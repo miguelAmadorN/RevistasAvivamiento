@@ -1,19 +1,18 @@
 const revistas = [
   {
-    title: "Revista 01: Qué es el discipulado",
-    description: "Fundamentos del discipulado cristiano para nuevos creyentes.",
-    href: "../QueEsElDiscipulado.html",
+    title: "Las Doctrinas Bíblicas de la Salvación",
+    description: "Las Doctrinas Bíblicas de la Salvación Primera Parte",
+    href: "./revistas/LasDoctrinasBiblicasDeLaSalvacion1P.html",
   },
   {
-    title: "Revista 02: Vida de oración",
-    description: "Guía práctica para fortalecer la oración diaria.",
-    href: "./revistas/vida-de-oracion.html",
-  },
-  {
-    title: "Revista 03: Evangelismo local",
-    description: "Ideas sencillas para compartir el evangelio en tu comunidad.",
-    href: "./revistas/evangelismo-local.html",
-  },
+    title: "Las Doctrinas Bíblicas de la Salvación",
+    description: "Las Doctrinas Bíblicas de la Salvación Segunda Parte",
+    href: "./revistas/LasDoctrinasBiblicasDeLaSalvacion2P.html",
+  },{
+       title: "¿Qué es el discipulado?",
+       description: "Fundamentos del discipulado cristiano para nuevos creyentes.",
+       href: "./revistas/QueEsElDiscipulado.html",
+     }
 ];
 
 const grid = document.getElementById("revistas-grid");
