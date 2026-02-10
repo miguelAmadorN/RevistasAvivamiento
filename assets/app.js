@@ -3,16 +3,20 @@ const revistas = [
     title: "Las Doctrinas Bíblicas de la Salvación",
     description: "Las Doctrinas Bíblicas de la Salvación Primera Parte",
     href: "./revistas/LasDoctrinasBiblicasDeLaSalvacion1P.html",
+    cover: "../assets/cover/LAS DOCTRINAS BIBLICAS DE LA SALVACION 1P.gif",
   },
   {
     title: "Las Doctrinas Bíblicas de la Salvación",
     description: "Las Doctrinas Bíblicas de la Salvación Segunda Parte",
     href: "./revistas/LasDoctrinasBiblicasDeLaSalvacion2P.html",
-  },{
-       title: "¿Qué es el discipulado?",
-       description: "Fundamentos del discipulado cristiano para nuevos creyentes.",
-       href: "./revistas/QueEsElDiscipulado.html",
-     }
+    cover: "../assets/cover/LAS DOCTRINAS BIBLICAS DE LA SALVACION 2P.gif",
+  },
+  {
+    title: "¿Qué es el discipulado?",
+    description: "Fundamentos del discipulado cristiano para nuevos creyentes.",
+    href: "./revistas/QueEsElDiscipulado.html",
+    cover: "../assets/cover/¿QUÉ ES EL DISCÍPULADO.jpg",
+  },
 ];
 
 const grid = document.getElementById("revistas-grid");
@@ -22,6 +26,7 @@ if (grid) {
     const card = document.createElement("article");
     card.className = "card";
     card.innerHTML = `
+      <img class="card-cover" src="${revista.cover}" alt="Portada de ${revista.description}" loading="lazy" />
       <h2>${revista.title}</h2>
       <p>${revista.description}</p>
       <a class="button" href="${revista.href}">Abrir revista</a>
