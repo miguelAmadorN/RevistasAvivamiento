@@ -2,19 +2,19 @@ const revistas = [
   {
     title: "Las Doctrinas Bíblicas de la Salvación",
     description: "Las Doctrinas Bíblicas de la Salvación Primera Parte",
-    href: "./revistas/LasDoctrinasBiblicasDeLaSalvacion1P.html",
+    href: "./revistas/las-doctrinas-biblicas-de-la-salvacion-1p/index.html",
     cover: "../assets/cover/LAS DOCTRINAS BIBLICAS DE LA SALVACION 1P.gif",
   },
   {
     title: "Las Doctrinas Bíblicas de la Salvación",
     description: "Las Doctrinas Bíblicas de la Salvación Segunda Parte",
-    href: "./revistas/LasDoctrinasBiblicasDeLaSalvacion2P.html",
+    href: "./revistas/las-doctrinas-biblicas-de-la-salvacion-2p/index.html",
     cover: "../assets/cover/LAS DOCTRINAS BIBLICAS DE LA SALVACION 2P.gif",
   },
   {
     title: "¿Qué es el discipulado?",
     description: "Fundamentos del discipulado cristiano para nuevos creyentes.",
-    href: "./revistas/QueEsElDiscipulado.html",
+    href: "./revistas/que-es-el-discipulado/index.html",
     cover: "../assets/cover/¿QUÉ ES EL DISCÍPULADO.jpg",
   },
 ];

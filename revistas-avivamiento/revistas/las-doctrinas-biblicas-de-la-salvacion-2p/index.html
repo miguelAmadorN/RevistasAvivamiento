@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Doctrinas Bíblicas de la Salvación - Segunda Parte</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .author-info {
+            text-align: left;
+        }
+        
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #4a6491;
+            font-style: italic;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+        
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+        
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+        
+        .bible-list {
+            margin: 20px 0 20px 30px;
+        }
+        
+        .bible-list li {
+            margin-bottom: 12px;
+            text-align: justify;
+            padding-left: 5px;
+        }
+        
+        .bible-list li strong {
+            color: #4a6491;
+        }
+        
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+        
+        .intro-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0 30px;
+            border-left: 4px solid #4a6491;
+        }
+        
+        .menu-button {
+            display: inline-block;
+            margin: 20px 0 10px;
+            padding: 10px 18px;
+            background-color: #4a6491;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .menu-button:hover {
+            background-color: #2c3e50;
+        }
+
+        .menu-link-container {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+        
+        .reader-note {
+            background-color: #f0f8f0;
+            border: 1px solid #d4edda;
+            border-radius: 6px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 20px 15px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            
+            .main-title {
+                font-size: 1.7rem;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="author-info">
+                <div class="author-name">Por Rev. Javier T. Ríos</div>
+                <div>Revista Avivamiento</div>
+            </div>
+            <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="intro-box">
+            <p>Desde luego, lo conveniente sería adquirir ambas partes para tener una comprensión completa de un tema tan trascendental: <span class="emphasis">LA SALVACIÓN DEL ALMA</span>.</p>
+            <p>Deseamos que esta obra ya clásica siga dando frutos y haga prosperar el alma de sus lectores.</p>
+        </div>
+        
+        <div class="editors-note">
+            ATENTAMENTE<br>
+            <strong>Los Editores</strong>
+        </div>
+        
+        <h1 class="main-title">LAS DOCTRINAS BÍBLICAS DE LA SALVACIÓN</h1>
+        <div class="subtitle">(2a. Parte) - Por: Rev. Javier T. Ríos</div>
+        
+        <div class="content-section">
+            <h2>Introducción</h2>
+            <p><span class="emphasis">"Porque os digo que muchos procurarán entrar y no podrán."</span> - Jesús</p>
+            <p>Hoy en día hay muchas personas que procuran entrar al Reino de Dios y a las bendiciones de la vida cristiana y no pueden, porque no saben qué es arrepentirse verdaderamente, o a qué se refiere la Biblia al decir: Cree. Esto está haciendo que algunos se alejen decepcionados de la búsqueda porque no obtuvieron lo que esperaban.</p>
+            <p>Procuran "entrar" pero no hallan la puerta porque se les ha enseñado superficialmente, o porque no han estudiado por sí mismos las doctrinas Bíblicas de la Salvación.</p>
+            <p>Si usted quiere saber exactamente que es "tener fe" o si se encuentra confundido con términos como "expiación" y "regeneración", qué significa "arrepentirse", "nacer de nuevo", "ser salvo por gracia" y cómo recibir el "perdón de pecado", usted encontrará en este libro una explicación Bíblica completa y muy sencilla de entender, de las doctrinas cristianas de salvación, expuestas por un profesor de teología práctica que entiende la teoría y de estas enseñanzas tan importantes y cómo se pueden aplicar en la vida diaria.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>Las Doctrinas Bíblicas de la Salvación</h2>
+            <p>Cuando alguien una vez le preguntó acerca de la salvación del alma, Jesús dijo:</p>
+            
+            <div class="scripture">
+                "Esforzaos a entrar por la puerta angosta; porque os digo que muchos procurarán entrar, y no podrán."
+                <span class="scripture-ref">Lucas 13:24</span>
+            </div>
+            
+            <p>Para entender qué es lo que Él nos quiere decir en este pasaje, necesitamos definir primero ¿quiénes son los que procuran entrar a la vida eterna? Primero veamos quienes son los que <span class="red-emphasis">NO PROCURAN ENTRAR</span>. Los que no procuran entrar son los que no se acercan a una iglesia, ni a templos, ni a Dios, ni a nada relacionado con la Biblia. La gente que no procura estas cosas evidencía claramente que no tiene ningún interés en la salvación de su alma.</p>
+            
+            <p>Ahora pues, ¿quiénes son los que <span class="red-emphasis">SÍ procuran entrar</span> en esa salvación? Es obvio que son aquellos que domingo a domingo asisten a reuniones cristianas o religiones, o a la iglesia; aquellos que estudian la Biblia, que oran, que se bautizan, que cantan himnos o alabanzas a Dios, que sirven, ayudan o predican, etc. Estos son los que están procurando entrar al reino de Dios. Pero si leemos el pasaje que estamos estudiando otra vez; nos damos cuenta de algo muy alarmante. Jesús dice, que de esos que sí están buscando su salvación, muchos no podrán entrar al cielo, en otras palabras Jesús está advirtiéndonos que <span class="red-emphasis">LA MAYORÍA</span> de los que domingo a domingo asisten a la iglesia, estudian la Biblia y oran y cantan en las iglesias, <span class="red-emphasis">SE VAN A PERDER</span>, o sea "procurarán entrar y no podrán". ¡Qué tragedia!, ¡la mayoría de los que asisten a las iglesias o grupos cristianos se van a perder eternamente!, ¡vuélvelo a leer!: "porque os digo que <span class="red-emphasis">MUCHOS PROCURARÁN ENTRAR; Y NO PODRÁN</span>."</p>
+            
+            <p>¿Por qué va a suceder esto? ¿Por qué muchos irán al infierno? Jesús nos da la respuesta en dos pasajes:</p>
+            
+            <div class="scripture">
+                "No todo el que me dice: Señor, Señor, entrará en el reino de los cielos, sino el que HACE la voluntad de mi Padre que está en los cielos."
+                <span class="scripture-ref">Mateo 7:21</span>
+            </div>
+            
+            <div class="scripture">
+                "Pero cualquiera que me oye estas palabras y NO LAS HACE, le compararé a un hombre insensato, que edificó su casa sobre la arena; y descendió lluvia, y vinieron ríos, y soplaron vientos, y dieron con ímpetu contra aquella casa; y cayó, y fue grande su ruina."
+                <span class="scripture-ref">Mateo 7:26-27</span>
+            </div>
+            
+            <p>En estos textos Jesús nos está explicando que hay personas que se dicen pueblo de Dios, gente que lo llama "Señor, Señor", que escucharán las palabras de Dios y profesarán creerlas, pero que <span class="red-emphasis">NO LAS PONEN POR OBRA</span>. Gente aparentemente cristiana que dice conocer las enseñanzas de la salvación, pero que estas doctrinas no transforman sus vidas.</p>
+            
+            <p>Hoy estamos viviendo esos días; hoy hay muchísima gente que habla del arrepentimiento SIN realmente vivirlo. Gente que habla de la fe sin poderla explicar, ni mucho menos mostrar los frutos; se menciona mucho la gracia y no se conocen sus verdaderos efectos; se predica "un nuevo nacimiento" sin siquiera poder reconocerlo cuando ocurre. Si la gente ni siquiera entiende el significado de estas verdades de la salvación, ¿cómo puede esperar que la gente las practique y las viva? ¡Por eso las personas parecen andar a ciegas buscando la puerta y pasan años sin encontrarla! y luego se decepcionan porque no obtuvieron la vida espiritual victoriosa y abundante que buscaban.</p>
+            
+            <p>En resumen, hay muchos "que procuran entrar" al reino de los cielos <span class="red-emphasis">SIN SABER CÓMO</span>. Sencillamente no conocen el verdadero significado de las enseñanzas de Jesús en cuanto a esto. Las palabras <span class="red-emphasis">FE, GRACIA, ARREPENTIMIENTO, NUEVO NACIMIENTO</span>, etc., son conceptos sumamente <span class="red-emphasis">SERIOS</span> y un error en su significado puede ser la causa de que usted sea uno de aquellos muchos que procurarán entrar y <span class="red-emphasis">NO PODRÁN</span>.</p>
+            
+            <p>El presente estudio tiene como objetivo que usted conozca, Bíblicamente, cuáles son las verdaderas enseñanzas de la salvación y cómo transforman a fondo la vida de la persona que las cree y las aplica en su vida.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>La Verdadera Justificación</h2>
+            <p>Cuando una persona se arrepiente y cree, entonces recibe la gracia de Dios y es perdonada de todo lo pasado. Ya no está bajo la ira de Dios, sino bajo su favor o gracia. Esto quiere decir que ya no está destinada al infierno que antes merecía por sus pecados, ya que no está bajo condenación o culpa por lo que hizo en el pasado.</p>
+            
+            <p>Dios ahora la trata como si nunca hubiera hecho nada malo, y se agrada de esa persona. A tales personas Dios las declara "Justificadas", Dios las declara justas; y aparte les da EL PODER para vivir rectamente; a esto se le llama JUSTIFICACIÓN.</p>
+            
+            <h3>¿Cómo Sabemos que Alguien Ha Sido en Verdad Justificado?</h3>
+            
+            <ol class="bible-list">
+                <li>El que ha muerto a sus pecados pasados, al yo, y al egoísmo ha sido justificado. <span class="emphasis">"porque el que ha muerto, ha sido justificado del pecado."</span> <span class="scripture-ref">Romanos 6:7</span></li>
+                
+                <li>El que tiene paz y no lo culpa del pasado su conciencia. <span class="emphasis">"Justificados, pues, por la fe, tenemos paz para con Dios por medio de nuestro Señor Jesucristo."</span> <span class="scripture-ref">Romanos 5:1</span></li>
+                
+                <li>El que ha sido justificado no camina en la carne sino en el Espíritu, no es alguien carnal. <span class="emphasis">"Para que la justicia de la ley se cumpliese en nosotros, que no andamos conforme a la carne, sino conforme al Espíritu."</span> <span class="scripture-ref">Romanos 8:4</span></li>
+                
+                <li>Aparte de sentirse perdonado VIVE rectamente; haciendo justicia. <span class="emphasis">"Hijitos, nadie os engañe; el que hace justicia es justo, como él es justo."</span> <span class="scripture-ref">1 Juan 3:7</span></li>
+            </ol>
+            
+            <p>Si alguien es aún carnal, no ha muerto al yo, vive con su conciencia intranquila o no hace justicia con sus semejantes <span class="red-emphasis">NO ESTÁ</span> en un estado de justificación, Dios <span class="red-emphasis">NO lo declara inocente</span> sino TODO LO CONTRARIO. Está en estado de CONDENACIÓN, no ha sido justificado por Jesucristo Bíblicamente hablando, y está perdido. Por cierto, no importa que una persona diga creer en Jesús o haber hecho la oración de aceptar a Cristo, si no tiene todo lo anterior, no ha recibido la justificación que Dios otorga.</p>
+            
+            <p>A veces cuando escucho a algunas personas decir ligeramente que han "aceptado a Jesús" yo les contesto: <span class="emphasis">"Tú has aceptado a Jesús, pero ¿estás seguro de que Él ya te aceptó a ti?"</span> La idea que algunos tienen de que la salvación viene por hacer una simple oración, sin tener en cuenta el arrepentimiento y la fe que se ejerza es antibíblica. De hecho es Dios quien acepta al hombre. El hombre es el que ha pedido y necesita con humildad acercarse al Señor para recibir de Él la justificación.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>La Verdadera Regeneración o Nuevo Nacimiento</h2>
+            
+            <div class="scripture">
+                "...el que no naciere de nuevo, no puede ver el reino de Dios."
+                <span class="scripture-ref">Juan 3:3</span>
+            </div>
+            
+            <p>A este "nacer de nuevo" es lo que se llama en sentido teológico, la doctrina de la regeneración, ¿cómo saber si alguien verdaderamente ha nacido de nuevo o ha sido engendrado por Dios, o nacido de Dios, todo lo cual es la misma cosa?</p>
+            
+            <ol class="bible-list">
+                <li>Los que han nacido de Dios <strong>ya no practican el pecado</strong>. <span class="emphasis">"Todo aquel que es nacido de Dios, NO PRACTICA EL PECADO..."</span> <span class="scripture-ref">1 Juan 3:9</span></li>
+                
+                <li>Los que han nacido de Dios <strong>no se deleitan con los deseos del mundo</strong> como son: la televisión, el cine, la música mundana, revistas vanas, etc. "El mundo" Bíblicamente hablando, es todo aquello que tiene una influencia anticristiana; es todo aquello que apela a los deseos de la carne, los deseos de los ojos y a la vanagloria. 1 Juan 2:16.</li>
+                
+                <div class="scripture">
+                    "Porque todo lo que es nacido de Dios vence al mundo."
+                    <span class="scripture-ref">1 Juan 5:4</span>
+                </div>
+                
+                <div class="scripture">
+                    "No améis al mundo, ni las cosas que están el mundo. Si alguno ama al mundo, el AMOR DEL PADRE NO ESTÁ EN ÉL. Porque todo lo que hay en el mundo, los deseos de la carne, los deseos de los ojos, y la vanagloria de la vida, NO PROVIENE DEL PADRE, SINO DEL MUNDO."
+                    <span class="scripture-ref">1 Juan 2:15-16</span>
+                </div>
+                
+                <li>Los que han nacido de nuevo tienen <strong>un cambio radical</strong> con relación a su manera de vivir. <span class="emphasis">"De modo que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron; he aquí todas son hechas nuevas."</span> <span class="scripture-ref">2 Corintios 5:17</span></li>
+                
+                <li>Viven una vida continua <strong>haciendo buenas obras</strong>; algunos ejemplos de buenas obras son: predicar a los perdidos, dar de comer al hambriento, visitar a los pobres y a los encarcelados, ayudar a los enfermos, etc. <span class="emphasis">"Porque somos hechura suya, creados en Cristo Jesús para buenas obras, las cuales Dios preparó de antemano para que anduviésemos en ellas."</span> <span class="scripture-ref">Efesios 2:10</span></li>
+            </ol>
+            
+            <p>Por lo tanto, si la persona realmente nació de nuevo, las evidencias serán que ya no practica sus pecados pasados, ni quiere nada de la influencia del mundo, su vida ha experimentado en todas las áreas un cambio radical a favor de Cristo y vive sirviendo a su prójimo con buenas obras.</p>
+            
+            <p>Pero si todavía practica algún pecado pasado, se deleita en las diversiones vanas como la televisión, el cine, etc.; o si hay algún área de su vida que no se ha alineado con la voluntad de Dios o si no es útil ni a Dios, ni sirve a su prójimo: <span class="red-emphasis">no ha sido regenerado, no ha nacido de Dios y es todavía hijo del diablo</span>. Conforme a lo que dice la Biblia:</p>
+            
+            <div class="scripture">
+                "El que practica el pecado es del diablo."
+                <span class="scripture-ref">1 Juan 3:8</span>
+            </div>
+            
+            <div class="scripture">
+                "Todo aquél que ama, es nacido de Dios."
+                <span class="scripture-ref">1 Juan 4:7</span>
+            </div>
+            
+            <p>¿Cómo podrá alguno decir que tiene verdadero amor si ve que la gente afuera se pierde por no conocer el evangelio, y no se esfuerza en predicarles? ¿Tendrán amor aquellos que nunca tienen tiempo de visitar a los enfermos, encarcelados y pobres que sufren, pero sí tienen tiempo para pasar horas ante la televisión y en sus diversiones mundanas? <span class="red-emphasis">No tienen ni una gota de verdadero amor. No han nacido de nuevo</span>. Si alguien se pregunta cómo nacer de nuevo, revise el capítulo sobre arrepentimiento y la fe, pues sólo un profundo arrepentimiento y una fe de corazón son el camino a esto.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>La Verdadera Expiación o el Perdón de Pecados</h2>
+            
+            <p>Seguramente usted habrá conocido multitudes de personas que dicen que creen que Jesús murió por ellos o que ya les han sido perdonados sus pecados. Veamos que dice la Biblia respecto al perdón de pecados: <span class="emphasis">"Bienaventurado aquel cuya transgresión ha sido perdonada, y cubierto su pecado"</span> (Salmo 32:1). La palabra bienaventurado quiere decir "muy feliz", o "felicísimo" aquél que llegase a ser perdonado. Esto nos habla de la actitud de aquellos que reciben el perdón de pecados, lo cual, sin excepción, afecta todas las áreas de su vida. ¿Cómo saber si alguien ha sido perdonado de sus pecados? ¿Cómo viven los que en verdad creen que sus pecados han sido cubiertos por la sangre de Jesucristo?</p>
+            
+            <ol class="bible-list">
+                <li>Andan en amor, o sea, <strong>viven habitualmente amando a la gente a su alrededor</strong>. <span class="emphasis">"Y andad en amor, como también Cristo nos amó, y se entregó a sí mismo por nosotros, ofrenda y sacrificio a Dios en olor fragante."</span> <span class="scripture-ref">Efesios 5:2</span></li>
+                
+                <li>Y el que anda en amor vive así: <span class="emphasis">"todo lo sufre, todo lo cree, todo lo espera, todo lo soporta, no guarda rencor, no se envanece, no hace NADA INDEBIDO, se goza de la verdad..."</span> <span class="scripture-ref">1 Corintios 13:4-7</span></li>
+                
+                <li>Aquellos que han sido perdonados por la fe en la expiación, <strong>han sido libres de la práctica del pecado</strong>. <span class="emphasis">"He aquí el Cordero de Dios, que QUITA el pecado del mundo."</span> <span class="scripture-ref">Juan 1:29</span></li>
+                
+                <li>Tienen una <strong>conciencia limpia</strong>; lo que significa que ya no se sienten culpables ante Dios por nada de lo que hicieron en su vida pasada. No importa como haya sido esto. <span class="emphasis">"¿cuánto más la sangre de Cristo, el cual mediante el Espíritu eterno se ofreció a sí mismo sin mancha a Dios, limpiará vuestras conciencias de obras muertas para que sirváis al Dios vivo."</span> <span class="scripture-ref">Hebreos 9:14</span></li>
+                
+                <p class="note">(Las obras muertas son aquellas obras que el hombre hace para apaciguar su conciencia que le acusa de pecado).</p>
+                
+                <li>También viven una vida de <strong>santidad</strong>. <span class="emphasis">"En esa voluntad somos SANTIFICADOS mediante la ofrenda del cuerpo de Jesucristo hecha una vez para siempre."</span> <span class="scripture-ref">Hebreos 10:10</span></li>
+                
+                <li>Finalmente los que han sido perdonados <strong>siguen el ejemplo de Jesús</strong>, viviendo una vida justa y recta. <span class="emphasis">"Pues para esto fuisteis llamados; porque también Cristo padeció por nosotros, dejándonos ejemplo, para que sigáis sus pisadas."</span> <span class="scripture-ref">1 Pedro 2:21</span> <span class="emphasis">"Quien llevó él mismo nuestros pecados en su cuerpo sobre el madero, para que nosotros, estando muertos a los pecados vivamos a la justicia."</span> <span class="scripture-ref">1 Pedro 2:24</span></li>
+            </ol>
+            
+            <p>Por lo tanto los que andan en verdadero amor con una conducta limpia, sin práctica del pecado y viviendo justa y rectamente, han experimentado el ser perdonados. Pero si alguno no anda así, solamente sabe intelectualmente que Dios perdona pecados, pero no lo ha experimentado en su vida y aún está sin el perdón.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>La Verdadera Santificación</h2>
+            
+            <p>La palabra santificación viene del griego HAGIOS, y del hebreo KADOSH que quiere decir: "estar separado", "ser puro". Es vivir apartado de toda maldad para agradar a Dios, la Biblia dice: <span class="emphasis">"sin santidad nadie verá al Señor"</span> Hebreos 12:14.</p>
+            
+            <p>Veamos que tipo de santidad es la requerida en el Nuevo Testamento para ver a Dios, o sea, para poder llegar al cielo. Quiero aclarar que la santidad es LA EVIDENCIA de haberse arrepentido y creído en Jesús. Cuando alguien lo ama, y cree de verdad, le será natural vivir apartado para Él.</p>
+            
+            <h3>Los que tienen santidad:</h3>
+            
+            <ol class="bible-list">
+                <li>Han sido <strong>libertados de la práctica de pecar</strong>. <span class="emphasis">"Más ahora que habéis sido LIBERTADOS DEL PECADO y hechos siervos de Dios, tenéis por vuestro fruto la santificación, y como fin, la vida eterna."</span> <span class="scripture-ref">Romanos 6:22</span>.</li>
+                
+                <li>Son santos <strong>EN TODAS las áreas de su vida</strong>, y no sólo en algunas, y no se conforman a los deseos que antes tenían. <span class="emphasis">"como hijos obedientes, no os conforméis a los deseos que antes teníais estando en vuestra ignorancia; sino como aquél que os llamó es santo, sed también vosotros santos en toda vuestra manera de vivir."</span> <span class="scripture-ref">1 Pedro 1:14-15</span></li>
+            </ol>
+            
+            <p>Por lo tanto, si una persona está apartada de lo malo y de lo mundano para agradar a Dios y es libre de la práctica de pecado, tiene santidad; pero, si hay áreas que no ha entregado a Dios y todavía no ha sido libertado del pecado <span class="red-emphasis">no es santa y por consecuencia NO VERA AL SEÑOR CUANDO MUERA</span>. De acuerdo a la Biblia.</p>
+            
+            <div class="scripture">
+                "Seguid la paz con todos, y la santidad, sin la cual nadie verá al Señor."
+                <span class="scripture-ref">Hebreos 12:14</span>
+            </div>
+            
+            <div class="scripture">
+                "...de que Dios os haya escogido desde el principio para salvación, MEDIANTE LA SANTIFICACIÓN POR EL ESPÍRITU Y LA FE EN LA VERDAD."
+                <span class="scripture-ref">2 Tesalonicenses 2:13</span>
+            </div>
+            
+            <p>Si no hay una vivencia de santidad no ha habido salvación, pues la consecuencia de un verdadero arrepentimiento y fe de corazón en Jesucristo, es la de vivir una vida santa.</p>
+        </div>
+        
+        <div class="reader-note">
+            <h2>Querido Lector</h2>
+            
+            <p>Acaba usted de leer una exposición totalmente Bíblica de las enseñanzas básicas acerca de <span class="emphasis">LA SALVACIÓN DEL ALMA</span>. En otras palabras, una persona verdaderamente salva habrá <span class="red-emphasis">EXPERIMENTADO</span> esas doctrinas EN SU PROPIA VIDA, y si no, la Biblia le asegura que no ha sido salva. Como se ha dado usted cuenta las palabras ARREPENTIMIENTO, FE, GRACIA, etc., son conceptos muy serios y de vital importancia. Todas estas doctrinas producen siempre una vida obediente, santa, pura y feliz, pues:</p>
+            
+            <div class="scripture">
+                "No todo el que me dice: Señor, Señor, entrará en el reino de los cielos, sino el que hace la voluntad de mi Padre que está en los cielos."
+                <span class="scripture-ref">Mateo 7:21</span>
+            </div>
+            
+            <p>Si alguno dice que tiene fe, pero no es la fe Bíblica; o si alguien dice ser salvo sin haberse arrepentido COMO LA BIBLIA MANDA, está viviendo en un peligroso engaño. Lo mismo los que dicen estar en la gracia o haber nacido de nuevo, cuando ni siquiera entienden a que se refiere la Biblia. Haga un alto en su vida hoy y examínese a la luz de la Palabra de Dios; deje que ella sea su <span class="red-emphasis">ÚNICA regla</span> para determinar si su fe es verdadera, y está viviendo bajo la gracia de Dios.</p>
+            
+            <p>Haga a un lado los credos, las tradiciones religiosas, las opiniones de tal o cual predicador y enfrente su experiencia con los textos Bíblicos que acaba de examinar. Si su vida concuerda con lo que acaba de leer, tiene usted la experiencia genuina de salvación y la Biblia lo certifica. Pero si su experiencia cristiana no es ésa, la misma Biblia, con la autoridad misma de Dios, le asegura que usted <span class="red-emphasis">NO HA SIDO SALVO</span>. Ha estado abrazando falsas doctrinas en cuanto a la salvación y eso le ha impedido entrar al reino de los cielos, a esa experiencia de salvación, poderosa y libertadora que Jesús prometió.</p>
+            
+            <div class="warning-box">
+                <p>Si usted realmente tiene un serio interés en su salvación, le invito a abandonar y rechazar las ideas falsas y antibíblicas para que esté usted libre para poder buscar a Dios en la forma correcta. El seguir la doctrina Bíblica siempre producirá resultados Bíblicos.</p>
+                
+                <p>Es mejor ser honestos con Dios AHORA, y reconocer que no hemos sido salvos, a EQUIVOCARNOS y después darnos cuenta de que ya es DEMASIADO TARDE para arreglar las cosas.</p>
+            </div>
+            
+            <p class="emphasis">Recordemos la advertencia de Jesús:</p>
+            
+            <div class="scripture">
+                "...porque os digo que muchos procurarán entrar, y no podrán."
+                <span class="scripture-ref">Lucas 13:24</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="menu-link-container">
+        <a class="menu-button" href="../menu.html">Volver al Menú</a>
+    </div>
+
+    <footer>
+        Revista Avivamiento - Las Doctrinas Bíblicas de la Salvación<br>
+        Segunda Parte - Por Rev. Javier T. Ríos
+    </footer>
+</body>
+</html>
