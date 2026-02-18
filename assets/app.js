@@ -17,6 +17,12 @@ const revistas = [
     href: "./revistas/que-es-el-discipulado/index.html",
     cover: "../assets/cover/¿QUÉ ES EL DISCÍPULADO.jpg",
   },
+  {
+    title: "¿Dónde está el Dios de Elías?",
+    description: "Una solución para el fundamentalismo muerto.",
+    href: "./revistas/donde-esta-el-Dios-de-elias/index.html",
+    cover: "../assets/cover/¿DÓNDE ESTÁ EL DIOS DE ELÍAS.jpg",
+  },
 ];
 
 const grid = document.getElementById("revistas-grid");

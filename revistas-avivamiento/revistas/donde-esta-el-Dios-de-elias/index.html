@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Dónde está el Dios de Elías? - Leonard Ravenhill</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #4a6491;
+            font-style: italic;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .bible-list {
+            margin: 20px 0 20px 30px;
+        }
+
+        .bible-list li {
+            margin-bottom: 12px;
+            text-align: justify;
+            padding-left: 5px;
+        }
+
+        .bible-list li strong {
+            color: #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        .intro-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0 30px;
+            border-left: 4px solid #4a6491;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .editorial-image {
+            flex: 0 0 150px;
+            text-align: center;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #e9ecef;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .editorial-text {
+            flex: 1;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .editorial-container {
+                flex-direction: column;
+            }
+
+            .editorial-image {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Leonard Ravenhill</div>
+            <div>Revista Avivamiento</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-text">
+            <div class="editorial-title">EDITORIAL</div>
+
+            <div class="scripture">
+                "Porque los ojos de Jehová contemplan toda la tierra, para mostrar su poder a favor de los que tienen corazón perfecto para con él"
+                <span class="scripture-ref">2ª Crónicas 16:9</span>
+            </div>
+
+            <p>Cuando Dios busca a un hombre para que trabaje en su viña, no pregunta: ¿tiene habilidades naturales? ¿Tiene educación? ¿Es él un buen cantante? ¿Es elocuente en la oración? ¿Tiene la capacidad de hablar mucho, o tiene muchos dones? ¿Es una persona talentosa? ¿Tiene riquezas o suficientes recursos económicos?</p>
+
+            <p>No, en lugar de esto, Dios pregunta: ¿es su corazón perfecto para conmigo? ¿Es él santo y ama? ¿Está dispuesto a caminar por fe y no por vista? ¿Me ama de modo que tiene la confianza de un niño y así poder ser usado? ¿Desmayará cuando yo lo corrija y trate de amoldarlo para el futuro? O como Job llorará: <span class="emphasis">"He aquí, aunque él me matare, en él esperaré"</span> (Job 13:15). ¿Buscará en mi palabra y meditará en ella de día y de noche a fin de hacer conforme a todo lo que está escrito? (Ver Josué 1:8).</p>
+
+            <p>Sí, Dios necesita gente que espere en Él por consejo y busque ser guiado por el Espíritu. Personas que no busquen la aprobación de los hombres sino la recompensa y la honra que viene de Dios. Un bienaventurado que sea manso, modesto y humilde de corazón.</p>
+
+            <p>Cuando Dios encuentre a tal hombre, lo usará. Él ha establecido claramente en Su palabra las condiciones para relacionarse con los hombres, y éstas no cambiarán jamás.</p>
+
+            <p>Si su deseo es ser usado por Dios, le recomendamos leer detenidamente el siguiente escrito. El artículo ha sido tomado del libro <span class="emphasis">"Por qué no llega el avivamiento"</span>, cuyo autor, Leonard Ravenhill, ya fallecido, continúa siendo una voz fresca y actual que resuena en medio de muchas otras que carecen de lo esencial: unción del Espíritu.</p>
+        </div>
+    </div>
+
+    <div class="editors-note">
+        ATENTAMENTE<br>
+        <strong>Los Editores</strong>
+    </div>
+
+    <h1 class="main-title">¿DÓNDE ESTÁ EL DIOS DE ELÍAS?</h1>
+
+    <div class="content-section">
+        <p>A la pregunta: ¿dónde está el Dios de Elías? respondemos: pues ¡dónde ha estado siempre: en su trono! Pero ¿dónde están los Elías de Dios?</p>
+
+        <p>Sabemos que Elías era un hombre <span class="emphasis">de pasiones semejantes a las nuestras</span>, pero, ¡ay!, nosotros no somos hombres de oración como él. Hoy Dios parece olvidar a los hombres de oración; no porque somos demasiado ignorantes, sino porque somos demasiado autosuficientes. <span class="red-emphasis">¡Hermanos, nuestras capacidades son nuestros impedimentos, y nuestros talentos piedras de tropiezo!</span></p>
+
+        <p>Elías salió de la oscuridad al escenario del Antiguo Testamento como un hombre maduro. La reina Jezabel, aquella hija del infierno, había destruido a los profetas de Dios reemplazándoles por sacerdotes de divinidades falsas. Oscuridad espiritual cubría la tierra. El pueblo estaba ciego y bebía la iniquidad como agua. Cada día se levantaban nuevos templos paganos, donde se practicaban crueles ritos en los que perecían inocentes víctimas humanas: niños y doncellas.</p>
+
+        <p>Todo esto ocurría en un pueblo que llamaba a Abraham su padre, y cuyos antepasados habían clamado a Dios en sus tribulaciones y habían sido librados de todas sus angustias. El Señor de gloria parecía ausente y la sal había perdido su sabor. El oro se había convertido en escoria. Sin embargo, de esa profunda apostasía Dios levantó a un hombre ---no un comité, ni una secta, ni un ángel, sino un <span class="red-emphasis">HOMBRE</span>---, y un hombre de pasiones semejantes a las nuestras. Dios <span class="emphasis">llamó a un hombre</span>, no a predicar, sino <span class="emphasis">a estar en el portillo</span>. Como Abraham en antiguos tiempos, así ahora Elías <span class="emphasis">estuvo ante el Señor</span>. Por esto el Espíritu Santo pudo escribir su biografía en dos palabras: <span class="red-emphasis">Elías oró</span>. Nadie puede hacer nada más importante para Dios y para los hombres. Si la Iglesia tuviera hoy tantos ardientes intercesores como tiene consejeros diligentes, veríamos el despertamiento universal antes de un año.</p>
+
+        <p>Tales hombres de oración son siempre benefactores nacionales. Elías era uno de éstos. Oyó una voz, vio una visión, experimentó un poder, se enfrentó con un enemigo y, contando con Dios como aliado, obtuvo una gran victoria.</p>
+
+        <p>Las lágrimas que derramó, las angustias que sufrió y los gemidos que profirió están escritos en el libro de las crónicas de Dios. Por fin, Elías emergió con la infalibilidad de un profeta. Conoció la mente de Dios. Por tanto, un solo hombre conquistó una nación y alteró el curso de la naturaleza. Este <span class="emphasis">desecho de los hombres</span> se mantuvo firme e inconmovible como los montes de Galaad cuando cerró los cielos con su palabra. Por la llave de la fe, que se adapta a todos los cerrojos, Elías cerró los cielos, se puso la llave en el bolsillo y Acab tembló. Aunque es maravilloso cuando Dios se apodera de un hombre, es todavía más admirable cuando un hombre se apodera de Dios. Que un hombre de Dios <span class="emphasis">gima en el espíritu</span>, y Dios clamará: "Dejadme hacer". Nosotros quisiéramos las proezas de Elías, pero no sus destierros.</p>
+
+        <p>Hermanos, si hacemos la obra de Dios, a la manera de Dios, en el tiempo de Dios y con el poder de Dios, tendremos la bendición de Dios y las maldiciones del diablo. Cuando Dios abre las ventanas del cielo para bendecirnos, el diablo abre las puertas del infierno para atacarnos. La sonrisa de Dios significa el ceño del diablo. Los simples predicadores no pueden ayudar ni dañar a nadie; pero los profetas conmueven a todo el mundo y hacen desesperar a algunos. El predicador suele ir con la multitud, el profeta va en contra. Un hombre pobre, pero ardiente y lleno de Dios, será tildado de mal patriota porque habla contra los pecados de su nación; de severo, porque su lengua es una espada de dos filos; de desequilibrado, porque el peso de la opinión está en su contra. El predicador será ensalzado, el profeta abucheado.</p>
+
+        <p><span class="red-emphasis">¡Ah, hermanos predicadores!</span> Amamos a los santos de la antigüedad, mártires y reformadores. Veneramos a nuestros Luteros, Bunyans, Wesleys, Asburys, etc. Escribimos sus biografías, reverenciamos su memoria, redactamos respetuosos epitafios, les construimos monumentos. Lo hacemos todo menos imitarles. Veneramos como reliquia hasta la última gota de su sangre; pero nos guardamos de derramar una gota de la sangre nuestra.</p>
+
+        <p>Juan el Bautista pudo mantenerse seis meses en prisión; pero él y Elías no podrían permanecer seis semanas en la calle de una ciudad moderna. Los encerrarían en un manicomio por reprender el pecado y no silenciar su mensaje.</p>
+
+        <p>Los evangelistas de nuestros tiempos lloran el poder de los sistemas ateos, pero cierran la boca ante la amenaza de la religión nominal y apóstata. América se estremecería de costa a costa si algún predicador famoso atacara a las religiones humanamente organizadas y sus errores; nadie siente compasión por las multitudes engañadas, en vida y en muerte, con formas nocivas de religión. Tales multitudes tienen que conmovernos, como conmovieron a Elías circunstancias parecidas. El enemigo ha venido como un río. ¿No hay ningún guerrero de Dios, revestido con la armadura del Espíritu Santo, capaz de levantar bandera contra él? Sólo un lugar mantendrá el corazón en pasión y los ojos en visión. Este lugar es la cámara secreta de oración. Elías, con un volcán en el corazón y voz de trueno, apareció en el reino de Israel para un tiempo como ése.</p>
+
+        <p>Las dificultades para la evangelización mundial son muchas en nuestros días. Pero las dificultades dan lugar a hombres decididos. ¿Has llegado ante ríos que te parecen invadeables? ¿Te hallas ante montañas imposibles de cruzar? Dios es especialista de cosas imposibles para todo otro poder.</p>
+
+        <p>Pero el precio es alto. Dios no quiere ser nuestro asociado sino a condición de ser dueño.</p>
+
+        <p>Elías vivió con Dios. Consideró los pecados de la nación como pecados contra Dios; se entristeció sobre tales pecados como Dios mismo, y habló contra ellos como Dios. Fue tan apasionado en sus oraciones como en su denuncia del mal. Su predicación era como fuego y los corazones de los hombres como metal fundido.</p>
+
+        <p>Pero "por Jehová son ordenados los pasos del hombre" (Ver Salmos 37:23). El Señor dijo a Elías: "Escóndete", y más tarde dijo: "Muéstrate". Habría sido un gran error esconderse cuando tenía que reprender a reyes por el amor de Dios, y peligroso desafiarles sin orden expresa del Señor. Es un error predicar si el Espíritu nos ordena esperar en el Señor. Debemos aprender a decir como David: "Alma mía, en Dios solamente reposa" (Salmos 62:5). ¿Quién se atreverá a pedir a Dios cortar todos nuestros propios apoyos? Sus caminos son <span class="emphasis">escondidos</span>, pero Él nos los revela por el Espíritu Santo.</p>
+
+        <p>¿Le ordenó Dios alojarse en Cherit y Sarepta en algún gran hotel? ¡Oh, no! ¡A este profeta de Dios, a este predicador de la justicia le fue ordenado alojarse en casa de una viuda pobre!</p>
+
+        <p>Más tarde la oración de Elías fue un modelo de oración concisa:</p>
+
+        <div class="scripture">
+            "Respóndeme, Jehová, respóndeme, para que conozca este pueblo que tú, oh Jehová, eres el Dios, y que tú vuelves a ti el corazón de ellos"
+            <span class="scripture-ref">1ª Reyes 18:37</span>
+        </div>
+
+        <p>E. M. Bounds tiene razón al decir que las oraciones breves en público son el resultado de largas oraciones en secreto. Elías oró, no por la destrucción de los profetas idólatras, ni que cayeran rayos sobre el rebelde pueblo de Israel, sino para que la gloria y el poder de Dios se revelaran como Dios quisiera.</p>
+
+        <p>Nosotros tratamos de ayudar a Dios a salir de las dificultades. Recordad que Abraham lo intentó, y hasta el día de hoy el mundo sufre su error a causa de Ismael. En cambio, Elías trató de poner las cosas más y más difíciles para Dios. ¡Pidió fuego e hizo empapar el altar de agua! Dios quiere vernos atrevidos en nuestras oraciones.</p>
+
+        <div class="scripture">
+            "Pídeme, y te daré por herencia las naciones, y como posesión tuya los confines de la tierra"
+            <span class="scripture-ref">Salmos 2:8</span>
+        </div>
+
+        <p><span class="red-emphasis">¡Oh hermanos ministros!</span> La mayoría de nuestras oraciones son advertencias y consejos a Dios. Nuestra oración está teñida de egoísmos, ya sea para nosotros mismos, para nuestra denominación o para nuestro grupo. ¡Perezca tal pensamiento! Nuestro objetivo debe ser solamente Dios. Es su honor el que está puesto en juego. Su bendito Hijo el que es despreciado e ignorado. Sus leyes, quebrantadas. Su nombre, profanado; su libro, olvidado, y su casa, convertida en un círculo de actividades recreativas.</p>
+
+        <p>Dios necesita mucha paciencia para con las oraciones de su pueblo. Le decimos lo que tiene que hacer y cómo. Hacemos juicios y formulamos apreciaciones cuando oramos. En una palabra: lo hacemos todo menos orar. Sin embargo, en ninguna escuela dominical puede aprenderse este arte. ¿Qué escuela bíblica tiene la oración como una de sus asignaturas? La ciencia más importante que uno puede estudiar es la oración según la Biblia. Pero ¿dónde se enseña semejante ciencia? Liándonos la manta a la cabeza nos atreveremos a decir que muchos de nuestros presidentes y maestros no oran ni derraman lágrimas ante Dios. ¿Cómo pueden enseñar lo que no saben?</p>
+
+        <div class="warning-box">
+            <p>La persona que pudiera inducir a muchos creyentes a orar levantaría el más grande despertamiento que el mundo haya conocido. La falta no está en Dios. <span class="emphasis">Él es poderoso para hacer conforme al poder que obra en nosotros.</span> El problema para Dios hoy día no es el ateísmo, ni la religión falsa, ni el liberalismo o modernismo. <span class="red-emphasis">El problema para Dios es el fundamentalismo muerto.</span></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - ¿Dónde está el Dios de Elías?<br>
+    Por Leonard Ravenhill - Del libro "Por qué no llega el avivamiento"
+</footer>
+</body>
+</html>
