@@ -23,6 +23,12 @@ const revistas = [
     href: "./revistas/donde-esta-el-Dios-de-elias/index.html",
     cover: "../assets/cover/¿DÓNDE ESTÁ EL DIOS DE ELÍAS.jpg",
   },
+  {
+    title: "Cristianismo Radical",
+    description: "Versión preliminar.",
+    href: "./revistas/cristianismo-radical/index.html",
+    cover: "../assets/cover/CRISTIANISMO RADICAL.gif",
+  },
 ];
 
 const grid = document.getElementById("revistas-grid");
