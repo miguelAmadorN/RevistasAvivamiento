@@ -29,6 +29,12 @@ const revistas = [
     href: "./revistas/cristianismo-radical/index.html",
     cover: "../assets/cover/CRISTIANISMO RADICAL.gif",
   },
+  {
+    title: "¿Eres Salvo o solamente Religioso?",
+    description: "Versión preliminar.",
+    href: "./revistas/eres-salvo-o-solamente-religioso/index.html",
+    cover: "../assets/cover/Eres-salvo-o-solamente-religioso.png",
+  }
 ];
 
 const grid = document.getElementById("revistas-grid");

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Eres Salvo o Solamente Religioso? - Carlos G. Finney</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #4a6491;
+            font-style: italic;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .bible-list {
+            margin: 20px 0 20px 30px;
+        }
+
+        .bible-list li {
+            margin-bottom: 12px;
+            text-align: justify;
+            padding-left: 5px;
+        }
+
+        .bible-list li strong {
+            color: #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        .intro-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0 30px;
+            border-left: 4px solid #4a6491;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .poem-box {
+            background-color: #f9f5e8;
+            border-left: 4px solid #b8860b;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .poem-line {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #5a3e1b;
+            text-align: center;
+        }
+
+        .characteristic-list {
+            list-style-type: none;
+            counter-reset: characteristic-counter;
+            margin: 20px 0 20px 20px;
+        }
+
+        .characteristic-list li {
+            counter-increment: characteristic-counter;
+            margin-bottom: 25px;
+            padding-left: 40px;
+            position: relative;
+            text-align: justify;
+        }
+
+        .characteristic-list li::before {
+            content: counter(characteristic-counter) ".";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+            color: #4a6491;
+            font-size: 1.2rem;
+        }
+
+        .characteristic-list li strong {
+            color: #4a6491;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Carlos G. Finney</div>
+            <div>¿ERES SALVO O SOLAMENTE RELIGIOSO? (Versión preliminar. En revisión)</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <div class="scripture">
+            "Examinaos a vosotros mismos si estáis en la fe; probaos a vosotros mismos..."
+            <span class="scripture-ref">2ª Corintios 13:5</span>
+        </div>
+
+        <p>Hoy día, más que en ninguna otra época los cristianos nominales viven engañados en cuanto al asunto más importante de su vida; la salvación del alma. Esto se debe principalmente a lo siguiente: En primer lugar, mucha gente piensa de manera equivocada que uno no puede saber a ciencia cierta si es salvo o no, y con esta idea caminan a ciegas hacia su muerte y perdición eterna.</p>
+
+        <p>- Después encontramos multitud de personas que le dan excesiva importancia a cosas que tienen muy poca o ninguna, como legalismos, rituales y prácticas religiosas particulares de su denominación, dejando de ver las verdaderas evidencias Bíblicas que sí ayudan a una sincera autoevaluación.</p>
+
+        <p>- ¿Qué parámetros se están utilizando para que alguien evalúe su fe?</p>
+
+        <p>- ¿Es suficiente una declaración de fe o un "Acepto a Cristo" para ser salvo o la fe verdadera viene acompañada de evidencias claras?</p>
+
+        <p>- ¿Es usted salvo o simplemente está engañado?</p>
+
+        <p>En esta ocasión ponemos en sus manos este excelente mensaje de Carlos G. Finney que expondrá sin lugar a dudas la realidad espiritual del lector.</p>
+
+        <div class="editors-note">
+            Atentamente<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>¡MIRAD QUE NADIE OS ENGAÑE!</h2>
+
+        <h3>Prefacio por Eiren Israel</h3>
+
+        <p>Cuando los discípulos le preguntaron a Jesús: "¿Qué señal habrá de tu venida y del fin del siglo?" Él respondió: "Mirad que nadie os engañe". Tanto para los cristianos como para muchos científicos y pensadores inconversos, es evidente que estamos en los días del fin. Una clave para identificar estos días es la palabra: <span class="red-emphasis">ENGAÑO</span>. En Mateo 24:11 Jesús vuelve a decir "¡Muchos serán engañados!". Una buena cantidad de versículos bíblicos que tienen que ver con el fin también hablan de engaños: ¡ministros que engañan a los cristianos!, ¡gente engañándose a sí misma!, ¡y aún "espíritus engañadores" dentro de la iglesia!. Cuando Jesús te dice: "Mirad que nadie os engañe", Él te lo dice para que no te engañe ningún pastor, ningún falso profeta, ningún religioso, ningún científico, ningún hermano bien intencionado. ¡Pero también te quiere evitar el ser engañado por tu propio corazón!</p>
+
+        <p>Este mensaje está dirigido a:</p>
+
+        <ul class="bible-list">
+            <li><strong>Los verdaderos creyentes</strong> que a menudo son engañados por el "falso cristianismo" de muchos dentro de las congregaciones y que tropiezan por el mal testimonio, su fe se enfría y son confundidos en su mente, para luego apartarse del Señor.</li>
+
+            <li><strong>Los verdaderos creyentes,</strong> que alguna vez experimentaron una pasión por Cristo pero que, engañados por falsos cristianos siguieron su ejemplo y se conformaron más bien a la imagen de ellos que a la de Cristo y Su Palabra. Aquellos pobres y amados hermanos a los cuales alguna vez les dijeron los religiosos que eran fanáticos y que "ya bajarían de su nube" y "se acabaría su primer amor" y que haciéndoles caso, abandonaron su primer amor y llegaron a creer que estaban mal y su experiencia con Cristo había sido anormal. ¡No amado! La tuya fue la experiencia normal, la de los otros era la anormal.</li>
+
+            <li><strong>A aquellos verdaderos creyentes</strong> que dándose cuenta del engaño y de tantos inconversos disfrazados de cristianos, no han dudado de la verdad. Aman a los religiosos, pero les falta instrucción para ayudarles a salir del error.</li>
+
+            <li><strong>Y por último a ti querido, pero engañado amigo,</strong> que profesas haberte arrepentido y entregado a Jesucristo alguna vez, pero que tu vida no concuerda ni con lo que la Biblia dice, ni con la experiencia de los que en verdad se han rendido al Maestro. Pregúntate: "¿No habré sido engañado? ¿No seré uno de los muchos que Cristo dijo que serían engañados? o ¿No me habré engañado a mí mismo?". Te juegas la vida eterna en tener la respuesta correcta.</li>
+        </ul>
+
+        <p>Que en la siguiente enseñanza encuentres las verdades para ayudar a otros o para salir de tu engaño.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>CARACTERISTICAS CLASICAS DE LOS RELIGIOSOS ENGAÑADOS</h2>
+
+        <h3>Por Carlos G. Finney</h3>
+
+        <ol class="characteristic-list">
+            <li><strong>Una indiferencia hacia los pecados de los demás</strong> es evidente de una mente inconversa y que se justifica de los pecados. Es imposible que una alma arrepentida no se oponga profundamente y de todo corazón a cualquier tipo de pecado. Y si en verdad está opuesta de todo corazón es imposible que no manifieste absolutamente esta oposición, pues el corazón controla la vida de una persona por una ley de causa y efecto: <span class="scripture-ref">"Porque cual es su pensamiento en su corazón, tal es él" (Prov. 23:7a)</span>.</li>
+
+            <li><strong>Obviamente, cuando alguien manifiesta complacencia de corazón hacia el pecado o hacia los pecadores,</strong> es una evidencia segura de un estado mental de inconversión. "La amistad del mundo es enemistad contra Dios". Cuando alguno se complace en los pecadores, el tal es amigo del mundo, y enemigo de Dios.</li>
+
+            <li><strong>Cuando alguien manifiesta una falta de celo para oponerse al pecado y promover las conversiones de otros,</strong> es un indicador seguro de un estado mental de inconversión. La persona que en verdad ha sido convencida de pecado, y se ha convertido del pecado al amor y servicio de Dios, no puede sino manifestar un profundo interés en todos los esfuerzos que se hagan para expulsar al pecado fuera del mundo. Esa alma no puede ser sino celosa en oponerse al pecado y en edificar y establecer la justicia en la tierra.</li>
+
+            <li><strong>Cuando alguien manifiesta oposición a Dios en cuanto a su gobierno providencial o moral,</strong> es una evidencia de inconversión del corazón. Una persona convertida, como se ha dicho antes, siempre justificará a Dios en todos sus caminos. Esto está implícito cuando el arrepentimiento es genuino. Una disposición a quejarse de lo estricto y lo riguroso de los mandamientos de Dios, el hablar quejándose de la providencia de Dios (de "cómo" Dios permitió que sucedieran las cosas), murmurar ante sus decisiones y sobre las circunstancias en que se ha puesto a una persona es evidencia de un estado mental inconverso y rebelde.</li>
+
+            <li><strong>Cuando alguien tiene falta de confianza en el carácter, fidelidad y promesas de Dios</strong> es una evidencia segura de que la persona no es convertida. Una desconfianza de Dios, en cualquier aspecto no puede ser consistente en un corazón convertido.</li>
+
+            <li><strong>La ausencia de paz mental,</strong> es una evidencia segura de que es inconverso. El alma convertida debe tener paz de conciencia, porque la conversión es un estado de rectitud consciente. También debe tener paz con Dios al contemplar y confiar en el sacrificio de Cristo. El arrepentimiento es un "volverse" de una actitud de rebelión contra Dios, a un estado de sumisión universal a Su voluntad y una aprobación de la misma como sabia y buena. Esto, obviamente, trae paz al alma. Cuando hay una evidencia de falta de paz, es una prueba de inconversión.</li>
+
+            <li><strong>Cualquier manifestación clara de egoísmo,</strong> es evidencia conclusiva de que la persona actualmente es inconversa. El arrepentimiento, como hemos visto, consiste en el cambio de alma del egoísmo a la benevolencia. Claro está que la presencia de egoísmo o de un espíritu de autosatisfacción o autocomplacencia en la persona es una evidencia tremenda de un estado de inconversión. Arrepentimiento implica el negarse a uno mismo, la negación o sujeción de todos los apetitos, pasiones o propensiones a la ley de Dios desarrollada en la razón. Entonces pues, un espíritu evidentemente de autocomplacencia, o sea una disposición para buscar la gratificación de los apetitos y pasiones, como por ejemplo, la sujeción de la voluntad al uso del alcohol, tabaco, o cualquiera de los apetitos naturales o artificiales, y todo esto bajo la luz del evangelio y en oposición a la ley de la razón, es evidencia absoluta de que la persona actualmente es inconversa. Es imposible que este tipo de satisfacciones puedan existir junto con un corazón arrepentido. Tal persona debe ser inconversa o entonces, la inconversión no existe.</li>
+
+            <li><strong>Un espíritu de autojustificación</strong> es otra evidencia de inconversión. Esta manifestación es exactamente lo contrario de la que tiene una persona verdaderamente convertida.</li>
+
+            <li><strong>Las personas que tienen una disposición para estar poniendo excusas por no hacer su deber</strong> es también una evidencia final de que tienen un corazón no arrepentido. El arrepentimiento implica el deshacerse de todas las excusas por la desobediencia en todas las cosas. Obviamente, cuando hay una disposición de crear excusas por no SER y HACER todo lo que Dios nos pide, es seguro de que hay, sin duda alguna, una mente inconversa. Es estar en guerra contra Dios.</li>
+
+            <li><strong>Una falta de franqueza acerca de cualquier área moral en la vida de la persona</strong> la evidencia como inconversa. Un estado de conversión de la voluntad está dedicado a conocer y abrazar toda verdad. Entonces pues, una mente insincera y prejuiciosa es inconsistente con la verdadera conversión, y cuando hay una manifestación de prejuicio, es la prueba de que la persona actualmente es inconversa. La negativa o falta de disposición para ser escudriñado, y el traer todos nuestros caminos y palabras a la luz de la verdad. La falta de disposición para ser reprobado cuando estamos en error, es una indicación segura de una mente inconversa. <span class="scripture-ref">"Porque todo aquel que hace lo malo, aborrece la luz y no tiene la luz, para que sus obras no sean reprendidas. Mas el que practica la verdad viene a la luz, para que sea manifiesto que sus obras son hechas en Dios" (Jn. 3:20,21)</span>.</li>
+
+            <li><strong>Una reforma PARCIAL de la vida,</strong> también indica que el corazón no ha abrazado toda la voluntad de Dios. Cuando se manifiesta una disposición para cometer algún pecado, no importa que tan pequeño, es evidencia segura de que la persona es inconversa. El alma verdaderamente arrepentida rechaza el pecado, ¡y claro! Todo tipo y grado de iniquidad es abandonado, pisoteado y aborrecido. <span class="scripture-ref">"Porque cualquiera que guardare toda ley, pero ofendiere en un punto, se hace culpable de todos" (Stg. 2:10);</span> o sea, si un hombre peca deliberadamente o desobedece a Dios, es seguro que él desde el fondo de su corazón no lo obedece verdaderamente en nada. No tiene un estado mental obediente. Si en verdad tuviera un respeto supremo hacia la autoridad de Dios, no podría sino obedecerlo en todas las cosas. Entonces, si encontramos a una persona que dijera haberse convertido y que no manifiesta el espíritu de obediencia universal, si en algunas cosas todavía es autoindulgente, que quede claro que tal persona todavía está en pecado y que se encuentra en <span class="emphasis">"hiel de amargura y prisión de maldad"</span>.</li>
+
+            <li><strong>La negligencia o el rehusar confesar y restituir,</strong> de acuerdo a la oportunidad y la habilidad que se tiene, es evidencia segura de una mente injusta e inconversa. Parecería imposible para una alma verdaderamente arrepentida, el NO impactarse de inmediato con el deber de confesar y restituir a todos aquellos que han sido heridos por ella. Cuando esto no se hace o se demora demasiado, tiene que haber inconversión. El corazón controla la vida de una persona por una ley de causa y efecto; cuando existe un corazón que confiesa y abandona su pecado es imposible que esto no aparezca en la forma de una confesión y restitución externa.</li>
+
+            <li><strong>Un espíritu de codicia o de "ir en pos del mundo"</strong> es una indicación segura de inconversión. Primera de Juan 5:4 y 5: <span class="scripture-ref">"Porque todo lo que es nacido de Dios vence al mundo; y esta es la victoria que ha vencido al mundo, nuestra fe. ¿Quién es el que vence al mundo, sino el que cree que Jesús es el Hijo de Dios?"</span> Aquí se explica claramente que nuestra fe "vence al mundo" y que el que en verdad cree en Jesucristo "ha vencido" al mundo. Efesios 2:2 dice que el espíritu del mundo "opera en los hijos de desobediencia" (Esto es: "correr en pos del mundo"). Es un hambre y sed y devoción por este mundo. El "hambre de tener", o codicia, cuando se practica, es evidencia positiva de una vida inconversa. Si alguno ama al mundo, el amor del Padre no esta en él.</li>
+
+            <li><strong>La falta de interés en los pecadores y la falta de compasión por ellos,</strong> es una señal segura de que la persona no está convertida al Señor y no es salva. Si uno ha visto su propia culpa y miseria y se ha encontrado hundido en el sucio lodo de sus propias abominaciones y ha hallado el camino para escapar, entonces tendrá sentimientos profundos por los pecadores y tendrá gran compasión y preocupación por ellos, así como celo por su salvación y esto le será tan natural como respirar. Si esa simpatía y ese celo no se manifiestan, confiemos en que la persona es inconversa, pues hay una falta de ese amor a Dios a las almas que siempre viene con el arrepentimiento real. ¿Has visto a alguno que dice haberse convertido a Cristo y que su compasión no le mueve y que no tiene un celo vivo por la salvación de las almas? Estate seguro de que estás viendo a un hipócrita.</li>
+
+            <li><strong>La pereza espiritual o la indolencia</strong> es una señal de una persona inconversa de corazón. El alma que se vuelve completamente a Dios y se consagra a Él, y que se dedica a promover Su gloria, en la construcción de Su reino, será, y debe ser todo, menos floja y perezosa. Una disposición para la ociosidad espiritual o al reposo, o a la indolencia de cualquier tipo, es una evidencia de que la persona no se ha arrepentido y convertido de corazón.</li>
+        </ol>
+
+        <div class="highlight-box">
+            <p>Y pudiéramos seguir este tema indefinidamente, pero lo que se ha dicho debe ser suficiente para esta enseñanza, y es suficiente para darte las claves con las cuales identificar las evasiones y los engaños de los corazones inconversos.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - ¿Eres Salvo o Solamente Religioso?<br>
+    Por Carlos G. Finney
+</footer>
+</body>
+</html>
