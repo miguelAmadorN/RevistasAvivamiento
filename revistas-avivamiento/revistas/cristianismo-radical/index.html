@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cristianismo Radical - William McDonald</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #4a6491;
+            font-style: italic;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .bible-list {
+            margin: 20px 0 20px 30px;
+        }
+
+        .bible-list li {
+            margin-bottom: 12px;
+            text-align: justify;
+            padding-left: 5px;
+        }
+
+        .bible-list li strong {
+            color: #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        .intro-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0 30px;
+            border-left: 4px solid #4a6491;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .editorial-image {
+            flex: 0 0 150px;
+            text-align: center;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #e9ecef;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .editorial-text {
+            flex: 1;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .poem-box {
+            background-color: #f9f5e8;
+            border-left: 4px solid #b8860b;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .poem-line {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #5a3e1b;
+            text-align: center;
+        }
+
+        .chapter-title {
+            font-size: 1.5rem;
+            color: #4a6491;
+            margin: 30px 0 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin: 20px 0 10px;
+            font-weight: bold;
+        }
+
+        .numbered-list {
+            margin: 15px 0 15px 30px;
+        }
+
+        .numbered-list li {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .editorial-container {
+                flex-direction: column;
+            }
+
+            .editorial-image {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por William McDonald</div>
+            <div>CRISTIANISMO RADICAL (Versión preliminar. En revisión)</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-text">
+            <div class="editorial-title">Capítulo 1</div>
+
+            <h3>LAS CONDICIONES DEL DISCIPULADO</h3>
+
+            <p>El verdadero cristianismo consiste en una entrega absoluta al Señor Jesucristo. El Salvador no está buscando personas que le dediquen sus tardes libres, sus fines de semana o sus años de jubilados. Él busca personas dispuestas a darle el primer lugar en su vida. "Él busca, y siempre ha sido así, no multitudes que van a la deriva y sin propósito en su senda, sino hombres y mujeres que individual y espontáneamente se consagran a su servicio por haber reconocido que Él necesita personas dispuestas a seguir en el sendero de la negación personal por el que Él caminó primero."</p>
+
+            <p>La única respuesta adecuada al sacrificio de Cristo en el Calvario es la rendición incondicional a Él. El amor Divino tan maravilloso no puede ser satisfecho con algo menos que la entrega de nuestra vida, nuestra alma, nuestro todo...</p>
+
+            <p>El Señor Jesús planteó exigencias rigurosas a los que iban a ser sus discípulos, demandas que han sido totalmente olvidadas en estos días de vida materialista. Con mucha frecuencia consideramos el cristianismo como un escape del infierno y una garantía del cielo. Aún más, pensamos que tenemos perfecto derecho a disfrutar de lo mejor de esta vida. Sabemos que en la Biblia hay muchos versículos que hablan fuerte acerca del discípulo, pero nos parece difícil conciliarlos con nuestras ideas acerca de lo que debe ser el cristianismo.</p>
+
+            <p>Aceptamos que los soldados entreguen sus vidas por razones patrióticas. No nos extraña que los hombres pongan su vida por ideologías políticas. Pero que la característica de la vida de un seguidor de Cristo sea "sangre, sudor y llanto", nos parece remoto y difícil de asimilar. Sin embargo, las palabras del Señor Jesús, son bastante claras. No hay el más mínimo lugar para malinterpretarlas si las aceptamos en su verdadero valor. Estas son las condiciones del discipulado tal como las dio el Salvador del mundo:</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Las Condiciones del Discipulado</h2>
+
+        <h3>1. Un amor supremo por Jesucristo.</h3>
+
+        <div class="scripture">
+            "Si alguno viene a mí, y no aborrece a su padre, y a madre, y mujer, e hijos, y hermanos, y hermanas, y aun también su propia vida, no puede ser mi discípulo"
+            <span class="scripture-ref">Lucas 14:26</span>
+        </div>
+
+        <p>Esto no quiere decir que debamos tener indisposición o mala voluntad en nuestro corazón hacia nuestros familiares, sino que nuestro amor a Cristo debe ser tan denotado que en comparación, todos los demás afectos parezcan odio. En realidad la parte más difícil de este pasaje es la expresión "y aún su propia vida". El amor propio es uno de los obstáculos más persistentes para el discipulado. Mientras no estemos dispuestos a ofrecer voluntariamente nuestra vida a disposición de Cristo, no estaremos en el lugar donde Él desea que estemos.</p>
+
+        <h3>2. Una negación del Yo.</h3>
+
+        <div class="scripture">
+            "Si alguno quiere venir en pos de mí, niéguese a sí mismo..."
+            <span class="scripture-ref">Mateo 16:24</span>
+        </div>
+
+        <p>La negación del Yo no es lo mismo que la abnegación. Esto último significa privarse de algunas comidas, placeres o posesiones. La negación del Yo es una sumisión tan completa al Señorío de Cristo, que el Yo no tiene derechos ni autoridad alguna. Significa que el Yo abdica del trono. Henry Martin lo expresa así: "Señor, no permitas que tenga voluntad propia ni considere que mi felicidad depende en lo más mínimo de las cosas que pueden sucederme exteriormente, sino que descanse completamente en tu voluntad."</p>
+
+        <h3>3. Elección deliberada de la Cruz.</h3>
+
+        <div class="scripture">
+            "Si alguno quiere venir en pos de mí, niéguese a sí mismo, y tome su cruz, y sígame"
+            <span class="scripture-ref">Mateo 16:24</span>
+        </div>
+
+        <p>Tomar la cruz no se refiere a una enfermedad física o angustia mental, puesto que estas cosas son comunes a todos los hombres. La cruz es una senda escogida deliberadamente. Es un "camino que tal como el mundo lo considera es una deshonra y un reproche."</p>
+
+        <p>La cruz es el emblema de la persecución, la vergüenza y el abuso que el mundo cargó sobre el Hijo de Dios y que el mundo cargará sobre todos aquellos que elijan ir contra la corriente. Cualquier creyente puede evitar la cruz conformándose a este mundo y a sus caminos.</p>
+
+        <h3>4. Una vida invertida en Cristo.</h3>
+
+        <div class="scripture">
+            "Si alguno quiere venir en pos de mí, niéguese a sí mismo, y tome su cruz, y sígame"
+            <span class="scripture-ref">Mateo 16:24</span>
+        </div>
+
+        <p>Para comprender lo que esto significa conviene preguntarse: ¿Cuál fue la principal característica de la vida del Señor Jesús? Fue una vida de obediencia a la voluntad de Dios, una vida de servicio desinteresado a los demás, una vida de paciencia y tolerancia ante los más graves errores. Fue una vida llena de celo y desgaste, templanza, mansedumbre, bondad, fidelidad y devoción. Para ser sus discípulos debemos andar como Él anduvo. Debemos mostrar el fruto de nuestra semejanza en Cristo. (Juan 15:8)</p>
+
+        <h3>5. Un amor ferviente por todos los que pertenecen a Cristo.</h3>
+
+        <div class="scripture">
+            "En esto conocerán todos que sois mis discípulos, si tuviereis amor los unos con los otros"
+            <span class="scripture-ref">Juan 13:35</span>
+        </div>
+
+        <p>Este es el amor que considera a los demás como mejores que uno mismo. Este es el amor que cubre multitud de pecados. Este es el amor que es sufrido y es benigno; no es jactancioso, no se envanece, no es injurioso, no busca lo suyo, no se irrita, no guarda rencor, todo lo sufre, todo lo cree, todo lo espera y todo lo soporta (1ª Corintios 13:4-7). Sin este amor el discipulado sería un ascetismo frío y legalista. Sería un címbalo que retiñe.</p>
+
+        <h3>6. Permanencia continua en su Palabra.</h3>
+
+        <div class="scripture">
+            "Si vosotros permaneciereis en mi palabra, seréis verdaderamente mis discípulos"
+            <span class="scripture-ref">Juan 8:31</span>
+        </div>
+
+        <p>El verdadero discipulado se caracteriza por la estabilidad. Es fácil empezar bien y lanzarse adelante a un deslumbramiento de gloria. Pero la prueba de la realidad del discipulado es la resistencia hasta el fin. "Ninguno que poniendo su mano en el arado mira hacia atrás, es apto para el reino de Dios" (Lucas 9:62). La obediencia ocasional a las Escrituras no sirve. Cristo desea que los que le siguen lo hagan obedeciendo en forma constante y continuada.</p>
+
+        <div class="poem-box">
+            <div class="poem-line">No permitas ¡oh Padre! que vuelva atrás,</div>
+            <div class="poem-line">Mis lágrimas ya mojan las asas de mi arado,</div>
+            <div class="poem-line">Mis otras herramientas corruptas he dejado;</div>
+            <div class="poem-line">No permitas, Dios Padre, que vuelva atrás.</div>
+        </div>
+
+        <h3>7. Rechazo de todo por seguir a Cristo.</h3>
+
+        <div class="scripture">
+            "Así, pues, cualquiera de vosotros que no renuncia a todo lo que posee, no puede ser mi discípulo"
+            <span class="scripture-ref">Lucas 14:33</span>
+        </div>
+
+        <p>Esta es, tal vez, la menos apreciada de las condiciones de Cristo para el discipulado, y se podría probar que es el texto menos apreciado de la Biblia. Los teólogos y entendidos pueden dar mil razones para probar que el versículo no quiere decir lo que parece decir, pero los discípulos sencillos lo reciben con ardor, aceptando que el Señor Jesús sabía lo que quería decir. ¿Qué quiso decir con renunciar a todo? Significa el abandono de todas las posesiones materiales que no nos sean absolutamente necesarias y que se puedan usar en la extensión del Evangelio.</p>
+
+        <p>El que renuncia a todo no se convierte en un despreocupado holgazán. Trabaja arduamente para proveer a las necesidades comunes de su familia y de sí mismo. Pero, como el fin de su vida es extender la obra de Cristo, invierte en el trabajo del Señor todo lo que sobrepase sus inmediatas necesidades y deja el futuro en las manos de Dios. Buscando primeramente el reino de Dios y su justicia, él cree que nunca le faltará nada, ni comida, ni vestido. Él no puede poner su confianza en dinero ahorrado cuando hay almas que están pereciendo por falta del evangelio. No quiere malgastar su vida acumulando riquezas que caerán en manos del diablo cuando Cristo regrese por sus santos. Desea obedecer el precepto del Señor en contra del almacenar tesoros en la tierra. Renunciando a todo, ofrece lo que de todos modos no puede conservar y que ya ha dejado de amar.</p>
+
+        <p>Entonces tenemos que estas son las siete condiciones del Discipulado cristiano. El que esto escribe comprende que al señalarlas se condena a sí mismo como un siervo inútil que es. Pero, ¿se suprimirá la verdad de Dios por la incompetencia de su pueblo? ¿No es verdad que el mensaje es más grande que el mensajero? ¿No es más correcto que Dios permanezca como un ser veraz y todo hombre sea considerado mentiroso? ¿No diremos como aquel anciano, siervo fiel del Señor: "Haz tu voluntad, aun cuando para ello tengas que quebrantarme"?</p>
+
+        <p>Cuando hayamos confesado nuestro fracaso pasado, enfrentemos decididamente lo que Cristo pretende de nosotros y procuremos ser verdaderos discípulos de nuestro glorioso Señor.</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Maestro mío, llévame hasta tu puerta, para que perfores mi oído, que voluntario te entrego.</div>
+            <div class="poem-line">Tus prisiones son mi libertad; déjame quedar contigo, para sufrir, soportar y obedecerte.</div>
+            <div class="scripture-ref">H.G.C. Moule</div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Capítulo 2 - RENUNCIANDO A TODO</h2>
+
+        <div class="scripture">
+            "Así, pues, cualquiera de vosotros que no renuncia a todo lo que posee, no puede ser mi discípulo"
+            <span class="scripture-ref">Lucas 14:33</span>
+        </div>
+
+        <p>Para ser discípulo del Señor Jesús, hay que renunciar a todo. Este es el sentido inequívoco de las palabras del Señor. No importa cuantas objeciones pongamos a tan extremada demanda ni cuanto nos rebelemos ante regla tan importante e imprudente. Prevalece el hecho de que esta es la Palabra del Señor y que quiere decir exactamente lo que dice.</p>
+
+        <p>Desde el comienzo debemos enfrentar las siguientes verdades inmutables:</p>
+
+        <ol class="bible-list">
+            <li>Jesús no hace esta demanda a una cierta clase selecta de obreros cristianos. Dice: "Cualquiera de vosotros..."</li>
+            <li>Él no dijo que debemos estar dispuestos a renunciar a todo en forma voluntaria. Dijo: "Cualquiera de vosotros que no renuncia a todo lo que posee..."</li>
+            <li>Él no dijo que hubiera una forma diluida de discipulado que permitiera al hombre conservar sus posesiones. Jesús dijo: "... no puede ser mi discípulo".</li>
+        </ol>
+
+        <p>Realmente no debería sorprendernos esta demanda tan absoluta como si fuera la única sugestión de este tipo en la Biblia.</p>
+
+        <p>¿No dijo Jesús: "No os hagáis tesoros en la tierra, donde la polilla y el orín corrompen, y donde ladrones minan y hurtan; sino haceos tesoros en el cielo..."? Muy acertadamente Wesley afirmó: "hacerse tesoros en la tierra está claramente prohibido por nuestro Señor como el adulterio y el asesinato".</p>
+
+        <p>¿No dijo Jesús: "Vended lo que poseéis y dad limosna"? (Lucas 12:33) ¿No instruyó al joven rico diciéndole: "vende todo lo que tienes, y dalo a los pobres, y tendrás tesoro en el cielo; y ven, sígueme"? (Lucas 18:22). Si no quería decir lo que dijo, ¿qué quería decir?</p>
+
+        <p>¿No es verdad, acaso, que los creyentes de la Iglesia Primitiva "vendían sus propiedades y sus bienes, y lo repartían a todos según la necesidad de cada uno"? (Hechos 2:45)</p>
+
+        <p>Y a través de los años, ¿no es un hecho que muchos de los santos de Dios han renunciado a todo por seguir a Cristo?</p>
+
+        <p>Antonio N. Groves y su esposa que fueron misioneros en Bagdag se convencieron de que tenían que dejar de hacer tesoros en la tierra, y que debían dedicar la totalidad de una importante fortuna al servicio del Señor.</p>
+
+        <p>C. T. Studd "decidió dar toda su fortuna a Cristo aprovechando la dorada oportunidad que se le ofrecía de hacer lo que el joven rico no pudo hacer... Era un simple acto de obediencia a las definidas declaraciones de la Palabra de Dios". Después de distribuir miles de libras esterlinas en la obra del Señor, reservó el equivalente de 9,588 dólares para su esposa. "Pero ella no fue menos que su marido".</p>
+
+        <div class="poem-box">
+            <div class="poem-line">"Carlos"- le preguntó-, "¿Qué le dijo el Señor al joven rico que hiciera?"</div>
+            <div class="poem-line">-"Vende todo" le contestó.</div>
+            <div class="poem-line">-"Entonces comenzaremos bien con el Señor desde nuestra boda." Y el dinero fue a dar a las misiones cristianas.</div>
+        </div>
+
+        <p>El mismo espíritu de dedicación animaba a Jim Elliot. En su diario escribió: "Padre hazme débil para que pueda desligarme de lo temporal. Mi vida, mi reputación, mis posesiones; haz que mi mano las suelte, Señor. Aún, Padre, quisiera desligarme del deseo de ser mimado". ¡Cuántas veces he dejado de abrir mi mano por retener solamente lo que he considerado un deseo inofensivo, por aquél ápice de mimosidad! Más bien, hazme abrir mi mano para recibir el clavo del Calvario, como Cristo la abrió, para que yo, soltándolo todo, pueda ser libertado, desatado de todo lo que ahora me tiene atado. Él consideró el cielo, sí, la igualdad con Dios, como cosa a la que no debía aferrarse. Así, haz que me desligue de lo que tengo tomado".</p>
+
+        <p>Nuestro corazón infiel nos dice que es imposible tomar literalmente las palabras de nuestro Señor: "Si renunciáramos a todo, nos moriríamos de hambre". "Después de todo, debemos hacer provisión para nuestro futuro y el de nuestros seres queridos". "Si todos los cristianos renunciaran a todo, ¿quién financiaría la obra del Señor?", y "Si no hubiera cristianos ricos, ¿cómo podríamos alcanzar con el Evangelio a la gente de las clases altas?". Y así van apareciendo los argumentos en rápida sucesión, todos para probar que Jesús dijo algo que significa una cosa diferente de lo que dio a entender.</p>
+
+        <p>Es un hecho comprobado que la obediencia al mandato del Señor es la forma de vida más sana y razonable y la que produce un mayor gozo. La Escritura y la experiencia testifican que ninguno de los que han vivido sacrificándose por Cristo ha padecido necesidad, y será también con los que lo hagan en el futuro. Cuando el hombre obedece a Dios, el Señor lo toma bajo su cuidado.</p>
+
+        <p>El hombre que deja todo por seguir a Cristo no es un pobre inútil que espera que los demás cristianos le sostengan:</p>
+
+        <ol class="bible-list">
+            <li><strong>Primero, es industrioso.</strong> Trabaja diligentemente para proveer a las necesidades mínimas de su familia y las suyas propias.</li>
+            <li><strong>Segundo, es frugal.</strong> Vive en la forma más económica posible para que todo lo que quede después de satisfacer sus necesidades inmediatas pueda ser usado en la obra del Señor.</li>
+            <li><strong>Tercero, es previsor.</strong> En vez de acumular tesoros en la tierra, los deposita en el cielo.</li>
+            <li><strong>Cuarto, confía en Dios</strong> en lo que respecta a su futuro. En vez de dar lo mejor de su vida tratando de formar vastas reservas para la vejez, da lo mejor de sí para el servicio de Cristo confiando en Él para la provisión futura. Cree que si busca primeramente el Reino de Dios y su justicia, jamás pasará necesidad de alimento y vestido (Mateo 6:33).</li>
+        </ol>
+
+        <p>Le es irrazonable acumular riquezas para un día que no sabe si vivirá. Su argumento es el siguiente:</p>
+
+        <ol class="bible-list">
+            <li>¿Cómo podemos acumular y guardar fondos extras en forma consciente cuando ese dinero podría usarse inmediatamente para la salvación de almas? "El que tiene bienes de este mundo y ve a su hermano tener necesidad, y cierra contra él su corazón, ¿cómo mora el amor de Dios en él?" (1ª Juan 3:17). Una vez más consideremos el importante mandamiento: "Amarás a tu prójimo como a ti mismo" (Levítico 19:18). ¿Podemos, con verdad, decir que amamos a nuestro prójimo como a nosotros mismos, cuando les dejamos pasar hambre mientras nosotros tenemos más que suficiente y de sobra? Le preguntaría a cualquiera que ha experimentado el gozo del conocimiento del don inefable de Dios: "¿Cambiaría usted este conocimiento... por la posesión de cien mundos?". Entonces no retengamos los medios por los cuales otros pueden obtener este conocimiento santificador y la consolación celestial.</li>
+            <li>Si creemos realmente que la venida de Cristo es inminente, desearemos usar nuestro dinero inmediatamente. De otro modo correremos el riesgo que caiga en las manos del diablo, dinero que debería haberse usado para bendición eterna.</li>
+            <li>¿Cómo podemos orar a conciencia que el Señor provea el dinero necesario para la obra cuando nosotros mismos tenemos dinero que no queremos usar en dicha empresa? El dejarlo todo por Cristo nos libra de la oración hipócrita.</li>
+            <li>¿Cómo podemos enseñar todo el consejo de Dios cuando hay ciertos sectores de la verdad, como el que estamos considerando, que no hemos obedecido? En tal caso nuestra manera de vivir debería sellar nuestros labios.</li>
+            <li>El hombre inteligente de este mundo hace abundantes reservas para su futuro. Pero esto es no caminar por fe, sino por la vista. El cristiano ha sido llamado a una vida de dependencia de Dios. Si hace tesoros en la tierra, ¿en qué difiere del mundo y su manera de vivir?</li>
+        </ol>
+
+        <p>Con frecuencia se nos argumenta que debemos proveer para las necesidades futuras de nuestra familia; de otro modo somos peores que los incrédulos. Apoyan este punto de vista con dos textos: "...no deben atesorar los hijos para los padres, sino los padres para los hijos" (2ª Corintios 12:14). "Porque si alguno no provee para los suyos, y mayormente para los de su casa, ha negado la fe, y es peor que un incrédulo" (1ª Timoteo 5:8).</p>
+
+        <p>Un estudio cuidadoso de estos textos mostrará que se refiere a las necesidades cotidianas y no a las contingencias futuras. En el primero de estos versículos Pablo está usando la ironía. Él es el padre y los corintios son sus hijos. Él no los carga económicamente, aunque tiene derecho a ello por ser siervo de Dios. Después de todo, él es su padre en la fe y los padres ordinariamente proveen para los hijos y no los hijos para los padres. Aquí no se trata de provisión de los padres para el futuro de sus hijos. Todo el pasaje tiene que ver con la provisión para las necesidades presentes del apóstol Pablo y no con la provisión para sus posibles necesidades futuras.</p>
+
+        <p>En 1ª Timoteo 5:8 el apóstol está discutiendo del cuidado a las viudas pobres, insiste que sus parientes deben cuidarlas. Si no tienen familia, o si ella las descuida, entonces la iglesia local debe cuidar de la viuda cristiana. Pero una vez más se refiere a necesidades presentes y no las futuras.</p>
+
+        <p>El ideal de Dios es que los miembros del cuerpo de Cristo se preocupen por las necesidades inmediatas de sus hermanos en la fe. Hay que compartir equitativamente... "Para que en este tiempo, con igualdad, la abundancia vuestra supla la escasez de ellos, para que también la abundancia de ellos supla la necesidad vuestra, para que haya igualdad, como está escrito: El que recogió mucho, no tuvo más, y el que poco, no tuvo menos" (2 Corintios 8:14-15).</p>
+
+        <p>El cristiano que piensa que debe hacer provisiones para necesidades futuras enfrenta el difícil problema de determinar cuanto necesitará. En consecuencia gasta su vida en tratar de adquirir una fortuna de modo indefinido, perdiendo el privilegio de dar lo mejor al Señor Jesucristo. Llega al final de una vida derrochada y descubre que después de todo, si hubiera vivido de todo corazón para el Salvador, todo lo necesario habría sido provisto oportunamente.</p>
+
+        <p>Si todos los cristianos tomaran literalmente las palabras de Jesús, la obra del Señor no carecería de fondos. El Evangelio sería proclamado con mayor poder y en menor tiempo. Si algún discípulo estuviera en necesidad, sería el gozo y privilegio de los demás dar de lo que ellos pudieran tener.</p>
+
+        <p>Sugerir que debe haber cristianos ricos para alcanzar a los ricos del mundo es un absurdo. Pablo alcanzó a la casa de César siendo un prisionero suyo (Filipenses 4:22). Si obedecemos a Dios podemos confiar en que Él se encargará de los detalles. En esto toda discusión debería terminar en el ejemplo que Jesús dejó. El esclavo no es mayor que su señor. Como dijera Jorge Muller: "El mal comienza cuando el siervo procura tener riquezas, grandeza y honra en este mundo donde su Señor fue pobre, humilde y despreciado."</p>
+
+        <p>"Los sufrimientos de Cristo incluían la pobreza" (2ª Corintios 8:9). Por supuesto, la pobreza no se demuestra por harapos y suciedad, sino por la falta de reservas y de los medios para darse lujos. Andrés Murray dice que el Señor y sus apóstoles no podrían haber realizado la obra que hicieron de no haber sido realmente pobres. "El que va a levantar a otros necesita descender, como el buen samaritano, y la inmensa mayoría de la humanidad ha sido y es pobre."</p>
+
+        <p>La gente reclama que hay ciertas posesiones que son indispensables para el hogar. Es cierto.</p>
+
+        <p>La gente razona que los hombres de negocios que son cristianos necesitan un capital para realizar sus negocios. Es cierto.</p>
+
+        <p>Otros argumentan que hay otras posesiones materiales que pueden ser usadas para gloria de Dios, por ejemplo, un automóvil. También es cierto.</p>
+
+        <p>Pero más allá de estas necesidades legítimas, el cristiano debería vivir en forma frugal y sacrificada para que el Evangelio sea difundido. Su lema debería ser: "Trabaja mucho, consume poco, da mucho, y todo para Cristo."</p>
+
+        <p>Cada uno de nosotros es responsable ante Dios por lo que significa dejarlo todo. Un creyente no puede dictar normas para el otro, cada persona debe actuar como resultado de su propio ejercicio delante de Dios. Es un asunto estrictamente personal.</p>
+
+        <p>Si como resultado de tal ejercicio, el Señor guía a un creyente a un grado de devoción hasta el momento desconocido, no debe ser ello motivo de orgullo personal. Los sacrificios que hagamos no son en ninguna manera sacrificios cuando los examinemos a la luz del Calvario. Además de esto, damos al Señor solamente aquello que ya no podemos retener y que hemos dejado de amar. <span class="emphasis">"No es necio quien da aquello que ya no puede retener para obtener algo que no puede perder."</span></p>
+    </div>
+
+    <div class="content-section">
+        <h2>Capítulo 3 - IMPEDIMENTOS AL DISCIPULADO</h2>
+
+        <p>Cualquiera que se propone seguir a Cristo puede estar seguro que se le brindarán maneras de eludir la responsabilidad. Se le concederán innumerables oportunidades para devolverse. Oirá voces que le llaman ofreciéndose para restarle algunas pulgadas a su cruz. Doce legiones de ángeles estarán listas para sacarle del camino de la abnegación y el sacrificio.</p>
+
+        <p>Esto lo ilustra en forma notable el relato de los tres discípulos en perspectiva que permitieron que otras voces tomaran el primer lugar en vez de obedecer la voz de Cristo: (Ver Revisión 1960) (Lucas 9:57-62), tres personajes anónimos se enfrentaron a Jesús. Sintieron un impulso interno de seguirle. Pero permitieron que algo se interpusiera entre sus almas y la completa dedicación al Señor.</p>
+
+        <h3>Señor Apresurado.</h3>
+        <p>El Primer hombre ha sido llamado Señor Apresurado. Se ofreció entusiastamente para seguir al Señor "adonde quiera que vayas". Ningún costo sería demasiado alto. Ninguna cruz le sería demasiada pesada. Ningún camino sería demasiado escarpado.</p>
+
+        <p>A primera vista parece que la respuesta de Jesús no tenía conexión con la oferta espontánea del Señor Apresurado. Jesús le dijo: "Las zorras tienen guaridas, y las aves de los cielos nidos; más el Hijo del Hombre no tiene dónde recostar la cabeza". Realmente fue una respuesta muy adecuada. Fue como si hubiera dicho: "Dices que estás dispuesto a seguirme a todo lugar, pero ¿estás dispuesto a hacerlo sin las comodidades materiales de esta vida? Las zorras tienen más comodidades que yo. Los pájaros tienen sus nidos que pueden decir es su nido. Pero yo vago sin hogar en este mundo que mis manos formaron. ¿Quieres sacrificar la seguridad de un hogar para seguirme? ¿Quieres renunciar a las comodidades legítimas de esta vida con el fin de servirme devotamente?"</p>
+
+        <p>Es claro que el hombre no estaba dispuesto, porque no oímos más de él en las Sagradas Escrituras. Su amor por lo terrenal fue mayor que su dedicación a Cristo.</p>
+
+        <h3>Señor Tardío.</h3>
+        <p>El segundo hombre ha sido llamado Señor Tardío. No se ofreció en forma voluntaria como el Señor Apresurado. Más bien el Salvador le llamó a que le siguiera. Su respuesta no fue un rechazo de plano. Él no estaba desinteresado en el Señor. La realidad es que quería hacer algo primero. Ese era su gran pecado. Puso sus pretensiones por sobre las demandas del Señor. Notemos su respuesta: "Señor, déjame que primero vaya y entierre a mi padre".</p>
+
+        <p>Ahora bien, es perfectamente legítimo que un hijo muestre un respeto natural por sus padres. Y si su padre ha muerto es ciertamente una obligación del cristiano darle una sepultura decente.</p>
+
+        <p>Pero, las legítimas acciones de la vida llegar a ser pecaminosas cuando se anteponen a los intereses del Señor Jesús. La verdadera ambición de este hombre queda expresada en su clara petición: "Señor... primero...". El resto de las palabras eran un mero disfraz del deseo de su corazón de poner primero su yo. Evidentemente no se dio cuenta que las palabras "Señor,... yo primero..." son un absurdo moral y una imposibilidad. Si Cristo es el Señor, entonces Él debe ser primero. Si el pronombre personal "yo" está sobre el trono entonces ya no es Cristo quien manda.</p>
+
+        <p>El Señor Tardío tenía algo que hacer y permitió que eso tomara el primer lugar. Por lo tanto fue correcto que Jesús le dijera: "Deja que los muertos entierren a sus muertos; y tú ve, y anuncia el reino de Dios". Podríamos parafrasear sus palabras de la siguiente manera: "Hay cosas que los muertos espirituales pueden hacer como los creyentes. Pero hay otras cosas que solamente un creyente puede hacer. Cuida de no pasar tu vida haciendo las cosas que el no creyente puede hacer tan bien como tú. Deja que los muertos espirituales entierren a sus muertos físicos. Pero a ti te necesito. Que el principal impulso de tu vida sea el progreso de mi causa sobre la tierra".</p>
+
+        <p>Parece que el precio era demasiado alto para el Señor Tardío. Sale en anónimo silencio del escenario del templo. Si el primer hombre ilustraba las comodidades temporales como uno de los impedimentos para el discipulado, el segundo nos habla de una actividad o un trabajo que ocupa un lugar preferente con respecto a la principal razón de existir del cristiano.</p>
+
+        <p>No hay nada de malo en un empleo secular. Es la voluntad de Dios que el hombre trabaje para proveer lo necesario para sí y su familia. Pero la vida del verdadero discipulado exige que el reino de Dios y su justicia se busquen en primer lugar; que un creyente no pase su vida haciendo lo que el no creyente podría hacer tan bien o mejor que él, y que la función del trabajo es solamente proveer para las necesidades normales de la vida, siendo la principal vocación del cristiano anunciar el reino de Dios.</p>
+
+        <h3>Señor Liviano.</h3>
+        <p>El tercer hombre ha sido llamado Señor Liviano. A semejanza del primer hombre se ofreció voluntariamente para seguir a Cristo. Pero también a semejanza del segundo usó las contradictorias palabras "Señor... yo primero...". Dijo: Te seguiré Señor; pero déjame que me despida primero de los que están en mi casa".</p>
+
+        <p>Una vez más debemos admitir que tomada aisladamente esta petición no tiene nada de malo. No es de ninguna manera contrario a las leyes de Dios demostrar un cariñoso interés por los familiares u observar las reglas de urbanidad cuando uno se aleja de ellos. Entonces ¿en qué falló este hombre? Fue en esto: dejó que los tiernos lazos de la naturaleza ocuparan el lugar que corresponde a Cristo.</p>
+
+        <p>Y así, con visión penetrante, el Señor Jesús, dijo: "Ninguno que poniendo su mano en el arado mira hacia atrás, es apto para el reino de Dios." En otras palabras, "mis discípulos no son tan egocéntricos, ni de ideas tan volubles como tú has demostrado ser. Yo necesito personas que quieran renunciar a los lazos familiares, que no sean distraídos por parientes sentimentales, discípulos que me pongan por sobre cualquier otra persona en su vida."</p>
+
+        <p>Concluimos forzosamente que el Señor Liviano dejó a Jesús y se alejó tristemente por el camino. Sus confiadísimas aspiraciones de ser un discípulo se hicieron mil pedazos al chocar con la roca de los lazos familiares. Quizás era una madre llorosa la que le dijo lastimeramente: "Harías estallar el corazón de tu madre si me dejas para irte al campo misionero". No lo sabemos. Todo lo que sabemos es que la Biblia, misericordiosamente omite el nombre del pusilánime que volviendo atrás, perdió la mayor oportunidad de su vida y se ganó el epitafio de "No apto para el reino de Dios".</p>
+
+        <h3>Resumen.</h3>
+        <p>Entonces tenemos que estos son tres de los impedimentos básicos para el discipulado, ilustrados por tres hombres que no quisieron seguir las exigencias del camino de Cristo:</p>
+
+        <ul class="bible-list">
+            <li><strong>Al Señor Apresurado:</strong> El amor por las comodidades terrenales.</li>
+            <li><strong>Al Señor Tardío:</strong> La precedencia de un trabajo u ocupación.</li>
+            <li><strong>Al Señor Liviano:</strong> La prioridad de los lazos familiares.</li>
+        </ul>
+
+        <p>El Señor Jesús siempre ha llamado y aún llama hombres y mujeres que le sigan heroica y sacrificadamente dejando todo. Las vías de escape aún se presentan diciendo con palabras tentadoras "¡Cuídate! ¡Esto no es para ti!". Pocos están dispuestos a responder:</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Jesús, he tomado mi cruz</div>
+            <div class="poem-line">Por seguirte todo he dejado</div>
+            <div class="poem-line">Jesús, he tomado mi cruz</div>
+            <div class="poem-line">Por seguirte todo he dejado</div>
+            <div class="poem-line">Desnudo, pobre, despreciado,</div>
+            <div class="poem-line">Desde ahora mi todo eres tú.</div>
+            <div class="poem-line">Perecido ha toda ambición,</div>
+            <div class="poem-line">Lo que buscaba y anhelaba,</div>
+            <div class="poem-line">Pues riquezas que no esperaba,</div>
+            <div class="poem-line">Dios y el cielo, con mi posesión.</div>
+            <div class="poem-line">Que el mundo me deje y desprecie,</div>
+            <div class="poem-line">Lo hicieron con mi Salvador</div>
+            <div class="poem-line">El engañoso corazón</div>
+            <div class="poem-line">Contra mí su ataque arrecie</div>
+            <div class="poem-line">Más de Dios, la ciencia y poder</div>
+            <div class="poem-line">en medio de mí lucha tenaz,</div>
+            <div class="poem-line">vence al enemigo, a Satanás,</div>
+            <div class="poem-line">y Su gozo inunda mi ser.</div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Capítulo 4 - LOS DISCÍPULOS SON MAYORDOMOS</h2>
+
+        <p class="scripture-ref">Leer Lucas 16:1-13</p>
+
+        <p>La parábola del mayordomo injusto fue presentada a los discípulos. En ella el Salvador sienta los principios aplicables a los discípulos de todos los tiempos. Después de todo los discípulos de Cristo son esencialmente mayordomos, a quienes se ha confiado el cuidado de Sus pertenencias e intereses sobre la tierra.</p>
+
+        <p>Esta parábola está rodeada de dificultades. Aparentemente recomienda la deshonestidad y los negocios ilícitos. Pero cuando se entiende con la debida luz, la encontramos saturada de enseñanzas de gran importancia.</p>
+
+        <p>En resumen, la historia es esta: Un rico propietario encargó sus negocios a un empleado. Pasado mucho tiempo el amo supo que su empleado estaba despilfarrando su dinero, inmediatamente le pidió una rendición de cuentas y le informó que quedaba despedido.</p>
+
+        <p>El empleado comprendió que su futuro era lúgubre. Era demasiado viejo para hacer trabajo físico pesado y le daba vergüenza mendigar. Entonces encontró un sistema que le aseguraría tener amigos en los días venideros. Fue donde uno de los deudores de su amo y le preguntó: ¿Cuánto le debes a mi jefe?. La respuesta fue: "Tres mil trescientos setenta y cinco litros de aceite". "Bien, dijo el empleado, paga la mitad y demos la cuenta por liquidada". Fue a otro de los deudores y le preguntó: "¿Cuánto debes?". El deudor contestó: "Treinta y dos mil kilos de trigo". "Bien, entonces paga veinticinco mil y demos por cancelada la cuenta".</p>
+
+        <p>Aún más molesto que la acción del empleado deshonesto es el comentario que sigue:</p>
+
+        <div class="scripture">
+            "Y alabó el amo al mayordomo malo por haber hecho sagazmente; porque los hijos de este siglo son más sagaces en el trato con sus semejantes que los hijos de luz"
+            <span class="scripture-ref">Lucas 16:8</span>
+        </div>
+
+        <p>¿Cómo hemos de entender esta aparente aprobación de prácticas deshonestas en los negocios?</p>
+
+        <p>Una cosa es cierta. Ni su señor, ni nuestro Señor aprobaron sus prácticas sinuosas. Fue por esto mismo que lo destituyeron. Ninguna persona justa aprobaría el fraude y la infidelidad. Cualquiera que sea la enseñanza de la parábola, no sugiere que el desfalco sea justificado.</p>
+
+        <p>Hay solamente una cosa por la que se alaba al siervo injusto y es que haya planeado su futuro. Dio los pasos necesarios para asegurar que tendría amigos después que hubiera cesado en su mayordomía. Él actuó para el "después" en cambio de satisfacer su sola necesidad inmediata.</p>
+
+        <p>Este es el punto central de la parábola. La gente del mundo toma estrictas medidas a fin de proveer para los días venideros. Del único futuro que se preocupan es el de su vejez y sus años de jubilación. Por ello trabajan diligentemente para asegurarse una situación cómoda cuando ya no sean capaces de trabajar en forma provechosa. Nada olvidan en su búsqueda de la seguridad social.</p>
+
+        <p>En este aspecto los no creyentes son más sabios que los cristianos. Sin embargo para entender el por qué, debemos entender que el futuro del cristiano no está en la tierra sino en el cielo. Este es el punto crucial. El futuro para quien no es cristiano es el tiempo entre el ahora y la tumba. Para el hijo de Dios es la eternidad con Cristo.</p>
+
+        <p>La parábola enseña entonces, que el no regenerado es más sabio y precavido en sus preparativos para su futuro en la tierra que el creyente lo es en su preparación para el cielo.</p>
+
+        <p>Con esto en mente el Señor Jesús presenta la enseñanza práctica.</p>
+
+        <div class="scripture">
+            "Y yo os digo: Ganad amigos por medio de las riquezas injustas, para que cuando éstas falten, os reciban en las moradas eternas"
+            <span class="scripture-ref">Lucas 16:9</span>
+        </div>
+
+        <p>Las riquezas injustas son el dinero y las demás posesiones materiales. Estas cosas podemos usarlas en ganar almas para Cristo. Las personas que nosotros ganamos por el adecuado uso de nuestro dinero aquí son llamados amigos. Viene un día cuando faltaremos (ya sea por la muerte o por haber sido llevados al cielo por Cristo en el arrebatamiento), los amigos ganados por el correcto uso de nuestras posesiones materiales servirán entonces como un comité de bienvenida para recibirnos en las moradas eternas.</p>
+
+        <p>Esta es la manera como los fieles mayordomos planean para el futuro, no gastando su corta vida en la búsqueda estéril de seguridad en la tierra, sino en un apasionado esfuerzo por verse rodeado en el cielo por amigos que fueron ganados para Cristo a través de su dinero. Dinero que fue transformado en Biblias, Testamentos, porciones, tratados y otra literatura cristiana. Dinero que fue usado para sostener misioneros y otros obreros cristianos. Dinero que ayudó a financiar programas radiales y otras dignas actividades cristianas. En suma dinero que fue usado para esparcir el evangelio por cualquier método. <span class="emphasis">"La única manera en que podemos depositar nuestros tesoros en el cielo es invirtiéndolo en algo que va a ir al cielo"</span>.</p>
+
+        <p>Cuando el cristiano ve que sus posesiones materiales pueden ser invertidas en la salvación de preciosas almas, pierde su amor por las cosas. El lujo, la riqueza y el esplendor material le resultan baladíes. Él ahora anhela ver que las riquezas injustas por obra de la alquimia divina se transformen en adoradores del Cordero por siempre jamás. Está cautivado por la posibilidad de realizar una obra en las vidas humanas que produzca gloria eterna a Dios y eterna bendición a las personas mismas. Siente algo de la sed de Rutherford:</p>
+
+        <div class="poem-box">
+            <div class="poem-line">¡Oh! si un alma de mi pueblo</div>
+            <div class="poem-line">me encontrara a la diestra del Dios Alto</div>
+            <div class="poem-line">mi cielo sería doblemente grato</div>
+            <div class="poem-line">allá donde Emanuel es el Dueño.</div>
+        </div>
+
+        <p>Para Él todos los diamantes, rubíes y perlas, todos los depósitos en el banco, todas las pólizas de seguro todas las mansiones, yates y coches son riquezas injustas. Si se usan en nuestro beneficio, perecen con el uso, pero usadas para Cristo, rinden dividendos a través de toda la eternidad.</p>
+
+        <p>La forma en que tratamos con lo material es un prueba de nuestro carácter. El Señor lo enfatiza en el versículo 10:</p>
+
+        <div class="scripture">
+            "El que es fiel en lo muy poco, también en lo más es fiel; y el que en lo muy poco es injusto, también en lo más es injusto"
+            <span class="scripture-ref">Lucas 16:10</span>
+        </div>
+
+        <p>Aquí lo muy poco es la mayordomía de lo material, los que usan estas cosas para gloria de Dios y bendición de los demás. Los injustos son los que usan sus posesiones para la comodidad, el lujo y los placeres egoístas. Si no se puede confiar en un hombre en lo muy poco (lo material), ¿cómo se le puede confiar lo mucho (mayordomía de lo espiritual)? Si se es inconstante con las riquezas injustas, ¿cómo se podrá ser fiel como ministro de Cristo y dispensador de los misterios de Dios? (1 Corintios 4:1).</p>
+
+        <p>Luego el Salvador da un paso más en su argumento.</p>
+
+        <div class="scripture">
+            "Pues si en las riquezas injustas no fuisteis fieles, ¿quién os confiará lo verdadero?"
+            <span class="scripture-ref">Lucas 16:11</span>
+        </div>
+
+        <p>Las posesiones terrenales no son verdaderas riquezas. Su valor es finito y temporal. Los tesoros espirituales son las verdaderas riquezas. Su valor no se puede medir y jamás se acaba. El hombre que no es fiel en el manejo de los bienes materiales ni puede esperar que Dios le conceda prosperidad espiritual en su vida o tesoros en los cielos.</p>
+
+        <p>Una vez más el Señor amplía su argumento diciendo:</p>
+
+        <div class="scripture">
+            "Y si en lo ajeno no fuisteis fieles, ¿quién os dará lo que es vuestro?"
+            <span class="scripture-ref">Lucas 16:12</span>
+        </div>
+
+        <p>Lo material no es nuestro. Pertenece a Dios. Todo lo que poseemos lo hemos recibido de Dios en mayordomía. Todo lo que podemos llamar nuestro, es el futuro de nuestro diligente estudio y servicio en esto, o la recompensa por haber sido fiel mayordomo en aquello. Si hemos demostrado ser incompetentes en el manejo de la propiedad de Dios, no podemos esperar el acceso a las verdades mas profundas de la Palabra de Dios de esta vida o ser recompensados en la próxima.</p>
+
+        <p>Como clímax de su enseñanza, el Señor resume toda la parábola en esta expresión:</p>
+
+        <div class="scripture">
+            "Ningún siervo puede servir a dos señores; porque o aborrecerá al uno y amará al otro, o estimará al uno y menospreciará al otro. No podéis servir a Dios y a las riquezas"
+            <span class="scripture-ref">Lucas 16:13</span>
+        </div>
+
+        <p>No puede existir una lealtad dividida. El discípulo no puede vivir para dos mundos. El mayordomo o ama a Dios o ama a Mamón. Si ama a Mamón odia a Dios.</p>
+
+        <p>Y, recordémoslo bien, esto fue escrito a los discípulos, no a los que no conocen a Dios.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Capítulo 5 - EL CELO QUE PRODUCE LLAMAS</h2>
+
+        <p>Es perdonable que un discípulo no tenga gran capacidad mental y no pueda exhibir habilidades físicas. Pero ningún discípulo puede ser excusado en su falta de celo. Si su corazón no arde con viva pasión por el Salvador, la condenación cae sobre él.</p>
+
+        <p>Después de todo los cristianos somos seguidores del que dijo: "El celo de tu casa me consume" (Juan 2:17). Su salvador fue consumido por una ardiente pasión por Dios y por sus intereses. No hay lugar en sus senderos para discípulos tibios e indiferentes.</p>
+
+        <p>El Señor Jesús vivía en un estado de tensión espiritual. Así lo indican sus palabras: "De un bautismo tengo que ser bautizado; y ¡cómo me angustio hasta que se cumpla! (Lucas 12:50). También está su memorable declaración: "Me es necesario hacer las obras del que me envió, entre tanto que el día dura; la noche viene, cuando nadie puede trabajar" (Juan 9:4).</p>
+
+        <p>El celo de Juan el Bautista fue atestiguado por el Señor cuando dijo: "Él era antorcha que ardía y alumbraba". (Juan 5:35).</p>
+
+        <p>El apóstol Pablo era un celote. Alguien ha tratado de captar el fervor de su vida en el siguiente bosquejo:</p>
+
+        <p>"Era un hombre que no se preocupaba por ganar amigos. Sin interés ni deseo por los bienes mundanales, sin temor de pérdidas materiales, sin preocupación por la vida, sin temor por la muerte. Era un hombre sin rango, nación, ni condición. Era un hombre de un pensamiento: El Evangelio de Cristo. Hombre de un propósito: la gloria de Dios. Un necio, y contento de ser reconocido como necio por Cristo. Llámese entusiasta, fanático, charlatán, estrambótico o cualquier otro nombre ridículo que el mundo quiera ponerle, pero que siga siendo raro. Si le llaman comerciante, jefe de casa, ciudadano, rico, mundano, erudito, o aún hombre de sentido común, todo cuadra con su carácter".</p>
+
+        <p>"Si no hablaba moría y aunque tuviera que morir, aún hablaba. No descansaba sino que extendía sus actividades por tierra y mar, roqueríos y desiertos arenosos. Clamaba en voz alta y no se medía para ello, ni nadie se lo podía impedir. En las prisiones elevaba su voz y en medio de las tempestades del mar no guardaba silencio. Testificaba de la verdad ante temibles concilios y delante del trono de reyes. Nada podía apagar su voz, sino la muerte, y aún ante la muerte, delante del cuchillo que habría de separar la cabeza de su cuerpo, él habló, oró, testificó, confesó, clamó a Dios, guerreó, y por último bendijo a la gente cruel".</p>
+
+        <p>Otros hombres de Dios han mostrado el mismo ardiente deseo de agradar a Dios.</p>
+
+        <p>C.T. Studd escribió una vez:</p>
+
+        <p>"Algunos desean vivir al son de la campana de la Iglesia. Yo prefiero rescatar almas aún dentro del mismo infierno".</p>
+
+        <p>Y justamente fue un artículo escrito por un ateo que aguijoneó a Studd a consagrarse enteramente al Señor.</p>
+
+        <p>Este era el artículo:</p>
+
+        <p>"Si yo creyera firmemente, como millones dicen creer, que el conocimiento y práctica de la religión en esta vida influye en el destino en la otra vida, entonces la religión sería para mí el todo. Desecharía los goces terrenales como si fueran escorias, las preocupaciones terrenas como locuras, los pensamientos y sentimientos terrenos como vanidad. La religión sería mi primer pensamiento al despertar y mi última visión al sumirme en la inconciencia del sueño. Trabajaría solamente en su causa. Mis pensamientos serían para el mañana de la eternidad solamente. Estimaría que un alma salvada para el cielo vale toda un vida de sufrimientos. Las consecuencias terrenales jamás detendrían mi mano, ni sellarían mis labios. El mundo, sus goces, sus penas, no tendrían lugar en mis pensamientos. Haría todo lo posible por mirar hacia la eternidad solamente, y a las almas inmortales como próximas a entrar a una eternidad de felicidad o a la miseria del sufrimiento eterno. Saldría al mundo y predicaría a tiempo y fuera de tiempo y mi texto sería: ¿Qué aprovechará al hombre, si ganare todo el mundo, y perdiere su alma?" (Mateo 16:26; Marcos 8:36).</p>
+
+        <p>Juan Wesley fue un hombre de celo vivo. Dijo: "Dadme cien hombres que amen a Dios con todo su corazón, que no teman sino al pecado y cambiaré al mundo".</p>
+
+        <p>Muerto por la causa a mano de los indios Aucas del Ecuador, Jim Elliot, era una antorcha de fuego por Jesús. Un día mientras meditaba en el texto "Él hace sus ministros llama de fuego", escribió en su diario:</p>
+
+        <p>"¿Soy inflamable? Dios líbrame del terrible asbesto de las "demás cosas". Satúrame con el aceite del Espíritu para que yo sea una llama. La llama es pasajera, a veces de corta vida. Alma mía ¿puedes soportar esto?, ¿una vida corta? En mí mora el Espíritu del Gran Ser que tuvo un vida corta, aquel cuyo celo por la casa de Dios lo consumió. Hazme Tu combustible, Llama de Dios".</p>
+
+        <p>Las últimas líneas de su diario anota la cita de un ferviente poema de Amy Carmichael. No es de maravillarse que Jim Elliot se inspirara en él:</p>
+
+        <div class="poem-box">
+            <div class="poem-line">De la oración que pide protección</div>
+            <div class="poem-line">de los vientos que sobre ti golpearon,</div>
+            <div class="poem-line">de temer cuando debería aspirar,</div>
+            <div class="poem-line">de vacilar, cuando debo ascender,</div>
+            <div class="poem-line">del cómodo yo, libra ¡Oh, Capitán!</div>
+            <div class="poem-line">Al soldado que va de ti en pos.</div>
+            <div class="poem-line">Del deseo sutil de buscar lo suave</div>
+            <div class="poem-line">de las elecciones fáciles, debilitadoras,</div>
+            <div class="poem-line">no es así como el espíritu se fortalece</div>
+            <div class="poem-line">ni el camino que el Señor anduvo,</div>
+            <div class="poem-line">De todo lo que haga luminoso el Calvario,</div>
+            <div class="poem-line">¡Oh, Cordero de Dios, líbrame!</div>
+            <div class="poem-line">Dame el amor que guía el camino</div>
+            <div class="poem-line">la fe que nada hace desmayar,</div>
+            <div class="poem-line">la esperanza que nunca se agota</div>
+            <div class="poem-line">la pasión que quema como el fuego</div>
+            <div class="poem-line">No me dejes abatir por ser un idiota,</div>
+            <div class="poem-line">Hazme tu combustible, ¡oh Llama de Dios!</div>
+        </div>
+
+        <p>La desgracia de la iglesia en el siglo XX es que hay más demostraciones de celo entre los comunistas o los de las sectas falsas que entre los cristianos.</p>
+
+        <p>En 1903 un hombre con 17 seguidores inició su ataque al mundo. Su nombre era Lenin. Hacia el año 1918 el número había crecido a cuarenta mil, y con aquellos cuarenta mil ganó el control de ciento sesenta millones de personas en Rusia. El movimiento ha crecido y actualmente controla más de la tercera parte de la población del mundo. Por mucho que uno se oponga a sus principios, no puede dejar de admirar su celo.</p>
+
+        <p>Muchos cristianos se sintieron fuertemente reprendidos cuando Billy Graham leyó la siguiente carta escrita por un universitario norteamericano que se había convertido al comunismo en México. El propósito de la carta era explicar a su novia por qué debía romper su compromiso:</p>
+
+        <p>"Los comunistas tenemos un alto porcentaje de muertes violentas. Somos los que morimos pasados por las armas, ahorcados, linchados, o alquitranados; somos encarcelados, calumniados, ridiculizados y despedidos de nuestros empleos y de diversos modos se procura hacernos la vida imposible. Un buen porcentaje de nosotros es muerto o tomado preso. Vivimos en una pobreza virtual. Damos al partido cada centésimo que ganamos por sobre lo que no sea absolutamente indispensable para mantenernos vivos. Los comunistas no tenemos tiempo ni dinero para cine, conciertos, asados, casas decentes o autos nuevos. Hemos sido descritos como fanáticos. Somos fanáticos. Nuestra vida está dominada por un gran factor que eclipsa todo otro interés: LA LUCHA POR EL COMUNISMO MUNDIAL.</p>
+
+        <p>Los comunistas tenemos una filosofía de la vida que ninguna cantidad de dinero puede comprar. Tenemos una causa por la cual pelear, un propósito definido en la vida. Subordinamos nuestros intereses mezquinos, nuestro yo a un gran movimiento de la humanidad, y, si nuestra vida personal parece dura, o si nuestro yo parece sufrir por haberse subordinado al partido, entonces cada uno se siente compensado adecuadamente por el pensamiento de que cada uno está contribuyendo con su grano de arena a algo nuevo, verdadero y mejor para la humanidad. Hay una cosa a la que me he consagrado fervorosamente y esa cosa es la causa comunista. Es mi vida, mi negocio, mi religión, mi entretenimiento, mi novia, mi esposa, mi mujer, mi pan y mi carne. Trabajo para el partido de día y sueño con él de noche. Su influencia sobre mí crece, no disminuye con el paso del tiempo, por tanto no puedo mantener amistad con nadie, no puedo tener asuntos amorosos, ni siquiera una conversación sin relacionarlas con esta fuerza que conduce y guía mi vida. Yo catalogo a las personas, libros, ideas y acciones de acuerdo a la forma en que afectan la causa comunista y por su actitud hacia ella. Yo ya he estado en la cárcel por mis ideas, y si fuera necesario estoy dispuesto a enfrentar el pelotón de fusilamiento".</p>
+
+        <p>Si los comunistas pueden consagrarse hasta este punto a su causa, cuanto más deberían los cristianos derramarse en amante y alegre devoción a su Salvador. Si el Señor Jesús vale algo, lo vale todo. Si la fe cristiana es digna de creerse, debe creérsela con heroísmo.</p>
+
+        <p>"Si Dios en verdad ha hecho algo en Cristo de lo cual depende la salvación del mundo, y si Él la ha dado a conocer, entonces es un deber cristiano ser intolerante de todo lo que lo ignore, niegue o anule con explicaciones sutiles."</p>
+
+        <p>Dios necesita hombres completamente entregados al control del Espíritu Santo. Hombres estos que parecerán borrachos a los demás, pero los que saben de estas cosas comprenderán que están guiados por una "profunda, enorme, obsesionante e insaciable sed de Dios".</p>
+
+        <p>Que cada discípulo en perspectiva tome muy en serio LA NECESIDAD de tener celo por Dios en su vida. Que tenga la aspiración por Dios en su vida. Que tenga la aspiración de responder a la descripción dada por J.C. Ryle:</p>
+
+        <p>"El cristiano celoso es principalmente hombre de una causa. No basta decir que es serio, cordial, intransigente, eficaz, sincero, ferviente en espíritu. Solamente ve una cosa, le importa solamente una cosa, vive por una cosa, está embebido de una sola cosa, y esa cosa es agradar a Dios. Viva o muera, enfermo o sano, rico o pobre, agrade al hombre o le ofenda, se le considere sabio o necio, reciba injurias o alabanzas, reciba honra o se le avergüence, nada de esto le importa. Este hombre arde por una cosa, y esa cosa es agradar a Dios y promover la gloria de Dios. Si ese fuego lo consume, no le importa, está contento. Siente que, al igual que la lámpara, ha sido hecho para arder, y si se consume ardiendo, solamente ha hecho aquello para lo cual Dios lo designó. Tal voluntad siempre halla una esfera donde desplegar su celo. Si no puede obrar, predicar, o dar dinero, clamará, deseará y orará. Sí, si es solamente un pobre, o un enfermo que debe permanecer toda la vida en cama, hará que las ruedas del pecado se muevan pesadamente a su alrededor debido a su constante intercesión en contra. Si no puede pelear en el valle con Josué, hará la obra de Moisés, Aarón y Hur en el monte (Éxodo 17:9-13). Si a él no se le deja trabajar, no le dará descanso al Señor hasta que lleguen refuerzos y el trabajo sea hecho. Esto es lo que quiero decir cuando hablo de celo en religión".</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Capítulo 6 - CRECIENDO EN LA FE</h2>
+
+        <p>No puede haber verdadero discipulado sin una profunda e incuestionable fe en el Dios vivo. El que va hacer hazañas para Dios debe confiar en Él implícitamente. Como dijera Hudson Taylor. "Todos los gigantes de Dios han sido hombres débiles que hicieron grandes cosas para Dios porque reconocieron que Dios estaba con ellos".</p>
+
+        <p>Ahora bien, la verdadera fe siempre descansa en alguna promesa de Dios, en alguna porción de Su Palabra. Esto es importante. El creyente primero lee o escucha alguna de las promesas de Dios. El Espíritu Santo toma aquella promesa y la aplica al corazón y conciencia en una forma muy personal. El creyente queda consciente de que Dios le ha hablado directamente. Con una confianza absoluta en la confiabilidad del que lo ha prometido, considera la promesa tan segura como si ya estuviera cumplida, aun cuando, humanamente hablando, ésta sea imposible.</p>
+
+        <p>Tal vez sea un mandamiento más que una promesa. Para la fe no hay diferencia. Si Dios manda, Él habilita. Si le pide a Pedro que camine sobre las aguas, Pedro debe estar seguro que el poder necesario para ello le será dado. (Mateo 14:28). Si nos ordena predicar el Evangelio a toda criatura, podemos estar seguros de recibir la gracia necesaria (Marcos 16:15).</p>
+
+        <p>La fe no opera en el reino de lo posible. No hay gloria para Dios en lo que es humanamente posible. La fe comienza donde termina el poder humano. "La incumbencia de la fe comienza donde cesan las probabilidades y donde fallan la vista y los sentidos".</p>
+
+        <p>La fe dice: "Si la única objeción es imposible aquello puede hacerse". La fe hace entrar a Dios al escenario, por lo tanto no sabe dificultades y aún más, se ríe de las imposibilidades. Para la fe Dios es la gran respuesta a toda duda, la gran solución a todo problema. Todo lo remite a Él y por eso poco importa a la fe si se trata de seiscientos mil pesos o de seiscientos millones. Sabe que Dios es todo suficiente. Halla en Él todos sus recursos. La incredulidad dice: "¿Cómo es posible tal o cuál cosa? Está llena de cómos, pero la fe tiene una sola y gran respuesta para diez mil cómos, y esa respuesta es Dios".</p>
+
+        <p>Humanamente hablando era imposible que Abraham y Sara tuvieran un hijo. Pero Dios lo había prometido y para Abraham había una sola imposibilidad: Que Dios mienta.</p>
+
+        <div class="scripture">
+            "Él creyó en esperanza contra esperanza, para llegar a ser padre de muchas gentes, conforme a lo que se le había dicho: Así será tu descendencia. Y no se debilitó en la fe al considerar su cuerpo, que estaba ya como muerto (siendo de casi cien años), o la esterilidad de la matriz de Sara. Tampoco dudó, por incredulidad, de la promesa de Dios, sino que se fortaleció en fe, dando gloria a Dios, plenamente convencido de que era también poderoso para hacer todo lo que había prometido"
+            <span class="scripture-ref">Romanos 4:18-21</span>
+        </div>
+
+        <div class="poem-box">
+            <div class="poem-line">La promesa ve la fe omnipotente</div>
+            <div class="poem-line">y mira a Dios solamente,</div>
+            <div class="poem-line">ríe de lo que es imposible</div>
+            <div class="poem-line">y clama: ¡Lo ha hecho el Invisible!</div>
+        </div>
+
+        <p>Nuestro Dios es especialista en imposibilidades (Lucas 1:37). Nada le es demasiado difícil (Génesis 18:14).</p>
+
+        <div class="scripture">
+            "Lo que es imposible para los hombres, es posible para Dios"
+            <span class="scripture-ref">Lucas 18:27</span>
+        </div>
+
+        <p>La fe reclama Su promesa: "Al que cree todo le es posible" (Marcos 9:23), y asegura juntamente con Pablo: "Todo lo puedo en Cristo que me fortalece" (Filipenses 4:13).</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Obstáculos ve la duda</div>
+            <div class="poem-line">la fe ve el camino</div>
+            <div class="poem-line">La duda la noche más oscura,</div>
+            <div class="poem-line">la fe ve el destino;</div>
+            <div class="poem-line">la duda teme dar un paso,</div>
+            <div class="poem-line">la fe vuela en las alturas;</div>
+            <div class="poem-line">la duda pregunta, "¿Crees acaso?"</div>
+            <div class="poem-line">la fe contesta "Sí", muy segura.</div>
+        </div>
+
+        <p>Debido a que la fe trata de lo sobrenatural y divino, no siempre es "razonable". Abraham salió sin saber donde iba, no en virtud del "sentido común", sino sencillamente obedeciendo a Dios (Hebreos 11:8). No fue "astucia" de Josué atacar a Jericó sin armas mortíferas (Josué 6:1-20). Los hombres del mundo se reirían de tal locura, ¡pero surtió efecto!</p>
+
+        <p>En realidad la fe es absolutamente racional. ¿Qué más razonable que el que la criatura confíe en su Creador? ¿Es locura confiar en Aquel que no miente, no falla ni se equivoca? Confiar en Dios es lo más sensato, cuerdo, y racional que un hombre puede hacer. No es un salto hacia las tinieblas. La fe demanda la evidencia más segura y la halla en la Palabra infalible de Dios. Nadie ha confiado en vano en Dios. Nadie que confíe en Él lo hará en vano. La fe en el Señor no incluye riesgos de ningún tipo.</p>
+
+        <p>La fe glorifica verdaderamente a Dios. Le da el lugar como el Único Ser completamente digno de confianza. Por otra parte la incredulidad deshonra a Dios: Le acusa de mentiroso (1 Juan 5:10). Limita al Santo de Israel (Salmo 78:41).</p>
+
+        <p>La fe coloca el hombre en su verdadero lugar: suplicante, humilde, humillado hasta el polvo delante del soberano Señor de todas las cosas.</p>
+
+        <p>La fe es lo contrario de la vista. Pablo nos recuerda que "por fe andamos, no por vista" (2ª Corintios 5:7). Caminar por vista significa tener medios visibles de abastecimiento, tener reservas adecuadas para el futuro, emplear la inteligencia humana para asegurarnos contra los riesgos. El camino de la fe es exactamente lo contrario: es confiar momento a momento en Dios solamente. Es una perpetua crisis de dependencia en Dios. La carne retrocede ante la idea de depender completamente de un Dios invisible. Trata de aprovisionarse para amortiguar posibles pérdidas. Si no puede ver por donde va a ir, es seguro que sufre un colapso nervioso. Pero la fe da el paso hacia adelante en obediencia a la Palabra de Dios, se levanta por sobre las circunstancias y confía en el Señor para la provisión a todas sus necesidades.</p>
+
+        <p>Todo discípulo que decide andar por fe puede estar seguro que su fe será probada. Tarde o temprano, será llevado hasta el límite de sus recursos humanos. Se sentirá tentado a recurrir a sus semejantes en busca de auxilio. Pero si está realmente confiando en Dios, esperará en El solamente.</p>
+
+        <p>Dar a conocer las necesidades en forma directa o indirecta a un ser humano, es apartarse de la vida de fe, y una positiva deshonra a Dios. Es traicionarle. Es como decir: "Dios me ha fallado y debo buscar ayuda entre mis amigos". Es dejar la fuente de agua viva y volverse a las cisternas rotas. Es colocar a la criatura entre mi alma y Dios, robándole a mi alma una rica bendición y a Dios la gloria debida a su nombre.</p>
+
+        <p>La actitud normal del discípulo es desear un crecimiento en la fe (Lucas 17:5) Ya ha confiado en Cristo para salvación. Ahora espera poner bajo el control del Señor nuevas áreas de su vida. Cuando enfrenta enfermedades, tribulaciones, tragedias y aflicciones, llega a conocer a Dios en una forma nueva y más íntima, resultando fortalecida su fe. Comprueba la verdad de la promesa: "Conoceremos y proseguiremos en conocer a Jehová" (Oseas 6:3). Mientras más comprende la fidelidad de Dios, más ansioso está de confiar en Él para cosas más grandes.</p>
+
+        <p>Como la fe es por el oír y el oír por la Palabra de Dios, el deseo íntimo del discípulo es saturarse de las Escrituras, leerlas, estudiarlas, memorizarlas, meditar en ellas día y noche. Son su carta y brújula, su guía y consuelo, su lámpara y luz.</p>
+
+        <p>En la vida de fe siempre hay lugar para progresar. Cuando leemos acerca de lo que ha sido hecho por fe, nos damos cuenta que somos como niños pequeños que están jugando a la orilla de un océano sin límites. Las hazañas de la fe se nos relatan en Hebreos 11. Se elevan en un magnificente ascenso en los versículos 32-40:</p>
+
+        <div class="scripture">
+            "¿Y qué más digo? Porque el tiempo me faltaría contando de Gedeón, de Barac, de Sansón, de Jefté, de David, así como de Samuel y de los profetas que por fe conquistaron reinos, hicieron justicia, alcanzaron promesas, taparon bocas de leones, apagaron fuegos impetuosos, evitaron filo de espada, sacaron fuerzas de debilidad, se hicieron fuertes en batallas, pusieron en fuga ejércitos extranjeros. Las mujeres recibieron sus muertos mediante resurrección; mas otros fueron atormentados, no aceptando el rescate, a fin de obtener mejor resurrección. Otros experimentaron vituperios y azotes, y a más de esto prisiones y cárceles. Fueron apedreados, aserrados, puestos a prueba, muertos a filo de espada; anduvieron de acá para allá cubiertos de pieles de ovejas y de cabras, pobres, angustiados, maltratados; de los cuales el mundo no era digno; errando por los desiertos, por los montes, por las cuevas y por las cavernas de la tierra. Y todos éstos, aunque alcanzaron buen testimonio mediante la fe, no recibieron lo prometido; proveyendo Dios alguna cosa mejor para nosotros, para que no fuesen ellos perfeccionados aparte de nosotros"
+            <span class="scripture-ref">Hebreos 11:32-40</span>
+        </div>
+
+        <p>Una palabras más. Ya hemos mencionado que un discípulo que camina por fe sin duda será considerado un soñador o un fanático por la gente del mundo y aun por otros cristianos. Pero es bueno recordar que "la fe que nos capacita para caminar con Dios también nos capacita para adjudicar el valor que le corresponde a la opinión de los hombres."</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Capítulo 7 - EL DISCÍPULO Y LA ORACION</h2>
+
+        <p>El único libro completamente satisfactorio que se ha escrito sobre la oración es la Biblia. Los demás nos dejan una sensación de la existencia de profundidades no alcanzadas y de alturas no escaladas. En este tratado no queremos emular los esfuerzos de otros. Todo lo que podemos hacer es resumir algunos de los principios importantes de la oración, especialmente en los que están conectados con el discipulado cristiano.</p>
+
+        <ol class="bible-list">
+            <li><strong>La mejor oración procede de una fuerte necesidad interna.</strong> Todos hemos probado que esto es así. Cuando nuestra vida se desliza serena y plácida, nuestras oraciones se hacen aburridas y mecánicas. Cuando enfrentamos una crisis, un peligro, una enfermedad o alguna seria dificultad, nuestras oraciones se convierten en fervientes y vitales. Alguien ha dicho: "la flecha que ha de penetrar los cielos debe ser lanzada de un arco completamente doblado". Las mejores oraciones nacen del sentimiento de urgencia, desamparo, o de cualquier necesidad consciente. Desgraciadamente, pasamos demasiado tiempo tratando de protegernos de las necesidades. Usando los métodos de los negocios, hacemos amplias reservas contra toda eventualidad imaginable. Por el uso de la diligencia humana llegamos al punto en que estamos ricos y engrandecidos, tan llenos de cosas que no necesitamos nada. Entonces nos preguntamos por qué nuestra vida de oración es pobre y sin vida, y por qué no cae del cielo el fuego que hemos pedido... Si verdaderamente camináramos por fe y no por vista, nuestra vida de oración sería revolucionada.</li>
+
+            <li><strong>Una de las condiciones de la oración exitosa es que "nos acerquemos con corazón sincero" (Hebreos 10:22).</strong> Esto significa que debemos ser honestos y genuinos delante del Señor. No debe haber hipocresía. Para cumplir esto no debemos pedir a Dios que haga algo cuando está dentro de nuestra capacidad de hacerlo. Por ejemplo, no debemos pedirle que nos provea de cierta suma de dinero para tal o cual proyecto, si tenemos fondos más que suficientes para realizarlo. Dios no puede ser burlado. Él no contesta oraciones si ya nos ha dado la respuesta y nosotros no queremos usarla. Dentro de esta misma línea de pensamiento, no deberíamos orar para que el Señor envíe a otros a sus labores si no estamos dispuestos personalmente a ir. Millares de oraciones han sido pronunciadas en favor de los musulmanes, hindúes y budistas. Pero si todos los que han orado hubieran estado dispuestos a ser usados por el Señor para alcanzar a esta gente, entonces la historia de las naciones cristianas hubiera sido diferente y más alentadora.</li>
+
+            <li><strong>La oración debe ser hecha con sencillez, creyendo y sin preguntar,</strong> porque es muy posible que nuestra ansia de orar sea absorbida por los problemas teológicos implícitos en la oración. Esto sirve para adormecer los sentidos espirituales. Es mejor orar que resolver todos los misterios relacionados con la oración. Que los doctores en Teología tejan sus teorías acerca de la oración. Pero que el creyente sencillo asalte las puertas del cielo con infantil confianza. Fue Agustín el que dijo. "Los simples toman el cielo por fuerza y nosotros con toda nuestra sapiencia no nos elevamos más allá de la carne y la sangre".</li>
+        </ol>
+
+        <div class="poem-box">
+            <div class="poem-line">El cómo no lo sé,</div>
+            <div class="poem-line">pero que Dios oye, lo experimenté.</div>
+            <div class="poem-line">No sé cuando la palabra dio</div>
+            <div class="poem-line">pero dice que mi súplica oyó.</div>
+            <div class="poem-line">Tarde o temprano respuesta vendrá,</div>
+            <div class="poem-line">esperar y orar, no necesito más.</div>
+            <div class="poem-line">No sé si contestará como yo pedí</div>
+            <div class="poem-line">pero siempre será lo mejor para mí.</div>
+        </div>
+
+        <ol class="bible-list" start="4">
+            <li><strong>Para tener todo el poder en la oración, debes rendirle todo a Cristo.</strong> Vuélvete completamente a Él. Déjalo todo por seguir al Salvador. El tipo de devoción que corona a Cristo como Señor de todo es la devoción que a Él le gusta honrar.</li>
+
+            <li><strong>Parece que Dios se complace en darle valor a la oración cuando esta nos cuesta algo.</strong> Los que madrugan gozan de la comunión y compañía de Aquel que cada día se levantaba al amanecer para recibir las instrucciones de su Padre. Del mismo modo, aquellos que imbuidos de un santo fervor pasan la noche en oración, gozan de un poder de parte de Dios que no puede ser negado. La oración que no cuesta nada, no vale nada. Es simplemente un subproducto del cristianismo barato a que estamos acostumbrados. El Nuevo Testamento continuamente liga la oración con el ayuno. El abstenerse de los alimentos puede ser una valiosa ayuda en el ejercicio espiritual. Al hombre que ayuna la abstinencia le da más claridad, concentración e inteligencia. Por parte de Dios parece que Él está especialmente dispuesto a favorecer las oraciones cuando ponemos la oración como más necesaria que el alimento.</li>
+
+            <li><strong>Evita las oraciones egoístas:</strong> "Pedís, y no recibís, porque pedís mal, para gastar en vuestros deleites" (Santiago 4:3). La carga primaria de nuestras oraciones debería ser los intereses del Señor. Debemos pedir en primer lugar: "Venga tu reino, sea hecha tu voluntad como en el cielo, así también en la tierra" para luego añadir: "Danos hoy nuestro pan de cada día".</li>
+
+            <li><strong>Deberíamos honrar con grandes peticiones porque Él es un gran Dios.</strong> "Tengamos fe para esperar grandes cosas del Señor".</li>
+        </ol>
+
+        <div class="poem-box">
+            <div class="poem-line">Si al Gran Rey vienes a ver</div>
+            <div class="poem-line">grandes peticiones debes traer</div>
+            <div class="poem-line">Su amor y poder tan grandes son</div>
+            <div class="poem-line">que jamás los excederá tu petición.</div>
+        </div>
+
+        <p>Infinidad de veces hemos ofendido a nuestro Dios pidiendo demasiado poco. Nos hemos conformado con triunfos tan escasos, con logros tan pobres, con anhelos tan débiles por cosas más elevadas, que hemos dejado en los demás la impresión que nuestro Dios no es un gran Dios. No le hemos glorificado ante los que no le conocen pues no hemos vivido de tal manera que nuestra vida llame la atención y despierte el deseo de inquirir acerca del poder que la sostiene. Casi no hemos oído decir de nosotros, como se decía del apóstol "ellos glorificaban a Dios en mí".</p>
+
+        <ol class="bible-list" start="8">
+            <li><strong>Al orar debemos asegurarnos de estar en la voluntad de Dios.</strong> Entonces oraremos creyendo que Él oirá y contestará. "Y esta es la confianza que tenemos en él, que si pedimos alguna cosa conforme a su voluntad, él nos oye. Y si sabemos que él nos oye en cualquiera cosa que pidamos, sabemos que tenemos las peticiones que le hayamos hecho" (1 Juan 5:14-15).</li>
+
+            <li><strong>Orar en el nombre de Jesús es orar de acuerdo a su voluntad.</strong> Cuando oramos verdaderamente en su nombre, es como si Él estuviera presentando su petición a Dios, su Padre "Y todo lo que pidiereis al Padre en mi nombre, lo haré, para que el Padre sea glorificado en el Hijo. Si algo pidiereis en mi nombre, yo lo haré". (Juan 14:13-14): "Y aquel día no me preguntaréis nada. De cierto, de cierto os digo, que todo cuanto pidiereis al Padre en mi nombre, os lo dará" (Juan 16:23). "Otra vez os digo, que si dos de vosotros se pusieren de acuerdo en la tierra acerca de cualquiera cosa que pidieren, les será hecho por mi Padre que está en los cielos. Porque donde están dos o tres congregados en mi nombre, allí estoy yo en medio de ellos" (Mateo 18:19-20). "Pedir en su nombre, significa ser llevado de la mano a la oración por él; significa, puedo decirlo así, que Él se arrodilla a nuestro lado y sus deseos fluyen a través de nuestro corazón. Esto es lo que significa En su nombre. Su nombre es lo que Él es, Su naturaleza, por lo tanto orar en el nombre de Cristo debe significar orar de acuerdo a su bendita voluntad. ¿Acaso puedo orar para mal en el Nombre del Hijo de Dios?. Lo que yo ore debería ser una expresión de su Naturaleza. ¿Puedo hacer eso en oración?. La oración debería exhalar el poder del Espíritu Santo, la mente de Cristo, los deseos de Cristo en nosotros. Que el Señor nos enseñe más y más a orar en su Nombre. No deberíamos sólo pensar en no terminar una oración sin las palabras mismas: En el bendito Nombre de Jesús, sino también toda la oración debería estar impregnada, completamente llena del Bendito Nombre de Jesús; todo de acuerdo a ese Nombre".</li>
+
+            <li><strong>Si nuestra vida de oración va a ser efectiva, debemos tener cuentas claras con Dios.</strong> Queremos decir que el pecado debe ser confesado y abandonado tan pronto como nos damos cuenta que ha entrado en nuestra vida. "Si en mi corazón hubiese yo mirado a la iniquidad, el Señor no me habría escuchado" (Salmo 66:18). Debemos permanecer en Cristo. "Si permanecéis en mí, y mis palabras permanecen en vosotros, pedid todo lo que queréis, y os será hecho" (Juan 15:7). La persona que está en Cristo se halla tan cerca de Él, que está llena del conocimiento de la voluntad del Señor. De este modo puede orar inteligentemente y estar seguro de recibir la respuesta. El estar en Él exige que obedezcamos sus mandamientos. "Y cualquiera cosa que pidiéremos la recibiremos de él, porque guardamos sus mandamientos, y hacemos las cosas que son agradables delante de él" (1 Juan 3:22). Se necesita un alma en correcta relación con él para que nuestras oraciones sean oídas y contestadas (1 Juan 3:20)</li>
+
+            <li><strong>No debemos orar solamente a ciertas horas establecidas durante el día.</strong> Debemos formar la actitud de oración, de modo que estemos mirando al Señor mientras caminamos por las calles, mientras conducimos el auto, en nuestro trabajo o en nuestro quehacer hogareño. Nehemías en un ejemplo clásico de este tipo espontáneo de oración (Nehemías 2:4). Es mejor habitar en la morada secreta del Altísimo, que hacerle visitas ocasionales.</li>
+
+            <li><strong>Finalmente, nuestras oraciones deberían ser específicas.</strong> Es solamente cuando oramos por cosas definidas que podemos ver respuestas definidas. La oración es un privilegio maravilloso. Por este medio, como dijo Hudson Taylor, podemos aprender a mover al hombre a través de Dios. "¡Qué ministerio tenemos en nuestras manos para obrar milagros en el reino maravilloso de la oración! Podemos llevar el sol a lugares fríos y ocultos. Podemos encender la luz de la esperanza en la cárcel de la desesperación. Podemos librar al prisionero de las cadenas que le impiden caminar. Podemos llevar los pensamientos gratos del hogar al que está en el país lejano. Podemos llevar consuelo celestial a los espiritualmente débiles, aun cuando ellos estén trabajando más allá de los mares. Estos son milagros en respuesta a la oración".</li>
+        </ol>
+
+        <p>A esto añade su testimonio un escritor llamado Wenham: "Predicar es un don difícil de hallar; el de orar es aún más escaso. La predicación, como la espada es un arma que debe ser usada a corta distancia, no puede alcanzar a los que están lejos. La oración es como un rifle: tiene largo alcance y bajo ciertas circunstancias es aún más efectiva."</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Señor, ¡cómo cambian las cosas</div>
+            <div class="poem-line">al pasar una hora</div>
+            <div class="poem-line">en tu presencia majestuosa!</div>
+            <div class="poem-line">Las pesadas cargas</div>
+            <div class="poem-line">de nuestros hombros caen,</div>
+            <div class="poem-line">refrescas al alma</div>
+            <div class="poem-line">con tu lluvia bienhechora,</div>
+            <div class="poem-line">caemos sobre las rodillas y</div>
+            <div class="poem-line">todo a nuestro lado parece descender.</div>
+            <div class="poem-line">Nos levantamos y</div>
+            <div class="poem-line">lo lejano y cercano brilla,</div>
+            <div class="poem-line">como resplandor del sol</div>
+            <div class="poem-line">en espiritual amanecer.</div>
+            <div class="poem-line">Entonces, ¿por qué he de pensar</div>
+            <div class="poem-line">que la fuerza está lejos de mí,</div>
+            <div class="poem-line">que soy débil,</div>
+            <div class="poem-line">que debo moverme con cuidado</div>
+            <div class="poem-line">para no desmayar;</div>
+            <div class="poem-line">y en dolores, y penas y temores vivir?</div>
+            <div class="poem-line">No es esa mi parte, Señor.</div>
+            <div class="poem-line">La ansiedad, el temor, la turbación,</div>
+            <div class="poem-line">el gozo, la paz y el amor</div>
+            <div class="poem-line">han cedido mi corazón,</div>
+            <div class="poem-line">porque me has concedido</div>
+            <div class="poem-line">el bendito don de la oración.</div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Capítulo 8 - LA GUERRA ESPIRITUAL</h2>
+
+        <p>Apenas se puede leer el Nuevo Testamento sin notar que la figura de la guerra se usa a menudo para describir el programa de Cristo en la tierra. Hay una gran distancia entre el verdadero cristianismo y el entretenimiento burdo que llaman cristianismo en el día de hoy. No debe confundirse con la vida lujosa y la búsqueda del placer que son tan comunes actualmente. En vez de eso, se trata de una guerra a muerte, de un incesante conflicto con las fuerzas infernales. El discípulo que no ha comprendido que la guerra ha comenzado y que no puede volverse, no vale un grano de sal.</p>
+
+        <p>En la guerra debe haber unidad. No hay lugar para riñas, celos partidistas o para lealtades divididas. Ninguna casa dividida contra sí misma puede prevalecer. Por lo tanto los soldados de Cristo deben ser unidos. El camino hacia la unidad pasa por la humildad. Esto lo enseña claramente Filipenses capítulo 2. Es imposible tener una rencilla con un hombre verdaderamente humilde. Se necesitan dos personas para que haya pelea. Sólo por orgullo viene la contención. Donde no hay orgullo no hay lugar para una disputa.</p>
+
+        <p>La guerra exige una vida austera y sacrificial. En guerras de cualquier dimensión hay invariablemente un vasto sistema de racionamiento. Ya es tiempo que los cristianos nos demos cuenta de que estamos en guerra y que los gastos deben ser suprimidos para que el máximo posible de nuestros recursos puedan ser invertidos en la lucha.</p>
+
+        <p>No muchos ven esto claramente como el joven discípulo llamado R.M. En 1960 era el presidente de los estudiantes de primer año de una Escuela Cristiana de enseñanza superior. Durante su mandato se propuso hacer un presupuesto, de los desembolsos de dinero para las acostumbradas fiestas, trajes y regalos de la clase. En vez de aprobar tales gastos que no contribuían directamente a la propagación del Evangelio, R.M. renunció a su cargo de presidente. El día en que renunció su renuncia circuló la siguiente carta entre sus compañeros de clase:</p>
+
+        <div class="highlight-box">
+            <p><strong>Estimados compañeros:</strong></p>
+            <p>Como la cuestión de las fiestas, trajes y regalos ha sido presentada a la directiva para consideración, yo, como presidente de la clase he considerado la actitud del cristiano hacia tales asuntos:</p>
+            <p>Pienso que hallaríamos el mayor gozo en darnos nosotros mismos, nuestro dinero y nuestro tiempo enteramente a Cristo y a los demás, probando así la realidad de sus palabras: "El que pierde su vida por mi causa la hallará".</p>
+            <p>Que los cristianos gasten su dinero y su tiempo en cosas que no son un testimonio definido al inconverso o para la edificación de los hijos de Dios parece contradictorio al considerar que 7,000 personas mueren diariamente de hambre y que más de la mitad del mundo jamás ha oído acerca de la única esperanza del hombre.</p>
+            <p>Mucha más gloria daríamos a Dios ayudando a llevar el Evangelio al otro 60 por ciento del mundo que jamás han oído de Jesucristo o aún en nuestro propio vecindario que reuniéndonos en un club, limitando nuestro roce social a aquellos que piensan como nosotros y gastando el dinero y el tiempo en nuestro propio placer.</p>
+            <p>Como estoy al tanto de las necesidades específicas y de oportunidades para usar el dinero con gran ventaja para la gloria de Dios y para ayudar a mi prójimo y en tierras lejanas me es imposible permitir que los fondos de la clase sean gastados innecesariamente en nosotros mismos. Si yo fuera uno de aquellos que tienen esa necesidad tan grande como sé de muchos que la tienen, yo querría que los que tienen la posibilidad hicieran lo que pudieran para darme a conocer el Evangelio y para ayudarme en mis necesidades materiales.</p>
+            <p>"Como quisiereis que los hombres hagan con vosotros, así haced vosotros con ellos". "Y si alguno tuviere bienes de este mundo y viere a su hermano padecer necesidad, y cierra su corazón, ¿cómo está el amor de Dios en él?".</p>
+            <p>Por tanto, con amor y oración y para que ustedes puedan ver a Cristo dándolo todo (2a Corintios 8:9), presento mi renuncia al cargo de presidente de la clase 63.</p>
+            <p class="scripture-ref">Vuestro en Él. R.M.</p>
+        </div>
+
+        <p>La guerra exige sufrimiento. Si los jóvenes de hoy están dispuestos a dar su vida por su país, cuanto más los cristianos deberían estar dispuestos a perder su vida por amor a Cristo y al Evangelio. Una fe que no cuesta nada no sirve para nada. Si el Señor Jesús significa algo para nosotros, él debería ser nuestro todo, y ninguna consideración acerca de seguridad personal o de prevención del sufrimiento nos detendría en nuestro servicio a Él.</p>
+
+        <p>Cuando el Apóstol Pablo defendió su apostolado de los ataques de sus críticos de alma egoísta, no señaló su genealogía, ni su educación ni sus conquistas materiales. En vez de eso, enumeró sus sufrimientos por la causa del Señor Jesucristo. Ver Versión Revisada 60. (2ª Corintios 11:23-28).</p>
+
+        <p>Al presentar su noble desafío a Timoteo le exige: "Tú, pues, sufre penalidades como buen soldado de Jesucristo" (2ª Timoteo 2:3).</p>
+
+        <p>La guerra implica obediencia inmediata. Un verdadero soldado seguirá las instrucciones superiores sin preguntar y sin demorar. Es absurdo pensar que Cristo podría quedar satisfecho con algo menos. Como Creador y Redentor, tiene todo el derecho de esperar de los que le siguen a la batalla una obediencia pronta y completa a sus órdenes.</p>
+
+        <p>La guerra exige pericia en el uso de las armas. Las armas del cristiano son la oración y la Palabra de Dios. Debe entregarse a la oración ferviente, fiel, y perseverante. Solamente así pueden ser derribadas las fortalezas del enemigo. También debe ser experto en el uso de la espada del Espíritu que es la Palabra de Dios. El enemigo hará todo lo posible para hacerlo soltar la espada. Sugerirá dudas acerca de la inspiración de la Palabra de Dios, indicará supuestas contradicciones. Presentará argumentos opuestos de la ciencia, la filosofía y la tradición humana. Pero el soldado de Cristo debe estar firme probando la efectividad de su arma por el uso de ella a tiempo y fuera de tiempo.</p>
+
+        <p>Las armas guerreras del cristiano parecen ridículas al hombre del mundo. El plan que fue efectivo en Jericó podría ser ridiculizado por los jefes militares de hoy. El ejército insignificante de Gedeón podría evocar solamente el ridículo. Y ¿qué diremos de la honda de David, el aguijón para los bueyes de Samgar, y del miserable ejército de necios que Dios ha tenido a través de los siglos? La mente espiritual sabe que Dios no está de lado de los grandes batallones, sino que le place escoger lo pobre y lo débil y lo despreciado de este mundo para glorificarse en ellos.</p>
+
+        <p>La guerra exige el conocimiento del enemigo y de sus tácticas. Es igual en la guerra cristiana. "Porque no tenemos lucha contra sangre y carne, sino contra principados, contra potestades, contra los gobernadores de las tinieblas de este siglo, contra huestes espirituales de maldad en las regiones celestes" (Efesios 6:12). Sabemos que Satanás mismo se disfraza como ángel de luz. Por tanto no es de extrañarse que sus ministros se disfracen de ministros de justicia, cuyo fin será conforme a sus obras (2ª Corintios 11:14-15). Un soldado cristiano bien preparado sabe que la oposición más amarga no vendrá del borracho, ni del ladrón vulgar, ni de la ramera, sino más bien de los ministros de la religión profesante. Fueron los líderes religiosos los que persiguieron la iglesia primitiva. Pablo recibió los peores ataques de manos de quienes profesan ser siervos de Dios. Y así ha sido a través de los años. Los ministros de Satanás se transforman en ministros de justicia. Hablan lenguaje religioso, usan ropas religiosas, y actúan con delicada piedad, pero su corazón está lleno de odio por Cristo y por el Evangelio.</p>
+
+        <p>La guerra no admite distracciones. "Ninguno que milita se enreda en los negocios de la vida, a fin de agradar a aquel que lo tomó por soldado". (2ª Timoteo 2:4). El discípulo de Cristo aprende a ser intolerante con todo lo que se pueda interponer entre su alma y su entera devoción a su Señor Jesucristo. Es despiadado sin ser ofensivo; firme, sin ser descortés. Tiene una pasión y solamente una. Todo lo demás debe quedar bajo entera sujeción.</p>
+
+        <p>La guerra exige valentía frente al peligro. "Por tanto, tomad toda la armadura de Dios, para que podáis resistir en el día malo, y habiendo acabado todo, estar firmes. Estad, pues, firmes..." (Efesios 6:13-14). Algunos han indicado que la armadura del cristiano según la descripción de Efesios 6:13-18 no hace provisión para la espalda y por lo tanto, no hace provisión para la huida ¿Por qué huir? Si "somos más que vencedores por medio de aquel que nos amó", si nadie puede estar contra nosotros y vencernos porque Dios es por nosotros, si la victoria está asegurada aún antes que comencemos la lucha, ¿cómo podemos pensar en retroceder?.</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Que viva con los vencedores,</div>
+            <div class="poem-line">o perezca en la batalla,</div>
+            <div class="poem-line">he de luchar con los moradores</div>
+            <div class="poem-line">de las tinieblas donde Satán se halla.</div>
+            <div class="poem-line">Fuerte es el enemigo que avanza,</div>
+            <div class="poem-line">desnuda, oh Señor, está mi espada</div>
+            <div class="poem-line">para derribar su estandarte y lanza</div>
+            <div class="poem-line">por la virtud que a tu Palabra ha sido dada.</div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Capítulo 9 - EL DOMINIO DEL MUNDO</h2>
+
+        <p>Dios nos ha llamado a dominar el mundo. No fue su intención que naciéramos hombres y muriéramos almaceneros. Su propósito no fue que ocupáramos nuestra vida siendo oficiales de empresas intrascendentes.</p>
+
+        <p>Cuando Dios creó al hombre, le dio dominio sobre la tierra. Le coronó de gloria y honra y puso todas las cosas bajo sus pies. El hombre fue investido de dignidad y soberanía poco menos que los ángeles. Cuando Adán pecó, perdió el dominio que había sido suyo por decreto divino. En vez de ejercer una supremacía indiscutible, gobernó en forma inestable sobre un reino incierto.</p>
+
+        <p>Hay un sentido en el Evangelio en el cual podemos recuperar el dominio. Ahora no se trata del control que se pueda tener sobre perros gruñones o víboras venenosas, sino el pedir las naciones como nuestra herencia y los términos de la tierra como posesión nuestra. "El verdadero imperialismo constituye un imperio por la soberanía espiritual y moral; atracción y dominio por la fascinante radiancia de una vida pura y santificada".</p>
+
+        <p>Realmente, la dignidad del llamamiento cristiano es algo que Adán jamás conoció. Somos coadjutores con Dios en la redención del mundo. "Este es nuestro mandato: Que unjamos hombres en el nombre de Cristo para una vida real, para que sean soberanos sobre el yo, para servir en el reino".</p>
+
+        <p>Es una tragedia que muchos en el día de hoy no han podido comprender la alta dignidad de nuestro llamamiento. Estamos contentos con pasar los años congratulando las bajezas, o destacándonos en cosas sin importancia. Nos arrastramos en vez de volar. Pocos han tenido la visión de pedir países para Cristo.</p>
+
+        <p>Spurgeon fue una excepción. Escribió el siguiente mensaje a su hijo:</p>
+
+        <p>"No me gustaría que tú, siendo llamado por Dios para ser misionero, mueras millonario. No me gustaría que siendo apto para ser misionero fueras coronado rey.</p>
+
+        <p>¿Qué son lo reyes, los nobles, las diademas, todo junto, cuando los comparas con la dignidad de ganar almas para Cristo, con el honor especial de edificar para Cristo, no sobre el fundamento de otro hombre, sino predicando el Evangelio de Cristo en regiones lejanas?"</p>
+
+        <p>Otra excepción fue Juan Mott. Cuando el Presidente Coolidge le pidió que fuera embajador en Japón, Mott contestó: "Señor Presidente, desde que Dios me llamó para ser Su embajador, ya no tengo oídos para otros llamamientos".</p>
+
+        <p>Billy Graham habló de otra excepción: "Cuando la Standard Oil Co. buscaba un hombre en el Lejano Oriente, escogieron un misionero para que fuera su representante. Le ofrecieron 10,000 dólares al año, y él rehusó. Veinticinco mil. Rehusó. Cincuenta mil. Nuevamente rechazo. Ellos le preguntaron: "¿Qué hay de malo?" Él les contestó: "Su precio es muy bueno, pero el trabajo insignificante. Dios me ha llamado para que sea misionero".</p>
+
+        <p>El llamamiento del cristiano es el más noble y si lo comprendemos, nuestra vida tendrá más altura. Ya no hablaremos de nosotros mismos como "llamados a ser plomeros", o médicos, o dentistas. Seremos uno de aquellos que ha sido llamado a ser apóstol de Jesucristo, y todo lo demás sea solamente el medio por el cual obtenemos el sustento. Nos sentiremos llamados a predicar el Evangelio a toda criatura, a hacer discípulos de entre todas las naciones, a evangelizar el mundo.</p>
+
+        <p>¿Dices que es una tarea inmensa? Sí, inmensa, pero no imposible. La inmensidad de la tarea está indicada por la siguiente visión gráfica del mundo en miniatura: Si reducimos el mundo imaginariamente a una población de mil, tendríamos que 290 de ellos serían cristianos profesantes y 710 no lo serían, 80 personas serían comunistas con un dominio sobre 370 personas. De los 290 cristianos profesantes , 70 serían protestantes. La mitad de este pueblo no habría oído mencionar el nombre de Cristo, pero más de la mitad estaría en condiciones de oír acerca de Marx. Mientras tanto, un 35 por ciento de la riqueza de este pueblo estaría en manos de los protestantes, los cuales consumirían un 16 por ciento de los alimentos producidos (siendo ellos mismos un 7 por ciento de la población). Ellos se preocuparían de hacer fuertes reservas para el futuro, mientras el resto de la población pasaría hambre.</p>
+
+        <p>¿Cómo va a ser ganado el mundo para Cristo en esta generación con estadísticas como la citada? Imposible, a menos que haya hombres y mujeres que amen a Dios con todo su corazón, y que amen a su prójimo como a sí mismos. La tarea será cumplida solamente con la dedicación y devoción que brotan de un amor imperecedero.</p>
+
+        <p>Los que han sido constreñidos por el amor a Cristo considerarán que ningún sacrificio es demasiado grande para realizarlo por él. Harán por amor a Él lo que jamás habrían hecho por una ganancia material. No contarán su vida preciosa para nada. Gastarán y se gastarán con tal que los hombres no perezcan sin haber oído el Evangelio.</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Crucificado Señor,</div>
+            <div class="poem-line">dame un corazón como el tuyo.</div>
+            <div class="poem-line">Enséñame a amar las almas que perecen.</div>
+            <div class="poem-line">Que mi alma y corazón</div>
+            <div class="poem-line">el contacto contigo aprecien,</div>
+            <div class="poem-line">Y dame amor,</div>
+            <div class="poem-line">como el de Aquel que dio el Hijo suyo,</div>
+            <div class="poem-line">por dar a los perdidos salvación que no merecen.</div>
+        </div>
+
+        <p>La causa está perdida, a menos que el amor la motive. De otro modo, nada sirve. El ministerio cristiano entonces llega a ser como metal que resuena o címbalo que retiñe. Pero cuando el amor es la estrella guiadora, cuando los hombres van inflamados con devoción a Cristo, ningún poder existe en la tierra que pueda detener el avance arrasador del Evangelio.</p>
+
+        <p>Obsérvese entonces un grupo de discípulos entregados enteramente a Cristo, atravesando océanos y tierras como portadores de un glorioso mensaje, incansables, siempre procurando entrar en nuevas áreas, encontrando en cada persona una vida por la cual Cristo murió y ambicionando que sean adoradores de Cristo por la eternidad. ¿Qué métodos usan estos hombres que no son de este mundo para dar a conocer a Cristo?</p>
+
+        <p>El Nuevo Testamento presenta dos métodos principales para alcanzar al mundo con el Evangelio. El primero era la proclamación pública. El segundo es la instrucción privada.</p>
+
+        <p>En cuanto al primer método fue usado por Jesucristo y sus discípulos. Donde quiera que se reunían gentes, allí había una oportunidad para predicar las buenas nuevas. Así encontramos que se proclamó el Evangelio en los mercados, prisiones, sinagogas, playas, y en las riberas de los ríos. La urgencia y el carácter superlativo del mensaje hacía que fuera imposible pensar en lugares convencionales de reunión.</p>
+
+        <p>El segundo método de propagación de la fe cristiana es la doctrinación de individuos. Este es el método que Jesús usó en la preparación de los doce. Llamó a este pequeño grupo de hombres para que estuvieran con Él y para poderlos enviar. Día a día los instruyó en la verdad de Dios. Les puso por delante la tarea para la cual estaban destinados. Les advirtió detalladamente los peligros y dificultades que encontrarían. Les introdujo a los consejos privados de Dios y les hizo partícipes de los gloriosos pero arduos planes de Dios. Los envió como a ovejas en medio de lobos. Los dotó del poder del Espíritu Santo y se lanzaron a decir al mundo las nuevas del Salvador resucitado ascendido y glorificado. La efectividad de este método se ve en el hecho de que ese grupo reducido a 11 por la defección del traidor, revolucionó el mundo para gloria del Señor Jesús.</p>
+
+        <p>El apóstol Pablo no solamente practicó este método, sino que urgió a Timoteo a que lo practicará. "Lo que has oído de mí ante muchos testigos, esto encarga a hombres fieles que sean idóneos para enseñar también a otros" (2ª Timoteo 2:2) El primer paso es la selección cuidadosa y con oración de los hombres fieles. El segundo es el impartirles la gloriosa visión. El tercero es enviar a estos hombres que doctrinen a otros (Mateo 28:19).</p>
+
+        <p>A los que codician ver números y piden del Señor grandes multitudes este método les parecerá tedioso y aburrido. Pero Dios sabe lo que Él está haciendo y sus métodos son los mejores métodos. Dios puede hacer mucho más por medio de unos pocos discípulos dedicados a Él que por medio de un ejército gigante de religiosos satisfechos.</p>
+
+        <p>Cuando estos discípulos salen en el nombre de Cristo ellos siguen ciertos principios básicos bosquejados en la Palabra de Dios. En primer lugar son astutos como serpientes, pero inofensivos como palomas. Su sabiduría la piden de Dios para poder seguir el difícil camino que tienen que transitar. Al mismo tiempo son mansos y humildes en sus contactos con sus semejantes. Nadie puede temer la violencia física de parte de ellos. Los hombres deben temer solamente a sus oraciones y a su inquebrantable testimonio.</p>
+
+        <p>Estos discípulos se mantienen libres de la política de este mundo. No se sienten llamados a luchar contra ninguna forma de gobierno ni contra ideas políticas. Pueden trabajar bajo cualquier forma de gobierno y ser leales a tal gobierno mientras no se les exija comprometer su testimonio o negar a su Señor. Entonces ellos rehusan obedecer y se someten a las consecuencias. Pero ellos nunca conspiran contra un gobierno humano, ni se comprometen en luchas revolucionarias. ¿No dijo el Señor: "Si mi reino fuera de este mundo, mis servidores pelearían?" Estos hombres son embajadores de un país celestial y pasan por este mundo como peregrinos y extranjeros.</p>
+
+        <p>Son absolutamente honestos en todos sus tratos. Evitan los subterfugios de cualquier tipo. Su sí es sí y su no es no. Rechazan la mentira popular de que "el fin justifica los medios". Bajo ninguna circunstancia hacen el mal para que venga algún bien. Cada uno es una conciencia encarnada que preferiría morir antes que pecar.</p>
+
+        <p>Otro principio invariablemente seguido por estos hombres es que su trabajo lo unen a una iglesia local. Salen al mundo a ganar almas para Cristo, pero ganadas las almas las ponen en comunión con la iglesia local donde pueden ser fortalecidas y edificadas en su santísima fe. El verdadero discípulo comprende que la iglesia local es la unidad de Dios puesta para propagar la fe y que el trabajo mejor y más duradero se edifica siguiendo esos delineamientos.</p>
+
+        <p>Los discípulos son prudentes y evitan el implicarse en alianzas de cualquier tipo. Firmemente rehusan permitir que sus movimientos sean dictados por organizaciones humanas. Reciben sus ordenes de marchar directamente del cuartel general en los cielos. Esto no significa que operan sin la confianza y la recomendación de la iglesia local. Por el contrario, consideran tal recomendación como una confirmación del llamamiento de Dios para el servicio. Pero insisten en la necesidad de servir a Cristo en obediencia a su Palabra y en que él les guíe.</p>
+
+        <p>Publicidad. Tratan de mantenerse en segundo plano. Su propósito es glorificar a Cristo y hacer que Él sea conocido. No buscan grandes cosas para sí, ni quieren revelar su estrategia al enemigo. De modo que trabajan silenciosamente sin ostentación, indiferentes a las alabanzas o las calumnias de los hombres. Saben que el cielo será el mejor lugar y el más seguro para conocer los resultados de su labor.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Capítulo 10 - EL DISCÍPULO Y EL MATRIMONIO</h2>
+
+        <div class="scripture">
+            "Hay eunucos que así mismos se hicieron eunucos por causa del reino de los cielos. El que sea capaz de recibir esto, que lo reciba"
+            <span class="scripture-ref">Mateo 19:12</span>
+        </div>
+
+        <p>Una de las grandes dudas que debe enfrentar el discípulo es si Dios le ha llamado a una vida de casado o al celibato. Este es un asunto completamente personal en que el Señor debe guiar a cada individuo. Nadie puede legislar para otro en esto, e interferir en una esfera tan vital es un asunto riesgoso.</p>
+
+        <p>La enseñanza general de la Palabra de Dios es que el matrimonio fue instituido por Dios para la raza humana con varios propósitos en vista:</p>
+
+        <ol class="bible-list">
+            <li><strong>Primero.</strong> Fue ordenado para compañía y placer. Dios vio que no era bueno que el hombre estuviera solo. (Génesis 2:18). Su designio es la perpetuación de la raza. Esto lo indica la orden de Dios: "Fructificad y multiplicaos; llenad la tierra" (Génesis 1:28). Fue instaurado para la preservación de la pureza de la familia y la sociedad. "Pero a causa de las fornicaciones, cada uno tenga su propia mujer, y cada una tenga su propio marido" (1ª Corintios 7:2).</li>
+        </ol>
+
+        <p>No hay nada en la Palabra de Dios que sugiera que el matrimonio es incompatible con la vida de pureza, devoción y servicio a Cristo. En vez de eso se nos recuerda que "honroso sea en todos el matrimonio, y el lecho sin mancilla" (Hebreos 13:4). Se afirma que el que halló esposa halló buena cosa (Proverbios 18:22). Las palabras del Predicador pueden aplicarse al matrimonio: Dos son mejor que uno (Eclesiastés 4:9), particularmente si los dos se han juntado para servir al Señor. La mayor efectividad de la acción unida se sugiere en Deuteronomio 32:30 donde uno vence a mil y dos hacen huir a diez mil.</p>
+
+        <p>Sin embargo, aunque el matrimonio es la voluntad de Dios para la raza humana en general, no es necesariamente la voluntad de Dios para cada individuo. Aun cuando puede considerarse como un derecho inalienable, el discípulo de Cristo puede preferir la omisión de este derecho con el fin de entregar más íntegramente su vida al servicio de Cristo.</p>
+
+        <p>El Señor Jesús hizo notar que en su reino habría algunos que llegarían a ser eunucos por causa de Cristo. "Pues hay eunucos que nacieron así del vientre de su madre, y hay eunucos que son hechos eunucos por los hombres, y hay eunucos que así mismos se hicieron eunucos por causa del reino de los cielos. El que sea capaz de recibir esto, que lo reciba" (Mateo 19:12).</p>
+
+        <p>En definitiva este es un voto voluntario que una persona pronuncia considerando dos factores:</p>
+
+        <ol class="bible-list">
+            <li>Que Dios le haya guiado a permanecer célibe.</li>
+            <li>El deseo de entregarse más completamente a la obra del Señor sin añadir a sus responsabilidades la de una vida hogareña.</li>
+        </ol>
+
+        <p>Debe existir la convicción del llamamiento divino (1ª Corintios 7:7). Solamente así puede el discípulo estar seguro que el Señor le dará gracia necesaria para la continencia.</p>
+
+        <p>Segundo, debe ser voluntario. Cuando se abraza al celibato por imposición eclesiástica aumenta el peligro de caer en la impureza y la inmoralidad. El apóstol Pablo enfatiza el hecho que una persona soltera puede darse más completamente a los negocios del Rey: "Quisiera, pues, que estuvieseis sin congoja. El soltero tiene cuidado de las cosas del Señor, de cómo agradar al Señor; pero el casado tiene cuidado de las cosas del mundo, de cómo agradar a su mujer". (1ª Corintios 7:32,33). Por eso él expresa el deseo de que el soltero y las viudas queden como él, esto es, sin casarse (1ª Corintios 7:7,8)</p>
+
+        <p>Aun para aquellos que ya estaban casados el Apóstol insistía en que la brevedad de la vida y del tiempo exige que todo debe sujetarse a la gran tarea de dar a conocer a Cristo: "Pero esto digo, hermanos: que el tiempo es corto; resta, pues, que los que tienen esposa sean como si no la tuviesen; y los que disfrutan de este mundo, como si no lo disfrutasen; porque la apariencia de este mundo se pasa" (1ª Corintios 7:29,31).</p>
+
+        <p>Esto ciertamente no significa que el hombre debe repudiar sus responsabilidades hogareñas y ser un misionero. Pero sí significa que no debe vivir para los placeres y satisfacciones de la vida de hogar. No debería usar su esposa e hijos como excusas para dar a Jesús el segundo lugar.</p>
+
+        <p>Carlos T. Studd tenía miedo que su novia estuviera tan enamorada de él que el Señor Jesús no tuviera el primer lugar en la vida de ella. Para evitar esto, compuso un verso para que ella lo recitara diariamente:</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Jesús yo te amo mucho, mucho más</div>
+            <div class="poem-line">que lo que a Carlos amaré jamás</div>
+        </div>
+
+        <p>Los comunistas han aprendido a subordinar los asuntos de familia a la gran tarea de conquistar el mundo para su causa. Gordon Arnold Lonsdale es un ejemplo. Después de ser capturado en Inglaterra en 1960 como espía ruso, la policía encontró una carta de su esposa y una respuesta de seis páginas. Su esposa escribió: "¡Qué injusta es la vida! Entiendo completamente que estás trabajando y este es tu deber; que amas el trabajo y tratas de hacer esto a conciencia. Sin embargo mi razón trabaja con la estrechez femenina y sufro terriblemente. Escríbeme diciendo cuánto me amas y puede ser que me sienta mejor".</p>
+
+        <p>Lonsdale replicó, en parte: "Todo lo que te voy a decir es que tengo una sola vida y que esta no es fácil. Todo lo que quiero es usar mi vida de modo que al considerarla, al mirar hacia atrás no tenga que avergonzarme... Tengo apenas 39 años; ¿es mucho lo que he dejado?" El tiempo es corto, escribía Pablo, sólo queda que "los que tienen esposa sean como si no la tuvieran...."</p>
+
+        <p>La tragedia es que el matrimonio apresurado o equivocado ha sido con frecuencia la herramienta del diablo para descaminar a algún joven discípulo del camino de la mayor efectividad para Él. Muchos aspirantes a pioneros han acabado su carrera de servicio absoluto al Señor en el momento en que se casaron.</p>
+
+        <p>El matrimonio es un amargo enemigo del cumplimiento de la voluntad de Cristo de que todos oigan su mensaje. El casamiento ha sido dado por Dios. Pero cuando se interpone como una barrera a la voluntad de Dios es porque ha sido mal usado. Podríamos nombrar muchos hombres y mujeres, que han tenido un llamamiento definido al campo misionero y que jamás lo hicieron efectivo porque sus cónyuges los retuvieron. Nada, ni siquiera la bendición que es un compañero para toda la vida, debe anteponerse al propósito de Dios en la vida de uno. Hoy hay almas que mueren sin Cristo porque los seres queridos han tomado prioridad a la voluntad de Dios.</p>
+
+        <p>Es quizá especialmente cierto, en el caso de pioneros, que una vida de celibato es preferible. Los hombres y mujeres de la vanguardia a veces necesitan negarse aún las necesidades de la vida, sin mencionar sus placeres más moderados y legítimos. Es su deber soportar penalidades, ser buenos soldados, sin las ataduras de las cosas de esta vida, atletas a los que ningún peso los embaraza... Es una vocación, un llamamiento y una ordenación a un servicio especial.</p>
+
+        <div class="scripture">
+            "Y cualquiera que haya dejado casas, o hermanos, o hermanas, o padre, o madre, o mujer, o hijos, o tierras, por mi nombre, recibirá cien veces más, y heredará la vida eterna"
+            <span class="scripture-ref">Mateo 19:29</span>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Capítulo 11 - CONSIDERANDO EL COSTO</h2>
+
+        <p>El Señor Jesús nunca trató de engañar a los hombres para que hicieran una profesión de fe de labios. Tampoco trató de conseguir una gran cantidad de seguidores predicando un mensaje popular.</p>
+
+        <p>En realidad, cada vez que veía que la gente empezaba a acumularse en pos de él, se volvía y los hacía pasar por el cedazo presentándoles las condiciones más duras del discipulado.</p>
+
+        <p>En una de estas ocasiones el Señor advirtió a sus seguidores que el que quisiera ir en pos de él debería calcular el costo en primer lugar. Dijo:</p>
+
+        <div class="scripture">
+            "Porque ¿quién de vosotros, queriendo edificar una torre, no se sienta primero y calcula los gastos, a ver si tiene lo que necesita para acabarla? No sea que después que haya puesto el cimiento, y no pueda acabarla, todos los que lo vean comiencen a hacer burla de él, diciendo: Este hombre comenzó a edificar, y no pudo acabar. ¿O qué rey, al marchar a la guerra contra otro rey, no se sienta primero y considera si puede hacer frente con diez mil al que viene contra él con veinte mil? Y si no puede, cuando el otro está todavía lejos, le envía una embajada y le pide condiciones de paz"
+            <span class="scripture-ref">Lucas 14:28-32</span>
+        </div>
+
+        <p>Compara aquí Jesús la vida cristiana con una edificación y con una guerra. Es total desatino comenzar a edificar una torre, dijo, a menos que uno se asegure de tener los fondos suficientes para acabarla. De otro modo, la estructura sin terminar permanecerá como un monumento a su falta de previsión.</p>
+
+        <p>¡Cuán verdadero es esto! Hacer una decisión para Cristo en el ambiente cálido y emotivo de una campaña evangelística es una cosa, pero es algo completamente diferente negarse a sí mismo, tomar su cruz cada día y seguir a Cristo. Aunque no cuesta nada llegar a ser cristiano, ser un cristiano firme que camina por el sendero del sacrificio, la separación y el sufrimiento por amor a Cristo cuesta todo. Comenzar bien la carrera cristiana es una cosa, pero es algo completamente diferente llevar esta carrera cada día, el mal tiempo y en buen tiempo, en la prosperidad y en la adversidad, en el gozo y en el dolor.</p>
+
+        <p>Un mundo de crítica está al acecho. Por algún extraño instinto comprende que la vida cristiana lo depara todo o nada. Cuando ve un cristiano cabal puede despreciarlo, mofarse de él o ridiculizarlo, aunque interiormente sienta un profundo respeto por la persona que valientemente se entrega a Cristo. Pero cuando el mundo ve al cristiano mediocre siente solamente desprecio. Se burla de él diciendo: "Este hombre comenzó a edificar y no pudo acabar. Causó gran conmoción cuando se convirtió, pero no es diferente de nosotros. Comenzó corriendo a gran velocidad pero ahora está marcando el paso". Por eso el Salvador dice: ¡Es mejor que calcules el costo!</p>
+
+        <p>Su segunda ilustración se refiere a un rey que iba a declarar la guerra a otro. ¿No sería sensato que primero calculara si sus 10,000 soldados podrían derrotar el ejército enemigo con doble cantidad de soldados? Sería muy absurdo que él declarara primero la guerra, para luego reconsiderar su decisión cuando los ejércitos estuvieran marchando a enfrentarse. Lo único que le quedaría por hacer sería enarbolar la bandera blanca, enviar una embajada proponiendo la rendición, arrastrándose abyectamente en el polvo, y humildemente pidiendo condiciones de paz.</p>
+
+        <p>No es exageración comparar la vida Cristiana con la guerra. Hay fieros enemigos: el mundo, la carne, el diablo. Hay desalientos, derramamientos de sangre y sufrimientos. Hay largas horas de agotadora vigilia, y de anhelar la llegada del día. Hay lágrimas, fatigas y pruebas. Y hay que morir diariamente.</p>
+
+        <p>Cualquiera que quiere seguir a Cristo debe recordar el Getsemaní Gabbata y el Gólgota, y entonces, calcular el costo. Porque es asunto de absoluta entrega a Cristo o de una derrota lamentable con todo lo que significaría de desgracia y degradación.</p>
+
+        <p>Con estas dos ilustraciones el Señor Jesús advirtió a sus oyentes del peligro de hacer una decisión impulsiva a ser sus discípulos. Él podía prometerles persecuciones, tribulaciones y desastres. Ellos debían calcular el costo en primer lugar. Y ¿cuál es el costo? El versículo siguiente contesta:</p>
+
+        <div class="scripture">
+            "Así, pues, cualquiera de vosotros que no renuncia a todo lo que posee, no puede ser mi discípulo"
+            <span class="scripture-ref">Lucas 14:33</span>
+        </div>
+
+        <p>El costo es "todo", todo lo que el hombre tiene y todo lo que es. Esto es lo que significaba para el Salvador cuando lo dijo; no puede su significado ser más liviano para aquellos que quieren seguirle. Si aquel que era rico más que todo lo que podemos imaginar, voluntariamente se hizo pobre, ¿es posible que sus discípulos ganen la corona por un medio menos costoso?.</p>
+
+        <p>El Señor concluye su discurso con este resumen: "Buena es la sal; más si la sal se hiciere insípida, ¿con qué se sazonará?" (Lucas 14:34).</p>
+
+        <p>En tiempos de nuestro Señor, no se disponía de sal pura como tenemos en nuestras mesas actualmente. La sal de ellos contenía diversas impurezas, arena por ejemplo. Era posible que la sal perdiera su sabor. El resto era insípido y sin valor. No se podía usar como tierra, ni como fertilizante. A veces se le usaba para hacer un sendero. De modo que llegaba a "servir más para nada, sino para ser echada fuera y hollada por los hombres" (Mateo 5:13).</p>
+
+        <p>La aplicación de la ilustración es clara. Hay un propósito principal en la existencia del cristiano: Glorificar a Dios mediante una vida que se presenta en sacrificio a él. El cristiano puede perder su labor haciendo tesoros en la tierra proveyendo para su propia comodidad y placer tratando de ganar fama en el mundo, prostituyendo su vida y sus talentos en un mundo indigno.</p>
+
+        <p>Si el creyente yerra el propósito central de su vida yerra también en todo. Entonces no es útil, ni es decorativo. Su destino es, como la sal insípida, ser hollada bajo el pie de los hombres, por sus burlas, el desprecio y escarnio. Las palabras finales son: "El que tenga oídos para oír, oiga".</p>
+
+        <p>Muchas veces el Señor después de haber dicho algo duro, añadía estas palabras. Es como si hubiera sabido que no todos los hombres las aceptarían. Él sabía que algunos mediante explicaciones invalidarían, tratando de suavizar sus exigencias tan tajantes. Pero también sabía que había corazones abiertos, jóvenes y maduros que se inclinarían ante sus demandas, reconociendo que son dignas de él.</p>
+
+        <p>Así es que Él dejó la puerta abierta: "el que tenga oídos para oír, oiga". Los que oyen son aquellos que calculan el costo y después dicen:</p>
+
+        <div class="poem-box">
+            <div class="poem-line">He decido seguir a Cristo;</div>
+            <div class="poem-line">aunque solo, yo le seguiré</div>
+            <div class="poem-line">el mundo atrás, la cruz ya sigo;</div>
+            <div class="poem-line">no vuelvo atrás, no vuelvo atrás.</div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Capítulo 12 - A LA SOMBRA DEL MARTIRIO</h2>
+
+        <p>Cuando una persona ha dedicado verdaderamente su vida a Cristo, parece que el vivir o el morir les resulta cosa de poca importancia. Todo lo que importa es que el Señor sea glorificado.</p>
+
+        <p>Al leer la biografía de los mártires Juan y Betty Stam, "Sangre y Semilla", Ud. encontrará una nota que se repite a través del libro "como siempre, ahora también será magnificado Cristo en mi cuerpo, o por vida o por muerte" (Filipenses 1:20).</p>
+
+        <p>El mismo fondo se descubre en los escritos de Jim Elliot. Mientras aún estudiaba en la Universidad de Wheaton, escribió en su diario: "Estoy listo para morir por los Aucas". En otra oportunidad escribió: "Padre toma mi vida, también mi sangre si así lo quieres, y consúmeme con tu fuego envolvente. Yo no la conservaré, porque no es mía para hacer tal cosa. Tómala toda. Derrama mi vida como oblación por el mundo. La sangre solo tiene valor si fluye ante tu altar".</p>
+
+        <p>Muchos de los héroes de Dios llegaron hasta este mismo punto en sus tratos con Dios. Comprendían que "Si el grano de trigo no cae en la tierra y muere, queda solo; pero si muere, lleva mucho fruto". (Juan 12:24). Ellos estaban dispuestos a ser ese grano de trigo. Esta actitud es exactamente la que el Señor enseñó a sus discípulos: "Todo el que pierda su vida por causa de mí, éste la salvará" (Lucas 9:24).</p>
+
+        <p>Mientras más pensamos en esto, más razonable nos parece.</p>
+
+        <p><strong>En primer lugar,</strong> nuestra vida de ningún modo nos pertenece. Pertenece a Aquél que nos valorizó con el costo de su sangre preciosa. ¿Podremos egoístamente aferrarnos a lo que es de Otro? C.T. Studd respondió a esta pregunta: "Yo sabía que Cristo había muerto por mí, pero nunca había podido comprender que si Él murió por mí, yo ya no me pertenezco. Redimir significa comprar por segunda vez algo que una vez perteneció al comprador. De modo que si ahora le pertenezco a Él, tengo que decidir entre ser un ladrón y quedarme con lo que no es mío, o entregarlo todo a Dios. Cuando por fin comprendí que Jesucristo murió por mí, no me fue difícil entregarlo todo a Él".</p>
+
+        <p><strong>En segundo lugar,</strong> pase lo que pase todos tenemos que morir algún día, a menos que el Señor venga antes. ¿Qué será más trágico, morir en el servicio del Señor, o como mero accidente estadístico? ¿No tenía razón Jim Elliot cuando dijo: "No es tonto el que da lo que no puede conservar, para ganar algo que no puede perder"?.</p>
+
+        <p><strong>En tercer lugar,</strong> es lógica irrevocable que si el Señor Jesucristo murió por nosotros, lo menos que nosotros podríamos hacer es morir por Él. Si el siervo no es mayor que su Señor, ¿qué derecho tenemos de ir al cielo más cómodamente que el Señor? Esta consideración hizo decir a C.T. Studd "Si Jesucristo es Dios y murió por mí, no hay ningún sacrificio que yo haga por Él que pueda ser demasiado costoso".</p>
+
+        <p><strong>Finalmente</strong> es un crimen cuidar nuestra vida cuando por medio de su abandono sin riesgo podemos traer bienaventuranza eterna a nuestros semejantes. Ha habido hombres que han ofrecido su vida en interés por las investigaciones de la medicina. Otros han muerto por rescatar seres queridos de edificios en llamas. Aún hay muchos que mueren en guerras por salvar su patria del poder del enemigo. ¿Cuánto vale la vida de los hombres para nosotros? Podemos decir con F.W.H. Myers:</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Sólo almas veo caminar a mi alrededor;</div>
+            <div class="poem-line">esclavo es el rey, siervo es el vencedor;</div>
+            <div class="poem-line">almas que comparten una esperanza vana</div>
+            <div class="poem-line">¡Ay! contentos con la apariencia mundana.</div>
+            <div class="poem-line">Entonces, con intensidad insoportable,</div>
+            <div class="poem-line">escucho el llamado del Dios adorable</div>
+            <div class="poem-line">¡Salva a estos! Sálvalos aunque perezcas</div>
+            <div class="poem-line">Da tu vida por ellos, menos no ofrezcas.</div>
+        </div>
+
+        <p>A todos no se les pide que den su vida como mártires. La espada, el fusil, la cárcel están reservados para unos pocos selectos, relativamente hablando. Pero cada uno de nosotros puede tener espíritu de mártir, el celo de un mártir, la devoción de un mártir. Cada uno de nosotros puede vivir como aquellos que ya han dado sus vidas a Cristo.</p>
+
+        <div class="poem-box">
+            <div class="poem-line">En la buena, en la mala,</div>
+            <div class="poem-line">con la cruz o la corona,</div>
+            <div class="poem-line">la tormenta o la bonanza</div>
+            <div class="poem-line">mi alma y cuerpo ¡Oh Dios! acepta</div>
+            <div class="poem-line">para que hagas con ellos</div>
+            <div class="poem-line">tu voluntad perfecta.</div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Capítulo 13 - LA RECOMPENSA DEL VERDADERO DISCIPULADO</h2>
+
+        <p>Una vida que ha sido dedicada al Señor Jesús tiene una profunda recompensa. Hay gozo y placer en seguir a Cristo y eso es vida en sentido más verdadero.</p>
+
+        <p>El Salvador dijo repetidas veces: "El que pierde su vida por causa de Mí, la hallará". En realidad, este dicho se halla en los cuatro Evangelios con más frecuencia que cualquier otro dicho suyo (véase Mateo 10:39, 16:25; Marcos 8:35; Lucas 9:24; 17:33; Juan 12:25). ¿Por qué se repite tantas veces? Es porque establece uno de los principios fundamentales de la vida cristiana: que una vida guardada para sí es una vida perdida, pero entregar la vida por Cristo es encontrar la vida, es salvarla, es gozarla y guardarla para la eternidad.</p>
+
+        <p>Ser un cristiano mediocre solamente asegura una existencia miserable. Estar enteramente consagrado a Cristo es el camino más seguro para llegar a gozar de lo mejor de Él. Ser un verdadero discípulo es ser un esclavo de Jesucristo y encontrar en su servicio perfecta libertad. Hay libertad en los pasos de todo aquel que pueda decir: "Amo a mi Señor; no saldré libre".</p>
+
+        <p>El discípulo no se enreda en pequeños asuntos o en cosas pasajeras. Está preocupado con asuntos eternos, y como Hudson Taylor, goza del lujo de tener pocas cosas que cuidar. Puede ser desconocido, sin embargo bien conocido. Aunque está constantemente muriendo, vive persistentemente. Es castigado, pero no muerto. Aun en la tristeza tiene gozo. Pobre, pero enriqueciendo a muchos. No tiene nada, pero lo posee todo (2ª Corintios 6:9,10).</p>
+
+        <p>Y si se puede decir que la vida del verdadero discipulado en la que más satisfacción espiritual produce en este mundo, también podemos afirmar con certeza que recibirá la más alta recompensa en la vida venidera. "Porque el Hijo del Hombre vendrá en la gloria de su Padre con sus ángeles, y entonces pagará a cada uno conforme sus obras" (Mateo 16:27).</p>
+
+        <p>Por lo tanto, el hombre verdaderamente bendecido en el tiempo y en la eternidad es el que puede decir con Borden de Yale: "Señor Jesús, yo saco mis manos en lo que concierne a mi vida. Ocupa Tú el trono de mi corazón. Cámbiame, límpiame, y úsame a tu arbitrio".</p>
+
+        <div class="poem-box">
+            <div class="poem-line">"No es su voluntad que ninguno perezca"</div>
+            <div class="poem-line">Jesús entronado en la gloria más excelsa</div>
+            <div class="poem-line">vio nuestro mundo pobre, dolorido y caído</div>
+            <div class="poem-line">y por ello derramó su vida compasivo.</div>
+            <div class="poem-line">Muchos perecen, atestan ya nuestra senda,</div>
+            <div class="poem-line">corazones con cargas que no hay quien pueda.</div>
+            <div class="poem-line">Jesús salvaría, pero nadie les ha hablado</div>
+            <div class="poem-line">de quien libra de la desesperación y el pecado.</div>
+            <div class="poem-line">"No es su voluntad que ninguno perezca"</div>
+            <div class="poem-line">vestido en carne nuestra con sus penas y dolores,</div>
+            <div class="poem-line">vino a consolar y a salvar a los peores,</div>
+            <div class="poem-line">a sanar al quebrantado y a todo el que padezca.</div>
+            <div class="poem-line">Muchos perecen, la siega pronto se acaba;</div>
+            <div class="poem-line">los obreros son pocos, la noche se acerca;</div>
+            <div class="poem-line">Jesús te está llamando, su desafío acepta,</div>
+            <div class="poem-line">y adornarás tu corona con las almas salvadas.</div>
+            <div class="poem-line">Mucho para los placeres, poco para Cristo,</div>
+            <div class="poem-line">Tiempo para el mundo con sus placeres vanos.</div>
+            <div class="poem-line">No hay tiempo para Cristo, para dar al convicto,</div>
+            <div class="poem-line">la palabra que falta para hacerle cristiano.</div>
+            <div class="poem-line">Muchos perecen, oíd, nos están llamando;</div>
+            <div class="poem-line">"El Salvador presentadnos, ¡Ay! de Él habladnos.</div>
+            <div class="poem-line">Estamos tan cansados, de culpas tan cargados,</div>
+            <div class="poem-line">que nada hacer podemos para ser aliviados."</div>
+            <div class="poem-line">"No es tu voluntad que ninguno perezca:</div>
+            <div class="poem-line">siendo seguidor Tuyo, ¿puedo vivir, acaso,</div>
+            <div class="poem-line">tranquilo mientras almas se deslizan abajo</div>
+            <div class="poem-line">perdidas porque su ayuda no les ofrezco?</div>
+            <div class="poem-line">¡Oh! Maestro, perdóname, inspírame de nuevo,</div>
+            <div class="poem-line">quita la mundanalidad, pon en mí el anhelo</div>
+            <div class="poem-line">de vivir conforme a lo eterno que no perece.</div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - Cristianismo Radical<br>
+    Por William McDonald
+</footer>
+</body>
+</html>
