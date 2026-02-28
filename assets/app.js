@@ -53,7 +53,10 @@ if (grid) {
       <img class="card-cover" src="${revista.cover}" alt="Portada de ${revista.description}" loading="lazy" />
       <h2>${revista.title}</h2>
       <p>${revista.description}</p>
-      <a class="button" href="${revista.href}">Abrir revista</a>
+      <div class="actions">
+        <a class="button" href="${revista.href}?theme=light">Vista día</a>
+        <a class="button theme-button" href="${revista.href}?theme=dark">Vista noche</a>
+      </div>
     `;
     grid.appendChild(card);
   });
