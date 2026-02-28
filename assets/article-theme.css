@@ -1,0 +1,119 @@
+html[data-theme="dark"] body {
+  background: #0f172a !important;
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .container,
+html[data-theme="dark"] .content-section,
+html[data-theme="dark"] .editorial-container,
+html[data-theme="dark"] .editorial-section,
+html[data-theme="dark"] .intro-box,
+html[data-theme="dark"] .scripture,
+html[data-theme="dark"] .highlight-box,
+html[data-theme="dark"] .warning-box,
+html[data-theme="dark"] .editors-note,
+html[data-theme="dark"] .math-illustration,
+html[data-theme="dark"] .note,
+html[data-theme="dark"] .application-box,
+html[data-theme="dark"] .question-box,
+html[data-theme="dark"] .poem-box,
+html[data-theme="dark"] .reader-note,
+html[data-theme="dark"] .continuation,
+html[data-theme="dark"] .bible-list {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #334155 !important;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] p,
+html[data-theme="dark"] li,
+html[data-theme="dark"] span,
+html[data-theme="dark"] strong,
+html[data-theme="dark"] footer,
+html[data-theme="dark"] .poem-line,
+html[data-theme="dark"] .author-name,
+html[data-theme="dark"] .editorial-title,
+html[data-theme="dark"] .editorial-text,
+html[data-theme="dark"] .main-title {
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .scripture-ref,
+html[data-theme="dark"] .subtitle,
+html[data-theme="dark"] .red-emphasis,
+html[data-theme="dark"] .author,
+html[data-theme="dark"] .emphasis,
+html[data-theme="dark"] .hebrew-word {
+  color: #93c5fd !important;
+}
+
+html[data-theme="dark"] a {
+  color: #93c5fd;
+}
+
+html[data-theme="dark"] a.menu-button,
+html[data-theme="dark"] .button {
+  color: #e2e8f0 !important;
+  background: #334155 !important;
+  border-color: #475569 !important;
+}
+
+html[data-theme="dark"] footer,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] hr,
+html[data-theme="dark"] .content-section,
+html[data-theme="dark"] .bible-list li {
+  border-color: #334155 !important;
+}
+
+.theme-toggle-button {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  line-height: 1;
+  padding: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.theme-toggle-button:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+header.has-theme-toggle {
+  position: relative;
+}
+
+header.has-theme-toggle .theme-toggle-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero .theme-toggle-button {
+  position: absolute;
+  top: 16px;
+  right: 28px;
+  border-color: rgba(148, 163, 184, 0.4);
+  color: var(--text);
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.hero .theme-toggle-button:hover {
+  background: rgba(15, 23, 42, 0.15);
+}
