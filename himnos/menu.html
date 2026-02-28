@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himnario</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #e8f0fe;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: #1a2c3f;
+        }
+        .page {
+            max-width: 1440px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .title-section {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .title-section h1 {
+            font-size: 3.2rem;
+            font-weight: 400;
+            font-family: 'Cormorant Garamond', serif;
+            color: #0a314b;
+            border-bottom: 3px solid #3d7eb3;
+            display: inline-block;
+            padding: 0 2rem 0.4rem;
+            letter-spacing: 0.5px;
+        }
+        .title-section .sub {
+            color: #1f5680;
+            font-size: 1.2rem;
+            margin-top: 0.6rem;
+            font-style: italic;
+        }
+        .filter-container {
+            background: #ffffffec;
+            backdrop-filter: blur(4px);
+            border-radius: 60px;
+            padding: 0.8rem 2rem;
+            margin: 2rem 0 1.5rem;
+            box-shadow: 0 8px 22px -10px #1f4b81;
+            border: 1px solid #b3cfec;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem 2rem;
+        }
+        .search-group {
+            flex: 2 1 260px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .search-group i {
+            color: #1f6fb0;
+            font-size: 1.3rem;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 0.9rem 1.3rem;
+            border: 1px solid #b6cee8;
+            border-radius: 40px;
+            font-size: 1rem;
+            background: white;
+        }
+        #searchInput:focus {
+            outline: none;
+            border-color: #1f6fb0;
+            box-shadow: 0 0 0 3px #a7c8ed;
+        }
+        .alpha-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem 0.4rem;
+            background: #daeafc;
+            padding: 0.6rem 1.6rem;
+            border-radius: 48px;
+            justify-content: center;
+        }
+        .alpha-btn {
+            width: 2.7rem;
+            height: 2.7rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 1px solid #7aa9d4;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: #103a5c;
+            cursor: pointer;
+            transition: 0.1s;
+            text-transform: uppercase;
+        }
+        .alpha-btn:hover {
+            background: #cde0f5;
+            border-color: #1f6fb0;
+        }
+        .alpha-btn.active {
+            background: #1a5f9c;
+            border-color: #0a2e4e;
+            color: white;
+            box-shadow: 0 4px 10px #397bb5;
+        }
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0 1.2rem;
+            color: #1a4c77;
+            font-weight: 450;
+            padding: 0 0.5rem;
+        }
+        #clearLink {
+            color: #1f5b8c;
+            text-decoration: none;
+            border-bottom: 1px dashed #7fa9ce;
+            cursor: pointer;
+        }
+        #clearLink:hover {
+            color: #083358;
+            border-bottom: 1px solid;
+        }
+        .hymn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.9rem;
+            background: #e2efff;
+            padding: 2rem 1.3rem;
+            border-radius: 36px;
+            border: 1px solid #b9d3f2;
+            box-shadow: inset 0 0 0 2px #ffffff80, 0 12px 24px -16px #0e3552;
+        }
+        .hymn-card {
+            background: #ffffff;
+            border-radius: 30px;
+            padding: 0.7rem 0.9rem 0.7rem 1.2rem;
+            border-left: 8px solid #4287c0;
+            box-shadow: 0 3px 12px #a1c0e0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.94rem;
+            line-height: 1.35;
+            transition: 0.15s;
+            border: 1px solid #d0e3fc;
+            border-left-width: 8px;
+        }
+        .hymn-card:hover {
+            background: #f2faff;
+            border-left-color: #1c6fb0;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 20px -12px #2f6599;
+        }
+        .prefix {
+            font-weight: 700;
+            color: #13548f;
+            background: #dbeafe;
+            border-radius: 40px;
+            padding: 0.2rem 0.9rem;
+            font-size: 0.73rem;
+            letter-spacing: 0.5px;
+            border: 1px solid #97bee7;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+        .title {
+            font-weight: 450;
+            color: #0f2d44;
+        }
+        .no-result {
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #d4e5fc;
+            border-radius: 60px;
+            color: #1a4c77;
+            font-size: 1.3rem;
+            border: 2px dashed #7da9d3;
+        }
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #2e6190;
+            border-top: 1px solid #bdd7f5;
+            padding-top: 1.5rem;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:opsz,wght@14..32,400;14..32,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="page">
+    <div class="title-section">
+        <h1>HIMNARIO</h1>
+    </div>
+
+    <div class="filter-container">
+        <div class="search-group">
+            <i class="fas fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Buscar himno (ej. 'cordero', 'aleluya')" autocomplete="off">
+        </div>
+        <div class="alpha-strip" id="alphaStrip"></div>
+    </div>
+
+    <div class="stats-row">
+        <span><i class="fa-regular fa-star" style="color:#1d6fb0;"></i> <span id="counter">0</span> himnos</span>
+        <span id="clearLink"><i class="fa-regular fa-circle-xmark"></i> limpiar filtros</span>
+    </div>
+
+    <div id="hymnGrid" class="hymn-grid"></div>
+
+    <div class="footer">
+        <i class="fa-regular fa-heart" style="color:#2e7ab3;"></i>  Himnario
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ----------------------------------------------------------
+        // BASE COMPLETA · 787 HIMNOS (A1 … Y31)
+        // Extraídos directamente de las imágenes proporcionadas
+        // ----------------------------------------------------------
+        const hymns = [
+            // A1 – A73
+            { prefix: "A1", title: "A Cristo sólo a Cristo" },
+            { prefix: "A2", title: "A los pies del Maestro" },
+            { prefix: "A3", title: "A mi Cristo" },
+            { prefix: "A4", title: "¿A quién iremos?" },
+            { prefix: "A5", title: "A su nombre gloria" },
+            { prefix: "A6", title: "A ti Omnipotente servimos" },
+            { prefix: "A7", title: "Abre mis ojos" },
+            { prefix: "A8", title: "Abreme las puertas" },
+            { prefix: "A9", title: "Aceite fresco del cielo" },
+            { prefix: "A10", title: "Aclamada a Dios" },
+            { prefix: "A11", title: "Adelante oh Rey eterno" },
+            { prefix: "A12", title: "Admirable, Consejero" },
+            { prefix: "A13", title: "Adorable, adorable" },
+            { prefix: "A14", title: "Adoremos, adoremos" },
+            { prefix: "A15", title: "Ahora canta, canta" },
+            { prefix: "A16", title: "Ahora en Cristo soy nueva" },
+            { prefix: "A17", title: "Ahora es tiempo de alabar" },
+            { prefix: "A18", title: "Al Cordero de Dios" },
+            { prefix: "A19", title: "A Cristo vivo sirvo" },
+            { prefix: "A20", title: "Al que está...en el trono" },
+            { prefix: "A21", title: "Al que está sentado" },
+            { prefix: "A22", title: "Al que nos amó" },
+            { prefix: "A23", title: "Al Rey de los reyes" },
+            { prefix: "A24", title: "Alaba a Dios adora" },
+            { prefix: "A25", title: "Alaba al Señor y canta" },
+            { prefix: "A26", title: "Alabad a Jehová naciones" },
+            { prefix: "A27", title: "Alabad a Jehová porque él" },
+            { prefix: "A28", title: "Alabad a nuestro Dios" },
+            { prefix: "A29", title: "Alabad siervos de Jehová" },
+            { prefix: "A30", title: "Alabad siervos del Señor" },
+            { prefix: "A31", title: "Alabaré, alabaré" },
+            { prefix: "A32", title: "Alcemos un canto con gozo" },
+            { prefix: "A33", title: "Alégrate oh estéril" },
+            { prefix: "A34", title: "Alégrate y canta" },
+            { prefix: "A35", title: "Alelu, aleluya, gloria" },
+            { prefix: "A36", title: "Aleluya...adora al Rey de reyes" },
+            { prefix: "A37", title: "Aleluya...alabado sea Dios" },
+            { prefix: "A38", title: "Aleluya...es Señor" },
+            { prefix: "A39", title: "Aleluya...Jesús es Rey" },
+            { prefix: "A40", title: "Aleluya, aleluya" },
+            { prefix: "A41", title: "Aleluya, hosanna, cantemos" },
+            { prefix: "A42", title: "Aleluya, nuestro Dios poderoso" },
+            { prefix: "A43", title: "Aleluya porque el Señor" },
+            { prefix: "A44", title: "Algo sucedió el día" },
+            { prefix: "A45", title: "Alza tu voz" },
+            { prefix: "A46", title: "Alzad oh puertas vuestras" },
+            { prefix: "A47", title: "Alzaré mis ojos a los montes" },
+            { prefix: "A48", title: "Alzo mis manos al Señor" },
+            { prefix: "A49", title: "Allá en el cielo" },
+            { prefix: "A50", title: "Ama y puedes ser feliz" },
+            { prefix: "A51", title: "Amado Jesucristo" },
+            { prefix: "A52", title: "Amados, amémonos unos" },
+            { prefix: "A53", title: "Amarás al Señor tu Dios" },
+            { prefix: "A54", title: "Amarte sólo a ti Señor" },
+            { prefix: "A55", title: "Amo a Jehová porque ha oído" },
+            { prefix: "A56", title: "Amo a mi Señor mas" },
+            { prefix: "A57", title: "Amor tan grande" },
+            { prefix: "A58", title: "Ampárame Omnipotente" },
+            { prefix: "A59", title: "Anda delante de mí" },
+            { prefix: "A60", title: "Ando con Cristo" },
+            { prefix: "A61", title: "Ante ti Señor levantaré" },
+            { prefix: "A62", title: "Antes de ti Señor mi alma" },
+            { prefix: "A63", title: "Anunciadora de Sion" },
+            { prefix: "A64", title: "Aplaudid tus manos" },
+            { prefix: "A65", title: "Aquel que fue manifestado" },
+            { prefix: "A66", title: "Aquel que la buena obra" },
+            { prefix: "A67", title: "Aquí estás mi gran Señor" },
+            { prefix: "A68", title: "Arrasando muros tomad" },
+            { prefix: "A69", title: "Atráeme, atráeme a ti Señor" },
+            { prefix: "A70", title: "Aun si mi vida derrumbarse" },
+            { prefix: "A71", title: "Aunque la higuera no florezca" },
+            { prefix: "A72", title: "Aunque marche por la oscuridad" },
+            { prefix: "A73", title: "Aunque te nieguen" },
+
+            // B1 – B23
+            { prefix: "B1", title: "Batid las manos pueblos todos" },
+            { prefix: "B2", title: "Bendecid al Señor todos los" },
+            { prefix: "B3", title: "Bendecid al Señor y todo" },
+            { prefix: "B4", title: "Bendeciré a Jehová en todo" },
+            { prefix: "B5", title: "Bendeciré a Jehová...de continuo" },
+            { prefix: "B6", title: "Bendeciré a Jesús...lo exaltaré" },
+            { prefix: "B7", title: "Bendice alma mía a Jehová" },
+            { prefix: "B8", title: "Bendigan al Señor siervos" },
+            { prefix: "B9", title: "Bendigan al Señor todos" },
+            { prefix: "B10", title: "Bendito, bendito Cordero" },
+            { prefix: "B11", title: "Bendito, bendito el Cordero" },
+            { prefix: "B12", title: "Bendito Cristo que hermoso" },
+            { prefix: "B13", title: "Bendito es el Señor" },
+            { prefix: "B14", title: "Bendito Jehová el Dios" },
+            { prefix: "B15", title: "Bendito sea el Señor que oyó" },
+            { prefix: "B16", title: "Bendito sea Jehová" },
+            { prefix: "B17", title: "Bienaventurado el hombre" },
+            { prefix: "B18", title: "Buen pastor, luz verdadera" },
+            { prefix: "B19", title: "Bueno es alabarte oh Dios" },
+            { prefix: "B20", title: "Bueno es alabarte oh Señor" },
+            { prefix: "B21", title: "Bueno es Dios siempre fiel" },
+            { prefix: "B22", title: "Busca primero el reino de Dios" },
+            { prefix: "B23", title: "Buscando por el mundo" },
+
+            // C1 – C97
+            { prefix: "C1", title: "Cada día con Cristo" },
+            { prefix: "C2", title: "Cada día de nuevo" },
+            { prefix: "C3", title: "Cada día te adoraré" },
+            { prefix: "C4", title: "Cambia mi corazón" },
+            { prefix: "C5", title: "Cambiaste con tu luz" },
+            { prefix: "C6", title: "Canta oh hija de Sion" },
+            { prefix: "C7", title: "Cantad a Jehová cántico nuevo" },
+            { prefix: "C8", title: "Cantad al Señor cántico nuevo" },
+            { prefix: "C9", title: "Cantad alegres a Jehová" },
+            { prefix: "C10", title: "Cantad, cantad, cantad" },
+            { prefix: "C11", title: "Cantaré a mi Señor por siempre" },
+            { prefix: "C12", title: "Cantaré al Señor por toda" },
+            { prefix: "C13", title: "Cantaré con gozo al Señor" },
+            { prefix: "C14", title: "Canto alabanza al Cordero" },
+            { prefix: "C15", title: "Castillo fuerte es nuestro Dios" },
+            { prefix: "C16", title: "Celebrad, celebrad la gloria" },
+            { prefix: "C17", title: "Ciertamente oh Dios yo nada" },
+            { prefix: "C18", title: "Ciertamente volverán los" },
+            { prefix: "C19", title: "Clamaré a mi Señor" },
+            { prefix: "C20", title: "Clamaré al Señor" },
+            { prefix: "C21", title: "Clamaré a mi Señor" },
+            { prefix: "C22", title: "Clamaré a mi Señor" },
+            { prefix: "C23", title: "Clamaré a mi Señor" },
+            { prefix: "C24", title: "Clamaré a mi Señor" },
+            { prefix: "C25", title: "Clamaré a mi Señor" },
+            { prefix: "C26", title: "Clamaré a mi Señor" },
+            { prefix: "C27", title: "Clamaré a mi Señor" },
+            { prefix: "C28", title: "Clamaré a mi Señor" },
+            { prefix: "C29", title: "Cómo agradecerte tu sacrificio" },
+            { prefix: "C30", title: "Cómo agradecer lo que has hecho" },
+            { prefix: "C31", title: "Como David ante el Señor" },
+            { prefix: "C32", title: "Como el ciervo...mi alma" },
+            { prefix: "C33", title: "Como el ciervo...hijo tú eres" },
+            { prefix: "C34", title: "Como el ciervo...y te adoro" },
+            { prefix: "C35", title: "Como el ciervo busca" },
+            { prefix: "C36", title: "Cómo es posible que yo viva" },
+            { prefix: "C37", title: "Como jabón de lavadores" },
+            { prefix: "C38", title: "Cómo me ama Jesús" },
+            { prefix: "C39", title: "¿Cómo podré estar triste?" },
+            { prefix: "C40", title: "Con alegría saldréis" },
+            { prefix: "C41", title: "Con mano fuerte de Egipto" },
+            { prefix: "C42", title: "Con mis labios y mi vida" },
+            { prefix: "C43", title: "Con mis manos hacia el cielo" },
+            { prefix: "C44", title: "Con tu amor me has cambiado" },
+            { prefix: "C45", title: "Con vino y aceite me ungió" },
+            { prefix: "C46", title: "Confía sólo en el Señor" },
+            { prefix: "C47", title: "Confío en ti, confío en ti" },
+            { prefix: "C48", title: "Conocer a mi Cristo" },
+            { prefix: "C49", title: "Conozco que todo lo puedes" },
+            { prefix: "C50", title: "Consumado es, consumado es" },
+            { prefix: "C51", title: "Contigo estaré mi amigo" },
+            { prefix: "C52", title: "Creaste el universo" },
+            { prefix: "C53", title: "Creo aunque todo parezca" },
+            { prefix: "C54", title: "Creo en ti, en ti" },
+            { prefix: "C55", title: "Cristo atráeme más y más" },
+            { prefix: "C56", title: "Cristo eres bello" },
+            { prefix: "C57", title: "Cristo es la peña de Horeb" },
+            { prefix: "C58", title: "Cristo es mi roca" },
+            { prefix: "C59", title: "Cristo es mi Señor, Salvador" },
+            { prefix: "C60", title: "Cristo es mi tesoro" },
+            { prefix: "C61", title: "Cristo es Rey todos alabad" },
+            { prefix: "C62", title: "Cristo está aquí, su presencia" },
+            { prefix: "C63", title: "Cristo está conmigo lo puedo" },
+            { prefix: "C64", title: "Cristo maravilloso eres tú" },
+            { prefix: "C65", title: "Cristo no es ninguna religión" },
+            { prefix: "C66", title: "Cristo nombre glorioso" },
+            { prefix: "C67", title: "Cristo quiero caminar siempre" },
+            { prefix: "C68", title: "Cristo rompe las cadenas" },
+            { prefix: "C69", title: "Cristo te amo, Cristo te amo" },
+            { prefix: "C70", title: "Cristo te exalto te proclamo" },
+            { prefix: "C71", title: "Cristo tu nombre es más" },
+            { prefix: "C72", title: "Cristo vivo, Cristo vivo" },
+            { prefix: "C73", title: "Cual barro en las manos" },
+            { prefix: "C74", title: "Cual la quietud de un" },
+            { prefix: "C75", title: "Cuán glorioso es el cambio" },
+            { prefix: "C76", title: "Cuán hermosos son los pies" },
+            { prefix: "C77", title: "Cuán pastor ansiado" },
+            { prefix: "C78", title: "Cuán preciosos son tus amores" },
+            { prefix: "C79", title: "Cuando Cristo no vivía en mí" },
+            { prefix: "C80", title: "Cuando Cristo venga en gloria" },
+            { prefix: "C81", title: "Cuando el Padre mandó" },
+            { prefix: "C82", title: "Cuando el Señor hiciere volver" },
+            { prefix: "C83", title: "Cuando Jesús llegó a mi vida" },
+            { prefix: "C84", title: "Cuando los ojos" },
+            { prefix: "C85", title: "Cuando miro tu amor" },
+            { prefix: "C86", title: "Cuando pienso en mi vida" },
+            { prefix: "C87", title: "Cuando tú llegaste" },
+            { prefix: "C88", title: "Cuando yo sentí" },
+            { prefix: "C89", title: "¿Cuántas veces Señor?" },
+            { prefix: "C90", title: "Cuántas veces, cuántas veces" },
+            { prefix: "C91", title: "Cuéntame la historia" },
+            { prefix: "C92", title: "Cuerpo santo partido" },
+            { prefix: "C93", title: "Cúbreme con tu manto" },
+            { prefix: "C94", title: "Cúrame, Sáname" },
+            { prefix: "C95", title: "Cristo te necesita" },
+            { prefix: "C96", title: "Cristo volverá" },
+            { prefix: "C97", title: "Cristo, mi Cristo" },
+
+            // D1 – D40
+            { prefix: "D1", title: "Da la mano a tu hermano" },
+            { prefix: "D2", title: "Dame amor oh Señor" },
+            { prefix: "D3", title: "Dános mas Señor de ti" },
+            { prefix: "D4", title: "Daré gracias a ti por ser" },
+            { prefix: "D5", title: "De este mundo ya no quiero" },
+            { prefix: "D6", title: "De gloria en gloria te veo" },
+            { prefix: "D7", title: "De tanto buscar por fin" },
+            { prefix: "D8", title: "De todas las tribus, lenguas" },
+            { prefix: "D9", title: "De tus misericordias cantaré" },
+            { prefix: "D10", title: "Debemos subir allá y tomar" },
+            { prefix: "D11", title: "Deja a Dios levantarse en ti" },
+            { prefix: "D12", title: "Déjame ver tu Reino" },
+            { prefix: "D13", title: "Desde el amanecer hasta el" },
+            { prefix: "D14", title: "Desde el fondo del mar" },
+            { prefix: "D15", title: "Desde el levantar del sol" },
+            { prefix: "D16", title: "Desde el pronto amanecer" },
+            { prefix: "D17", title: "Desde temprano en la mañana" },
+            { prefix: "D18", title: "Día fatal vendrá" },
+            { prefix: "D19", title: "Día tan grande no puedo" },
+            { prefix: "D20", title: "Dice el débil fuerte soy" },
+            { prefix: "D21", title: "Dicen que soy un soñador" },
+            { prefix: "D22", title: "Digno, digno, digno" },
+            { prefix: "D23", title: "Digno, digno es el Señor" },
+            { prefix: "D24", title: "Digno el Cordero Inmolado" },
+            { prefix: "D25", title: "Digno eres Cordero, Santo" },
+            { prefix: "D26", title: "Digno eres de tomar el libro" },
+            { prefix: "D27", title: "Digno eres Señor de tomar" },
+            { prefix: "D28", title: "Digno, hermoso, santo" },
+            { prefix: "D29", title: "Dios es mi padre, yo soy" },
+            { prefix: "D30", title: "Dios es nuestro amparo" },
+            { prefix: "D31", title: "Dios está aquí que hermoso" },
+            { prefix: "D32", title: "Dios está aquí tan cierto como" },
+            { prefix: "D33", title: "Dios nos trajo hasta aquí" },
+            { prefix: "D34", title: "Dios precioso Dios" },
+            { prefix: "D35", title: "Dios tan sólo Dios" },
+            { prefix: "D36", title: "Dios te adoro a ti" },
+            { prefix: "D37", title: "Dispuesto está mi corazón" },
+            { prefix: "D38", title: "Donde está el Espíritu de Dios" },
+            { prefix: "D39", title: "Donde quiera que esté" },
+            { prefix: "D40", title: "Dulce comunión" },
+
+            // E1 – E97
+            { prefix: "E1", title: "Ebenu, shalom, alejem" },
+            { prefix: "E2", title: "Edifica oh Señor el lugar" },
+            { prefix: "E3", title: "El amor de Cristo que lindo es" },
+            { prefix: "E4", title: "El atardecer se fue" },
+            { prefix: "E5", title: "El Dios de Israel es" },
+            { prefix: "E6", title: "El Dios de Israel es el" },
+            { prefix: "E7", title: "El Dios de Israel es el poderoso" },
+            { prefix: "E8", title: "El Dios de Israel es el Rey" },
+            { prefix: "E9", title: "El Dios de Israel es el Rey eterno" },
+            { prefix: "E10", title: "El es Jehová Dios de la creación" },
+            { prefix: "E11", title: "El es la fuente de agua viva" },
+            { prefix: "E12", title: "El es la imagen del Dios" },
+            { prefix: "E13", title: "El es la Roca cuya obra es" },
+            { prefix: "E14", title: "El es la vid y yo la rama" },
+            { prefix: "E15", title: "El extendió su misericordia" },
+            { prefix: "E16", title: "El glorioso día esperado es hoy" },
+            { prefix: "E17", title: "El gozo del Señor me fortalecerá" },
+            { prefix: "E18", title: "El me ha dado su manto" },
+            { prefix: "E19", title: "El me liberó, él me liberó" },
+            { prefix: "E20", title: "El Nazareno sufrió por mí" },
+            { prefix: "E21", title: "El que estaba muerto resucitó" },
+            { prefix: "E22", title: "El que todo lo llena en todo" },
+            { prefix: "E23", title: "El Rey me atrajo" },
+            { prefix: "E24", title: "El Rey resucitó" },
+            { prefix: "E25", title: "El se acercó a la tumba" },
+            { prefix: "E26", title: "El Señor es mi luz" },
+            { prefix: "E27", title: "El Señor está presente" },
+            { prefix: "E28", title: "El Señor Jesús es mi pastor" },
+            { prefix: "E29", title: "El Señor marchando va" },
+            { prefix: "E30", title: "El Señor me llenó de gozo" },
+            { prefix: "E31", title: "El Señor resucitó, aleluya" },
+            { prefix: "E32", title: "El Shaddai, el Shaddai" },
+            { prefix: "E33", title: "El vio mi viña y la vio desolada" },
+            { prefix: "E34", title: "El vive, él vive" },
+            { prefix: "E35", title: "Ellos cantan de Moisés" },
+            { prefix: "E36", title: "Elohim, Adonai, mi Dios" },
+            { prefix: "E37", title: "En aquel día cantarán este" },
+            { prefix: "E38", title: "En el altar de Dios" },
+            { prefix: "E39", title: "En el cielo se oye" },
+            { prefix: "E40", title: "En el principio el Espíritu" },
+            { prefix: "E41", title: "En esta reunión Cristo está" },
+            { prefix: "E42", title: "En Jerusalén mora nuestro Dios" },
+            { prefix: "E43", title: "En Jesús puse toda" },
+            { prefix: "E44", title: "En las olas inmensas" },
+            { prefix: "E45", title: "En la cruz con Cristo estoy" },
+            { prefix: "E46", title: "En la presencia de tu pueblo" },
+            { prefix: "E47", title: "En la Roca estaré" },
+            { prefix: "E48", title: "En la vida hay pruebas" },
+            { prefix: "E49", title: "En los cielos puedo contemplar" },
+            { prefix: "E50", title: "En medio de la congregación" },
+            { prefix: "E51", title: "En medio de la congregación" },
+            { prefix: "E52", title: "En mi corazón hay banderas" },
+            { prefix: "E53", title: "En mi vida gloria te doy" },
+            { prefix: "E54", title: "En momentos así, levanto" },
+            { prefix: "E55", title: "En pastos verdes" },
+            { prefix: "E56", title: "En pecado yo vivía" },
+            { prefix: "E57", title: "En presencia estar de Cristo" },
+            { prefix: "E58", title: "¿En quién creíste tú?" },
+            { prefix: "E59", title: "En Sion yo pongo" },
+            { prefix: "E60", title: "En tu presencia yo me puedo" },
+            { prefix: "E61", title: "Enséñame oh Dios" },
+            { prefix: "E62", title: "Entonces la iglesia se alegrará" },
+            { prefix: "E63", title: "Entra en la presencia del Señor" },
+            { prefix: "E64", title: "Entraré por sus puertas" },
+            { prefix: "E65", title: "Entré en pacto con el Señor" },
+            { prefix: "E66", title: "Envuelveme Señor" },
+            { prefix: "E67", title: "Eres digno de alabar" },
+            { prefix: "E68", title: "Eres digno de alabanza" },
+            { prefix: "E69", title: "Eres Dios del cielo" },
+            { prefix: "E70", title: "Eres la roca eternal" },
+            { prefix: "E71", title: "Eres mi protector" },
+            { prefix: "E72", title: "Eres todo para mí" },
+            { prefix: "E73", title: "Es agua viva, es agua viva" },
+            { prefix: "E74", title: "Es el león de la tribu de Judá" },
+            { prefix: "E75", title: "Es mi mandamiento" },
+            { prefix: "E76", title: "Escucha esta triste canción" },
+            { prefix: "E77", title: "Escúchame porque a ti he" },
+            { prefix: "E78", title: "Esperaré delante de ti" },
+            { prefix: "E79", title: "Espíritu de Dios llena mi ser" },
+            { prefix: "E80", title: "Espíritu del Santo Dios" },
+            { prefix: "E81", title: "Esta obra no va a parar" },
+            { prefix: "E82", title: "Estamos de fiesta con Jesús" },
+            { prefix: "E83", title: "Estamos de fiesta pues" },
+            { prefix: "E84", title: "Estamos juntos otra vez" },
+            { prefix: "E85", title: "Estamos parados en lugar" },
+            { prefix: "E86", title: "Estamos todos reunidos" },
+            { prefix: "E87", title: "Este es el Cristo que yo" },
+            { prefix: "E88", title: "Éste es el día, éste es el día" },
+            { prefix: "E89", title: "Este es el día de alabanza" },
+            { prefix: "E90", title: "Este gozo que yo siento" },
+            { prefix: "E91", title: "Este pueblo que has formado" },
+            { prefix: "E92", title: "Estoy alegre porque soy" },
+            { prefix: "E93", title: "Exalta al Rey de gloria" },
+            { prefix: "E94", title: "Exaltad a Jesús" },
+            { prefix: "E95", title: "Exalto a Cristo" },
+            { prefix: "E96", title: "Examíname oh Dios" },
+            { prefix: "E97", title: "Examíname oh Dios y conoce" },
+
+            // F1 – F4
+            { prefix: "F1", title: "Fija tus ojos en Cristo" },
+            { prefix: "F2", title: "Firmes y adelante huestes" },
+            { prefix: "F3", title: "Fuerte Dios, Consolador" },
+            { prefix: "F4", title: "Fuerte y poderoso eres" },
+
+            // G1 – G18
+            { prefix: "G1", title: "Gloria a Cristo gloria" },
+            { prefix: "G2", title: "Gloria a ti Jesús divino" },
+            { prefix: "G3", title: "Gloria al nombre de Cristo" },
+            { prefix: "G4", title: "Gloria al Padre" },
+            { prefix: "G5", title: "Gloria al Rey" },
+            { prefix: "G6", title: "Gloria al Señor por siempre" },
+            { prefix: "G7", title: "Gloria, gloria a tu nombre" },
+            { prefix: "G8", title: "Gozaos en el Señor" },
+            { prefix: "G9", title: "Gracias Cristo" },
+            { prefix: "G10", title: "Gracias mi Dios por dar" },
+            { prefix: "G11", title: "Gracias porque estamos juntos" },
+            { prefix: "G12", title: "Gracias yo te doy a ti" },
+            { prefix: "G13", title: "Grande es el Señor, Creador" },
+            { prefix: "G14", title: "Grande es el Señor y digno" },
+            { prefix: "G15", title: "Grande gozo hay en mi alma" },
+            { prefix: "G16", title: "Grandes y admirables" },
+            { prefix: "G17", title: "Grandes y maravillosas" },
+            { prefix: "G18", title: "Guárdame como a la niña" },
+
+            // H1 – H31
+            { prefix: "H1", title: "Ha resucitado, ha resucitado" },
+            { prefix: "H2", title: "Hablaré a mis hermanos" },
+            { prefix: "H3", title: "Hacer tu voluntad Señor" },
+            { prefix: "H4", title: "Hallé un buen amigo" },
+            { prefix: "H5", title: "Has cambiado hoy mi ser" },
+            { prefix: "H6", title: "Has cambiado mi lamento" },
+            { prefix: "H7", title: "Has sido tan bueno conmigo" },
+            { prefix: "H8", title: "Hay cosas que no comprendo" },
+            { prefix: "H9", title: "Hay momentos que las palabras" },
+            { prefix: "H10", title: "Hay muchas historias" },
+            { prefix: "H11", title: "Hay poder, poder" },
+            { prefix: "H12", title: "Hay un poder que consume" },
+            { prefix: "H13", title: "Hay un pueblo que te ama" },
+            { prefix: "H14", title: "Hay un pueblo que vive muy" },
+            { prefix: "H15", title: "Hay una senda que el mundo" },
+            { prefix: "H16", title: "Hay victoria, hay victoria" },
+            { prefix: "H17", title: "Hay vida, hay vida" },
+            { prefix: "H18", title: "He de confiar en Jesús" },
+            { prefix: "H19", title: "He decidido seguir a Cristo" },
+            { prefix: "H20", title: "He decidido seguir al Cordero" },
+            { prefix: "H21", title: "He decidido seguirte Señor" },
+            { prefix: "H22", title: "He sido libre oh gloria a Dios" },
+            { prefix: "H23", title: "Heme aquí yo iré Señor" },
+            { prefix: "H24", title: "Hijo de Dios te alabamos" },
+            { prefix: "H25", title: "Hosanna, hosanna" },
+            { prefix: "H26", title: "Hoy recordé oh Dios" },
+            { prefix: "H27", title: "Hoy te bendigo mi Señor" },
+            { prefix: "H28", title: "Hoy tu voz escuché" },
+            { prefix: "H29", title: "Hoy vengo a derramar" },
+            { prefix: "H30", title: "Humíllate en la presencia" },
+            { prefix: "H31", title: "Humilde vengo a ti" },
+
+            // J1 – J24
+            { prefix: "J1", title: "Jehová es el Señor" },
+            { prefix: "J2", title: "Jehová enviará de Sion" },
+            { prefix: "J3", title: "Jehová es mi roca y mi" },
+            { prefix: "J4", title: "Jehová es varón de guerra" },
+            { prefix: "J5", title: "Jehová está en medio de ti" },
+            { prefix: "J6", title: "Jehová está en su templo" },
+            { prefix: "J7", title: "Jehová se ha vestido de poder" },
+            { prefix: "J8", title: "Jehová tú eres mi Dios" },
+            { prefix: "J9", title: "Jesucristo prepárame en" },
+            { prefix: "J10", title: "Jesucristo reina ya" },
+            { prefix: "J11", title: "Jesús eres mi Dios" },
+            { prefix: "J12", title: "Jesús es el camino al cielo" },
+            { prefix: "J13", title: "Jesús es mi Rey soberano" },
+            { prefix: "J14", title: "Jesús, Jesús eres todo para mí" },
+            { prefix: "J15", title: "Jesús me escogiste antes" },
+            { prefix: "J16", title: "Jesús mi Dios hoy vengo a ti" },
+            { prefix: "J17", title: "Jesús reina, Jesús reina" },
+            { prefix: "J18", title: "Jesús te amo, Señor te adoro" },
+            { prefix: "J19", title: "Jesús tomó mi vida en sus" },
+            { prefix: "J20", title: "Jesús viene en las nubes" },
+            { prefix: "J21", title: "Jesús yo te amo, Jesús yo te" },
+            { prefix: "J22", title: "José un día a sus hermanos" },
+            { prefix: "J23", title: "Judá primero y la batalla" },
+            { prefix: "J24", title: "Junto a la cruz" },
+
+            // L1 – L35
+            { prefix: "L1", title: "La fuente del cielo fluyendo" },
+            { prefix: "L2", title: "La gloria de Jehová" },
+            { prefix: "L3", title: "La iglesia está llena" },
+            { prefix: "L4", title: "La salvación es de nuestro" },
+            { prefix: "L5", title: "La sangre de Cristo tiene poder" },
+            { prefix: "L6", title: "La vida en Jesús, aleluya" },
+            { prefix: "L7", title: "La vida eterna eres tú" },
+            { prefix: "L8", title: "Las aves ya no cantan" },
+            { prefix: "L9", title: "Las cuerdas me cayeron" },
+            { prefix: "L10", title: "Las estrellitas que están en el" },
+            { prefix: "L11", title: "Las puertas de los cielos" },
+            { prefix: "L12", title: "Le amo, le amo, le amo" },
+            { prefix: "L13", title: "Levanta tu casa sobre la Roca" },
+            { prefix: "L14", title: "Levantamos tu nombre" },
+            { prefix: "L15", title: "Levantaré mi voz" },
+            { prefix: "L16", title: "Levántate, levántate oh Dios" },
+            { prefix: "L17", title: "Levántate oh amado mío" },
+            { prefix: "L18", title: "Levántate Señor tus enemigos" },
+            { prefix: "L19", title: "Levántate Señor...a tu reposo" },
+            { prefix: "L20", title: "Levántate y canta porque he" },
+            { prefix: "L21", title: "Levántate y sálvame Señor" },
+            { prefix: "L22", title: "Libertador desde el tiempo" },
+            { prefix: "L23", title: "Libre me hiciste Señor" },
+            { prefix: "L24", title: "Libre para alabarte" },
+            { prefix: "L25", title: "Libre tú me hiciste libre" },
+            { prefix: "L26", title: "Limpia mi conciencia" },
+            { prefix: "L27", title: "Lléneme, lléname" },
+            { prefix: "L28", title: "Los cielos proclaman" },
+            { prefix: "L29", title: "Los dioses de este mundo" },
+            { prefix: "L30", title: "Los hijos de Sion se alegran" },
+            { prefix: "L31", title: "Los israelitas dieron siete" },
+            { prefix: "L32", title: "Los muros caen, los muros caen" },
+            { prefix: "L33", title: "Los que confían en Jehová" },
+            { prefix: "L34", title: "Los que esperan en Jehová" },
+            { prefix: "L35", title: "Los que esperan, los que" },
+
+            // M1 – M34
+            { prefix: "M1", title: "Majestad, gloria a su majestad" },
+            { prefix: "M2", title: "Maravilloso Dios tu permaneces" },
+            { prefix: "M3", title: "Más allá del cielo" },
+            { prefix: "M4", title: "Más de ti quiero vivirte" },
+            { prefix: "M5", title: "Mas no habrá siempre" },
+            { prefix: "M6", title: "Más que el centinela" },
+            { prefix: "M7", title: "Mas tu sacaste mi vida" },
+            { prefix: "M8", title: "Me alegraré, me alegraré" },
+            { prefix: "M9", title: "Me está libertando este santo" },
+            { prefix: "M10", title: "Me gozaré, me alegraré" },
+            { prefix: "M11", title: "Me ha mostrado el Señor" },
+            { prefix: "M12", title: "Me has ungido a mí" },
+            { prefix: "M13", title: "Me hirió el pecado" },
+            { prefix: "M14", title: "Me levantaré y saldré" },
+            { prefix: "M15", title: "Me librará del cazador" },
+            { prefix: "M16", title: "Me ofrezco Señor" },
+            { prefix: "M17", title: "Me sedujiste oh Jehová" },
+            { prefix: "M18", title: "Mi buen amigo y Dios" },
+            { prefix: "M19", title: "Mi confianza he puesto en ti" },
+            { prefix: "M20", title: "Mi corazón dispuesto está" },
+            { prefix: "M21", title: "Mi corazón he fijado en ti" },
+            { prefix: "M22", title: "Mi Cristo, mi Rey" },
+            { prefix: "M23", title: "Mi Dios poderoso eres fuerte" },
+            { prefix: "M24", title: "Mi esperanza, mi esperanza" },
+            { prefix: "M25", title: "Mi juventud Señor es para ti" },
+            { prefix: "M26", title: "Mi paz te doy a ti" },
+            { prefix: "M27", title: "Mi pensamiento eres tú Señor" },
+            { prefix: "M28", title: "Mi salvación es Jehová" },
+            { prefix: "M29", title: "Mi Señor me demostró el amor" },
+            { prefix: "M30", title: "Mira que lindo, que lindo es" },
+            { prefix: "M31", title: "Mirad cual amor nos ha dado" },
+            { prefix: "M32", title: "Mirad cuan bueno y delicioso" },
+            { prefix: "M33", title: "Mis pecados son borrados ya" },
+            { prefix: "M34", title: "Muéstranos tu gloria" },
+
+            // N1 – N22
+            { prefix: "N1", title: "Nada en la vida mi Señor" },
+            { prefix: "N2", title: "No daré mi vida a nadie" },
+            { prefix: "N3", title: "No descansaré hasta ver" },
+            { prefix: "N4", title: "No duerme el que cuida" },
+            { prefix: "N5", title: "No está la gloria en la" },
+            { prefix: "N6", title: "No hay Dios mayor" },
+            { prefix: "N7", title: "No hay Dios tan grande como" },
+            { prefix: "N8", title: "No hay imposibles para Dios" },
+            { prefix: "N9", title: "No hay problema tan grande" },
+            { prefix: "N10", title: "No hay Santo como Jehová" },
+            { prefix: "N11", title: "No me importa de donde tú" },
+            { prefix: "N12", title: "No me pidas que me vaya" },
+            { prefix: "N13", title: "No puedo estar triste" },
+            { prefix: "N14", title: "No puedo estar triste" },
+            { prefix: "N15", title: "No sé porqué Señor tú me" },
+            { prefix: "N16", title: "No te avergüences y alaba" },
+            { prefix: "N17", title: "No temáis manada pequeña" },
+            { prefix: "N18", title: "Noble sostén de la esperanza" },
+            { prefix: "N19", title: "Nos levantaremos con él" },
+            { prefix: "N20", title: "Nuestro Dios hizo los cielos" },
+            { prefix: "N21", title: "Nunca jamás me olvidaré" },
+            { prefix: "N22", title: "Nunca, nunca, Cristo me ha" },
+
+            // O1 – O25
+            { prefix: "O1", title: "Oh bendigan al Señor" },
+            { prefix: "O2", title: "Oh deja que el Señor te" },
+            { prefix: "O3", title: "Oh Dios eterno" },
+            { prefix: "O4", title: "Oh Jehová he oído tu palabra" },
+            { prefix: "O5", title: "Oh Jehová mira al que se" },
+            { prefix: "O6", title: "Oh Jehová muchos son mis" },
+            { prefix: "O7", title: "Oh Jehová oh Señor" },
+            { prefix: "O8", title: "Oh Jerusalén que bonita" },
+            { prefix: "O9", title: "Oh Jesucristo quiero decirte" },
+            { prefix: "O10", title: "Oh la gloria de tu presencia" },
+            { prefix: "O11", title: "Oh, oh, oh hosanna" },
+            { prefix: "O12", title: "Oh, oh, oh ven Señor Jesús" },
+            { prefix: "O13", title: "Oh qué amigo nos es Cristo" },
+            { prefix: "O14", title: "Oh Señor Jesús nadie ama como" },
+            { prefix: "O15", title: "Oh Señor Jesús quiero verte" },
+            { prefix: "O16", title: "Oh Señor ya te he encontrado" },
+            { prefix: "O17", title: "Oh si tú supieras amigo cuanto" },
+            { prefix: "O18", title: "Oh Sion, Sion" },
+            { prefix: "O19", title: "Oh ven a las cámaras reales" },
+            { prefix: "O20", title: "Oí la voz del que me llamaba" },
+            { prefix: "O21", title: "Oí tu voz que me decía" },
+            { prefix: "O22", title: "Orando sin cesar venceremos" },
+            { prefix: "O23", title: "Otra vez abriré ríos en el" },
+            { prefix: "O24", title: "Oye oh Dios...a mi oración" },
+            { prefix: "O25", title: "Oye oh Dios...atiende" },
+
+            // P1 – P29
+            { prefix: "P1", title: "Padre te adoramos" },
+            { prefix: "P2", title: "Padre te amo, te alabo" },
+            { prefix: "P3", title: "Para hacer mi corazón fuerte" },
+            { prefix: "P4", title: "Para ti oh Jehová" },
+            { prefix: "P5", title: "Pelearán contra el Cordero" },
+            { prefix: "P6", title: "Pertenezco a ti Señor Jesús" },
+            { prefix: "P7", title: "Pídeme lo que quieras sin temor" },
+            { prefix: "P8", title: "Pon aceite en mi lámpara Señor" },
+            { prefix: "P9", title: "Pon en mi boca oh Señor" },
+            { prefix: "P10", title: "Pon tu corazón en mí" },
+            { prefix: "P11", title: "Ponte el manto de gozo" },
+            { prefix: "P12", title: "Por amor de Sion no callaré" },
+            { prefix: "P13", title: "Por amor de Sion...entonces" },
+            { prefix: "P14", title: "Por cierto la presencia del Señor" },
+            { prefix: "P15", title: "Por cuanto amó Dios" },
+            { prefix: "P16", title: "Por la gracia de Dios" },
+            { prefix: "P17", title: "Por mucho tiempo el pueblo" },
+            { prefix: "P18", title: "¿Por qué buscáis...?" },
+            { prefix: "P19", title: "Porque he levantado mi voz" },
+            { prefix: "P20", title: "Porque tanto amó Dios" },
+            { prefix: "P21", title: "Porque tú eres bueno" },
+            { prefix: "P22", title: "Porque tú oh Dios en lo alto" },
+            { prefix: "P23", title: "Porque vive él puedo vivir" },
+            { prefix: "P24", title: "Pueblo de Dios toma toda" },
+            { prefix: "P25", title: "Pueblo mío escucha hoy" },
+            { prefix: "P26", title: "Pueblos todos batid las manos" },
+            { prefix: "P27", title: "Puedo levantar mis manos" },
+            { prefix: "P28", title: "Pues tú has librado mi alma" },
+            { prefix: "P29", title: "Pues yo nací para ser" },
+
+            // Q1 – Q26
+            { prefix: "Q1", title: "Qué alegre, qué alegre" },
+            { prefix: "Q2", title: "Qué bonito es el rocío de los cielos" },
+            { prefix: "Q3", title: "Qué glorioso es andar con él" },
+            { prefix: "Q4", title: "Qué grande salvación has" },
+            { prefix: "Q5", title: "Qué misericordia ha mostrado" },
+            { prefix: "Q6", title: "Qué no se acabe el gozo" },
+            { prefix: "Q7", title: "Qué puede haber más hermoso" },
+            { prefix: "Q8", title: "Qué tu amor oh Señor" },
+            { prefix: "Q9", title: "¿Quién como tú?...el fuerte" },
+            { prefix: "Q10", title: "¿Quién como tú...oh Jehová?" },
+            { prefix: "Q11", title: "¿Quién irá por nosotros?" },
+            { prefix: "Q12", title: "¿Quién me separará de ti?" },
+            { prefix: "Q13", title: "¿Quién nos separará del amor?" },
+            { prefix: "Q14", title: "¿Quién, quién, quién?" },
+            { prefix: "Q15", title: "¿Quieres ser salvo de toda?" },
+            { prefix: "Q16", title: "Quiero alabarte más y más" },
+            { prefix: "Q17", title: "Quiero amarte oh Jesús" },
+            { prefix: "Q18", title: "Quiero cantar una linda canción" },
+            { prefix: "Q19", title: "Quiero disponer mi corazón" },
+            { prefix: "Q20", title: "Quiero gritar mi necesidad" },
+            { prefix: "Q21", title: "Quiero levantar mis manos" },
+            { prefix: "Q22", title: "Quiero llenar tu trono" },
+            { prefix: "Q23", title: "Quiero orar hasta perderme" },
+            { prefix: "Q24", title: "Quiero rendirte culto" },
+            { prefix: "Q25", title: "Quiero ser obrero de tu viña" },
+            { prefix: "Q26", title: "Quitado fue de aquella cruz" },
+
+            // R1 – R11
+            { prefix: "R1", title: "Razón de vivir" },
+            { prefix: "R2", title: "Rebosando de gozo" },
+            { prefix: "R3", title: "Regocijaos, regocijaos" },
+            { prefix: "R4", title: "Regocíjate Sion, grita, canta" },
+            { prefix: "R5", title: "Regocíjate y canta oh moradora" },
+            { prefix: "R6", title: "Renúevame Señor Jesús" },
+            { prefix: "R7", title: "Restauración quiero Señor" },
+            { prefix: "R8", title: "Restaurarás el santo lugar" },
+            { prefix: "R9", title: "Rey de reyes y Señor" },
+            { prefix: "R10", title: "Rey glorioso eres tú" },
+            { prefix: "R11", title: "Rey Soberano" },
+
+            // S1 – S65
+            { prefix: "S1", title: "Sal al campo y ponte a trabajar" },
+            { prefix: "S2", title: "Saliendo del pretorio" },
+            { prefix: "S3", title: "Salta oh fuente salta" },
+            { prefix: "S4", title: "Salvo soy, salvo soy" },
+            { prefix: "S5", title: "Santo de Israel mira" },
+            { prefix: "S6", title: "Santo el más Santo" },
+            { prefix: "S7", title: "Santo Espíritu llena mi vida" },
+            { prefix: "S8", title: "Santo, santo, santo, santo" },
+            { prefix: "S9", title: "Santo, santo...es el Cordero" },
+            { prefix: "S10", title: "Santo, santo, santo Dios" },
+            { prefix: "S11", title: "Santo, santo...porque es" },
+            { prefix: "S12", title: "Santo, santo...es el Señor" },
+            { prefix: "S13", title: "Santo, santo...Señor de gloria" },
+            { prefix: "S14", title: "Santo...Señor Omnipotente" },
+            { prefix: "S15", title: "Sálvame Señor con tu" },
+            { prefix: "S16", title: "Sé exaltado por siempre" },
+            { prefix: "S17", title: "Se oye su voz" },
+            { prefix: "S18", title: "Sembraré la simiente preciosa" },
+            { prefix: "S19", title: "Señor de amor has ganado" },
+            { prefix: "S20", title: "Señor de qué sirve tener" },
+            { prefix: "S21", title: "Señor hoy vengo ante ti" },
+            { prefix: "S22", title: "Señor Jesús yo quiero ser" },
+            { prefix: "S23", title: "Señor llévame a tus atrios" },
+            { prefix: "S24", title: "Señor me miraste" },
+            { prefix: "S25", title: "Señor me tomaste de lo" },
+            { prefix: "S26", title: "Señor mi Dios al contemplar" },
+            { prefix: "S27", title: "Señor mi Dios en medio de" },
+            { prefix: "S28", title: "Señor mi Dios te alzamos" },
+            { prefix: "S29", title: "Señor prepárame a ser" },
+            { prefix: "S30", title: "¿Señor quién entrará?" },
+            { prefix: "S31", title: "Señor quiero construir" },
+            { prefix: "S32", title: "Señor, Señor Jesús" },
+            { prefix: "S33", title: "Señor te bendigo" },
+            { prefix: "S34", title: "Señor tú eres digno" },
+            { prefix: "S35", title: "Señor tú eres hermoso" },
+            { prefix: "S36", title: "Señor tú eres mi canción" },
+            { prefix: "S37", title: "Señor tú eres mi pastor" },
+            { prefix: "S38", title: "Señor tu nombre es grande" },
+            { prefix: "S39", title: "Señor únenos" },
+            { prefix: "S40", title: "Sepárame para ti" },
+            { prefix: "S41", title: "Si el mismo Espíritu" },
+            { prefix: "S42", title: "Si en tu vida hay batallas" },
+            { prefix: "S43", title: "Si no fuera por el Señor" },
+            { prefix: "S44", title: "Si te convirtieres" },
+            { prefix: "S45", title: "Siento tu amor que viene" },
+            { prefix: "S46", title: "Siervos todos alabemos" },
+            { prefix: "S47", title: "Sin santidad nadie verá" },
+            { prefix: "S48", title: "Sion es el lugar de gozo" },
+            { prefix: "S49", title: "Sirvámosle, sirvámosle" },
+            { prefix: "S50", title: "Solamente en Cristo" },
+            { prefix: "S51", title: "Solo Dios hace al hombre" },
+            { prefix: "S52", title: "Solo el poder de Dios" },
+            { prefix: "S53", title: "Solo tú eres Santo" },
+            { prefix: "S54", title: "Solo una cosa he pedido" },
+            { prefix: "S55", title: "Somos un cuerpo en Cristo" },
+            { prefix: "S56", title: "Soñé que el gran día del" },
+            { prefix: "S57", title: "Soy feliz Cristo me salvó" },
+            { prefix: "S58", title: "Soy momentáneo" },
+            { prefix: "S59", title: "Soy una nueva criatura" },
+            { prefix: "S60", title: "Soy yo soldado de Jesús" },
+            { prefix: "S61", title: "Su gloria cubrió los cielos" },
+            { prefix: "S62", title: "Suba mi oración delante de ti" },
+            { prefix: "S63", title: "Sube a la torre atalaya" },
+            { prefix: "S64", title: "Sublime gracia del Señor" },
+            { prefix: "S65", title: "Suene la trompeta en Sion" },
+
+            // T1 – T67
+            { prefix: "T1", title: "Tabernáculo entre tu pueblo" },
+            { prefix: "T2", title: "Tan cerca de ti" },
+            { prefix: "T3", title: "Tan grande fue el amor de Dios" },
+            { prefix: "T4", title: "Te adoraré a ti Señor" },
+            { prefix: "T5", title: "Te adoro mi gran Señor" },
+            { prefix: "T6", title: "Te agradezco Señor" },
+            { prefix: "T7", title: "Te alabaré con todo mi corazón" },
+            { prefix: "T8", title: "Te alabaré Señor con todo" },
+            { prefix: "T9", title: "Te alabo Jesucristo" },
+            { prefix: "T10", title: "Te alabo mi Señor yo te alabo" },
+            { prefix: "T11", title: "Te amo más que a la vida" },
+            { prefix: "T12", title: "Te amo mi Señor y pronto" },
+            { prefix: "T13", title: "Te amo Rey, te amo Rey" },
+            { prefix: "T14", title: "Te amo Rey y levanto mi voz" },
+            { prefix: "T15", title: "Te amo tanto Señor" },
+            { prefix: "T16", title: "Te amo, te amo porque eres" },
+            { prefix: "T17", title: "Te bendigo Señor, te bendigo" },
+            { prefix: "T18", title: "Te buscaré con todo mi ser" },
+            { prefix: "T19", title: "Te corono Señor, te corono" },
+            { prefix: "T20", title: "Te damos gracias Señor" },
+            { prefix: "T21", title: "Te daré lo mejor del trigo" },
+            { prefix: "T22", title: "Te exaltamos, te exaltamos" },
+            { prefix: "T23", title: "Te exaltaré mi Dios, mi Rey" },
+            { prefix: "T24", title: "Te glorifico Dios porque eres" },
+            { prefix: "T25", title: "Te ofrecemos a ti" },
+            { prefix: "T26", title: "Te vengo a decir, te vengo" },
+            { prefix: "T27", title: "Te veo en tu trono de justicia" },
+            { prefix: "T28", title: "Temo fallarte y no llegar" },
+            { prefix: "T29", title: "Ten misericordia de mí oh Dios" },
+            { prefix: "T30", title: "Tenemos un Dios muy, muy" },
+            { prefix: "T31", title: "Tengo en mi alma" },
+            { prefix: "T32", title: "Tengo un perfume que" },
+            { prefix: "T33", title: "Tierno es el amor de mi Señor" },
+            { prefix: "T34", title: "Toda la tierra te alabará" },
+            { prefix: "T35", title: "Todo a Cristo yo me rindo" },
+            { prefix: "T36", title: "Todo el mundo es un estrecho" },
+            { prefix: "T37", title: "Todo lo he tenido por basura" },
+            { prefix: "T38", title: "Todos deben de saber" },
+            { prefix: "T39", title: "Todos nosotros nos" },
+            { prefix: "T40", title: "Toma este pan yo te lo doy" },
+            { prefix: "T41", title: "Toma hoy mi corazón oh Dios" },
+            { prefix: "T42", title: "Toma mi ser es para ti" },
+            { prefix: "T43", title: "Tomado de la mano yo voy" },
+            { prefix: "T44", title: "Torre fuerte es el nombre" },
+            { prefix: "T45", title: "Traemos sacrificio de alabanza" },
+            { prefix: "T46", title: "Tres valientes dieron de beber" },
+            { prefix: "T47", title: "Tú amas la alabanza" },
+            { prefix: "T48", title: "Tú amas la verdad en lo íntimo" },
+            { prefix: "T49", title: "Tú amigo seré" },
+            { prefix: "T50", title: "Tu amor me ha seducido" },
+            { prefix: "T51", title: "Tu amor por mí" },
+            { prefix: "T52", title: "Tú como Zaqueo" },
+            { prefix: "T53", title: "Tú eres digno de obediencia" },
+            { prefix: "T54", title: "Tú eres digno, tú eres digno" },
+            { prefix: "T55", title: "Tú eres Dios, tú eres mi Rey" },
+            { prefix: "T56", title: "Tú eres Dios, tú eres Rey" },
+            { prefix: "T57", title: "Tú eres la vid Señor y yo" },
+            { prefix: "T58", title: "Tú escuchaste la voz" },
+            { prefix: "T59", title: "Tu fidelidad es grande" },
+            { prefix: "T60", title: "Tú me das y tú me quitas" },
+            { prefix: "T61", title: "Tú me has dado todo para" },
+            { prefix: "T62", title: "Tu misericordia es mejor que" },
+            { prefix: "T63", title: "Tu nombre levantaré" },
+            { prefix: "T64", title: "Tu nombre oh Dios es puro" },
+            { prefix: "T65", title: "Tu presencia, tu presencia" },
+            { prefix: "T66", title: "Tu sangre me limpia" },
+            { prefix: "T67", title: "Tu voz, tu voz, tu voz" },
+
+            // U1 – U4
+            { prefix: "U1", title: "Un cántico nuevo al Señor" },
+            { prefix: "U2", title: "Una nueva oportunidad me diste" },
+            { prefix: "U3", title: "Una vez perdido vivía yo" },
+            { prefix: "U4", title: "Unidos, unidos en su nombre" },
+
+            // V1 – V31
+            { prefix: "V1", title: "Vamos orando hasta que baje" },
+            { prefix: "V2", title: "Vamos todos alabar al Señor" },
+            { prefix: "V3", title: "Ven adorad al Omnipotente" },
+            { prefix: "V4", title: "Ven Espíritu de Dios" },
+            { prefix: "V5", title: "Ven por tu alabanza Señor" },
+            { prefix: "V6", title: "Ven Santo Espíritu" },
+            { prefix: "V7", title: "Ven Señor no tardes" },
+            { prefix: "V8", title: "Ven sopla sobre mí" },
+            { prefix: "V9", title: "Ven y toma el trono" },
+            { prefix: "V10", title: "Ven y ven conmigo" },
+            { prefix: "V11", title: "Vengan a mí todos los que están" },
+            { prefix: "V12", title: "Vengo a glorificarte" },
+            { prefix: "V13", title: "Vengo a ti oh Señor a rendir" },
+            { prefix: "V14", title: "Vengo a ti oh Señor toma" },
+            { prefix: "V15", title: "Venid adoremos a Jesús" },
+            { prefix: "V16", title: "Venid adoremos al Señor" },
+            { prefix: "V17", title: "Venid adoremos con gozo" },
+            { prefix: "V18", title: "Venid al lugar santísimo" },
+            { prefix: "V19", title: "Venid subamos al monte" },
+            { prefix: "V20", title: "Venimos ante ti, deseamos" },
+            { prefix: "V21", title: "Venimos ante ti Señor" },
+            { prefix: "V22", title: "Veo a Cristo sentado a la diestra" },
+            { prefix: "V23", title: "Victoria, la victoria mía es" },
+            { prefix: "V24", title: "Viene una gran gloria" },
+            { prefix: "V25", title: "Vine a alabar a Dios" },
+            { prefix: "V26", title: "Viste mi vida perdida" },
+            { prefix: "V27", title: "Volvió del desierto" },
+            { prefix: "V28", title: "Voy a proseguir" },
+            { prefix: "V29", title: "Voy feliz al dulce hogar" },
+            { prefix: "V30", title: "Voz que clama en el desierto" },
+            { prefix: "V31", title: "Vuelve a brillar en Sion" },
+
+            // Y1 – Y31
+            { prefix: "Y1", title: "Y ahora que estoy en ti" },
+            { prefix: "Y2", title: "Y al estar en la presencia" },
+            { prefix: "Y3", title: "Y por el Espíritu que ves" },
+            { prefix: "Y4", title: "Y si vivimos para él vivimos" },
+            { prefix: "Y5", title: "Y me entregué a mi Padre" },
+            { prefix: "Y6", title: "Yo celebraré, cantaré al Señor" },
+            { prefix: "Y7", title: "Yo exalto, exalto al precioso" },
+            { prefix: "Y8", title: "Yo he hablado todas estas" },
+            { prefix: "Y9", title: "Yo he venido...el que ofrece" },
+            { prefix: "Y10", title: "Yo he venido...es el Rey" },
+            { prefix: "Y11", title: "Yo me alegraré en Dios" },
+            { prefix: "Y12", title: "Yo me alegraré con los ojos" },
+            { prefix: "Y13", title: "Yo no soy nada y del pecado" },
+            { prefix: "Y14", title: "Yo nunca lo vi más ahora" },
+            { prefix: "Y15", title: "Yo quiero andar las calles" },
+            { prefix: "Y16", title: "Yo quiero estar cerca de ti" },
+            { prefix: "Y17", title: "Yo quiero más y más de ti" },
+            { prefix: "Y18", title: "Yo quiero ser Señor amado" },
+            { prefix: "Y19", title: "Yo siento como que la gloria" },
+            { prefix: "Y20", title: "Yo siento gozo en mi alma" },
+            { prefix: "Y21", title: "Yo quiero estar donde tú estás" },
+            { prefix: "Y22", title: "Yo te alabaré, cantaré de ti" },
+            { prefix: "Y23", title: "Yo te alabo de corazón" },
+            { prefix: "Y24", title: "Yo te amo en el amor" },
+            { prefix: "Y25", title: "Yo te doy gracias" },
+            { prefix: "Y26", title: "Yo te llevaré, yo te llevaré" },
+            { prefix: "Y27", title: "Yo tengo paz y gozo" },
+            { prefix: "Y28", title: "Yo tengo un amigo que te" },
+            { prefix: "Y29", title: "Yo tengo un Dios poderoso" },
+            { prefix: "Y30", title: "Yo vi al Señor en su trono" },
+            { prefix: "Y31", title: "Yo vivo, yo vivo" }
+        ];
+
+        // ---------- UI ----------
+        const grid = document.getElementById('hymnGrid');
+        const searchInput = document.getElementById('searchInput');
+        const counterSpan = document.getElementById('counter');
+        const clearLink = document.getElementById('clearLink');
+        const alphaStrip = document.getElementById('alphaStrip');
+
+        let currentLetter = '';
+
+        // Letras únicas de A a Y (excepto I,K,Ñ,U,W,X,Z)
+        const letters = [...new Set(hymns.map(h => h.prefix.charAt(0).toUpperCase()).filter(l => /[A-Y]/.test(l) && !['I','K','U'].includes(l)))].sort();
+        alphaStrip.innerHTML = letters.map(l => `<span class="alpha-btn" data-letter="${l}">${l}</span>`).join('');
+
+        function filterAndRender() {
+            const term = searchInput.value.toLowerCase();
+            let filtered = hymns;
+
+            if (currentLetter) {
+                filtered = filtered.filter(h => h.prefix.toUpperCase().startsWith(currentLetter));
+            }
+            if (term) {
+                filtered = filtered.filter(h => h.title.toLowerCase().includes(term) || h.prefix.toLowerCase().includes(term));
+            }
+
+            counterSpan.textContent = filtered.length;
+            document.querySelectorAll('.alpha-btn').forEach(btn => btn.classList.remove('active'));
+            if (currentLetter) {
+                const activeBtn = document.querySelector(`.alpha-btn[data-letter="${currentLetter}"]`);
+                if (activeBtn) activeBtn.classList.add('active');
+            }
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="no-result"><i class="fa-regular fa-compass"></i> ningún himno coincide</div>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(h =>
+                `<div class="hymn-card"><span class="prefix">${h.prefix}</span><span class="title">${h.title}</span></div>`
+            ).join('');
+        }
+
+        searchInput.addEventListener('input', () => { currentLetter = ''; filterAndRender(); });
+        alphaStrip.addEventListener('click', (e) => {
+            const btn = e.target.closest('.alpha-btn');
+            if (!btn) return;
+            const letter = btn.dataset.letter;
+            currentLetter = currentLetter === letter ? '' : letter;
+            filterAndRender();
+        });
+        clearLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            searchInput.value = '';
+            currentLetter = '';
+            filterAndRender();
+        });
+
+        filterAndRender();
+    })();
+</script>
+</body>
+</html>

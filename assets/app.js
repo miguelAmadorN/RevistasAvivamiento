@@ -34,7 +34,13 @@ const revistas = [
     description: "Versión preliminar.",
     href: "./revistas/eres-salvo-o-solamente-religioso/index.html",
     cover: "../assets/cover/Eres-salvo-o-solamente-religioso.png",
-  }
+  },
+     {
+       title: "El camino de muerte",
+       description: "Versión preliminar.",
+       href: "./revistas/el-camino-de-muerte/index.html",
+       cover: "../assets/cover/EL CAMINO DE MUERTE.jpg",
+     }
 ];
 
 const grid = document.getElementById("revistas-grid");

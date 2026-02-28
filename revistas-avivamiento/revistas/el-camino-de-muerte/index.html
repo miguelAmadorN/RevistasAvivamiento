@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Camino de Muerte - Michael L. Brown</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #4a6491;
+            font-style: italic;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .bible-list {
+            margin: 20px 0 20px 30px;
+        }
+
+        .bible-list li {
+            margin-bottom: 12px;
+            text-align: justify;
+            padding-left: 5px;
+        }
+
+        .bible-list li strong {
+            color: #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        .intro-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0 30px;
+            border-left: 4px solid #4a6491;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .poem-box {
+            background-color: #f9f5e8;
+            border-left: 4px solid #b8860b;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .poem-line {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #5a3e1b;
+            text-align: center;
+        }
+
+        .hebrew-word {
+            font-weight: bold;
+            color: #8B4513;
+            font-style: normal;
+            font-size: 1.2rem;
+        }
+
+        .warning-large {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #8B0000;
+            text-align: center;
+            margin: 20px 0;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Michael L. Brown</div>
+            <div>EL CAMINO DE MUERTE</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EL FINAL FATAL</div>
+
+        <div class="poem-box">
+            <div class="poem-line"><em>"El remordimiento es tan amargo. Yo daría</em></div>
+            <div class="poem-line"><em>todo sólo por hacer marchar el reloj hacia</em></div>
+            <div class="poem-line"><em>atrás."</em></div>
+            <div class="scripture-ref">Carmela Bouchbout</div>
+            <div class="poem-line"><em>(Después de ser liberada de una prisión</em></div>
+            <div class="poem-line"><em>israelí, el 3 de enero de 1996. Ella había</em></div>
+            <div class="poem-line"><em>matado a su esposo después de años de haber</em></div>
+            <div class="poem-line"><em>sido físicamente maltratada)</em></div>
+        </div>
+
+        <p>Hemos estado considerando con cuidado los incentivos bíblicos para guardarnos del pecado. Pero hay una simple verdad que las reúne a todas, y esa es la verdad que ha estado ardiendo en mi corazón por más de veinte años. He predicado acerca de ella alrededor del mundo y nunca ha fallado en hacer un impacto profundo y duradero en los oyentes. De hecho, honestamente creo que esta simple verdad puede cambiar tu vida para siempre.</p>
+
+        <p>Está basada en una sola palabra hebrea, la palabra <span class="hebrew-word">'aharít</span> (se pronuncia ah-kha-REET). Limpia tu garganta y repite después de mi: ah-kha-REET. ¡Así es! Dilo otra vez despacio ah-kha-REET. "Pero, ¿cómo una palabra hebrea puede cambiar mi vida?" te preguntarás. Permanece conmigo y te darás cuenta.</p>
+
+        <p>En el lenguaje hebreo, como en el arábigo, arameo y las otras lenguas semíticas, muchas preposiciones o palabras que tienen que ver con dirección u orientación son derivadas de partes del cuerpo. Por ejemplo, en el hebreo, las palabras "primero" o "al principio" vienen de la palabra usada para "cabeza", así como en el cuerpo humano, es la cabeza la que viene primero. Y así como podemos hablar de "ir a la cabeza de la clase" en inglés, así también en hebreo puedes hablar de estar en la "cabeza" (en lo más alto) de la montaña. O, para darte otros ejemplos basados en otras partes del cuerpo, cuando me paro cerca de alguien, en hebreo estoy literalmente "a la mano" de esa persona; si estoy parado enfrente de esa persona, estoy literalmente "en su cara". ¿Sí entiendes?</p>
+
+        <p>Ahora, la palabra <span class="hebrew-word">'aharít</span> está relacionada a la palabra hebrea para "espalda", y literalmente significa "eso que viene después; los efectos después de; consecuencias finales; el final". El principio es simple: De nuestra posición normal, no podemos ver la espalda de otra persona. No vemos lo que viene detrás. Así que si rompo la parte de atrás del saco de mi traje, dejándole un horrible hoyo, tú nunca lo sabrías si sólo me vieras por enfrente. Desde ese ángulo, yo me vería bien. Pero en cuanto caminara de largo y te pasara, te quedarías boquiabierto. Momentos antes, todo se veía estupendo; pero por atrás, vergonzoso. Cuando vieras mi espalda, todo el panorama cambiaría. En lugar de verme bien arreglado, me vería desaliñado. Y eso es un principio bíblico:</p>
+
+        <div class="highlight-box">
+            <p style="font-size: 1.2rem; text-align: center;">De nuestra naturaleza ordinaria, el punto de vista humano, no podemos ver qué viene después, las consecuencias finales de una situación, el <span class="hebrew-word">'aharít</span>.</p>
+        </div>
+
+        <p>Pero Dios ve todo el panorama. A sus ojos, el <span class="hebrew-word">'aharít</span> está siempre a plena vista. Y si vamos a vivir vidas santas, es crucial que obtengamos Su perspectiva. En un momento todo esto estará claro.</p>
+
+        <p>Esta palabra <span class="hebrew-word">'aharít</span> se encuentra sesenta y cinco veces en el Antiguo Testamento, pero trece de estas veces -20% de las ocasiones- se encuentra en el libro de los Proverbios. ¡Aquí hay una lección! De hecho todo el libro de Proverbios puede resumirse en un versículo:</p>
+
+        <div class="scripture">
+            <strong>Escucha el consejo, y recibe la corrección, para que seas sabio en tu vejez.</strong>
+            <span class="scripture-ref">(Proverbios 19:20)</span>
+        </div>
+
+        <p>Traducido literalmente, en este versículo dice, "Escucha el consejo y recibe la disciplina / instrucción para que puedas ser sabio en tu final", en tu <span class="hebrew-word">'aharít</span>. Esto es lo que realmente cuenta. Cuando todo ya esté dicho y hecho, tú habrás actuado y vivido sabiamente. Tu <span class="hebrew-word">'aharít</span> será bendecido.</p>
+
+        <p>El problema es que Satanás nunca nos enseña el <span class="hebrew-word">'aharít</span>. En cambio, todo su enfoque está en el aquí y en el ahora, en el placer del momento, en la necesidad de esta hora. Y hace su mejor esfuerzo para quitar nuestros ojos del <span class="hebrew-word">'aharít</span>, el "final" de la historia. Piensa sólo en Esaú, quien vendió su primogenitura por una sola comida, únicamente porque tenía hambre en ese momento.</p>
+
+        <div class="scripture">
+            "Y guisó Jacob un potaje; y volviendo Esaú del campo, cansado, dijo a Jacob: Te ruego que me des a comer de ese guiso rojo, pues estoy muy cansado. Por tanto fue llamado su nombre Edom. Y Jacob respondió: Véndeme en este día tu primogenitura. Entonces dijo Esaú: He aquí yo me voy a morir; ¿para qué, pues, me servirá la primogenitura? Y dijo Jacob: Júramelo en este día. Y él le juró, y vendió a Jacob su primogenitura. Entonces Jacob dio a Esaú pan y del guisado de las lentejas; y él comió y bebió, y se levantó y se fue. Así menospreció Esaú la primogenitura."
+            <span class="scripture-ref">(Gen. 25:29-34)</span>
+        </div>
+
+        <p>Hebreos nos exhorta a no ser como este hombre "impío", "quien por una sola comida vendió sus derechos de primogenitura. Después, como ya sabes, cuando quiso heredar la bendición, fue rechazado. Y no pudo cambiar su decisión, aunque la procuró con lágrimas" (Heb. 12:16-17). El <span class="hebrew-word">'aharít</span> de Esaú fue miserable.</p>
+
+        <p>Una vez después de desobedecer al Señor en una forma relativamente pequeña, me sentía acongojado y me dije: "Antes de sucumbir al pecado la próxima vez, necesito recordar cómo me sentí después de haber pecado esta vez." Ese debe ser el antídoto. Pero todo en nuestra naturaleza caída trabaja en contra de esa visión del <span class="hebrew-word">'aharít</span>. Dice: Olvida las consecuencias; sólo piensa en el ahora.</p>
+
+        <p>Dios dice, "Enfócate en el <span class="hebrew-word">'aharít</span>". Vamos a ver la sabiduría de la Palabra. Puedes recordar algunos versos de Proverbios que vimos antes. Regresemos a Proverbios 5, uno de los muchos pasajes en este libro que te advierten sobre los peligros de la inmoralidad sexual:</p>
+
+        <div class="scripture">
+            "Hijo mío, está atento a mi sabiduría, y a mi inteligencia inclina tu oído, para que guardes consejo, y tus labios conserven la ciencia. Porque los labios de la mujer extraña destilan miel, y su paladar es más blando que el aceite; mas su fin es amargo como el ajenjo, agudo como espada de dos filos. Sus pies descienden a la muerte; sus pasos conducen al Seol. Sus caminos son inestables; no los conocerás, si no considerares el camino de vida."
+            <span class="scripture-ref">(Proverbios 5:1-6)</span>
+        </div>
+
+        <p>No importa qué tan bien se vea la mujer seductora, la consecuencia final de asociarte con ella será desastrosa. Completa y absolutamente desastrosa.</p>
+
+        <p>Hay una historia que leí en un periódico de Nueva York en 1984 que provocó que mi estómago estuviera hecho nudos aproximadamente dos días. Un acaudalado hombre de negocios de Long Island, Nueva York, investigado por que había sido secuestrado. De acuerdo con esta grotesca historia, el hombre conoció a una joven muy atractiva que le ofreció tener sexo con él: Se pusieron de acuerdo para verse el día siguiente en un cierto lugar. Pero cuando la encontró y entró en la casa, estaba preparada una emboscada: Varios hombres y mujeres lo amarraron y amordazaron, llevándolo, después a un edificio de departamentos especialmente preparado para ese momento, con tablones extras en las ventanas para amortiguar el ruido de sus lamentos.</p>
+
+        <p>Lo que el periódico describía después todavía está fresco en mi mente: Empezaron a torturarlo y a abusar de él, lo quemaron con cigarrillos en todo su cuerpo, lo sodomizaron con tal fuerza que algunos de sus órganos internos fueron dañados severamente. Lo dejaron desahogarse en un pañal, y los últimos cinco días de su vida, no le dieron nada de comer. Aunque la esposa ya había aceptado pagar una recompensa por él, lo golpearon hasta matarlo antes de que el dinero les llegara. ¡Mi estómago está hecho nudos aún ahora que escribo esto!</p>
+
+        <p>Si él tan sólo hubiera podido haber visto su <span class="hebrew-word">'aharít</span> ¡Si hubiera podido verse a sí mismo gritando en agonía, suplicando por misericordia, torturado y violado, golpeado y humillado, muerto de hambre y amarrado -y posteriormente yaciendo ahí sin movimiento, un cadáver sangriento-. Si tan sólo hubiera podido ver las consecuencias finales de su adulterio lujurioso, jamás se hubiera acercado a esa joven, sin importar qué tan bien se veía, no importando cuántos placeres físicos le hubiera ofrecido. Hubiera hecho un pacto para no tener sexo por el resto de su vida en vez de encontrar esa fatalidad. ¡Pero no vio su <span class="hebrew-word">'aharít</span>!</p>
+
+        <p>¡Por eso las advertencias de Proverbios son tan urgentes. No hay hipérbole aquí!</p>
+
+        <div class="scripture">
+            "Ahora pues, hijos, oídme, y no os apartéis de las razones de mi boca. Aleja de ella tu camino, y no te acerques a la puerta de su casa; para que no des a los extraños tu honor, y tus años al cruel; no sea que extraños se sacien de tu fuerza, y tus trabajos estén en casa del extraño; y gimas al final, Cuando se consuma tu carne y tu cuerpo, y digas: ¡Cómo aborrecí el consejo, y mi corazón menospreció la reprensión; no oí la voz de los que me instruían, y a los que me enseñaban no incliné mi oído! casi en todo mal he estado, en medio de la sociedad y de la congregación."
+            <span class="scripture-ref">(Proverbios 5:7-14)</span>
+        </div>
+
+        <p>Me he sentado con amigos míos que han destruido sus ministerios por el adulterio, sus caras torcidas de la culpa, lágrimas de pesar cayendo por sus mejillas, sus conciencias atormentadas con desesperanza y desconfianza. Y he orado silenciosamente mientras sollozaba con ellos, ¡Dios, nunca me dejes que olvide la expresión en su cara! No me dejes que olvide esa mirada de angustia y dolor! Deja que esa imagen viva permanezca conmigo por siempre. ¡No vale la pena! ¡NO vale la pena! ¡NO VALE LA PENA! Ninguna cantidad de satisfacción sexual, ninguna cantidad de emoción romántica, ninguna cantidad de plenitud y sensación de libertad, vale la pena para perder el derecho al ministerio. Así como George Hutcheson advirtió muchos siglos atrás "Ten cuidado; en una hora puedes producir algo de lo que nos culpemos para siempre" ¡Recuerda el <span class="hebrew-word">'aharít</span>!</p>
+
+        <p>Había un pastor y plantador de iglesias que empezó a estar muy desanimado y como resultado se deslizó completamente una noche. Terminó borracho y yendo a una fiesta donde las personas estaban intercambiando parejas libremente. De alguna manera, él cayó tan bajo que tuvo sexo con otro hombre. Al siguiente día la realidad llegó: Él agonizaba atormentado, arrepentido profundamente, llevándolo gradualmente a una situación para restauración. Y después su ministerio continuó, como si todo hubiera regresado a la normalidad. Pero no era así. En esa terrible noche de desobediencia, se contagió de Sida, y cuando se dio cuenta de que había contraído la enfermedad ya había infectado a su esposa y al último niño que tuvo. Cuando conocí a su familia, lo acababan de enterrar. Ahora su esposa y su hijo probablemente ya se hayan ido también. ¡Qué pena!</p>
+
+        <p>¡Si solamente hubiera podido ver su <span class="hebrew-word">'aharít</span>! Si solamente hubiera visto a su familia y a sus amigos lamentándose en su funeral mientras bajaban a la tierra el ataúd que guardaba su enflaquecido cuerpo... Si hubiera podido ver a su esposa y a su hijo gradualmente debilitarse bajo la embestida de esa misma espantosa enfermedad.... ¡Si solamente hubiera visto su final! Nunca se hubiera acercado al bar en donde se emborrachó, no importa que tan deprimido hubiera estado. Él le hubiera dicho a su esposa, "Amárrame a la pata de mi cama cierra la puerta con llave" -cualquier cosa que lo hubiera detenido de ese desastroso final-. En cambio, su vida es un eco de aquellas palabras de Proverbios: "¡Cómo aborrecí el consejo! ¡Cómo mi corazón menospreció la reprensión! ¡No oí la voz de los que me instruían, y a los que me enseñaban no incliné mi oído! He llegado al límite de la ruina absoluta en medio de la sociedad y de la congregación." Un pecado. Una vez. Un final fatal.</p>
+
+        <p>Es por este tipo de razones que nunca dejo de advertir a mis compañeros ministros (así como a los creyentes) acerca del peligro del pecado sexual. Y siempre que predico este mensaje del <span class="hebrew-word">'aharít</span>, me lo predico a mí mismo. Ninguno de nosotros estamos exentos de esta tentación. Nuestra sociedad está totalmente súpersexualizada, con un constante ataque a nuestros sentidos hacia lo sensual por donde voltees: Hombres y mujeres ataviados escasamente en las portadas de las revistas nos guiñan el ojo desde los estantes de las cajas registradores de los supermercados; bellezas en diminutos bikinis sonriéndonos en sus carros y en los comerciales de cervezas en la televisión; miles de sitios pornográficos esperándonos en Internet. ¿Será extraño que la gran mayoría de nuestros adolescentes sean sexualmente activos? ¡Existe un gran bombardeo! Y la Palabra conoce nuestra naturaleza también, advirtiéndonos una y otra vez para conservarnos sexualmente puros. De hecho, si lees todo Proverbios, encontrarás que fuera de diversos pasajes que tratan de las virtudes y las necedades en general, los pasajes más largos en el libro tienen que ver con pecados sexuales (incluyendo virtualmente todo el capítulo cinco, parte del seis y cada línea del capítulo siete).</p>
+
+        <p>En la mayoría de los pasajes la mujer seductora es descrita tal cual las fotos de portadas que vemos hoy del "perfecto" chico o chica. Y esa es la única imagen que Satanás quiere que veamos. Él no quiere que entendamos que en esa foto fueron corregidos algunos de los defectos, ni que esa invitadora sonrisa es completamente artificial, ni que esa persona casi desnuda posando ahí es la hija o el hijo de alguien. ¡Satanás no nos enseña eso! Ni tampoco el vacío de esa vida, de ese símbolo sexual, ni los problemas familiares que provocan cuando un esposo o una esposa se vuelve adicto a esas estrellas porno. No, él no quiere que consideremos el <span class="hebrew-word">'aharít</span>.</p>
+
+        <p>También hay otra cara en todas esas descripciones del libro de Proverbios acerca de la seducción y la belleza de la mujer pecadora: Nos recuerda la gran presión que tienen las mujeres en nuestra sociedad de tener cuerpos para "casi dejarlos muertos", para ser objetos de estimulación visual a los hombres y de verse al punto de ser seductora. Damas, tengan cuidado de no caer en esto. Es muy malo que un hijo de Dios caiga tan bajo...pero cuídate muy bien de no ser tú la causante.</p>
+
+        <div class="warning-box">
+            <p style="font-size: 1.3rem; font-weight: bold; text-align: center; color: #8B0000;">EL "LIGUE" NO TIENE LUGAR ENTRE LOS HIJOS DE DIOS. DE CUALQUIER MANERA ¿DE LADO DE QUIÉN ESTAMOS?</p>
+        </div>
+
+        <p>Tú sabes lo que esa forma de vestirse causa en los hombres. Sabes el efecto que causan una blusa cortita o unos pantalones pegados a la piel o esa falta tan corta o ese traje de baño tan revelador. ¿Y no es esa una de las razones para vestirte así -si lo haces-, para gustar a los hombres? (Y si solamente es para "sentirte cómoda", entonces sacrifica tu comodidad por la santidad y la modestia.)</p>
+
+        <div class="scripture">
+            Dijo Jesús a sus discípulos: Imposible es que no vengan los tropiezos; más ¡ay de aquel por quien vienen! Mejor le fuera que se atase al cuello una piedra de molino y se arrojase al mar, que hacer tropezar a uno de esos pequeñitos.
+            <span class="scripture-ref">(Lucas 17:1-2)</span>
+        </div>
+
+        <p>¡Esa no es una advertencia que se pueda ignorar! Los santos de Dios comprados con su sangre, nunca se visten ni se comportan de tal manera que se conviertan en un objeto de atractivo sexual para otros hombres o mujeres. Nunca te permitas ser una piedra de tropiezo para los salvos o para los inconversos. Nunca trates de que te vean con deseo o lascivia. Hay mucha diferencia entre un matrimonio que en la intimidad de su hogar disfruta su relación física ante el Señor, y entre convertirse en un seductor o una seductora de los extraños. El coqueteo no tiene lugar entre los hijos de Dios, ni tampoco lo tienen los vestidos que marcan las curvas llamativas o el atractivo físico de cada uno. De por sí difícil mantenerse puro en este mundo cuando la gente en la iglesia se viste adecuadamente. Pero es realmente duro cuando los creyentes visten y actúan en formas sexualmente sugestivas. De cualquier manera, ¿de qué lado estamos?</p>
+
+        <p>Así que Proverbios nos advierte contra los placeres pecaminosos que nos llaman, describiéndolos vivamente. La descarriada esposa le dice a su amante:</p>
+
+        <div class="scripture">
+            "Sacrificios de paz había prometido, hoy he pagado mis votos; por tanto, he salido a encontrarte, buscando diligentemente tu rostro, y te he hallado. He adornado mi cama con colchas recamadas con cordoncillo de Egipto; he perfumado mi cámara con mirra, áloes y canela. Ven, embriaguémonos de amores hasta la mañana; alegrémonos en amores. Porque el marido no está en casa; se ha ido a un largo viaje. La bolsa de dinero llevó en su mano; el día señalado volverá a su casa."
+            <span class="scripture-ref">(Proverbios 7:14-20)</span>
+        </div>
+
+        <p>¡De ninguna manera podrá él resistir! Él recuerda como se sintió esa última vez. Además, ella es una chica de Iglesia y ritualmente limpia con ofrendas personales. ¡Ella ciertamente no es una trampa! (Dime si no es esto lo más elevado de la hipocresía religiosa) y es tan seguro, su esposo no está en la ciudad y va a ser tan dulce. ¡Qué rápido se vuelve amargo!</p>
+
+        <div class="scripture">
+            "Lo rindió con la suavidad de sus muchas palabras, le obligó con la zalamería de sus labios. Al punto se marchó tras ella, como va el buey al degolladero, y como el necio a las prisiones para ser castigado; como el ave que se apresura a la red, y no sabe que es contra su vida, hasta que la saeta traspasa su corazón."
+            <span class="scripture-ref">(Proverbios 7:21-23)</span>
+        </div>
+
+        <p>El placer ya ha pasado y él ha sido atravesado. Su pequeña aventura le costó la vida, así que no lo sigas tú en su locura. Recuerda el <span class="hebrew-word">'aharít</span>, y no seas "como el buey que va al degolladero y como el necio a las prisiones....como el ave que se apresura a la red." Dios nos muestra las trampas de antemano. Satanás solamente nos enseña la carnada.</p>
+
+        <p>A mediados de los ochentas, una atractiva jovencita de Long Island de quince años, con una apariencia madura, cayó en rebeldía en contra de sus padres, preocupada por los constantes conflictos en casa. Dejó Nueva York y pidió aventón hasta salir del Estado. En el camino, un trailero le llevó y le pagó por tener un acto sexual con ella. Posteriormente ella sollozaba de pena. Pero la culpa rápidamente desapareció y después de unos meses de su llegada a Texas, ya había caído en la prostitución y trabajaba en un restaurante que pasaba películas pornográficas en una pantalla grande en la pared mientras los hombres se sentaban alrededor de las mesas escogiendo la muchacha a su gusto. Cuando le escribió a su familia, les dijo que todo estaba bien y que estaba trabajando como mesera.</p>
+
+        <p>Pronto se volvió muy popular e hizo mucho dinero que otras prostitutas empezaron a voltearse en contra de ella. Decidió salirse mientras podía, pero la atraparon un gigoló (padrote, alcahuete) y su esposa, abusaron de ella en formas que no se pueden ni mencionar, finalmente la mataron y la echaron al río. Cuando encontraron su cadáver desnudo, un jefe de la policía dijo que era el cadáver más brutalmente torturado que él nunca hubiera visto. Tenía quemaduras de cigarrillo desde la cabeza hasta los pies, su maxilar estaba fracturado y le dispararon en la boca. ¡Si tan sólo hubiera visto su <span class="hebrew-word">'aharít</span>! El diablo está jugando con esas vidas.</p>
+
+        <p>Recuerda Proverbios 23, advirtiéndonos acerca de los efectos destructores de alcohol.</p>
+
+        <div class="scripture">
+            "No mires al vino cuando rojea, cuando resplandece su color en la copa. Se entra suavemente; mas al fin como serpiente morderá, y como áspid dará dolor."
+            <span class="scripture-ref">(Proverbios 23:31-32)</span>
+        </div>
+
+        <p>Una vez más, el fin del pecado resulta totalmente diferente a lo que había prometido, sólo que esta vez no fue sexo sino alcohol. Tomar ofrecía deleite pero al final trajo muerte. Garantizó lo alto, pero en su lugar trajo un infierno. Falló en advertirte acerca de los efectos posteriores del alcohol.</p>
+
+        <p>Ahora en las calles de algunas de las ciudades más grandes en Estados Unidos hay borrachos y adictos al crack tirados en su propio vómito, sus caras ensangrentadas al golpearse en el concreto, sus vidas totalmente destruidas, pero cinco años antes eran exitosos médicos, prominentes abogados o atletas felizmente casados. ¿Qué pasó? Bueno ellos estaban ante mucha presión, tuvieron un evento trágico o uno de sus amigos les traicionó por primera vez. Después de un tiempo, ese trago de Borbón (o esa aspirada de cocaína) se volvió un asunto del diario y empezó a dominarlos, hasta que comenzaron a perder sus trabajos, sus casas, sus familias y luego terminaron viviendo en las calles. Si tan solo entonces hubieran visto la película de su <span class="hebrew-word">'aharít</span> por anticipado, no hubiera habido nada que los llevara a dirigirse a tomar o a las drogas. ¡Nada!</p>
+
+        <p>Satanás es realmente listo. ¿Alguna vez has visto un anuncio de licor con una pareja sentada en una mesa en un lugar exótico, con la luna brillando detrás de ellos y la champaña reflejando sus destellos en los ojos de la pareja mientras se lanzan miradas de deseo y afecto? ¡Qué escenario!, ¡qué pareja!, ¡qué mensaje! Sí, si tú bebes ese champaña, serás parte de ese escenario. Te encontrarás en esa cita perfecta -aun si tienes cien libras de sobrepeso y te faltan los dos dientes de enfrente.- Estarás ahí en esa isla maravillosa, meseros y sirvientes atendiendo todos y cada uno de tus deseos y caprichos -aun si no tienes ni un centavo en el bolsillo-. ¡Sí! ¡una botella de champaña hará todo para ti!</p>
+
+        <p>¡Qué mentira tan estúpida! Sin embargo millones de personas lo creen consciente o inconscientemente. Este vino hará tu fiesta maravillosa. Después de un evento deportivo grande, la cerveza es lo obligado. *Un Jack Daniels hará brillar tu vida.¿Cirrosis? ¿Muerto en un choque automovilístico? ¿Las consecuencias finales de alcohol? No pienses en nada de eso es ¡la hora de diversión!*</p>
+
+        <p>Cuando era niño, mi papá que era abogado, me explicó que era ilegal en los comerciales de televisión enseñar a alguien tomando alcohol. Es por eso que sólo verás tomas cercanas de cómo se vierte esa cerveza dorada, espumosa en un tarro helado, con su espuma blanca derramándose por los lados- así como lo describe Proverbios- (No veas al vino cuando rojea, cuando resplandece su color en la copa...) Después de ver estos comerciales por algunos años, mi mejor amigo y yo decidimos que teníamos que probar una cerveza. Así es que una noche, cuando mis padres habían salido, salimos de la casa, hicimos ejercicio y jugamos hasta que estábamos sudorosos y sedientos (si no mal me acuerdo, anduvimos en bicicleta alrededor del vecindario, aunque todo estaba cubierto de nieve). Después, sacamos unas galletas con una lata de cerveza que mi papá tenía en el refrigerador para sus amigos. Luego llegó el gran momento: Vertimos la cerveza en nuestros vasos (así como se veía en los comerciales de televisión), comimos una galletita o dos, levantamos nuestros vasos, tomamos el primer sorbo de cerveza, y lo escupimos inmediatamente! ¡Yuck! No era nada de lo que esperábamos. ¡Qué ordinario y desagradable sabor! Pero no pasó mucho tiempo antes de que decidiéramos probar otra vez, después de todo se veía tan apetitoso en la televisión.</p>
+
+        <p>Lo mismo sucede en la publicidad de los cigarros. ¿Recuerdas los comerciales de Marlboro en los 60's? Un guapo y fuerte vaquero, sentado en su majestuoso caballo en un paraje sin fin de campos verdes. Sí, es el campo de Marlboro. Y puedes vivir ahí también. Sólo respira ese veneno en tus pulmones, respira ese humo blanco y serás como ese hombre Marlboro, sentado en la cima del mundo en esa vasta tierra salvaje y teniendo como techo un cielo sin nubes. Respira profundamente y disfruta el aire limpio. Ya estás viviendo en ese lugar, aunque estés sentado en tu sillón desvencijado, atestado de cucarachas, en un departamentucho, en el Brons, mientras toses y te atragantas. Ahhh, este es el campo de Marlboro.</p>
+
+        <p>Es el final el que cuenta, el marcador final es el que cuenta. Muchos equipos deportivos han empezado rápido y transitado rápido para fallar al final del juego o de la temporada. Un buen comienzo hace el pobre final más decepcionante. Pablo podía decir asimismo, "He peleado la buena batalla, he acabado la carrera, he guardado la fe" (2 Tim. 4:7). Su <span class="hebrew-word">'aharít</span> fue glorioso, el transcurso de su vida fue firme. ¡Así debe ser para nosotros!</p>
+
+        <p>La palabra nos asegura que el <span class="hebrew-word">'aharít</span> del malo es destrucción (vea Proverbios 14:12) y su esperanza es corta (vea Salmos 37:38; 109:13). De hecho, Proverbios dice que el malo no tiene un <span class="hebrew-word">'aharít</span> real porque hereda tinieblas y destrucción (ver Proverbios 24:20). Pero los justos tendrán un maravilloso <span class="hebrew-word">'aharít</span>. Nosotros tenemos algo que nos aguarda más adelante.</p>
+
+        <div class="scripture">
+            <strong>No tenga tu corazón envidia de los pecadores, antes persevera en el temor de Jehová todo el tiempo; porque ciertamente hay fin, y tu esperanza no será cortada.</strong>
+            <span class="scripture-ref">(Prov. 23:17-18; ver Prov. 24:14)</span>
+        </div>
+
+        <div class="scripture">
+            <strong>Considera al íntegro, y mira al justo; porque hay un final dichoso para el hombre de paz.</strong>
+            <span class="scripture-ref">(Salmos 37:37)</span>
+        </div>
+
+        <div class="scripture">
+            <strong>Porque yo sé los pensamientos que tengo acerca de vosotros, dice Jehová, pensamientos de paz, y no de mal, para daros el fin que esperáis.</strong>
+            <span class="scripture-ref">(Jeremías 29:11)</span>
+        </div>
+
+        <p>El <span class="hebrew-word">'aharít</span> de los creyentes será bendecido. Un día estaremos parados delante del trono de Dios, rodeados de su gloria y belleza radiante sin descripción. Yo puedo casi imaginar a mi esposa ahí, pero tan transformada, tan brillante, luminosa y resplandeciente que apenas si puedo reconocerla. "¿Eres realmente tú? ¡Te ves tan angelical!" Sí, así va a ser el <span class="hebrew-word">'aharít</span> de los justos.</p>
+
+        <p>Hasta Balam entendió esta verdad "¿Quién contará el polvo de Jacob o el número de la cuarta parte de Israel? Muera yo la muerte de los rectos, y mi postrimería sea como la suya. (Núm. 23:10). Desgraciadamente para este profeta mercenario, él murió la muerte de los incrédulos, habiendo amado "el premio de la maldad"(2 Pedro 2:15). Su <span class="hebrew-word">'aharít</span> fue maldecido. ¿Cuál será tu <span class="hebrew-word">'aharít</span>?</p>
+
+        <ul class="bible-list">
+            <li>No seas como Esaú que cambió su primogenitura por una sola comida.</li>
+            <li>No seas como ese rico hombre de negocios, torturado y golpeado hasta la muerte por que su lujuria le abrió la puerta de la destrucción.</li>
+            <li>No seas como ese pastor con dones, cuya inclinación al desánimo le llevó a deslizarse de lleno en la depravación, siendo finalmente receptor y transmisor del Sida.</li>
+            <li>No seas como el borracho en la calle, que cayó desde el pináculo del éxito después de desbaratarse bajo las presiones de la vida, primero fascinado con la paz del alcohol y luego víctima de su veneno.</li>
+            <li>No seas como el hombre Marlboro, un símbolo de vida, de fuerza y libertad, pero realmente esclavo de un amo de tres pulgadas de nicotina. Finalmente víctima innecesaria del cáncer.</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p style="font-size: 1.3rem; text-align: center; font-weight: bold;">¡No! Escucha el consejo, sométete a la disciplina y tu final será glorioso. Estás advertido. Ahora sé sabio. Recuerda el <span class="hebrew-word">'aharít</span>.</p>
+        </div>
+
+        <p style="text-align: right; font-style: italic; margin-top: 30px;">Tomado del libro:<br><strong>Go and Sin No More: A Call to Holiness</strong></p>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - El Camino de Muerte<br>
+    Por Michael L. Brown
+</footer>
+</body>
+</html>
