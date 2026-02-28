@@ -35,12 +35,35 @@
     document.head.appendChild(link);
   };
 
-  const isArticlePage = () => Boolean(document.querySelector(".content-section"));
+  const isMagazinePage = () => Boolean(
+    document.querySelector("header .header-content")
+      || document.querySelector(".editorial-container")
+      || document.querySelector(".content-section")
+      || document.querySelector(".scripture"),
+  );
+
+  const isMenuPage = () => Boolean(document.querySelector("#revistas-grid"));
+
+  const getToggleHost = () => {
+    if (isMenuPage()) {
+      return document.querySelector(".hero") || document.body;
+    }
+
+    if (isMagazinePage()) {
+      return document.querySelector("header .header-content")
+        || document.querySelector("header")
+        || document.body;
+    }
+
+    return null;
+  };
 
   const addThemeButton = () => {
-    if (!isArticlePage()) return;
+    const host = getToggleHost();
+    if (!host) return;
 
-    const existingHeaderButton = document.querySelector(".print-button");
+    const shouldReusePrintButton = isMagazinePage() && !isMenuPage();
+    const existingHeaderButton = shouldReusePrintButton ? document.querySelector(".print-button") : null;
     const button = existingHeaderButton || document.createElement("button");
 
     button.type = "button";
@@ -48,7 +71,7 @@
 
     const updateLabel = () => {
       const current = document.documentElement.getAttribute("data-theme");
-      button.textContent = current === "dark" ? "☀️" : "🌙";
+      button.textContent = current === "dark" ? "☀︎" : "☾";
       button.setAttribute(
         "aria-label",
         current === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro",
@@ -67,17 +90,10 @@
     updateLabel();
 
     if (!existingHeaderButton) {
-      const headerContent = document.querySelector("header .header-content");
-      if (headerContent) {
-        headerContent.appendChild(button);
-        return;
+      if (host.matches("header")) {
+        host.classList.add("has-theme-toggle");
       }
-
-      const header = document.querySelector("header");
-      if (header) {
-        header.classList.add("has-theme-toggle");
-        header.appendChild(button);
-      }
+      host.appendChild(button);
     }
   };
 
