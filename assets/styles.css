@@ -151,7 +151,7 @@ html[data-theme="light"] .hero {
 }
 
 html[data-theme="light"] .hero h1 {
-  background: linear-gradient(90deg, #0f172a, #1d4ed8 45%, #0f766e);
+  background: linear-gradient(90deg, #0b2242, #1e3a8a 46%, #0f4c81);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
