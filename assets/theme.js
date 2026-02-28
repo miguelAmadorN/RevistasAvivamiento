@@ -22,86 +22,41 @@
     localStorage.setItem(STORAGE_KEY, theme);
   };
 
+  const ensureSharedStylesheet = () => {
+    const currentScript = document.currentScript;
+    if (!currentScript?.src) return;
 
-  const injectBaseButtonStyles = () => {
-    const style = document.createElement("style");
-    style.textContent = `
-      .theme-toggle-button {
-        position: fixed;
-        right: 1rem;
-        bottom: 1rem;
-        z-index: 1000;
-        border: none;
-        border-radius: 999px;
-        padding: 0.65rem 1rem;
-        background: #22c55e;
-        color: #052e16;
-        font-weight: 700;
-        cursor: pointer;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.18);
-      }
-    `;
-    document.head.appendChild(style);
+    const cssUrl = new URL("article-theme.css", currentScript.src).toString();
+    if (document.querySelector(`link[href="${cssUrl}"]`)) return;
+
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = cssUrl;
+    document.head.appendChild(link);
   };
 
-  const injectArticleThemeStyles = () => {
-    if (!document.querySelector(".container")) return;
-
-    const style = document.createElement("style");
-    style.textContent = `
-      html[data-theme="dark"] body {
-        background: #0f172a !important;
-        color: #e2e8f0 !important;
-      }
-
-      html[data-theme="dark"] .container,
-      html[data-theme="dark"] .content-section,
-      html[data-theme="dark"] .editorial-container,
-      html[data-theme="dark"] .intro-box,
-      html[data-theme="dark"] .scripture,
-      html[data-theme="dark"] .highlight-box,
-      html[data-theme="dark"] .warning-box,
-      html[data-theme="dark"] .editors-note {
-        background: #1e293b !important;
-        color: #e2e8f0 !important;
-        border-color: #334155 !important;
-      }
-
-      html[data-theme="dark"] h1,
-      html[data-theme="dark"] h2,
-      html[data-theme="dark"] h3,
-      html[data-theme="dark"] p,
-      html[data-theme="dark"] li,
-      html[data-theme="dark"] span,
-      html[data-theme="dark"] strong,
-      html[data-theme="dark"] footer {
-        color: #e2e8f0 !important;
-      }
-
-      html[data-theme="dark"] .scripture-ref,
-      html[data-theme="dark"] .subtitle,
-      html[data-theme="dark"] .red-emphasis {
-        color: #93c5fd !important;
-      }
-
-      html[data-theme="dark"] footer {
-        border-color: #334155 !important;
-      }
-    `;
-
-    document.head.appendChild(style);
-  };
+  const isArticlePage = () => Boolean(document.querySelector(".content-section"));
 
   const addThemeButton = () => {
-    const button = document.createElement("button");
+    if (!isArticlePage()) return;
+
+    const existingHeaderButton = document.querySelector(".print-button");
+    const button = existingHeaderButton || document.createElement("button");
+
     button.type = "button";
-    button.className = "theme-toggle-button";
+    button.classList.add("theme-toggle-button");
 
     const updateLabel = () => {
       const current = document.documentElement.getAttribute("data-theme");
-      button.textContent = current === "dark" ? "☀️ Vista día" : "🌙 Vista noche";
+      button.textContent = current === "dark" ? "☀️" : "🌙";
+      button.setAttribute(
+        "aria-label",
+        current === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro",
+      );
+      button.title = button.getAttribute("aria-label");
     };
 
+    button.onclick = null;
     button.addEventListener("click", () => {
       const current = document.documentElement.getAttribute("data-theme");
       const nextTheme = current === "dark" ? "light" : "dark";
@@ -110,12 +65,24 @@
     });
 
     updateLabel();
-    document.body.appendChild(button);
+
+    if (!existingHeaderButton) {
+      const headerContent = document.querySelector("header .header-content");
+      if (headerContent) {
+        headerContent.appendChild(button);
+        return;
+      }
+
+      const header = document.querySelector("header");
+      if (header) {
+        header.classList.add("has-theme-toggle");
+        header.appendChild(button);
+      }
+    }
   };
 
   applyTheme(getInitialTheme());
-  injectBaseButtonStyles();
-  injectArticleThemeStyles();
+  ensureSharedStylesheet();
 
   window.addEventListener("DOMContentLoaded", () => {
     addThemeButton();

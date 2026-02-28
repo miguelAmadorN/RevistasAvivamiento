@@ -1,0 +1,78 @@
+html[data-theme="dark"] body {
+  background: #0f172a !important;
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .container,
+html[data-theme="dark"] .content-section,
+html[data-theme="dark"] .editorial-container,
+html[data-theme="dark"] .intro-box,
+html[data-theme="dark"] .scripture,
+html[data-theme="dark"] .highlight-box,
+html[data-theme="dark"] .warning-box,
+html[data-theme="dark"] .editors-note,
+html[data-theme="dark"] .math-illustration,
+html[data-theme="dark"] .note,
+html[data-theme="dark"] .application-box,
+html[data-theme="dark"] .question-box {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #334155 !important;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] p,
+html[data-theme="dark"] li,
+html[data-theme="dark"] span,
+html[data-theme="dark"] strong,
+html[data-theme="dark"] footer {
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .scripture-ref,
+html[data-theme="dark"] .subtitle,
+html[data-theme="dark"] .red-emphasis,
+html[data-theme="dark"] .author {
+  color: #93c5fd !important;
+}
+
+html[data-theme="dark"] footer,
+html[data-theme="dark"] h2 {
+  border-color: #334155 !important;
+}
+
+header .theme-toggle-button,
+header .print-button.theme-toggle-button {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+header .theme-toggle-button:hover,
+header .print-button.theme-toggle-button:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+header.has-theme-toggle {
+  position: relative;
+}
+
+header.has-theme-toggle .theme-toggle-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
