@@ -145,12 +145,12 @@ html[data-theme="light"] .button:hover {
 
 html[data-theme="light"] .hero {
   background:
-    linear-gradient(125deg, rgba(59, 130, 246, 0.28), rgba(30, 64, 175, 0.42) 52%, rgba(15, 23, 42, 0.4)),
-    linear-gradient(180deg, rgba(239, 246, 255, 0.94), rgba(219, 234, 254, 0.72));
-  border: 1px solid rgba(30, 64, 175, 0.36);
+    linear-gradient(125deg, rgba(14, 116, 220, 0.34), rgba(29, 78, 216, 0.46) 52%, rgba(12, 74, 110, 0.38)),
+    linear-gradient(180deg, rgba(239, 246, 255, 0.95), rgba(219, 234, 254, 0.74));
+  border: 1px solid rgba(29, 78, 216, 0.4);
   border-top: none;
   border-radius: 0 0 24px 24px;
-  box-shadow: 0 12px 24px rgba(30, 64, 175, 0.18);
+  box-shadow: 0 12px 24px rgba(30, 64, 175, 0.2);
 }
 
 html[data-theme="light"] .hero h1 {
