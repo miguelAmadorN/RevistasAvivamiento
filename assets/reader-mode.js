@@ -128,10 +128,6 @@ function addReadAloudControls(main, article) {
   voiceSelect.className = "reader-toolbar__select";
   voiceSelect.setAttribute("aria-label", "Idioma y voz de lectura");
 
-  const themeButton = document.createElement("button");
-  themeButton.type = "button";
-  themeButton.className = "reader-toolbar__button reader-toolbar__theme-button";
-  themeButton.setAttribute("aria-label", "Cambiar tema claro/oscuro");
 
   const playButton = document.createElement("button");
   playButton.type = "button";
@@ -152,7 +148,7 @@ function addReadAloudControls(main, article) {
   buttons.className = "reader-toolbar__buttons";
   buttons.append(playButton, pauseButton, stopButton);
 
-  controlsRow.append(voiceSelect, themeButton, buttons);
+  controlsRow.append(voiceSelect, buttons);
 
   const status = document.createElement("p");
   status.className = "reader-toolbar__status";
@@ -174,29 +170,6 @@ function addReadAloudControls(main, article) {
   let isStopped = true;
   let isPaused = false;
   let currentUtterance = null;
-
-  const getCurrentTheme = () => {
-    return document.documentElement.getAttribute("data-reader-theme") || "light";
-  };
-
-  const applyTheme = (theme) => {
-    document.documentElement.setAttribute("data-reader-theme", theme);
-    themeButton.textContent = theme === "dark" ? "☀️" : "🌙";
-    themeButton.setAttribute("title", theme === "dark" ? "Usar tema claro" : "Usar tema oscuro");
-  };
-
-  const savedTheme = localStorage.getItem("readerTheme");
-  if (savedTheme === "dark" || savedTheme === "light") {
-    applyTheme(savedTheme);
-  } else {
-    applyTheme(getCurrentTheme());
-  }
-
-  themeButton.addEventListener("click", () => {
-    const nextTheme = getCurrentTheme() === "dark" ? "light" : "dark";
-    applyTheme(nextTheme);
-    localStorage.setItem("readerTheme", nextTheme);
-  });
 
   const getPreferredLanguage = () => {
     return document.documentElement.lang || navigator.language || "es-ES";
@@ -383,13 +356,13 @@ function injectToolbarStyles() {
       border: 1px solid #d6dde8;
       border-left: 4px solid #4a6491;
       border-radius: 8px;
-      padding: 16px;
-      margin: 0 0 20px;
+      padding: 10px 12px;
+      margin: 0 0 12px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     .reader-toolbar__label {
-      margin: 0 0 10px;
+      margin: 0 0 6px;
       font-weight: 700;
       color: #2c3e50;
     }
@@ -397,21 +370,21 @@ function injectToolbarStyles() {
     .reader-toolbar__controls-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 6px;
       align-items: center;
     }
 
     .reader-toolbar__select {
       border: 1px solid #b7c3d6;
       border-radius: 6px;
-      padding: 8px;
+      padding: 6px 8px;
       color: #2c3e50;
       max-width: 100%;
     }
 
     .reader-toolbar__buttons {
       display: flex;
-      gap: 10px;
+      gap: 6px;
       flex-wrap: wrap;
     }
 
@@ -420,7 +393,7 @@ function injectToolbarStyles() {
       background: #4a6491;
       color: #fff;
       border-radius: 6px;
-      padding: 8px 12px;
+      padding: 6px 10px;
       font-weight: 700;
       cursor: pointer;
     }
@@ -432,59 +405,92 @@ function injectToolbarStyles() {
     }
 
     .reader-toolbar__status {
-      margin: 10px 0 0;
+      margin: 6px 0 0;
       color: #425a76;
       font-size: 0.95rem;
     }
 
-    [data-reader-theme="dark"] body {
+
+    .print-button {
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      line-height: 1;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+    }
+
+    .print-button:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.3);
+    }
+
+    html[data-theme="dark"] .print-button {
+      background: rgba(30, 41, 59, 0.92);
+      border-color: rgba(148, 163, 184, 0.35);
+      color: #e2e8f0;
+    }
+
+    html[data-theme="light"] .print-button {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.45);
+      color: #ffffff;
+    }
+
+    html[data-theme="dark"] body {
       background-color: #0f172a;
       color: #e2e8f0;
     }
 
-    [data-reader-theme="dark"] .content-section,
-    [data-reader-theme="dark"] .editorial-container,
-    [data-reader-theme="dark"] .reader-toolbar,
-    [data-reader-theme="dark"] .scripture,
-    [data-reader-theme="dark"] .note,
-    [data-reader-theme="dark"] .highlight-box,
-    [data-reader-theme="dark"] .warning-box,
-    [data-reader-theme="dark"] .math-illustration,
-    [data-reader-theme="dark"] .intro-box,
-    [data-reader-theme="dark"] .editorial-text {
+    html[data-theme="dark"] .content-section,
+    html[data-theme="dark"] .editorial-container,
+    html[data-theme="dark"] .reader-toolbar,
+    html[data-theme="dark"] .scripture,
+    html[data-theme="dark"] .note,
+    html[data-theme="dark"] .highlight-box,
+    html[data-theme="dark"] .warning-box,
+    html[data-theme="dark"] .math-illustration,
+    html[data-theme="dark"] .intro-box,
+    html[data-theme="dark"] .editorial-text {
       background-color: #1e293b !important;
       color: #e2e8f0 !important;
       border-color: #334155 !important;
     }
 
-    [data-reader-theme="dark"] h1,
-    [data-reader-theme="dark"] h2,
-    [data-reader-theme="dark"] h3,
-    [data-reader-theme="dark"] p,
-    [data-reader-theme="dark"] li,
-    [data-reader-theme="dark"] .reader-toolbar__label,
-    [data-reader-theme="dark"] .reader-toolbar__status,
-    [data-reader-theme="dark"] .scripture-ref,
-    [data-reader-theme="dark"] .author,
-    [data-reader-theme="dark"] .subtitle,
-    [data-reader-theme="dark"] footer {
+    html[data-theme="dark"] h1,
+    html[data-theme="dark"] h2,
+    html[data-theme="dark"] h3,
+    html[data-theme="dark"] p,
+    html[data-theme="dark"] li,
+    html[data-theme="dark"] .reader-toolbar__label,
+    html[data-theme="dark"] .reader-toolbar__status,
+    html[data-theme="dark"] .scripture-ref,
+    html[data-theme="dark"] .author,
+    html[data-theme="dark"] .subtitle,
+    html[data-theme="dark"] footer {
       color: #e2e8f0 !important;
     }
 
-    [data-reader-theme="dark"] .reader-toolbar__select {
+    html[data-theme="dark"] .reader-toolbar__select {
       background-color: #0f172a;
       color: #e2e8f0;
       border-color: #334155;
     }
 
-    [data-reader-theme="dark"] .reader-toolbar__button,
-    [data-reader-theme="dark"] .menu-button,
-    [data-reader-theme="dark"] .button {
+    html[data-theme="dark"] .reader-toolbar__button,
+    html[data-theme="dark"] .menu-button,
+    html[data-theme="dark"] .button {
       background-color: #334155 !important;
       color: #e2e8f0 !important;
     }
 
-    [data-reader-theme="dark"] a {
+    html[data-theme="dark"] a {
       color: #93c5fd;
     }
   `;
