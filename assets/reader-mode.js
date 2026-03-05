@@ -81,7 +81,7 @@ function groupHeaderActionButtons() {
     const themeButton = host.querySelector(".theme-toggle-button");
 
     if (!printButton || !themeButton) {
-      return;
+      return false;
     }
 
     let actionGroup = host.querySelector(".header-action-group");
@@ -91,13 +91,29 @@ function groupHeaderActionButtons() {
       host.appendChild(actionGroup);
     }
 
-    actionGroup.append(printButton, themeButton);
+    const needsMove = printButton.parentElement !== actionGroup
+      || themeButton.parentElement !== actionGroup
+      || actionGroup.firstElementChild !== printButton
+      || actionGroup.lastElementChild !== themeButton;
+
+    if (needsMove) {
+      actionGroup.append(printButton, themeButton);
+    }
+
+    return true;
   };
 
-  regroup();
-  const observer = new MutationObserver(regroup);
-  observer.observe(host, { childList: true, subtree: true });
-  setTimeout(() => observer.disconnect(), 2000);
+  if (regroup()) {
+    return;
+  }
+
+  let attempts = 0;
+  const timer = setInterval(() => {
+    attempts += 1;
+    if (regroup() || attempts >= 12) {
+      clearInterval(timer);
+    }
+  }, 150);
 }
 
 function splitTextIntoChunks(text, maxLength = 900) {
