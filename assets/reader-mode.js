@@ -58,11 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function enhancePrintButtons() {
-  const printButtons = document.querySelectorAll(".print-button");
-
-  printButtons.forEach((button) => {
-    const originalText = (button.textContent || "").trim().toLowerCase();
-    if (!originalText.includes("imprimir") && !originalText.includes("🖨")) {
+  document.querySelectorAll(".print-button").forEach((button) => {
+    const text = (button.textContent || "").trim().toLowerCase();
+    if (!text.includes("imprimir") && !text.includes("🖨")) {
       return;
     }
 
@@ -97,20 +95,14 @@ function groupHeaderActionButtons() {
   };
 
   regroup();
-
-  const observer = new MutationObserver(() => {
-    regroup();
-  });
-
+  const observer = new MutationObserver(regroup);
   observer.observe(host, { childList: true, subtree: true });
   setTimeout(() => observer.disconnect(), 2000);
 }
 
 function splitTextIntoChunks(text, maxLength = 900) {
   const cleanText = text.replace(/\s+/g, " ").trim();
-  if (!cleanText) {
-    return [];
-  }
+  if (!cleanText) return [];
 
   const sentences = cleanText.split(/(?<=[.!?])\s+/);
   const chunks = [];
@@ -122,9 +114,7 @@ function splitTextIntoChunks(text, maxLength = 900) {
       return;
     }
 
-    if (current) {
-      chunks.push(current);
-    }
+    if (current) chunks.push(current);
 
     if (sentence.length <= maxLength) {
       current = sentence;
@@ -134,14 +124,10 @@ function splitTextIntoChunks(text, maxLength = 900) {
     for (let i = 0; i < sentence.length; i += maxLength) {
       chunks.push(sentence.slice(i, i + maxLength));
     }
-
     current = "";
   });
 
-  if (current) {
-    chunks.push(current);
-  }
-
+  if (current) chunks.push(current);
   return chunks;
 }
 
@@ -154,40 +140,43 @@ function addReadAloudControls(main, article) {
 
   const label = document.createElement("p");
   label.className = "reader-toolbar__label";
-  label.textContent = "Escuchar esta revista";
+  label.textContent = "Escuchar revista";
 
   const controlsRow = document.createElement("div");
   controlsRow.className = "reader-toolbar__controls-row";
-
-  const languageSelect = document.createElement("select");
-  languageSelect.className = "reader-toolbar__select";
-  languageSelect.setAttribute("aria-label", "Idioma de lectura");
-
-  const languages = [
-    { code: "es", label: "Español" },
-    { code: "en", label: "English" },
-    { code: "pt", label: "Português" },
-    { code: "fr", label: "Français" },
-    { code: "it", label: "Italiano" },
-    { code: "de", label: "Deutsch" },
-  ];
-
-  languages.forEach(({ code, label: languageLabel }) => {
-    const option = document.createElement("option");
-    option.value = code;
-    option.textContent = languageLabel;
-    if (code === "es") {
-      option.selected = true;
-    }
-    languageSelect.appendChild(option);
-  });
 
   const playButton = document.createElement("button");
   playButton.type = "button";
   playButton.className = "reader-toolbar__button reader-toolbar__play-toggle";
   playButton.textContent = "▶ Reproducir";
 
-  controlsRow.append(languageSelect, playButton);
+  const languageToggle = document.createElement("button");
+  languageToggle.type = "button";
+  languageToggle.className = "reader-toolbar__button reader-toolbar__toggle-language";
+  languageToggle.textContent = "🌐 Idioma";
+
+  const languageWrap = document.createElement("div");
+  languageWrap.className = "reader-toolbar__language-wrap";
+  languageWrap.hidden = true;
+
+  const languageSelect = document.createElement("select");
+  languageSelect.className = "reader-toolbar__select";
+  languageSelect.setAttribute("aria-label", "Idioma de voz");
+
+  [
+    { code: "es-ES", label: "Español (España)" },
+    { code: "es-MX", label: "Español (México)" },
+    { code: "es-AR", label: "Español (Argentina)" },
+  ].forEach(({ code, label: name }) => {
+    const option = document.createElement("option");
+    option.value = code;
+    option.textContent = name;
+    if (code === "es-ES") option.selected = true;
+    languageSelect.appendChild(option);
+  });
+
+  languageWrap.appendChild(languageSelect);
+  controlsRow.append(playButton, languageToggle, languageWrap);
 
   const status = document.createElement("p");
   status.className = "reader-toolbar__status";
@@ -198,50 +187,44 @@ function addReadAloudControls(main, article) {
 
   if (!speechSupported) {
     status.textContent = "Tu navegador no soporta reproducción de texto por voz.";
-    [languageSelect, playButton].forEach((control) => {
+    [playButton, languageToggle, languageSelect].forEach((control) => {
       control.disabled = true;
     });
     return;
   }
 
   const speech = window.speechSynthesis;
-  const originalText = article.innerText;
-  const translatedCache = new Map();
+  const sourceText = article.innerText;
   let queue = [];
   let isStopped = true;
-  let isBusy = false;
 
-  const setPlayButtonState = (isPlaying) => {
+  const setPlayState = (isPlaying) => {
     playButton.textContent = isPlaying ? "⏹ Detener" : "▶ Reproducir";
   };
 
   const resolveVoice = (langCode) => {
     const voices = speech.getVoices();
-    const exact = voices.find((voice) => voice.lang.toLowerCase() === langCode.toLowerCase());
-    if (exact) return exact;
-
-    const sameBase = voices.find((voice) => voice.lang.toLowerCase().startsWith(langCode.toLowerCase()));
-    if (sameBase) return sameBase;
-
-    return voices.find((voice) => voice.default) || null;
+    return (
+      voices.find((v) => v.lang.toLowerCase() === langCode.toLowerCase()) ||
+      voices.find((v) => v.lang.toLowerCase().startsWith("es")) ||
+      voices.find((v) => v.default) ||
+      null
+    );
   };
 
   const clearPlayback = () => {
     isStopped = true;
     queue = [];
     speech.cancel();
-    setPlayButtonState(false);
+    setPlayState(false);
   };
 
   const speakNext = () => {
-    if (isStopped) {
-      return;
-    }
+    if (isStopped) return;
 
     if (queue.length === 0) {
       status.textContent = "Reproducción finalizada.";
-      setPlayButtonState(false);
-      isStopped = true;
+      clearPlayback();
       return;
     }
 
@@ -249,123 +232,56 @@ function addReadAloudControls(main, article) {
     const utterance = new SpeechSynthesisUtterance(text);
     const voice = resolveVoice(langCode);
 
-    if (voice) {
-      utterance.voice = voice;
-      utterance.lang = voice.lang;
-    } else {
-      utterance.lang = langCode;
-    }
-
-    utterance.rate = 1;
-    utterance.pitch = 1;
+    utterance.lang = langCode;
+    if (voice) utterance.voice = voice;
 
     utterance.onstart = () => {
-      status.textContent = `Reproduciendo en ${langCode.toUpperCase()}...`;
-      setPlayButtonState(true);
+      status.textContent = "Reproduciendo en español...";
+      setPlayState(true);
     };
 
     utterance.onend = () => {
-      if (!isStopped) {
-        speakNext();
-      }
+      if (!isStopped) speakNext();
     };
 
     utterance.onerror = () => {
-      if (!isStopped) {
-        status.textContent = "No se pudo reproducir una parte del audio.";
-        speakNext();
-      }
+      status.textContent = "No se pudo reproducir una parte del audio.";
+      if (!isStopped) speakNext();
     };
 
     speech.speak(utterance);
   };
 
-  const translateText = async (text, targetLang) => {
-    if (targetLang === "es") {
-      return text;
-    }
-
-    const cacheKey = `${targetLang}:${text.length}`;
-    if (translatedCache.has(cacheKey)) {
-      return translatedCache.get(cacheKey);
-    }
-
-    const chunks = splitTextIntoChunks(text, 700);
-    const translatedChunks = [];
-
-    for (const chunk of chunks) {
-      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(chunk)}`;
-      const response = await fetch(url);
-
-      if (!response.ok) {
-        throw new Error("No se pudo traducir");
-      }
-
-      const data = await response.json();
-      const translated = (data?.[0] || []).map((entry) => entry?.[0] || "").join("");
-      translatedChunks.push(translated);
-    }
-
-    const result = translatedChunks.join(" ").trim();
-    translatedCache.set(cacheKey, result);
-    return result;
-  };
-
-  const buildQueueForLanguage = async (langCode) => {
-    let textForSpeech = originalText;
-
-    if (langCode !== "es") {
-      status.textContent = `Traduciendo contenido a ${langCode.toUpperCase()}...`;
-      textForSpeech = await translateText(originalText, langCode);
-    }
-
-    const chunks = splitTextIntoChunks(textForSpeech);
-    return chunks.map((chunk) => ({ text: chunk, langCode }));
-  };
-
-  playButton.addEventListener("click", async () => {
-    if (isBusy) {
-      return;
-    }
-
+  playButton.addEventListener("click", () => {
     if (!isStopped || speech.speaking || speech.pending) {
       clearPlayback();
       status.textContent = "Reproducción detenida.";
       return;
     }
 
-    isBusy = true;
-    playButton.disabled = true;
+    const langCode = languageSelect.value || "es-ES";
+    queue = splitTextIntoChunks(sourceText).map((text) => ({ text, langCode }));
 
-    try {
-      const langCode = languageSelect.value || "es";
-      queue = await buildQueueForLanguage(langCode);
-
-      if (queue.length === 0) {
-        status.textContent = "No se encontró texto para reproducir.";
-        setPlayButtonState(false);
-        isStopped = true;
-      } else {
-        isStopped = false;
-        speakNext();
-      }
-    } catch (error) {
-      status.textContent = "No se pudo traducir o preparar el audio.";
-      clearPlayback();
-    } finally {
-      isBusy = false;
-      playButton.disabled = false;
+    if (queue.length === 0) {
+      status.textContent = "No se encontró texto para reproducir.";
+      return;
     }
+
+    isStopped = false;
+    speakNext();
   });
 
-  status.textContent = "Idioma por defecto: Español. El botón Reproducir cambia a Detener.";
+  languageToggle.addEventListener("click", () => {
+    languageWrap.hidden = !languageWrap.hidden;
+    languageToggle.textContent = languageWrap.hidden ? "🌐 Idioma" : "✖ Ocultar idioma";
+  });
+
+  status.textContent = "Lectura en español lista. Idioma está oculto hasta que lo abras.";
   window.addEventListener("beforeunload", clearPlayback);
 }
 
 function injectToolbarStyles() {
-  if (document.getElementById("reader-toolbar-styles")) {
-    return;
-  }
+  if (document.getElementById("reader-toolbar-styles")) return;
 
   const style = document.createElement("style");
   style.id = "reader-toolbar-styles";
@@ -375,59 +291,6 @@ function injectToolbarStyles() {
       align-items: center;
       gap: 6px;
       margin-left: 10px;
-    }
-
-    .reader-toolbar {
-      background: #ffffff;
-      border: 1px solid #d6dde8;
-      border-left: 4px solid #4a6491;
-      border-radius: 8px;
-      padding: 10px 12px;
-      margin: 0 0 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .reader-toolbar__label {
-      margin: 0 0 6px;
-      font-weight: 700;
-      color: #2c3e50;
-    }
-
-    .reader-toolbar__controls-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      align-items: center;
-    }
-
-    .reader-toolbar__select {
-      border: 1px solid #b7c3d6;
-      border-radius: 6px;
-      padding: 6px 8px;
-      color: #2c3e50;
-      max-width: 100%;
-    }
-
-    .reader-toolbar__button {
-      border: none;
-      background: #4a6491;
-      color: #fff;
-      border-radius: 6px;
-      padding: 6px 10px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .reader-toolbar__button[disabled],
-    .reader-toolbar__select[disabled] {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    .reader-toolbar__status {
-      margin: 6px 0 0;
-      color: #425a76;
-      font-size: 0.92rem;
     }
 
     .print-button,
@@ -449,9 +312,63 @@ function injectToolbarStyles() {
       color: #fff;
     }
 
-    .print-button:hover,
-    .theme-toggle-button:hover {
-      transform: translateY(-1px);
+    .reader-toolbar {
+      background: rgba(255,255,255,0.96);
+      border: 1px solid #d6dde8;
+      border-radius: 10px;
+      padding: 8px 10px;
+      margin: 0 0 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      max-width: 520px;
+    }
+
+    .reader-toolbar__label {
+      margin: 0 0 6px;
+      font-weight: 700;
+      color: #2c3e50;
+      font-size: 0.95rem;
+    }
+
+    .reader-toolbar__controls-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .reader-toolbar__language-wrap[hidden] {
+      display: none;
+    }
+
+    .reader-toolbar__button {
+      border: 1px solid #c8d4e5;
+      background: #4a6491;
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .reader-toolbar__toggle-language {
+      background: #eef3fb;
+      color: #2c3e50;
+    }
+
+    .reader-toolbar__select {
+      border: 1px solid #b7c3d6;
+      border-radius: 999px;
+      padding: 6px 8px;
+      color: #2c3e50;
+      font-size: 0.85rem;
+      background: #fff;
+    }
+
+    .reader-toolbar__status {
+      margin: 6px 0 0;
+      font-size: 0.82rem;
+      color: #5a6d86;
     }
 
     html[data-theme="dark"] .print-button,
@@ -461,55 +378,23 @@ function injectToolbarStyles() {
       color: #e2e8f0;
     }
 
-    html[data-theme="dark"] body {
-      background-color: #0f172a;
-      color: #e2e8f0;
-    }
-
-    html[data-theme="dark"] .content-section,
-    html[data-theme="dark"] .editorial-container,
-    html[data-theme="dark"] .reader-toolbar,
-    html[data-theme="dark"] .scripture,
-    html[data-theme="dark"] .note,
-    html[data-theme="dark"] .highlight-box,
-    html[data-theme="dark"] .warning-box,
-    html[data-theme="dark"] .math-illustration,
-    html[data-theme="dark"] .intro-box,
-    html[data-theme="dark"] .editorial-text {
-      background-color: #1e293b !important;
-      color: #e2e8f0 !important;
-      border-color: #334155 !important;
-    }
-
-    html[data-theme="dark"] h1,
-    html[data-theme="dark"] h2,
-    html[data-theme="dark"] h3,
-    html[data-theme="dark"] p,
-    html[data-theme="dark"] li,
-    html[data-theme="dark"] .reader-toolbar__label,
-    html[data-theme="dark"] .reader-toolbar__status,
-    html[data-theme="dark"] .scripture-ref,
-    html[data-theme="dark"] .author,
-    html[data-theme="dark"] .subtitle,
-    html[data-theme="dark"] footer {
-      color: #e2e8f0 !important;
-    }
-
-    html[data-theme="dark"] .reader-toolbar__select {
-      background-color: #0f172a;
-      color: #e2e8f0;
+    html[data-theme="dark"] .reader-toolbar {
+      background: rgba(15, 23, 42, 0.88);
       border-color: #334155;
     }
 
-    html[data-theme="dark"] .reader-toolbar__button,
-    html[data-theme="dark"] .menu-button,
-    html[data-theme="dark"] .button {
-      background-color: #334155 !important;
-      color: #e2e8f0 !important;
+    html[data-theme="dark"] .reader-toolbar__label,
+    html[data-theme="dark"] .reader-toolbar__status,
+    html[data-theme="dark"] .reader-toolbar__toggle-language {
+      color: #e2e8f0;
     }
 
-    html[data-theme="dark"] a {
-      color: #93c5fd;
+    html[data-theme="dark"] .reader-toolbar__toggle-language,
+    html[data-theme="dark"] .reader-toolbar__select,
+    html[data-theme="dark"] .reader-toolbar__button {
+      border-color: #334155;
+      background: #1e293b;
+      color: #e2e8f0;
     }
   `;
 
