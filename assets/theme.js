@@ -20,6 +20,14 @@
   const applyTheme = (theme) => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem(STORAGE_KEY, theme);
+    updateBackButtonTheme(theme);
+  };
+
+  const updateBackButtonTheme = (theme) => {
+    const backButton = document.querySelector(".back-to-menu-button");
+    if (backButton) {
+      backButton.href = `../../menu.html?theme=${theme}`;
+    }
   };
 
   const ensureSharedStylesheet = () => {
@@ -62,10 +70,9 @@
     const host = getToggleHost();
     if (!host) return;
 
-    const shouldReusePrintButton = isMagazinePage() && !isMenuPage();
-    const existingHeaderButton = shouldReusePrintButton ? document.querySelector(".print-button") : null;
-    const button = existingHeaderButton || document.createElement("button");
+    if (document.querySelector(".theme-toggle-button")) return;
 
+    const button = document.createElement("button");
     button.type = "button";
     button.classList.add("theme-toggle-button");
 
@@ -89,12 +96,28 @@
 
     updateLabel();
 
-    if (!existingHeaderButton) {
-      if (host.matches("header")) {
-        host.classList.add("has-theme-toggle");
-      }
-      host.appendChild(button);
+    if (host.matches("header")) {
+      host.classList.add("has-theme-toggle");
     }
+    host.appendChild(button);
+  };
+
+  const addBackToMenuButton = () => {
+    if (!isMagazinePage() || isMenuPage()) return;
+    if (document.querySelector(".back-to-menu-button")) return;
+
+    const button = document.createElement("a");
+    button.className = "menu-button back-to-menu-button";
+    button.textContent = "← Volver al menú";
+
+    const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+    button.href = `../../menu.html?theme=${currentTheme}`;
+
+    const host = document.querySelector(".header-content")
+      || document.querySelector("header")
+      || document.body;
+
+    host.appendChild(button);
   };
 
   applyTheme(getInitialTheme());
@@ -102,5 +125,6 @@
 
   window.addEventListener("DOMContentLoaded", () => {
     addThemeButton();
+    addBackToMenuButton();
   });
 })();
