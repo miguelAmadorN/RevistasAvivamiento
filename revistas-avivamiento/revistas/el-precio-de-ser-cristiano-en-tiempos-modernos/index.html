@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Precio de Ser Cristiano en Tiempos Modernos - David Wilkerson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #4a6491;
+            font-style: italic;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .bible-list {
+            margin: 20px 0 20px 30px;
+        }
+
+        .bible-list li {
+            margin-bottom: 12px;
+            text-align: justify;
+            padding-left: 5px;
+        }
+
+        .bible-list li strong {
+            color: #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        .intro-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0 30px;
+            border-left: 4px solid #4a6491;
+        }
+
+
+        .menu-button {
+            display: inline-block;
+            margin: 20px 0 10px;
+            padding: 10px 18px;
+            background-color: #4a6491;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .menu-button:hover {
+            background-color: #2c3e50;
+        }
+
+        .menu-link-container {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .poem-box {
+            background-color: #f9f5e8;
+            border-left: 4px solid #b8860b;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .poem-line {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #5a3e1b;
+            text-align: center;
+        }
+
+        .section-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4a6491;
+            margin-right: 10px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin: 30px 0 20px;
+            border-bottom: 2px solid #4a6491;
+            padding-bottom: 10px;
+        }
+
+        .sub-section {
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+            color: #4a6491;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por David Wilkerson</div>
+            <div>EL PRECIO DE SER CRISTIANO EN TIEMPOS MODERNOS</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p><span class="emphasis">"El precio de ser cristiano en tiempos modernos"</span>, cuyo título ya nos adentra en su contenido: Caminar con Cristo tiene un precio. Una verdad importantísima que ha sido pasada por alto por muchos de los que profesan el cristianismo hoy en día. ¿Qué implica ese precio? Tiene que ver con la entrega y con la consagración del verdadero seguidor de Cristo. Ha de ser ésta íntegra y sin reservas.</p>
+
+        <p>Si en verdad la persona ha pasado de las tinieblas a la Luz, entenderá que todo lo que a su criterio le pertenecía, deberá ser puesto a los pies y al servicio de Aquél que lo adquirió a precio de sangre. Dejará de ser su propio señor para empezar una vida que agrade y glorifique a Dios.</p>
+
+        <p>El verdadero cristiano no escatimará nada por obedecer y defender la verdad. Su dinero, pertenencias, comodidad, reputación, estabilidad, familia o aun su propia vida, serán parte del precio por caminar con Él. La deshonra y el menosprecio de los enemigos de la verdad, será soportado con gozo por aquellos que han comprendido el precio que costó su rescate, y honrarán con su vida, su entrega y su disposición, al que no escatimó a Su propio Hijo para salvarnos y llevarnos a la Gloria Eterna.</p>
+
+        <p>Meditemos en ello y decidamos pagar el precio que requiere la lealtad a nuestro Señor y Salvador Jesucristo.</p>
+
+        <div class="scripture">
+            "El que ama a padre o madre más que a mí, no es digno de mí; el que ama a hijo o hija más que a mí, no es digno de mí; y el que no toma su cruz y sigue en pos de mí, no es digno de mí. El que halla su vida, la perderá; y el que pierde su vida por causa de mí, la hallará"
+            <span class="scripture-ref">Mateo 10:37-39</span>
+        </div>
+
+        <div class="editors-note">
+            ATENTAMENTE<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">EL PRECIO DE SER CRISTIANO EN TIEMPOS MODERNOS</h1>
+    <div class="subtitle">Por David Wilkerson</div>
+
+    <div class="content-section">
+        <p>Una de las mejores formas de perder amigos y ser rechazados, es caminar conforme a la voluntad de Dios. Tener seriedad en los asuntos espirituales, abandonar todos tus ídolos, volverte al Señor con todo tu corazón, quitar tus ojos de las cosas del mundo... Y ¡Repentinamente te has convertido en un fanático religioso y te hallas ante el peor rechazo por el resto de tu vida!</p>
+
+        <p>Cuando eras tibio, teniendo una forma de santidad sin poder, cuando no eras demasiado pecador o demasiado santo... tú no tenías problemas con nadie, ni aun con el diablo. Las cosas estaban tranquilas, eras aceptado. Tú eras justamente otro de los muchos creyentes indiferentes.</p>
+
+        <p>Pero has cambiado. Tuviste hambre de Dios. Te convertiste de tus pecados y no pudiste participar ya más de los juegos de la iglesia. Te arrepentiste y te volviste al Señor de todo corazón. Se vinieron abajo los ídolos. Empezaste a escudriñar la Palabra de Dios. Te detuviste de ir tras las cosas materiales y llegaste a obsesionarte con Jesús. Viniste a un nuevo reino de discernimiento y comenzaste a ver cosas en la iglesia, las cuales antes no te interesaban. Escuchas cosas desde el púlpito que quebrantan tu corazón. Ves a otros congregantes comprometidos con el mundo, exactamente como tú estabas una vez. Eso te lastima. Has sido despertado, cambiado, quebrantado y contrito en espíritu. Y tienes ahora una carga por la iglesia dada por Dios.</p>
+
+        <p>¡Pero en lugar de que tus amigos se regocijen o entiendan, piensan que te estás volviendo loco!, llamándote fanático.</p>
+
+        <p>Moisés fue tocado maravillosamente por la mano de Dios y despertado acerca de la esclavitud del pueblo de Dios: <span class="emphasis">"Le vino al corazón el visitar a sus hermanos, pero él pensaba que sus hermanos comprendían que Dios les daría libertad por mano suya; mas ellos no lo habían entendido así"</span> (Hechos 7:23-25) Moisés fue el hombre más dócil del mundo; fue consumido por Dios, y movido proféticamente por Él. Él deseaba que sus hermanos oyeran y vieran lo que Dios iba a hacer. En lugar de esto, ellos lo rechazaron, diciendo: <span class="emphasis">"¿Quién te ha puesto por gobernante y juez sobre nosotros?"</span> (Hechos 7:27) ¿Quién te crees que eres? Un día comprenderían, pero no ahora.</p>
+
+        <p>Cuando el Espíritu Santo me despertó hace años, cuando empecé a ver su llamado a la santidad; y me convencí realmente de caminar en la verdad y la palabra llegó a ser viva; y cuando empecé a ver cosas que nunca había visto antes, quise compartirlo con todos. Deseé y llamé a los predicadores por teléfono y compartí lo que Dios estaba diciendo. Con muchos que vinieron a mi oficina, lloré y saqué mi Biblia y les señalé las verdades gloriosas de una total rendición y pureza de corazón. Pensé que ellos lo verían también. Pensé que amarían la Palabra y caerían conmigo a orar para obtener un nuevo toque de Dios. En lugar de eso, la mayoría solamente me miraron diciendo cosas como: ¿Estas seguro que no te estas sobrepasando un poco? o, "Es un poco pesado para mí". Entre más busque a Dios, menos lo vi. Fue como agua helada que arrojaron en mi cara. Ellos no querían escuchar.</p>
+
+        <p>Si esto te ha estado sucediendo desde que Dios te despertó, tú no estás solo. Quiero mostrarte y advertirte de acuerdo a la Palabra de Dios, que es lo que te espera si te has decidido a caminar de acuerdo a la voluntad de Dios. Debes esperar tres reacciones: <span class="red-emphasis">1. Serás rechazado 2. Serás echado 3. Serás apedreado.</span></p>
+    </div>
+
+    <div class="content-section">
+        <h2><span class="section-number">1.-</span> SERAS RECHAZADO</h2>
+
+        <div class="scripture">
+            "Si fuerais del mundo, el mundo amaría lo suyo; pero porque no sois del mundo, antes yo os elegí del mundo, por eso el mundo os aborrece"
+            <span class="scripture-ref">Juan 15:19</span>
+        </div>
+
+        <p>Muéstrame un creyente que haya llegado a amar tanto la Palabra, como hacedor de la verdad, y te mostraré uno que será rechazado y perseguido por la totalidad de la iglesia tibia. Abandona este mundo y ellos te abandonarán. Jesús tuvo muchos seguidores, hasta que la palabra que Él predicó fue percibida: --demasiado dura, demasiado exigente--. La multitud que amaba sus milagros escuchó sus declaraciones y lo abandonaron, diciendo: ¡Demasiado dura! ¿Quién puede recibirla? Jesús se volvió hacia los doce y preguntó: <span class="emphasis">"¿Queréis acaso iros también vosotros?"</span> o, ¿Es mi palabra demasiado dura para ustedes también? Pedro respondió: <span class="emphasis">"¿A Quién iremos? Sólo Tú tienes palabras de vida eterna"</span> (Juan 6:67-68) No, Pedro y los doce no se irían porque la mayoría de la gente decía que era demasiado dura, demasiado exigente, la amaban porque estaba produciendo en ellos valores eternos. Ellos permanecerían en la verdad, sin importar el precio.</p>
+
+        <p>Esta es la situación que cada cristiano debe afrontar en estos últimos tiempos: ¿Te vas a apartar de la Palabra que te convierte; verdad que señala tu pecado; verdad que remueve, corrige y arruina tus ídolos? ¿Verdad que te llama a quitar tus ojos de las cosas de este mundo, de ti mismo y del materialismo? ¿O te vas a apartar de escuchar un cosquilleo suave, sosegado de la verdad adulterada? ¿Vas a permitir que el Espíritu Santo te pruebe? ¿Te exponga?</p>
+
+        <p>La verdad te hace libre: Libre de predicaciones muertas; libre de pastores muertos; libre de tradiciones muertas; libre de doctrinas de demonios; libre de compañerismos que te desvían de la verdad porque es: "Demasiado comprometedora", como la llaman ellos. Los hacedores de la verdad desean venir a la Luz, dejar que cada hecho secreto sea revelado, Jesús dijo:</p>
+
+        <div class="scripture">
+            "Porque todo aquel que hace lo malo, aborrece la luz y no viene a la luz, para que sus obras no sean reprendidas. Mas el que practica la verdad viene a la Luz, para que sea manifiesto que sus obras son hechas en Dios"
+            <span class="scripture-ref">Juan 3:20-21</span>
+        </div>
+
+        <p>Aquello que es verdad genuina, revela cada cosa oculta. Cuando Jesús empezó a sacar a la luz los pecados ocultos, los judíos religiosos buscaron matarlo. Jesús dijo:</p>
+
+        <div class="scripture">
+            "Sé que sois descendientes de Abraham; pero procuráis matarme, porque mi Palabra no haya cabida en vosotros. Pero ahora procuráis matarme a mí, hombre que os he hablado la verdad, la cual he oído de Dios; no hizo esto Abraham. El que es de Dios, las palabras de Dios oye; por esto no las oís vosotros, porque no sois de Dios"
+            <span class="scripture-ref">Juan 8:37,40 y 47</span>
+        </div>
+
+        <p>La Palabra de Dios dice:</p>
+
+        <div class="scripture">
+            "Y entonces se manifestará aquel inicuo, a quien el Señor matará con el espíritu de su boca, y destruirá con el resplandor de su venida; inicuo cuyo advenimiento es por obra de Satanás, con gran poder y señales y prodigios mentirosos, y con todo engaño de iniquidad para los que se pierden, por cuanto no recibieron el amor de la verdad para ser salvos. Por esto Dios les envía un poder engañoso, para que crean la mentira, a fin de que sean condenados todos los que no creyeron a la verdad, sino que se complacieron en la injusticia"
+            <span class="scripture-ref">2ª Tesalonicenses 2:8-12</span>
+        </div>
+
+        <p>Hay multitud de cristianos hoy en día que no aman la verdad. Dios dice que esto es a causa de su pecado secreto --<span class="emphasis">"Se complacen en su iniquidad"</span>-. Estos comprometidos amantes del placer están en un horrible engaño. Igual que los judíos de los tiempos de Jesús, están convencidos de que ellos ven. Creen que son hijos de Dios, y rechazan ferozmente cada palabra que revela sus más profundos secretos y codicias. Lo que tienen en sus corazones es algo diferente a la verdad. No están abrazando la verdad como una perla de gran precio. En vez de ello, acarician algún placer oculto, algún ídolo, algún pecado favorito.</p>
+
+        <p>Anótalo. Aquellos que te rechazan y abandonan por causa de la verdad, lo hacen porque te ven como una amenaza hacia lo que ellos estiman. Tu vida apartada es una reprensión a su forma de actuar y tibieza.</p>
+
+        <p>Pablo escribió a Timoteo: <span class="emphasis">"Me abandonaron todos los que están en Asia"</span> (2ª Timoteo 1:15). Pablo se había entregado del todo a esa misma gente, declarándoles todo el consejo de Dios. Él fue intachable ante ellos; santo e irreprensible. Fue rechazado por las iglesias de Asia y sus propios hijos espirituales lo evitaron. ¿Por qué?</p>
+
+        <p>Pablo ahora estaba en prisión. Estaba sufriendo. Estaba en profunda aflicción; atado por cadenas: <span class="emphasis">"Un prisionero del Señor"</span>. Pero un nuevo maestro había llegado a ser muy popular --un maestro que trajo un susurrante mensaje de prosperidad-. <span class="emphasis">"Alejandro el calderero me ha causado muchos males; el Señor le pague conforme a sus hechos"</span> (2ª Timoteo 4:14)</p>
+
+        <p>El nombre de Alejandro significa <span class="emphasis">"hombre de placer"</span>. Alejandro e Himeneo estuvieron enseñando un falso evangelio que proveía para la carne. Himeneo fue nombrado después "el dios de las nupcias". Esto representa un evangelio de amor, de celebración, de placeres humanos, sin santidad. Pablo los entregó a Satanás para destrucción de la carne para que aprendieran a no blasfemar (Ver 1ª Timoteo 1:20) El entregarlos a Satanás no fue para destrucción de sus cuerpos --sino de la doctrina carnal-. Fue una experiencia de aprendizaje, para que aprendieran a no blasfemar: ¿Cómo podrían aprender si estuvieran muertos? Estas doctrinas negaban todo sufrimiento, toda penalidad.</p>
+
+        <p>Pablo dijo que ellos mancharon la verdad de la fe, disculpando el pecado, no tenían conciencia pura. Cambiaron la verdadera fe por las enseñanzas de placeres. Rechazaron a Pablo porque no estaban dispuestos a sufrir penalidades. Sus aflicciones las veían como falta de fe. Para ellos, era el diablo quien lo tenía prisionero. Si Pablo es tan santo, si él predica que Dios es Todopoderoso, ¿Por qué está sufriendo? Ellos se avergonzaban de sus cadenas. Y existen cristianos hoy en día que te rechazarán; se avergonzarán de ti --por encontrarte en alguna clase de prueba o tribulación o enfermedad-.</p>
+    </div>
+
+    <div class="content-section">
+        <h2><span class="section-number">2.-</span> TE ECHARAN</h2>
+
+        <div class="scripture">
+            "Os expulsarán de las sinagogas; y aun viene la hora cuando cualquiera que os mate, pensará que rinde servicio a Dios"
+            <span class="scripture-ref">Juan 16:2</span>
+        </div>
+
+        <p>Jesús dijo: estas cosas les digo, para que no se entristezcan... no se sorprendan cuando las iglesias tibias los arrojen: <span class="emphasis">"Porque no conocen al Padre ni a mí"</span> (Juan 16:3)</p>
+
+        <p>Jesús sanó a un hombre que había nacido ciego. Fue traído a la iglesia para ser interrogado por los fariseos religiosos. Sus ojos se habían abierto: ¡Podía ver! Y dijo: <span class="emphasis">"Una cosa sé, que habiendo yo sido ciego, ahora veo"</span> (Juan 9:25). ¿Se regocijaron ellos porque este hombre había recobrado la vista? ¡No! <span class="emphasis">"Respondieron y le dijeron: Tú naciste del todo en pecado, ¿Y nos enseñas a nosotros? Y le expulsaron"</span> (Juan 9:34)</p>
+
+        <p>Ese hombre ciego representa el remanente santo --aquellos cuyos ojos han sido abiertos a la santidad de Dios--. Sigan adelante; testifiquen como él lo hizo ¡Antes estaba ciego y ahora veo! Ellos te echarán diciendo ¿Quién te ha hecho nuestro maestro? ¡Si tu pretendes caminar de acuerdo a la voluntad de Cristo, debes estar preparado para soportar su vituperio!</p>
+
+        <div class="scripture">
+            "Porque por amor de ti he sufrido afrenta; confusión ha cubierto mi rostro. Extraño he sido para mis hermanos, y desconocido para los hijos de mi madre (mis hermanos y hermanas). Porque me consumió el celo de tu casa; y los denuestos de los que te vituperaban cayeron sobre mí"
+            <span class="scripture-ref">Salmo 69:7-9</span>
+        </div>
+
+        <p>Esto habla primeramente de los sufrimientos de Cristo ¡Pero tal como Él estaba en este mundo, así estamos nosotros! Si ellos lo persiguieron y lo vituperaron, harán lo mismo con aquellos que mueren a sí mismos. ¿Quién vituperó a Cristo? ¿Quién amontonó deshonra sobre su cabeza y arrojó su nombre como una inmundicia? ¡La multitud de la iglesia centrada en el hombre!</p>
+
+        <p>¡Echar a los creyentes santos, es el más grande favor que la iglesia centrada en el hombre, pudiera otorgarles! Escucho a cristianos decir: Mi iglesia esta muerta ¡No me gusta lo que está pasando, pero Dios me puso aquí! Permaneceré y trataré de cambiar las cosas. Esto puede ser peligroso y es antibíblico. ¡Debemos salir de todo lo que es de Babilonia! También, puede ser la tradición la que te esté deteniendo. Puede ser que no estés listo para caminar de acuerdo a la voluntad de Dios como pensabas. Tus viejos amigos te detienen.</p>
+
+        <p>Pablo entraba a las sinagogas en cada parte que iba, <span class="emphasis">"como acostumbraba"</span> (Su práctica) (Hechos 17:2). Él predicó a aquellos ciegos devotos de Isaías, diciendo: <span class="emphasis">"Porque yo hago una obra en vuestros días, obra que no creeréis, si alguien os la contare"</span> (Hechos 13:41). Trató de persuadirlos muy fuerte, esperando que escucharan. Pero finalmente Pablo oyó la profecía de Isaías impactar su alma: ¡No hay forma de que ellos crean, aunque permanezcas con ellos y lo declares! Pon atención a esta advertencia: ¡Haz lo que Pablo hizo y retírate! Él <span class="emphasis">"sacudiendo contra ellos el polvo de sus pies"</span> (Hechos 13:51). Pablo dijo a estos judíos religiosos: <span class="emphasis">"Era necesario que se os hablase primero la palabra de Dios; mas puesto que la desecháis... he aquí, nos volvemos a los gentiles"</span> (Hechos 13:46).</p>
+
+        <p>Si tú estás en una comunidad o iglesia que ha oído la verdad y la ha desechado: ¡Déjala! Salte ¡O tus hijos pueden apostatar! Olvídate de decir: ¡Es que mis hijos tienen amigos aquí! Sí, y todos ellos pueden creer sin convicción de pecado, por la falta de poder o de la presencia de Dios. Tú no vas a cambiar nada -¡en ninguna manera!- Sin embargo, ellos sí pueden cambiarte. ¿Qué compañerismo tiene la luz con las tinieblas? Sal fuera de ellos y manténte separado y limpio ENTONCES TE RECIBIRE".</p>
+    </div>
+
+    <div class="content-section">
+        <h2><span class="section-number">3.-</span> ¡SERAS APEDREADO!</h2>
+
+        <div class="scripture">
+            "Y apedreaban a Esteban, mientras él invocaba y decía: Señor Jesús, recibe mi espíritu"
+            <span class="scripture-ref">Hechos 7:59</span>
+        </div>
+
+        <p>¡Había un hombre contra la multitud!</p>
+
+        <p>Aquí tenemos un hombre <span class="emphasis">"¡Con sus ojos fijos en Jesús!"</span>, Siendo aborrecido por sus opositores. Escuchen el odio de estos hombres con vestidura de fanático religiosos: <span class="emphasis">"Y crujían los dientes contra él. Se taparon los oídos, y arremetieron a una contra él"</span> (Hechos 7:54,57). ¿Qué fue lo que este hombre justo hizo para enfurecer a las multitudes religiosas? Predicó la verdad que les partió el corazón: <span class="emphasis">"¡Duros de cerviz, e incircuncisos de corazón y de oídos! Vosotros resistís siempre al Espíritu Santo; como vuestros padres, así también vosotros. Vosotros que recibisteis la ley... y no la guardasteis"</span> (Hechos 7:51,53). ¡Él tuvo que predicar la verdad! Ellos tenían su corazón aún ligado al mundo --atado por su codicia--. Sabían lo que era la ley de Dios, pero rehusaron obedecerla. Ellos crucificaron a Cristo.</p>
+
+        <p>La espada de dos filos de la verdad había partido lo más profundo de sus corazones. Pero fue su testimonio, cuando vio el cielo abierto, lo que atrajo la ira sobre él.</p>
+
+        <div class="scripture">
+            "Pero Esteban, lleno del Espíritu Santo, puestos los ojos en el cielo, vio la gloria de Dios, y a Jesús que estaba a la diestra de Dios, y dijo: He aquí, veo los cielos abiertos, y al Hijo del Hombre que está a la diestra de Dios. Entonces ellos, dando grandes voces, se taparon los oídos, y arremetieron a una contra él. Y echándole fuera de la ciudad, le apedrearon"
+            <span class="scripture-ref">Hechos 7:55-58</span>
+        </div>
+
+        <p>¡Esteban sacó a la luz la mezcla, el corazón divido!: <span class="emphasis">"Entonces hicieron un becerro, y ofrecieron sacrificio al ídolo, y en las obras de sus manos se regocijaron. Y Dios se aparto, y los entregó a que rindiesen culto al ejército del cielo; como está escrito en el libro de los profetas: ¿Acaso me ofrecisteis víctimas y sacrificios en el desierto por cuarenta años, casa de Israel? Antes bien llevasteis el tabernáculo de Moloc, y la estrella de vuestro dios Renfán, figuras que os hicisteis para adorarlas. Os transportaré, pues, más allá de Babilonia"</span> (Hechos 7:41-43).</p>
+
+        <p>En esta época de gracia, si miras a una mujer con codicia, has cometido adulterio ante los ojos de Dios. Si odias, eres un asesino. Y si palabras ruines son lanzadas a ti por caminar de acuerdo a la voluntad de Dios, ¡estás siendo apedreado! <span class="emphasis">"Los labios del necio traen contienda; y su boca los azotes llama... Las palabras del chismoso son como bocados suaves, y penetran hasta las entrañas"</span> (Proverbios 18:6,8). <span class="emphasis">"Que afilan como espada su lengua; lanzan cual saeta suya, palabra amarga"</span> (Salmos 64:3).</p>
+
+        <p>Jesús enseñó una parábola del labrador que poseía una viña y envió por los frutos al tiempo de la cosecha. Envió a sus sirvientes. <span class="emphasis">"Mas los labradores, tomando a los siervos, a uno golpearon, a otro mataron, y a otro apedrearon"</span> (Mateo 21:35). ¡Así es hoy! Dios ha enviado sus santos atalayas a recoger el fruto de su viña. Pero en lugar de eso, hay palizas verbales, muertes con odio, apedreados con palabras hirientes. Tenemos hoy en día una "compañía de Esteban" quienes pueden decir: ¡He visto el cielo abierto! Esto es una clara visión de Jesús --esa cortante palabra de verdad, ¡que provoca la ira de aquellos incircuncisos de corazón!-</p>
+
+        <p>Los israelitas trataron de apedrear a Josué y a Caleb por su llamado a caminar de acuerdo a la voluntad de Dios. Diez espías desalentaron al pueblo de Dios diciendo: No podemos ir. ¡Hay demasiados gigantes! ¡Demasiadas murallas altas! <span class="emphasis">"Y Caleb dijo... subamos luego, y tomemos posesión de ella; porque más podremos nosotros que ellos"</span> (Números 13:30). Pero ellos dijeron: <span class="emphasis">"Designemos un capitán, y volvamos a Egipto"</span> (Números 14:4) <span class="emphasis">"Y Josué hijo de Nun y Caleb hijo de Jefone, que eran de los que habían reconocido la tierra, rompieron sus vestidos, y hablaron a toda la congregación de los hijos de Israel, diciendo: La tierra por donde pasamos para reconocerla, es tierra en gran manera buena. Si Jehová se agradare de nosotros, él nos llevará a esta tierra, y nos la entregará; tierra que fluye leche y miel. Por tanto, no seáis rebeldes contra Jehová, ni temáis al pueblo de esta tierra; porque nosotros los comeremos como pan; su amparo se ha apartado de ellos, y con nosotros está Jehová; no los temáis. Entonces toda la multitud habló de apedrearlos. Pero la gloria de Jehová se mostró en el tabernáculo de reunión a todos los hijos de Israel"</span> (Números 14: 6-10)</p>
+
+        <p>Mi interés en esta historia no es por Josué y Caleb, sino por Dios, que estaba con ellos. ¡Mi interés es por este pueblo de Dios que estaba crujiendo los dientes y recogiendo piedras! ¿Por qué un llamado a la obediencia provocó en ellos tal reacción? ¡Vean el llamado! Estoy convencido de que una vez que el corazón es capturado por un ídolo o codicia, la incredulidad se posesiona. La indiferencia y la incredulidad van de la mano. Por tal razón, toda predicación en contra de ser indiferentes al pecado los hace rechinar y terminan peleando contra Dios, mientras que ciegamente están confesando su nombre.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>UNA ADVERTENCIA</h2>
+
+        <p>¿Cómo debería reaccionar un justo cuando es rechazado, echado, apedreado? Jesús reaccionó, como un cordero <span class="emphasis">"y no abrió su boca"</span>. No pidas que descienda fuego del cielo sobre aquellos que abusan de ti.</p>
+
+        <div class="scripture">
+            "¿Por qué no sufrís mas bien el agravio? ¿Por qué no sufrís mas bien el ser defraudado?"
+            <span class="scripture-ref">1ª Corintios 6:7</span>
+        </div>
+
+        <div class="scripture">
+            "Nos maldicen, y bendecimos; padecemos persecución, y la soportamos"
+            <span class="scripture-ref">1ª Corintios 4:12</span>
+        </div>
+
+        <p>Ora por aquellos que despiadadamente te agravian.</p>
+
+        <p>No tengo tiempo para los arrogantes, llamados por sí mismos profetas que pelean, amenazan o arrojan maldiciones. Cuando Simei se paró en un cerro arrojando piedras a David mientras él se retiraba de Jerusalén y de Absalón, el capitán del ejercito dijo: <span class="emphasis">"¿Por qué maldice este perro muerto a mi Señor el rey?"</span> David respondió: <span class="emphasis">"Dejadle que maldiga... Quizá mirará Jehová mi aflicción, y me dará Jehová bien por sus maldiciones de hoy"</span> (2ª Samuel 16:9,11,12).</p>
+
+        <p>Moisés fue a la mañana --encerrado con Dios -, <span class="emphasis">"Y su rostro resplandeció"</span>. Y aun cuando todos los demás pudieron verlo, tanto que tuvo que ponerse un velo sobre su rostro, él mismo no <span class="emphasis">"estaba consciente de que su rostro brillaba"</span>. Aun no se había dado cuenta de que el reflejo de la Santidad de Dios estaba sobre él. Como Esteban, Moisés no ostentaba el toque de Dios. Ellos no se daban el aire de un profeta. No amenazaban; no hablaban de tener "nuevas" o "especiales" revelaciones. No se pusieron una máscara ni manifestaron falsa piedad. Humildad es la Señal de un alma totalmente dependiente de Cristo. En ésta no existe absolutamente el orgullo espiritual, ni la exclusividad.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LA RECOMPENSA DE CAMINAR DE ACUERDO A LA VOLUNTAD DE DIOS</h2>
+
+        <p>¿Cuál es la recompensa? ¡Tener a Cristo junto a ti! Hay muchas otras recompensas por caminar de acuerdo a la voluntad de Dios, pero menciono sólo una, porque es todo lo que necesitamos. Pablo estaba encarcelado en una fortaleza en Jerusalén, mientras todo el sistema religioso buscaba matarlo. La iglesia estaba consternada. Él fue acusado de <span class="emphasis">"Profanar el lugar santo, de predicar una falsa doctrina"</span>. Aun los soldados <span class="emphasis">"temieron que Pablo fuera despedazado"</span>; así es que lo arrebataron de en medio de ellos y lo apresaron en un castillo.</p>
+
+        <div class="scripture">
+            "A la noche siguiente se le presentó el Señor y le dijo: Ten ánimo, Pablo, pues como has testificado de mí en Jerusalén, así es necesario que testifiques también en Roma"
+            <span class="scripture-ref">Hechos 23:11</span>
+        </div>
+
+        <p>El mismo Señor le habló a Pablo -¡no un ángel!- Y qué palabra: ¡ANÍMATE! ¡HAY MAS POR VENIR! ¡Pero podrás enfrentar cualquier circunstancia o a cualquier persona si sabes que: <span class="red-emphasis">EL SEÑOR ESTA CONTIGO!</span></p>
+
+        <div class="highlight-box">
+            <p style="font-size: 1.3rem; text-align: center; font-weight: bold;">"Si sufrimos, también reinaremos con Él"</p>
+            <p style="text-align: center;">(2 Timoteo 2:12)</p>
+        </div>
+    </div>
+</div>
+
+    <div class="menu-link-container">
+        <a class="menu-button" href="../../menu.html">Volver al Menú</a>
+    </div>
+
+<footer>
+    Revista Avivamiento - El Precio de Ser Cristiano en Tiempos Modernos<br>
+    Por David Wilkerson
+</footer>
+    <script src="../../../assets/theme.js"></script>
+</body>
+</html>
