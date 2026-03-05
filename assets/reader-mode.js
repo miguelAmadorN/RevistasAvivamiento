@@ -151,6 +151,7 @@ function addReadAloudControls(main, article) {
   const speech = window.speechSynthesis;
   let queue = [];
   let isStopped = true;
+  let isPaused = false;
   let currentUtterance = null;
 
   const getPreferredLanguage = () => {
@@ -206,13 +207,18 @@ function addReadAloudControls(main, article) {
 
   const clearPlayback = () => {
     isStopped = true;
+    isPaused = false;
     queue = [];
     currentUtterance = null;
     speech.cancel();
   };
 
   const speakNext = () => {
-    if (isStopped || queue.length === 0) {
+    if (isStopped || isPaused) {
+      return;
+    }
+
+    if (queue.length === 0) {
       if (!speech.speaking && !speech.paused) {
         status.textContent = "Reproducción finalizada.";
       }
@@ -238,7 +244,7 @@ function addReadAloudControls(main, article) {
 
     utterance.onend = () => {
       currentUtterance = null;
-      if (!isStopped) {
+      if (!isStopped && !isPaused) {
         speakNext();
       }
     };
@@ -265,6 +271,7 @@ function addReadAloudControls(main, article) {
 
   playButton.addEventListener("click", () => {
     if (speech.paused) {
+      isPaused = false;
       speech.resume();
       status.textContent = "Reproducción reanudada.";
       return;
@@ -274,7 +281,9 @@ function addReadAloudControls(main, article) {
       return;
     }
 
-    if (!isStopped && queue.length > 0 && !currentUtterance) {
+    if (!isStopped && queue.length > 0) {
+      isPaused = false;
+      status.textContent = "Reproducción reanudada.";
       speakNext();
       return;
     }
@@ -287,13 +296,21 @@ function addReadAloudControls(main, article) {
 
     clearPlayback();
     isStopped = false;
+    isPaused = false;
     queue = chunks;
     speakNext();
   });
 
   pauseButton.addEventListener("click", () => {
     if (speech.speaking && !speech.paused) {
+      isPaused = true;
       speech.pause();
+      status.textContent = "Reproducción pausada.";
+      return;
+    }
+
+    if (!speech.speaking && queue.length > 0) {
+      isPaused = true;
       status.textContent = "Reproducción pausada.";
     }
   });
