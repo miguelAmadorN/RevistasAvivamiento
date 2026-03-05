@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   enhancePrintButtons();
+  groupHeaderActionButtons();
   addReadAloudControls(main, article);
 });
 
@@ -61,7 +62,7 @@ function enhancePrintButtons() {
 
   printButtons.forEach((button) => {
     const originalText = (button.textContent || "").trim().toLowerCase();
-    if (!originalText.includes("imprimir")) {
+    if (!originalText.includes("imprimir") && !originalText.includes("🖨")) {
       return;
     }
 
@@ -71,7 +72,41 @@ function enhancePrintButtons() {
   });
 }
 
-function splitTextIntoChunks(text, maxLength = 800) {
+function groupHeaderActionButtons() {
+  const host = document.querySelector("header .header-content") || document.querySelector("header");
+  if (!host) {
+    return;
+  }
+
+  const regroup = () => {
+    const printButton = host.querySelector(".print-button");
+    const themeButton = host.querySelector(".theme-toggle-button");
+
+    if (!printButton || !themeButton) {
+      return;
+    }
+
+    let actionGroup = host.querySelector(".header-action-group");
+    if (!actionGroup) {
+      actionGroup = document.createElement("div");
+      actionGroup.className = "header-action-group";
+      host.appendChild(actionGroup);
+    }
+
+    actionGroup.append(printButton, themeButton);
+  };
+
+  regroup();
+
+  const observer = new MutationObserver(() => {
+    regroup();
+  });
+
+  observer.observe(host, { childList: true, subtree: true });
+  setTimeout(() => observer.disconnect(), 2000);
+}
+
+function splitTextIntoChunks(text, maxLength = 900) {
   const cleanText = text.replace(/\s+/g, " ").trim();
   if (!cleanText) {
     return [];
@@ -82,8 +117,8 @@ function splitTextIntoChunks(text, maxLength = 800) {
   let current = "";
 
   sentences.forEach((sentence) => {
-    if ((current + " " + sentence).trim().length <= maxLength) {
-      current = (current + " " + sentence).trim();
+    if ((`${current} ${sentence}`).trim().length <= maxLength) {
+      current = `${current} ${sentence}`.trim();
       return;
     }
 
@@ -124,31 +159,35 @@ function addReadAloudControls(main, article) {
   const controlsRow = document.createElement("div");
   controlsRow.className = "reader-toolbar__controls-row";
 
-  const voiceSelect = document.createElement("select");
-  voiceSelect.className = "reader-toolbar__select";
-  voiceSelect.setAttribute("aria-label", "Idioma y voz de lectura");
+  const languageSelect = document.createElement("select");
+  languageSelect.className = "reader-toolbar__select";
+  languageSelect.setAttribute("aria-label", "Idioma de lectura");
 
+  const languages = [
+    { code: "es", label: "Español" },
+    { code: "en", label: "English" },
+    { code: "pt", label: "Português" },
+    { code: "fr", label: "Français" },
+    { code: "it", label: "Italiano" },
+    { code: "de", label: "Deutsch" },
+  ];
+
+  languages.forEach(({ code, label: languageLabel }) => {
+    const option = document.createElement("option");
+    option.value = code;
+    option.textContent = languageLabel;
+    if (code === "es") {
+      option.selected = true;
+    }
+    languageSelect.appendChild(option);
+  });
 
   const playButton = document.createElement("button");
   playButton.type = "button";
-  playButton.className = "reader-toolbar__button";
+  playButton.className = "reader-toolbar__button reader-toolbar__play-toggle";
   playButton.textContent = "▶ Reproducir";
 
-  const pauseButton = document.createElement("button");
-  pauseButton.type = "button";
-  pauseButton.className = "reader-toolbar__button";
-  pauseButton.textContent = "⏸ Pausar";
-
-  const stopButton = document.createElement("button");
-  stopButton.type = "button";
-  stopButton.className = "reader-toolbar__button";
-  stopButton.textContent = "⏹ Detener";
-
-  const buttons = document.createElement("div");
-  buttons.className = "reader-toolbar__buttons";
-  buttons.append(playButton, pauseButton, stopButton);
-
-  controlsRow.append(voiceSelect, buttons);
+  controlsRow.append(languageSelect, playButton);
 
   const status = document.createElement("p");
   status.className = "reader-toolbar__status";
@@ -159,187 +198,167 @@ function addReadAloudControls(main, article) {
 
   if (!speechSupported) {
     status.textContent = "Tu navegador no soporta reproducción de texto por voz.";
-    [voiceSelect, playButton, pauseButton, stopButton].forEach((control) => {
+    [languageSelect, playButton].forEach((control) => {
       control.disabled = true;
     });
     return;
   }
 
   const speech = window.speechSynthesis;
+  const originalText = article.innerText;
+  const translatedCache = new Map();
   let queue = [];
   let isStopped = true;
-  let isPaused = false;
-  let currentUtterance = null;
+  let isBusy = false;
 
-  const getPreferredLanguage = () => {
-    return document.documentElement.lang || navigator.language || "es-ES";
+  const setPlayButtonState = (isPlaying) => {
+    playButton.textContent = isPlaying ? "⏹ Detener" : "▶ Reproducir";
   };
 
-  const buildVoiceOptions = () => {
+  const resolveVoice = (langCode) => {
     const voices = speech.getVoices();
-    voiceSelect.innerHTML = "";
+    const exact = voices.find((voice) => voice.lang.toLowerCase() === langCode.toLowerCase());
+    if (exact) return exact;
 
-    const autoOption = document.createElement("option");
-    autoOption.value = "auto";
-    autoOption.textContent = `Automático (${getPreferredLanguage()})`;
-    voiceSelect.appendChild(autoOption);
+    const sameBase = voices.find((voice) => voice.lang.toLowerCase().startsWith(langCode.toLowerCase()));
+    if (sameBase) return sameBase;
 
-    voices.forEach((voice) => {
-      const option = document.createElement("option");
-      option.value = voice.name;
-      option.textContent = `${voice.lang} — ${voice.name}`;
-      voiceSelect.appendChild(option);
-    });
-  };
-
-  const resolveVoiceAndLang = () => {
-    const voices = speech.getVoices();
-    const preferredLanguage = getPreferredLanguage().toLowerCase();
-
-    if (voiceSelect.value && voiceSelect.value !== "auto") {
-      const selected = voices.find((voice) => voice.name === voiceSelect.value);
-      if (selected) {
-        return { voice: selected, lang: selected.lang };
-      }
-    }
-
-    const byExactLang = voices.find((voice) => voice.lang.toLowerCase() === preferredLanguage);
-    if (byExactLang) {
-      return { voice: byExactLang, lang: byExactLang.lang };
-    }
-
-    const baseLang = preferredLanguage.split("-")[0];
-    const byBaseLang = voices.find((voice) => voice.lang.toLowerCase().startsWith(baseLang));
-    if (byBaseLang) {
-      return { voice: byBaseLang, lang: byBaseLang.lang };
-    }
-
-    const defaultVoice = voices.find((voice) => voice.default);
-    if (defaultVoice) {
-      return { voice: defaultVoice, lang: defaultVoice.lang };
-    }
-
-    return { voice: null, lang: getPreferredLanguage() };
+    return voices.find((voice) => voice.default) || null;
   };
 
   const clearPlayback = () => {
     isStopped = true;
-    isPaused = false;
     queue = [];
-    currentUtterance = null;
     speech.cancel();
+    setPlayButtonState(false);
   };
 
   const speakNext = () => {
-    if (isStopped || isPaused) {
+    if (isStopped) {
       return;
     }
 
     if (queue.length === 0) {
-      if (!speech.speaking && !speech.paused) {
-        status.textContent = "Reproducción finalizada.";
-      }
-      currentUtterance = null;
+      status.textContent = "Reproducción finalizada.";
+      setPlayButtonState(false);
+      isStopped = true;
       return;
     }
 
-    const chunk = queue.shift();
-    const utterance = new SpeechSynthesisUtterance(chunk);
-    const { voice, lang } = resolveVoiceAndLang();
+    const { text, langCode } = queue.shift();
+    const utterance = new SpeechSynthesisUtterance(text);
+    const voice = resolveVoice(langCode);
 
     if (voice) {
       utterance.voice = voice;
+      utterance.lang = voice.lang;
+    } else {
+      utterance.lang = langCode;
     }
 
-    utterance.lang = lang;
     utterance.rate = 1;
     utterance.pitch = 1;
 
     utterance.onstart = () => {
-      status.textContent = `Reproduciendo contenido (${utterance.lang})...`;
+      status.textContent = `Reproduciendo en ${langCode.toUpperCase()}...`;
+      setPlayButtonState(true);
     };
 
     utterance.onend = () => {
-      currentUtterance = null;
-      if (!isStopped && !isPaused) {
+      if (!isStopped) {
         speakNext();
       }
     };
 
     utterance.onerror = () => {
-      currentUtterance = null;
       if (!isStopped) {
         status.textContent = "No se pudo reproducir una parte del audio.";
         speakNext();
       }
     };
 
-    currentUtterance = utterance;
     speech.speak(utterance);
   };
 
-  buildVoiceOptions();
+  const translateText = async (text, targetLang) => {
+    if (targetLang === "es") {
+      return text;
+    }
 
-  if (speech.onvoiceschanged !== undefined) {
-    speech.onvoiceschanged = () => {
-      buildVoiceOptions();
-    };
-  }
+    const cacheKey = `${targetLang}:${text.length}`;
+    if (translatedCache.has(cacheKey)) {
+      return translatedCache.get(cacheKey);
+    }
 
-  playButton.addEventListener("click", () => {
-    if (speech.paused) {
-      isPaused = false;
-      speech.resume();
-      status.textContent = "Reproducción reanudada.";
+    const chunks = splitTextIntoChunks(text, 700);
+    const translatedChunks = [];
+
+    for (const chunk of chunks) {
+      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(chunk)}`;
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error("No se pudo traducir");
+      }
+
+      const data = await response.json();
+      const translated = (data?.[0] || []).map((entry) => entry?.[0] || "").join("");
+      translatedChunks.push(translated);
+    }
+
+    const result = translatedChunks.join(" ").trim();
+    translatedCache.set(cacheKey, result);
+    return result;
+  };
+
+  const buildQueueForLanguage = async (langCode) => {
+    let textForSpeech = originalText;
+
+    if (langCode !== "es") {
+      status.textContent = `Traduciendo contenido a ${langCode.toUpperCase()}...`;
+      textForSpeech = await translateText(originalText, langCode);
+    }
+
+    const chunks = splitTextIntoChunks(textForSpeech);
+    return chunks.map((chunk) => ({ text: chunk, langCode }));
+  };
+
+  playButton.addEventListener("click", async () => {
+    if (isBusy) {
       return;
     }
 
-    if (speech.speaking) {
-      return;
-    }
-
-    if (!isStopped && queue.length > 0) {
-      isPaused = false;
-      status.textContent = "Reproducción reanudada.";
-      speakNext();
-      return;
-    }
-
-    const chunks = splitTextIntoChunks(article.innerText);
-    if (chunks.length === 0) {
-      status.textContent = "No se encontró texto para reproducir.";
-      return;
-    }
-
-    clearPlayback();
-    isStopped = false;
-    isPaused = false;
-    queue = chunks;
-    speakNext();
-  });
-
-  pauseButton.addEventListener("click", () => {
-    if (speech.speaking && !speech.paused) {
-      isPaused = true;
-      speech.pause();
-      status.textContent = "Reproducción pausada.";
-      return;
-    }
-
-    if (!speech.speaking && queue.length > 0) {
-      isPaused = true;
-      status.textContent = "Reproducción pausada.";
-    }
-  });
-
-  stopButton.addEventListener("click", () => {
-    if (speech.speaking || speech.paused || queue.length > 0) {
+    if (!isStopped || speech.speaking || speech.pending) {
       clearPlayback();
       status.textContent = "Reproducción detenida.";
+      return;
+    }
+
+    isBusy = true;
+    playButton.disabled = true;
+
+    try {
+      const langCode = languageSelect.value || "es";
+      queue = await buildQueueForLanguage(langCode);
+
+      if (queue.length === 0) {
+        status.textContent = "No se encontró texto para reproducir.";
+        setPlayButtonState(false);
+        isStopped = true;
+      } else {
+        isStopped = false;
+        speakNext();
+      }
+    } catch (error) {
+      status.textContent = "No se pudo traducir o preparar el audio.";
+      clearPlayback();
+    } finally {
+      isBusy = false;
+      playButton.disabled = false;
     }
   });
 
-  status.textContent = "Usa los controles para escuchar el contenido. Puedes cambiar idioma/voz.";
+  status.textContent = "Idioma por defecto: Español. El botón Reproducir cambia a Detener.";
   window.addEventListener("beforeunload", clearPlayback);
 }
 
@@ -351,6 +370,13 @@ function injectToolbarStyles() {
   const style = document.createElement("style");
   style.id = "reader-toolbar-styles";
   style.textContent = `
+    .header-action-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 10px;
+    }
+
     .reader-toolbar {
       background: #ffffff;
       border: 1px solid #d6dde8;
@@ -382,12 +408,6 @@ function injectToolbarStyles() {
       max-width: 100%;
     }
 
-    .reader-toolbar__buttons {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
     .reader-toolbar__button {
       border: none;
       background: #4a6491;
@@ -407,40 +427,38 @@ function injectToolbarStyles() {
     .reader-toolbar__status {
       margin: 6px 0 0;
       color: #425a76;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
 
-
-    .print-button {
-      width: 38px;
-      height: 38px;
-      padding: 0;
-      border-radius: 999px;
+    .print-button,
+    .theme-toggle-button {
+      width: 34px;
+      height: 34px;
+      padding: 0 !important;
+      border-radius: 999px !important;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.05rem;
+      font-size: 1rem;
       line-height: 1;
+    }
+
+    .print-button {
       background: rgba(255,255,255,0.2);
       border: 1px solid rgba(255,255,255,0.35);
       color: #fff;
     }
 
-    .print-button:hover {
+    .print-button:hover,
+    .theme-toggle-button:hover {
       transform: translateY(-1px);
-      background: rgba(255,255,255,0.3);
     }
 
-    html[data-theme="dark"] .print-button {
+    html[data-theme="dark"] .print-button,
+    html[data-theme="dark"] .theme-toggle-button {
       background: rgba(30, 41, 59, 0.92);
       border-color: rgba(148, 163, 184, 0.35);
       color: #e2e8f0;
-    }
-
-    html[data-theme="light"] .print-button {
-      background: rgba(255,255,255,0.25);
-      border-color: rgba(255,255,255,0.45);
-      color: #ffffff;
     }
 
     html[data-theme="dark"] body {
