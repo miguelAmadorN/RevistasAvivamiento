@@ -62,10 +62,9 @@
     const host = getToggleHost();
     if (!host) return;
 
-    const shouldReusePrintButton = isMagazinePage() && !isMenuPage();
-    const existingHeaderButton = shouldReusePrintButton ? document.querySelector(".print-button") : null;
-    const button = existingHeaderButton || document.createElement("button");
+    if (document.querySelector(".theme-toggle-button")) return;
 
+    const button = document.createElement("button");
     button.type = "button";
     button.classList.add("theme-toggle-button");
 
@@ -89,13 +88,12 @@
 
     updateLabel();
 
-    if (!existingHeaderButton) {
-      if (host.matches("header")) {
-        host.classList.add("has-theme-toggle");
-      }
-      host.appendChild(button);
+    if (host.matches("header")) {
+      host.classList.add("has-theme-toggle");
     }
+    host.appendChild(button);
   };
+
 
   applyTheme(getInitialTheme());
   ensureSharedStylesheet();
