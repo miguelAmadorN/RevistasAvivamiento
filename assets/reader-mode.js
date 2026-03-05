@@ -63,31 +63,32 @@ function splitTextIntoChunks(text, maxLength = 800) {
 
   const sentences = cleanText.split(/(?<=[.!?])\s+/);
   const chunks = [];
-  let currentChunk = "";
+  let current = "";
 
   sentences.forEach((sentence) => {
-    if ((currentChunk + " " + sentence).trim().length <= maxLength) {
-      currentChunk = (currentChunk + " " + sentence).trim();
+    if ((current + " " + sentence).trim().length <= maxLength) {
+      current = (current + " " + sentence).trim();
       return;
     }
 
-    if (currentChunk) {
-      chunks.push(currentChunk);
+    if (current) {
+      chunks.push(current);
     }
 
     if (sentence.length <= maxLength) {
-      currentChunk = sentence;
+      current = sentence;
       return;
     }
 
     for (let i = 0; i < sentence.length; i += maxLength) {
       chunks.push(sentence.slice(i, i + maxLength));
     }
-    currentChunk = "";
+
+    current = "";
   });
 
-  if (currentChunk) {
-    chunks.push(currentChunk);
+  if (current) {
+    chunks.push(current);
   }
 
   return chunks;
@@ -104,6 +105,13 @@ function addReadAloudControls(main, article) {
   label.className = "reader-toolbar__label";
   label.textContent = "Escuchar esta revista";
 
+  const controlsRow = document.createElement("div");
+  controlsRow.className = "reader-toolbar__controls-row";
+
+  const voiceSelect = document.createElement("select");
+  voiceSelect.className = "reader-toolbar__select";
+  voiceSelect.setAttribute("aria-label", "Idioma y voz de lectura");
+
   const playButton = document.createElement("button");
   playButton.type = "button";
   playButton.className = "reader-toolbar__button";
@@ -119,47 +127,87 @@ function addReadAloudControls(main, article) {
   stopButton.className = "reader-toolbar__button";
   stopButton.textContent = "⏹ Detener";
 
-  const status = document.createElement("p");
-  status.className = "reader-toolbar__status";
-
-  if (!speechSupported) {
-    status.textContent = "Tu navegador no soporta reproducción de texto por voz.";
-    [playButton, pauseButton, stopButton].forEach((button) => {
-      button.disabled = true;
-    });
-  } else {
-    status.textContent = "Usa los controles para escuchar el contenido en español.";
-  }
-
   const buttons = document.createElement("div");
   buttons.className = "reader-toolbar__buttons";
   buttons.append(playButton, pauseButton, stopButton);
 
-  toolbar.append(label, buttons, status);
+  controlsRow.append(voiceSelect, buttons);
+
+  const status = document.createElement("p");
+  status.className = "reader-toolbar__status";
+
+  toolbar.append(label, controlsRow, status);
   main.insertBefore(toolbar, article);
   injectToolbarStyles();
 
   if (!speechSupported) {
+    status.textContent = "Tu navegador no soporta reproducción de texto por voz.";
+    [voiceSelect, playButton, pauseButton, stopButton].forEach((control) => {
+      control.disabled = true;
+    });
     return;
   }
 
   const speech = window.speechSynthesis;
   let queue = [];
-  let isStopped = false;
-  let voiceRetryEnabled = true;
+  let isStopped = true;
+  let currentUtterance = null;
 
-  const getVoice = () => {
+  const getPreferredLanguage = () => {
+    return document.documentElement.lang || navigator.language || "es-ES";
+  };
+
+  const buildVoiceOptions = () => {
     const voices = speech.getVoices();
-    return (
-      voices.find((voice) => voice.lang && voice.lang.toLowerCase().startsWith("es")) ||
-      voices.find((voice) => voice.default) ||
-      null
-    );
+    voiceSelect.innerHTML = "";
+
+    const autoOption = document.createElement("option");
+    autoOption.value = "auto";
+    autoOption.textContent = `Automático (${getPreferredLanguage()})`;
+    voiceSelect.appendChild(autoOption);
+
+    voices.forEach((voice) => {
+      const option = document.createElement("option");
+      option.value = voice.name;
+      option.textContent = `${voice.lang} — ${voice.name}`;
+      voiceSelect.appendChild(option);
+    });
+  };
+
+  const resolveVoiceAndLang = () => {
+    const voices = speech.getVoices();
+    const preferredLanguage = getPreferredLanguage().toLowerCase();
+
+    if (voiceSelect.value && voiceSelect.value !== "auto") {
+      const selected = voices.find((voice) => voice.name === voiceSelect.value);
+      if (selected) {
+        return { voice: selected, lang: selected.lang };
+      }
+    }
+
+    const byExactLang = voices.find((voice) => voice.lang.toLowerCase() === preferredLanguage);
+    if (byExactLang) {
+      return { voice: byExactLang, lang: byExactLang.lang };
+    }
+
+    const baseLang = preferredLanguage.split("-")[0];
+    const byBaseLang = voices.find((voice) => voice.lang.toLowerCase().startsWith(baseLang));
+    if (byBaseLang) {
+      return { voice: byBaseLang, lang: byBaseLang.lang };
+    }
+
+    const defaultVoice = voices.find((voice) => voice.default);
+    if (defaultVoice) {
+      return { voice: defaultVoice, lang: defaultVoice.lang };
+    }
+
+    return { voice: null, lang: getPreferredLanguage() };
   };
 
   const clearPlayback = () => {
     isStopped = true;
     queue = [];
+    currentUtterance = null;
     speech.cancel();
   };
 
@@ -168,52 +216,52 @@ function addReadAloudControls(main, article) {
       if (!speech.speaking && !speech.paused) {
         status.textContent = "Reproducción finalizada.";
       }
+      currentUtterance = null;
       return;
     }
 
     const chunk = queue.shift();
     const utterance = new SpeechSynthesisUtterance(chunk);
-    const voice = getVoice();
+    const { voice, lang } = resolveVoiceAndLang();
 
-    if (voice && voiceRetryEnabled) {
+    if (voice) {
       utterance.voice = voice;
-      utterance.lang = voice.lang;
-    } else {
-      utterance.lang = "es-ES";
     }
 
+    utterance.lang = lang;
     utterance.rate = 1;
     utterance.pitch = 1;
 
     utterance.onstart = () => {
-      status.textContent = "Reproduciendo contenido...";
+      status.textContent = `Reproduciendo contenido (${utterance.lang})...`;
     };
 
     utterance.onend = () => {
+      currentUtterance = null;
       if (!isStopped) {
         speakNext();
       }
     };
 
-    utterance.onerror = (event) => {
-      if (!isStopped && voiceRetryEnabled) {
-        voiceRetryEnabled = false;
-        queue.unshift(chunk);
-        status.textContent = "Reintentando con la voz predeterminada del navegador...";
-        setTimeout(() => {
-          speakNext();
-        }, 100);
-        return;
-      }
-
+    utterance.onerror = () => {
+      currentUtterance = null;
       if (!isStopped) {
         status.textContent = "No se pudo reproducir una parte del audio.";
         speakNext();
       }
     };
 
+    currentUtterance = utterance;
     speech.speak(utterance);
   };
+
+  buildVoiceOptions();
+
+  if (speech.onvoiceschanged !== undefined) {
+    speech.onvoiceschanged = () => {
+      buildVoiceOptions();
+    };
+  }
 
   playButton.addEventListener("click", () => {
     if (speech.paused) {
@@ -226,17 +274,20 @@ function addReadAloudControls(main, article) {
       return;
     }
 
-    const text = article.innerText;
-    const chunks = splitTextIntoChunks(text);
+    if (!isStopped && queue.length > 0 && !currentUtterance) {
+      speakNext();
+      return;
+    }
 
+    const chunks = splitTextIntoChunks(article.innerText);
     if (chunks.length === 0) {
       status.textContent = "No se encontró texto para reproducir.";
       return;
     }
 
+    clearPlayback();
     isStopped = false;
-    voiceRetryEnabled = true;
-    queue = [...chunks];
+    queue = chunks;
     speakNext();
   });
 
@@ -248,18 +299,13 @@ function addReadAloudControls(main, article) {
   });
 
   stopButton.addEventListener("click", () => {
-    if (speech.speaking || speech.paused) {
+    if (speech.speaking || speech.paused || queue.length > 0) {
       clearPlayback();
       status.textContent = "Reproducción detenida.";
     }
   });
 
-  if (speech.onvoiceschanged !== undefined) {
-    speech.onvoiceschanged = () => {
-      getVoice();
-    };
-  }
-
+  status.textContent = "Usa los controles para escuchar el contenido. Puedes cambiar idioma/voz.";
   window.addEventListener("beforeunload", clearPlayback);
 }
 
@@ -287,6 +333,21 @@ function injectToolbarStyles() {
       color: #2c3e50;
     }
 
+    .reader-toolbar__controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .reader-toolbar__select {
+      border: 1px solid #b7c3d6;
+      border-radius: 6px;
+      padding: 8px;
+      color: #2c3e50;
+      max-width: 100%;
+    }
+
     .reader-toolbar__buttons {
       display: flex;
       gap: 10px;
@@ -303,7 +364,8 @@ function injectToolbarStyles() {
       cursor: pointer;
     }
 
-    .reader-toolbar__button[disabled] {
+    .reader-toolbar__button[disabled],
+    .reader-toolbar__select[disabled] {
       opacity: 0.5;
       cursor: not-allowed;
     }
