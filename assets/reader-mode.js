@@ -55,6 +55,44 @@ document.addEventListener("DOMContentLoaded", () => {
   addReadAloudControls(main, article);
 });
 
+function splitTextIntoChunks(text, maxLength = 800) {
+  const cleanText = text.replace(/\s+/g, " ").trim();
+  if (!cleanText) {
+    return [];
+  }
+
+  const sentences = cleanText.split(/(?<=[.!?])\s+/);
+  const chunks = [];
+  let currentChunk = "";
+
+  sentences.forEach((sentence) => {
+    if ((currentChunk + " " + sentence).trim().length <= maxLength) {
+      currentChunk = (currentChunk + " " + sentence).trim();
+      return;
+    }
+
+    if (currentChunk) {
+      chunks.push(currentChunk);
+    }
+
+    if (sentence.length <= maxLength) {
+      currentChunk = sentence;
+      return;
+    }
+
+    for (let i = 0; i < sentence.length; i += maxLength) {
+      chunks.push(sentence.slice(i, i + maxLength));
+    }
+    currentChunk = "";
+  });
+
+  if (currentChunk) {
+    chunks.push(currentChunk);
+  }
+
+  return chunks;
+}
+
 function addReadAloudControls(main, article) {
   const speechSupported = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
 
@@ -105,34 +143,45 @@ function addReadAloudControls(main, article) {
     return;
   }
 
-  let utterance = null;
+  const speech = window.speechSynthesis;
+  let queue = [];
+  let isStopped = false;
+  let voiceRetryEnabled = true;
 
-  const getArticleText = () => article.innerText.replace(/\s+/g, " ").trim();
-
-  const cancelSpeaking = () => {
-    window.speechSynthesis.cancel();
-    utterance = null;
+  const getVoice = () => {
+    const voices = speech.getVoices();
+    return (
+      voices.find((voice) => voice.lang && voice.lang.toLowerCase().startsWith("es")) ||
+      voices.find((voice) => voice.default) ||
+      null
+    );
   };
 
-  playButton.addEventListener("click", () => {
-    if (window.speechSynthesis.paused) {
-      window.speechSynthesis.resume();
-      status.textContent = "Reproducción reanudada.";
+  const clearPlayback = () => {
+    isStopped = true;
+    queue = [];
+    speech.cancel();
+  };
+
+  const speakNext = () => {
+    if (isStopped || queue.length === 0) {
+      if (!speech.speaking && !speech.paused) {
+        status.textContent = "Reproducción finalizada.";
+      }
       return;
     }
 
-    if (window.speechSynthesis.speaking) {
-      return;
+    const chunk = queue.shift();
+    const utterance = new SpeechSynthesisUtterance(chunk);
+    const voice = getVoice();
+
+    if (voice && voiceRetryEnabled) {
+      utterance.voice = voice;
+      utterance.lang = voice.lang;
+    } else {
+      utterance.lang = "es-ES";
     }
 
-    const text = getArticleText();
-    if (!text) {
-      status.textContent = "No se encontró texto para reproducir.";
-      return;
-    }
-
-    utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "es-ES";
     utterance.rate = 1;
     utterance.pitch = 1;
 
@@ -141,33 +190,77 @@ function addReadAloudControls(main, article) {
     };
 
     utterance.onend = () => {
-      status.textContent = "Reproducción finalizada.";
-      utterance = null;
+      if (!isStopped) {
+        speakNext();
+      }
     };
 
-    utterance.onerror = () => {
-      status.textContent = "No se pudo reproducir el audio.";
-      utterance = null;
+    utterance.onerror = (event) => {
+      if (!isStopped && voiceRetryEnabled) {
+        voiceRetryEnabled = false;
+        queue.unshift(chunk);
+        status.textContent = "Reintentando con la voz predeterminada del navegador...";
+        setTimeout(() => {
+          speakNext();
+        }, 100);
+        return;
+      }
+
+      if (!isStopped) {
+        status.textContent = "No se pudo reproducir una parte del audio.";
+        speakNext();
+      }
     };
 
-    window.speechSynthesis.speak(utterance);
+    speech.speak(utterance);
+  };
+
+  playButton.addEventListener("click", () => {
+    if (speech.paused) {
+      speech.resume();
+      status.textContent = "Reproducción reanudada.";
+      return;
+    }
+
+    if (speech.speaking) {
+      return;
+    }
+
+    const text = article.innerText;
+    const chunks = splitTextIntoChunks(text);
+
+    if (chunks.length === 0) {
+      status.textContent = "No se encontró texto para reproducir.";
+      return;
+    }
+
+    isStopped = false;
+    voiceRetryEnabled = true;
+    queue = [...chunks];
+    speakNext();
   });
 
   pauseButton.addEventListener("click", () => {
-    if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
-      window.speechSynthesis.pause();
+    if (speech.speaking && !speech.paused) {
+      speech.pause();
       status.textContent = "Reproducción pausada.";
     }
   });
 
   stopButton.addEventListener("click", () => {
-    if (window.speechSynthesis.speaking || window.speechSynthesis.paused) {
-      cancelSpeaking();
+    if (speech.speaking || speech.paused) {
+      clearPlayback();
       status.textContent = "Reproducción detenida.";
     }
   });
 
-  window.addEventListener("beforeunload", cancelSpeaking);
+  if (speech.onvoiceschanged !== undefined) {
+    speech.onvoiceschanged = () => {
+      getVoice();
+    };
+  }
+
+  window.addEventListener("beforeunload", clearPlayback);
 }
 
 function injectToolbarStyles() {
