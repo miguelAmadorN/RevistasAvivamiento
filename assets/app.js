@@ -35,12 +35,18 @@ const revistas = [
     href: "./revistas/eres-salvo-o-solamente-religioso/index.html",
     cover: "../assets/cover/Eres-salvo-o-solamente-religioso.png",
   },
-     {
-       title: "El camino de muerte",
-       description: "Versión preliminar.",
-       href: "./revistas/el-camino-de-muerte/index.html",
-       cover: "../assets/cover/EL CAMINO DE MUERTE.jpg",
-     }
+ {
+   title: "El Camino de Muerte",
+   description: "Versión preliminar.",
+   href: "./revistas/el-camino-de-muerte/index.html",
+   cover: "../assets/cover/EL CAMINO DE MUERTE.jpg",
+ },
+   {
+     title: "El Precio de Ser Cristiano en Tiempos Modernos",
+     description: "Versión preliminar.",
+     href: "./revistas/el-precio-de-ser-cristiano-en-tiempos-modernos/index.html",
+     cover: "../assets/cover/El Precio De Ser Cristiano En Tiempos Modernos.png",
+   }
 ];
 
 const grid = document.getElementById("revistas-grid");
