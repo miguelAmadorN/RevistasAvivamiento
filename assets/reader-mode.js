@@ -52,8 +52,24 @@ document.addEventListener("DOMContentLoaded", () => {
     title.setAttribute("itemprop", "headline");
   }
 
+  enhancePrintButtons();
   addReadAloudControls(main, article);
 });
+
+function enhancePrintButtons() {
+  const printButtons = document.querySelectorAll(".print-button");
+
+  printButtons.forEach((button) => {
+    const originalText = (button.textContent || "").trim().toLowerCase();
+    if (!originalText.includes("imprimir")) {
+      return;
+    }
+
+    button.setAttribute("aria-label", "Imprimir este número");
+    button.setAttribute("title", "Imprimir este número");
+    button.textContent = "🖨️";
+  });
+}
 
 function splitTextIntoChunks(text, maxLength = 800) {
   const cleanText = text.replace(/\s+/g, " ").trim();
@@ -112,6 +128,11 @@ function addReadAloudControls(main, article) {
   voiceSelect.className = "reader-toolbar__select";
   voiceSelect.setAttribute("aria-label", "Idioma y voz de lectura");
 
+  const themeButton = document.createElement("button");
+  themeButton.type = "button";
+  themeButton.className = "reader-toolbar__button reader-toolbar__theme-button";
+  themeButton.setAttribute("aria-label", "Cambiar tema claro/oscuro");
+
   const playButton = document.createElement("button");
   playButton.type = "button";
   playButton.className = "reader-toolbar__button";
@@ -131,7 +152,7 @@ function addReadAloudControls(main, article) {
   buttons.className = "reader-toolbar__buttons";
   buttons.append(playButton, pauseButton, stopButton);
 
-  controlsRow.append(voiceSelect, buttons);
+  controlsRow.append(voiceSelect, themeButton, buttons);
 
   const status = document.createElement("p");
   status.className = "reader-toolbar__status";
@@ -153,6 +174,29 @@ function addReadAloudControls(main, article) {
   let isStopped = true;
   let isPaused = false;
   let currentUtterance = null;
+
+  const getCurrentTheme = () => {
+    return document.documentElement.getAttribute("data-reader-theme") || "light";
+  };
+
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute("data-reader-theme", theme);
+    themeButton.textContent = theme === "dark" ? "☀️" : "🌙";
+    themeButton.setAttribute("title", theme === "dark" ? "Usar tema claro" : "Usar tema oscuro");
+  };
+
+  const savedTheme = localStorage.getItem("readerTheme");
+  if (savedTheme === "dark" || savedTheme === "light") {
+    applyTheme(savedTheme);
+  } else {
+    applyTheme(getCurrentTheme());
+  }
+
+  themeButton.addEventListener("click", () => {
+    const nextTheme = getCurrentTheme() === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+    localStorage.setItem("readerTheme", nextTheme);
+  });
 
   const getPreferredLanguage = () => {
     return document.documentElement.lang || navigator.language || "es-ES";
@@ -391,6 +435,57 @@ function injectToolbarStyles() {
       margin: 10px 0 0;
       color: #425a76;
       font-size: 0.95rem;
+    }
+
+    [data-reader-theme="dark"] body {
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+
+    [data-reader-theme="dark"] .content-section,
+    [data-reader-theme="dark"] .editorial-container,
+    [data-reader-theme="dark"] .reader-toolbar,
+    [data-reader-theme="dark"] .scripture,
+    [data-reader-theme="dark"] .note,
+    [data-reader-theme="dark"] .highlight-box,
+    [data-reader-theme="dark"] .warning-box,
+    [data-reader-theme="dark"] .math-illustration,
+    [data-reader-theme="dark"] .intro-box,
+    [data-reader-theme="dark"] .editorial-text {
+      background-color: #1e293b !important;
+      color: #e2e8f0 !important;
+      border-color: #334155 !important;
+    }
+
+    [data-reader-theme="dark"] h1,
+    [data-reader-theme="dark"] h2,
+    [data-reader-theme="dark"] h3,
+    [data-reader-theme="dark"] p,
+    [data-reader-theme="dark"] li,
+    [data-reader-theme="dark"] .reader-toolbar__label,
+    [data-reader-theme="dark"] .reader-toolbar__status,
+    [data-reader-theme="dark"] .scripture-ref,
+    [data-reader-theme="dark"] .author,
+    [data-reader-theme="dark"] .subtitle,
+    [data-reader-theme="dark"] footer {
+      color: #e2e8f0 !important;
+    }
+
+    [data-reader-theme="dark"] .reader-toolbar__select {
+      background-color: #0f172a;
+      color: #e2e8f0;
+      border-color: #334155;
+    }
+
+    [data-reader-theme="dark"] .reader-toolbar__button,
+    [data-reader-theme="dark"] .menu-button,
+    [data-reader-theme="dark"] .button {
+      background-color: #334155 !important;
+      color: #e2e8f0 !important;
+    }
+
+    [data-reader-theme="dark"] a {
+      color: #93c5fd;
     }
   `;
 
