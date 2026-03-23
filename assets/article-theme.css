@@ -29,6 +29,7 @@ html[data-theme="dark"] .case-box,
 html[data-theme="dark"] .testimony-box,
 html[data-theme="dark"] .vision-box,
 html[data-theme="dark"] .revival-example,
+html[data-theme="dark"] .revival-story,
 html[data-theme="dark"] .faust-quote,
 html[data-theme="dark"] .warning-large,
 html[data-theme="dark"] .pledge-table,
@@ -71,7 +72,10 @@ html[data-theme="dark"] .vision-title,
 html[data-theme="dark"] .symptom-title,
 html[data-theme="dark"] .testimony,
 html[data-theme="dark"] .exhortation,
-html[data-theme="dark"] .signature {
+html[data-theme="dark"] .signature,
+html[data-theme="dark"] .section-number,
+html[data-theme="dark"] .characteristic-list li::before,
+html[data-theme="dark"] .characteristic-list li strong {
   color: #93c5fd !important;
 }
 
@@ -199,6 +203,7 @@ html[data-theme="dark"] .case-box,
 html[data-theme="dark"] .testimony-box,
 html[data-theme="dark"] .vision-box,
 html[data-theme="dark"] .revival-example,
+html[data-theme="dark"] .revival-story,
 html[data-theme="dark"] .faust-quote,
 html[data-theme="dark"] .prayer-box {
   background: #172033 !important;
