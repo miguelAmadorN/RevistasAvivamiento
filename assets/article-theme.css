@@ -19,10 +19,28 @@ html[data-theme="dark"] .question-box,
 html[data-theme="dark"] .poem-box,
 html[data-theme="dark"] .reader-note,
 html[data-theme="dark"] .continuation,
-html[data-theme="dark"] .bible-list {
+html[data-theme="dark"] .bible-list,
+html[data-theme="dark"] .stat-box,
+html[data-theme="dark"] .prayer-box,
+html[data-theme="dark"] .testimony,
+html[data-theme="dark"] .exhortation,
+html[data-theme="dark"] .quote-box,
+html[data-theme="dark"] .letter-box,
+html[data-theme="dark"] .note-box,
+html[data-theme="dark"] .case-box,
+html[data-theme="dark"] .testimony-box,
+html[data-theme="dark"] .vision-box,
+html[data-theme="dark"] .revival-example,
+html[data-theme="dark"] .revival-story,
+html[data-theme="dark"] .faust-quote,
+html[data-theme="dark"] .warning-large,
+html[data-theme="dark"] .pledge-table,
+html[data-theme="dark"] .pledge-option,
+html[data-theme="dark"] .separator {
   background: #1e293b !important;
   color: #e2e8f0 !important;
   border-color: #334155 !important;
+  box-shadow: none !important;
 }
 
 html[data-theme="dark"] h1,
@@ -47,7 +65,19 @@ html[data-theme="dark"] .subtitle,
 html[data-theme="dark"] .red-emphasis,
 html[data-theme="dark"] .author,
 html[data-theme="dark"] .emphasis,
-html[data-theme="dark"] .hebrew-word {
+html[data-theme="dark"] .hebrew-word,
+html[data-theme="dark"] .feature-title,
+html[data-theme="dark"] .hero-name,
+html[data-theme="dark"] .letter-name,
+html[data-theme="dark"] .revival-title,
+html[data-theme="dark"] .vision-title,
+html[data-theme="dark"] .symptom-title,
+html[data-theme="dark"] .testimony,
+html[data-theme="dark"] .exhortation,
+html[data-theme="dark"] .signature,
+html[data-theme="dark"] .section-number,
+html[data-theme="dark"] .characteristic-list li::before,
+html[data-theme="dark"] .characteristic-list li strong {
   color: #93c5fd !important;
 }
 
@@ -141,4 +171,60 @@ html[data-theme="light"] .hero .theme-toggle-button:hover {
     height: 40px;
     font-size: 1rem;
   }
+}
+
+
+html[data-theme="dark"] .poem-line,
+html[data-theme="dark"] .latin-quote,
+html[data-theme="dark"] .ichabod {
+  color: #cbd5f5 !important;
+}
+
+html[data-theme="dark"] [style*="margin-bottom: 30px"][style*="font-style: italic"][style*="color: #4a6491"] {
+  color: #93c5fd !important;
+}
+
+html[data-theme="dark"] .four-steps li,
+html[data-theme="dark"] .sign-list li,
+html[data-theme="dark"] .sin-list li,
+html[data-theme="dark"] .consider-list li,
+html[data-theme="dark"] .implications-list li,
+html[data-theme="dark"] .examination-list li,
+html[data-theme="dark"] .waste-list li,
+html[data-theme="dark"] .bible-list li,
+html[data-theme="dark"] .pledge-option,
+html[data-theme="dark"] .pledge-table td,
+html[data-theme="dark"] .pledge-table th {
+  border-color: #334155 !important;
+}
+
+html[data-theme="dark"] .pledge-table th,
+html[data-theme="dark"] .separator,
+html[data-theme="dark"] .warning-large,
+html[data-theme="dark"] .stat-box,
+html[data-theme="dark"] .quote-box,
+html[data-theme="dark"] .letter-box,
+html[data-theme="dark"] .note-box,
+html[data-theme="dark"] .case-box,
+html[data-theme="dark"] .testimony-box,
+html[data-theme="dark"] .vision-box,
+html[data-theme="dark"] .revival-example,
+html[data-theme="dark"] .revival-story,
+html[data-theme="dark"] .faust-quote,
+html[data-theme="dark"] .prayer-box,
+html[data-theme="dark"] .latin-quote,
+html[data-theme="dark"] .testimony,
+html[data-theme="dark"] .exhortation {
+  background: #172033 !important;
+}
+
+html[data-theme="dark"] .highlight-box,
+html[data-theme="dark"] .warning-box,
+html[data-theme="dark"] .warning-large,
+html[data-theme="dark"] .red-emphasis {
+  color: #fca5a5 !important;
+}
+
+html[data-theme="dark"] .menu-link-container {
+  color: #e2e8f0 !important;
 }

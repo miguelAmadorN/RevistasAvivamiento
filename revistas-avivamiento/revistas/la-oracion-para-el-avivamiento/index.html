@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Oración para el Avivamiento - David Wilkerson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+
+
+    .menu-button {
+        display: inline-block;
+        margin: 20px 0 10px;
+        padding: 10px 18px;
+        background-color: #4a6491;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .menu-button:hover {
+        background-color: #2c3e50;
+    }
+
+    .menu-link-container {
+        text-align: center;
+    }
+footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .revival-story {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 4px solid #8B0000;
+        }
+
+        .revival-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #8B0000;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+  <script defer src="../../../assets/reader-mode.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por David Wilkerson</div>
+            <div>LA ORACIÓN PARA EL AVIVAMIENTO</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p><span class="emphasis">Estimado lector:</span> Nos ha parecido oportuno publicar algo que enfatizará la necesidad de la oración. Quizás no haya algo más fácil de menospreciar y olvidar, pero debemos entender que sin oración es imposible pensar en AVIVAMIENTO. El orar cambia las cosas; de hecho el primero que cambia cuando en verdad se ora es uno mismo. No es fácil orar y sin embargo un niño lo puede hacer y sólo los que son humildes como ellos.</p>
+
+        <p>Para el alma mundana es imposible, ya que la oración es un ejercicio muy espiritual y la carne se rehusa a hacerlo.</p>
+
+        <p>Para el corazón satisfecho y engreído la oración será un tiempo rutinario y monótono que carecerá de lo esencial; la asistencia del Espíritu Santo. No es a esta oración a la que nos estamos refiriendo.</p>
+
+        <p>Es más bien la permanencia en la presencia de Dios, que hace que uno sea transformado. Lo terrenal se desvanece y Jesús y su Reino Celestial se hacen visibles. Dios se convierte en una realidad y sus palabras y advertencias cobran un peso como nunca antes. Las almas son vistas con el valor que tienen para Dios y su perdición como algo cierto. La insensibilidad e indiferencia por el pecado y sus consecuencias se pierden y una genuina aflicción invade el alma del que ora.</p>
+
+        <p>Simplemente observemos estas realidades. El ambiente espiritual está cada vez más frío y más denso. La verdad es ignorada y el pecado es puesto en lugares prominentes aún por aquellos que profesan cristianismo. La generación en la que vivimos y las que vienen no son capaces de discernir entre lo bueno y lo malo. Las religiones y las modas espirituales han usurpado el lugar de Dios. ¡Jesús no es conocido ni en México ni en el mundo!</p>
+
+        <p><span class="red-emphasis">¡Necesitamos un Avivamiento! ¡Necesitamos una visitación de Dios!</span></p>
+
+        <p>¿Quién entiende hoy día lo que causa en el corazón de Dios las malas obras de una nación pecadora y cargada de maldad? Es más... ¿A quién le importa realmente? ¿En qué iglesia o Instituto Bíblico se está enseñando la aflicción y el dolor por el pecado que nos asedia? Antes vemos mucho "gozo" para tiempos demasiado tristes.</p>
+
+        <p>Los avivamientos registrados por la Biblia y la historia siempre han sido precedidos por tiempos de humillación y aflicción.</p>
+
+        <p>Quiera Dios utilizar esta publicación como un llamado a LA ORACIÓN Y EL AVIVAMIENTO.</p>
+
+        <div class="editors-note">
+            Atentamente<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">UN LLAMADO A LA AFLICCIÓN</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por David Wilkerson</div>
+
+    <div class="content-section">
+        <p>Estoy convencido de que la única manera de experimentar la plenitud del gozo de Jehová es compartiendo su aflicción. Dios sí se aflige por el pecado, y aquellos que verdaderamente caminan con Él participan de su aflicción.</p>
+
+        <p>En los días de Noé:</p>
+
+        <div class="scripture">
+            "Y vio Jehová que la maldad de los hombres era mucha en la tierra, y que todo designio de los pensamientos del corazón de ellos era de continuo solamente el mal... y se arrepintió Jehová de haber hecho hombre en la tierra, y le dolió en el corazón"
+            <span class="scripture-ref">Génesis 6:5-6</span>
+        </div>
+
+        <p>La palabra hebrea aquí usada significa afligir. Significa herir, causar dolor. La maldad del hombre estaba hiriendo a Dios profundamente, causando gran dolor en su corazón.</p>
+
+        <p>Isaías dijo de Cristo:</p>
+
+        <div class="scripture">
+            "Él es... varón de dolores, experimentado en quebranto (aflicción)"
+            <span class="scripture-ref">Isaías 53:4</span>
+        </div>
+
+        <p>El pecado del hombre causó ese dolor. Él participó de la misma herida y dolor del Padre Celestial.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LOS SIERVOS DEL NUEVO Y ANTIGUO TESTAMENTO COMPARTIERON ESTE DOLOR POR EL PECADO.</h2>
+
+        <p>David fue un hombre de Dios que descubrió la gloria de gozarse en Jehová, pero este gozo nació de un gran dolor por las transgresiones entre el pueblo de Dios. Él dijo:</p>
+
+        <div class="scripture">
+            "Veía a los prevaricadores, y me disgustaba... porque no guardaban tus palabras..."
+            <span class="scripture-ref">Salmo 119:158</span>
+        </div>
+
+        <div class="scripture">
+            "¿No odio, oh Jehová, a los que te aborrecen... y me enardezco contra tus enemigos?"
+            <span class="scripture-ref">Salmo 139:21</span>
+        </div>
+
+        <p>David odió lo que Dios odiaba; él se dolió de las cosas que le dolían a Dios y detestaba lo que Dios detestaba.</p>
+
+        <p>El profeta Amós clamó contra <span class="emphasis">"aquellos que reposan en Sión... y no se afligen por el quebrantamiento de José..."</span> (Amós 6). Él compartió la aflicción de Dios por la apostasía de un pueblo que reposaba en comodidad y prosperidad, sin importarles la inminente hora de juicio, mientras se recostaban en camas de marfil (materialismo), cantando su música, bebiendo vino -aún sin sentir dolor por la ruina que estaba alrededor de ellos- (Ver Amós 6:1-6).</p>
+
+        <p>La palabra que Amós usó es enfermar. En realidad él estaba diciendo: "El pecado y la ruina entre el pueblo de Dios no te enferma. No te repugna porque has llegado a cegarte por el pecado y la buena vida que ahora disfrutas".</p>
+
+        <p>Nehemías se afligió porque comprendió la maldad que se había infiltrado a la casa de Dios. Un sacerdocio apóstata había traído a la casa de Dios una terrible indiferencia, y únicamente Nehemías comprendía la profundidad de la maldad y las terribles consecuencias que traería sobre la gente. (Ver Nehemías 13:1-9). El sumo sacerdote Eliasib, cuyo nombre en hebreo sugiere unidad a través de la indiferencia, había establecido una residencia en el templo para Tobías, un príncipe amonita. Por ley, a ningún amonita se le permitía poner un pie en el templo. Pero a Tobías, cuyo nombre significa prosperidad, placer, buena vida, se le permitió permanecer ahí, un pagano establecido en la casa de Dios.</p>
+
+        <p>Ahora había algo nuevo en la casa de Dios. Un ministerio corrupto estaba en sociedad con el paganismo. El pueblo de Dios suspiraba por prosperidad, por una buena vida; y Tobías estaba listo y dispuesto para enseñarles el camino materialista de la idolatría.</p>
+
+        <div class="scripture">
+            "Eliasib el sacerdote, siendo jefe de la cámara de la casa de nuestro Dios, había emparentado con Tobías..."
+            <span class="scripture-ref">Nehemías 13:4</span>
+        </div>
+
+        <p>Nehemías se dio cuenta de la maldad que estaba siendo apoyada por un sacerdocio indiferente al pecado,</p>
+
+        <div class="scripture">
+            "Y vine a Jerusalén; y entonces supe del mal que había hecho Eliasib por consideración a Tobías, haciendo para él una cámara en los atrios de la casa de Dios. Y me dolió en gran manera; y arrojé todos los muebles de la casa de Tobías fuera de la cámara, y dije que limpiasen las cámaras, e hice volver allí los utensilios de la casa de Dios, las ofrendas y el incienso"
+            <span class="scripture-ref">Nehemías 13:7-9</span>
+        </div>
+
+        <p>¡Nehemías no estaba actuando por impulso o tradición legalista! Él estaba viendo a través de los ojos de Dios, sintiendo como Dios sentía y estaba comprendiendo lo malo de mezclarse, de ser indiferente; del crecimiento canceroso del pecado en la casa de Dios.</p>
+
+        <p>Si más ministros comprendieran la mala mezcla de la música, el abuso de la diversión, la codicia por el materialismo que ahora existe en la iglesia -como Nehemías, ellos se afligirían y lo echarían de la iglesia de una vez por todas-. Dios, danos un cuerpo de predicadores y creyentes que estén enfermos por el pecado y la mezcla, y quienes se mantendrán firmes en contra de ello. Dios, danos creyentes con suficiente discernimiento para comprender la profundidad y horror de la indiferencia y del pecado que está penetrando en la casa del Señor.</p>
+
+        <p>Pablo se afligió por la apostasía del pueblo de Dios. Él advirtió:</p>
+
+        <div class="scripture">
+            "Porque por ahí andan muchos, de los cuales os dije muchas veces, y aún ahora lo digo llorando, que son enemigos de la cruz de Cristo... el fin de los cuales será perdición, cuyo dios es el vientre... y cuya gloria es su vergüenza; que sólo piensan en lo terrenal"
+            <span class="scripture-ref">Filipenses 3:18-19</span>
+        </div>
+
+        <p>El significado en griego aquí es, fuerte sollozo o sollozo profundo de un corazón afligido. El ver a los cristianos yéndose tras las cosas terrenales, rechazando el vituperio de la Cruz, rompió el corazón de Pablo al punto de que él literalmente fue sacudido con la aflicción de Dios. Esta no fue una desesperación en silencio ni un resignado suspiro a causa de la apostasía, sino que fue un fuerte, profundo lamento de un corazón afligido de un hombre participando del dolor de Dios por sus hijos descarriados.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>EL MISTERIO DE AFLICCIÓN</h2>
+
+        <p>Samuel fue un hombre joven quien fue llamado "al ministerio de aflicción". No era su propia aflicción, ni la aflicción de la humanidad, -¡sino la profunda e insondable aflicción de Dios!-. Dios estaba profundamente dolido por la condición apóstata de su propio pueblo, y no había nadie con quien compartir su dolor. Dios estaba por quitar Su gloria de su casa en Silo, y el ministerio que permanecía en ese entonces ante su altar no lo sabía. Qué triste estar tan sordo, mudo y ciego justamente a la hora del juicio.</p>
+
+        <p>Israel era corrupto; el sacerdocio era adúltero; y el ministerio establecido y organizado estaba totalmente ciego. Elí representa el decadente sistema religioso con todos sus intereses propios, habiéndose conformado suavemente por la vida fácil únicamente con un pequeño recuerdo de odiar el pecado. Elí había llegado a la gordura y pereza de las cosas profundas de Dios, haciendo solamente lo que bien le parecía.</p>
+
+        <p>Sus hijos Ofni y Finees representan el actual ministerio de tradición. Estos dos jóvenes sacerdotes nunca tuvieron un encuentro con Dios. Ellos no sabían nada de "escuchar algo celestial". No sabían nada de tener hambre de Dios, de una pasión ardiente de experimentar la gloria y la presencia del Señor -nada de la aflicción de Dios-. Esta clase de ministros no ayunaban, ni oraban. Ellos buscaban las mejores posiciones ministeriales, con los más altos beneficios y las mejores oportunidades de ser promovidos. Sus corazones nunca habían sido quebrantados por la humanidad perdida; sabían muy poco del sufrimiento. Ellos son un producto de ritualismo frío y muerto. ¡No están llenos de la presencia de Dios! Hablan lo correcto, lo nuevo, y se oyen y actúan profesionalmente. Pero no hay un ungimiento, no hay santa unción; ellos no tienen temor y pavor de un Dios Santo.</p>
+
+        <p>Así es que, los hijos de Elí, llegaron a ser sensuales, mundanos y egoístas. Los hijos de Elí llegaron a ser tan corruptos, que Dios los llamó "los hijos de Belial" (hijos de Satanás). Se dice de ellos: <span class="emphasis">"Que no conocían a Dios"</span>. <span class="emphasis">"Se engordaban de lo principal de todas las ofrendas del pueblo de Israel"</span> (I Samuel 2:29). Por esta razón multitudes de jóvenes evangélicos están creciendo tan fríos y sensuales, convirtiéndose en fanáticos del rock and roll, tomando cerveza, comprometiéndose con el sexo ilícito, aburridos e inquietos. Algunos de los pastores que ministran jóvenes los están condenando con su propio ejemplo deficiente y su falta de discernimiento del Espíritu Santo. Si los líderes que ministran jóvenes no conocen al Señor, ¿cómo pueden alcanzar a los jóvenes para Dios? Ahora enfrentamos la tragedia de una generación entera que va extraviada porque tiene muy pocos pastores que les muestren como escapar de las trampas satánicas de esta era. Ha habido demasiada provisión hacia los deseos sensuales de la juventud.</p>
+
+        <p>¡Elí había perdido todo su discernimiento espiritual! Ana, una mujer santa, estaba llorando amargamente en la casa de Dios en Silo. Ella estaba suplicándole al Señor que le diera un hijo y estaba en profunda intercesión. Ella es un tipo del remanente santo que intercede, que suspira y clama a Dios por una palabra fresca de Él.</p>
+
+        <div class="scripture">
+            "Pero Ana hablaba en su corazón, y solamente se movían sus labios, y su voz no se oía; y Elí la tuvo por ebria"
+            <span class="scripture-ref">1 Samuel 1:13</span>
+        </div>
+
+        <p>¿Cómo puede un ministro de Dios ser tan ciego? Ella estaba en el Espíritu, conversando con Dios, bajo una unción divina y pronto llegaría a ser un canal de renovación en Israel -y el hombre de Dios no pudo discernir la verdad-. Él perdió totalmente el significado de lo que estaba sucediendo en el altar. ¿Qué es lo que le ha sucedido a este sacerdote del Dios Altísimo, que debería estar permaneciendo en el umbral de un profundo movimiento nuevo de Dios que afectaría el futuro de Israel -y está tan fuera de un contacto con Dios que lo confundió con la carne-?</p>
+
+        <p>¿Cómo va Dios a penetrar a este pueblo apóstata, y corrupto de Israel? ¡Dios está afligido! Él está queriendo sacudir las cosas. ¡Él está a punto de moverse prontamente en ira y vomitarlo de su boca! ¡Pero Elí no lo sabe! Elí ha llegado a ser tan indulgente, tan cómodo, tan empapado en su fría tradición -que no tiene ni la más mínima insinuación de lo que Dios está diciendo o está a punto de hacer-. Sus hijos van a ser echados fuera -literalmente cortados de las cosas de Dios-. Pero están tan contaminados con la lujuria, tan acostumbrados a los mejores cortes de la carne, tan endurecidos por el pecado -que se han convertido en agentes de Satanás-, ciegos al juicio inminente. ¡Dios tiene que salir fuera de la estructura religiosa establecida para encontrar a alguien lo suficientemente abierto o quebrantado para compartir su aflicción!</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LA COMPAÑÍA DE SAMUEL</h2>
+
+        <p>El Señor siempre atrae a un pueblo como Samuel para que escuche su voz en un tiempo de decadencia espiritual. Esta compañía está compuesta de hombres y mujeres que no le dan ninguna importancia a la tradición, ni como se promueven, ni tienen límites denominacionales. Ellos representan pastores y gente dispuesta que tiene oídos para escuchar. Ellos se encierran con Dios.</p>
+
+        <p>Dios envió un profeta no nombrado a Elí con una advertencia. Fue un flechazo directo hacia el corazón de un sistema religioso que se había convertido en una "mafia" donde se guardaban unos a otros. Elí había encubierto a sus hijos descarriados. Dios le dijo proféticamente:</p>
+
+        <div class="scripture">
+            "¿Por qué... has honrado a tus hijos más que a mí, engordándoos de lo principal de todas las ofrendas de mi pueblo Israel?"
+            <span class="scripture-ref">1 Samuel 2:29</span>
+        </div>
+
+        <p>Cuando Elí escuchó como sus hijos hicieron gala de sus fornicaciones justamente a las puertas de la congregación, todo lo que él dijo fue:</p>
+
+        <div class="scripture">
+            "No, hijos míos, porque no es buena fama la que yo oigo; pues hacéis pecar al pueblo de Jehová"
+            <span class="scripture-ref">1 Samuel 2:24</span>
+        </div>
+
+        <p>Posteriormente Dios le dijo a Samuel que Él juzgaría la casa de Elí porque él conocía su iniquidad y no hizo nada al respecto.</p>
+
+        <div class="scripture">
+            "Y le mostraré que yo juzgaré su casa para siempre, por la iniquidad que él sabe; porque sus hijos han blasfemado a Dios, y él no los ha estorbado"
+            <span class="scripture-ref">1 Samuel 3:13</span>
+        </div>
+
+        <p>Hay un día de juicio señalado aquí en la tierra para los ministros del evangelio que conocen el pecado en la congregación o en su familia -y rehusan tratar con él-. Ellos pueden recriminar a los adúlteros, a los borrachos, a los fornicarios -¡pero no tienen un mensaje penetrante de reprobación!-. Temen disciplinar a sus hijos espirituales. A la hora del juicio el Señor preguntará, <span class="emphasis">"¿Por qué no le enseñaste a la gente la diferencia entre lo santo y lo profano?"</span></p>
+
+        <p>¿Por qué fue Elí tan suave con el pecado de sus hijos? Porque ellos estaban robándose el filete mignon antes de cocinarlo en la olla, y estaban trayéndose a su casa esta carne fresca y roja y Elí se había acostumbrado a ella. Él hubiera sufrido si él los regañaba muy duro -tendría que volver a comer carne hervida-. Él había aprendido a no querer percatarse de todas las cosas malas que estaban sucediendo en la casa de Dios -y en su propia familia-.</p>
+
+        <p>Por esto creo que algunos predicadores son suaves con el pecado. ¡Han llegado a vivir tan cómodamente que se han conformado con la buena vida! ¡Disfrutan la comodidad y el prestigio de gran cantidad de personas, de edificios más grandes! Qué sutil es esto -mientras que ellos saben que deben decirle la verdad a la gente, simplemente pronuncian un suave, <span class="emphasis">"¡No deberían hacer estas cosas malas!"</span> No hay una denuncia santa. No hay aflicción por el pecado y el conformismo. No hay la visión del apóstol Pablo acerca del exceso de la maldad del pecado. No hay advertencias de un castigo divino y juicio. La gente se ofendería -dejaría de venir, dejaría de pagar las cuentas-. El crecimiento podría ser impedido.</p>
+
+        <p>He predicado en algunas de estas iglesias, y ha sido una experiencia que rompe el corazón. El pastor, al igual que Elí, usualmente ama el Arca de Dios -no es un "hombre malo"-. Pero es un hombre temeroso de los hombres. Con temor a que se mueva el Espíritu Santo, con temor a que la gente se ofenda, dando homenaje de labios en cuanto a la santidad -pero temeroso de tratar demasiado duro con el pecado-. Hay divorcios desenfrenados. ¡Aventuras secretas! Gente joven atada con hábitos; diáconos fumando y bebiendo; y mucha confraternidad sin Espíritu.</p>
+
+        <p>Me pongo de pie en el púlpito de este hermano haciéndoles saber la demanda del Señor por la santidad, llamado al arrepentimiento, advirtiendo del juicio hacia el pecado- y la gente que está escuchando el mensaje corre hacia el frente, llorando, confesando, buscando liberación-. Miro hacia un lado y veo un pastor preocupado de que la reunión pudiera salirse fuera de control o de que vaya a haber alguna clase de manifestación de llanto incontrolable o de que la gente caiga al suelo con convicción y dolor por el pecado. Se muestra muy temeroso de que su "gente nueva" no llegue a entender esto. Él apenas puede esperar a que la reunión termine y así calmar las cosas. Comienza a susurrar dulces afirmaciones de que Dios los ama a todos -y les recuerda a todos que la hora es muy tarde y rápidamente se despide de ellos-. Él apaga la convicción y los miembros cargados de pecado se van a casa atribulados, por lo que parece ser indiferente a su pastor.</p>
+
+        <p>He salido de esta clase de reuniones con el corazón destrozado. Me pregunto a mí mismo: <span class="emphasis">"¿En dónde está la aflicción por el pecado? ¿No podrán los líderes ver esas ovejas que derraman sus lágrimas y desean clamar y permitir que la convicción del Espíritu Santo haga su trabajo de limpieza en ellos?"</span></p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿DÓNDE ESTÁ LA AFLICCIÓN DE DIOS EN NUESTROS PÚLPITOS?</h2>
+
+        <p>¿En dónde están los Samueles que han escuchado la voz de Dios, que han sido despertados por el Espíritu Santo, que han recibido una revelación de los próximos juicios hacia la casa de Dios apóstata? ¿Por qué no todos los predicadores del evangelio se afligen por la condición de pecado de la iglesia? ¿Por qué no todos los pastores y evangelistas claman como vigilantes en el muro?</p>
+
+        <p>Se dice de Samuel:</p>
+
+        <div class="scripture">
+            "Y Samuel se lo manifestó todo (a Elí), sin encubrirle nada..."
+            <span class="scripture-ref">1 Samuel 3:18</span>
+        </div>
+
+        <p>Te pregunto, pastor: ¿Les estás diciendo todo? ¿Estás resistiéndote, escondiendo la verdad, temeroso de ofender?</p>
+
+        <p>¡El mensaje de la Compañía de Samuel no es placentero!</p>
+
+        <div class="scripture">
+            "Y Samuel temía descubrir la visión a Elí..."
+            <span class="scripture-ref">1 Samuel 3:15</span>
+        </div>
+
+        <p>Samuel escuchó a Dios pronunciar el final de una estructura religiosa apóstata. ¡La visión fue abrumante! Dios ya no iba a tolerar más una forma de piedad sin el poder de la santidad. El juicio estaba por caer en la casa de Dios. El adulterio sería expuesto. El liderazgo conformista ya no disfrutaría más las bendiciones de la presencia de Dios.</p>
+
+        <p>Dios iba a retirar su presencia de Silo e iba a hacer una cosa nueva y gloriosa en Israel. Dios dijo:</p>
+
+        <div class="scripture">
+            "Y yo me suscitaré un sacerdote fiel, que haga conforme a mi corazón y a mi alma; y yo le edificaré casa firme, y andará delante de mi ungido todos los días"
+            <span class="scripture-ref">1 Samuel 2:35</span>
+        </div>
+
+        <p>Esto habla de la Compañía de creyentes de Samuel y de los ministros que comparten el mismo corazón de Dios. Ellos conocen la mente del Señor, ellos conocen su voluntad; y caminan en temor y santidad delante de Él. <span class="red-emphasis">¡La Compañía de Samuel es un pueblo de oración!</span> Y, ¡porque están en contacto con Dios, se les da a conocer y comparten su aflicción! Mientras Samuel estaba en oración, Dios le reveló unas cosas terribles que venían hacia el pueblo de Dios.</p>
+
+        <div class="scripture">
+            "Y Jehová dijo a Samuel: he aquí haré una cosa en Israel, que a quien la oyere, le retiñirán ambos oídos"
+            <span class="scripture-ref">1 Samuel 3:11</span>
+        </div>
+
+        <p>¡Puedo decirte a quien le está hablando Dios en estos días! Está hablando a aquellos que están entregados a Él, -que palpitan por Él, como el ciervo palpita por el agua-, aquellos que han muerto a cada ambición egoísta, ¡qué no tienen otra meta en la vida sino la de traer placer, gloria y gozo al corazón de Dios!</p>
+
+        <p>Lo digo resueltamente -¡No va a ser una denominación la que lleve la Palabra de Dios a esta generación que ha sido maldecida! No será un comité el que escuche la Palabra de verdad y encienda las reuniones del remanente de los últimos tiempos-. Mientras que los ángeles del Apocalipsis vienen para herir la tierra, denominaciones y líderes religiosos estarán trabajando duro protegiendo sus intereses y fortaleciendo su autoridad, extendiendo reglamentos y resoluciones.</p>
+
+        <p>Al mismísimo final de su ministerio, Samuel llevó la aflicción de Dios por el pecado de su pueblo. Después Israel deseó un rey para que pudieran ser "juzgados como todas las naciones..." (1 Samuel 7:15). Samuel cayó de rodillas disgustado grandemente. Y una vez más Dios compartió su aflicción con él:</p>
+
+        <div class="scripture">
+            "Y dijo Jehová a Samuel: Oye la voz del pueblo en todo lo que te digan; porque no te han desechado a ti, sino a mí me han desechado, para que no reine sobre ellos"
+            <span class="scripture-ref">1 Samuel 8:7</span>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>LA AFLICCIÓN DE DIOS PRODUCE PROTESTA CONTRA EL PECADO</h2>
+
+        <p>¡La aflicción de Dios en la Compañía de Samuel debe producir una protesta en contra de todo pecado y apostasía!</p>
+
+        <div class="scripture">
+            "Ahora, pues, oye su voz; mas protesta solemnemente contra ellos... y muéstrales como les tratará el rey que reinará sobre ellos..."
+            <span class="scripture-ref">1 Samuel 8:9</span>
+        </div>
+
+        <p>¡Por dondequiera que voltees ahora, el pueblo de Dios en número creciente está rechazado el señorío de Cristo! Hay un clamor: <span class="emphasis">"ser como las naciones"</span>. ¡Esto es mezcla! Está siendo justamente como el mundo. Está diciendo: <span class="emphasis">"¡Queremos a Dios y al mundo!"</span></p>
+
+        <p>¡Gracias a Dios por la Compañía de Samuel que protesta! Ellos han escuchado de Dios y saben hacia dónde te va a llevar este conformismo. Ellos ven los espantosos resultados que vienen a causa de la apostasía, y como Pablo, ellos sollozan ese profundo lamento de un corazón hecho pedazos por la aflicción.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>UN LLAMADO A LA AFLICCIÓN DA COMO RESULTADO EL GOZO ETERNO DE JEHOVÁ</h2>
+
+        <p>A los que gimen por causa del pecado de la Iglesia los llaman pronosticadores de destrucción y portadores de tristeza. Muchos creyentes han dicho: "No quiero estar cerca de ellos. Son tan negativos y hoscos, y parecen tan tristes" ¡Esto es simplemente porque no los conocen! Ellos no saben que aquellos que comparten la aflicción de Dios por el pecado, también son partícipes de la más grande medida de gozo.</p>
+
+        <p>¡Aquellos que verdaderamente sienten la aflicción junto con Dios, se les ha dado un corazón que salta de gozo en Jehová!</p>
+
+        <div class="scripture">
+            "Aunque la higuera no dé su fruto; ni haya ninguna provisión en las vides; el producto del olivo falte; los sembrados no produzcan subsistencia; las ovejas sean quitadas de la majada, y no haya vacas en los corrales. Con todo yo brincaré de gozo en Jehová. Yo me gloriaré en el Dios de mi salvación. Jehová el Señor es mi fortaleza"
+            <span class="scripture-ref">Habacuc 3:17-19 (Paráfrasis)</span>
+        </div>
+
+        <p>Este gozo viene a saber que Dios siempre tendrá un ministerio puro, un cuerpo santo y separado -aún en los peores días-. Ellos saben que Dios los honrará con su presencia constante aunque todos los demás se aparten de ellos con temor. Ellos están llenos de gozo porque sacan fuerzas creyendo en la majestad y el poder de Dios, cuyos juicios son siempre justos. Con Habacuc, ellos pueden decir: "Aunque todos fallen, mi corazón se regocijará en Dios únicamente!" Aún cuando parezca que todo falla alrededor y haya muy poca evidencia de resultados, la aflicción nos lleva a un gozo permanente a causa de la cercanía al corazón de Dios. Con Pablo, el remanente afligido puede decir:</p>
+
+        <div class="scripture">
+            "Como moribundos, mas he aquí vivimos; como castigados, mas no muertos; como entristecidos, mas siempre gozosos..."
+            <span class="scripture-ref">2 Corintios 6:9-10</span>
+        </div>
+
+        <p>Como prueba Bíblica conclusiva que el participar de la aflicción de Dios da como resultado el gozo, te recuerdo las palabras de David que dijo:</p>
+
+        <div class="scripture">
+            "Irá andando y llorando el que lleva la preciosa semilla; mas volverá a venir con regocijo, trayendo sus gavillas"
+            <span class="scripture-ref">Salmo 126:6</span>
+        </div>
+    </div>
+
+    <div class="revival-story">
+        <div class="revival-title">CUANDO DIOS RASGA LOS CIELOS Y DESCIENDE</div>
+        <p style="font-style: italic; margin-bottom: 15px;">¡Un poderoso avivamiento hoy entre los Zulúes!</p>
+        <p>Artículo que narra la historia del Avivamiento hoy entre los Zulúes tomando de la publicación "Herald of his Coming" (Mayo 1992).</p>
+
+        <p>Cuando Dios rasga los cielos y desciende esto es un ¡AVIVAMIENTO! Con el sonido de un viento recio Dios rasgó los cielos y descendió a un pequeño grupo de misioneros y cristianos de la tribu zulú que estaban reunidos en un antiguo establo color blanco en Natal, Africa del Sur. Fue a principios de 1967 que este pequeño grupo de penitentes que buscaban a Dios fueron sosegados al silencio mediante una manifestación maravillosa de la presencia de Dios en medio de ellos. Dios puso en movimiento de salvación, liberación y sanidad y desde ese tiempo ha continuado durante estos 25 años y aún hoy se está incrementando.</p>
+
+        <p>En los terrenos donde la obra ahora está centrada, Kwa Sizabantu, hay un edificio con capacidad para 10,000 personas. 120 obreros llenos del Espíritu ministran diariamente alrededor de 1000 personas que buscan ayuda. Los obreros también viajan en equipos a otras localidades para ministrar en y fuera de Sudáfrica. Decenas de miles han escuchado el Evangelio puro proclamado y han recibido a Cristo como el salvador. Aunque no se llevan a cabo reuniones especiales de sanidad y liberación, Dios por su gracia ha sanado y liberado a muchos cientos, dejando libres a brujos y médicos brujos, satanistas y a otros, atados por el pecado y malos hábitos, y algunos literalmente han sido sanados en sus lechos de muerte.</p>
+
+        <p>Vidas transformadas que han permanecido fieles a través de los años atestiguan que ésta es una obra de Dios bendecida en forma maravillosa y genuina.</p>
+
+        <p>Sudáfrica hoy día atraviesa tiempos difíciles. Desde el desmantelamiento oficial del "apartheid", varios grupos de raza de color están luchando por el liderazgo. Como resultado hay intimidaciones, revueltas y homicidios: 22,000 perdieron su vida durante el año pasado. Los cristianos que no desean unirse en la violencia, son maltratados y enfrentados con violencia algunas veces.</p>
+
+        <p>Este avivamiento ha surgido en medio de la crisis presente del país, y aunque no tienen ayuda terrenal, proveen instrucción y ánimo a los cristianos, ayudándoles a "Pararse por Dios" y su Palabra.</p>
+
+        <p>En 1991 una conferencia que incluyó líderes de 71 iglesias y organizaciones cristianas se reunieron en Kwa Sizabantu, para orar y ponerse de acuerdo en la posición bíblica que deberían tomar en los asuntos que ponen en peligro y saquean su país. El grupo tomó una valiente y firme determinación afirmando que se pararían en la Palabra de Dios como la base del Evangelio que ellos proclamaban y de rechazar tales enseñanzas no bíblicas como humanismo, socialismo y comunismo.</p>
+
+        <p>Gente joven que enfrentaba la violencia en las escuelas, buscó ayuda en Kwa Sizabantu. El resultado ha sido la formación de una organización, "CRISTIANOS POR LA VERDAD" ahora con 23,000 adherentes quienes toman la posición bíblica, fortaleciéndose unos a otros, y ganando respeto a través de la Nación.</p>
+
+        <h3 style="color: #8B0000;">LOS COMIENZOS</h3>
+
+        <p>¿Qué movió a Dios para obrar de esta manera bendita?</p>
+
+        <p>El primero en el que Dios comenzó a obrar fue Erlo Stegen. Erlo fue salvo siendo adolescente a través del ministerio de su pastor luterano alemán en Sudáfrica, donde la familia de Stegen vivía. Después de su conversión, la Palabra de Dios se volvió muy dulce para él. Nada en el mundo se comparaba a eso, y para él, el amor a Cristo sobrepasaba todo lo demás en la tierra.</p>
+
+        <p>Cuando Dios lo llamó para predicar el Evangelio, él deseaba predicar las verdades como Jesús lo hizo. Él estudió cuidadosamente en los Evangelios como enseñó Jesús. Su oración era: <span class="emphasis">"¡Concédeme que predique como Tú lo hiciste!"</span> Después de entrenarse, Erlo adquirió una carpa y por 12 años predicó el Evangelio a LA GENTE DE Zulú. Las multitudes que asistían a las reuniones y el número de aquellos que respondían, era mayor que los que otros evangelistas experimentaban en aquel tiempo. Pero Erlo se sentía continuamente y cada vez más desanimado y abatido. Vez tras vez era "sacudido hasta el fondo de su corazón" cuando regresaba a las áreas donde había tenido reuniones anteriores, y encontraba que la mayoría de los que habían sido aconsejados estaban viviendo vidas que difícilmente eran mejores de lo que eran antes de su "conversión". De nuevo los reunía, ministraba y animaba en el camino correcto; pero una visita posterior revelaba un retroceso a la misma condición y la ministración tenía que ser repetida. Erlo creía y predicaba la Biblia pero lo que veía que sucedía en su ministerio no era lo que él creía que la Biblia proclamaba. No era lo que suponía seguía a la predicación del Evangelio. Ni lo que sucedió en la iglesia primitiva. Combatiendo el desánimo, oraba y trabajaba más duro. Además de la Biblia estudiaba sobre el avivamiento.</p>
+
+        <p>En una ocasión fue abordado por una viuda que tenía una hija desequilibrada mentalmente que era el terror donde se encontraba. Alguien había dirigido a la viuda a Erlo después de oírle predicar. <span class="emphasis">"¿Es verdad?"</span> la viuda preguntó, <span class="emphasis">"¿Está vivo Jesucristo? ¿Puedes tú hablar con él? ¡Por favor pídele que sane a mi hija"</span>, rogaba ella en su desesperación. Ella le dijo que había vendido todas sus posesiones para pagar a los médicos brujos para que la ayudaran pero sin resultados. Erlo aceptó el reto. Trajo a la niña a un lugar de oración, y él y tres colegas oraron literalmente día y noche por tres semanas hasta que se sintió sin fuerzas y totalmente quebrantado. Todavía la niña estaba tan violenta, destructiva y mentalmente desordenada como siempre. La tuvo que llevar a su hogar, derrotado.</p>
+
+        <p>Concluyó que quizás necesitaba estudiar y predicar más sobre la fe. En otra ocasión después de predicar <span class="emphasis">"Cree solamente"</span> (Marcos 5:36) fue alcanzado para orar por sanidad. La petición la hizo una mujer con su esposo ciego. <span class="emphasis">"Ven mañana y oraremos por él"</span>, respondió Erlo.</p>
+
+        <p>De nuevo después de orar fervientemente, Erlo tuvo que ceder ante la derrota. Se decía a sí mismo: <span class="emphasis">"Quizás no es la voluntad de Dios"</span>, pero su corazón no estaba satisfecho con eso. Casi sucumbía a las dudas y se cuestionaba si la iglesia de hoy podría experimentar lo que la iglesia primitiva experimentó. Sus oraciones por el avivamiento decayeron.</p>
+
+        <p>Pero aún tenía que enfrentar a aquellos zulúes quienes decían; <span class="emphasis">"El cristianismo es la religión del hombre blanco"</span>.</p>
+
+        <p><span class="emphasis">"Oh, Dios"</span>, oraba, <span class="emphasis">"ayúdame a convencer a esta gente que Jesús es el Salvador de toda la humanidad, y de los zulúes también"</span>. Y entonces comenzó a orar de nuevo por el avivamiento. En 1966 se reunió con una pequeña congregación de 20 a 30 zulúes, y comenzaron un estudio bíblico para ver como estaban sus vidas comparadas con la Biblia. Leyeron en Juan 7:37 y 38 las palabras de Jesús: <span class="emphasis">"Si alguno tiene sed venga a mí y beba. El que cree en mí como dice la Escritura, de su interior correrán ríos de agua viva"</span>. ¡Ríos de agua viva! Esto es lo que ellos deseaban. Se sentían secos y sin fruto. ¡Ríos de agua viva! No solo una corriente y no solo un río.</p>
+
+        <p>Jesús dijo: <span class="emphasis">"El que cree en mí, como dice la Escritura"</span>. ¿Qué dice la Escritura que ellos deberían creer? Estuvieron de acuerdo en estudiar la Biblia para enterarse si ellos creían de acuerdo a la Escritura. Aceptaron la Biblia como una Palabra inspirada por Dios. No tratarían de justificarse a ellos mismos con explicaciones más allá de la Biblia. Tomaron la Palabra aún por encima de todo lo que fueron enseñados por el pasado. Dejaron que la Palabra les hablara y les juzgara.</p>
+
+        <p>Y así, de esta manera, comenzaron a reunirse diariamente de 7:00 a.m a 5:00 p.m para orar y estudiar la Biblia. Escogieron el libro de los Hechos para estudiar. Dios comenzó a escudriñar sus corazones mediante la Palabra y mediante su Espíritu. Comenzaron a descubrirse pecados en sus vidas tales como orgullo y el preocuparse más por la opinión de la gente que por la opinión de Dios. Conforme las semanas pasaron, sus tiempos de oración y estudio se convirtieron en tiempos de clamor a Dios pidiendo misericordia para ellos de sus pecados.</p>
+
+        <p>En una ocasión Erlo estaba preocupado de que el clamor levantado a Dios en intercesión pudiera ser escuchado por algunas personas prominentes de la comunidad que jugaban tenis cerca de allí, y pensó en cerrar las ventanas. Dios le dijo: <span class="emphasis">"¡Muy bien, si tú cierras las ventanas Yo me saldré de aquí. Te preocupas demasiado por lo que otros piensan!"</span></p>
+
+        <p>Erlo llegó a ver a través de esto que la razón de que los últimos resultados de sus predicaciones entre los zulúes fueran tan deficientes, yacía no en su debilidad o en algunas otras razones que estaba acostumbrado a dar, sino que el problema estaba en él mismo.</p>
+
+        <p>Con un mismo propósito de mente y corazón, en el pequeño grupo se humillaron ante Dios, y cada uno se metió con Dios para arreglar su vida profundamente con Él. Debía haber completa obediencia, todo puesto en el altar, poniendo la voluntad de Dios por encima de la de ellos y confesando y abandonando todo pecado. Y así lo hicieron fervorosamente, humillándose delante de Él y consiguiendo así vidas puras ante Su presencia.</p>
+    </div>
+
+    <div class="revival-story">
+        <div class="revival-title">DIOS DESCIENDE</div>
+
+        <p>Entonces un día mientras buscaban a Dios, llegó un sonido como viento y una gran conciencia de pecado, pero además sabían que Dios estaba en medio de ellos. Estaban quietos ante Su Maravillosa y santa presencia. Esto era la prueba del amanecer de un nuevo día en sus vidas y ministerio.</p>
+
+        <p>El Espíritu Santo empezó a obrar poderosamente trayéndoles personas que necesitaban ser ministradas. Día y noche la gente comenzó a venir. Se convirtió en un flujo constante de cristianos nominales y de paganos. En algunas ocasiones grupos de 200 y 300 venían, deseando ser ayudados. El trabajo se incrementó tanto que era difícil comer y dormir. Nadie les decía a la gente que viniera, eran movidos por el Espíritu Santo. En algunas ocasiones ellos mismos decían que eran movidos por una urgencia de venir. Uno de los primeros en venir fue una bruja. Erlo estaba sorprendido cuando ella apareció, <span class="emphasis">"¿Quién te dijo de nosotros? ¿Quién te dijo que vinieras?"</span>, preguntaba. <span class="emphasis">"Nadie"</span>, respondía ella, <span class="emphasis">"me sentí impulsada por dentro a venir"</span>. Erlo había viajado anteriormente miles y miles de kilómetros tratando de ganar las almas de los brujos para Cristo, y a través de todos esos años de esfuerzos tremendos sólo había alcanzado ganar a dos para Cristo y uno de ellos apostató. Y ahora, allí estaba una bruja buscando ayuda de él. Pronto encontró salvación y liberación de los poderes de las tinieblas a quienes ella había servido. Algunos que venían con necesidades específicas fueron sanados aún antes de que se hiciera alguna oración específica por su enfermedad. Esto sucedía después de que confesaban sus pecados y se arreglaban ante Dios rindiéndose a Él. Mucha autoridad en la oración a este pequeño grupo le fue dada. Dos muchachos estudiantes que oraban juntos, mantenían una lista diaria de aquellos por quienes pedían a Dios para que los trajera al servicio y los salvara. Casi sin excepción, los hombres que estaban en la lista se salvaban y eran borrados de ella. Dos mujeres igualmente tenían las oraciones de su lista plenamente contestadas, tanto, que Erlo en ocasiones les preguntaba antes del servicio por quién habían orado y de esta manera sabía que vendría al servicio y se salvaría.</p>
+    </div>
+
+    <div class="revival-story">
+        <div class="revival-title">EL LUGAR DE LA MISIÓN ES ESTABLECIDO</div>
+
+        <p>Después de cuatro años, el Señor les dio una propiedad para la misión de Kwa Sizabantu, y la obra ha continuado allí. Los edificios fueron creciendo en tamaño conforme la misión ha crecido. Hay un hospital en sus terrenos, no tienen personal médico, pero tienen obreros que aconsejan y oran por las personas. Es completamente una obra de fe, no se cobra, pero Dios provee las necesidades y muy a menudo en una forma notable conforme se ora y se ejercita la fe, se enfrentan muchas pruebas de fe. Muchas clases de milagros se han efectuado en los terrenos de la misión y en las áreas alrededor y distantes de la misión; pero siempre el énfasis está en que la persona se aparte y confiese sus pecados, arrepintiéndose y obedeciendo a Dios. Probablemente cada milagro ocurrido en el libro de los Hechos se ha visto en el avivamiento entre los zulúes. Ha habido manifestaciones poderosas de guianza del Espíritu entre ellos. La historia es por demás notable. <span class="emphasis">"¡A Dios sea la gloria!"</span></p>
+
+        <p>Algunos miembros del personal del diario "Herald of His coming" que oyeron hablar recientemente aquí en nuestra área a Erlo Stegen acerca del avivamiento, pudieron comprobar que no había sensacionalismo en sus palabras sino una sobriedad ferviente. Él enfatiza la necesidad de "Velar y orar" tal como Jesús nos dice que hagamos. Cuando Dios obra, el diablo también obra. Debe haber constante vigilancia contra el error y cualquier cosa en que el diablo pudiera intervenir, o cualquier cosa que pudiera ser de la carne en vez del Espíritu Santo.</p>
+
+        <p>En éste avivamiento la Palabra de Dios es proclamada en una forma clara y sencilla, y está siendo celosamente adherida a la vida de muchos para ser fielmente obedecida y vivida diariamente.</p>
+
+        <p>Amor, gozo y unidad están como evidencia entre las personas de razas y trasfondos denominacionales diferentes congregados en Kwa Sizabantu. Los obreros ministran en equipos. Sus dones complementan unos a otros. Los acontecimientos, visiones y sueños, son constantemente revisados y confrontados con la Escritura. Manteniéndose todos en una actitud humilde y quebrantada, en una profunda pobreza de espíritu, practicando la obediencia a la guianza de Dios, de esta manera la obra continúa hacia delante muy bendecida.</p>
+
+        <div class="highlight-box">
+            <p>Erlo Stegen dice: <span class="emphasis">"Si Dios puede enviar un avivamiento entre los zulúes, Él lo puede hacer en cualquier parte del mundo. ¡Dios está dispuesto! ¿Dónde está la gente de fe que está dispuesta a buscar hasta que Dios rasgue los cielos y descienda?"</span> Se ha reportado que solamente un 30% (uno de cada tres) de quienes comienzan a buscar un avivamiento lo experimentan actualmente.</p>
+            <p>Hay un precio que pagar. Dios ayuda a muchos de nosotros a reunir sus requisitos y prepara el camino para sus obras maravillosas para la humanidad, ¡obra que contarán para la eternidad!</p>
+            <p>Cuando llega el avivamiento, muchos, muchos, encuentran nueva vida en Cristo y perseveran hasta el fin. Sin avivamiento, muchos, muchos, inútilmente van a la perdición. ¿Vale la pena pagar el precio? A la luz de la eternidad, sólo hay una respuesta. Sí, sí, es digno cualquier precio para <span class="emphasis">"ganar para Cristo la recompensa de Sus sufrimientos"</span>.</p>
+        </div>
+    </div>
+</div>
+
+<div class="menu-link-container">
+  <a class="menu-button" href="../../menu.html">Volver al Menú</a>
+</div>
+
+<footer>
+    Revista Avivamiento - La Oración para el Avivamiento<br>
+    Por David Wilkerson
+</footer>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

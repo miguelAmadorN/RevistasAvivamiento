@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radiografía del Pecado - Dr. Jorge Treviño</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+
+
+    .menu-button {
+        display: inline-block;
+        margin: 20px 0 10px;
+        padding: 10px 18px;
+        background-color: #4a6491;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .menu-button:hover {
+        background-color: #2c3e50;
+    }
+
+    .menu-link-container {
+        text-align: center;
+    }
+footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .case-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #8B0000;
+        }
+
+        .note-box {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+  <script defer src="../../../assets/reader-mode.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Dr. Jorge Treviño</div>
+            <div>RADIOGRAFÍA DEL PECADO</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>Estimado Lector: Poco podemos añadir al excelente estudio que ponemos en sus manos. Se trata de un análisis detallado y actual de las consecuencias del pecado en el alma de una persona y por lo tanto de cualquier sociedad. Las primeras palabras del Dr. Jorge Treviño que hemos incluido en nuestra introducción nos meten inmediatamente en materia, cautivando nuestra atención de modo que resulta difícil abandonar su lectura.</p>
+
+        <p>No obstante le recomendamos leerlo meditando en las profundas verdades que analiza.</p>
+
+        <p>"Radiografía del Pecado" implica males y daños irreversibles que no son visibles aparentemente. Consecuencias mortales de un mal que se está ignorando demasiado.</p>
+
+        <p>Sométase a una radiografía espiritual por medio de este escrito, para que tenga un diagnóstico veraz de la realidad de su estado.</p>
+
+        <p>Hoy quizás todavía haya remedio.</p>
+
+        <div class="editors-note">
+            Atentamente<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">RADIOGRAFÍA DEL PECADO</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por Dr. Jorge Treviño</div>
+
+    <div class="content-section">
+        <h2>Introducción</h2>
+
+        <p>Cuando se reflexiona con cuidado acerca de sus desastrosas consecuencias a todos los niveles de la existencia humana, resulta extraño que no se empleen más esfuerzos para intentar prevenir el pecado. Sin embargo, a menudo sucede lo contrario, especialmente en el ámbito religioso. Hoy en día, no sólo son poco apreciados aquellos esfuerzos que intentan ayudar al ser humano a abandonar los pecados, sino que además existe un fabuloso esfuerzo por parte de teólogos y líderes de distintas denominaciones para legitimar como cristiano todo un sofisticado sistema doctrinal que, en los hechos, constituye un esquema de indulgencias.</p>
+
+        <p>La presencia de maestros y ministros en el cristianismo que ayudan a fabricar excusas religiosas, en vez de disuadir a sus oyentes a abandonar aquello que destruye mente y alma, es un hecho escandaloso. En la sociedad secular equivaldría a tener médicos dedicados a minimizar, en forma irresponsable, los peligros del SIDA en lugar de procurar su prevención.</p>
+
+        <p>La crisis es de tal magnitud que se ha hecho necesaria una revisión de los principios básicos del Evangelio, comenzando con una radiografía del pecado.</p>
+
+        <p>La palabra pecado y los verbos y sustantivos relativos a ella, aparecen más veces en la Biblia que las palabras misericordia, perdón, bendición, salvación y aún, amor. Pecado, aparece más de 800 veces, mientras que amor y bendición, que son de las cinco anteriores, las que están presentes en mayor número de ocasiones, aparecen menos de 600.</p>
+
+        <p>Jesús mismo habló más del pecado que de la salvación (213 textos contra 203). Como vemos, son las Sagradas Escrituras mismas las que dan un énfasis preponderante a este tema que actualmente es poco popular y hasta incómodo. Seguramente que si Dios mismo enfatiza tanto el tema del pecado, es porque necesitamos profundizar sobre su naturaleza y sus efectos en el ser humano.</p>
+
+        <p>A continuación, se esboza un breve pero necesario repaso al respecto.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿Qué es el pecado?</h2>
+
+        <p>Primeramente es necesario entender claramente qué es el pecado. El pecado es una transgresión de la ley divina; es desobedecer la ley moral de Dios. Ésa es exactamente la definición Bíblica según 1ª Juan 3:4. No es un virus, ni un germen. Ni es una sustancia, ni un líquido, ni un sólido, ni un gas. No es un espíritu, ni ningún ser. Es simplemente, una conducta voluntaria contraria a los estándares de comportamiento prescritos por Dios. Esto quedará conclusivamente demostrado tanto por las definiciones etimológicas de la palabra, como por las definiciones bíblicas y el uso de la palabra griega hamartia en escritos extrabíblicos.</p>
+
+        <p>Cuando utilizo la palabra pecado, me estoy refiriendo a una acción. La acción de desobedecer la ley moral de Dios. Cuando me refiero a la naturaleza del pecado, intento decir con esto, las cualidades propias de la acción de desobedecer a Dios.</p>
+
+        <p>¿Cuáles son estas cualidades innatas del pecado? Cuando menos podemos resaltar cuatro: el engaño, la destrucción del alma, la corrupción del carácter y la condenación. Así pues, el pecado siempre tiende a producir estas cuatro cosas en la vida de las personas. Pasemos a explicar cómo engaña prometiendo placer.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>El problema del autoengaño</h2>
+
+        <div class="scripture">
+            "¿Pero, qué fruto teníais de aquellas cosas de las cuales ahora os avergonzáis? Porque el fin de ellas es muerte"
+            <span class="scripture-ref">Romanos 6:21</span>
+        </div>
+
+        <p>Él pregunta, "qué fruto" (producto, consecuencia), no "qué satisfacción". ¿Por qué no pregunta qué satisfacción?, porque está sobreentendido que el pecado en sí trae consigo satisfacción, aunque ésta es siempre momentánea (He. 11:25). Esta capacidad de provocar placer es el gran medio por el cual el pecado engaña. Por eso el apóstol presenta inmediatamente el costo final del pecado: "el fin de ellas es muerte".</p>
+
+        <p>En el momento de la tentación, se percibe el deleite que traerá el pecado en una forma tan fuerte que las consecuencias de cometer el acto se oscurecen. Ése es el engaño. El alma se entrega al placer en un deleite, sin evaluar las consecuencias. Una parábola de Jesús lo ilustra bien. Cuando el hijo pródigo tomó sus bienes para vivir perdidamente, nunca imaginó que después andaría hambriento y mendigando hasta las sobras de lo que comían los cerdos.</p>
+
+        <p>Usando la personificación: El pecado deslumbra a la persona, pero no le presenta las consecuencias; esconde el pago hasta que el acto se comete; no te recuerda que lo que siembras vas a cosechar, que en el hoyo que hiciste caerás, que tu iniquidad volverá sobre tu cabeza (Sal. 7:15-16). Por eso es engañoso. Te puede llevar a imaginar que no pasará nada, que serás librado de las consecuencias o que tú eres alguien muy especial y que a ti Dios te extenderá una misericordia extra.</p>
+
+        <p>El pecado no sólo engaña para atraer, sino que ocasiona que la persona comience a engañarse a sí misma con el fin de justificarse de su acción. Así, la persona se repite ideas tales como: "no es tan malo" "todo el mundo lo hace", "los santos de la Biblia también pecaron", etc. Todo con el fin de apaciguar esa conciencia que la intenta refrenar. Si la persona es religiosa, pervertirá las doctrinas de la Biblia para autoengañarse y pensar que puede continuar transgrediendo las leyes divinas sin que le suceda nada. Así pues, se dirá: "al fin yo estoy bajo la gracia", "Dios ya no me ve a mí, sino a Cristo en mí", "ya no estamos bajo la ley"</p>
+
+        <p>Otro engaño frecuente es el intentar excusarse diciendo que no se puede evitar hacer el mal; que se es humano; que la tentación es insoportable; que los traumas de la niñez o las hormonas; que todo aquello que existe y se pueda culpar, son la causa verdadera de que se continúe con dichas conductas.</p>
+
+        <p>El ser humano fabricará cualquier pretexto para evitar reconocer su adicción voluntaria al placer. En otras palabras, se peca de mil maneras distintas para obtener placer, mientras se ignoran, también voluntariamente, las consecuencias destructivas para nosotros mismos y para los demás de dichos comportamientos, consecuencias que son la base de gran parte de la culpabilidad humana por el pecado.</p>
+
+        <p>Los propósitos del autoengaño son dos: Primero, tratar de inhibir la conciencia para no sentirse mal al pecar. El segundo, quitar el freno para así libremente transgredir.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>La destrucción del alma</h2>
+
+        <p>Otra característica innata del pecado, es la de provocar la destrucción del alma. Esto lo hace primeramente adormeciendo la conciencia para que no repruebe ciertas acciones, de modo que transgredirás las leyes morales y no te sentirás redargüido, o a lo mucho, sentirás una leve molestia en la conciencia que luego podrás calmar pensando, si eres una persona religiosa, que "es el diablo el que te está acusando". Una conciencia adormecida es una conciencia cauterizada, insensible, que ya no cumple su función de alarmarnos cuando se rompen ciertos principios. Normalmente en la mayoría de la gente, las conciencias están despiertas (sensibles) para los pecados escandalosos como matar, adulterar, robar, etc.; pero están dormidas a los pecados socialmente aceptados como son: la amargura y la codicia. ¿Cómo se ha adormecido esa conciencia? Con argumentos. Argumentos que buscan apaciguar y eliminar el sentido de culpabilidad que ésta produce.</p>
+
+        <div class="case-box">
+            <p>Un buen ejemplo es Esaú. Cuando su hermano Jacob le pidió la primogenitura a cambio de su guiso de lentejas, Esaú tuvo que fabricar un fuerte argumento para que su conciencia no lo acusara de lo que pretendía hacer, estaba mal. Así que argumentó y se dijo: <span class="emphasis">"He aquí yo me voy a morir; ¿para qué, pues, me servirá la primogenitura?"</span> (Gn. 25:32). ¿Acaso no podía ir a casa de sus padres a comer, si es que realmente estaba a punto de morir de hambre? Era su propio deseo que no quiso refrenar lo que le hacía pensar que "estaba a punto de morir de hambre", sólo para saciar su apetito en ese momento.</p>
+        </div>
+
+        <p>Pero a más de adormecer la conciencia, el pecado ultraja la razón del hombre. Hacer lo que uno sabe que hace daño es algo irracional, es una especie de locura porque la persona está consciente de que es dañino, sin embargo lo hace. En ese momento decide que no quiere ser influenciado por la razón, sino por las pasiones y los deseos. Así, hay hombres que han perdido su familia, esposa e hijos, a cambio de un rato de placer sexual en la infidelidad. O por un romance con una amante, que luego los despoja de su dinero y los abandona... por otro. ¿No es éste un acto irracional? Hay predicadores que han perdido su ministerio, ¡la unción del Espíritu Santo!, por una noche con una prostituta. Esto sería semejante a cambiar un kilo de oro por un kilo de estiércol; ¡sería una locura! Sin embargo, lo cambian. Se trata de un acto irracional. El libro de Proverbios dice lo siguiente:</p>
+
+        <div class="scripture">
+            "Mas el que comete adulterio es falto de entendimiento..."
+            <span class="scripture-ref">Proverbios 6:32a (Énfasis del autor)</span>
+        </div>
+
+        <div class="scripture">
+            "Al punto se marchó tras ella, Como va el buey al degolladero,... Como el ave que se apresura a la red, Y no sabe que es contra su vida, hasta que la saeta traspasa su corazón."
+            <span class="scripture-ref">Proverbios 7:22-23 (Énfasis del autor)</span>
+        </div>
+
+        <div class="scripture">
+            "...¡Ah! señor mío, no pongas ahora sobre nosotros este pecado; porque locamente hemos actuado,..."
+            <span class="scripture-ref">Números 12:11 (Énfasis del autor)</span>
+        </div>
+
+        <div class="scripture">
+            "...Locamente has hecho; no guardaste el mandamiento de Jehová tu Dios que él te había ordenado"
+            <span class="scripture-ref">1 Samuel 13:13-14a (Énfasis del autor)</span>
+        </div>
+
+        <p>Pecar degrada a los seres humanos al nivel de los animales irracionales. Además de embrutecer, el pecado endurece el corazón; el libro de los Hebreos dice:</p>
+
+        <div class="scripture">
+            "Antes exhortaos los unos a los otros cada día, entre tanto que se dice: Hoy; para que ninguno de vosotros se endurezca por el engaño del pecado."
+            <span class="scripture-ref">Hebreos 3:13 (Énfasis del Autor)</span>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Endurece el corazón, esclerokardias</h2>
+
+        <p>Endurecer el corazón, del griego esclerokardias, es obstinarse voluntariamente. Por más razones que se le presenten, la persona con corazón endurecido no cambia su intención egoísta. Es como si un ladrón entrara en una casa para robar y de paso tomara a uno de los hijos de esa familia del cuello y le dijera a sus padres que lo va a ahorcar. Los padres empiezan a intentar persuadirlo para que no lo haga, apelan a su avaricia y le ofrecen dinero. Luego le ofrecen sus bienes, sus carros, todo lo que poseen, pero el hombre es duro de corazón e insiste obstinadamente en matar a su hijo; la familia apela entonces a que piense en la corta edad del niño, en que sufrirá con dicha muerte, o en que es su hijo mayor que los ayuda a sostenerse, etc. Luego la familia intenta atemorizarlo para que desista y le dicen que la justicia lo castigará, que quizás lo encarcelen, etc., pero el ladrón tal parece que no tiene entrañas y que nada lo mueve, está duro, no accede a soltar al niño.</p>
+
+        <p>Esto es exactamente lo que hace el pecado en la persona impía, la vuelve obstinada, terca. Dios le promete el cielo y no lo convence de abandonar su mala conducta. Le muestra su bondad en Cristo, le da la ayuda del Espíritu Santo al hacerle entender que el pecado lo daña a él mismo y a sus seres queridos, y ni aun así lo logra persuadir; lo busca concienciar advirtiéndole que será juzgado, etc., y ni aun así lo persuade. ¿Qué sucede? Su corazón está endurecido: no quiere ceder para rendirse a Dios. No quiere perder los deleites momentáneos que ha venido disfrutando, ni quiere considerar que hay una felicidad eterna en el camino del bien.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Deseos sin control</h2>
+
+        <p>No sólo se afecta el alma al endurecerse el corazón, además se sensibilizan los deseos carnales cada vez que se peca. Cada vez que el hombre los alimenta dándoles rienda suelta, esos deseos se vuelven más sensibles, más fácilmente estimulables y más exigentes al demandar ser complacidos. La práctica del pecado agiganta los deseos y después éstos doblegan la voluntad ante la más mínima tentación.</p>
+
+        <p>Cuando Jesús hablaba de "sacar un ojo" o "cortar la mano", si éstos fueran ocasión de caer (Mt. 5:29-30), estaba enseñando, en un lenguaje retórico, la manera radical en que debemos tratar a los deseos. Él conocía la fuerza y rapidez con que crecen. El pecado los alimenta, de tal forma que los convierte en un tirano que después manipula al hombre como un títere.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>La corrupción del carácter</h2>
+
+        <p><span class="red-emphasis">El pecado tiende a corromper todo el carácter.</span></p>
+
+        <p>Este es el desarrollo natural del pecado: se empieza quizás con enojos pero, al no considerarlos pecados, al rato se permiten los rencores, luego los odios y los actos violentos. La codicia engendra mentiras para obtener dinero, después robos, traiciones de confianza y hasta homicidios por el ansia de obtener, etc. El pecado aumenta en variedad y cantidad, pero también comienza a aumentar en frecuencia individual. La persona se envicia y cede a la tentación de actuar así continuamente. Tristemente ésta es la experiencia hoy en día de muchos que se llaman convertidos, pero que retuvieron con ellos algunos pecados socialmente aceptados y abandonaron sólo los pecados escandalosos. Estos "inocentes pecados" comienzan a ser más frecuentes y luego llevan a otros hasta que se termina cayendo en los pecados escandalosos. ¿Por qué? Porque en vez de abandonarse, también se justificaron con excusas religiosas.</p>
+
+        <div class="scripture">
+            "...Y Acab hijo de Omri hizo lo malo ante los ojos de Jehová, más que todos los que reinaron antes de él."
+            <span class="scripture-ref">1 Reyes 16:30</span>
+        </div>
+
+        <p>Si estudiamos la historia de Israel viéndolo como una unidad, vemos que conforme pasó el tiempo su maldad fue en aumento, tanto en género como en grado de transgresiones.</p>
+
+        <p>Lo mismo sucede en el ser humano. Los pecados aumentan. Pero no sólo en tipo y en cantidad, sino en gravedad. La persona se va degradando cada día más para cometer actos más escandalosos y vergonzosos que lo esclavizan.</p>
+
+        <p>El pecado tiende a corromper a toda la persona. La naturaleza misma de estas acciones es insensibilizar la conciencia, endurecer el corazón, ultrajar la razón, desarrollar en forma monstruosa los deseos carnales. Esto es lo que naturalmente genera cada pecado individual que se comete. Imaginemos lo que producirá la suma acumulada de muchos pecados a través de largos años y entenderemos mejor por qué nuestra sociedad, y la iglesia, están dando a luz personalidades cada vez más aberrantes y violentas.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Los efectos del pecado</h2>
+        <h3>Un caso Clínico</h3>
+
+        <div class="case-box">
+            <p>Margarita era una joven de 17 años sumamente alegre y cariñosa con su familia; muy hogareña, acomedida, extrovertida y platicadora. Bastante madura para su edad, Margarita disfrutaba tanto de la confianza como del afecto de sus padres y de la admiración de sus hermanos, todos menores que ella. De un día para otro la joven se volvió silenciosa a la hora de comer, retraída y se empezó a aislar en su cuarto. Ahora todo le molestaba en su casa y veía muchos errores en sus padres y hermanos. Su rostro expresaba molestia todo el tiempo y procuraba pasar el menor tiempo posible en su casa. Sus padres, desconcertados, no entendían el por qué de ese cambio tan repentino. Su querida hija ya no era la misma que antes.</p>
+            <p>¿Qué había pasado? Ella decidió empezar a tener relaciones sexuales con su novio y perdió su virginidad; inmediatamente se sintió culpable e incómoda. Esto provocó los cambios en su conducta, dañando su relación familiar. Las alteraciones en su comportamiento tenían su raíz en la culpabilidad que ahora sentía. Buscaba desahogar el tormento de su conciencia culpando a otros; como para apaciguar la conciencia argumentándole: "Mira, los demás también cometen muchos errores, no soy la única". Esta molestia que sentía era porque ante la presencia de sus padres se sentía redargüida, como si la acusaran; aun cuando ellos no sabían lo que hizo. Ahora Margarita adopta siempre una conducta defensiva en la casa, como si todos estuvieran en contra suya. Su aislamiento es para evitar ser cuestionada sobre detalles de su noviazgo; además se siente sucia e indigna de estar con sus hermanos y sus padres pues sabe que ha traicionado la confianza depositada en ella. Está también llena de temores de ser descubierta, de quedar embarazada, o de haber sido sólo utilizada como un objeto de placer por su novio y luego ser abandonada. Todo esto la irrita mucho y la predispone hacia la malicia; esa actitud de desconfianza que tiende a arruinar las relaciones con los demás.</p>
+        </div>
+
+        <p>El anterior es un ejemplo clásico de los efectos del pecado.</p>
+
+        <p>Cuando una persona comienza a practicar cualquier pecado, su mente se oscurece a lo espiritual, esto es; ya no lo percibe correctamente. Teniendo ojos no ve y teniendo oídos no oye. Sabe cuando va a llover; cuando hará frío, pero las cosas espirituales no las capta. Principios tan sencillos como que aquello que está haciendo está mal y le traerán serias consecuencias, le parecen un misterio velado y a veces una herejía digna de ser desarraigada a fuego y espada. Cuando Adán pecó hubo cambios inmediatos en él, experimentó intranquilidad y culpabilidad. La voz de Jehová que se paseaba en el huerto no la percibió como un acto de amor en su búsqueda. Mas bien conceptualizó a Dios como un injusto tirano del cual había que esconderse. Cuando Dios lo llamó, no lo percibió como aquél que le quería restaurar y perdonar, sino como si quisiera castigarlo; además culpó a Dios por su pecado para intentar justificarse a sí mismo: <span class="emphasis">"... la mujer que me diste..."</span> (Gn. 3:12). No hubo transparencia, ni confesión aceptando su responsabilidad moral, sino evasiones y justificaciones.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Conciencias atormentadas</h2>
+
+        <p>Quienes viven esclavizados a algún pecado, exhiben siempre un discurso de continuas justificaciones de su conducta. Frecuentemente, incluso proyectarán ese sentido de culpabilidad que los impulsa a actuar así. Herodes creía que Jesús era Juan el Bautista a quien había asesinado. ¿Por qué los asociaba? Porque su conciencia lo acusaba todo el tiempo de haber matado a un hombre piadoso; no lo podía olvidar. Cuando los hermanos de José se enfrentaron a él sin haberlo aún reconocido, su conciencia les recordó de inmediato que su calamidad actual les acontecía por haber vendido a su hermano. En otras palabras, la conciencia culpable sabe que merece castigo e interpreta sus circunstancias actuales bajo esa luz.</p>
+
+        <p>Las conciencias culpables buscan un desahogo y actualmente muchas lo encuentran en reuniones de alabanza muy emocionales. Según un interesante análisis realizado por el teólogo Dr. D. E. Wells[1], el contenido de la letra en los cantos e himnos de las iglesias está cambiando radicalmente. Los cantos en el cristianismo que vivió grandes avivamientos en el pasado, eran más doctrinales; ahora son más sentimentales. Antes expresaban el tipo de vida de un verdadero creyente, ahora son sólo repeticiones románticas de expresiones de un amor de labios sin que haya detrás una vida recta. La causa de estos cambios, según el Dr. Wells, estriba en la pérdida de principios morales en los ámbitos denominacionales y en los creyentes, quienes se sentirían incómodos con cantos que hablen de justicia y rectitud. Con los cantos románticos y sentimentales, ya no se enfatiza una vida recta o el tomar la cruz, sino que son expresiones de un amor indefinido por parte de Dios. Para la persona que practica el pecado, esto es como un sedante a su conciencia. Cuando canta que Dios es amor, la persona interpreta que aunque continúe haciendo lo malo Dios la acepta como es, y por lo tanto, no cosechará las consecuencias de sus acciones.</p>
+
+        <div class="note-box">
+            <p>[1] D. E. Wells, No Place For Truth, Eerdmans Publishing Co., 1993, Grand Rapids, MI, pp. 236-239.</p>
+        </div>
+
+        <p>De manera que la popularidad de los congresos y de la creciente producción discográfica religiosa, se debe en parte a la multitud de conciencias culpables que buscan ser tranquilizadas por medio de dulces voces, letras y melodías que produzcan experiencias emocionales. Es una clientela segura.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>La estructura de la conciencia y la Ley moral</h2>
+
+        <p>La conciencia del hombre fue diseñada con la ley moral de Dios en ella, de tal manera que nunca puede aceptar a fondo que la persona practique el mal y sienta que ya está perdonada por el simple hecho de haber tenido una experiencia religiosa.</p>
+
+        <div class="scripture">
+            "Mostrando la obra de la ley escrita en sus corazones, dando testimonio su conciencia, y acusándoles o defendiéndoles sus razonamientos."
+            <span class="scripture-ref">Romanos 2:15</span>
+        </div>
+
+        <p>La conciencia sabe que no puede haber perdón sin arrepentimiento, así que mientras la persona no se arrepiente y rompe con la conducta incorrecta, su conciencia continúa acusándolo; la Biblia dice:</p>
+
+        <div class="scripture">
+            "El pecado de Judá escrito está con cincel de hierro y con punta de diamante; esculpido está en la tabla de su corazón, ..."
+            <span class="scripture-ref">Jeremías 17:1</span>
+        </div>
+
+        <p>Queriendo decir con esto que su pecado no había sido borrado. De igual manera, aunque la persona busque lavarse el cerebro repitiéndose y pensando que Cristo ya la perdonó a pesar de que no ha abandonado la práctica del pecado, su conciencia culpable lo descubrirá. Todavía su pecado está grabado en el corazón, y su intranquilidad, que se expresa y afecta toda su conducta, es la evidencia de que no ha sido perdonado. Al respecto la Escritura dice en Isaías:</p>
+
+        <div class="scripture">
+            "Pero los impíos son como el mar en tempestad, que no puede estarse quieto, y sus aguas arrojan cieno y lodo."
+            <span class="scripture-ref">Isaías 57:20</span>
+        </div>
+
+        <p>Intranquilidad y culpabilidad son los síntomas de una mente que se sabe culpable. De estos dos sentimientos se puede descender a otro nivel más profundo, esto es: al autoengaño. Quizás la persona comenzará a engañarse a sí misma creyendo que es convertida, mientras persevera en la maldad, porque nació en una religión que se dice cristiana, en tanto que la Biblia y su propia conciencia le atestiguan que no lo es. Este autoengaño se fabrica como calmante de la conciencia. Si piensa que es cristiana, entonces la persona concluye que no será condenada. La Biblia dice con respecto a esto:</p>
+
+        <div class="scripture">
+            "Porque el que se cree ser algo, no siendo nada, a sí mismo se engaña."
+            <span class="scripture-ref">Gálatas 6:3</span>
+        </div>
+
+        <p>Aplicando el texto sería: "porque el que cree ser cristiano, no siéndolo, a sí mismo se engaña". El autoengaño es muy socorrido como un pacificador barato de las conciencias, y las anestesia de tal manera, que después es muy difícil despertarlas a la realidad.</p>
+
+        <div class="case-box">
+            <p>En cierta ocasión un predicador hablaba con alguien que afirmaba ser cristiano pero que mentía habitualmente; cuando el ministro le mostró el texto de 1ª Jn. 3:9, que dice que el que es nacido de Dios no practica el pecado, le preguntó: "Tú mismo me has dicho que practicas la mentira ¿de quién eres nacido?". El hombre contestó: "De Dios". Le puso otro ejemplo el predicador y le dijo: "Tu vecino que vive al lado y que practica la idolatría, pero afirma creer en Jesús, ¿de quién es nacido según el texto?". El autonombrado creyente contestó: "Del diablo". Pensando que entendía el predicador añadió: "Tu vecino de enfrente que practica la avaricia, ¿de quién es nacido?". De nuevo el hombre contestó: "Del diablo". Como para concluir dijo el ministro: "Bien, ahora, tú que practicas la mentira ¿de quién eres hijo?". El hombre muy seguro respondió "Soy hijo de Dios".</p>
+        </div>
+
+        <p>Este es un claro ejemplo de cómo opera el autoengaño. El cual es evidencia, no de fe, sino de que hay una profunda culpabilidad que está intentando apaciguarse. Científicamente a esto se le llama disonancia cognoscitiva. El apóstol Santiago añade lo siguiente:</p>
+
+        <div class="scripture">
+            "Pero sed hacedores de la palabra, y no tan solamente oidores, engañandoos a vosotros mismos."
+            <span class="scripture-ref">Santiago 1:22 (Énfasis del autor)</span>
+        </div>
+
+        <p>Por lo anterior, lo más probable es que aquéllos que tienen conocimiento religioso pero siguen esclavizados a distintos hábitos pecaminosos, terminen uniéndose a una iglesia que les enseñe que aunque sigan en ese estado ya son salvos. En otras palabras, son clientes seguros para que se les expida una licencia para pecar.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>La conciencia cauterizada</h2>
+
+        <p>Una vez autoengañada la persona, puede descender a otro nivel, su conciencia se cauteriza. De hecho, este es el efecto lógico del autoengaño. Una conciencia cauterizada es como un árbitro de fútbol que permite en la cancha las patadas, los jalones, los codazos en la cara, etc.; en otras palabras, ya no evalúa estas cosas como infracciones. Así, la conciencia es como un juez dentro de nosotros que valora nuestras acciones. Cuando se hace algo recto, la conciencia transmite un sentir de satisfacción, aprobando dicha conducta a través del razonamiento. Pero cuando se hace lo malo, transmite un sentido de culpabilidad, acusando con argumentos. Cuando la conciencia se cauteriza, se vuelve insensible, ya no reprueba lo malo. Ésta es la causa de que algunos en el cristianismo tengan problemas para admitir que el rencor, la vanidad, el materialismo y la mentira son tan pecaminosos como el homicidio, el adulterio y el robo. En su mente, tienen dos listas de pecados. Los pecados "socialmente aceptables", sí son permitidos por su conciencia, pero los escandalosos, no. Así, se pueden ver evangélicos testificando a católicos con las Escrituras que la idolatría transgrede la ley moral de Dios. Con gran vehemencia hablan en contra de la idolatría, casi como si fuera el único pecado. Sin embargo, ellos practican la mentira o guardan rencores, conductas reprobadas en los mismos textos que usan para predicar contra la idolatría (Ga. 5:19-21). Muchos evangélicos no lo notan, es porque su conciencia está cauterizada con el autoengaño.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Malicia, desconfianza e irresponsabilidad</h2>
+
+        <p>La malicia fue el mayor estorbo que tuvo Adán para ser restaurado. Si Adán tan sólo hubiera pensado que Dios lo buscaba porque lo quería ayudar, hubiera corrido hacia Él y le hubiera confesado su pecado, admitiendo sin excusas su culpabilidad. Pero la malicia, una forma agravada de desconfianza, le estorbó.</p>
+
+        <p>La malicia es otro síntoma de un caminar torcido. Se manifiesta como una expectación de que los demás desean nuestro mal. Toda corrección se interpreta como agresión o humillación, y siempre se desconfía de los motivos de otros cuando se acercan para ayudar; particularmente cuando alguien desea ayudarnos a ver que estamos viviendo equivocadamente.</p>
+
+        <p>Otro efecto clásico del pecado es la irresponsabilidad crónica. La persona nunca parece asumir cabal responsabilidad por sus acciones y aprende a vivir así. Siempre busca repartir su responsabilidad entre los demás y se vuelve maestra en inventar excusas.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Quitando todo límite</h2>
+
+        <p>Un efecto notorio del pecado es que tiende a relajar los límites de la conducta moral. Esto provocará que gradualmente la persona se vaya involucrando en conductas cada vez más graves y escandalosas. La pérdida de límites y la insensibilidad de la conciencia, eventualmente harán que la persona llegue a cometer pecados que antes se hubiera avergonzado siquiera de imaginar.</p>
+
+        <p>Esto en forma natural le insensibilizará más y más, hasta llevarlo a un estado de absoluto cinismo. Llega una mujer, se sienta y con una sonrisa en los labios le dice a su ministro: "Mi problema es que no amo a mis hijos, y me fastidian; yo ya recibí al Señor pero tengo estos problemitas". Al rato confiesa además un adulterio que cometió, todo lo hace en una atmósfera de risitas y de plática ligera de café, sin sentir una gota de vergüenza. ¿Por qué ha perdido la vergüenza? Porque al acallar la voz de su conciencia y resistir por tanto tiempo sus argumentos, ya no tiene referencias para evaluar sus acciones. Jeremías dice:</p>
+
+        <div class="scripture">
+            "¿Se han avergonzado de haber hecho abominación? Ciertamente no se han avergonzado en lo más mínimo, ni supieron avergonzarse..."
+            <span class="scripture-ref">Jeremías 8:12a</span>
+        </div>
+
+        <p>Una vez que la persona ya no tiene la ley moral de Dios en su conciencia como regla de conducta, hará lo que otros hacen o lo que los deseos le dictan. Hallar a muchos otros que estén haciendo lo malo, le servirá como calmante temporal de la conciencia.</p>
+
+        <p>El límite de nuestra libertad moral es el precepto de Dios. El ser humano no debe mirar cómo se comportan otras personas, aunque se digan cristianas, para saber cómo regir su vida; y si lo hace, continuará degradándose más y más. Esto es porque siempre podrá encontrar un grupo de personas más perdidas que él mismo, que le sirvan como punto de referencia para engañarse diciendo: "Los demás también lo hacen".</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Desenfreno total</h2>
+
+        <p>El último paso dentro de los efectos del pecado es la pérdida completa del control de las pasiones, deseos, apetitos, etc. Al decir que se pierde el control, me refiero a que la persona estará siendo gobernada, totalmente y de continuo, por sus pasiones y deseos animales. De hecho, vivirá como esclava de ellos para satisfacer sus cada vez más exigentes demandas. Muchas de las decisiones que tomará ahora serán en respuesta automática a estas pasiones sin importar los costos en salud, futuro, familia, daños a terceros, etc. Cuando hablo de pasiones no me refiero exclusivamente al deseo sexual; aunque ciertamente éste está incluido entre las pasiones. Hay cuatro pasiones específicas que van a estar controlando a la persona y cada una de ellas prevalecerá sobre las otras tres según tenga la oportunidad. Estas pasiones son: la cobardía, la ambición, el deleite sensual y la ansiedad.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Cobardía y autoestima</h2>
+
+        <p>Así, por momentos la cobardía gobernará expresándose en temor, inseguridad y en ocasiones encubriendo estos temores con violencia. La conciencia culpable es la raíz de los miedos en el hombre, así pues, éste vivirá en la expectación de que algo malo le sucederá y ello controlará muchas de sus decisiones. La Escritura reconoce esa relación entre la culpa y el miedo cuando dice:</p>
+
+        <div class="scripture">
+            "El temor lleva en sí castigo."
+            <span class="scripture-ref">1 Juan 4:18</span>
+        </div>
+
+        <p>En ese caso el hombre vivirá con toda clase de miedos: temor a estudiar por el posible fracaso; a viajar; a casarse y a no casarse; a ser rechazado; a ser desplazado, etc. La cobardía lo llevará a evadir sus problemas personales y familiares en vez de enfrentarlos e intentar solucionarlos, a dejar de cumplir sus deberes, a ceder a la presión grupal y hacer cosas que no hubiera deseado, a ser una persona fácil de moldear al gusto de los demás. Esto a su vez complicará las cosas haciendo que la persona se desprecie a sí misma y se sienta poca cosa. Su inseguridad le llevará también a no enfrentar y vencer obstáculos en la vida. Esto le hará sentir peor mal, conducirá a formar un carácter defectuoso, que se rinda fácilmente, irresponsable, desobligado, etc.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Relación entre la soberbia y la pérdida de dignidad personal</h2>
+
+        <p>En otros momentos surge la ambición, la segunda pasión que mencionamos, puede obrar a través de la vanagloria, y la soberbia tomará delantera. Entonces, la persona procurará afanosamente ser admirada por todo lo que posee o no posee. Anhelará ardientemente ser admirada por su dinero o conocimiento; por sus títulos, por su trabajo, por sus hijos, por su apellido, por su casa, por el carro que maneja, por los talentos que posee, por su voz para cantar, por la ropa con que se viste; aun en las cuestiones religiosas buscará ser muy reconocida. Esta vanagloria nutrirá aún más su soberbia para tener un concepto más alto de ella misma, que el que debería. Así pues, emprenderá grandes proyectos que después quedarán inconclusos, y esto le llevará a la frustración o a la amargura haciéndole una persona difícil por su mal carácter. Los sueños de grandeza le llevarán a hablar de más y a jactarse de que hará esto o aquello, pero después quedará en ridículo ante sus amigos. Esto le irritará todavía más.</p>
+
+        <div class="scripture">
+            "Donde abundan los sueños, también abundan las vanidades y las muchas palabras..."
+            <span class="scripture-ref">Eclesiastés 5:7</span>
+        </div>
+
+        <p>El soberbio se alimenta de fantasías, y su imaginación y sus deseos de obtener la aprobación de los demás, lo llevarán también a fingir y a tratar de dar buenas apariencias. También lo llevarán, por un camino diferente al de la cobardía, a hacer cosas vergonzosas para comprar aceptación. En otras palabras, la soberbia y vanidad son en realidad evidencias de falta de autovaloración adecuada.</p>
+
+        <p>Una autovaloración de la dignidad personal que se obtiene en Cristo al comprender el amor de Dios en la expiación y al entender las implicaciones de que el hombre fue creado a imagen y semejanza de Dios.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Mal manejo de la sexualidad</h2>
+
+        <div class="scripture">
+            "... Ya que tienen por delicia el gozar de deleites cada día. ...Tienen los ojos llenos de adulterio, no se sacian de pecar..."
+            <span class="scripture-ref">2 Pedro 2:13-14</span>
+        </div>
+
+        <p>Cuando alguien es controlado por la sed de deleites, no podrá nunca satisfacer todo lo que su corazón desea. Obtendrá sólo una medida de satisfacción, no toda la que sus apetitos demandan. Esto es algo extremadamente frustrante. Por lo mismo será muy dado a la queja, a la ira, a la envidia y a la amargura. No tiene contentamiento cualquiera que sea su situación, siempre siente que algo le falta, aun cuando está en donde anhelaba estar. Se siente continuamente insatisfecho.</p>
+
+        <p>Mientras el corazón esté controlado por la pasión sensual nada traerá satisfacción permanente. A esta insatisfacción le seguirá otra pasión de relevo: la ansiedad. Manifestándose en impaciencia, en desesperación, en tensión, en un carácter insatisfecho. Es aquí en donde nacen esas iras por nada. La epístola de Santiago lo describe así:</p>
+
+        <div class="scripture">
+            "¿De dónde vienen las guerras y los pleitos entre vosotros? ¿No es de vuestras pasiones, las cuales combaten en vuestros miembros? Codiciáis, y no tenéis; matáis y ardéis de envidia, y no podéis alcanzar... Pedís, y no recibís, porque pedís mal, para gastar en vuestros deleites."
+            <span class="scripture-ref">Santiago 4:1-3</span>
+        </div>
+
+        <p>De un corazón insatisfecho brotarán a menudo decisiones apresuradas como fruto de la impaciencia. Aquí aparece la cuarta pasión que gobierna al hombre, la ansiedad. ¡Cuántos dolores y hasta tragedias, acontecen en la vida por tomar una decisión apresurada en un asunto delicado!, matrimonios infelices, negocios en bancarrota, relaciones rotas, embarazos "antes de tiempo". Dice el proverbio:</p>
+
+        <div class="scripture">
+            "El alma sin ciencia no es buena, y aquel que se apresura con los pies, peca."
+            <span class="scripture-ref">Proverbios 19:2</span>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>La influencia del pecado</h2>
+
+        <p>Cuando hablamos de la influencia del pecado, queremos explicar que cuando alguien vive transgrediendo las normas divinas, esto influye en su relación con Dios y con sus semejantes. La práctica del pecado hace que se perciba a Dios de una manera distinta; de igual manera, su relación con la gente cambiará porque también la verá desde otra óptica. La influencia del pecado desfigura la percepción de Dios, esto lo vemos claramente en el ejemplo de Adán después de haber desobedecido:</p>
+
+        <div class="scripture">
+            "Y oyeron la voz de Jehová Dios que se paseaba en el huerto, al aire del día; y el hombre y su mujer se escondieron de la presencia de Jehová Dios entre los árboles del huerto. Mas Jehová Dios llamó al hombre, y le dijo: ¿Dónde estás tú? Y él respondió: Oí tu voz en el huerto, y tuve miedo, porque estaba desnudo; y me escondí."
+            <span class="scripture-ref">Génesis 3:8-10</span>
+        </div>
+
+        <p>Sus reacciones inmediatas fueron de temor, de huir y esconderse de la presencia de Dios. Esto nos deja ver claramente que ahora veía a Dios de una manera diferente a la de antes. Pero Dios era y es el mismo; Dios no cambia (Mal. 3:6). El que cambió fue el hombre. Estos cambios en la percepción de Dios se deben a la naturaleza misma del pecado y a sus efectos en la persona. Su nueva visión de Dios es sólo un mecanismo de autodefensa en contra de la culpabilidad que siente en la conciencia.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Calvino: Creando un Dios a la imagen del hombre</h2>
+
+        <p>Otro ejemplo escritural es el siguiente:</p>
+
+        <div class="scripture">
+            "Pero llegando también el que había recibido un talento, dijo: Señor, te conocía que eres hombre duro, que siegas donde no sembraste y recoges donde no esparciste; por lo cual tuve miedo, y fui y escondí tu talento en la tierra; aquí tienes lo que es tuyo."
+            <span class="scripture-ref">Mateo 25:24-25</span>
+        </div>
+
+        <p>Aquí vemos en la parábola cómo este hombre percibía a Dios: como un amo duro, "porque siegas donde no sembraste y recoges donde no esparciste", aparte lo veía como un ser injusto que sin trabajar, deseaba obtener beneficios. ¿Por qué percibía a Dios así? Porque el hombre mismo era así; él era quien no deseaba trabajar pero proyectaba su pereza en Dios. Y además lo acusaba de injusticia para sentirse víctima de Él, por si le llegase a pedir cuentas. Hoy en día muchos perciben a Dios como un tirano injusto. Inclusive hay quienes piensan que Dios crea gente desde su nacimiento predestinada para condenación, sin ninguna posibilidad de salvación. Esto es sólo la proyección misma del carácter injusto, y a menudo cruel, del ser humano. Muchas veces el hombre refleja en Dios sus frustraciones, tiranías y miedos con el fin de justificarse a sí mismo. En otras palabras, el hombre crea en su imaginación un dios a su imagen y semejanza.</p>
+
+        <div class="note-box">
+            <p>[2] Will Durant, La Reforma, (Barcelona: Editorial Sudamericana, 1976), p. 462.</p>
+            <p>[3] Will Durant, La Reforma, p. 465.</p>
+            <p>[4] Will Durant, La Reforma, p. 468.</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Dioses de acuerdo a sus concupiscencias</h2>
+
+        <p>Existen personas que no intentarán engañar su conciencia en cuanto a que cierta acción es o no mala, pero sí, en cuanto a que por cierta mala acción, no se sufrirá ninguna consecuencia. En este caso se refugian en una distorsión del concepto de que Dios es Amor. Sólo que su idea de un dios de amor es un concepto pagano: deidades que solapan al pecador. Son la marca característica de distintas religiones paganas que han dominado la historia de la humanidad. La palabra amor, la entienden como libertinaje.</p>
+
+        <p>Otros perciben a Dios de acuerdo a su avaricia y en su mente imaginan un dios que está interesado en hacerlos millonarios.</p>
+
+        <p>Estos son sólo ejemplos de cómo el pecado en una persona deforma la percepción de Dios y después lo imagina conforme a su conciencia culpable, o a las concupiscencias que desea justificar.</p>
+
+        <p>El pecado influirá siempre para provocar un alejamiento de Dios. Cuando Adán pecó, lejos de acercarse a Él, se escondió. El pecado trae separación, pero no sólo de Dios hacia el hombre, sino también del hombre hacia Dios.</p>
+
+        <p>La persona estará evadida. Siempre tendrá algo más que hacer en lugar de buscar a Dios. La lectura de las Sagradas Escrituras será aburrida; los tiempos de comunión íntima con Dios por medio de la oración serán poco atractivos, y el mundo y sus deleites resultarán muy llamativos.</p>
+
+        <p>Dios será para dicha persona sólo un medio para alcanzar las metas e ilusiones de su vida, pero su comunión y su corazón estarán unidos a estas metas e ilusiones, no a Dios. Su comunión espiritual será con el ídolo que ha fabricado en su mente y ha confundido con el Dios único y verdadero.</p>
+
+        <p>En su relación con otros seres humanos, la influencia de una vida en donde gobierna el pecado, será un foco continuo de contaminación. Si se tratara de un padre de familia, sus hijos aprenderán de él a decir mentiras, a cometer injusticias, a guardar rencores, actos que después les provocarán innumerables conflictos internos. Y si alguien llegase a señalarle que su comportamiento los está dañando, el que vive bajo el dominio del pecado, se justificará a sí mismo y de inmediato comenzará a aborrecer a quien deseaba ayudarle.</p>
+
+        <p>En puestos de liderazgo religioso, esta actitud se acentúa aún más. Muchos se vuelven como "dioses" que no admiten corrección alguna de nadie: La influencia del pecado sobre sus mentes los hace severos con aquellos pecados que ellos no practican y tolerantes con los que sí. Por eso existen denominaciones que aun cuando sus pastores o sacerdotes viven en adulterio o han cometido violaciones, sus superiores los dejan continuar en el ministerio. Es de temerse que esa extraña indulgencia sea realmente evidencia de que son culpables del mismo tipo de conductas. Se ven también líderes que son severos para condenar la hechicería, pero no la mentira o la avaricia. ¿Cuál es la causa? Que la persona condena lo que no practica y justifica lo que sí practica. Esto le hace sentir superior a otros y tranquiliza temporalmente su conciencia. Un ejemplo de esto lo encontramos en el Evangelio de Juan:</p>
+
+        <div class="scripture">
+            "Entonces los escribas y los fariseos le trajeron una mujer sorprendida en adulterio; y poniéndola en medio, le dijeron: Maestro, esta mujer ha sido sorprendida en el acto mismo de adulterio. Y en la ley nos mandó Moisés apedrear a tales mujeres. Tú, pues, ¿qué dices? Más esto decían tentándole, para poder acusarle. Pero Jesús inclinado hacia el suelo, escribía en tierra con el dedo. Y como insistieran en preguntarle, se enderezó y les dijo: El que de vosotros esté sin pecado sea el primero en arrojar la piedra contra ella. E inclinándose de nuevo hacia el suelo, siguió escribiendo en tierra. Pero ellos, al oír esto, acusados por su conciencia, salían uno a uno, comenzando desde los más viejos hasta los postreros; y quedó sólo Jesús, y la mujer que estaba en medio."
+            <span class="scripture-ref">Juan 8:3-9</span>
+        </div>
+
+        <p>Quizás ninguno de estos fariseos era adúltero, pero la Escritura los describe como avaros, vanagloriosos e hipócritas. El problema de los fariseos no era, como muchos han pensado, que juzgaban el pecado; este es un deber cristiano (1ª Co. 6:3). El verdadero problema es que no juzgaban todo pecado sino que tenían dos listas: los pecados escandalosos que no toleraban y los aceptados en su religión que habían legalizado para justificar sus vidas. Reprobaban el adulterio, pero no la avaricia. Hoy se condena al idólatra, pero no la amargura. Exactamente esto era lo que hacían los fariseos para sentirse más justos que los demás.</p>
+
+        <p>El pecado pervierte las relaciones entre las personas, de hecho termina por destruirlas. Pervertir es corromper, alterar algo en su estado natural. Es como encontrar un pozo de agua pura de manantial y vaciarle una carreta de estiércol. La persona que practica el pecado, será influida para pervertir toda relación en donde se le brinde amor, bondad o confianza. Así pues, la confianza que se le brinda a un cajero que maneja dinero la aprovechará para robar; la amabilidad de una secretaria con su jefe, éste la interpretará como que se le está ofreciendo sexualmente; una esposa que ama mucho a su marido y le tiene confianza, encontrará que la misma sirvió para que él la engañara. En otras palabras, la relación pura y desinteresada la utilizarán para un beneficio egoísta. También, el corazón impío cuando se disfraza de religión cristiana, terminará corrompiendo las doctrinas, torciéndolas. Cuando aprende que Dios es amor, interpretará que aunque haga lo malo Dios lo protegerá de las consecuencias. La salvación la entiende como un "seguro de vida" para poder desobedecer y después ir al cielo; la gracia la ve como una licencia para pecar; la santidad como algo prohibido para el ser humano y sólo reservado para Dios, Cristo y los ángeles. La justicia de Dios es sólo para los que son idólatras o los herejes; cuando la Biblia habla de prosperidad, entiende que Dios justifica su avaricia. Cuando en alguna iglesia se habla contra un pecado que él practica, se molestará diciendo que "juzgan a la gente", y cuando lee sobre los pecados de Abraham o David, etc., lo entenderá como un pretexto para su pecado; todo lo tuerce a su conveniencia. El liderazgo cristiano lo entiende como una posición donde nadie lo puede llamar a cuentas por sus acciones. El pastorado lo ve como una oportunidad para servirse de la gente y no al revés. Todo lo tuerce, todo lo ensucia. Todo lo pervierte. El texto dice:</p>
+
+        <div class="scripture">
+            "Engañoso es el corazón más que todas las cosas, y perverso..."
+            <span class="scripture-ref">Jeremías 17:9</span>
+        </div>
+
+        <p>La influencia del pecado es una calamidad. Digo una calamidad porque es una desgracia que lastima a muchas personas que llegan a tener contacto directo o indirecto con la persona que lo practica. Allí está el ejemplo de los niños que desde pequeños son expuestos al ejemplo de un padre borracho, irresponsable e infiel. ¡Cómo inicia a sus hijos en el mismo camino de impiedad!</p>
+
+        <p>De hecho el pecado provoca daños inconmensurables. Con esto quiero decir, que no podemos medir todos los alcances del daño causado por un pecado, pero sabemos que su influencia no se detiene y provocará una reacción en cadena. El primer pecado que cada persona cometió, desató una serie de efectos que hasta el día de hoy no se han detenido. Como si alguien pusiera una fila larga de libros parados uno detrás de otro y se golpeara al primer libro, éste caería y al hacerlo golpearía al segundo que entonces caería y así sucesivamente. Un ejemplo de esto es el pecado de Adán; hasta hoy tenemos sus consecuencias, ya multiplicadas. El pecado de un hombre adúltero ¡cómo afecta a su esposa!; y si ella se amarga ¡cómo daña a su vez a sus hijos!; y luego estos hijos cuando se casan, suelen llevar esta amargura y quizás tratarán mal a sus esposas que no eran responsables de nada y así sucesivamente. Un solo pecado de una sola persona desata una continua calamidad.</p>
+
+        <p>La transgresión de la ley moral de Dios, además de las consecuencias anteriores, trae también como resultado que Dios eventualmente retire su protección y te abandone a todas las fuerzas y situaciones peligrosas que suceden diariamente. Y aún más, puede ocurrir que Dios intervenga directamente para hacerte entender que no tienes derecho de destruir a otros con tu conducta equivocada. Muchas de las lecciones que enseña la vida a través de circunstancias duras, no son sino la providencia de Dios actuando para concienciar con gráficas y solemnes advertencias al ser humano.</p>
+
+        <p>Otra consecuencia, es que se puede llegar a un punto en donde se esté más allá de redención y el corazón se endurezca tanto por resistir al Espíritu Santo. El resultado de esto será que Él te entregue a una mente reprobada donde ya no haya más remedio, sino la eterna perdición.</p>
+
+        <div class="scripture">
+            "Y como ellos no aprobaron tener en cuenta a Dios, Dios los entregó a una mente reprobada, para hacer cosas que no convienen."
+            <span class="scripture-ref">Romanos 1:28</span>
+        </div>
+
+        <p>Líderes y ministros podrán repartir pretextos, absoluciones, indulgencias y licencias para pecar, haciendo creer a la gente que es cristiana aunque continúe esclava del pecado. Pero una cosa es cierta, cada persona pagará los terribles resultados del efecto del pecado en carne propia, además de las consecuencias, aquí y en la otra vida.</p>
+
+        <div class="highlight-box">
+            <p>En cuestión de pecado, toda persona debe ser muy escéptica de cualquier doctrina que le prometa que puede continuar en la práctica del pecado y al mismo tiempo salvarse. Nótese que si por un pecado Adán y Eva fueron sacados del paraíso, y que si por un pecado Lucifer fue echado fuera del mismo cielo, y que si Cristo llevando nuestros pecados fue desamparado por el Padre en la cruz, sería una acepción de personas que a nosotros se nos permitiera entrar al cielo con pecado. Pues si a los que ya estaban dentro los sacaron por haber pecado una sola vez, ¿qué será de aquellos que no han entrado y que viven en pecado diariamente? La respuesta está más que bien ilustrada en la famosa parábola de Cristo acerca de la fiesta de bodas. El pasaje habla por sí mismo y no requiere comentario.</p>
+
+            <div class="scripture">
+                "Y entró el rey para ver a los convidados, y vio allí a un hombre que no estaba vestido de boda. Y le dijo: Amigo, ¿cómo entraste aquí, sin estar vestido de boda? Mas él enmudeció. Entonces el rey dijo a los que servían: Atadle de pies y manos, y echadle en las tinieblas de afuera; allí será el lloro y el crujir de dientes."
+                <span class="scripture-ref">Mateo 22:11-13</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="menu-link-container">
+  <a class="menu-button" href="../../menu.html">Volver al Menú</a>
+</div>
+
+<footer>
+    Revista Avivamiento - Radiografía del Pecado<br>
+    Por Dr. Jorge Treviño
+</footer>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

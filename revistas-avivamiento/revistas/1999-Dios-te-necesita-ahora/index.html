@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dios Te Necesita Ahora - David Wilkerson</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background-color: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        background: linear-gradient(135deg, #2c3e50, #4a6491);
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .author-info {
+        text-align: left;
+    }
+
+    .author-name {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    .print-button {
+        background: rgba(255,255,255,0.2);
+        border: 1px solid rgba(255,255,255,0.3);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+
+    .print-button:hover {
+        background: rgba(255,255,255,0.3);
+    }
+
+    .main-title {
+        text-align: center;
+        font-size: 2rem;
+        margin: 30px 0 10px;
+        color: #2c3e50;
+    }
+
+    .content-section {
+        background: white;
+        border-radius: 8px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        border-left: 4px solid #4a6491;
+    }
+
+    h2 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        color: #4a6491;
+        margin: 25px 0 15px;
+        font-size: 1.3rem;
+    }
+
+    p {
+        margin-bottom: 15px;
+        text-align: justify;
+    }
+
+    .scripture {
+        background-color: #f0f4f8;
+        border-left: 4px solid #8ba3c7;
+        padding: 15px;
+        margin: 20px 0;
+        font-style: italic;
+        border-radius: 0 4px 4px 0;
+    }
+
+    .scripture-ref {
+        display: block;
+        text-align: right;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #5a738f;
+    }
+
+    .highlight-box {
+        background-color: #fff9e6;
+        border: 1px solid #ffeaa7;
+        border-radius: 6px;
+        padding: 20px;
+        margin: 25px 0;
+    }
+
+    .editors-note {
+        text-align: center;
+        margin: 30px 0;
+        padding: 20px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        background-color: #f0f4f8;
+        border-radius: 6px;
+        border-top: 2px solid #4a6491;
+        border-bottom: 2px solid #4a6491;
+    }
+
+    .emphasis {
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+    .red-emphasis {
+        color: #8B0000;
+        font-weight: bold;
+    }
+
+
+
+    .menu-button {
+        display: inline-block;
+        margin: 20px 0 10px;
+        padding: 10px 18px;
+        background-color: #4a6491;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .menu-button:hover {
+        background-color: #2c3e50;
+    }
+
+    .menu-link-container {
+        text-align: center;
+    }
+footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px;
+        color: #666;
+        border-top: 1px solid #eee;
+        font-style: italic;
+    }
+
+    .editorial-container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        border-left: 4px solid #4a6491;
+    }
+
+    .editorial-title {
+        color: #2c3e50;
+        font-weight: bold;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .stat-box {
+        background-color: #e8f4f8;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+        border-left: 4px solid #8B0000;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #8B0000;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+
+        header {
+            padding: 20px 15px;
+        }
+
+        .header-content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .author-info {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .main-title {
+            font-size: 1.7rem;
+        }
+
+        .content-section {
+            padding: 20px;
+        }
+    }
+  </style>
+  <script defer src="../../../assets/reader-mode.js"></script>
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <div class="author-info">
+      <div class="author-name">Por David Wilkerson</div>
+      <div>DIOS TE NECESITA AHORA</div>
+    </div>
+    <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="editorial-container">
+    <div class="editorial-title">EDITORIAL</div>
+
+    <p>Estimados amigos de Avivamiento: El Señor ha tenido a lo largo de la historia hombres y mujeres que le han servido fielmente. Cristianos que en palabras del Señor Jesucristo, <span class="emphasis">"perdieron su vida, pero la hallaron en Él"</span>. Creyeron que era mejor invertir su fuerza, tiempo y talentos en el Reino venidero y Eterno, que dejarse atrapar aquí por los afanes y preocupaciones terrenales. Jesús fue su vida, su objetivo, su alimento y su todo. La Causa de Cristo la hicieron suya y supeditaron todo a ella. Su amor ferviente por Aquél que <span class="emphasis">"los había amado primero"</span> los sostuvo en su peregrinar. El pecado ya no se enseñoreó de ellos, y su vida fue agradable a los ojos del que los compró con precio incorruptible. En fin, caminaron en esta vida, como es <span class="emphasis">"digno de Jesucristo"</span>.</p>
+
+    <p>Pero... ¿Qué está sucediendo en esta época? ¿Dónde están aquéllos que deben ser las luminarias de hoy? Si somos francos, no se ven. A decir verdad estamos viviendo los tiempos más oscuros de la humanidad y <span class="emphasis">"la luz que hay en los Cristianos de México es tinieblas. ¿Cuántas no serán las mismas tinieblas?"</span></p>
+
+    <p><span class="red-emphasis">Pecamos de una terrible IRRESPONSABILIDAD.</span></p>
+
+    <p>Las advertencias de juicio y devastación predichas en la Biblia no se creen, a pesar de que las vemos con nuestros ojos naturales. El infierno que está devorando a la gran mayoría de las personas que mueren diariamente, no se tiene presente como un peligro inminente. La gente enfervorizada con sus ídolos cae delante de nosotros, y no nos inmutamos. ¿En qué estamos pensando? ¿Por qué nos hemos hecho tan indiferentes a la miseria y perdición eternas?</p>
+
+    <p>Nadie toma la responsabilidad. Nadie se siente responsable de parar todo esto. Unos piensan que los otros deben hacerlo. Los que con sus diezmos engordan al autonombrado pastor que mantienen. Piensan que es Su responsabilidad. Los cristianos jóvenes sienten que no están preparados para levantarse y les corresponde a los adultos. Los mayores sólo ven sus compromisos mundanos y piensan que los jóvenes deberían levantarse porque son fuertes.</p>
+
+    <p>Las mujeres piensan en los hombres, y los hombres en las mujeres. De esta manera gira implacable la rueda del tiempo y aproximadamente <span class="red-emphasis">1000 mexicanos se van al infierno cada día.</span></p>
+
+    <div class="stat-box">
+      <p>¿A esta desolación maquillada con cultos, eventos musicales, rituales y entretenimientos le podemos llamar Iglesia de Jesús? Por cierto que no. Son en todo caso <span class="emphasis">"las ovejas" engordadas de la matanza</span>. <span class="red-emphasis">¡Esto debe acabar ya!</span></p>
+    </div>
+
+    <p>Hermano y amigo. <span class="red-emphasis">Dios te necesita a ti ahora.</span> Despójate de todo peso y del pecado que te asedia y corre la carrera que tienes por delante. No mires tus limitaciones, sino fija tus ojos en Cristo y su ejemplo. ¡Hazlo ya, en tanto que se dice hoy! ¡Mientras Dios está cerca y puede ser hallado, de lo contrario, tendrás que vivir el resto de tu vida en la tibieza y muerte a la que estás acostumbrado, y después...!</p>
+
+    <p>Deseamos invitarle a que lea y considere este escrito con meditación, para que le lleve a hacer decisiones definitivas en su vida. Ese es nuestro anhelo y oración.</p>
+
+    <div class="editors-note">
+      Atentamente<br>
+      <strong>Los Editores</strong>
+    </div>
+  </div>
+
+  <h1 class="main-title">DIOS TE NECESITA AHORA</h1>
+  <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por: David Wilkerson</div>
+
+  <div class="content-section">
+    <h2>MENSAJE</h2>
+
+    <p>Algunas veces me pregunto si no hemos sobrepasado la maldad de Sodoma y Gomorra. En realidad, yo creo que si te pudieras ganar la confianza de un hombre del senado, y que a solas te mostrara su corazón, te confesaría, <span class="emphasis">"estamos peor que lo que cualquiera se pueda imaginar. No hay esperanza. Las cosas están fuera de control y es sólo cuestión de tiempo para que nuestros problemas nos entierren"</span>.</p>
+
+    <p>Los ecólogos han venido a ser los agoreros modernos del día final. Según ellos nuestro planeta se está desintegrando. Las lluvias ácidas están acabando los bosques; la capa superior de la tierra está desapareciendo; los bosques están siendo talados; la capa de ozono se está evaporando. Con los cambios tan drásticos del clima y el hambre que se ha experimentado últimamente, parece que nos estamos encaminando a una catástrofe natural.</p>
+
+    <p>Hay tantas malas noticias, tantas advertencias, tanta crisis nerviosa, que no podemos asimilarlo todo, así que simplemente decidimos darles la vuelta. Para la mayoría de las personas la televisión ha venido a ser un escape de la realidad. Otras se vuelven al alcohol y a las drogas para adormecer la mente y encontrar un descanso temporal.</p>
+
+    <p>Los cristianos ven crecer la conspiración satánica en América y no pueden creer que esté sucediendo tan aprisa y tan abiertamente. En la Ciudad de Nueva York los homosexuales se están volviendo cada vez más activos y violentos.</p>
+
+    <p>Los políticos, los economistas, los escritores y las masas que viven en Nueva York dicen, <span class="emphasis">"Esta ciudad se está yendo derechito al infierno. El mismo diablo se ha hecho el rey y la ciudad está muriendo rápidamente"</span>.</p>
+
+    <p>Creo que a la mayoría de los cristianos que viven aquí les gustaría escapar a algún escondite seguro y tranquilo en las montañas para evitar ser corrompidos por toda la iniquidad que les rodea. Muchos desesperados dicen, <span class="emphasis">"Qué puede hacer un cristiano con toda esta degradación moral? ¿Qué puede hacer una iglesia en una ciudad tan grande, tan perversa y tan salvaje? Yo tengo bastante con quedarme cerca de Jesús, para no ser arrastrado con la marea..."</span></p>
+
+    <p><span class="emphasis">"¿Habrá algo que un insignificante cristiano como yo pueda hacer? No tengo dinero, ni entrenamiento, ni experiencia, ¡solamente un gran amor a Jesús!"</span></p>
+
+    <p>A menudo esperamos que Dios se mueva de una de estas dos formas: Enviando un derramamiento sobrenatural de Su Espíritu Santo para que barra a las multitudes y las meta en Su reino; o, enviando un juicio que ponga a la gente de rodillas o los destruya.</p>
+
+    <p>Pero, amado, este no es el método de Dios para cambiar las cosas en el día malo. Su manera de restaurar las ruinas ha sido siempre usando hombres y mujeres comunes y corrientes a quienes Él ha tocado. ¡Él lo hace llenándolos de Su Espíritu Santo y enviándolos a la batalla con gran fe y poder!</p>
+
+    <p><span class="red-emphasis">¡Dios usa gente, no ángeles, para proclamar Su Palabra a los perdidos!</span> ¡Sin embargo, el Señor no ha hecho mucho con los pecados de esta generación porque aún no ha encontrado creyentes lo suficientemente desesperados para buscar la llenura de Su Espíritu Santo y el poder!</p>
+
+    <p>La iglesia ha sido engañada en los últimos cincuenta años por hombres que buscaban el poder de Dios para su fama y gloria personal. Forraron sus bolsillos de dinero y se dieron títulos arrogantes: <span class="emphasis">"Lleno de Fe y Poder"</span>, <span class="emphasis">"El Hombre del Momento"</span>, <span class="emphasis">"El Hacedor de Milagros"</span> -¡dando sus bendiciones por una tarifa-! Yo llamo a esto, indulgencias carismáticas.</p>
+
+    <p>Hicimos pequeños dioses de ellos y los idolatramos. ¡Ahora, estamos dando el mismo <span class="emphasis">"status"</span> a una nueva generación de profetas!</p>
+
+    <p>No es de sorprender que el diablo siga sin inmutarse, burlándose y sin impresionarse con todo ese hablar de poder y autoridad en la iglesia. ¡La iglesia ha hecho algo perverso! Como Israel, hemos deseado un rey humano. ¡Los cristianos se sientan en las congregaciones y observan al pastor o al evangelista hacer lo que todos los creyentes están llamados a hacer!</p>
+
+    <p>Pero ahora el Espíritu Santo está tirando a todas las estrellas y destronando a todos los reyes religiosos. ¡Está destruyendo imperios espirituales y, literalmente, vomitando de Su boca a todos los ministerios idolátricos!</p>
+  </div>
+
+  <div class="content-section">
+    <h2>DIOS ESTÁ HACIENDO COMO HIZO EN EL PRINCIPIO, ¡ESTÁ HACIENDO DOS MOVIMIENTOS IMPORTANTES!</h2>
+
+    <p><span class="red-emphasis">Primero</span>, está levantando un ministerio apostólico, santo, que consiste en hombres totalmente entregados a la Palabra y a la oración. No se imponen con nadie. ¡Son hombres que claman -que en sus corazones no tienen ningún plan-, sino que buscan, escuchan y obedecen a Dios!</p>
+
+    <p><span class="red-emphasis">Segundo</span>, Dios te está llamando a ti al servicio inmediato. Necesita gente común y corriente, las ovejas. Él utiliza a gente que los sumos sacerdotes llamarían <span class="emphasis">"hombres sin letras e ignorantes"</span> (Hch. 4:13).</p>
+
+    <p>La Biblia dice también que en Pentecostés, en el Aposento Alto, <span class="emphasis">"fueron todos llenos del Espíritu Santo"</span> (Hch. 2:4) ¡Todos llegaron a ser poderosos en batalla, todos fueron testigos poderosos y valientes! En estos creyentes llenos del Espíritu Santo, no sólo se incluye a Pedro, a Santiago, a Juan y a los otros discípulos conocidos, sino también a las viudas, a los jóvenes, a los siervos y a las siervas.</p>
+
+    <p>Sabemos que Esteban fue lleno del Espíritu Santo, <span class="emphasis">"lleno de gracia (fe) y poder"</span> (Hch. 6:8). Él no era un apóstol, ni un ministro ordenado. En realidad él fue escogido para servir las mesas a la iglesia para que los apóstoles se pudieran dedicar a la oración y al ministerio de la Palabra. ¡Esteban era un hombre común lleno del Espíritu de Dios!</p>
+
+    <p>¿Y qué acerca de Prócoro, Nicanor, Timón, Parmenas y Nicolás, los cuales sirvieron las mesas? ¡Todos eran ovejas! Las Escrituras dicen que eran <span class="emphasis">"llenos del Espíritu Santo y de sabiduría"</span> (Hch. 6:3).</p>
+
+    <p>Felipe también era una oveja y alguien que servía las mesas. Él también estaba lleno del Espíritu Santo. Las Escrituras nos cuentan que fue a Samaria donde predicaba en las calles, oraba por los enfermos, echaba fuera demonios y creía que el Señor levantaba a los cojos e inválidos. <span class="emphasis">"Y la gente unánime, escuchaba atentamente las cosas que decía Felipe, oyendo y viendo las señales que hacía... Así que había gran gozo en aquella ciudad"</span> (Hch. 8:6,8).</p>
+
+    <p><span class="emphasis">¡El plan de Dios para salvar Samaria era un hombre lleno del Espíritu Santo y de poder!</span> ¡Felipe era un hombre tan humilde, tan lleno de Jesús, que pudo dejar las grandes obras en Jerusalén y en Samaria, e ir por la guianza de Dios, a un hombre en el desierto! (Ver Hch. 8:26-40).</p>
+
+    <p>¿Cómo va Dios a testificar a Nueva York, la Babilonia moderna, una ciudad llena de crimen, drogas, homosexualidad, odio, violencia e impiedad? No lo va a hacer por medio de grandes predicaciones, no importa que convincentes e incisivas sean. No lo hará por medio de juntas de iglesia, ni por medio de una poderosa adoración o una vívida alabanza, ni siquiera porque el Espíritu Santo sacuda la casa.</p>
+
+    <p><span class="red-emphasis">¡Dios se proclamará en Nueva York de la misma manera que espera hacerlo en tu ciudad o colonia -¡a través del testimonio de todo el que salga al camino y a las calles a predicar Su evangelio!-</span></p>
+
+    <p>El testimonio de Dios aquí en Nueva York no es que tengamos iglesia en un teatro en Broadway. No es que tengamos una reunión llena. No es que experimentemos la gloria o una increíble lluvia de bendiciones. Es a través de hombres y mujeres, viudas, desempleados, ricos y pobres igualmente ¡todos, ovejas que el Señor sacude!</p>
+
+    <p><span class="red-emphasis">¡Tú eres el testimonio de Dios para tu ciudad!</span> Él usa ovejas que van solamente con Él, que tienen sus corazones conmovidos, que lo buscan en oración, y le rinden sus corazones. ¡Que como Felipe siguen adelante, llenos del Espíritu Santo, gracia (fe), y poder!</p>
+
+    <p>Si Dios no te ha estado usando es probablemente porque no has sido utilizable. Esto es lo que les pasa a los creyentes que son atrapados <span class="emphasis">"contemplando la gloria"</span>.</p>
+
+    <p>Los discípulos quedaron extasiados por la gloria cuando Jesús fue llevado al cielo. Ellos se podrían haber quedado ahí para siempre, disfrutando el dulce resplandor, pero el ángel del Señor les censuró amorosamente <span class="emphasis">"¿Por qué estáis mirando al cielo?"</span> (Hch. 1:11)</p>
+
+    <p>Hay un peligro en desear estar sentado dentro de la iglesia <span class="emphasis">"contemplando la gloria"</span>. Jesús le dijo a sus discípulos, <span class="emphasis">"Esperen en Mí. Ustedes necesitan el Espíritu Santo y el poder. ¡Necesito que sean Mis testigos!"</span></p>
+  </div>
+
+  <div class="content-section">
+    <h2>QUITEN SUS OJOS DE LOS TIEMPOS Y LAS ESTACIONES QUE ESTÁN SOLAMENTE EN EL PODER DEL PADRE.</h2>
+
+    <p>Tan pronto como los discípulos oyeron acerca de recibir el bautismo de poder, preguntaron: <span class="emphasis">"¿Señor, restaurarás el reino a Israel en este tiempo?"</span> (Hch. 1:6). Jesús les contestó en términos que no dejaban lugar a duda: <span class="emphasis">"No os toca a vosotros saber los tiempos y las sazones, que el Padre puso en su sola potestad"</span> (V. 7).</p>
+
+    <p>Detente a pensar lo que implicaba su pregunta: <span class="emphasis">"¿Señor, quieres decir que vas a empezar a restaurar el reino de Israel en esta pieza, solamente con nosotros? ¿Somos nosotros los que vamos a derrotar a Herodes y a Roma? ¿Somos los que vamos a limpiar la tierra, a establecer el reino y a producir Tu venida?"</span></p>
+
+    <p>Sabemos que Jesús tuvo que tratar en algunos de sus discípulos con su deseo de liderazgo y autoridad. Pero, yo siento algo más en su pregunta, algo que iba más allá de su deseo por un lugar y por autoridad. ¡Era una necesidad humana de estar involucrado en algo grande, en el destino final! Era un deseo de ser especial -de ser la gente correcta en el momento preciso-.</p>
+
+    <p>Tal vez en sus corazones los discípulos habían estado diciendo, <span class="emphasis">"¿Señor, dónde estamos nosotros en Tu plan profético? Sería un gran incentivo espiritual saber que estamos en el fin de una dispensación y que está a punto de amanecer un nuevo día. Qué felices estaríamos si nos permitieras saber que estamos viviendo y ministrando en un día decisivo -que nos estás usando para llevarlo a cabo nosotros mismos-!"</span></p>
+
+    <p>Santos, este mismo deseo de ser gente de un gran destino está, hasta cierto punto, en todos nosotros. Pero la respuesta de Jesús a esto fue clara, <span class="emphasis">"No os toca a vosotros saber los tiempos"</span>.</p>
+
+    <p>Jesús no está buscando hombres de destino o constructores del reino. ¡Él sólo quiere testigos de Sí mismo! Él está diciendo, <span class="emphasis">"El asunto no es 'la hora profética', o algún destino importante asignado para ti. ¡Yo debo tener testigos en esta presente generación!"</span></p>
+
+    <p>¡Esto me condena profundamente! Como muchos hoy en día, quiero saber en dónde estamos en este preciso momento en el reloj profético de Dios: ¿Por qué está cayendo el comunismo? ¿Cuándo sucederá el colapso económico? ¿Estamos a punto de entrar en la tribulación? ¿Está Dios juntando su último remanente? ¿Estamos a punto de ver caer juicios sobre Nueva York y en América?</p>
+
+    <p>Entonces oigo a Jesús decir, <span class="emphasis">"No te corresponde a ti saber. Espera en Dios. Sé lleno del Espíritu Santo. ¡Toma el poder de Dios y luego ve y testifica!"</span></p>
+
+    <p>En el Antiguo Testamento Dios no hizo nada hasta que advirtió a su pueblo a través de Sus profetas. En el Nuevo Testamento Él nos dice, <span class="emphasis">"Porque Moisés dijo a los padres: El Señor vuestro Dios os levantará profeta de entre vuestros hermanos como a mí; a él oiréis en todas las cosas que os hable"</span> (Hch. 3:22).</p>
+
+    <p>¡Ese profeta es Jesús! Y Él está diciendo, <span class="emphasis">"Quita tus ojos de los tiempos y las estaciones y deja de estar jugueteando con los pensamientos del destino. ¡Toma el poder de Dios para testificar de Mí a tu presente generación!"</span></p>
+
+    <p>Santos, todos los profetas del Antiguo Testamento están muertos. Pablo está muerto, los apóstoles están muertos -¡Dios sólo te tiene a ti y a mí para testificar del poder de Cristo!-.</p>
+
+    <p>Debemos vivir en un estado vigilante, esperando anhelantes con nuestras lámparas preparadas y encendidas. Debemos desear y anhelar Su venida. Debemos predicar Su venida y advertir acerca de Sus juicios -¡Pero antes, y más importante, debemos ser Sus testigos!-.</p>
+
+    <p>Dudamos en predicarles a los judíos porque pensamos que puede no ser el tiempo profético adecuado. Nos preguntamos, <span class="emphasis">"¿Se está cumpliendo ya el tiempo de los gentiles? ¿Caerá pronto el Espíritu de Dios sobre el Israel natural y les quitará el velo de sus ojos?"</span></p>
+
+    <p>¡Sé que esto ha obstaculizado mucho al ministerio de la iglesia para los judíos! Queremos saber si es correcto proféticamente para no desperdiciar nuestros <span class="emphasis">"esfuerzos"</span>. Sin embargo, Jesús contesta, <span class="emphasis">"No os corresponde saber los tiempos ¡Solamente testifica!"</span></p>
+
+    <p>No hemos experimentado un impedimento profético, ni nos ha obstaculizado la dureza de corazón de los que oyen. Ha sido que nos ha faltado el deseo de trabajar. ¡No hemos tenido suficiente poder de Dios en nosotros para ir a alcanzar a los perdidos!</p>
+
+    <p><span class="emphasis">¡Queremos avivamiento, bendiciones, derramamientos, sacudimientos! ¡Queremos quedarnos en la iglesia pidiendo que baje la gloria de Dios sobre nosotros! ¡Queremos oír más predicaciones!</span> Esto está bien, pero Jesús dijo, <span class="emphasis">"Recibiréis el Espíritu Santo. Les será dado poder para ir y testificar"</span>.</p>
+
+    <p>Nos queremos regocijar en la presencia gloriosa del Señor -y Su presencia aumentará según lo busquemos-. Pero debemos recordar lo que hace que Él y todos los cielos se regocijen:</p>
+
+    <div class="scripture">
+      "Habrá más gozo en el cielo por un pecador que se arrepiente que por noventa y nueve justos que no necesitan de arrepentimiento"
+      <span class="scripture-ref">Lucas 15:7</span>
+    </div>
+
+    <div class="scripture">
+      "Hay gozo delante de los ángeles de Dios por un pecador que se arrepiente"
+      <span class="scripture-ref">Lucas 15:10</span>
+    </div>
+
+    <p>Si oramos por un derramamiento poderoso del Espíritu Santo sobre el cuerpo de Cristo, debe dar como resultado un cuerpo de testigos poderosos yendo por todas partes, trayendo a Jesús a los perdidos.</p>
+  </div>
+
+  <div class="content-section">
+    <h2>SE NECESITA MÁS QUE AMOR A JESÚS Y COMPASIÓN POR LAS ALMAS PERDIDAS PARA SER CALIFICADO COMO SU TESTIGO</h2>
+
+    <p>Los que fueron llamados al Aposento Alto amaban a Jesús profundamente. Eran compasivos, sacrificados, amantes de las almas. Pero todavía no estaban calificados para ser Sus testigos.</p>
+
+    <p>Habían sido enseñados en la escuela de Cristo. Habían sanado enfermos y echado fuera demonios. Habían hecho milagros. Habían visto a Jesús revestido con Su gloria eterna en el monte.</p>
+
+    <p>Habían estado cerca cuando sudó gotas de sangre. Le habían visto colgado en la Cruz y habían visto Su tumba vacía. Lo habían visto resucitado. Habían comido con Él y hablado con Él en Su cuerpo glorificado. ¡Aun le habían visto ascender al cielo! ¡Sin embargo, aún no estaban listos para testificar de Él!</p>
+
+    <p>¿Por qué no pudo Pedro ir a esas multitudes que se arremolinaban en Jerusalén y testificarles inmediatamente de Su resurrección? ¿No había sido testigo de primera mano de ese evento? ¿No podía predicar, <span class="emphasis">"¡Jesús vive! ¡Él ascendió al cielo! ¡Arrepiéntete!"</span>?</p>
+
+    <p><span class="red-emphasis">¡La diferencia se encuentra en el poder del Espíritu Santo!</span></p>
+
+    <p>Pedro hace una declaración poderosa a los principales sacerdotes:</p>
+
+    <div class="scripture">
+      "Y nosotros somos testigos suyos de estas cosas, y también el Espíritu Santo, el cual ha dado Dios a los que le obedecen"
+      <span class="scripture-ref">Hechos 5:32</span>
+    </div>
+
+    <p>Por las palabras del Espíritu Santo -hablando a través de Pedro- los sacerdotes <span class="emphasis">"Se enfurecían y querían matarlos"</span> (Hch. 5:33). El Espíritu Santo también habló a través de Pedro el día de Pentecostés y todos los que oyeron <span class="emphasis">"se compungieron de corazón"</span> (Hch. 2:37)</p>
+
+    <p>Esteban lleno del Espíritu Santo, les predicó a los líderes religiosos:</p>
+
+    <div class="scripture">
+      "¡Duros de cerviz, e incircuncisos de corazón y de oídos! Vosotros resistís siempre al Espíritu Santo; como vuestros padres, así también vosotros... Oyendo estas cosas, se enfurecían en sus corazones, y crujían los dientes contra él."
+      <span class="scripture-ref">Hechos 7:51,54</span>
+    </div>
+
+    <p>Cuando sales de haber buscado a Dios, lleno del Espíritu Santo, puedes pararte con valor delante de compañeros de trabajo, de familiares -de cualquiera- y tu testimonio provocará una de dos cosas: O, gritarán, <span class="emphasis">"¿Qué debo hacer para ser salvo?"</span> O, literalmente, ¡querrán matarte! Hablarás una palabra que divida el corazón.</p>
+  </div>
+
+  <div class="content-section">
+    <h2>HAY UN AVIVAMIENTO Y UN DERRAMAMIENTO QUE ESTÁ DE ACUERDO CON LA PALABRA DE DIOS.</h2>
+
+    <p>Si lo buscas en la construcción te vas a desilusionar. Si hubieras visitado el Aposento Alto unas horas después que sopló el viento y de que cayó el fuego y que se sacudió el edificio -queriendo experimentar algo milagroso- te ibas a desilusionar.</p>
+
+    <p>Mira, el viento del Espíritu Santo sopló sobre todas las personas y las llevó a las calles -al patio del templo y a las plazas-. Podrías haber preguntado, <span class="emphasis">"¿Dónde está el avivamiento, el viento sobrenatural? Me gustaría experimentar algo de este sacudimiento del que he oído hablar. ¿Se siente como un pequeño terremoto? ¿Puedo ver algo de esas lenguas de fuego?"</span>, ¡Pero habrías sido enviado afuera!</p>
+
+    <p><span class="emphasis">¡Te habrían señalado a los 120 testigos en las calles, predicando a Jesús en el poder del Espíritu Santo! ¡Ahí estaba el avivamiento -y siempre ha sido así-! ¡Ese es el derramamiento! ¡El viento, el fuego, el Espíritu -está ahora en los testigos de Dios-!</span></p>
+
+    <p>Si Dios bendice esta iglesia con otro Pentecostés -un tiempo de avivamiento y de frescura del cielo- la Palabra se esparcirá. La gente curiosa se acercará preguntando, <span class="emphasis">"¿Bueno, dónde está? ¿Qué podemos ver? ¿Qué podemos sentir? ¿Se cae la gente bajo el poder de Dios?"</span></p>
+
+    <p><span class="emphasis">¡No lo vas a encontrar en la alabanza ni en la adoración! No lo vas a encontrar en emociones especiales -danzando en el Espíritu o siendo conmovido bajo el poder-.</span> Todas éstas son experiencias maravillosas, pero pueden ser falsificadas e imitadas en la carne, y hay pocos hoy en día que puedan discernir la diferencia.</p>
+
+    <p><span class="red-emphasis">¡Si hay un derramamiento de acuerdo al plan de Dios, no lo vas a encontrar en la iglesia! ¡Tendrás que ir a conjuntos habitacionales, escuelas, al Metro, los sitios de trabajo, las oficinas, los mercados! ¡Lo vas a encontrar en la cámara de oración!</span></p>
+
+    <p>En esta clase de derramamiento vas a encontrar muchas casas donde los santos están ayunando, orando y llorando, clamando a Dios por Sus hijos y por los no salvos. ¡Verás a los testigos yendo a todas partes hablando en el poder del Espíritu Santo!</p>
+
+    <p><span class="emphasis">¡Recibes el Espíritu Santo y lo haces! ¡Esto es un derramamiento! No es una hoguera en la iglesia. Son 20, ó 200, ó 2000 fuegos pequeños encendidos por toda tu ciudad o tu colonia.</span></p>
+  </div>
+
+  <div class="content-section">
+    <h2>¡JESÚS SERÁ NUESTRO PROFETA!</h2>
+
+    <div class="scripture">
+      "Porque Moisés dijo a los padres: El Señor vuestro Dios os levantará profeta de entre vuestros hermanos, como a mí; a él oiréis en todas las cosas que os hable"
+      <span class="scripture-ref">Hechos 3:22</span>
+    </div>
+
+    <p>Si estas buscando a un profeta verdadero en estos tiempos finales, el Espíritu Santo te guiará solamente a Jesús. El profeta resucitado de estos últimos días habla desde la gloria, a todos los que se toman el tiempo de escucharlo.</p>
+
+    <p>Multitud de cristianos están hoy corriendo de un lado para otro buscando un profeta para obtener unas migajas de bendición o dirección. ¡Amado, yo he encontrado mi Profeta! ¡Es Jesús! Y la Biblia dice, <span class="emphasis">"¡Escúchalo en todas las cosas!"</span></p>
+
+    <p>Hay una fuerte advertencia para todos aquellos que no hacen caso de esto:</p>
+
+    <div class="scripture">
+      "Y toda alma que no oiga a aquel profeta, será desarraigada del pueblo"
+      <span class="scripture-ref">Hechos 3:23</span>
+    </div>
+
+    <p>Hay tantas vidas que están siendo destruidas; la fe de muchos está naufragando. Hay pocos que quieran oír al Profeta verdadero -prefieren tener el cosquilleo en sus oídos- producido por autonombrados profetas que no son más que unos agoreros.</p>
+
+    <p>Un verdadero profeta debe alinearse detrás de Samuel y de todos los que le siguieron -para bendecir al pueblo- <span class="emphasis">"a fin de que cada uno se convierta de su maldad"</span> (Hch. 3:24,26). Los verdaderos profetas no buscan ser respaldados por señales, maravillas o milagros. No tratan de ganarse tu confianza revelándote secretos. Ellos te enseñan la diferencia entre lo santo y lo profano, haciéndote arrepentir de tu pecado. ¡Ellos te vuelven a Jesús para arrepentimiento!</p>
+  </div>
+
+  <div class="content-section">
+    <h2>ADVERTENCIA DE JUICIO</h2>
+
+    <p>Te estarás diciendo, <span class="emphasis">"Has hablado mucho de testificar pero, ¿Y qué de advertir acerca de los juicios venideros?"</span></p>
+
+    <p>Ciertamente, he dicho a menudo que Dios nos mandó a Nueva York para levantar un remanente y para advertir a esta ciudad sobre el juicio venidero. ¿No deberíamos ahora invadir la ciudad con libros y literatura llenos de advertencias sobre el colapso económico, las bombas de hidrógeno, las luchas raciales, la escasez de alimentos y desgracias repentinas?</p>
+
+    <p><span class="emphasis">¡No! Todo esto puede suceder, y probablemente sucederá -pero este no es el juicio mayor-.</span></p>
+
+    <p><span class="red-emphasis">El verdadero juicio viene de rechazar a Cristo.</span> <span class="emphasis">"Toda alma que no oiga a aquel profeta será desarraigada del pueblo"</span> (Hch. 3:23) ¡Este mismo juicio cae sobre cristianos tibios que rehúsan oír la voz de Jesús!</p>
+
+    <p>Cuando el Espíritu Santo viene toma tu corazón, te redarguye de pecado, de justicia y de juicio. Así es como lo hace. El viento de Su Espíritu nos lleva a las calles a predicar a Jesús resucitado y a advertir a la gente, <span class="emphasis">"¡Si no escuchas a Jesús y te arrepientes, vas a ser destruido de entre la gente!"</span></p>
+
+    <p>Cómo va Dios a traer esta destrucción, es cuenta Suya. Este es el juicio que debemos predicar:</p>
+
+    <div class="scripture">
+      "El que en él cree, no es condenado; pero el que no cree ya ha sido condenado, porque no ha creído en el nombre del unigénito Hijo de Dios. Y esta es la condenación: que la luz vino al mundo, y los hombres amaron más las tinieblas que la luz, porque sus obras eran malas"
+      <span class="scripture-ref">Juan 3:18-19</span>
+    </div>
+
+    <p>Los testigos que vayan llenos del poder del Espíritu Santo, que traigan la luz de Jesús, también van a traer juicio sobre todos los que se nieguen a escuchar y que se apeguen a su maldad.</p>
+
+    <div class="highlight-box">
+      <p>Amado, Este es el juicio, igual que ha sido en todos los tiempos: rechazar a Cristo. Sin embargo, si ponemos atención a la voz de nuestro Profeta, Jesús, <span class="red-emphasis">¡nuestra oración más sincera es que muchos escuchen y se arrepientan!</span></p>
+    </div>
+  </div>
+</div>
+
+<div class="menu-link-container">
+  <a class="menu-button" href="../../menu.html">Volver al Menú</a>
+</div>
+
+<footer>
+  Revista Avivamiento - Dios Te Necesita Ahora<br>
+  Por David Wilkerson
+</footer>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

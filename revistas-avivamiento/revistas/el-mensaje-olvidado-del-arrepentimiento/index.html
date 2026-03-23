@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El mensaje olvidado de arrepentimiento - David Wilkerson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+
+
+    .menu-button {
+        display: inline-block;
+        margin: 20px 0 10px;
+        padding: 10px 18px;
+        background-color: #4a6491;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .menu-button:hover {
+        background-color: #2c3e50;
+    }
+
+    .menu-link-container {
+        text-align: center;
+    }
+footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .prayer-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #4a6491;
+            font-style: italic;
+        }
+
+        .four-steps {
+            margin: 20px 0 20px 30px;
+        }
+
+        .four-steps li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+  <script defer src="../../../assets/reader-mode.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por David Wilkerson</div>
+            <div>EL MENSAJE OLVIDADO DE ARREPENTIMIENTO</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EL MENSAJE OLVIDADO DE ARREPENTIMIENTO</div>
+
+        <p>En la ciudad de Nueva York podrás visitar iglesia tras iglesia, desde majestuosas catedrales hasta pequeñas congregaciones, y rara vez escucharás una predicación acerca del arrepentimiento. Lo mismo ocurre en muchas iglesias evangélicas en toda América y el mundo entero. Podrías visitar congregación tras congregación por meses enteros y nunca escuchar una sola mención de la palabra arrepentimiento.</p>
+
+        <p>Desde luego, hay iglesias que no se comprometen con esta importante doctrina bíblica. Un gran número de iglesias ha determinado que el arrepentimiento es un mensaje bastante ofensivo para ser predicado. De hecho, denominaciones enteras lo han despreciado restándole importancia.</p>
+
+        <p>En tales iglesias escucharás todo acerca del amor de Dios, sus bendiciones y los principios que debes aplicar a tu vida, pero no una palabra que hable de sentir la tristeza que es según Dios por tus pecados. Podrás escuchar mensajes que hablen de amar a los demás para convertirte en una buena persona. Estas cosas definitivamente son bíblicas. Pero no escucharás un mensaje de arrepentimiento como el que Pedro predicó en Pentecostés. Su predicación llevó a muchos a la libertad en Cristo Jesús.</p>
+
+        <p>Muchos pastores modernos podrían horrorizarse de lo que Pedro predicó aquel día. Hechos 2 nos muestra el contexto del poderoso mensaje del apóstol:</p>
+
+        <div class="scripture">
+            "Al oír esto, se compungieron de corazón, y dijeron a Pedro y a los otros apóstoles: Varones hermanos, ¿qué haremos?"
+            <span class="scripture-ref">Hechos 2:37</span>
+        </div>
+
+        <p>Como este versículo lo demuestra, debe haber un conocimiento previo de los pecados antes de tener un verdadero arrepentimiento. Ese es el propósito de la ley: hacernos conscientes de nuestros pecados. El corazón de aquellas personas en Jerusalén fue conmovido cuando escucharon la palabra de Dios y solo así reconocieron sus pecados.</p>
+
+        <p>Pedro respondió a su clamor desesperado instruyéndoles de esta manera: <span class="emphasis">"Arrepentíos, y bautícese cada uno de vosotros en el nombre de Jesucristo para perdón de los pecados; y recibiréis el don del Espíritu Santo"</span> (Hechos 2:38). ¿Qué significa esto de arrepentirse?</p>
+    </div>
+
+    <div class="content-section">
+        <h2>EL VERDADERO ARREPENTIMIENTO PRODUCE TRISTEZA, PENA Y PESAR POR LOS PECADOS</h2>
+
+        <p>Arrepentirse consiste en experimentar tal contrición que lleve a cambiar el rumbo de tu vida. O algo más simple: arrepentirse es volverte de tus pecados e ir en la dirección opuesta.</p>
+
+        <p>El arrepentimiento no te da ningún mérito ante Dios. Sólo el sacrificio de la sangre de Cristo puede otorgarte el perdón. Pero el arrepentimiento es el único camino para obtener el verdadero gozo y ser restaurado. No hay otra forma de entrar en la paz y el reposo de Cristo, sino a través de las puertas del arrepentimiento. Pablo escribió a los Corintios acerca de los frutos que produce el arrepentimiento:</p>
+
+        <div class="scripture">
+            "Porque la tristeza que es según Dios produce arrepentimiento para salvación, de que no hay que arrepentirse; pero la tristeza del mundo produce muerte. Porque he aquí, esto mismo de que hayáis sido contristados según Dios, ¡qué solicitud produjo en vosotros, qué defensa, qué indignación, qué temor, qué ardiente afecto, qué celo, y qué vindicación!"
+            <span class="scripture-ref">2ª Corintios 7:10-11</span>
+        </div>
+
+        <p>Déjame darte el trasfondo de la carta que Pablo escribió a los Corintios. Él puso en evidencia el pecado de incesto en la congregación, pues nadie había tomado cartas en el asunto. Y debido a que pasaron por alto este terrible pecado, no había tristeza alguna en medio de ellos.</p>
+
+        <p>Así que Pablo escribió a la iglesia un mensaje duro, pero bien merecido. Entonces, cuando la gente se sentó a leer la carta en voz alta, fueron conmovidos sus corazones. Se arrepintieron, llenos de tristeza y dolor, e hicieron frente al pecado tan vergonzoso que había entre ellos.</p>
+
+        <p>Ahora Pablo los animaba, diciendo: <span class="emphasis">"Vean lo que la tristeza de Dios hizo en ustedes. Produjo prudencia, trajo una indignación en contra de su propio pecado"</span>. El arrepentimiento es el único medio por el cual aquellos que están cautivos por el pecado pueden ser liberados y restaurados.</p>
+
+        <p>El arrepentimiento y la fe en la sangre redentora de Cristo resultan en la remisión de los pecados, que significa perdón y libertad del poder del pecado. De acuerdo con Pedro, no puede haber conversión, libertad ni nuevo nacimiento sin arrepentimiento:</p>
+
+        <div class="scripture">
+            "Así que, arrepentíos y convertíos, para que sean borrados vuestros pecados; para que vengan de la presencia del Señor tiempos de refrigerio."
+            <span class="scripture-ref">Hechos 3:19</span>
+        </div>
+
+        <p>De esta misma manera, Pablo predicó a los atenienses: <span class="emphasis">"Pero Dios, habiendo pasado por alto los tiempos de esta ignorancia, ahora manda a todos los hombres en todo lugar, que se arrepientan"</span> (Hechos 17:30). Jesús dijo que había venido con este mismo propósito: <span class="emphasis">"No he venido a llamar a justos, sino a pecadores al arrepentimiento"</span> (Lucas 5:32). Quizás Lucas es todavía más claro cuando escribe:</p>
+
+        <div class="scripture">
+            "y les dijo: Así está escrito, y así fue necesario que el Cristo padeciese, y resucitase de los muertos al tercer día; y que se predicase en su nombre el arrepentimiento y el perdón de pecados en todas las naciones, comenzando desde Jerusalén"
+            <span class="scripture-ref">Lucas 24:46-47</span>
+        </div>
+
+        <p>Arrepentimiento fue el mensaje que Dios nos mandó enseñar cuando establecimos la iglesia, hace más de veinte años, aquí en Nueva York.</p>
+
+        <p>En los inicios de la iglesia de Times Square, el Espíritu Santo instruyó a nuestro equipo pastoral para predicar arrepentimiento. Él consumió nuestros corazones con una verdad: donde el pecado abunda, sobreabunda la gracia.</p>
+
+        <p>Debíamos plantar nuestra iglesia en el corazón de Broadway, cerca de la Calle 42, en medio de sus clubes nocturnos, cines XXX, tiendas de pornografía, distribuidores de droga, prostitutas y homosexuales. Realizábamos nuestros servicios en el teatro Nederlander de la Calle 41. En aquel tiempo esa cuadra era llamada "el callejón de la basura" porque los adictos inhalaban su droga y tiraban el desperdicio frente al teatro. Era como un retrato del infierno en la tierra.</p>
+
+        <p>El Espíritu nos advirtió que estábamos entrando en territorio de Satanás. Tuvimos que asumir una postura firme para ir en contra del dominio del pecado. En breve nos encontramos en la zona de guerra para reclamar a los cautivos por el diablo. Así que tuvimos que estar preparados para el contraataque y para ser perseguidos con todas las armas del infierno.</p>
+
+        <p>Francamente, no podríamos ganar a esos cautivos mientras estuvieran cómodos en su pecado. Para hacerles entender la misericordia de Cristo tuvimos que confrontarlos con sus pecados, así ellos estarían convictos y listos para abandonarlos por completo. Esa fue la única forma de emprender la guerra en el campo espiritual.</p>
+
+        <p>Así que predicamos arrepentimiento. Dijimos a todo aquel que cruzaba nuestras puertas que nadie podía llamar a Jesús Señor si su vida no había cambiado. Ese mensaje lo predicamos a todos los que asistían a nuestros servicios, sin tomar en cuenta su estatus social: actores de Broadway, vendedores de droga, ejecutivos de Wall Street y travestis. Nadie podía decir amar a Jesús si su vida no mostraba los frutos de su arrepentimiento.</p>
+
+        <p>Después de confrontar el pecado con la predicación de arrepentimiento, comenzó a brotar un increíble gozo. Las personas fueron liberadas de sus pecados, abandonaron sus hábitos pecaminosos y su manera sensual de vivir. Hombres y mujeres, tanto de oficinas corporativas como del "callejón de la basura", fueron transformados por la sangre de Cristo que limpia todo pecado y por el poder de su Espíritu que hace libre al cautivo.</p>
+
+        <p>Después de más de veinte años, ese mismo gozo permanece aquí en la iglesia de Times Square. Y todavía enseñamos el mensaje que la primera iglesia predicó en Jerusalén el día de Pentecostés: arrepentimiento para perdón de los pecados.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>EL EVANGELIO DE LA COMODIDAD CONFUNDE COMPLETAMENTE EL AMOR DE DIOS</h2>
+
+        <p>Multitudes hoy en día se congregan en eventos donde los pastores de la comodidad les dicen: <span class="emphasis">"Todo lo que necesitan es creer y nacerán de nuevo"</span>. Esta doctrina la fundamentan en el pasaje de Hechos 16, donde un carcelero pregunta a los apóstoles acerca de cómo obtener la salvación. La respuesta de Pablo fue: <span class="emphasis">"Cree en el Señor Jesucristo, y serás salvo, tú y tu casa"</span> (Hechos 16:31).</p>
+
+        <p>Los ministros que hacen énfasis en esta doctrina olvidan que cuando el carcelero se acercó a los apóstoles, estaba tan convencido de su pecado, que <span class="emphasis">"vino temblando, y se postró a los pies de Pablo y de Silas"</span> (Hechos 16:29). Este hombre estaba tan angustiado y turbado que había considerado suicidarse. Reconoció su pecado y el temor de Dios lo llevó a arrepentirse.</p>
+
+        <p>Los simples sentimientos no pueden convertir el alma de nadie. Éstos sólo tocan las emociones pero son incapaces de conmover los lugares más profundos del alma. Esta es una verdad muy importante que tuvimos cuidado de enseñar desde un inicio en la iglesia de Times Square. Y es una verdad que constituye la base del evangelio mismo. Es una verdad que nos habla de la condenación bíblica del pecado --una amonestación al pecador a correr a la Cruz o perecer-- el más grande mensaje de amor jamás ofrecido al hombre.</p>
+
+        <p>Debajo del nombre de nuestra iglesia, sobre la marquesina del teatro, se lee el siguiente mensaje: <span class="emphasis">"La iglesia que el amor está construyendo"</span>. Para nosotros esto no es una idea romántica o sentimental, sino es un mensaje que dice claramente: <span class="emphasis">"Estamos aquí para pelear por ti contra todo el infierno. No te encubriremos la verdad, si en realidad quieres una vida nueva"</span>.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LOS MINISTROS QUE ELUDIERON EL MENSAJE DE ARREPENTIMIENTO COMIENZAN A PREDICARLO DE NUEVO</h2>
+
+        <p>El pastor de una <span class="emphasis">megaiglesia</span> se sintió redargüido debido a sus predicaciones tan ligeras y simplonas. Por semanas forcejeó con su conciencia, pensando: <span class="emphasis">"No soy un pastor verdadero. No estoy dando a las personas lo que necesitan para crecer y madurar en Cristo"</span>.</p>
+
+        <p>Así que cambió su predicación e incluyó el mensaje de arrepentimiento. Antes de esto su congregación era contada en millares. Ahora, desde que comenzó a enseñar arrepentimiento, ha quedado con menos de doscientas personas. Pero está lleno de gozo y muy bendecido al ver a sus congregantes crecer en Cristo.</p>
+
+        <p>Tengo que preguntarme: ¿es esta la razón por la cual muchos pastores nunca predican arrepentimiento? ¿Tienen miedo de perder gente en sus iglesias? ¿Temen no poder pagar sus créditos hipotecarios? ¿Necesitan muchas personas que diezmen para así poder absorber los gastos cada vez mayores en su congregación?</p>
+
+        <p>A veces me pregunto qué pasaría con las personas de tales iglesias al escuchar a su predicador dar un mensaje de arrepentimiento. Me imagino multitudes a punto de escuchar su último sermón. Detrás de las bambalinas, el predicador está bajo la influencia del Espíritu Santo que le habla con gran poder:</p>
+
+        <div class="highlight-box">
+            <p><span class="emphasis">"El día del Señor está cerca. La mano escribe en la pared, y Dios pronto juzgará a las naciones. Todas las cosas serán conmovidas, y los corazones de los hombres desfallecerán por ello".</span></p>
+            <p><span class="emphasis">"No vayas esta noche al púlpito y fortalezcas las manos de los pecadores. La mayoría son almas ciegas y enfermas, como ovejas perdidas. Están turbadas con dolorosos problemas familiares, vicios, esclavos de los tormentos del enemigo".</span></p>
+            <p><span class="emphasis">"Si tú no les adviertes, su sangre será sobre tu cabeza. El profeta Ezequiel te lo ha anunciado y sin duda alguna acontecerá si tú no tocas la trompeta para amonestar al perverso. Ellos morirán en su pecado y el Señor demandará su sangre de tu mano".</span></p>
+            <p><span class="emphasis">"Ve ahora y diles que se arrepientan y que dejen sus malos caminos. Nunca más obstruyas mis palabras, porque conducen a la vida. Después confórtalos y aliéntalos".</span></p>
+        </div>
+
+        <p>Si tal predicador fuere obediente, inmediatamente sería testigo de dos cosas: un éxodo masivo de personas y un reducido grupo que se quedaría perplejo en sus asientos. Después de algunos minutos, el predicador comenzaría a escuchar sollozos entre los que decidieron quedarse. Finalmente, una voz se levantaría de entre ellos preguntando: <span class="emphasis">"¿Qué debemos hacer ahora?"</span>.</p>
+
+        <p>Esto está comenzando a suceder. Uno de los predicadores más exitosos en Europa, estando delante de una enorme multitud, dijo: <span class="emphasis">"Ha venido la hora de confesar los pecados, llorar y enderezar los caminos"</span>. Un predicador amigo mío estuvo en ese evento y lo calificó de maravilloso. Mi oración es por que lo mismo acontezca en todas las iglesias, aquí en América y en todo el mundo.</p>
+
+        <p>Debo admitir que en ocasiones he bajado del púlpito con un gran dolor después de predicar un duro mensaje. Algunas veces me he preguntado: <span class="emphasis">"Señor, me parece que esto ha estado muy duro. ¿Te habré escuchado correctamente? Si estoy equivocado al predicar este tipo de mensajes, muéstramelo por favor"</span>. Una vez, cuando me encontraba en una profunda agonía por una prédica que di, recibí una llamada telefónica de uno de mis hijos, que me dijo: <span class="emphasis">"Papá, gracias por predicar ese mensaje. El Señor me habló claramente y me puso en una encrucijada que he tenido que enfrentar"</span>.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>ALGUNOS DE LOS QUE SE HAN ARREPENTIDO PERMANECEN EN TEMOR E INCREDULIDAD</h2>
+
+        <p>Estoy seguro de que Dios se lamenta de las iglesias que no predican el mensaje de arrepentimiento. De hecho, tengo la convicción de que el Espíritu Santo no habita en tales iglesias.</p>
+
+        <p>Con todo y esto, creo que hay algo que aflige el corazón de Dios aún más que ser negligentes en predicar arrepentimiento. Y esto es que aquellos que confiesan sus pecados continúen viviendo en temor e incredulidad.</p>
+
+        <p>Hablo de aquellos quienes han tenido una verdadera convicción de pecado. Que han experimentado la tristeza que es según Dios por sus maldades y las han confesado, pero aún no tienen la paz y el gozo que viene con el perdón que trae el arrepentimiento.</p>
+
+        <p>El arrepentimiento conduce al perdón y el perdón debe conducir al gozo y la paz. Estas personas, sin embargo, no tienen tal descanso. Por el contrario, viven en constante temor de que sus vidas no estén agradando a Dios. Continúan orando por su salvación e incluso intentan bautizarse una y otra vez. Sencillamente, nunca han comprendido en su totalidad el poder del perdón.</p>
+
+        <p>En realidad, tales personas viven bajo el pacto del Antiguo Testamento. Son oprimidos por una ley que los mantiene atormentados y su conciencia los condena. Tal como dijo Isaías: <span class="emphasis">"Pobrecita, fatigada con tempestad, sin consuelo..."</span> (Isaías 54:11).</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LA OPRESIÓN POR LOS PECADOS --MEMORIAS Y RECUERDOS DE LOS PECADOS PASADOS-- NO DEBE CARGARSE MÁS ALLÁ DE LA CRUZ.</h2>
+
+        <p>Cualquier tristeza por los pecados pasados, impuesta voluntariamente, debe ser echada en los raudales de la sangre de Cristo. Finalmente, llega el momento cuando todo aquel que sigue a Cristo escucha las palabras:</p>
+
+        <div class="scripture">
+            "Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar"
+            <span class="scripture-ref">Mateo 11:28</span>
+        </div>
+
+        <p>El Señor hace un llamado a todos los que se han arrepentido y creído en su nombre, pero que todavía no pueden gozarse en ello porque llevan una pesada carga de culpabilidad y condenación. A todos estos, Dios los invita a venir a Él y entregarle su pesada carga, para ser llenos de gozo en sus corazones.</p>
+
+        <p>Cuando hacemos esto, el Espíritu Santo viene a hacer morada en nosotros. Jesús llamó al Espíritu "El Consolador", cuyo nombre significa "uno que viene a estar a tu lado". A partir de entonces, nunca más andaremos solos ni en nuestras propias fuerzas, sino con la ayuda del Espíritu Santo.</p>
+
+        <p>Esto es a partir del Nuevo Pacto, el cual Dios hizo con los primeros creyentes. Según Hebreos, este pacto entró en vigor cuando Jesús murió en la cruz:</p>
+
+        <div class="scripture">
+            "Porque el testamento con la muerte se confirma; pues no es válido entre tanto que el testador vive."
+            <span class="scripture-ref">Hebreos 9:17</span>
+        </div>
+
+        <p>¿Cuál es la herencia que Jesús nos dejó a través de este pacto? Esta es la promesa:</p>
+
+        <div class="scripture">
+            "Porque seré propicio a sus injusticias, y nunca más me acordaré de sus pecados y de sus iniquidades"
+            <span class="scripture-ref">Hebreos 8:12</span>
+        </div>
+
+        <p>Pero además recibimos algo más que el perdón por medio de este Nuevo Pacto. Dios nos da una promesa adicional cuando dice que nos hace <span class="emphasis">"aptos en toda obra buena para que hagáis su voluntad, haciendo él en vosotros lo que es agradable delante de él por Jesucristo; al cual sea la gloria por los siglos de los siglos. Amén"</span> (Hebreos 13:21).</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿ESTÁS BAJO UN ATAQUE SEVERO, TU MENTE ESTÁ ACOSADA?</h2>
+
+        <p>Muchos cristianos, incluyendo algunos pastores, me han dicho que continuamente son asediados por sus pecados pasados. Me dicen: <span class="emphasis">"Hermano David, si supiera todo lo que hice, cómo pequé contra la luz, entonces entendería por qué me siento angustiado. Mis pecados se han acumulado sobre mi cabeza y lucho constantemente contra esa culpabilidad. Creo que el Señor me ha perdonado y que su sangre es suficiente para cubrir mi iniquidad, pero no tengo la paz que trae el entenderlo"</span>.</p>
+
+        <p>Otros me dicen: <span class="emphasis">"Creo que he sido perdonado, pero mi mente continuamente es bombardeada con ideas infernales. Pueden venirme donde sea, aun en la iglesia, y me hacen sentir muy sucio. Es difícil creer que soy puro ante los ojos de Dios"</span>.</p>
+
+        <p>Estos creyentes olvidan que Satanás también tentó a Jesús de forma terrible, con ideas espantosas cuando fue probado en el desierto. Hoy el diablo envía pequeñas zorras a tu vida para hacerte creer que no tienes esperanza y que Dios está airado contigo. Todo esto con el fin de poner dardos en tu mente e intentar destruir tu fe en el poder de la sangre de Cristo.</p>
+
+        <p>Amado santo, no debes prestar atención a estos ataques en tu mente. Debes ignorarlos, clamando: <span class="emphasis">"Santo Espíritu, sé que estás a mi lado. Dame tu ayuda"</span>.</p>
+
+        <p>Tienes que entender que todo aquel que toma la cruz de Cristo y pelea la buena batalla de la fe estará en una guerra constante. Todos vamos a hacer frente a los dardos del maligno --pensamientos que vienen debido a nuestro pasado, pues en otro tiempo vivimos en la maldad y la sensualidad--. No obstante, cuando rociamos la sangre de Cristo sobre esas raíces de duda, cada parte de nuestro ser es confortada, incluyendo nuestra mente, y somos purificados por completo.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿ESTÁS LUCHANDO PARA DEJAR UN PECADO QUE TE ASEDIA, UNA FORTALEZA DE SATANÁS?</h2>
+
+        <p>¿Has determinado que no existe posibilidad alguna de que seas libre para siempre de tu pecado? Yo te exhorto a considerar estas cuatro cosas:</p>
+
+        <ol class="four-steps">
+            <li><span class="red-emphasis">Asegúrate de que el Señor aún te ama y que te extiende su gracia y misericordia.</span></li>
+            <li><span class="red-emphasis">Arrepiéntete, pidiéndole a Dios que traiga sobre ti tristeza y contrición por tus pecados.</span></li>
+            <li><span class="red-emphasis">Recibe el amor de Dios y descansa en su promesa de perdonarte.</span></li>
+            <li><span class="red-emphasis">Confía en el Nuevo Pacto que te dice: "Seré misericordioso contigo y perdonaré todos tus pecados. Y formaré en ti aquellas cosas que son agradables a mi voluntad".</span></li>
+        </ol>
+
+        <p>No estás solo en esta lucha. Él ha enviado su Santo Espíritu, quien sabe como superar al enemigo y liberarte de toda esclavitud. Él es el inmutable, la voz que te guiará y te fortalecerá en todas tus batallas.</p>
+
+        <div class="prayer-box">
+            <p><span class="emphasis">Ora conmigo:</span> "Santo Espíritu, quiero crecer espiritualmente. Quiero ser librado de toda hipocresía, y tener un carácter gentil, paciente y amoroso. Prepárame y dame de tu ayuda. Amén".</p>
+        </div>
+    </div>
+</div>
+
+<div class="menu-link-container">
+  <a class="menu-button" href="../../menu.html">Volver al Menú</a>
+</div>
+
+<footer>
+    Revista Avivamiento - El mensaje olvidado de arrepentimiento<br>
+    Por David Wilkerson
+</footer>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

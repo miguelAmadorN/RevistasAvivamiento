@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Características Sobresalientes de un Avivamiento - James Stewart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+
+
+    .menu-button {
+        display: inline-block;
+        margin: 20px 0 10px;
+        padding: 10px 18px;
+        background-color: #4a6491;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .menu-button:hover {
+        background-color: #2c3e50;
+    }
+
+    .menu-link-container {
+        text-align: center;
+    }
+footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .poem-box {
+            background-color: #f9f5e8;
+            border-left: 4px solid #b8860b;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .poem-line {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #5a3e1b;
+            text-align: center;
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            color: #8B0000;
+            margin: 30px 0 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #8B0000;
+            display: inline-block;
+        }
+
+        .testimony {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #4a6491;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+  <script defer src="../../../assets/reader-mode.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por James Stewart</div>
+            <div>CARACTERÍSTICAS SOBRESALIENTES DE UN AVIVAMIENTO</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p><span class="emphasis">Estimados Lectores:</span> El presente número se titula: <span class="red-emphasis">"Características Sobresalientes de un Avivamiento"</span>. ¿Cuáles son estas características? ¿Qué es un Avivamiento? Porque este concepto por lo general es mal entendido. Para muchos un avivamiento es la excitación de las emociones y sentimientos en alguna concentración musical "Cristiana".</p>
+
+        <p>Otros creen haberse avivado por incluir alguna novedosa forma a los rituales clásicos de su denominación y otros más tienen el concepto del avivamiento como una euforia incontrolable y arrasadora carente de razón y sustento Bíblico que sucede esporádicamente, y que no hace a la persona que lo experimenta ni más santa, ni más misericordiosa, ni más parecida a Cristo.</p>
+
+        <h3>¿Qué debemos entender por AVIVAMIENTO?</h3>
+
+        <p>No queremos limitar LA OBRA VIVIFICADORA DEL ESPÍRITU SANTO a una definición pero observando la evidencia bíblica e histórica pudiéramos decir lo siguiente:</p>
+
+        <div class="highlight-box">
+            <p>Un avivamiento es un revivir de las épocas gloriosas de la iglesia primitiva en estos tiempos. Una visitación del Espíritu de Dios a individuos, familias, estados o naciones llamándolos al arrepentimiento y consagración a Dios. Una conciencia personal y general de la presencia del Dios Santo acercándose a los hombres.</p>
+        </div>
+
+        <p>Carlos Finney, el llamado apóstol de los avivamientos lo definió como un resurgimiento a la obediencia de la palabra de Dios.</p>
+
+        <p>¿Quién está anhelando un avivamiento en nuestro país? ¿Hay alguien que ore y se preocupe para que esto suceda pronto?</p>
+
+        <p>El pecado, la corrupción, la crisis y la muerte que nos están consumiendo no podrán ser extirpados por el actual "Cristianismo" de formas externas, absolutamente falto de poder y piedad. El hombre sin Cristo no podrá revertir los devastadores efectos de su indiferencia a Dios.</p>
+
+        <p>¡Necesitamos la culminación de la promesa de Isaías 35:4!</p>
+
+        <div class="scripture">
+            "DIOS MISMO VENDRÁ Y NOS SALVARÁ"
+            <span class="scripture-ref">Isaías 35:4</span>
+        </div>
+
+        <div class="scripture">
+            "Oh Jehová aviva tu obra en medio de los tiempos<br>
+            En medio de los tiempos hazla conocer.<br>
+            En la ira, acuérdate de la misericordia"
+            <span class="scripture-ref">Habacuc 3:2</span>
+        </div>
+
+        <p>La lectura del presente artículo nos permitirá revalorar y anhelar un avivamiento del Espíritu.</p>
+
+        <div class="editors-note">
+            ATENTAMENTE<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">CARACTERÍSTICAS SOBRESALIENTES DE UN AVIVAMIENTO</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Dr. James Stewart</div>
+
+    <div class="content-section">
+        <p>¿Cuáles son las características distintivas de un avivamiento? ¿Qué diferencia hay entre los días extraordinarios de la iglesia y los días ordinarios?</p>
+
+        <p>En mi propio ministerio de avivamiento he descubierto que los días de "el cielo en la tierra" se reconocen fácilmente por ciertas evidencias. Es cierto que ningún avivamiento es completamente igual a otro. Mientras que cada uno conlleva elementos comunes con los demás, sin embargo cada uno tiene características singulares. No importa el tiempo, el país, o las circunstancias, hay ciertas características sobresalientes que se encuentran en todos los verdaderos movimientos del Espíritu Santo.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="feature-title">Una profunda hambre de Dios</div>
+
+        <p>Una historia morava escrita pocos días antes del 3 de agosto de 1797 dice:</p>
+
+        <div class="testimony">
+            <p>"Una gran hambre de la palabra de Dios tuvo lugar en nosotros de tal manera que teníamos que tener tres servicios cada día; por ejemplo, 5:00, 7:30 a.m. y 9:00 p.m. y cada quien deseaba más que cualquier otra cosa que el Espíritu Santo tomara completo control. El amor propio y el egoísmo, así como toda desobediencia desaparecieron y una abrumadora y desbordante gracia nos arrastró literalmente a todos hacia un gran océano de amor divino."</p>
+        </div>
+
+        <p>En 1885 el reverendo G.H. Moore y su congregación buscaron de manera más profunda y más completa un encuentro con el Señor. Cuatro hombres fueron movidos a orar: McQuilkin, Meneely, Wallace y Carlisle. Se reunían generalmente los sábados por la noche en una vieja escuela de Kells, buscando al Señor para tener una manifestación más llena de su poder para saciar el hambre de sus corazones. Esto fue el principio de un poderoso avivamiento que llegó a todo Ulster.</p>
+
+        <p>Juan Wesley describe este encuentro en su periódico:</p>
+
+        <div class="testimony">
+            <p>"Lunes, 1º de enero de 1739. Mi hermano Charles y los señores Hall, Kinchin, Ingham, Whitefield y Hutchins, estaban presentes en nuestra fiesta de amor en Getterslane con aproximadamente sesenta hermanos más. Como a las tres de la mañana mientras continuábamos en oración el poder de Dios cayó poderosamente sobre nosotros, tanto que algunos lloraban de inmenso gozo y otros caían al suelo. Tan pronto como nos recuperamos un poco del temor reverencial y del asombro por la presencia de su Majestad, prorrumpimos a una voz: 'Te alabamos, oh Dios, reconocemos que eres el Señor'.</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="feature-title">Agonía por las almas</div>
+
+        <p>Una agonía por las almas es otra característica sobresaliente. Un joven galés, mientras hacía una lectura un domingo en la mañana llegó a las palabras "por Su agonía y el sudor de Su sangre" y fue tomado por una gran pesadez y por su agonía, y de alguna manera se sintió parte del gran sufrimiento de Getsemaní y del Calvario. Esto fue el principio de un poderoso trabajo de gracia que sacudió la pequeña localidad de Gales. Cuando Daniel Rowlands leyó estas palabras a su congregación fueron subyugados y sintieron que estaban también en Getsemaní con su Señor.</p>
+
+        <p>Cuando Murray McCheyene regresó de Tierra Santa después de 6 meses de estar ausente de su gente en Dundee, describió que una gran obra de parte de Dios estaba como nunca antes teniendo lugar a través del ministerio de William C. Burns, un joven de 22 años. Tan grande era la agonía dentro de la congregación por las almas perdidas y por las increíbles eran las escenas que sucedían aún hasta las cuatro de la mañana en la iglesia de San Pedro, que el Presbiterio de Aberdeen le pidió que hiciera un reporte especial sobre estas impresionantes escenas. Algunos del Presbiterio querían condenar lo que sucedía en San Pedro de Dundee por su aspecto emocional. Aquí tenemos parte de su respuesta:</p>
+
+        <div class="testimony">
+            <p>"Desde mi regreso he visto con frecuencia la predicación de la palabra con tanto poder, y las cosas eternas tan cerca, que los sentimientos de la gente no se pueden contener. He observado en esas ocasiones una tremenda quietud que prevalece en la asamblea, cada oyente inclinado hacia delante con profunda atención cubriéndose las caras para orar que las saetas del Rey de Sion sean enviadas a los corazones de los pecadores".</p>
+        </div>
+
+        <p>Algunas veces durante mis reuniones en Europa, el coro no ha podido ni entonar los cantos debido al gran quebranto en agonía por las almas.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="feature-title">Llenos del amor de Cristo</div>
+
+        <p>Esta característica está siempre en un avivamiento. Un inglés visitó a Christmas Evans en Gales, de quien había oído hablar mucho, y con quien sentía cierto disgusto por sus reuniones desordenadas y su celo impropio. Este inglés predicó fríamente, determinado a no dejarse llevar por las formas desordenadas del galés. Cuando terminó le tocó el turno a Evans y lleno de respeto por el hermano inglés trató de hablar con un sencillo lenguaje y mientras describía de manera poderosa la gloria de Cristo, lo enorme de su Sufrimiento y el infinito mérito de su sacrificio, el inglés olvidándose de sí mismo exclamó: "Oh mi Dios, ¿es este mi Salvador?" y cayó al piso.</p>
+
+        <p>Este relato fue sólo una secuencia natural de una experiencia previa del predicador Evans. Mientras cabalgaba hacia las laderas donde tendría que predicar y estando consciente de lo que es tener un corazón frío en el púlpito, en la oración secreta y el estudio, desmontó de cabalgadura y pasó tres horas en el bosque clamando a Dios que quebrantara su frío corazón y le llenara con ardiente amor por las almas.</p>
+
+        <div class="testimony">
+            <p>"Habiendo empezado," dijo "en el nombre de Jesús, pronto sentí como si se soltaran las cadenas y la dureza del corazón se ablandara, y como lo pensé, montañas de hielo y nieve se disolvían y se derretían junto conmigo. Me cubrían con una dulce sensación de Su amor y Su perdón. Mientras el sol se ocultaba me encaminé a mi cita. Al día siguiente prediqué con tal poder a la gran cantidad de gente que se reunió en la ladera, que el avivamiento no se hizo esperar y se extendió por toda la región."</p>
+        </div>
+
+        <p>En una remota villa de Cardiganshire en una reunión una joven de naturaleza tímida se paró con voz temblorosa exclamó en galés: "Amo a Jesús con todo mi corazón." Muchos historiadores espirituales creen que este fue el principio del avivamiento en Gales en 1904.</p>
+
+        <p>Recuerdo que estaba exponiendo la gloria de Cristo de acuerdo a Efesios, a un grupo de nuevos convertidos en Hungría, cuando el Espíritu Santo nos inundó a todos con Su amor, tanto que no pude terminar el mensaje, sino sólo llorar junto con la congregación en gran gozo de alegría.</p>
+
+        <p>No podemos asombrarnos de que uno de los himnos favoritos del avivamiento galés en 1904 fuera:</p>
+
+        <div class="poem-box">
+            <div class="poem-line">¡Maravilloso amor! ¡ilimitada misericordia!</div>
+            <div class="poem-line">Tan grande como los océanos,</div>
+            <div class="poem-line">Jesús, el Príncipe de la vida, está muriendo</div>
+            <div class="poem-line">Por su sangre hay vida en nosotros.</div>
+            <div class="poem-line">¡Oh qué corazón podría olvidarlo!</div>
+            <div class="poem-line">¿Quién puede cesar de cantarle alabanzas?</div>
+            <div class="poem-line">¡Maravilloso amor! Por siempre apreciado</div>
+            <div class="poem-line">Mientras los cielos se llenan de música.</div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="feature-title">Una pasmosa sensación de la majestad y la santidad de Dios</div>
+
+        <p>¡Cuán vacíos y superficiales son nuestros servicios hoy en día para los avivamientos! Cuán poco sentido de la presencia y del poder de Dios se manifiesta en nuestro medio. El apóstol Juan, en la Isla de Patmos, tuvo una reunión de avivamiento para él solo. Tuvo una visión de la majestad de Cristo en toda Su belleza incomparable, de Su gloria y de Su poder. Estuvo conmovido y turbado.</p>
+
+        <div class="scripture">
+            "Y cuando lo vi, caí a sus pies como muerto"
+            <span class="scripture-ref">Apocalipsis 1:17</span>
+        </div>
+
+        <p>El despertamiento de Northampton, Mass, bajo la predicación de Jonathan Edwards, revolucionó toda la región. Si acaso una persona habrá quedado sin ser tocada por las grandes cosas de lo eterno. En el año de 1735 parecía como si todo el pueblo estuviera lleno de la presencia de Dios.</p>
+
+        <p>El escritor recuerda como en repetidas ocasiones en Europa era tan grande la turbación de la presencia de Dios que nos era imposible tener fuerza para pararnos a predicar a la gente. Aún a los pecadores les entraba tanto temor que abandonaban el pueblo.</p>
+
+        <p>El Dr. Jowett dijo de Moody: "La excelencia de Moody estaba en una vasija de barro, y muchos doctores en divinidad se han cuestionado acerca de la extraña asociación. Había miles de predicadores más elocuentes que Moody pero el tesoro de la gloria no estaba en ellos. Moody podía no haber tenido educación, pudo haber tenido modales rudos y no tener experiencia en oratoria, pero cuando hablaba, el poder de un mundo invisible caía sobre la audiencia."</p>
+
+        <p>En agosto de 1859, Dios hizo un gran trabajo durante la convocación de la iglesia Calvino Metodista. El predicador David Morgan escribió en su diario que fue la reunión de oración más maravillosa en la que él haya estado. A Thomas John, de Calgerin, después de una profunda meditación, le hicieron una pregunta: "Hermano Juan, ¿No le impresionó ver a los miles que oraban en silencio? ¿Alguna vez vio algo así?".</p>
+
+        <div class="testimony">
+            <p>"Nunca vi a ninguno de los que oraban", contestó, <span class="red-emphasis">"¡Sólo vi a Dios!"</span></p>
+        </div>
+
+        <p>Una noche mientras predicaba en una catedral luterana escandinava, una tremenda sensación de la presencia de Dios cayó sobre la reunión. Yo estaba tan turbado por la terrible conciencia de la presencia de Jehová, que sentí temor de seguir predicando. No podía soportar la gloria de Dios y terminé repentinamente con el sermón. No supe qué hacer, así que solo me incliné a orar en silencio. El silencio era tremendo. Estoy seguro de que si no lo hubiera roto pidiéndole al encargado de la catedral que impartiera la bendición, la congregación entera habría clamado en gran angustia y sufrimiento, creyentes y no creyentes, todos. Tan grande era el sentir de la majestad divina que muchos dejaron ahí sus automóviles y regresaron por ellos después para no interrumpir estos momentos de santa quietud. En la sacristía había unos treinta predicadores, preciosos hombres nacidos de nuevo. Ninguno profería palabra. Todos en silencio se retiraron a sus casas. Yo mismo no le dirigí la palabra a mi intérprete hasta tal vez tres horas después.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="feature-title">Profunda convicción de pecado</div>
+
+        <p>Esta relevante característica sigue a la anterior. Teniendo un abrumador sentido de la santidad de Dios y de su pecado, lo mismo creyentes que no creyentes, son tocados y conmovidos por el Espíritu. Cuando George Whitefield en febrero de 1739 estaba predicando al aire libre a los mineros de Kingswood, el poder de Dios cayó sobre los 20,000 congregados. La primera evidencia del trabajo del Espíritu Santo sobre los rudos e incultos oyentes fue un profundo silencio; luego y aún más convincente fueron los ríos de lágrimas que rodeaban por las ennegrecidas mejillas de aquellos mineros.</p>
+
+        <p>En la vida de Christmas Evans esto se repitió durante su poderoso ministerio. Mientras predicaba al aire libre sobre "El Hijo Pródigo", cientos de personas que se sentaban en el pasto, todos a una se levantaron, como por un resorte, como electrificados. Alguno lloraba y otros oraban en gran agonía mental. Aunque el predicador solo había hablado por quince minutos, tuvo que interrumpir, y con sus ayudantes, hacerse cargo de las almas angustiadas hasta la madrugada del día siguiente.</p>
+
+        <p>Cuando Jonathan Edwards estaba leyendo las palabras de Deuteronomio 32:35 "A su tiempo su pie resbalará", el Espíritu de Dios cayó sobre la congregación con tal poder de convicción que los que no eran salvos sintieron que se deslizaban hacia las profundidades del infierno a cada momento con sus almas aterrorizadas se abrazaban a los pilares del salón y gritaban en agonía: "¿Qué haremos para ser salvos?"</p>
+
+        <p>Mi padre espiritual, David Rea, ese gran evangelista de Ulster, cuenta de su primer servicio en público en 1869.</p>
+
+        <div class="testimony">
+            <p>"Fui a Dooran. Cuando llegué la casa de la reunión estaba llena a pesar de la fuerte tormenta. De inmediato entré y sentí la presencia del Señor y cuando empecé a predicar, un poder indescriptible cayó sobre toda la congregación y llantos pidiendo misericordia se escucharon por todas partes del edificio. Luego en una de estas reuniones hubo ocasiones en que tuve que dejar de hablar ya que alguien se paraba y gritaba 'Gloria a Dios', mientras que otros caían postrados al piso pidiendo misericordia. De repente tenía que suspender la predicación del todo y mirar el trabajo que el Señor estaba realizando. A veces había casi cien personas en un lugar clamando por misericordia, y en otra área una cuarta parte oraba por ellos, mientras que otros iban entre ellos llevándolos a Cristo. Luego como una docena estaban de pie después de haber encontrado la paz y alababan a Dios en voz alta."</p>
+        </div>
+
+        <p>Durante este poderoso movimiento del Espíritu de Dios al norte de Escocia, mucha gente caía al suelo con sus almas agonizando mientras Jock Troup predicaba. La gente yacía como muerta en un campo de batalla. Cuando años más tarde trabajé con él, encontré a algunas de estas personas regocijándose en el Señor.</p>
+
+        <p><span class="red-emphasis">¡Oh, cuán poca convicción de pecado hay en nuestras campañas hoy en día! Tenemos miles de conversiones falsas a causa de esto.</span></p>
+
+        <p>¡Oh, que glorioso es oír sollozos de las almas interrumpir la reunión!</p>
+    </div>
+
+    <div class="content-section">
+        <div class="feature-title">Progreso espontáneo</div>
+
+        <p>Dos símbolos de Pentecostés son el VIENTO y el FUEGO. Ambos nos hablaban del trabajo soberano, místico y sobrenatural del bendito Espíritu. NO HAY UN PROGRAMA PARA UN CICLÓN O PARA EL INCENDIO EN UNA PRADERA. Una de las mejores descripciones de un avivamiento la da el mismo Señor Jesús.</p>
+
+        <div class="scripture">
+            "El viento sopla donde quiere, y oyes su sonido; mas ni sabes de donde viene, ni a donde va"
+            <span class="scripture-ref">Juan 3:8</span>
+        </div>
+
+        <p>John Shearer dice: "Un gran avivamiento es como un fuego en el bosque; puedes rastrear su principio, siguiendo la primera línea de la flama, pero pronto su progreso es tan rápido y extenso que el ojo no puede ya seguir su paso. La flama salta de inmediato a muchos lugares, y lo único que vemos es una gran conflagración."</p>
+
+        <p>El avivamiento estalla en todas direcciones para la completa sorpresa de todos nosotros.</p>
+
+        <p>En los benditos días de 1890 y por ese tiempo, los fuegos de avivamientos se prendían por la costa noreste de Escocia de manera espontánea, independientemente de los planes de las campañas evangelísticas. Duncan, Matheson, Reginald, Ratchiffe y James Turner iban de pueblo en pueblo, de aldea en aldea recogiendo una gran cosecha.</p>
+
+        <p>Ustedes han oído del maravilloso trabajo de gracia que hubo durante el ministerio de Murray, McCheyne y William C. Burns. Estos hombres tenían únicamente veintiséis y veintidós años respectivamente. Sin embargo, en cualquier lugar de Escocia en donde predicaban, iban miles para oírlos. Por favor, recuerden que no había ninguna organización, ningún comité, ni ofrendas de amor para los evangelistas. No se gastaba nada de dinero en promover las reuniones y nunca se estipulaba cuanto tiempo iban a estar en un lugar estos hombres de Dios. Todo estaba bajo la dirección del Espíritu Santo. Él era el Señor de la Cosecha; Él los mandaba y ellos obedecían Su voz. Algunas veces se quedaban en un pueblo dos días, en otras ocasiones se quedaban tres semanas. Las iglesias estaban repletas. Multitudes desbordantes se juntaban al aire libre. Cientos de personas seguían a estos dos hombres santos a su alojamiento después de la media noche para que les predicaran la Palabra otra vez.</p>
+
+        <p>Durante los años de avivamiento en Hungría, miles se reunían como por magia. La policía o el pastor me llamaban por teléfono para que fuera rápidamente a un pueblo porque multitudes se habían reunido y estaban esperando un mensaje aunque no se había acordado llevar a cabo ninguna reunión en ese lugar. En algunos lugares en Europa se juntaban 2,000 personas sin que hubiera programado ninguna reunión. ¡Esta era la gloria, el misterio, el milagro del avivamiento! Era el irresistible movimiento del Espíritu Santo. Esto es lo que diferenciaba los días de avivamiento de los días de reuniones evangélicas ordinarias. Estas escenas de reuniones espontáneas fueron presenciadas por el avivamiento en Ulster bajo el ministerio de W. P. Nichosol y en avivamientos escoceses bajo el ministerio de Jock Troup y otros.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="feature-title">La rapidez y lo imprevisto del movimiento</div>
+
+        <p>Los avivamientos comienzan de pronto y se expanden con una velocidad impresionante, como un fuego en la pradera.</p>
+
+        <div class="scripture">
+            "Y se alegró Ezequías con todo el pueblo, de que Dios hubiese preparado el pueblo; porque la cosa fue hecha RÁPIDAMENTE"
+            <span class="scripture-ref">2 Crónicas 29:36</span>
+        </div>
+
+        <p>Los movimientos poderosos del Espíritu Santo comienzan en el lugar secreto del Altísimo. Las manifestaciones externas vienen repentinamente para asombro de todos; santos y pecadores claman igualmente asombrados: "Es el Señor el que lo está haciendo y es maravilloso lo que vemos". La gente de Dios se llena de alegría y cantan con gran gozo:</p>
+
+        <div class="scripture">
+            "Grandes cosas ha hecho Jehová con nosotros; estaremos alegres"
+            <span class="scripture-ref">Salmo 126:6</span>
+        </div>
+
+        <p>El historiador Kirkton escribió acerca de la reforma en Escocia:</p>
+
+        <div class="testimony">
+            <p>"En Escocia toda la nación se convirtió como en un estallido, diez años después de la salida del Papa. NO HABÍA NI DIEZ PERSONAS DE SOCIEDAD QUE PROFESARAN LA VERDADERA RELIGIÓN REFORMADA, y así era en la misma proporción con la gente del pueblo. He aquí una nación que nació en un día".</p>
+        </div>
+
+        <p>Otra vez Jonathan Edwards escribe acerca del gran avivamiento en 1740, dice:</p>
+
+        <div class="testimony">
+            <p>"Esto es seguro, es un evento grande y maravilloso, una revolución extraña, un inesperado sorpresivo cambio de las cosas, sucedió de pronto... ¿Quién que hubiera visto el estado de las cosas en Nueva Inglaterra hace algunos años, creyera que habría un cambio?"</p>
+        </div>
+
+        <p>Yo mismo he presenciado, no sólo lo espontáneo sino también la rapidez del poderoso movimiento de Dios en diferentes partes de Europa. Por ejemplo, alrededor de 1935 en la parte rusa de Polonia empezaron a encenderse poderosos fuegos de avivamiento que se extendieron por diferentes provincias, en lugares donde no había ni una sola iglesia evangélica, por un corto período de tiempo, surgieron iglesias neotestamentarias por todos lados. En poco tiempo, algunas de estas iglesias llegaron a tener mil miembros, a veces bautizábamos a 200 personas en un día. En otros países de Europa oriental se encendían simultáneamente fuegos de avivamiento.</p>
+
+        <div class="highlight-box">
+            <p>El verdadero espíritu de avivamiento no se deja atrapar por organizaciones o sistemas. <span class="red-emphasis">NO PUEDE SER CREADO CON MAQUINARIA NI PROMOVIDO POR LA TINTA DE LA IMPRENTA.</span></p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="feature-title">Un cántico desbordante</div>
+
+        <p>Una de las características de un gran avivamiento es un maravilloso gozo. Cuando la noche de agonía por la convicción, el dolor y el terror del pecado ha pasado, entra en el corazón agonizante la bendita paz del perdón. Ningún gozo que el mundo pueda ofrecer se compara con el misterioso e inefable gozo que se despierta en el alma del que ha nacido de nuevo. De esta manera las visiones del templo de Isaías - que las montañas y los collados prorrumpirían en canto y que los árboles aplaudirían - no parecen extravagantes. Un gozo desbordante viene a los creyentes mientras son llevados a mayores alturas de santidad. EL CANTO ES LA EXPRESIÓN NATURAL DE UN CORAZÓN JUBILOSO. Escocia encontró en los salmos la respuesta a su estado victorioso, mientras los himnos de Wesley permanecen actualmente aunque el avivamiento ya haya terminado.</p>
+
+        <p>Durante estos poderosos movimientos abundaban cientos de cantos nuevos expresando el sentimiento reprimido de la gente. Los viejos himnos comunes que habían sido cantados tan fría y mecánicamente por años, ahora tomaban un nuevo significado. Sí, el cántico espiritual de una congregación es siempre un buen termómetro para probar el avivamiento.</p>
+
+        <p>Duncan Matheson solía despedir las reuniones de avivamiento en Escocia cantando fuertemente con gozo santo el Salmo 126:2 "Entonces nuestra boca se llenará de risa, nuestra lengua de alabanza..."</p>
+
+        <p>Cuando el pueblo de Dios se llena del Espíritu Santo como bendición del avivamiento, ellos "hablan entre sí, con salmos himnos y cánticos espirituales, alabando al Señor en sus corazones".</p>
+
+        <p><span class="red-emphasis">NUNCA SUPE QUE EN UN AVIVAMIENTO SE NECESITARA UN LÍDER DE ALABANZA.</span> Su ministerio es innecesario, porque la gente debe ser restringida una y otra vez por estar cantando por horas en un servicio. He conocido a gente que puede estar cantando durante dos horas antes de que empiece la reunión sin ningún director humano.</p>
+
+        <p>Una noche en una concurrida reunión de oración en Checoslovaquia yo repetí la bendición tres veces. La gente simplemente me ignoró y siguieron cantando hasta la media noche bajo la poderosa unción del Espíritu Santo. Podían haber continuado hasta la mañana siguiente si no hubiera sido porque el conserje del edificio les pidió que desalojaran.</p>
+
+        <div class="scripture">
+            "Aderezas mesa delante de mí en presencia de mis angustiadores; unges mi cabeza con aceite; MI COPA ESTA REBOSANDO"
+            <span class="scripture-ref">Salmo 23:5</span>
+        </div>
+
+        <p>Este no es el cantar de los cuartetos, los solistas o los grupos de diferentes iglesias. Es el Espíritu desbordándose hacia el Padre y hacia el Hijo en la alabanza de los creyentes.</p>
+
+        <p>Tal experiencia está descrita en un himno del avivamiento en Ulster, cuando durante las reuniones de avivamiento en las calles, en las fábricas, en el campo y en las casas la gente cantaba fuertemente:</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Cada vez que nos reunimos, dices:</div>
+            <div class="poem-line">¿Qué nuevas hay? ¿Qué nuevas hay?</div>
+            <div class="poem-line">Oh, yo tengo buenas nuevas que decir:</div>
+            <div class="poem-line">Mi salvador ha hecho todas las cosas bien</div>
+            <div class="poem-line">Y ha triunfado sobre la muerte y el infierno</div>
+            <div class="poem-line">¡Esas son las nuevas! ¡Esas son las nuevas!</div>
+            <div class="poem-line">El Cordero fue crucificado en el Calvario</div>
+            <div class="poem-line">Para librar a un mundo de pecadores</div>
+            <div class="poem-line">Ahí fue donde se derramó su preciosa sangre</div>
+            <div class="poem-line">Ahí es donde Su sagrada frente fue humillada</div>
+            <div class="poem-line">Pero ha resucitado de entre los muertos</div>
+            <div class="poem-line">¡Esas son las nuevas! ¡Esas son las nuevas!</div>
+            <div class="poem-line">Sus obras están avivando todo lugar</div>
+            <div class="poem-line">Y muchos la salvación han encontrado ya</div>
+            <div class="poem-line">Y desde que sus almas se han encendido en fuego</div>
+            <div class="poem-line">Gritan hosanna a Su nombre</div>
+            <div class="poem-line">Y por todos lados proclaman Su Honor</div>
+            <div class="poem-line">¡Esas son las nuevas! ¡Esas son las nuevas!</div>
+        </div>
+    </div>
+</div>
+
+<div class="menu-link-container">
+  <a class="menu-button" href="../../menu.html">Volver al Menú</a>
+</div>
+
+<footer>
+    Revista Avivamiento - Características Sobresalientes de un Avivamiento<br>
+    Por James Stewart
+</footer>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

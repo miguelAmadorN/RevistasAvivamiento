@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Ayúdame a salir de aquí! - Estudio sobre el Salmo 32</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+
+
+    .menu-button {
+        display: inline-block;
+        margin: 20px 0 10px;
+        padding: 10px 18px;
+        background-color: #4a6491;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .menu-button:hover {
+        background-color: #2c3e50;
+    }
+
+    .menu-link-container {
+        text-align: center;
+    }
+footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .poem-box {
+            background-color: #f9f5e8;
+            border-left: 4px solid #b8860b;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .poem-line {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #5a3e1b;
+            text-align: center;
+        }
+
+        .hebrew-word {
+            font-weight: bold;
+            color: #8B4513;
+            font-style: normal;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+  <script defer src="../../../assets/reader-mode.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">¡AYÚDAME A SALIR DE AQUÍ!</div>
+            <div>Estudio sobre el Salmo 32</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">Lectura Recomendada</div>
+
+        <p>Lectura previa recomendada: Salmo 32:1-11 una vez. Después leer de nuevo los versículos uno al seis y reflexionar en su significado.</p>
+
+        <div class="scripture">
+            "Bienaventurado aquel cuya transgresión ha sido perdonada, y cubierto su pecado. Bienaventurado el hombre a quien Jehová no culpa de iniquidad, Y en cuyo espíritu no hay engaño"
+            <span class="scripture-ref">Salmo 32:1-2</span>
+        </div>
+
+        <p>Bienaventurado se puede traducir como <span class="emphasis">"dichoso"</span>, <span class="emphasis">"mil veces feliz"</span> y nos da a entender el estado y experiencia bendecida de quien ha sido perdonado por Dios de un pecado. Para los que entienden las cosas espirituales no es "bienaventurado el que tiene fama y riquezas" o "el que no tiene problemas y dificultades en la vida". Nada hay como tener una conciencia limpia y sentirse libre de sentimientos de culpas y confusiones que atormentan el alma. Nada como un corazón puro, indispensable para experimentar la presencia de Dios. Sobre todo cuando alguien ha caído en pecado y no encuentra la salida.</p>
+    </div>
+
+    <div class="content-section">
+        <p><span class="emphasis">"Ya no lo practico"</span>, <span class="emphasis">"estoy arrepentido"</span>, <span class="emphasis">"ya lo dejé"</span> dicen algunos, pero saben que las cosas no son como antes. Culpas y dudas lo atormentan. Incredulidades, miedos, insatisfacción.</p>
+
+        <h2>El Arte Perdido de la Confesión</h2>
+
+        <p>El siguiente párrafo nos da un ejemplo dramático de lo que sucede cuando un justo llega a cometer un pecado y no encuentra la salida. El salmista narra así su propia experiencia:</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Mientras callé envejecieron mis huesos</div>
+            <div class="poem-line">En mi gemir todo el día</div>
+            <div class="poem-line">Porque de día y de noche se agravó sobre mí tu mano</div>
+            <div class="poem-line">Se volvió mi verdor en sequedades de verano</div>
+            <div class="scripture-ref">Salmo 32:3-4</div>
+        </div>
+
+        <p>Con bello lenguaje poético y utilizando metáforas sencillas de inmediato nos muestra la causa de su atormentada existencia: <span class="red-emphasis">"Mientras callé"</span>, dice en la primera frase, y después describe los resultados de no haber confesado su falta. ¿Cuáles fueron?</p>
+
+        <p><span class="emphasis">"Envejecieron mis huesos"</span>, expresa, refiriéndose a que lo más íntimo de su ser se debilitaba. No tenía fuerza espiritual, gemía de continuo: expresión de estrés, de miseria e infelicidad. ¿No se limita a esto la oración de algunos que sólo se dedican a decirle a Dios lo mal que se sienten en vez de utilizar su tiempo intercediendo por los perdidos?</p>
+
+        <p>La conciencia que no ha sido perdonada lo sabe. Y siente a Dios de continuo en contra. Es difícil explicar cómo, pero parece que se entiende por intuición o por las circunstancias. David lo tenía muy presente: <span class="emphasis">"porque de día y de noche se agravó sobre mí tu mano"</span> y concluye explicando que aunque hubo un tiempo en que estaba lleno de vitalidad, de ánimo, luego del pecado su alma quedó seca, muerta y no hallaba la salida por más que llamaba y gemía. ¿Por qué? Porque calló lo que tenía que haber dicho. El contexto habla de que no había hecho una confesión adecuada a Dios por un pecado que había cometido ---no sabemos cuál---. Pero cualquiera que haya sido, lo cierto es que la estaba pasando bastante mal y ya llevaba un rato.</p>
+
+        <div class="warning-box" style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 6px; padding: 20px; margin: 25px 0;">
+            <p>El problema aquí no era que siguiera practicando el pecado. Es obvio que ya lo había abandonado. El Salmo es claro: <span class="red-emphasis">No había alcanzado perdón por no habérselo confesado a Dios</span>.</p>
+        </div>
+
+        <p>Por supuesto, hay casos en que la reconciliación con Dios también requiere la restitución con otras personas. Esto es indispensable cuando se ha agraviado o sido injusto contra alguien. Jesús fue claro al respecto en Mt. 5:23-24. En tales casos es necesario decir al prójimo en que se le dañó y pedir perdón. Mas en el Salmo 32 el problema era que no había confesado un pecado directamente a Dios. O si se lo había confesado no había hecho el tipo de confesión que Él, que todo lo ve y todo lo sabe, pide.</p>
+
+        <p>¿Quizás hizo una confesión parcial? ¿O minimizó su responsabilidad? ¿o le puso un nombre elegante a sus abominaciones? En ocasiones, personas se acercan así a Dios con esperanza de reconciliarse y ofrecen en vez de una verdadera confesión, una especie de pretexto. O tratan de hermosear con palabras sus maldades. Pero eso no es de ninguna manera confesar tu pecado. Esperar recibir perdón y paz cuando se hacen confesiones a Dios con pretextos, es en vano.</p>
+
+        <div class="highlight-box">
+            <p>En la celebración del Yom Kipur, la festividad hebrea que se conoce en el Antiguo Testamento como Día de la Expiación, muchos rabinos todavía enseñan en las sinagogas un antiguo principio: <span class="hebrew-word">"No importa cuánta convicción sientas, qué tan mal o culpable te sientas, mientras no expreses tus pecados claramente con palabras ante Dios no lo has confesado y por tanto no podrás recibir perdón"</span>. Esta tradición tiene sus raíces en las enseñanzas del Antiguo Testamento sobre la importancia de la confesión y es clave para entender el arrepentimiento cristiano.</p>
+        </div>
+
+        <p>Algo muy interesante del Salmo 32 es que se trata de un <span class="hebrew-word">Masquil</span>, esto es, poesía didáctica. Este tipo de salmos fueron diseñados para enseñar doctrina y al mismo tiempo ayudarnos a reflexionar profundamente en cada frase. Si lo lees completo, notarás que la estructura del mismo contiene varias veces la palabra <span class="hebrew-word">selah</span>, que en el contexto señala un interludio o pausa musical, un momento en donde el cántico cesaba y sólo sonaban los instrumentos para permitir que se meditara la estrofa que se acababa de cantar. El efecto de hacer esas pausas al leerlo es dramático y permite profundizar en lo que se está diciendo. Otro aspecto que se debe resaltar es que se trata de un Salmo enfocado particularmente al justo que llega a caer en pecado. No es, propiamente dicho, un texto para inconversos. Es para quien ha caído y no encuentra la salida.</p>
+
+        <h2>El remedio viene en la tercera estrofa:</h2>
+
+        <div class="scripture">
+            "Mi pecado te declaré, y no encubrí mi iniquidad.<br>
+            Dije: Confesaré mis transgresiones a Jehová;<br>
+            Y tú perdonaste la maldad de mi pecado."
+            <span class="scripture-ref">Salmo 32:5</span>
+        </div>
+
+        <p>Días de gemir, desfalleciendo en vida, consumido por la culpa, sabiendo que Dios estaba contra él. ¡Muerto en vida cuando antes todo era vitalidad espiritual! De pronto entiende y decide a sincerarse con Dios. Y confiesa.</p>
+
+        <p><span class="red-emphasis">Y confiesa claro</span>. Como un dique que revienta bajo la presión de muchas aguas estancadas, las palabras ahora fluyen como torrente.</p>
+
+        <p><span class="emphasis">"Mi pecado te declaré y no encubrí mi iniquidad."</span> No hay más minimización ni pretextos. Allí están las benditas palabras que expresan verazmente lo que se ha hecho. Palabras fuertes: pecado, iniquidad, maldad. Suena feo, y no era agradable a su ego, pero era la verdad.</p>
+
+        <p>¿Cuántos viven hoy miserablemente y <span class="emphasis">"su verdor se volvió en sequedales de verano"</span> por no haber confesado? ¿Por no decirle a Dios claramente sus iniquidades debido al orgullo?</p>
+
+        <p>El Salmo 32 es claro. Dios otorga la dicha del perdón al que abandona su maldad y la confiesa adecuadamente. ¡Y qué dicha tiene aquel a quien Jehová no culpa de iniquidad! No hay temor al castigo ni al juicio, ni incertidumbre si "estoy bien o mal", ni confusión de si pequé o no. Todo es claro y dichoso, hay acceso con libertad al Padre por el Espíritu Santo.</p>
+
+        <p>El versículo 2(b) aporta el secreto de quienes habiendo caído, son perdonados. <span class="emphasis">"En cuyo espíritu no hay engaño"</span>. En otras palabras, no trata de engañar a Dios ni a sí mismo con confesiones tibias ni con palabras elegantes y pretextos para minimizar su culpa y vileza.</p>
+
+        <div class="warning-box" style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 6px; padding: 20px; margin: 25px 0;">
+            <p>El autoengaño y la pretensión de engañar a Dios son grandes obstáculos para que alguien que cayó se reconcilie con Dios. Dejar de hacer lo malo no basta cuando no hay honestidad y palabras correctas para llamar a la iniquidad por su nombre.</p>
+        </div>
+
+        <p><span class="red-emphasis">¿Has cometido un pecado y lo has dejado de cometer pero no tienes aún la dicha espiritual del perdón?</span> Corre a tu cuarto, en lo secreto, y quítate la máscara. No trates de guardar apariencias con el que no puede ser burlado. Él conoce tus vilezas, tus intenciones, el orgullo. No manipules las palabras para sentirte mejor ante tus propios ojos. ¡Dios te conoce! ¿Qué le puedes ocultar? Confiesa <span class="emphasis">"sin encubrir tu iniquidad"</span>. No escatimes palabras y experimentarás la dicha de David cuando se sinceró con Dios.</p>
+
+        <div class="scripture">
+            "Si confesamos nuestros pecados, Él es fiel y justo para perdonarnos..."
+            <span class="scripture-ref">1 Juan 1:9</span>
+        </div>
+
+        <p>Por supuesto, el Salmo 32 nos enseña cómo es que hay que confesar ante El Único que perdona pecados.</p>
+
+        <div class="highlight-box">
+            <p style="font-size: 1.2rem; text-align: center;">No dejes que el orgullo o la incredulidad te roben la oportunidad.</p>
+        </div>
+    </div>
+</div>
+
+<div class="menu-link-container">
+  <a class="menu-button" href="../../menu.html">Volver al Menú</a>
+</div>
+
+<footer>
+    Revista Avivamiento - ¡Ayúdame a salir de aquí!<br>
+    Estudio sobre el Salmo 32 - El arte perdido de la confesión
+</footer>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

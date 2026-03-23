@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros de Hierro - David Wilkerson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+
+
+    .menu-button {
+        display: inline-block;
+        margin: 20px 0 10px;
+        padding: 10px 18px;
+        background-color: #4a6491;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .menu-button:hover {
+        background-color: #2c3e50;
+    }
+
+    .menu-link-container {
+        text-align: center;
+    }
+footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .letter-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #4a6491;
+        }
+
+        .letter-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .separator {
+            border-top: 1px dashed #ccc;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+  <script defer src="../../../assets/reader-mode.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por David Wilkerson</div>
+            <div>CARROS DE HIERRO</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <div class="scripture">
+            "Tiempo es de actuar, oh Jehová, porque han invalidado tu ley."
+            <span class="scripture-ref">Salmo 119:126</span>
+        </div>
+
+        <p>La Biblia dice en la carta a los Romanos, que la creación gime al unísono y anhela ardientemente la manifestación de los hijos de Dios. (Ro. 8:19) ¿Por qué gime a una y aún está con dolores de parto hasta ahora? Porque ve su esclavitud a la corrupción y no puede hacer nada. Ve al enemigo tomándolo todo y sólo puede contemplarlo con impotencia.</p>
+
+        <p>Dios ha establecido que sus enemigos deben ser derrotados y puestos por estrado de Sus pies, por medio de su iglesia; de sus hijos. Y sin embargo, a pesar de lo que muchos pudieran argumentar, ese hecho no tiene trazas de cumplirse en el cristianismo nominal actual. ¿Por qué David Wilkerson opina de este modo? Muy sencillo. En primer lugar, un gran sector de lo que se autodenomina iglesia de Jesucristo, participa de los mismos pecados que el mundo. No es extraño encontrar en las Congregaciones; adulterios, fornicaciones, lascivias, enemistades, pleitos, celos, herejías, amor a las diversiones mundanas, etc. etc. Y esto, desde los líderes hasta el congregante más reciente. Jamás podrá un esclavo atado a gruesas cadenas, liberar a otro en su misma condición.</p>
+
+        <p>En segundo lugar, encontramos un sector mucho más reducido, que ciertamente no participa de estos pecados, pero no tiene el suficiente vigor espiritual para reprenderlos y extirparlos de su entorno. Podríamos denominarlo, <span class="emphasis">"Cristianismo de Supervivencia"</span>. Tampoco éstos son los conquistadores que Dios necesita para contrarrestar la maldad de estos últimos tiempos.</p>
+
+        <p>Necesitamos un cambio; un despertamiento. Necesitamos que este mensaje retumbe en nuestras conciencias, avergonzándonos del acomodo espiritual imperante. Una sacudida del estupor y de las mortales fantasías religiosas que vivimos.</p>
+
+        <p>No podemos ignorar por más tiempo que por culpa de nuestra actitud, el Nombre del Señor es blasfemado entre los que no lo conocen.</p>
+
+        <p>Paguemos el precio necesario para llegar a ser la Iglesia digna del Señor Jesucristo.</p>
+
+        <div class="scripture">
+            "Tus enemigos vociferan en medio de tus asambleas... Se parecen a los que levantan el hacha en medio de tupido bosque. Han puesto a fuego tu santuario. Han profanado el tabernáculo de tu nombre, echándolo a tierra... No vemos ya nuestras señales; No hay más profeta... ¿Hasta cuándo, oh Dios, nos afrentará el angustiador? ¿Ha de blasfemar el enemigo perpetuamente tu nombre?..."
+            <span class="scripture-ref">Salmo 74:4-10</span>
+        </div>
+
+        <div class="editors-note">
+            ATENTAMENTE<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">CARROS DE HIERRO</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por: David Wilkerson</div>
+
+    <div class="content-section">
+        <h2>MENSAJE</h2>
+
+        <div class="scripture">
+            "Y Jehová estaba con Judá, quien arrojó a los de las montañas; mas no pudo arrojar a los que habitaban en los llanos, los cuales tenían carros herrados"
+            <span class="scripture-ref">Jueces 1:19</span>
+        </div>
+
+        <div class="scripture">
+            "Sino que aquél monte será tuyo; pues aunque es bosque, tú lo desmontarás y lo poseerás hasta sus límites más lejanos; porque tú arrojarás al cananeo, aunque tenga carros herrados, y aunque sea fuerte."
+            <span class="scripture-ref">Josué 17:18</span>
+        </div>
+
+        <p>¿Por qué nuestro país está infestado de SIDA? ¿Por qué se han vuelto inseguras nuestras calles? ¿Por qué toda una generación se ha enajenado con las drogas y el alcohol? ¿Por qué están nuestras fronteras indefensas ante los traficantes que inundan nuestra nación con una oleada de todo tipo de drogas?</p>
+
+        <p>Isaías describe nuestros tiempos:</p>
+
+        <div class="scripture">
+            "¡Oh, gente pecadora, pueblo cargado de maldad, generación de malignos, hijos depravados! Dejaron a Jehová, provocaron a ira al Santo de Israel, se volvieron atrás. ¿Por qué queréis ser castigados aún? ¿Todavía os rebelaréis? Toda cabeza está enferma, y todo corazón doliente. Desde la planta del pie hasta la cabeza no hay en él cosa sana, sino herida, hinchazón y podrida llaga; no están curadas, ni vendadas, ni suavizadas con aceite. Vuestra tierra está destruida, vuestras ciudades puestas a fuego, vuestra tierra delante de vosotros comida por extranjeros, y asolada como asolamiento de extraños"
+            <span class="scripture-ref">Isaías 1:4-7</span>
+        </div>
+
+        <p>Dios le advirtió a Israel que sus inclinaciones perversas acabarían en esclavitud:</p>
+
+        <div class="scripture">
+            "Y Jehová te hará volver a Egipto... y allí seréis vendidos a vuestros enemigos"
+            <span class="scripture-ref">Deuteronomio 28:68</span>
+        </div>
+
+        <p>Nuestro país se ha vuelto una nación mala y perversa; y Dios nos ha entregado al enemigo. Ahora somos una nación de esclavos, <span class="red-emphasis">¡Somos esclavos de la lujuria, el alcohol, las drogas, la televisión, el dinero, el sexo, los placeres!</span>. ¡Fuimos advertidos de los errores de Israel!</p>
+
+        <div class="scripture">
+            "Y estas cosas les acontecieron como ejemplo, y están escritas para amonestarnos (instrucción), a nosotros a quienes han alcanzado los fines de los siglos."
+            <span class="scripture-ref">1 Corintios 10:11</span>
+        </div>
+
+        <p>Un ejemplo convincente y detallado para nuestra instrucción se encuentra en Jueces 4 y 5.</p>
+
+        <div class="scripture">
+            "...Los hijos de Israel volvieron a hacer lo malo ante los ojos de Jehová. Y Jehová los vendió en mano de Jabín, rey de Canaán..."
+            <span class="scripture-ref">Jueces 4:1-2</span>
+        </div>
+
+        <p>Israel fue una vez una nación santa, apartada para Dios, que dependía solamente de su poder ¡Y no tenía temor a nada!, sus ciudades estaban llenas de niños que jugaban alegremente. Sus líderes y pastores anhelaban conocer el corazón de Dios. ¡Pero Dios vendió a Israel a esclavitud a causa de su lujuria y su apostasía! Durante 20 años de cautiverio Israel se rebajó como los cobardes porque 900 carros herrados cananeos corrían de un lado al otro por sus calles. Ningún israelita podía caminar por las calles con seguridad. ¡Los niños vivían con temor! Había "tregua en la puerta" debido a que se habían vuelto a nuevos dioses.</p>
+
+        <div class="scripture">
+            "Quedaron abandonados los caminos... y los que andaban por senderos torcidos"
+            <span class="scripture-ref">Jueces 5:6</span>
+        </div>
+
+        <p>¡Qué pena! ¡Qué vergonzoso! ¡Hubo un día en que el pueblo de Dios hubiera podido destruir a cualquier enemigo! Ningún arma que se levantara contra ellos los podía vencer. Más ahora, ve a estos cobardes -el pueblo de Dios- escondiéndose, caminando en temor. El sonido retumbante de los carros de hierro infundía temor en sus corazones. Era el mismo tipo de escena que en Checoslovaquia cuando los tanques retumbaban por las calles imponiendo el comunismo. ¡Toda oposición era aplastada! Israel huyó a los poblados, escondiéndose en las montañas. El pecado había vuelto a la nación en un pueblo cobarde, envilecido y sin poder.</p>
+
+        <p>Algunos de ustedes que leen esto tal vez ya se estén preguntando, <span class="emphasis">"¿Qué es lo que quieres decir? ¡Ciertamente no vas a insinuar que los cristianos de hoy somos esclavos y cobardes! ¡Seguramente no vas a pasar por alto todas las convenciones grandiosas, los seminarios, las cruzadas y las marchas! ¿Qué hay de todos los ministerios especiales contra el aborto y la pornografía? ¿Y qué de las mega-iglesias donde miles se congregan en reuniones de alabanza y adoración magníficas? ¿No es esto avivamiento? ¿No está Dios con Su iglesia?"</span>. Otros se pueden preguntar, <span class="emphasis">"Mira a todos los cristianos ocupados -los que trabajan en la cárcel y en la calle-. Mira todos los programas de rehabilitación de drogas, todos los retiros espirituales. ¿Y qué acerca de todas las reuniones masivas de literatura, la radio y la televisión cristianas? ¿No es esto avivamiento?"</span></p>
+
+        <p>La respuesta a estas preguntas está en Times Square en la calle 42 -y en todas las zonas indignas y decadentes de todas las naciones-. La respuesta está en muchos de los escondrijos de drogadictos, la gran cantidad de hospitales llenos de pacientes con SIDA, los adictos neuróticos y aturdidos; las tiendas con videos pornográficos multiplicándose por toda la nación y aún en los poblados más pequeños.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>ESTAMOS HABLANDO DE LOS CARROS DE HIERRO DEL DIABLO</h2>
+
+        <p>Los perversos carros herrados del diablo todavía corren de un lado a otro por las calles -esparciendo temor- <span class="red-emphasis">¡Sin que nadie los confronte!</span> ¡La nación y la iglesia parecen ser inútiles para detenerlos!</p>
+
+        <p>Recientemente trajimos a más de 500 cristianos a la ciudad de Nueva York para ayudarnos a comenzar la iglesia en Times Square. La mayoría eran valientes e intrépidos y tenían una carga por Nueva York. Pero algunos no podían esperar a regresarse a sus refugios, y algunos se fueron diciendo: <span class="emphasis">"¡Qué pozo más degradante! ¡Los demonios tienen el control por todos lados! ¡Qué degradante!"</span>. Los neoyorquinos no son diferentes. Yo escucho a los cristianos decir: <span class="emphasis">"Yo trato de permanecer al margen de esos lugares perversos! No quiero estar cerca de ellos"</span>. Así pues, escapamos a nuestras casas y apartamentos seguros, permaneciendo lejos de los adictos, permaneciendo lejos de Times Square, permaneciendo lejos de los pobres y de las prostitutas, manteniéndonos lejos, <span class="red-emphasis">¡Temerosos de estos carros de hierro satánicos!</span></p>
+
+        <p>¿Cómo nos atrevemos a jactarnos de que el avivamiento ha llegado -en cualquier parte de este territorio-? ¡Cuando las fortalezas de Satanás no están siendo desafiadas! ¿Es esto avivamiento, cuando todos los poderes legislativos que hay, municipal, estatal y nacional, no pueden controlar la calle 42? ¿Cuando todo lo que nuestro gobierno puede ofrecer es ir a los carros de hierro y decir <span class="emphasis">"¡SOLO DI NO!"</span>? ¿Hay avivamiento cuando todas las iglesias juntas en la ciudad de Nueva York no son capaces de detener los carros de hierro del diablo?</p>
+
+        <p>Los adictos y rufianes se están haciendo más valientes, los homosexuales ya no temen esconderse; los pornógrafos se burlan de nuestras leyes; los corredores de la bolsa de valores roban y negocian descaradamente; los criminales saquean y roban a plena luz del día; y cada domingo, algunos cientos de cristianos se reúnen como cobardes en sus seguras casas, la mayoría de ellos, pensando que nada se puede hacer contra estos carros de hierro! ¡El resto está holgazaneando en sus cómodas sillas, riéndose con sus programas televisivos.</p>
+
+        <p>La verdad es que la iglesia se ha conformado solamente con victorias en la cima de la montaña. Como los israelitas en la historia de Jueces 1, nosotros <span class="emphasis">"Perseguimos al enemigo en la montaña"</span>. <span class="emphasis">"Y Jehová estaba con Judá, quien arrojó a los de las montañas..."</span> (Jue. 1:19). Esto representa la victoria sobre los hábitos: la carne, la lujuria -¡El enemigo de adentro!- Israel puso sus altares en los lugares altos, empezaron a acostumbrarse a alabar y a adorar, y concedieron el resto a los seguidores del diablo. Ellos menospreciaron a los 900 carros de hierro y dijeron <span class="emphasis">"el valle pertenece al dios de este mundo. Que el enemigo lo posea. No lo vamos a confrontar. Vamos a quedarnos aquí arriba a disfrutar de las bendiciones en la cima de la montaña. ¿Qué podemos hacer contra tal fuerza maligna?"</span></p>
+
+        <p>Por el hecho de no ir tras esos carros de hierro Israel presentó un falso concepto de Dios a los paganos. ¡Ellos hicieron aparecer a Dios como débil e impotente! Los conductores de los carros se mofaron, <span class="emphasis">"¡El suyo es un Dios de las colinas! Él es solamente un Dios de cantos, ¡Alguien de quien cantar! ¡Alaban muy ruidosamente pero actúan cobardemente! El suyo es sólo el Dios de los cobardes e impotentes"</span>.</p>
+
+        <p><span class="red-emphasis">¡Y así es hoy en día!</span> ¿Qué imagen tiene el mundo de la iglesia? Esto es lo que ellos están diciendo, <span class="emphasis">"Son un montón de ancianas débiles y fanáticas y predicadores en la calle que te ponen un folleto en la mano. La iglesia es para los enfermos, los débiles, los impotentes, ¡Aquellos que se están perdiendo! Ese tipo de gente no hace la más mínima diferencia. Ellos han estado aquí durante años, pero nada cambia. Al contrario, ¡Se vuelve peor! Todos ellos son como los predicadores codiciosos de la televisión, tienen a un 'Cristo computadora'. No tienen agallas ni poder. Hablan mucho de poder, pero sólo pelean con los demonios que están dentro de la iglesia. Tienen miedo del verdadero diablo aquí afuera"</span>.</p>
+
+        <p>No puede darse un verdadero avivamiento hasta que el pueblo de Dios salga en fe a confrontar a los carros de hierro del diablo -¡Justo en su propio territorio!-. ¿Por qué debe haber un avivamiento de santidad? Porque ese es el único tipo de avivamiento que saca a relucir el odio por el pecado. <span class="red-emphasis">¡Debe existir un coraje santo contra los carros de hierro del diablo!</span> ¡Cuando el avivamiento que Dios quiere ha llegado, ningún demonio está a salvo! No habrá coexistencia con el mal. ¡Ningún principado o potestad será inmune a la autoridad espiritual ya que la visión de la santidad de Cristo crea un odio y un coraje enérgico contra el pecado! ¡A los endemoniados se les ordena ser libres! ¡Los fabricantes de ídolos claman <span class="emphasis">"nuestro sustento está en juego"</span>! Los libros inmundos son quemados. Los engañados que mienten al Espíritu Santo caen muertos. Los magistrados tiemblan, los carceleros caen sobre sus rostros y se convierten, <span class="red-emphasis">¡Y las ciudades se llenan de la noticia de que Dios ha llegado!</span></p>
+
+        <p>Durante el gran avivamiento de Welsh bajo el ministerio de Evan Roberts ¡Los adolescentes oraban!. Se cansaron de ver papás alcohólicos golpear a sus esposas. ¡Oraban y los bares cerraban! La policía lloró y se unió en el canto -y el crimen casi se detuvo por completo-.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>ORACIÓN DE INTERCESIÓN -LA ÚNICA MANERA- DE ORIGINAR EL AVIVAMIENTO QUE DIOS QUIERE</h2>
+
+        <div class="scripture">
+            "Entonces los hijos de Israel clamaron a Jehová..."
+            <span class="scripture-ref">Jueces 4:3</span>
+        </div>
+
+        <p>¡Desesperadamente buscaron a Dios!</p>
+
+        <p>En medio de toda la maldad Dios tuvo un testimonio de su santidad en la tierra -una profetisa llamada Débora-. Mientras todos los demás se mostraban cobardes e insensibles, Débora estaba en el monte de Efraín encerrada con Dios aprendiendo a conocer su corazón, llevando su carga y aprendiendo a confiar en Jehová para la victoria sobre todo el poder del enemigo. Débora empezó a predicar una palabra pura a la iglesia del Señor que estaba debajo de la palmera en el monte de Efraín. Hubo un mensaje de santidad y de arrepentimiento y victoria (¡Que se predicaba en esa iglesia escondida!), el pueblo vino -despacio al principio- ¡Ricos y pobres! La clase alta <span class="emphasis">"... vosotros los que cabalgáis en asnos blancos..."</span> (Jue. 5:10), vinieron a Débora para escuchar y orar. Dios siempre tiene a los suyos dentro de los ricos. Durante el avivamiento de Carlos Finney los más adinerados en la ciudad estaban en el corazón de todo. Ellos escucharon a Débora y como sus corazones ardían dentro de ellos, también empezaron a ver como los carros de hierro huían.</p>
+
+        <p>La clase media se acercó <span class="emphasis">"...los que viajáis..."</span> (Jue. 5:10). No cabalgando en asnos blancos -hoy estos representan aquellos que utilizan los autobuses, el metro- los empleados. No había distinción de clases sociales al tiempo que todos iban a escuchar la misma palabra.</p>
+
+        <p>Los pobres venían <span class="emphasis">"Lejos del ruido de los arqueros, en los abrevaderos..."</span> (Jue. 5:11). Estos tenían que pelear para sobrevivir; siempre estaban en peligro, viviendo de un momento a otro. Pero ellos también vinieron a la iglesia de la palmera de Débora. Y los escribas vinieron <span class="emphasis">"Y de Zabulón los que tenían vara de mando."</span> (Jue. 5:14). Todos los avivamientos tienen esto, ¡Un remanente escondido de escribas deseosos de pelear contra los carros de hierro con sus dones! Yo profetizo que muchos serán levantados en los medios de comunicación en los días que vienen. ¡La suya será una palabra poderosa! Escritores de oración, ambos hombres y mujeres estarán enlistados en la última batalla.</p>
+
+        <p>Eran hombres y mujeres -¡Trabajando juntos!- eran Débora y Barac ministrando juntos. No hay nada "macho" en un verdadero avivamiento del Espíritu Santo. Es Dios moviéndose en sus siervos, ¡Es Dios provocando a los hombres a actuar! Qué diferente es la actitud de Barac con lo que vemos hoy en día. A él se le dijo que si Débora iba sola a la batalla, a una mujer se le daría el crédito por ganar la guerra. ¡A Barac no le importó el crédito o el honor! Quería la autoridad profética y el poder de la oración de esta profetisa con él ¡Así será hoy! ¡Cuando el verdadero avivamiento venga ninguno va a brillar! No habrá vanagloria alguna. Nadie va a escuchar: <span class="emphasis">"Mi predicador favorito"</span>. No habrá más gente diciendo <span class="emphasis">"Mira, ¿No tiene él mucho poder?"</span>. Por el contrario se dirá, <span class="emphasis">"Cristo está ahí, ¡Hay santidad! ¡Dios habla!"</span>.</p>
+
+        <p>La victoria fue realmente ganada contra los carros de hierro en el monte de Efraín debajo de la palmera. Fue un movimiento subterráneo de Dios. El mensaje en esta iglesia era, <span class="emphasis">"¡Ni una pulgada al enemigo! ¡La batalla está aquí!"</span>. Todos los que vinieron a este lugar secreto salieron con sus corazones encendidos. ¡Barac, el guerrero (<span class="emphasis">"hombre de trueno"</span>), había estado ahí! ¿Qué escuchó él de Débora? <span class="emphasis">"¿Cuándo te vas a levantar y actuar como hombre? ¿Cuándo vas a creer que Dios tiene el poder para exterminar estos carros de hierro?"</span>. Y los príncipes, los líderes y los escribas recibieron la palabra manifiesta de que Dios estaba a punto de pelear la batalla: ¡Más vale entrar a la pelea! ¡Dios va a reivindicar Su nombre! ¡Él va a ser glorificado ante los ojos de los impíos!</p>
+
+        <p>De la intercesión surgieron direcciones muy claras: <span class="emphasis">"Ve, junta a tu gente en el monte de Tabor y toma contigo diez mil hombres de la tribu de Neftalí y de la tribu de Zabulón"</span> (Jue. 4:6). ¡No pudo haber sido más claro! Qué específico fue -¡Ve al monte de Tabor y junta diez mil hombres!- El enemigo vendrá contra ti con carros de hierro en el arroyo de Cisón -¡Dios entregará los carros de hierro y todo el ejército en tus manos!-.</p>
+
+        <p>Débora sabía cuándo moverse y dónde moverse. ¡En ese preciso día ella había escuchado a Dios! Para ella, esos novecientos carros de hierro ya eran chatarra.</p>
+
+        <div class="scripture">
+            "Y reunió Sísara todos sus carros, novecientos carros herrados, con todo el pueblo que con él estaba, desde Haroset-goim hasta el arroyo de Cisón. Entonces Débora dijo a Barac: Levántate, porque este es el día en que Jehová ha entregado a Sísara en tus manos. ¿No ha salido Jehová delante de ti? Y Barac descendió del monte de Tabor, y diez mil hombres en pos de él."
+            <span class="scripture-ref">Jueces 4:13-14</span>
+        </div>
+
+        <p>¿Por qué sucede que tanto de lo que hacemos en el nombre de Dios no trae resultados, es confuso, insatisfactorio y no presenta un reto a los carros de hierro del diablo? ¿Por qué no son claras y precisas nuestras direcciones como las que recibió Débora que vivió en un tiempo de menos luz? <span class="red-emphasis">¡Es porque no hemos estado encerrados con Dios!</span> ¡Oramos únicamente para ser recompensados! Rehusamos la disciplina de oración privada y en grupo.</p>
+
+        <p>Yo personalmente estoy cansado de todos los esfuerzos vanos e inútiles. En los pasados 30 años hemos distribuido toneladas y toneladas de literatura. Nos hemos parado ante la gente, como niños en la costa que levantan las manos ante una gran ola y gritan <span class="emphasis">"¡Detente!"</span>. ¡Un folleto no es nada más que una espada de papel -a menos que vaya acompañado por el Espíritu Santo-! Es como si fuéramos a los carros de hierro y gritáramos <span class="emphasis">"Hasta aquí y no más"</span> y luego agitáramos las espadas de papel. ¡Esto es la letra que mata, a menos que vaya respaldada con mucha oración y lágrimas! A través de la oración Dios convierte esa espada de papel en una espada de acero. El evangelismo en las calles, sin el poder del Espíritu Santo y sin autoridad espiritual es ineficaz. Es tan solo puro entretenimiento que no cambia las vidas. <span class="red-emphasis">¡Sólo a través de oración y ayuno podemos ser una amenaza para esas fortalezas!</span></p>
+
+        <p>¡Ellos oraron para que descendiera una tormenta y fue la lluvia la que derribó a los carros de hierro!</p>
+
+        <div class="scripture">
+            "Desde los cielos pelearon las estrellas; desde sus órbitas pelearon contra Sísara. Los barrió el torrente de Cisón, el antiguo torrente, el torrente de Cisón. Marcha, oh alma mía, con poder. Entonces resonaron los cascos de los caballos por el galopar, por el galopar de sus valientes."
+            <span class="scripture-ref">Jueces 5:20-22</span>
+        </div>
+
+        <p>El arroyo de Cisón se desbordó de sus orillas y formó un gran pantano cuando el enemigo se levantó y montó sus carros las ruedas patinaron y se hundieron más y más en el lodo. ¡Los carros se convirtieron en estorbos! Y en pedazos inservibles de hierro. Puedo mirar al ejército de Barac escalando agitadamente sobre esos carros inmovilizados, haciendo añicos las ruedas y despedazando los arreos. ¿No sabes que ellos vieron a esos carros inservibles, enlodados y hundidos y dijeron, <span class="emphasis">"¿le tuvimos miedo a esto?"</span> <span class="emphasis">"Y Jehová quebrantó a Sísara, a todos sus carros y a todo su ejército..."</span> (Jue. 4:15).</p>
+
+        <p>Cuando la lluvia del Espíritu Santo viene en respuesta a la oración, Dios atasca al enemigo en su propio territorio. De la noche a la mañana, el poder de Satanás es expuesto como ineficaz. El pueblo de Dios no tendrá miedo nunca más. No temerán lo que Satanás pueda hacerles. Las familias se salvarán. ¡Los hijos serán fortalecidos! Todas las fortalezas del enemigo serán aplastadas. La lluvia que desciende hace que el poder del enemigo se vea menguado.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¡ES PELIGROSO SER CONDESCENDIENTE DURANTE EL DÍA QUE DIOS SEÑALÓ PARA EL DESPERTAMIENTO!</h2>
+
+        <p>Mientras que la cuadrilla avivada fue a tomar dominio en el nombre de Dios, otros rehusaron involucrarse. Los carros de hierro no les preocuparon ya que estaban muy ocupados con sus propios problemas y sus vidas.</p>
+
+        <div class="scripture">
+            "¿Por qué te quedaste entre los rediles, para oír los balidos de los rebaños? Entre las familias de Rubén hubo grandes propósitos del corazón. Galaad se quedó al otro lado del Jordán; y Dan, ¿Por qué se estuvo junto a las naves? Se mantuvo Aser a la ribera del mar, y se quedó en sus puertos."
+            <span class="scripture-ref">Jueces 5:16-17</span>
+        </div>
+
+        <p>¡Los rubenitas todavía están entre nosotros! Ellos ahora están llevando a cabo o planeando otro seminario de <span class="emphasis">"Cómo hacerlo"</span>. Se congregan en convenciones y conferencias compartiendo grandiosas ideas de cómo ganar a los perdidos, cómo tomar dominio, cómo implantar un reino justo. Ellos están planeando estrategias. Tienen sus computadoras arrojando números -de cómo el mundo puede salvarse en 90 días si 3.5 cristianos le predican a 6.2 paganos-. ¡Qué grandiosas búsquedas de todo corazón! Ellos aún lloran por su desinterés. Aman ir a reuniones para sentir una gran convicción. Toman grandiosas resoluciones. Forman comités. Estudian estrategias. Siempre preguntan, <span class="emphasis">"¿Cuál es tu estrategia para alcanzar tu ciudad? ¿Cuál es tu plan maestro?"</span> Mi respuesta es, <span class="emphasis">"Nuestro único plan es permanecer en nuestras rodillas hasta que Dios nos diga exactamente cómo y cuándo actuar"</span>. Ellos todavía están hablando cuando la batalla ya se peleó y se ganó. Ellos son los que escriben los libros para generaciones futuras -<span class="emphasis">"16 pasos para vencer a los carros de hierro"</span>-. Los rubenitas eran gente que no actuaba, no se comprometía, ni se ensuciaba las manos, ¡No subía a la montaña para orar con Débora! Tenían que llegar a su próxima conferencia.</p>
+
+        <p>Yo digo <span class="red-emphasis">¡Basta ya de todas las marchas, los especiales en televisión, las reuniones masivas, los planes en papel, las reuniones de estrategia, los grandiosos pensamientos de grandiosas mentes, el estimular, el rogar! ¡Es tiempo de orar! ¡Es tiempo de agarrarse de Dios! ¡Es tiempo de dejar todo a un lado y clamar al Señor por poder y guianza!</span></p>
+
+        <p>¡Galaad, Aser y Dan estaban muy ocupados haciendo dinero! Buscando éxito y prosperidad. ¡Eran demasiado adictos a la comodidad y a lo fácil! Lee Jueces 5:17 otra vez. Ellos se <span class="emphasis">"quedaron en sus puertos"</span>, envueltos completamente en su pequeño mundo de necesidades. ¡Absorbidos por sus pequeñas batallas particulares! Ellos <span class="emphasis">"se quedaron en sus naves"</span>, remando en su propio bote.</p>
+
+        <p>¡Estos son aquellos contra quien Amós profetizó!</p>
+
+        <div class="scripture">
+            "¡Ay de los reposados en Sión... que duermen en camas de marfil, y reposan sobre sus lechos; y comen los corderos del rebaño, y los novillos de en medio del engordadero; gorjean al son de la flauta, e inventan instrumentos musicales, como David; beben vino en tazones, y se ungen con los ungüentos más preciosos; y no se afligen por el quebrantamiento de José..."
+            <span class="scripture-ref">Amós 6:1,4-6</span>
+        </div>
+
+        <p>¡No estaban <span class="emphasis">"afligidos por el quebrantamiento de José!"</span> Ellos <span class="emphasis">"dilataron el día malo"</span>: ¡Durmiendo en camas de marfil, reposando!; reposando sobre sus lechos; comiendo y bebiendo abundantemente; gorjeando su música. Ellos estaban inventando nuevas formas de disfrutar la vida. Se dice que alguien entró a la oficina de A.B. Simpson temprano en una mañana y vio a ese gran predicador misionero en el suelo, abrazando un globo terráqueo -llorando por los perdidos-.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LA MALDICIÓN DE MEROZ</h2>
+
+        <div class="scripture">
+            "Maldecid a Meroz, dijo el ángel de Jehová; maldecid severamente a sus moradores, porque no vinieron al socorro de Jehová, al socorro de Jehová contra los fuertes."
+            <span class="scripture-ref">Jueces 5:23</span>
+        </div>
+
+        <p>¡Los de Meroz simplemente no se preocuparon! ¡Y fueron maldecidos por Dios por su complacencia! La maldición de Meroz es uno de los más serios temas en toda la palabra de Dios. Fue una maldición directa del cielo ¡Claramente revelando la actitud de Dios acerca de la complacencia! Rubén, Galaad y Aser no se comprometieron pero ellos no fueron maldecidos como lo fue Meroz. ¿Por qué la aterradora maldición sobre Meroz?</p>
+
+        <p><span class="red-emphasis">¡Fue una amarga controversia que Dios tuvo con Meroz!</span> Yo creo que fue causada porque Meroz pecó contra la luz. Ellos habían escuchado el sonido de la trompeta y se hicieron sordos. ¡Ellos escucharon el clamor de Débora y se burlaron de ella! Los merozitas, creo yo, fueron maldecidos porque estaban tan cerca de la batalla, tan cerca de los carros de hierro, pero tan lejos de comprometerse o preocuparse.</p>
+
+        <p>Los días se han acabado en que los cristianos puedan estar tan cerca de la batalla, ver tantas cosas alrededor de ellos y las tapen diciendo, <span class="emphasis">"¡Me voy a encerrar en mi cuarto, voy a orar y voy a crecer en Cristo yo sólo, no necesito a nadie -solo yo y el Señor-!"</span></p>
+
+        <p>¡No! El juez nos va a llamar a cuentas. <span class="emphasis">"¡Estuve hambriento y no me diste de comer! ¡Desnudo y en prisión y tú no hiciste nada! ¡No fuiste a los desviados y a los esclavizados, ni los forzaste a entrar! ¡Te encerraste, envolviste tu talento en una servilleta y esperaste la venida del Señor! ¡Tú eres el talento encerrado!"</span></p>
+
+        <p>Meroz trató de ocultarse del tumulto y tomó la salida fácil y segura. Ellos dejaron al resto del pueblo de Dios peleando contra los carros de fuego, mientras ellos se juntaban alrededor de sus acogedoras chimeneas. Pero Dios despreció su complacencia y puso una maldición sobre ellos. El tipo de maldición de Meroz es la peor de todas. Es ser abandonado al egoísmo, robado de toda energía y visión espiritual, para simplemente desaparecer en el olvido.</p>
+
+        <div class="highlight-box">
+            <p>En cuanto a mi respecta, denme el valor y el fuego de Débora, denme su determinación en el Espíritu Santo, su confianza y su fe sin límites, su renuencia a acobardarse delante de los enemigos de Dios. <span class="red-emphasis">¡Que la iglesia de Jesucristo declare la guerra a todos los carros de hierro satánicos y obtenga la victoria con oración!</span></p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>CARTAS DE NUESTROS SUSCRIPTORES</h2>
+
+        <div class="letter-box">
+            <div class="letter-name">Nombre: Rogelio Olmedo Morales (Pastor) - Oaxaca.</div>
+            <p>Quiero agradecer y felicitar al ministerio Avivamiento por el material que distribuye, el cual es tan urgente en nuestros días. Quiero decirles que el material titulado "El día del juicio" ha impactado tanto mi corazón que sentí la urgencia de compartirlo con la congregación. Para esto, no sé si cometí un error, si es así pido disculpas, saqué cincuenta copias para dar por lo menos una a cada matrimonio y familias, quiero decir también que tanto era el deseo que este artículo despertara a cada Cristiano que lo leyera, que hasta lo pusimos sobre el altar y oramos porque fuera ungido del Espíritu Santo y en seguida lo distribuimos, por eso digo que es un material importante y urgente.</p>
+            <p>Gracias por todo, Dios respalde tan importante ministerio.</p>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="letter-box">
+            <div class="letter-name">Nombre: Jorge Reyes Reyes - Cd. Nezahualcóyotl, Edo. de México.</div>
+            <p>Me permito dirigir a ustedes un cordial saludo y a la vez mi más sincero agradecimiento por el esfuerzo realizado de parte suya por la publicación y distribución de material cristiano libre de toda contaminación o tibieza espiritual.</p>
+            <p>Hago de su conocimiento que antes yo era un religioso que acudía a una congregación pseudocristiana llevando una vida espiritual de autoengaño y manchando con mi triste testimonio el nombre de nuestro Señor Jesucristo.</p>
+            <p>Una de las cosas que me hizo reaccionar fue la lectura de algunos boletines de su revista, por lo cual escogí seguir por el camino angosto y abandonar mi iglesia en medio de críticas, murmuraciones y difamaciones por parte de los líderes de aquél lugar, pues no soportaban que un líder dejara sus enseñanzas y predicara arrepentimiento.</p>
+            <p>Hoy día con gran felicidad puedo decir que he hallado verdaderamente al Señor y me congrego en una verdadera iglesia cristiana en donde se predica y se vive el arrepentimiento y la santidad sin la cual nadie verá al Señor.</p>
+            <p>El propósito de mi carta es, el de animarles a seguir editando y distribuyendo sus ejemplares, pues puedo decir con una vida arrepentida y en santidad que su trabajo puede ayudar a otras personas a volver en sí y seguir al Señor verdaderamente.</p>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="letter-box">
+            <div class="letter-name">Nombre: Rafael Rojas Escartin (Pastor) - México, D.F.</div>
+            <p>Queridos hermanos, cuánto bien para mi vida han hecho las revistas que me obsequiaron. Avivaron mi vida en Cristo, les estoy muy agradecido y a la vez pido esas revistas para darlas a otros compañeros pastores.</p>
+            <p>Dios les siga guiando y bendiciendo.</p>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="letter-box">
+            <div class="letter-name">Nombre: Martha Domínguez</div>
+            <p>Estimados Señores, me encantó la carta que me escribieron y sobre todo por estar orando por mí. Esta última revista estuvo muy interesante y sobre todo que me llevó a pedir perdón a Dios por la tibieza de mi vida Cristiana y pedir por ese avivamiento.</p>
+            <p>Estoy completamente convencida de que Dios puede y quiere hacer ese milagro en nuestras vidas y en nuestro país.</p>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="letter-box">
+            <div class="letter-name">Nombre: Efraín Flores F. - Cuernavaca, Morelos</div>
+            <p>Hermanos que imparten la revista Avivamiento, que Dios les bendiga grandemente en su labor.</p>
+            <p>Hermanos. Soy una persona que tiene poco que dejé una iglesia, que nunca tuvo un encuentro con Jesucristo, por lo tanto la iglesia no crecía. Las almas llegaban y se iban, y después de investigar por qué ocurría eso, encontré que este líder hacía cosas feas que no se pueden contar y salí mejor a unirme a otra iglesia y luego leí su revista Avivamiento que alguien me prestó y eso me dio más fuerza, ya que pude identificar a un falso ministro. Les pido si me la podían estar enviado regularmente, pues me ha sido de gran bendición.</p>
+            <p>Que Dios les bendiga.</p>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="letter-box">
+            <div class="letter-name">Nombre: Noé Rincón Valdón - México, D.F.</div>
+            <p>Apreciables hermanos; llegó a mis manos la revista Avivamiento que fue de grande bendición, con un tema verdadero que ha despertado mi vida para vivir delante de Dios con toda la consagración que Dios pide. Será un esfuerzo más para buscar siempre la consagración, pero sé que Dios estará dispuesto a ayudar a todo aquél que quiere agradar a Dios.</p>
+            <p>Así que, hermanos solicito una suscripción para seguir recibiendo este valioso mensaje. Dios premie su esfuerzo que hacen para que el pueblo de Dios siga buscando el rostro de Jesús.</p>
+        </div>
+    </div>
+</div>
+
+<div class="menu-link-container">
+  <a class="menu-button" href="../../menu.html">Volver al Menú</a>
+</div>
+
+<footer>
+    Revista Avivamiento - Carros de Hierro<br>
+    Por David Wilkerson
+</footer>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Doctrina de Jezabel - David Wilkerson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+
+
+    .menu-button {
+        display: inline-block;
+        margin: 20px 0 10px;
+        padding: 10px 18px;
+        background-color: #4a6491;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .menu-button:hover {
+        background-color: #2c3e50;
+    }
+
+    .menu-link-container {
+        text-align: center;
+    }
+footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .doctrine-list {
+            margin: 20px 0 20px 30px;
+        }
+
+        .doctrine-list li {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+  <script defer src="../../../assets/reader-mode.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por David Wilkerson</div>
+            <div>LA DOCTRINA DE JEZABEL</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>Estimados lectores: <span class="emphasis">"La doctrina de Jezabel"</span>. Jezabel sin duda ha representado el símbolo perfecto del adulterio espiritual y la apostasía. ¿Quién es Jezabel? Hija de Et-baal rey de los sidonios, sacerdotisa de Astarté y ferviente adoradora de Baal. Dotada de un enérgico carácter con el cual gobernaba a través de su marido el rey Acab, quien terminaba haciendo la voluntad de su mujer; llegando a construir para ella un templo y un altar en Samaria consagrados a Baal y una estatua para Astarté.</p>
+
+        <p>Fue Jezabel quien dio muerte a todos los profetas de Jehová, y quien también se propuso dar muerte al profeta Elías. Su nombre ha sido símbolo de la falsa doctrina y apostasía.</p>
+
+        <p>El Nuevo Testamento nos hace referencia también a una profetisa de nombre Jezabel (Quizás esta Jezabel es alegórica o quizás fue real):</p>
+
+        <div class="scripture">
+            "Pero tengo unas pocas cosas contra ti: que toleras que esa mujer Jezabel, que se dice profetisa, enseñe y seduzca a mis siervos a fornicar y a comer cosas sacrificadas a los ídolos"
+            <span class="scripture-ref">Apocalipsis 2:20</span>
+        </div>
+
+        <p>Uno se asombra al ver como una mujer pudo tener tanta astucia y atractivo como para extraviar a los siervos de Dios en aquella iglesia. La iglesia toleraba a los nicolaítas y a esta líder cuyo objetivo prioritario era la inmoralidad sexual, y aquellos, se vieron demasiado involucrados con ella como para poder enfrentarse a la herejía.</p>
+
+        <p>En la asamblea se había tolerado doctrinas impuras. ¿El resultado? La práctica de la fornicación y la idolatría. Lo más alarmante es que esto se hizo ante los ojos del liderazgo de aquella época. <span class="emphasis">"Si la luz que había en ellos era tinieblas, ¡cuántas no serían las mismas tinieblas!"</span></p>
+
+        <p>Así como la Jezabel del Antiguo Testamento había corrompido al pueblo de Dios con su perfidia así esta mujer enseñaba que los cristianos podían darse a estas prácticas sin pecar por ello. Quizás animaban a los creyentes a unirse a los gremios profesionales de Tiatira, aunque esto involucraba honrar al dios o la diosa del gremio y a participar en fiestas en las que se promovía el culto y el sacrificio a los ídolos. Indudablemente justificaba esta contemporización con el mundo sobre la base de que esto supuestamente impulsaría la causa de la iglesia.</p>
+
+        <p>¿No es esta la manera de pensar de muchos cristianos y ministros en la iglesia actual? Que en nombre del avance del reino de Dios fomentan toda clase de prácticas inmorales, mezclándose y haciéndose uno con el mundo. Diciendo que no hay pecado en dichas prácticas, mientras los fines sean que la "Iglesia crezca".</p>
+
+        <p>Veamos una solemne advertencia en la Escritura:</p>
+
+        <div class="scripture">
+            "Porque vendrá tiempo cuando no sufrirán la sana doctrina, sino que teniendo comezón de oír, se amontonarán maestros conforme a sus propias concupiscencias, y apartarán de la verdad el oído y se volverán a las fábulas"
+            <span class="scripture-ref">2 Timoteo 4:3-4</span>
+        </div>
+
+        <p>Se profetiza un abandono general de la sana doctrina. El apóstol Pablo prevé un tiempo cuando la gente manifestará una repugnancia clara y evidente hacia la enseñanza saludable. Esta sana doctrina a través de la historia cristiana, siempre ha tenido que ver con tomar la cruz, la negación, la santidad y la separación con las cosas mundanas. Sin embargo, la Escritura nos advierte: <span class="emphasis">"Se apartarán"</span>. Un apartarse voluntario de aquellos que enseñan la verdad de la palabra de Dios. Tendrán comezón de oír doctrinas placenteras y cómodas. Acumularán para sí maestros que para satisfacer su concupiscencia, sustituirán la verdad por doctrinas "novedosas" y "gratificantes", una doctrina llena de sensualidad y comodidad. Maestros que les dirán lo que ellos quieren oír.</p>
+
+        <div class="warning-box">
+            <p><span class="red-emphasis">¡Jezabel no ha muerto!</span> Su espíritu sigue recorriendo iglesias y púlpitos, su doctrina sigue siendo seductora y agradable a los oídos. ¡Necesitamos discernimiento en las iglesias! ¡Necesitamos discernimiento en nuestros ministros! ¡Necesitamos aprender a discernir entre lo santo y lo profano, entre lo limpio y lo inmundo! ¡Necesitamos que Dios unja con colirio nuestros ojos para ver!</p>
+        </div>
+
+        <p>Como siempre, es nuestro deseo que recapacite en las palabras de este mensaje y tome las decisiones necesarias. Jezabel no ha muerto.</p>
+
+        <div class="editors-note">
+            Atentamente<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">LA DOCTRINA DE JEZABEL</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por: David Wilkerson</div>
+
+    <div class="content-section">
+        <p>Podría dar un subtítulo a este mensaje <span class="emphasis">"El Peligro de Ser Seducidos por una Falsa Doctrina"</span>. Lea Apocalipsis 2:18-29 y verás que el mismo Cristo advirtió a la iglesia contra la doctrina de Jezabel.</p>
+
+        <div class="scripture">
+            "Toleras que esa mujer Jezabel, que se dice profetisa, enseñe y seduzca a mis siervos a fornicar y a comer cosas sacrificadas a los ídolos"
+            <span class="scripture-ref">Apocalipsis 2:20</span>
+        </div>
+
+        <p>La palabra en griego aquí para Jezabel es un sinónimo de falsa maestra. Ella representa claramente doctrinas falsas. Jesús aclara esto mediante lo que continúa, <span class="emphasis">"... a cuantos no tienen esa doctrina..."</span> (Ap. 2:24).</p>
+
+        <p>Aquí está un grupo de gente de Dios, llena de buenas obras y caridad, teniendo una forma de fe y paciencia. Pero los ojos de Jesús aparecen entre ellos como llamas de fuego. Aun con todo lo que es bueno y meritorio, hay algo muy peligroso que le sigue, algo tan seductor que Cristo advierte que Él enviará juicio y los hará que sean un ejemplo para todas las iglesias. Ciertos miembros de la iglesia se estaban vendiendo a Satanás. Sus buenas obras, caridad, servicio, fe y paciencia estaban eclipsados por una seducción en la que se habían involucrado, una seducción de falsa doctrina. Estaban bajo el encanto de una enseñanza falsa, una enseñanza que vino disfrazada como la Palabra de verdad pero que de hecho era diabólica.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LA SEDUCCIÓN DE LOS SIERVOS DE DIOS</h2>
+
+        <p>Cristo dijo <span class="emphasis">"mis siervos"</span> están siendo seducidos. Ministros hemos llegado a esta mismísima condición peligrosa de la que Cristo nos advirtió. Hay multitudes de pastores, maestros y evangelistas completamente seducidos bajo el encanto de la doctrina de Jezabel. Estos maestros seductores a su vez están produciendo <span class="emphasis">"hijos de seducción"</span>. Ellos enseñan fornicación y consumo de comida de ídolos esto es fornicación espiritual. Esto significa estarse alimentando de comida demoniaca de doctrinas que excusan el pecado.</p>
+
+        <p>Deseo decir en términos no inciertos, que es peligroso establecerse bajo una enseñanza errónea. Una doctrina falsa puede condenarte más fácilmente que todas las lujurias y pecados de la carne. Falsos predicadores y maestros están enviando más gente al infierno que todos los vendedores de drogas, los alcahuetes y prostitutas juntos. Esto no es una exageración -yo lo creo-. Multitudes de ciegos y extraviados cristianos están cantando y alabando al Señor en iglesias esclavizadas por doctrinas falsas, miles están sentados bajo maestros que están enseñando la doctrina de demonios -y se apartan diciendo, <span class="emphasis">"No fue esto maravilloso"</span>-.</p>
+
+        <p>Cristo no toma este asunto a la ligera. Sus ojos están aún traspasando la iglesia, y Él ha venido para advertir, para exponer y para salvar a su pueblo y a sus siervos de esta terrible seducción. Sería mejor que tomáremos en serio esto. Seriedad en cuanto a la iglesia a la que asistes. Seriedad en saber a quien estás escuchando. Seriedad en la enseñanza que recibe tu corazón.</p>
+
+        <p>El pueblo de Dios se está vendiendo a Satanás por todas partes entregándose ellos mismos en manos de maestros falsos y promotores de falsas doctrinas. Cuando oímos hablar de venderse a Satanás creemos que se refiere a los adictos y alcohólicos, prostitutas afligidas y de ateos que odian a Dios. No es así. Esto está sucediendo en la iglesia, en las reuniones de evangelio, en convenciones y en los grandes seminarios de enseñanza.</p>
+
+        <p>La marca de un cristiano seducido es que es <span class="emphasis">"llevado de un lado para otro"</span> buscando algo nuevo, diferente, una enseñanza extraña. La Biblia advierte,</p>
+
+        <div class="scripture">
+            "No os dejéis llevar de doctrinas diversas y extrañas"
+            <span class="scripture-ref">Hebreos 13:9</span>
+        </div>
+
+        <p>No sean llevados hacia allá y hacia acá, de un lado hacia otro. Esto no se refiere a aquellas raras veces que un creyente maduro va a escuchar a un hombre de Dios predicar a Cristo y arrepentimiento. Esto se refiere a ir corriendo de un lado hacia otro, de un seminario a una convención, de una iglesia a otra, de una reunión de milagros después de una de sanidad, sin tener raíces. Sus oídos siempre tienen comezón de oír algo nuevo, algo sensacional, algo de entretenimiento, algo placentero a la carne. Los tenemos en nuestra iglesia en Times Square -callejeros, plantas rodantes humanas que pasean los vientos de doctrinas-. Esta clase de personas no regresan porque rehusamos rasguñar oídos que tienen comezón. Ellos quieren ser acariciados, no reprobados. Así es que ellos regresan hacia sus maestros -los sosegadores, los felices pensadores positivos-. Ellos se parecen a los atenienses que <span class="emphasis">"pasaban su tiempo en ninguna otra cosa sino en decir o en oír algo nuevo"</span> (Hch. 17:21). Pablo advirtió a Timoteo,</p>
+
+        <div class="scripture">
+            "Porque vendrá tiempo cuando no sufrirán la sana doctrina, sino que teniendo comezón de oír, se amontonarán maestros conforme a sus propias concupiscencias"
+            <span class="scripture-ref">2 Timoteo 4:3</span>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>LA DOCTRINA DE CRISTO</h2>
+
+        <p>La marca de un creyente maduro es un rechazo a ser <span class="emphasis">"fluctuante, llevado por doquiera por todo viento de doctrina..."</span> (Ef. 4:14). Tales creyentes no pueden ser manipulados por ningún maestro. Ellos no necesitan correr de un lado a otro porque están bebiendo de la Roca. Ellos están creciendo en Cristo. Ellos se están dando un banquete en los verdes pastos. Ellos han circuncidado sus oídos y miden a cada maestro, cada doctrina, en la medida de cuanto se conforma a la santidad de Cristo. Ellos pueden discernir todas las doctrinas que son falsas, y son rechazadas al ser enseñanzas extrañas y nuevas. Ellos han aprendido de Cristo. Ellos no serán detenidos por la música, amistades, personalidades o milagros, sino por un hambre por la Palabra pura.</p>
+
+        <p>Existen únicamente dos doctrinas. La doctrina de Cristo y la doctrina de Jezabel. Pablo dijo, <span class="emphasis">"...para que en todo adornen la doctrina de Dios nuestro Salvador"</span> (Tit. 2:10). ¿Cuál es la doctrina de Cristo? La gracia de Dios nos enseña que negando las perversas y mundanas lujurias, vivamos sobria, justa y piadosamente, en este mundo presente. (Tit. 2:11-12). La doctrina de Cristo te conformará a la imagen de Cristo. Ella expondrá cada pecado oculto y cada anhelo malo.</p>
+
+        <p>¿Está tu maestro reprendiendo con autoridad, hablando y exhortándote a abandonar el pecado y a quitar todos los ídolos como se instruye en Tito 2? ¿Estás aprendiendo a odiar el pecado apasionadamente? ¿O sales de la iglesia, no convencido aún profundamente? ¿Puedes dejar de adherirte a los pecados consentidos? El mensaje de la doctrina de Cristo es,</p>
+
+        <div class="scripture">
+            "Limpiémonos de toda contaminación de carne y del espíritu, perfeccionando la santidad en el temor de Dios"
+            <span class="scripture-ref">2 Corintios 7:1</span>
+        </div>
+
+        <p>Muchos nos escriben diciéndonos, <span class="emphasis">"nuestro pastor se mantiene diciendo, 'No estoy aquí para predicar en contra del pecado; estoy aquí para elevar a Jesús', o, 'Ninguna de esas predicaciones de condenación se predican desde este púlpito -no estoy aquí para reanimar el temor y la desesperación en mi gente'"</span>. Aun con predicadores pentecostales existen dos extremos. Algunos gritan un evangelio duro legalista y sin amor; mientras otros predican contra el pecado como cobardes retractándose de todo en el mismo mensaje. Falso amor y lágrimas de cocodrilo.</p>
+
+        <p>La doctrina de Cristo es una doctrina de piedad y santidad.</p>
+
+        <div class="scripture">
+            "Si alguno enseña otra cosa, y no se conforma a las sanas palabras de nuestro Señor Jesucristo, y a la doctrina que es conforme a la piedad, está envanecido, nada sabe, y delira acerca de cuestiones y contiendas de palabras, de las cuales nacen envidias, pleitos, blasfemias, malas sospechas"
+            <span class="scripture-ref">1 Timoteo 6:3-4</span>
+        </div>
+
+        <p>Algunos nos dicen <span class="emphasis">"mi maestro habla de santidad"</span>. Pero no me refiero exactamente a que use las palabras "santo" y "piadoso"; me refiero a predicarlo con toda autoridad. La predicación de la doctrina de Cristo te bendecirá, fortalecerá y te animará, pero también te convencerá tan profundamente de tal manera que ya no podrás acomodarte en ella y al mismo tiempo estar adherido a una lujuria secreta.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LA DOCTRINA DE JEZABEL</h2>
+
+        <p>Veamos esta doctrina de demonios y comprobemos si tú estás en peligro de estar vendiéndote a Satanás. Existen tres marcas para distinguir la doctrina de Jezabel. Todas estas fueron encontradas en la Jezabel del Antiguo Testamento, la madre y la encarnación de las falsas doctrinas. Jesús dio a Jezabel un sinónimo de falsa doctrina. Es una doctrina que enseña que algo malo puede ser bueno, que lo profano puede ser puro.</p>
+
+        <p>Jezabel, en hebreo significa <span class="emphasis">"casta, virtuosa, sin idolatría"</span>. Imagínate, la más impía, más idólatra, astuta y odiosa mujer en toda la Biblia llamada virtuosa, sin pecado. Algo muy malo es llamado bueno. Pero irónicamente, ¿es esto "casto (puro, honesto)"? ¿Cómo? ¿Cuándo? ¿Dónde? ¿Cómo se convirtió en casta? ¿Cuándo? ¿Dónde?</p>
+
+        <p>Veamos a Acab.</p>
+
+        <div class="scripture">
+            "Y reinó Acab hijo de Omri sobre Israel en Samaria veintidós años. Y Acab hijo de Omri hizo lo malo ante los ojos de Jehová, más que todos los que reinaron antes de él. Porque le fue ligera cosa andar en los pecados de Jeroboam hijo de Nabat, y tomó por mujer a Jezabel, hija de Et-baal rey de los sidonios, y fue y sirvió a Baal, y lo adoró"
+            <span class="scripture-ref">1 Reyes 16:30-31</span>
+        </div>
+
+        <p>Acab significa <span class="emphasis">"uno como padre"</span> o <span class="emphasis">"sellado con la naturaleza de su padre"</span>. Jezabel representa doctrina falsa y Acab es su víctima. La Biblia declara que no fue suficiente que Acab tuviera un corazón inclinado hacia el pecado, idolatría y conformidad al mundo. Él trajo a su vida una influencia satánica, que lo confirmaría en su pecado.</p>
+
+        <div class="scripture">
+            "A la verdad ninguno fue como Acab que se vendió para hacer lo malo ante los ojos de Jehová; porque Jezabel su mujer lo incitaba"
+            <span class="scripture-ref">1 Reyes 21:25</span>
+        </div>
+
+        <p>El mensaje es que la tendencia de los cristianos quienes mantienen en secreto el pecado y la lujuria será para abrazar y llegar a casarse con una doctrina falsa la cual únicamente los excitará y confirmará en sus pecados. La última cosa que Acab necesitó fue una Jezabel. ¡Qué Peligroso! Ella sacó lo peor que había en él, lo magnificó y lo destruyó. Así es que esto ocurre con una falsa doctrina. Si hay algún pecado, lujuria o mundanalidad en ti, la última cosa que tú necesitas es una doctrina que saque lo peor que hay en ti. Cuando David pecó con Betsabé, él no tuvo necesidad de un falso profeta con un deleitante mensaje que le dijera que tanto lo amaba Dios. Él tuvo necesidad de un profeta verdadero, Natán, con un dedo amenazador, que le dijera, <span class="emphasis">"Tú eres el hombre"</span>. Aquellos que predican la doctrina de Cristo le enseñan a la gente la diferencia entre lo malo y lo bueno. No hay mezcla en sus labios.</p>
+
+        <div class="scripture">
+            "Y enseñarán a mi pueblo a hacer diferencia entre lo santo y lo profano, y les enseñarán a discernir entre lo limpio y lo no limpio"
+            <span class="scripture-ref">Ezequiel 44:23</span>
+        </div>
+
+        <p>Ezequiel denuncia a estos falsos profetas que se enriquecen a sí mismos trayendo un mensaje que excusa el pecado.</p>
+
+        <div class="scripture">
+            "Hay conjuración de sus profetas en medio de ella, como león rugiente que arrebata presa; devoraron almas, tomaron haciendas y honra, multiplicaron sus viudas en medio de ellos. Sus sacerdotes violaron mi ley, y contaminaron mis santuarios; entre lo santo y lo profano no hicieron diferencia, ni distinguieron entre inmundo y limpio; y de mis días de reposo apartaron sus ojos, y yo he sido profanado en medio de ellos. Sus príncipes en medio de ella son como lobos que arrebatan presa, derramando sangre, para destruir las almas, para obtener ganancias injustas. Y sus profetas recubrían con lodo suelto, profetizándoles vanidad y adivinándoles mentira, diciendo: Así ha dicho Jehová el Señor; y Jehová no había hablado"
+            <span class="scripture-ref">Ezequiel 22:25-28</span>
+        </div>
+
+        <p>Como resultado de esto, tenemos una generación entera de muchachos confundidos que aún no pueden reconocer lo malo cuando lo están viendo. Los falsos profetas los han engañado. Ellos lo llaman bueno cuando se ven rockeros con el cabello morado, vestidos como sado-masoquistas, pavoneándose y girando sexualmente en el púlpito, tocando su "rock 'n roll". A ellos se les ha dicho que el sexo fuera del matrimonio es bueno mientras tú estés enamorado y respetes a la otra persona. Los predicadores y maestros se han convertido en los más grandes defensores del pecado en la nación.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LA DOCTRINA DE JEZABEL PROMUEVE LA CODICIA</h2>
+
+        <div class="scripture">
+            "Y Nabot respondió a Acab: Guárdeme Jehová de que yo te dé a ti la heredad de mis padres. Y vino Acab a su casa triste y enojado, por la palabra que Nabot de Jezreel le había respondido, diciendo: No te daré la heredad de mis padres. Y se acostó en su cama y volvió su rostro, y no comió. Vino a él su mujer Jezabel, y le dijo: ¿Por qué está tan decaído tu espíritu, y no comes? Él respondió: Porque hablé con Nabot de Jezreel, y le dije que me diera su viña por dinero, o que si más quería, le daría otra viña por ella; y él respondió: Yo no te daré mi viña. Y su mujer Jezabel le dijo: ¿Eres tú ahora rey sobre Israel? Levántate, y come y alégrate; yo te daré la viña de Nabot de Jezreel"
+            <span class="scripture-ref">1 Reyes 21:3-7</span>
+        </div>
+
+        <p>Escuchen la doctrina de Jezabel, <span class="emphasis">"Tú eres rey. Número uno. Tú tienes derechos. No permitas que nadie te impida obtener lo que deseas"</span>. Ella le dijo a Acab, <span class="emphasis">"Levántate. Alégrate. Regocíjate. Te la conseguiré yo"</span>. En pocas palabras éste es el evangelio de prosperidad. <span class="emphasis">"No sudes. No te sientas triste o condenado por aquellos deseos que te están devorando. Los conseguiré para ti"</span>. Durante siglos la iglesia predicó sacrificio y censuró la codicia, llamando un pecado el ir tras las cosas materiales. Pero más adelante vino la doctrina de Jezabel diciendo, <span class="emphasis">"Lo conseguiré para ti"</span>. Así como los métodos engañosos usados por Jezabel, estas doctrinas tuercen y mal emplean las Escrituras.</p>
+
+        <p>La más grande decepción en la iglesia moderna es el asunto de usar la Palabra de Dios para poner una señal de aprobación a la codicia. Aparentemente la doctrina de Jezabel funciona (ver I Re. 21:14-16). Logró que Acab obtuviera lo que él deseaba. Él se posesionó de sus derechos porque cuando un hombre era apedreado por alta traición contra el rey, todos sus derechos pasaban a manos del rey. Nunca ha existido una pregunta por qué para muchos esta doctrina de prosperidad funciona. Como Acab, ellos están disfrutando sus posesiones. Pero Acab no pudo disfrutarla a causa de un molesto profeta de Dios.</p>
+
+        <div class="scripture">
+            "Entonces vino palabra de Jehová a Elías tisbita, diciendo: Levántate, desciende a encontrarte con Acab rey de Israel, que está en Samaria, he aquí él está en la viña de Nabot, a la cual ha descendido para tomar posesión de ella. Y le hablarás diciendo: Así ha dicho Jehová: ¿No mataste, y también has despojado? Y volverás a hablarle diciendo: Así ha dicho Jehová: En el mismo lugar donde lamieron los perros la sangre de Nabot, los perros lamerán también tu sangre, tu misma sangre. Y Acab dijo a Elías: ¿Me has hallado enemigo mío? Él respondió: Te he encontrado, porque te has vendido a hacer lo malo delante de Jehová"
+            <span class="scripture-ref">1 Reyes 21:17-20</span>
+        </div>
+
+        <p>Imagínense a Acab caminando alrededor de su nueva posesión diciendo: <span class="emphasis">"¿No es dulce la vida? Ah. Jezabel. Pueda que no esté de acuerdo con todos sus métodos, pero ella lo logró"</span>. Pero siguiendo cada una de sus pisadas está el profeta Elías. Acab se tambaleó impactado. Él sabía lo que le esperaba. Su conciencia le dijo, <span class="emphasis">"Me encontraste, enemigo mío"</span>.</p>
+
+        <p>Así ocurre hoy en día. Dios ha enviado profetas por toda la tierra, clamando en voz alta, confrontando la doctrina materialista de Jezabel, haciéndola tan incómoda como para que los cristianos disfruten de sus juguetes y adquisiciones. Ellos se han vendido. No pueden verlo, pero el pecado está detrás de todo esto. Cada vez que clamo en contra de la doctrina de la prosperidad siento el poder y el espíritu de Elías sobre mí. Ustedes van a escuchar exponer aún más y más esta doctrina de Jezabel. Por dondequiera, serán escuchadas voces proféticas fuertes y claras, clamando, <span class="emphasis">"Pecado. Tú gozaste vendiéndote al pecado"</span>.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>JEZABEL ODIA A LOS PROFETAS DE DIOS Y LAS PROFECÍAS DIVINAS</h2>
+
+        <div class="scripture">
+            "Acab dio a Jezabel la nueva de todo lo que Elías había dicho, y de cómo había matado a espada a todos los profetas. Entonces envió Jezabel a Elías un mensajero, diciendo: Así me hagan los dioses, y aun me añadan, si mañana a estas horas yo no he puesto tu persona como la de uno de ellos"
+            <span class="scripture-ref">1 Reyes 19:1-2</span>
+        </div>
+
+        <p>Los cristianos atados por la doctrina de Jezabel no tienen consideración alguna para los santos profetas de Dios. Ellos se sientan fríamente, como lo hizo Jezabel, inmóvil, mientras Acab le detallaba la milagrosa exhibición de la autoridad sobrenatural en el Monte Carmelo. Escuchen a Acab, <span class="emphasis">"Pero Jezabel, tal vez necesitamos escuchar. Lo vi con mis propios ojos. Nuestros profetas danzaron y gritaron por horas, pero no había poder. Elías solamente habló la palabra de Dios y el fuego cayó. La gente inclinó sus rostros por todas partes arrepintiéndose. Ellos han dejado toda su idolatría. Dios envió un avivamiento de santidad"</span>. Pero Jezabel no estaba impresionada. Todo lo que esto hizo fue convertir su resolución en piedra.</p>
+
+        <p>Así sucede ahora. Los maestros de la doctrina de Jezabel y aquellos que como Acab son sus víctimas, no están abiertos a la convicción del Espíritu Santo, ni al mensaje de arrepentimiento y santidad. Ellos lo escuchan, y luego hacen lo que desean aún más determinadamente que antes en sus doctrinas. No existe el temor de Dios ante sus ojos.</p>
+
+        <p>La señal más exacta de un falso maestro y de una doctrina de Jezabel es apagar las advertencias proféticas y el rechazo a escuchar acerca del juicio. Ellos lo llaman abatimiento y sentencia. Ellos se ríen, se burlan y lo ridiculizan. Ellos no tienen respeto por ninguna advertencia negativa. Jeremías dice que tales pastores están ciegos y sordos. El Señor dice,</p>
+
+        <div class="scripture">
+            "Obedeced... Y no oyeron ni inclinaron su oído; antes caminaron en sus propios consejos, en la dureza de su corazón malvado, y fueron hacia atrás y no hacia adelante"
+            <span class="scripture-ref">Jeremías 7:24-28</span>
+        </div>
+
+        <p>Aquellos que enseñan la doctrina de Jezabel se dicen ser profetas. Pero existe una prueba para saber quién es profeta verdadero y quién es falso. Los profetas de Jezabel profetizan únicamente cosas buenas, solamente paz y prosperidad.</p>
+
+        <div class="scripture">
+            "Y en los profetas de Jerusalén he visto torpezas; cometían adulterios, y andaban en mentiras, y fortalecían las manos de los malos, para que ninguno se convirtiese de su maldad; me fueron todos ellos como Sodoma, y sus moradores como Gomorra. Por tanto, así ha dicho Jehová de los Ejércitos contra aquellos profetas: He aquí que yo les hago comer ajenjos, y les haré beber agua de hiel; porque de los profetas de Jerusalén salió la hipocresía sobre toda la tierra. Así ha dicho Jehová de los Ejércitos: No escuchéis las palabras de los profetas que os profetizan; os alimentan con vanas esperanzas; hablan visión de su propio corazón, no de la boca de Jehová. Dicen atrevidamente a los que me irritan: Jehová dijo: Paz tendréis; y a cualquiera que anda tras la obstinación de su corazón, dicen: No vendrá mal sobre vosotros"
+            <span class="scripture-ref">Jeremías 23:14-17</span>
+        </div>
+
+        <p>Ellos no hacen que la gente se arrepienta de su impiedad. Ellos hablan de sueños y actúan tontamente en el púlpito. Son engañadores.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>EL CONVENIO DE ACAB CON EL MUNDO</h2>
+
+        <p>Acab se arrepintió con la predicación de Elías. El mensaje de Elías lo afectó profundamente. Él rasgó sus ropajes y caminó por unos momentos en humildad. Dios llamó a esto arrepentimiento.</p>
+
+        <div class="scripture">
+            "¿No has visto como Acab se ha humillado delante de mí?"
+            <span class="scripture-ref">1 Reyes 21:29</span>
+        </div>
+
+        <p>Desde ese día él pudo mirarse hacia atrás y decir, <span class="emphasis">"¿Arrepentimiento? Sí. Bajo la predicación de ese gran profeta de Dios, Elías, en mi jardín de Jezreel..."</span> Para él fue una experiencia única, no un diario caminar. No duró mucho. El problema era que él había hecho un pacto con el mundo. Él estaba de acuerdo con el pecado. Él había llegado a ser un hermano y amigo del mundo. <span class="emphasis">"Hermano"</span> aquí significa <span class="emphasis">"afinidad"</span>, uno como yo, uno a quien respeto. Él estaba en convenio con lo que Dios había maldecido. Y así el día de hoy, existe un arrepentimiento superficial. Pero ustedes darán marcha atrás si no rompen su pacto con el mundo.</p>
+
+        <p>Acab proclamó amar la verdad, pero en lo más íntimo él odiaba el ser reprendido. Acab y Josafat iban a ir a la guerra contra los Sirios. Cuatrocientos profetas falsos estuvieron predicando éxito: <span class="emphasis">"Vayan y serán prosperados. Ustedes pueden lograrlo"</span>. Así permanece ahí el solitario profeta que estaba en contra de los cuatrocientos falsos. Escuchen la demanda de Acab por saber la verdad:</p>
+
+        <div class="scripture">
+            "Y Micaías respondió: Vive Jehová, que lo que Jehová me hablare, eso diré. Vino, pues, al rey, y el rey le dijo: Micaías, ¿Iremos a pelear contra Ramot de Galaad, o la dejaremos? Él le respondió: Sube, y serás prosperado, y Jehová la entregará en mano del rey. Y el rey le dijo: ¿Hasta cuántas veces he de exigirte que no me digas sino la verdad en el nombre de Jehová?"
+            <span class="scripture-ref">1 Reyes 22:14-16</span>
+        </div>
+
+        <p>Sin embargo en su corazón él no quería escucharla; él la odiaba. Así que él encarceló al profeta.</p>
+
+        <p>Pastores, maestros y aquellos en la congregación, hoy en día dicen todos, <span class="emphasis">"Queremos únicamente la verdad. Que se predique tal como es. Adelante. Vacíenla. No importa cuanto duela"</span>. Pero en sus corazones algunos están hirviendo, <span class="emphasis">"Esto es demasiado triste. Muy duro. No puedo soportarlo"</span>.</p>
+
+        <p>Acab estaba ciego ante el terrible hecho de que él estaba siendo guiado por espíritus de mentira. Este espíritu de mentira no era de Dios, sino bajo su mandato. Los espíritus malos y mentirosos deben ir o venir a su palabra. Ellos no son de Dios, pero son enviados por Dios,</p>
+
+        <div class="scripture">
+            "el Señor ha puesto un espíritu de mentira en la boca de todos tus profetas"
+            <span class="scripture-ref">1 Reyes 22:22-23</span>
+        </div>
+
+        <p>Este espíritu de mentira causó que Sedequías, un profeta falso, se jactara de que el Espíritu de Dios estaba sobre él. El Espíritu mentiroso en él, pudo declarar honestamente, <span class="emphasis">"El Señor me envió"</span>. Los espíritus mentirosos son muy persuasivos -<span class="emphasis">"Le inducirás"</span>- (I Re. 22:22). Acab estaba ahora totalmente persuadido de que él estaba escuchando la voz de Dios y que regresaría victoriosamente.</p>
+
+        <p>Los cristianos atados por la doctrina de Jezabel están cien por ciento seguros de que ellos están bien. No pueden ver el engaño. Acab no se fue pensando, <span class="emphasis">"Micaías está bien; él tiene la mente de Dios. Los cuatrocientos son falsos; ellos no tienen una palabra de Dios"</span>. No. Él se fue totalmente convencido, totalmente engañado, totalmente seducido. Él estaba convencido de que Micaías estaba equivocado y los cuatrocientos estaban bien.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿POR QUÉ ALGUNOS CRISTIANOS CAEN EN TAL DECEPCIÓN?</h2>
+
+        <div class="scripture">
+            "He aquí, vosotros confiáis en palabras de mentira, que no aprovechan. Hurtando, matando, adulterando, jurando en falso e incensando a Baal, y andando tras dioses extraños que no conocisteis, ¿vendréis y os pondréis delante de mí en esta casa sobre la cual es invocado mi nombre, y diréis: Librados somos; para seguir haciendo todas estas abominaciones?"
+            <span class="scripture-ref">Jeremías 7:8-10</span>
+        </div>
+
+        <div class="warning-box">
+            <p>Hay una respuesta. Están apapachando algún pecado consentido, algún ídolo secreto en el corazón. Una justificación de pecado. Un caminar con el mundo. Una hermandad con el mundo. Luego vienen a la casa de Dios jactándose <span class="emphasis">"No soy culpable"</span>. Esta es una invitación abierta a espíritus de mentira.</p>
+        </div>
+    </div>
+</div>
+
+<div class="menu-link-container">
+  <a class="menu-button" href="../../menu.html">Volver al Menú</a>
+</div>
+
+<footer>
+    Revista Avivamiento - La Doctrina de Jezabel<br>
+    Por David Wilkerson
+</footer>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

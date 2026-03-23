@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Cómo me arrepiento? - Charles Finney</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+
+
+    .menu-button {
+        display: inline-block;
+        margin: 20px 0 10px;
+        padding: 10px 18px;
+        background-color: #4a6491;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .menu-button:hover {
+        background-color: #2c3e50;
+    }
+
+    .menu-link-container {
+        text-align: center;
+    }
+footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .sin-list {
+            margin: 20px 0 20px 30px;
+        }
+
+        .sin-list li {
+            margin-bottom: 15px;
+            text-align: justify;
+            padding-left: 5px;
+        }
+
+        .sin-list li strong {
+            color: #4a6491;
+        }
+
+        .sub-section-title {
+            font-size: 1.2rem;
+            color: #8B0000;
+            margin: 25px 0 15px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+  <script defer src="../../../assets/reader-mode.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Charles Finney</div>
+            <div>¿CÓMO ME ARREPIENTO?</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>En nuestro número anterior presentamos una reedición especial acerca del mensaje de arrepentimiento y vimos que ésta es la clave para entrar al reino de los cielos y para una vida espiritual sólida y triunfante. ¡Tenemos que reconocerlo! El mensaje Bíblico de arrepentimiento es el ingrediente que brilla por su ausencia en mucho del Evangelio que se predica actualmente, por eso existe tanta derrota en miles de personas. Se habla del amor, de prosperidad, de éxito y de mil cosas más, pero se omite, cuidadosamente, explicar qué tipo de arrepentimiento Jesús pide de nosotros.</p>
+
+        <p>Para el lector serio y para la persona realmente interesada en su vida espiritual, no basta saber que es necesario arrepentirse; eso es solo la teoría y no le traerá ningún beneficio. La persona con inclinaciones espirituales dice: <span class="emphasis">"¡Quiero hacerlo!"</span> <span class="emphasis">"¡Lo necesito hoy mismo!"</span> <span class="emphasis">"¿Cómo me arrepiento?"</span></p>
+
+        <p>La respuesta a esa última pregunta es muy importante, pues, recordemos que aunque el arrepentimiento es inducido por el Espíritu Santo, no es algo mágico, el hombre tiene que responder de su libre voluntad adecuadamente al llamado de Dios.</p>
+
+        <p>Si una persona se siente sucia, vil y manchada ante Dios por sus pecados; si alguno se ha dado cuenta de que es un esclavo de ciertos vicios o pecados y por más que lucha no puede salir de ellos; o si otro se sabe perdido por haber hecho tanto mal y desea arreglarse con el Señor: estos son ejemplos de la acción del Espíritu en sus vidas; si usted se encuentra en un caso similar, no importa si es cristiano o inconverso: <span class="red-emphasis">¡Ahora falta que responda en arrepentimiento y haga su parte!</span></p>
+
+        <div class="highlight-box">
+            <p>Recuérdelo: <span class="red-emphasis">usted tiene una libre voluntad y si usted no se arrepiente <strong>nadie lo hará en su lugar.</strong></span></p>
+        </div>
+
+        <p>Si su pregunta sincera es <span class="emphasis">¿Y cómo me arrepiento?</span>, No se preocupe; en este número de avivamiento dejaremos que nos conteste un reconocido experto en esos asuntos, el evangelista Carlos G. Finney; un predicador, maestro y pastor, que vivió en el siglo pasado y que ha sido considerado por muchos el evangelista más grande de los Estados Unidos, grande no porque fuera ostentoso o muy famoso, sino porque en efecto, él fue un instrumento divino para lograr la conversión de más de 500,000 almas a Cristo. Conversiones que por cierto, permanecían casi todas hasta el fin de sus vidas. Los mensajes prácticos, bíblicos y sencillos de este clásico de los evangelistas, no fallaban en producir resultados en las almas sinceras. Confiamos en que ahora tampoco, pues la palabra de Dios nunca pierde su efectividad; solo es necesario obedecer con fe.</p>
+
+        <p>Lea este número y al final tenga<br>
+            Un genuino y profundo arrepentimiento.</p>
+
+        <div class="editors-note">
+            ATENTAMENTE<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">COMO TENER UN AVIVAMIENTO ESPIRITUAL EN TU PROPIA VIDA</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por: Carlos G. Finney</div>
+    <div style="text-align: center; margin-bottom: 30px; font-size: 0.9rem; color: #666;">(Tomado del libro REVIVAL LECTURES publicado por FLEMING H. REVELL COMPANY)</div>
+
+    <div class="content-section">
+        <div class="scripture">
+            <strong>"Haced para vosotros barbecho; porque es tiempo de buscar a Jehová, hasta que venga y os enseñe justicia"</strong>
+            <span class="scripture-ref">Oseas 10:12</span>
+        </div>
+
+        <p>Los hebreos eran gente de campo, por eso es muy común que la Biblia traiga ejemplos sobre labores en el campo y el trato con el ganado, pues eran cosas que ellos entendían muy bien. Así que cuando el profeta Oseas se dirigió a Israel como una nación de apóstatas, condenando su idolatría y amenazándoles con el juicio de Dios, usó el barbecho para ilustrarles lo que tenían que hacer si querían volver a tener su favor. El barbecho es un suelo que alguna vez fue labrado pero que en el presente no se ocupa. Debe ser arado <span class="emphasis">(roturado)</span> otra vez antes de que esté listo para que se vuelva a sembrar en él.</p>
+
+        <p>Hoy deseo mostrar como tener un avivamiento espiritual.</p>
+
+        <p>Un avivamiento consta de dos partes: 1) avivar la iglesia y, 2) avivar a los inconversos. Explicaré ahora como tener un avivamiento <span class="emphasis">dentro</span> de la iglesia. Primero vamos a examinar lo que significa <span class="emphasis">"hacer para vosotros barbecho"</span> y después veremos <span class="emphasis">cómo</span> hacerlo.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿QUÉ SIGNIFICA "HACER PARA VOSOTROS BARBECHO"?</h2>
+
+        <p>Arad el barbecho quiere decir: <span class="red-emphasis">quebrar tu corazón.</span> Quiere decir que te prepares para dar fruto para Dios. La Biblia a menudo se refiere al alma como la tierra y a la Palabra de Dios como la semilla que siembra en ella. El fruto representa los deseos y las acciones de las personas que reciben la palabra. Arar la tierra quiere decir traer el alma a un estado apropiado para recibir la Palabra de Dios, porque tu corazón a veces está tan endurecido y tan seco que no dará fruto hasta que sea quebrantado, y quede listo para recibir la Palabra. Suavizar el corazón para sentir la verdad es a lo que el profeta le llama <span class="emphasis">"hacer para vosotros barbecho"</span>.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿CÓMO SE PUEDE QUEBRANTAR UN CORAZÓN DURO?</h2>
+
+        <p>No se hará tratando de sentir. La gente se equivoca a menudo en este punto por no fijarse en cómo actúa la mente. Hablan acerca de <span class="emphasis">"sentimientos espirituales"</span>, como si pudieran por sí mismos atraer emociones. Pero la mente no trabaja así. Nadie puede sentir algo sólo por proponérselo, ya que las emociones no están directamente bajo nuestro control. No podemos forzarnos a sentir emociones porque son estados involuntarios que se producen por circunstancias que los provocan.</p>
+
+        <p>Sin embargo, las emociones pueden ser controladas de manera indirecta. ¡Esto es obvio! Si no pudiéramos controlar nuestras emociones, de alguna manera nuestras emociones no tendrían ningún valor moral para bien o para mal. No podemos decir: "ahora voy a sentir compasión por esta persona", pero sí podemos fijar nuestra atención en ella y observarla hasta que se despierte la compasión. Un padre que está lejos de su familia si piensa en su esposa y en sus hijos, ¿no sentirá algo?; pero no va a sentir sólo por decir: "ahora voy a tener sentimientos hacia mi familia", pero sí puede poner su atención sobre lo que quiere sentir y de esta manera traer la emoción adecuada.</p>
+
+        <p>Si una persona piensa en su enemigo va a venir a él un sentimiento de odio. De la misma manera que si alguien piensa en Dios y mantiene su pensamiento en alguna faceta de su carácter va a sentir una emoción de acuerdo a donde su mente está puesta; si es amigo de Dios y contempla su gracia y santidad, brotarán en él sentimientos de complacencia, pero si es enemigo de Dios y está pensando en el carácter de Dios, va a tener un sentimiento hostil hacia Dios.</p>
+
+        <p>Si quieres romper la dureza de tu corazón y quieres hacerte sensible a las cosas espirituales, tendrás que esforzarte al igual que para lograr cualquier cosa. En lugar de andar todo distraído y esperar que, sólo porque vayas a unas cuantas reuniones, se despertará tu alma, tienes que enfocarte para lograr eso que esperas. Hacer que tu mente se vuelva sensible a las cosas espirituales es fácil. Dios puso tu mente bajo tu control, de la misma manera que puedes controlar tus piernas y brazos. ¡Si la gente controlara sus piernas tan irracionalmente como controla sus sentimientos, nunca iría a ningún lado!</p>
+
+        <p>Si quieres romper el barbecho de tu corazón, empieza por ver tu corazón; examina el estado de tu alma para ver cómo estás; ¡hay muchas personas que nunca hacen esto! Nunca se preocupan por el estado de su corazón y por lo tanto no saben cómo están espiritualmente, no saben si van para adelante o para atrás, si están dando fruto o no lo dan, saca todo de tu mente y sólo concéntrate en el estado de tu corazón; ¡no tengas prisa!, haz un examen concienzudo y ve cómo estás, examina si estás bajo el dominio del príncipe de las tinieblas o de Jesucristo. Para hacer esto tienes que ponerte a examinar tus pecados.</p>
+
+        <p>Esto no quiere decir que te pongas a ver qué estás sintiendo ahora. Esta sería la mejor manera de parar cualquier sentimiento. En realidad nuestros sentimientos morales son tan conscientes como nuestros sentidos. Para descubrirlos sólo tienes que actuar y usar la cabeza, nos vamos a dar cuenta de eso según actuamos, de la misma manera que nos damos cuenta por nuestros sentidos cuando ponemos la mano en el fuego.</p>
+
+        <p>Un auto-examen consiste en ver nuestra vida, considerar nuestras acciones. Examinar los pecados que has cometido, uno por uno. No me refiero solo a mirar tu vida en una pasada general y ver que ha estado llena de pecado y después ir a Dios y hacer una confesión sencilla. ¡Así no se hace! Debes examinar tus pecados uno por uno. Toma papel y lápiz y escríbelos según te vayas acordando de ellos, repásalos cuidadosamente y cada vez que te acuerdes de otro pecado, añádelo a la lista. Las confesiones generales nunca funcionarán. Cometiste los pecados uno por uno, así que repásalos y arrepiéntete de cada uno. Empecemos con los que llamamos pecados de omisión.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>PECADOS QUE PARECEN PEQUEÑOS PERO SON GRANDES ANTE DIOS</h2>
+
+        <ol class="sin-list">
+            <li><strong>La ingratitud.</strong> Toma este pecado y escribe todas las veces que recuerdas que recibiste alguna bendición de parte de Dios pero que nunca se lo agradeciste. ¿Cuántas ocasiones puedes recordar que Dios haya cambiado los acontecimientos para salvarte de algo malo? Escribe cuántas veces Dios fue bueno contigo y no lo reconociste plenamente; cuántas veces lo hizo cuando aún estabas en pecado antes de tu conversión; recuerda las circunstancias para que te volvieras a Él. Pon en tu lista todas las veces que Él ha hecho misericordia contigo desde que te convertiste. ¿Cuántas veces ha sido tu ingratitud tan grande que correrías a esconder la cara lleno de vergüenza?</li>
+
+            <li><strong>Falta de amor a Dios.</strong> Escribe todas las veces que recuerdes que no le diste a Dios el ferviente amor que se merece. Piensa como te sentirías si descubrieras la más mínima inconstancia en el amor que te tiene tu marido, tu esposa o tus hijos; ¿qué pensarías si vieras que alguien más se ganaba sus corazones, sus pensamientos y su tiempo?; ¡Tendrías celos muy justificados! Dios es un Dios aún más celoso. ¿Has puesto tu corazón en otros amores y lo has ofendido a Él con tu adulterio?</li>
+
+            <li><strong>Descuidar la Biblia.</strong> Escribe las veces en que por días, semanas o meses has despreciado la Palabra de Dios. Las veces que no leíste ni un capítulo, o en las que, si lo leíste, lo hiciste de tal manera que fue más desagradable para Dios que si no lo hubieras leído. Muchas personas leen el capítulo, pero de tal forma que no pueden decir que fue lo que leyeron; ponen tan poca atención a lo que leyeron que en la noche no recuerdan lo que vieron en la mañana. Esto demuestra qué poco entra a su corazón lo que leen. ¿Si estuvieras leyendo un libro o una revista que te gusta no recordarías que fue lo último que leíste? El hecho de que no recuerdes el tema que leíste demuestra que lees por obligación, más que por amor o por reverencia a la Palabra de Dios. La Palabra de Dios mide tu obediencia. ¿La consideras tan poco importante que olvidas lo que leíste? Sí este es el caso, no es de sorprender que vivas tan superficialmente y que tu vida espiritual sea un fracaso tan miserable.</li>
+
+            <li><strong>Incredulidad.</strong> Enumera las veces que virtualmente has acusado de mentiroso al Dios verdadero a causa de tu incredulidad en sus promesas y estatutos. Dios promete dar el Espíritu Santo a todo aquel que se lo pida, ¿has creído esto?, ¿Has esperado que envíe el Espíritu Santo cuando se lo has pedido? ¿No has pensado en tu corazón "no lo creo"? Dios ha hecho la promesa de Su Espíritu y tú dices que miente.</li>
+
+            <li><strong>Descuidar la oración.</strong> Anota las veces en que has dejado la oración privada, la familiar, o no has ido a las reuniones de oración. Cuenta las veces en que has orado de tal manera que has ofendido más a Dios que si no hubieras orado.</li>
+
+            <li><strong>Descuidar los medios de gracia.</strong> Las veces que has puesto excusas tontas para no asistir a las reuniones, o cuando has descuidado o despreciado los medios de salvación, porque te disgustan tus obligaciones espirituales.</li>
+
+            <li><strong>La forma en que cumples tus obligaciones espirituales.</strong> Sin amor, sin fe, con una actitud impía, de tal manera que fueron solamente palabras de labios. Las veces en que "hiciste tus oraciones" de manera tan indiferente y superficial que a los cinco minutos ya no te acordabas que habías orado.</li>
+
+            <li><strong>Falta de amor por la gente que te rodea.</strong> ¡Mira que poca compasión has tenido por tu familia y por tus amigos! Te quedas parado viéndolos irse al infierno y no parece que te importe. ¿Cuánto tiempo ha pasado sin que pienses cuál es su condición, o sin que hayas hecho una oración sincera por ellos, o a la mejor sin ni siquiera haber anhelado su salvación?</li>
+
+            <li><strong>Falta de interés por los perdidos.</strong> Tal vez ni siquiera te has interesado en saber de ellos, ni siquiera te has interesado en que pasa en otras regiones del mundo. Piensa cuando realmente te has interesado en los perdidos y en su salvación. Considera que tan grande es tu deseo de que se salven, piensa cuanto te has negado a ti mismo para que les llegue el Evangelio. ¿Te has negado tus pequeños lujos por ellos?, o ¿te has acomodado en tu modo de vida y no te has dispuesto a pasar el menor inconveniente por ellos? ¿Oras diariamente en tu oración privada por ellos? ¿Asistes a reuniones de oración para orar para que se salven? ¿Apartas algo cada mes de tu dinero para mandar a las misiones? Si no haces estas cosas, y si no agoniza tu alma por los perdidos, entonces eres hipócrita, ¿Cómo pretendes ser cristiano? El llamarte cristiano es un insulto a Jesucristo.</li>
+
+            <li><strong>Descuidar tus obligaciones familiares.</strong> ¿Cómo vives delante de ellos? ¿Cuánto oras por ellos? ¿Qué ejemplos les has dado? ¿De qué manera los has enriquecido espiritualmente? ¿Qué obligación no has descuidado con ellos?</li>
+
+            <li><strong>Descuidar tu propia vida.</strong> Las veces en que te has afanado por tus obligaciones y no se lo has confesado a Dios. ¿Cuántas veces has sido descuidado con tu comportamiento y has pecado delante de incrédulos, de la iglesia y de Dios?</li>
+
+            <li><strong>Descuido en velar por los hermanos en Cristo.</strong> ¿Cuántas veces has descuidado tu obligación de cuidar de ellos delante del Señor? ¿Qué sabes de sus vidas espirituales? ¿Te preocupas? Y sin embargo, Dios te une a ellos para que cuides su vida espiritual. ¿Qué has hecho para tratar de conocerlo? Repasa la lista y cuantas veces encuentres que has descuidado alguna obligación escríbela. ¿Cuántas veces has visto que se enfríe su relación con Cristo en alguno de ellos sin decir nada? Los has visto en una responsabilidad y en otra y no los has corregido con amor. Los ves caer en pecado y todavía dices que los amas. ¡Qué hipócritas! ¿Podrías ver caer a tu esposa o a tu hijo en el fuego y quedarte callado? ¡No! ¿Qué piensas de ti mismo que dices que amas a los cristianos y a Cristo, y que los ves caer en desgracia y no le dices nada?</li>
+
+            <li><strong>Descuidar el negarte a ti mismo.</strong> Muchos de los que se dicen cristianos pueden hacer cualquier cosa mientras que no les requiera que se nieguen a sí mismos pero, pídeles algo que requiera que se nieguen a sí mismos, y siempre dicen ¡eso es demasiado! Ellos creen que ya hacen mucho por Dios, pero no están dispuestos a renunciar a ninguna comodidad ni a ninguna conveniencia por causa del Señor. No están dispuestos a padecer con gusto alguna afrenta por servir a Cristo, ni están dispuestos a renunciar a los lujos de la vida para evitar que el mundo se vaya al infierno.</li>
+        </ol>
+
+        <p>Están muy lejos de pensar que el negarse a sí mismo es la condición del discipulado, y ni siquiera saben lo que es negarse a sí mismo. No se han negado un adorno o alguna baratija por causa de Cristo o del Evangelio. ¡Este tipo de hipócritas pronto estarán en el infierno! Algunos de estos dan de su abundancia, y dan mucho, pero inmediatamente se quejan porque los otros no dan más. En realidad, no dan nada que necesitan, solo dan de lo que les sobra. Una mujer pobre que dé $5 ó $10 al mes se niega más a sí misma que ellos dando miles.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¡MÁS PECADOS!</h2>
+        <h3>Pecados de comisión</h3>
+
+        <ol class="sin-list">
+            <li><strong>Una mente materialista.</strong> ¿Cuál es tu actitud sobre tus posesiones? ¿Crees que son tuyas como si tuvieras derecho a hacer con ellas lo que quieras? Si es así, estás en pecado. Si has amado el tener cosas y has ido tras ellas para satisfacer tu lujuria o tu ambición, o si has hecho grandes tesoros para tu familia, entonces has pecado y necesitas arrepentirte.</li>
+
+            <li><strong>Orgullo.</strong> Recuerda todas las veces que has tenido orgullo, la vanidad es una forma de orgullo; recuerda cuantas veces has actuado con vanidad respecto a tu apariencia. Cuantas veces has pasado más tiempo arreglando tu cuerpo que preparando tu alma para ir a adorar a Dios. Has ido a las reuniones más preocupado de cómo te verán los demás, que de cómo ve tu alma el Dios que todo lo escudriña. Tal vez, mujer, te has preparado para ser adorada por los hombres más que prepararte para adorar a Dios. Quizás has provocado que se divida la admiración en la casa de Dios, atrayendo la atención en la casa de Dios con tus actitudes llamativas. No quieras aparentar que no te importa que la gente te vea, ¡Sé honesta!, ¿Serías tan cuidadosa de tu arreglo si la gente fuera ciega y no te viera?</li>
+
+            <li><strong>Envidia.</strong> Recuerda cuantas veces tuviste envidia de la gente que estaba por encima de ti. Tal vez envidiaste a los que parecían más talentosos y eran más útiles que tú. ¿No has envidiado tanto a alguien que quizás te sea difícil oír que alguien lo honra? ¿Te hace más feliz pensar en sus errores que en sus virtudes, y en sus fallas más que en sus aciertos? Sé honesto contigo mismo y si le has dado cabida a este espíritu del infierno, arrepiéntete de todo corazón delante de Dios o nunca te perdonará.</li>
+
+            <li><strong>Crítica.</strong> Escribe las veces en que has tenido amargura y has hablado acerca de los cristianos sin amor y sin caridad. El amor demanda que, en todo lo posible, siempre esperes lo mejor de cada situación, y que pienses lo mejor en cada situación ambigua.</li>
+
+            <li><strong>Calumnia.</strong> ¿Cuántas veces has hablado de las fallas de los demás (ya sean imaginarias o reales) a sus espaldas, sin necesidad o sin tener alguna buena razón? ¡Esto es calumniar! No necesita que sea mentira lo que hablas para que sea calumnia. Decir la verdad con el propósito de lastimar eso es la calumnia.</li>
+
+            <li><strong>Ligereza.</strong> Cuantas veces has actuado ligeramente delante de Dios. Cuantas veces has actuado de manera que no te hubieras atrevido a hacerlo delante de una persona respetable aquí en la tierra. Una de dos, o se te ha olvidado que hay un Dios, o has tenido menos respeto por Él, que el que hubieras tenido por un rey terrenal.</li>
+
+            <li><strong>Mentir.</strong> Entiende lo que es mentir: es cualquier engaño intencionado. Si el engaño no es intencional, no es mentira. Pero si tú intentas dar una impresión que no tiene que ver con la verdad tal cual es, entonces mentiste. Apunta las veces que recuerdas haber hecho esto, y no le llames de otra manera, Dios le llama mentira y te acusa de mentir. Es mejor que te examines correctamente. Son incontables las mentiras que se dicen en los negocios y en la sociedad por medio de palabras, de apariencias, de hechos, cada uno de ellos diseñados para dejar la impresión de algo que no es la verdad.</li>
+
+            <li><strong>Trampas y engaños.</strong> Escribe las veces que has hecho a otros alguna cosa que no te hubiera gustado que te hicieran a ti. Esto se llama engañar y hacer trampa. Dios ha dado una regla para todos los casos: "No hagas a otros lo que no quieras que te hagan a ti", esa es la regla y si tú la rompes estás haciendo trampa. Date cuenta que la regla no dice que hagas a otros lo que <span class="emphasis">"esperas"</span> que hagan contigo, porque esta regla permitiría toda clase de pecados. La regla dice, <span class="emphasis">"lo que quieras que hagan contigo"</span>.</li>
+
+            <li><strong>Hipocresía.</strong> Hipocresía en tus oraciones y en tus confesiones a Dios. Haz una lista de las veces que has orado por cosas que realmente no deseabas, sabrás que realmente no las querías cuando oraste por ellas porque cuando sucedieron no te acordaste que habías orado por ellas. ¿Cuántas veces has confesado pecados que realmente no tenías intención de dejar?</li>
+
+            <li><strong>Robar a Dios.</strong> Haz una lista de todas las horas que Dios te ha dado para que lo sirvas y para que lleves a la gente a Cristo, y esas cosas las gastaste en cosas triviales, en conversaciones vanas, leyendo novelitas, viendo basura, o perdiendo el tiempo. ¿Cuántas veces has malgastado tus talentos o tu inteligencia en cosas vanas? Acuérdate las veces en que has gastado tu dinero en tus lujos, o en cosas que no necesitabas, que no reportaban nada para la salud, para el bienestar, o que no eran útiles. Quizás alguien gastó el dinero de Dios en cigarros. ¿Imagínese a una persona que se dice cristiana gastando el dinero de Dios en ese veneno!</li>
+
+            <li><strong>Mal humor.</strong> Quizás le has faltado a tu esposa, a tus hijos, o tu familia, a los sirvientes o a algún vecino.</li>
+
+            <li><strong>Impedir a otros ser útiles.</strong> Tal vez hayas debilitado la influencia de alguna persona por criticarla. De esa manera no sólo le robaste a Dios tus talentos, sino que también le has atado las manos a otros. Qué siervo tan pecador es aquel que no solamente es flojo, sino que estorba a los demás. Esto se hace a veces haciéndoles perder el tiempo, otras, destruyendo la confianza en sí mismos. Has sido un juguete en las manos de Satanás y no sólo has sido flojo tú, sino que has impedido que otros trabajen para Dios.</li>
+        </ol>
+
+        <p>Si has pecado contra alguien y puedes llegar a esa persona, ve y confiésale tu pecado inmediatamente. Si la persona que has herido se encuentra fuera de tu alcance, escríbele una carta y confiésale tu ofensa. Si estafaste a alguien envíale todo su dinero con intereses.</p>
+
+        <p>Métete profundamente en todo este asunto de inmediato; el dejarlo de lado solamente empeorará las cosas. Confiésale a Dios los pecados que cometiste contra Él, y al hombre los pecados que cometiste contra el hombre. No pienses escapas dándole vuelta a los asuntos difíciles. Saca todo. Para roturar el barbecho hay que remover cada piedra.</p>
+
+        <p>Si no arreglas todo, aún las cosas que consideres de poca importancia, luego no te preguntes porque no te sientes bien con Dios, pues la razón será que por tu orgullo ocultaste algo que Dios te había dicho que confesaras y removieras. ¡Que las dificultades no te detengan! Ara profundamente, remueve la tierra hasta que esté suave para recibir la semilla y dar fruto al ciento por uno.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Instrucciones Finales</h2>
+
+        <p>Cuando hayas terminado de revisar toda tu vida concienzudamente, entonces vuelve a revisarlo todo una segunda vez en forma seria. Las cosas que hayas escrito te recordarán otras de las que has sido culpable. Después vuélvela a repasar una tercera vez, y te recordará otras cosas. Y al final recordarás ciertas cosas de tu pasado que nunca creerías jamás haberlas recordado. A menos que veas tus pecados uno por uno nunca vas a poder darte cuenta de tu maldad. Debes examinar tu vida tanto como si te estuvieras preparando para el día del juicio.</p>
+
+        <p>Tan pronto como hayas repasado la lista de tus pecados, comprométete a hacer inmediatamente un cambio completo. En cualquier cosa que encuentres mal decídete, por el poder de Dios, a no pecar otra vez en eso. No te beneficiará el haberte examinado a menos que decidas cambiar cada pequeño error en las actitudes o en tu conducta.</p>
+
+        <p>Si mientras estás tratando de quebrantar el barbecho encuentras que tu mente está entenebrecida, vuelve a empezar y encontrarás, que hay una razón por la cual el Espíritu de Dios se aparta de ti: No has sido fiel y profundo. En este proceso debes de ser muy serio contigo mismo. Con la Biblia enfrente de ti examina tu corazón hasta que realmente sientas. No esperes que Dios haga el milagro de preparar la tierra porque eso lo debes hacer tú. El trabajo debe hacerse por el método que Él enseñó.</p>
+
+        <p>Fija tu atención en tus pecados. No podrás ver tus pecados a profundidad y darte cuenta de lo grave que han sido, sin ser conmovido profundamente. La experiencia ha probado lo beneficioso que es revisar nuestras vidas de esta manera, así que empieza a hacerlo ahora. Decídete a no parar hasta que puedas orar con libertad. Nunca vas a tener el Espíritu de oración hasta que te examines y confieses tus pecados; hasta que rompas el barbecho. Nunca vas a tener el Espíritu de Dios morando en ti hasta que descubras todo tu pecado delante de Dios.</p>
+
+        <p>Si tienes este profundo arrepentimiento y una completa confesión, y un total quebrantamiento delante de Dios, entonces vas a tener tanto Espíritu de oración como tu cuerpo puede resistir. Pocos cristianos conocen el Espíritu de oración porque nunca han hecho esta revisión y por lo tanto no saben lo que significa estar quebrantado de esa manera.</p>
+
+        <p>Apenas he empezado a desarrollar el tema. Quiero darle estrategias que cuando las pruebe traerán resultados, lo mismo que cuando el granjero en el campo preparado siembra la semilla. Esto dará resultado si empiezas como te he mostrado y continúas hasta que tu endurecido corazón se quebrante completamente.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>ALGUNAS INSTRUCCIONES FINALES</h2>
+
+        <ol class="sin-list">
+            <li>No tiene ningún caso enseñar y predicar cuando los corazones están endurecidos, sucios y sin quebranto. Sería como si el campesino sembrara su semilla en la roca, allí no produciría fruto. Esta es la razón por la cual hay tantos cristianos sin fruto en la iglesia, y es la razón de que haya tanta organización externa, tanta superficialidad y poco movimiento profundo en la iglesia. Por ejemplo ve las escuelas dominicales, y ve cuanta programación hay y que poco poder y santidad. Si continúas en el estado en que te encuentras hoy, la Palabra de Dios seguirá endureciéndote cada vez más; como la lluvia que cae sobre la tierra no arada la endurece cada vez mas así también cada vez peor.</li>
+
+            <li>Esta es la razón por la cual muchas predicaciones se desperdician y no sirven para nada. Es porque muchos, que profesan ser cristianos, no han quebrantado sus corazones. Los predicadores podrían gastar toda su vida y casi no tener resultados porque hay muchos oyentes duros como roca, que no han arado su barbecho. Sólo están medio convertidos y su "fe" solo ha implicado un cambio de opinión pero no un cambio de corazón; por fuera hacen muchas cosas pero no hay cambios profundos internos.</li>
+
+            <li>La gente que se dice cristiana no debería de conformarse con solo haber despertado del sueño, hacer mucho ruido, aparentar y hablarle a los pecadores. Los cristianos que quieren trabajar para Cristo deben arar su campo. Es irracional creer que estas comprometido con Cristo sólo por que les hablas a los que no creen. Si tú aras primero tu campo, y luego vas y les predicas a los pecadores y los llevas a Cristo tus sentimientos Espirituales van aumentar. Tú te puedes producir un celo, una emoción, pero tu trabajo va a ser mecánico y esto no va a ser duradero. ¡Tú corazón debe estar quebrantado!.</li>
+
+            <li>Para terminar ¿te vas a quebrantar?, ¿Vas a ir por el camino que te señale y a perseverar hasta que estés completamente avivado? Si no cumples con esto no puedes seguir adelante conmigo porque lo tengo que decirte más adelante sólo te endurecería más.</li>
+        </ol>
+
+        <div class="highlight-box">
+            <p>Sí todavía no tienes un corazón quebrantado, no esperes recibir ningún beneficio de lo que todavía tengo que decir. Si no cumples con esta tarea inmediatamente te hago responsable de abandonar a Cristo por haberte rehusado a arrepentirte.</p>
+        </div>
+    </div>
+</div>
+
+<div class="menu-link-container">
+  <a class="menu-button" href="../../menu.html">Volver al Menú</a>
+</div>
+
+<footer>
+    Revista Avivamiento - ¿Cómo me arrepiento?<br>
+    Por Charles Finney
+</footer>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

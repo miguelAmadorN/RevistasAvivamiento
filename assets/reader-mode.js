@@ -179,15 +179,37 @@ function addReadAloudControls(main, article) {
   languageSelect.className = "reader-toolbar__select";
   languageSelect.setAttribute("aria-label", "Idioma de voz");
 
-  [
-    { code: "es-ES", label: "Español (España)" },
-    { code: "es-MX", label: "Español (México)" },
-    { code: "es-AR", label: "Español (Argentina)" },
-  ].forEach(({ code, label: name }) => {
+  const languages = [
+    { code: "es", label: "Español", speechLang: "es-ES" },
+    { code: "en", label: "English", speechLang: "en-US" },
+    { code: "pt", label: "Português", speechLang: "pt-BR" },
+    { code: "fr", label: "Français", speechLang: "fr-FR" },
+    { code: "it", label: "Italiano", speechLang: "it-IT" },
+    { code: "de", label: "Deutsch", speechLang: "de-DE" },
+    { code: "nl", label: "Nederlands", speechLang: "nl-NL" },
+    { code: "pl", label: "Polski", speechLang: "pl-PL" },
+    { code: "ru", label: "Русский", speechLang: "ru-RU" },
+    { code: "uk", label: "Українська", speechLang: "uk-UA" },
+    { code: "ro", label: "Română", speechLang: "ro-RO" },
+    { code: "cs", label: "Čeština", speechLang: "cs-CZ" },
+    { code: "sv", label: "Svenska", speechLang: "sv-SE" },
+    { code: "tr", label: "Türkçe", speechLang: "tr-TR" },
+    { code: "ar", label: "العربية", speechLang: "ar-SA" },
+    { code: "hi", label: "हिन्दी", speechLang: "hi-IN" },
+    { code: "ja", label: "日本語", speechLang: "ja-JP" },
+    { code: "ko", label: "한국어", speechLang: "ko-KR" },
+    { code: "zh", label: "中文", speechLang: "zh-CN" },
+  ];
+
+  const getLanguageConfig = (code) => (
+    languages.find((language) => language.code === code) || languages[0]
+  );
+
+  languages.forEach(({ code, label: name }) => {
     const option = document.createElement("option");
     option.value = code;
     option.textContent = name;
-    if (code === "es-ES") option.selected = true;
+    if (code === "es") option.selected = true;
     languageSelect.appendChild(option);
   });
 
@@ -211,8 +233,10 @@ function addReadAloudControls(main, article) {
 
   const speech = window.speechSynthesis;
   const sourceText = article.innerText;
+  const translationCache = new Map();
   let queue = [];
   let isStopped = true;
+  let isPreparing = false;
 
   const setPlayState = (isPlaying) => {
     playButton.textContent = isPlaying ? "⏹ Detener" : "▶ Reproducir";
@@ -222,7 +246,7 @@ function addReadAloudControls(main, article) {
     const voices = speech.getVoices();
     return (
       voices.find((v) => v.lang.toLowerCase() === langCode.toLowerCase()) ||
-      voices.find((v) => v.lang.toLowerCase().startsWith("es")) ||
+      voices.find((v) => v.lang.toLowerCase().startsWith(langCode.toLowerCase())) ||
       voices.find((v) => v.default) ||
       null
     );
@@ -235,6 +259,54 @@ function addReadAloudControls(main, article) {
     setPlayState(false);
   };
 
+  const translateChunk = async (chunk, targetLang) => {
+    const cacheKey = `${targetLang}:${chunk}`;
+    if (translationCache.has(cacheKey)) {
+      return translationCache.get(cacheKey);
+    }
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 9000);
+
+    try {
+      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(chunk)}`;
+      const response = await fetch(url, { signal: controller.signal });
+      if (!response.ok) {
+        throw new Error("translate failed");
+      }
+
+      const data = await response.json();
+      const translated = (data?.[0] || []).map((entry) => entry?.[0] || "").join("").trim();
+      const resolved = translated || chunk;
+      translationCache.set(cacheKey, resolved);
+      return resolved;
+    } catch {
+      return chunk;
+    } finally {
+      clearTimeout(timeout);
+    }
+  };
+
+  const buildSpeechQueue = async (language) => {
+    const baseChunks = splitTextIntoChunks(sourceText, 700);
+    const langCode = language.code;
+    const speechLang = language.speechLang;
+
+    if (langCode === "es") {
+      return baseChunks.map((text) => ({ text, langCode: speechLang, label: language.label }));
+    }
+
+    status.textContent = `Traduciendo a ${language.label}...`;
+    const translatedChunks = [];
+
+    for (const chunk of baseChunks) {
+      const translatedChunk = await translateChunk(chunk, langCode);
+      translatedChunks.push(translatedChunk);
+    }
+
+    return translatedChunks.map((text) => ({ text, langCode: speechLang, label: language.label }));
+  };
+
   const speakNext = () => {
     if (isStopped) return;
 
@@ -244,15 +316,15 @@ function addReadAloudControls(main, article) {
       return;
     }
 
-    const { text, langCode } = queue.shift();
+    const { text, langCode, label: languageLabel } = queue.shift();
     const utterance = new SpeechSynthesisUtterance(text);
     const voice = resolveVoice(langCode);
 
-    utterance.lang = langCode;
+    utterance.lang = voice?.lang || langCode;
     if (voice) utterance.voice = voice;
 
     utterance.onstart = () => {
-      status.textContent = "Reproduciendo en español...";
+      status.textContent = `Reproduciendo en ${languageLabel || langCode}...`;
       setPlayState(true);
     };
 
@@ -268,23 +340,35 @@ function addReadAloudControls(main, article) {
     speech.speak(utterance);
   };
 
-  playButton.addEventListener("click", () => {
+  playButton.addEventListener("click", async () => {
+    if (isPreparing) {
+      return;
+    }
+
     if (!isStopped || speech.speaking || speech.pending) {
       clearPlayback();
       status.textContent = "Reproducción detenida.";
       return;
     }
 
-    const langCode = languageSelect.value || "es-ES";
-    queue = splitTextIntoChunks(sourceText).map((text) => ({ text, langCode }));
+    isPreparing = true;
+    playButton.disabled = true;
 
-    if (queue.length === 0) {
-      status.textContent = "No se encontró texto para reproducir.";
-      return;
+    try {
+      const language = getLanguageConfig(languageSelect.value || "es");
+      queue = await buildSpeechQueue(language);
+
+      if (queue.length === 0) {
+        status.textContent = "No se encontró texto para reproducir.";
+        return;
+      }
+
+      isStopped = false;
+      speakNext();
+    } finally {
+      isPreparing = false;
+      playButton.disabled = false;
     }
-
-    isStopped = false;
-    speakNext();
   });
 
   languageToggle.addEventListener("click", () => {
@@ -292,7 +376,7 @@ function addReadAloudControls(main, article) {
     languageToggle.textContent = languageWrap.hidden ? "🌐 Idioma" : "✖ Ocultar idioma";
   });
 
-  status.textContent = "Lectura en español lista. Idioma está oculto hasta que lo abras.";
+  status.textContent = "Listo para leer en español. Puedes abrir Idioma para traducir y reproducir en más idiomas.";
   window.addEventListener("beforeunload", clearPlayback);
 }
 
@@ -329,13 +413,13 @@ function injectToolbarStyles() {
     }
 
     .reader-toolbar {
-      background: rgba(255,255,255,0.96);
+      background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(241,245,249,0.96));
       border: 1px solid #d6dde8;
       border-radius: 10px;
       padding: 8px 10px;
       margin: 0 0 10px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-      max-width: 520px;
+      max-width: 560px;
     }
 
     .reader-toolbar__label {
@@ -358,7 +442,7 @@ function injectToolbarStyles() {
 
     .reader-toolbar__button {
       border: 1px solid #c8d4e5;
-      background: #4a6491;
+      background: linear-gradient(135deg, #4a6491, #35507f);
       color: #fff;
       border-radius: 999px;
       padding: 6px 10px;
@@ -395,8 +479,9 @@ function injectToolbarStyles() {
     }
 
     html[data-theme="dark"] .reader-toolbar {
-      background: rgba(15, 23, 42, 0.88);
-      border-color: #334155;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.96));
+      border-color: #475569;
+      box-shadow: 0 6px 18px rgba(2, 6, 23, 0.35);
     }
 
     html[data-theme="dark"] .reader-toolbar__label,
@@ -411,6 +496,11 @@ function injectToolbarStyles() {
       border-color: #334155;
       background: #1e293b;
       color: #e2e8f0;
+    }
+
+    html[data-theme="dark"] .reader-toolbar__button:not(.reader-toolbar__toggle-language) {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      border-color: #3b82f6;
     }
   `;
 

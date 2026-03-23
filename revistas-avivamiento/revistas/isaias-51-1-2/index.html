@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaías 51:1-2 - Eiren Israel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+
+
+    .menu-button {
+        display: inline-block;
+        margin: 20px 0 10px;
+        padding: 10px 18px;
+        background-color: #4a6491;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .menu-button:hover {
+        background-color: #2c3e50;
+    }
+
+    .menu-link-container {
+        text-align: center;
+    }
+footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .revival-example {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #8B0000;
+        }
+
+        .revival-title {
+            font-weight: bold;
+            color: #8B0000;
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+  <script defer src="../../../assets/reader-mode.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Eiren Israel</div>
+            <div>ISAÍAS 51:1-2</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <div class="scripture">
+            "He aquí que no se ha acortado la mano de Jehová para salvar, ni se ha agravado su oído para oír; pero vuestras iniquidades han hecho división entre vosotros y vuestro Dios, y vuestros pecados han hecho ocultar de vosotros su rostro para no oír"
+            <span class="scripture-ref">Isaías 59:1-2</span>
+        </div>
+
+        <div class="scripture">
+            "Mas el pecado es afrenta de las naciones"
+            <span class="scripture-ref">Proverbios 14:34</span>
+        </div>
+
+        <p>Hay pecados que por ser muy comunes se vuelven pecados nacionales. Cuando mucha gente se entrega a un cierto tipo de maldad, eso se convierte en la afrenta o vergüenza de todo el país. Es triste decirlo, pero hay naciones a las que se les conoce mundialmente por sus pecados particulares; por ejemplo, Francia y Rusia son de los países con índices más altos de alcoholismo en todo el mundo; su vergüenza ante la humanidad y ante Dios es ser conocidos por sus borracheras.</p>
+
+        <p>Los Estados Unidos son conocidos por su gran inmoralidad sexual; por sus altos índices de divorcios, madres solteras, por su libertinaje y por su pornografía; la inmoralidad es uno de sus pecados nacionales. Así también Brasil es conocido mundialmente por tener aproximadamente 7 millones de niños abandonados en las calles de sus ciudades; su pecado es la falta de misericordia. Japón se destaca en años recientes por su gran avaricia, y así casi en cada país son evidentes sus pecados nacionales. México no es la excepción. Nuestro amado país tiene grandes y terribles pecados que son su vergüenza delante de los hombres y delante de Dios. Pecados que millones de mexicanos practican, como: el adulterio, la corrupción, el alcoholismo y la hechicería. Pecados que no le han sido perdonados. Pecados que ofenden a Dios. Pecados que mandan diario al infierno a muchos mexicanos. Son los pecados de México los que le dan autoridad a Satanás para destruirlo y esclavizarlo más todos los días. Por los pecados muchos niños sufren. Es por los pecados que Dios envía juicios a México, pues está escrito <span class="emphasis">"... porque por estas cosas viene la ira de Dios sobre los hijos de desobediencia."</span> (Efesios 5:6). El pecado no es cosa ligera, ya que ofende a Dios, y quita su bendición. En donde hay pecado hay cielos cerrados.</p>
+
+        <p>Es importante que entendamos esto claramente: <span class="red-emphasis">El pecado es algo gravísimo ante los ojos de nuestro Dios.</span></p>
+
+        <ul class="bible-list" style="margin-left: 30px; margin-bottom: 20px;">
+            <li>- Por un pecado Satanás fue sacado del cielo</li>
+            <li>- Por un pecado fueron encerrados los ángeles caídos en el abismo</li>
+            <li>- Por un solo pecado fue Adán echado del paraíso</li>
+            <li>- Por un solo pecado Esaú perdió su primogenitura y después no pudo recuperarla</li>
+            <li>- Por un solo pecado Moisés no entró en la tierra prometida</li>
+            <li>- Por un solo pecado fueron muertos Ananías y Safira</li>
+        </ul>
+
+        <p>¡Por un solo pecado! Cuanto más terribles deben ser muchos pecados, muchas veces al día, cometidos por muchos millones de mexicanos. Pecados que Dios aborrece, como la idolatría, la hechicería, los abusos sexuales contra los niños. Por eso Dios no ha visitado México con un gran avivamiento espiritual, por el pecado. Los pecados de nuestro país se han multiplicado, refinado y engrandecido, y Dios se ha airado y no ha dado su bendición. Querido lector, ¿cómo te imaginas que se siente Dios cada vez que un adulto abusa sexualmente de un menor? Esto es un hecho muy común en México. ¿Y cada vez que matan a alguien en un asalto y derraman su sangre por un poco de dinero; cómo lo verá Él?, ¿no dirá?: <span class="emphasis">"¡Ay de ti, ciudad sanguinaria, toda llena de mentira y de rapiña...!"</span> (Nahum 3:1). ¿Sonreirá Dios sobre una nación así? ¡Ay de México! Cuanto más cerca está del infierno que del cielo. El avivamiento, el gran despertamiento espiritual que muchos han deseado no ha llegado a México por causa del pecado. El pecado de toda esta nación está delante de Dios acusándola día y noche.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>"¿QUÉ ES UN AVIVAMIENTO?"</h2>
+
+        <p>Un avivamiento es un mover sobrenatural del Espíritu Santo sobre un país o grupo de personas, cuando esto ocurre la gente en grandes cantidades es movida a convertirse al Señor, no hablo de una conversión aquí y otra allá, sino de números importantes que afectan toda la sociedad.</p>
+
+        <p>Inexplicablemente la gente se empieza a interesar en las cosas de Dios y son movidos a buscar la Palabra con hambre y sed, con desesperación; Dios afecta e impacta toda la sociedad. Él conmueve y atrae las almas para que dejen su vida pasada y se entreguen a Jesús. En un avivamiento el Espíritu Santo atrae, inquieta, sacude. Todo mundo sabe que algo está pasando. Sólo una acción así de sobrenatural puede salvar a nuestro país de la maldad que se lo está comiendo. Necesitamos que una ola del poder de Dios barra la nación de norte a sur y de este a oeste; una ola que deje tras de sí almas convertidas y apartadas del pecado; sociedades moralmente transformadas. Una conversión aquí y otra allá, una y otra campaña evangelística harán muy poco para salvar un país de casi cien millones de personas.</p>
+
+        <div class="warning-box">
+            <p><span class="red-emphasis">Querido amigo, tú debes saber esto: MÉXICO NUNCA HA TENIDO UN AVIVAMIENTO.</span> Esto es cierto. Países enteros en distintas partes del mundo han tenido estas divinas visitaciones, pero México no.</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>¿POR QUÉ NOSOTROS NO?</h2>
+
+        <p>En los días de Jesús y los apóstoles; todo Israel fue visitado, el país entero se sacudió y muchos se convirtieron. No fue una semana de emociones, ni una campaña mensual. Por años enteros, la gente se salvó en grandes cantidades.</p>
+
+        <div class="revival-example">
+            <div class="revival-title">ISRAEL</div>
+            <div class="scripture">
+                "Y le vieron todos los que habitaban en Lida y en Sarón, los cuales se convirtieron al Señor."
+                <span class="scripture-ref">Hechos 9:35</span>
+            </div>
+            <p>Aquí dice que dos poblaciones ENTERAS se convirtieron al Señor; no dice que sólo levantaron la mano en un llamamiento, o sólo confesaron a Jesús como Salvador, sino que se convirtieron, esto es, estaban totalmente entregados a Dios. ¿Hemos visto algo así en México? ¿Algún pueblo entero convertido? Nunca.</p>
+        </div>
+
+        <div class="revival-example">
+            <div class="revival-title">JERUSALÉN</div>
+            <div class="scripture">
+                "Y salía a él Jerusalén, y toda Judea, y toda la provincia de alrededor del Jordán, y eran bautizados por él en el Jordán, confesando sus pecados."
+                <span class="scripture-ref">Mateo 3:5-6</span>
+            </div>
+            <p>He aquí un estado entero y su capital tocados y movidos hacia las cosas de Dios.</p>
+        </div>
+
+        <div class="revival-example">
+            <div class="revival-title">ASIA</div>
+            <p>En la importante ciudad de Efeso en días del apóstol Pablo hubo tal avivamiento que <span class="emphasis">"Y muchos de los que habían creído venían, confesando y dando cuenta de sus hechos. Asimismo muchos de los que habían practicado la magia trajeron los libros y los quemaron delante de todos; y hecha la cuenta de su precio, hallaron que era cincuenta mil piezas de plata."</span> (Hechos 19:18-19). ¡Muchos se entregaban, y en realidad cambiaban sus vidas!; muchos magos y hechiceros se salvaban. Hoy en día se escucha de la conversión de un brujo como algo raro y ocasional; pero en el avivamiento era frecuente. Fue tan fuerte en Efeso el impacto del Espíritu, que <span class="emphasis">"Así continuó por espacio de dos años, de manera que todos los que habitaban en Asia, judíos y griegos, oyeron la palabra del Señor Jesús."</span> (Hechos 19:10). ¡Leamos bien! TODOS los que habitaban en Asia... oyeron la Palabra ¡en sólo DOS AÑOS! No escucharon de religión sino el evangelio verdadero, y eran varios países. ¿Podemos decir así de México, o de nuestra ciudad?</p>
+        </div>
+
+        <div class="revival-example">
+            <div class="revival-title">GALES</div>
+            <p>Hace varios años que hubo una visitación tan preciosa en el país de Gales, que la gente caía en la calle pidiendo perdón por sus pecados. La convicción del Espíritu era tan fuerte que había personas que viajaban kilómetros en la nieve hasta encontrar algún cristiano o ministro que les predicara. Cuando comenzaban las reuniones de adoración cristianas, en la cantina que estaba cerca se dejaba sentir la presencia de Dios y había gente que no tenía valor ni para darle un trago a su cerveza, pues sabían que Dios estaba cerca.</p>
+        </div>
+
+        <div class="revival-example">
+            <div class="revival-title">ALEMANIA</div>
+            <p>Alemania también tuvo su tiempo de visitación, por años se salvaron muchísimos, allá en el siglo XVI.</p>
+        </div>
+
+        <div class="revival-example">
+            <div class="revival-title">LOS MORAVOS</div>
+            <p>Era el año de 1797 cuando una comunidad europea, originaria de Moravia, experimentó el avivamiento; al relatar lo sucedido un testigo presencial dijo lo siguiente:</p>
+            <div class="highlight-box">
+                <p>"Una gran hambre por la Palabra de Dios nos ha inundado a todos. Tanto es así; que necesitamos tener tres reuniones cada día. Una es a las 5:00 am, otra a las 7:30 am y otra a las 9:00 pm. El deseo de todos y cada uno es que sobre todas las cosas el Espíritu Santo tome control. Han desaparecido el egoísmo, la necedad, así como la desobediencia de todas las personas. Ha habido un diluvio de gracia que nos ha sumergido en el amor de Dios."</p>
+            </div>
+        </div>
+
+        <div class="revival-example">
+            <div class="revival-title">INGLATERRA</div>
+            <p>Sólo en el tiempo de Juan Wesley el país experimentó más de 30 años de visitación y avivamiento, en pocos años había aproximadamente 30,000 convertidos, transformados profundamente en sus vidas espirituales.</p>
+        </div>
+
+        <div class="revival-example">
+            <div class="revival-title">CUBA</div>
+            <p>Hace pocos años esta pequeña isla experimentó un derramamiento del Espíritu a todo lo largo y a todo lo ancho. Literalmente pueblos enteros fueron tocados por Dios y movidos hacia Jesús.</p>
+        </div>
+
+        <div class="revival-example">
+            <div class="revival-title">ESTADOS UNIDOS</div>
+            <p>Este país tuvo por lo menos dos avivamientos nacionales. Dios tuvo misericordia de multitudes y el rumbo del país fue totalmente cambiado para bien.</p>
+            <p>El primer gran despertamiento ocurrió en el siglo XVIII. Jonathan Edwards, pastor de una iglesia en el poblado de Northampton, Nueva Inglaterra dice:</p>
+            <div class="highlight-box">
+                <p>"En 1735 no había ni una sola persona en todo el pueblo; que estuviera ajena a las cosas de Dios. Nadie era indiferente. En ese año parecía que todo el pueblo estaba lleno de la presencia de Dios."</p>
+            </div>
+            <p>El segundo avivamiento ocurrió en Estados Unidos en el siglo XIX. Hubo semanas seguidas en las que se convertían hasta 50,000 personas por semana durante el tiempo del ministerio del evangelista Carlos G. Finney; eran tocados hasta 100,000 personas de las cuales se comprobó que el 85% permanecieron verdaderamente convertidas hasta el final de sus vidas.</p>
+        </div>
+
+        <div class="revival-example">
+            <div class="revival-title">GUATEMALA</div>
+            <p>Ese país tuvo un despertamiento que duró años. Hubo poblados enteros que cerraron todas las cantinas y se convirtieron; ¡y para qué hablar de Chile, Brasil, Rusia, Hungría, etc.! Países todos que tuvieron su tiempo, todos tuvieron su visitación. <span class="red-emphasis">Oh, amado lector, ¡México no ha tenido nada así!</span>, parece como si Dios se hubiera olvidado del país. ¿No lo puedes ver? Es por el pecado de esta nación que el Señor no ha dado un avivamiento. Visitó Estados Unidos, visitó Guatemala, <span class="red-emphasis">¡y a México lo pasó de largo!</span> Al norte cayó la bendición, al sur también... ¿y nosotros?</p>
+        </div>
+
+        <div class="scripture">
+            "E hice llover sobre una ciudad, y sobre otra ciudad no hice llover... y la parte sobre la cual no llovió, se secó... con todo, no os volvisteis a mí, dice Jehová."
+            <span class="scripture-ref">Amós 4:7-8</span>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>SEAMOS REALISTAS</h2>
+
+        <p>Despierta amigo. Despierta, en México no hay, ni ha habido, avivamiento, aunque algunos piensen lo contrario. Miremos a México con los ojos de la realidad, dejemos ya la fantasía de que "por fe será salvo". ¡Hoy no es salvo! Los cientos de mexicanos que murieron las últimas 24 hrs. no fueron convertidos, se perdieron. Mira la juventud mexicana entregada al placer, al alcohol, a la droga y al pandillerismo. Mira nuestros jóvenes, carne de nuestra carne, sangre nuestra, obsérvalos en las grandes ciudades, mendigando en los cruceros de las calles, prostituyéndose, drogándose con thinner.</p>
+
+        <p>¿Hay avivamiento? Observa como el crimen aumenta, la deshonestidad, el vicio. Ve los cientos de rostros que caminan tristes y amargados, atados por el pecado. Para ellos no hay avivamiento, ni aun se les ha predicado a la mayoría. No saben que hay un Jesús que salva y que sana el corazón. En México cada vez hay más adulterios, más inmoralidad; en Zacatecas se legalizó una zona de prostitución; Monterrey va en el mismo camino; Mérida pelea su derecho al aborto. Ya se habla de instalar casinos en lugares turísticos. Hay más divorcios, más pobreza, más asaltos, más abusos sexuales.</p>
+
+        <div class="highlight-box">
+            <p>Como dice el profeta Joel: <span class="emphasis">"Despertad, borrachos, y llorad".</span></p>
+        </div>
+
+        <p>Es tiempo de despertar de la embriaguez que nos ha causado este mundo con sus afanes. Es momento de dejar las fantasías y los juegos religiosos. Miremos a nuestro país como realmente está. Miremos a nuestras familias y conocidos: ¡Están endurecidos y esclavos del pecado! Lloremos por México; lloremos ante Dios pidiéndole que envíe un avivamiento. Sólo el hombre y la mujer que se atrevan a mirar las cosas con realismo podrán hacer oraciones quebrantadas y fervorosas a Dios. <span class="emphasis">"Gemid todos los que bebéis vino, a causa del mosto, por que os será quitado de vuestra boca."</span> Cuantos ya se están regocijando en los beneficios económicos que traerá el Tratado de Libre Comercio a nuestro país, ¡cómo se preparan! Dicen: "Ya pasó la crisis". Permíteme decirte algo. El dinero no va a venir solo; va a venir acompañado de vicios, pornografía y avaricia; el dinero va a venir, pero también el crimen organizado de Estados Unidos, ellos también buscan en donde invertir. Viene el dinero, pero también el estilo de vida americano; sistema que ha destruido hasta los cimientos la moral de su propia gente. Viene el dinero, pero con el esclavizante sistema de crédito estadounidense acompañándolo; viene la publicidad americana, primer lugar mundial para engatusar a la gente con productos que no necesita. Vienen más programas de televisión, con más violencia y más sexo. Viene más tentación. Va a ser un precio muy caro el que se va a pagar por ese dinero. <span class="red-emphasis">¡Ay de ti México!</span> Cuando no tienes dinero es para mal y cuando lo tienes también, pues no has entendido que <span class="emphasis">"una sola cosa"</span> es necesaria en esta vida: tener a Jesús.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>La Causa del Problema</h2>
+
+        <p>En Isaías el Señor dice porque no llega el avivamiento a México:</p>
+
+        <div class="scripture">
+            "He aquí que no se ha acortado la mano de Jehová para salvar, ni se ha agravado su oído para oír; pero vuestras iniquidades han hecho división entre vosotros y vuestro Dios, y vuestros pecados han hecho ocultar de vosotros su rostro para no oír."
+            <span class="scripture-ref">Isaías 59:1-2</span>
+        </div>
+
+        <p>No es que a Él le falte poder, pues <span class="emphasis">"Su mano no se ha acortado para salvar"</span>. Él es el Todopoderoso. Es el mismo que movió a Jerusalén, a Escocia, a Cuba. Él es el mismo ayer y hoy y por los siglos de los siglos.</p>
+
+        <p>Tampoco es que Él no ha visto u oído lo que pasa en México, pues <span class="emphasis">"no se ha agravado su oído para oír"</span>. Él oye, Él sabe lo que pasa. Él se interesa.</p>
+
+        <p>No es que todavía no sea su tiempo, pues <span class="emphasis">"hoy es el día de salvación"</span>. Es ahora que se necesita más que nunca y <span class="emphasis">"Dios ahora manda a todos los hombres en todo lugar, que se arrepientan"</span> (Hechos 17:30). Él desea bendecir a México ahora. ¿O te imaginas que Dios está feliz al ver como mueren y van al tormento eterno las almas?</p>
+
+        <p><span class="red-emphasis">El gran obstáculo es EL PECADO</span>, <span class="emphasis">"pero vuestras iniquidades han hecho división entre vosotros y vuestro Dios"</span>. La Biblia es muy clara al respecto: <span class="emphasis">"y vuestros pecados han hecho ocultar de vosotros su rostro para no oír."</span></p>
+
+        <p>Cuando una nación persiste en sus pecados, eso pone una barrera como si fuera un muro de división entre la gente y Dios. Eso evita que vengan grandes bendiciones espirituales para la nación. Eso hace también que Satanás gane ventaja y gobierne sobre las multitudes. Cuando hay gran maldad Dios se ofende y oculta su rostro. Él es muy sensible, Él aborrece el pecado, lo ofende y lo lastima. Sí, Dios está ofendido, Él <span class="emphasis">"no oye"</span> la oración. Piensa en esto un momento, ¡Cuántas oraciones hay en México! Miles oran y no hay respuesta. Dios no oye; está ofendido. ¡Cuántas oraciones por la juventud de México! y la juventud, casi en su totalidad, está cada vez más perdida. ¿No nos damos cuenta? Dios ha ocultado Su rostro de la gran mayoría de mexicanos y los ha <span class="emphasis">"entregado a una mente reprobada para hacer cosas que no convienen"</span>. Los ha dejado en manos de Satanás y de los demonios. Los ha dejado andar en la dureza de su corazón.</p>
+
+        <div class="warning-box">
+            <p><span class="red-emphasis">El avivamiento no ha llegado a México por el pecado. Punto.</span> Estemos conscientes de eso. Si el avivamiento viene alguna vez, será porque hombres y mujeres serios, decididos, se limpien primero de sus propios pecados y después intercedan a Dios con fervientes súplicas y lágrimas, pidiendo que Dios perdone la gran maldad de este pueblo. Pueblo que de continuo provoca a ira a Dios con idolatrías, mentiras y hechicerías.</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>El Camino al Avivamiento</h2>
+
+        <p>El avivamiento vendrá cuando hombres y mujeres quebrantados, se atrevan a ver la verdadera condición de perdición de sus semejantes, sin fantasías religiosas.</p>
+
+        <p>El avivamiento vendrá, cuando reconozcamos nuestra necesidad espiritual, y dejemos de creer que hemos logrado algo cuando millones de mexicanos viven en las peores tinieblas.</p>
+
+        <p>El avivamiento vendrá cuando se levanten personas como Daniel que en lugar de echarle la culpa al diablo de la condición del pueblo, entendió que era el propio país el responsable y que Dios también estaba involucrado en la situación.</p>
+
+        <div class="scripture">
+            "Todo Israel traspasó tu ley apartándose para no obedecer tu voz; por lo cual ha caído sobre nosotros la maldición"
+            <span class="scripture-ref">Daniel 9:11</span>
+        </div>
+
+        <div class="scripture">
+            "... porque contra Él pecamos."
+            <span class="scripture-ref">Daniel 9:11</span>
+        </div>
+
+        <div class="scripture">
+            "Por tanto, Jehová veló sobre el mal y lo trajo sobre nosotros; porque justo es Jehová nuestro Dios en todas sus obras que ha hecho, porque no obedecimos su voz."
+            <span class="scripture-ref">Daniel 9:14</span>
+        </div>
+
+        <p>El avivamiento vendrá cuando nos humillemos ante Dios, y reconozcamos que Él es justo al dejar caer sobre México sus juicios y nos humillemos en profunda oración, confesando los pecados nacionales y suplicando con fe por un avivamiento.</p>
+
+        <div class="scripture">
+            "Inclina, oh Dios mío, tu oído, y oye; abre tus ojos, y mira nuestras desolaciones, y la ciudad sobre la cual es invocado tu nombre; porque no elevamos nuestros ruegos ante ti confiados en nuestras justicias, sino en tus muchas misericordias."
+            <span class="scripture-ref">Daniel 9:18</span>
+        </div>
+
+        <div class="scripture">
+            "Oye, Señor; oh Señor, perdona; presta oído, Señor, y hazlo; no tardes"
+            <span class="scripture-ref">Daniel 9:19</span>
+        </div>
+    </div>
+</div>
+
+<div class="menu-link-container">
+  <a class="menu-button" href="../../menu.html">Volver al Menú</a>
+</div>
+
+<footer>
+    Revista Avivamiento - Isaías 51:1-2<br>
+    Por Eiren Israel
+</footer>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

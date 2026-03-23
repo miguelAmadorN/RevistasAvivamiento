@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Cristianismo Afeminado - Carlos Studd</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+
+
+    .menu-button {
+        display: inline-block;
+        margin: 20px 0 10px;
+        padding: 10px 18px;
+        background-color: #4a6491;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .menu-button:hover {
+        background-color: #2c3e50;
+    }
+
+    .menu-link-container {
+        text-align: center;
+    }
+footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .poem-box {
+            background-color: #f9f5e8;
+            border-left: 4px solid #b8860b;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .poem-line {
+            font-size: 1rem;
+            margin-bottom: 6px;
+            color: #5a3e1b;
+            text-align: center;
+        }
+
+        .hero-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8B0000;
+            margin: 25px 0 10px;
+        }
+
+        .pledge-table {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .pledge-option {
+            flex: 1;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            min-width: 250px;
+        }
+
+        .pledge-option h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .pledge-option .signature {
+            border-top: 1px solid #ccc;
+            margin-top: 15px;
+            padding-top: 10px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .pledge-table {
+                flex-direction: column;
+            }
+        }
+    </style>
+  <script defer src="../../../assets/reader-mode.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Carlos Studd</div>
+            <div>UN CRISTIANISMO AFEMINADO</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>Estimado lector: En esta ocasión hemos tomado para el presente número la clásica obra <span class="emphasis">"El cristiano de chocolate"</span> del misionero Inglés Carlos Studd.</p>
+
+        <p>Seguramente la mayoría de nuestros lectores estará de acuerdo en que vivimos tiempos donde los modelos cristianos son tan escasos, que nos conviene mirar cien años atrás para encontrar verdaderos ejemplos. No que hoy en día no haya cristianos reales. Sí los hay, aunque pocos. Lo que sucede es que una avalancha de cantantes, actores y modelos "cristianos" afeminados han invadido nuestra decadente época, robando la atención de los jóvenes, haciéndoles creer que esa es la vida y el llamamiento del Señor Jesucristo. De esta manera, el joven, bien dispuesto a seguir sus deplorables ejemplos a pesar de estar convencido de que amar y servir a Dios significa otra cosa, se deja atraer y finalmente se extravía en estas corrientes contemporáneas, que en realidad obedecen a los mismos principios egoístas y mundanos que se manifestaban en los tiempos de Studd.</p>
+
+        <p>Studd, precisamente en su juventud, comprendió lo que implicaba ser cristiano, y su corazón sintió la urgencia de obedecer la gran comisión de su Salvador. Pero no sucedía lo mismo en la mayoría de los supuestos cristianos de entonces. Siempre tenían suficientes excusas y argumentos para no hacer lo que sabían que tenían que hacer. Las misiones pedían hombres y los hombres sentían que su llamado era quedarse en Inglaterra. Todos querían cantar pero nadie quería sufrir. Los africanos agonizaban sin ayuda espiritual y las denominaciones se engordaban en congresos y cultos innecesarios. No había respuesta a la necesidad. Los hombres, bien capacitados para suplirla, no lo hacían, porque les implicaba sufrimiento y negación.</p>
+
+        <p>Nadie vaya a pensar que las cosas son mejores hoy, de lo que fueron hace un siglo. Al contrario. En la actualidad la situación se presenta todavía más patética. Aun los buenos libros y artículos de misioneros hay que desenterrarlos de un montón de revistas, cassettes, libretos y cd's de estrellas del llamado cristianismo de hoy. ¿Responder a la terrible necesidad del mundo sin Cristo? Eso está más allá de lo que los varones de hoy siquiera puedan considerar. Las mujeres manifiestan más dedicación y compromiso que los hombres y eso es algo vergonzoso que cualquiera puede observar. Desde luego, los hombres no se dan por aludidos.</p>
+
+        <p>¿Dónde están los verdaderos hombres? ¿Dónde están los varones que Dios puede usar, que no van a escatimar nada por servir a su generación?</p>
+
+        <p>El escrito que ponemos en sus manos nos hará reflexionar. No importa que tan buenos sean los argumentos con los que cada quien quiera convencerse, ya sea el movimiento prestigiado o la denominación a la que se pertenezca. Mientras exista a nuestro alrededor la necesidad que todos conocemos y vemos con nuestros propios ojos, sabremos en lo más íntimo de nuestro ser que nos engañamos y que ninguno que no se niegue a sí mismo y tome la cruz cada día no puede ser discípulo de Cristo.</p>
+
+        <div class="editors-note">
+            Atentamente<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">EL SOLDADO DE CHOCOLATE</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Heroísmo, el acorde perdido del cristianismo<br>Por: C.T. Studd</div>
+
+    <div class="content-section">
+        <p>¡El heroísmo es el acorde perdido, la nota que falta en el cristianismo actual!</p>
+
+        <p>¡Todo verdadero cristiano es un héroe! ¡Un soldado sin heroísmo es un soldado de chocolate! ¿Quién no es incitado al desdén y a la burla con la simple idea de un soldado de chocolate? En tiempo de paz, los verdaderos soldados están como leones cautivos, inquietos dentro de sus jaulas, en cambio, la guerra los libera y los envía como a estudiantes contentos al final del día escolar, a obtener el deseo de su corazón o a perecer en el intento ¡El aliento vital del soldado es la batalla! La paz lo vuelve asmático y jorobado, mientras que la guerra le devuelve la vitalidad contagiosa. ¡Le da el corazón, la fuerza y el vigor de un héroe!</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">TODO VERDADERO CRISTIANO, ES UN SOLDADO DE CRISTO</div>
+
+        <p>¡Un héroe por excelencia! Valiente entre los valientes, que se burla de las seducciones de la paz y sus repetidas advertencias contra las dificultades, enfermedades, peligro y muerte, cosas que el valiente considera sus mejores amigos.</p>
+
+        <p>¡El cristiano que no es así, es un cristiano de chocolate! Que se disuelve en el agua y se derrite al olor del fuego. ¡Son golosinas, bombones, caramelos! Que pasan sus vidas sobre una charola de porcelana o en una cajita de dulces, cada uno envuelto suavemente, en un papelito con bordes recortados para preservar su preciosa y delicada textura.</p>
+
+        <p>"Dice: "Yo voy, Señor" y no fue", dijo que iría a los paganos, pero en lugar de hacerlo, se quedó con los cristianos.</p>
+
+        <p>"Ellos dicen y no hacen", mandan ir a otros, pero ellos no van.</p>
+
+        <p>En la batalla de Sebastopol, un cabo mandó a un soldado raso para que arreglara una defensa militar. "Nunca mande a otro, a hacer lo que usted mismo tiene miedo de hacer", le dijo el general Gordon al cabo, mientras él mismo saltaba sobre el parapeto de la trinchera para componerla.</p>
+
+        <p>Para el Cristiano de Chocolate, el sólo hecho de pensar en la guerra le produce un violento ataque de nervios, y el llamado a la batalla lo deja paralizado. Dice: "Realmente soy paralítico", "Quisiera hacerlo, pero sólo puedo cantar". He aquí algunos de mis versos favoritos:</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Que me lleven al cielo</div>
+            <div class="poem-line">sobre camas de flores,</div>
+            <div class="poem-line">que otros conquisten el premio,</div>
+            <div class="poem-line">a través de mares de horrores.</div>
+            <div class="poem-line">¡Seguid vuestra marcha! héroes cristianos,</div>
+            <div class="poem-line">que nosotros también avanzamos</div>
+            <div class="poem-line">aunque no a la misma batalla.</div>
+            <div class="poem-line">¡Deteneos! Cuidad a los niños</div>
+            <div class="poem-line">mimadlos con muchos cariños</div>
+            <div class="poem-line">alimentadlos, vestid en pañuelo,</div>
+            <div class="poem-line">a los bebes que están en el suelo.</div>
+            <div class="poem-line">Hacedlo sin tregua, no deben parar</div>
+            <div class="poem-line">hasta que de gorditos</div>
+            <div class="poem-line">no puedan ni andar</div>
+            <div class="poem-line">Coro:</div>
+            <div class="poem-line">Dejadnos deambular</div>
+            <div class="poem-line">en paz dejadnos dar</div>
+            <div class="poem-line">vueltas y vueltas en la guardería,</div>
+            <div class="poem-line">niñeras somos, en vez de infantería.</div>
+            <div class="poem-line">Dulces, pasteles y demás</div>
+            <div class="poem-line">en nuestros platos deben estar</div>
+            <div class="poem-line">porque lo más deleitoso,</div>
+            <div class="poem-line">no nos debe faltar.</div>
+        </div>
+
+        <p>Gracias al buen Señor, decía una frágil y anciana señora, ¡"Dios nunca quiso que yo fuera una gelatina" y en verdad no lo era! Dios jamás ha sido y nunca será un fabricante de chocolate.</p>
+
+        <p>Los hombres de Dios siempre son héroes. En las Escrituras se pueden hallar sus gigantes huellas sobre las arenas del tiempo.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">NOE</div>
+
+        <p>Caminaba con Dios y no sólo predicaba la justicia, sino que la practicaba. Pasó por el agua y no se disolvió, se enfrentó a la opinión general de su época, desdeñando tanto el odio como la mofa de quienes se burlaban de la idea de que existiera un sólo camino para ser salvos. Noé les advirtió a los incrédulos del juicio de Dios, y una vez que entró en el arca, no abrió la puerta ni una pulgada, ya que Dios la había cerrado. He ahí un verdadero héroe inconmovible ante el temor al hombre.</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Aprende a desdeñar de los hombres sus elogios,</div>
+            <div class="poem-line">aprende a perder con Dios;</div>
+            <div class="poem-line">Jesús conquistó el mundo sufriendo vergüenza,</div>
+            <div class="poem-line">y a todos nos invita a seguir su senda.</div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">ABRAHAM</div>
+
+        <p>Fue un sencillo campesino que al escuchar las palabras del Dios invisible, se marchó con su familia y su ganado, a través del terrible desierto hacia una tierra lejana, para vivir en medio de un pueblo cuyo idioma no hablaba ni entendía. ¡Qué tal! Y más tarde hizo algo mejor. Marchó de prisa contra un ejército de cinco reyes aliados, enaltecidos por su reciente victoria, ¡todo para rescatar a un sólo hombre! ¿Su ejército? Sólo unos 318 hombres equipados para la aventura, ¡Y ganó! "El que se une con Dios siempre gana". ¡Qué intrepidez! ¡Era sólo un campesino sin preparación alguna para la guerra! No obstante: ¿Qué héroe ha superado esa hazaña? ¿Y cuál fue su secreto? Abraham era amigo de Dios. Ese fue su secreto abierto.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">MOISÉS</div>
+
+        <p>Llamado el hombre de Dios, fue una especie de camaleón humano. Erudito, general, legislador, líder, etc. Criado como nieto del rey, tenía muchas posibilidades de llegar al trono, para lo cual sólo había un obstáculo: "La verdad". ¡Qué decisión más difícil! ¡Qué tentación! ¡Un trono a cambio de una mentira! La ignominia, el exilio, o bien la muerte, a cambio de la verdad. ¡Hizo el papel de hombre!</p>
+
+        <div class="scripture">
+            "Rehusó llamarse hijo de la hija de Faraón, escogiendo antes ser maltratado con el pueblo de Dios, que gozar de los deleites temporales del pecado, teniendo por mayores riquezas el vituperio de Cristo, que los tesoros de los egipcios..."
+            <span class="scripture-ref">Hebreos 11:24-26</span>
+        </div>
+
+        <p>Lo veo de nuevo... Ahora viejo y solitario, marchando imperturbable de regreso a Egipto, después de cuarenta años de exilio, a enfrentarse al león en su guarida, a liberar a los esclavos del Faraón frente a sus propios ojos, y conducirlos a través del inmenso y peligroso desierto.</p>
+
+        <p>¡Un proyecto que requiere esfuerzo, y sobrepasa a cualquier otro! ¡Los designios de Dios siempre han sido así! Mira el Jordán, a Jericó, a Gedeón, Goliat, y a muchos más. Los Proyectos fáciles llevan otra marca: ¡La de la Brigada de Chocolate! ¡Cuánto aman sus escondrijos y aún así se consideran sabios! Los verdaderos cristianos se deleitan en aventuras de gran riesgo por Cristo, esperando grandes cosas de Dios e intentando las mismas grandes cosas con regocijo. En la historia no se han podido igualar las hazañas de Moisés. ¿Cómo lo hizo? No consultó con carne y sangre. No obedeció a ningún hombre, sino a Dios.</p>
+
+        <p>Y de nuevo veo al anciano de barba gris, bajando esta vez del monte a grandes zancadas, precipitándose al campamento, con los ojos flameantes como carbones encendidos. Un sólo hombre contra dos millones de danzantes, desenfrenados en el libertinaje. ¡Bravo! ¡Bien hecho viejo! ¡De primera! Su rostro no palidece, pero su boca se mueve y creo escuchar las palabras: "Si Dios está por mí, ¿quién contra mí? No temeré a diez millares de hombres que se hayan puesto en contra mía. Aún si un ejército acampe alrededor de mí, no temerá mi corazón". Y no temió ¡Nuevamente ganó Moisés! ¿De dónde tal valor y heroísmo? Escucha lo que Dios dice de él:</p>
+
+        <div class="scripture">
+            "Y aquel varón Moisés era muy manso, más que todos los hombres que había sobre la tierra"
+            <span class="scripture-ref">Números 12:3</span>
+        </div>
+
+        <p>El Señor habló cara a cara con Moisés, como hablamos nosotros con un amigo:</p>
+
+        <div class="scripture">
+            "No así a mi siervo Moisés, que es fiel en toda mi casa. Cara a cara hablaré con él..."
+            <span class="scripture-ref">Números 12:7-8</span>
+        </div>
+
+        <p>Tal es la afirmación acerca de Moisés, el camaleón, el hombre y amigo de Dios; por consecuencia, un héroe de primera clase.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">DAVID</div>
+
+        <p>David, cuyo corazón era conforme al de Dios, fue un hombre de guerra y de mucho valor. Cuando todo el ejército de Israel se acobardó, él enfrentó a Goliat -sólo... con Dios- siendo apenas un muchacho y además bien regañado por su hermano mayor, por haberse acercado al campo de batalla. ¡Qué necio más grande fue su hermano Eliab! Como si David sólo hubiera ido a ver una batalla y no a luchar. Eso es para los soldados de chocolate. Los que sólo van a ver las batallas y tranquilamente incitan a otros a pelear.</p>
+
+        <p>Sería mejor que guardaran el dinero del viaje y lo emplearan para enviar a los verdaderos guerreros. Los soldados no necesitan niñeras, les basta el Espíritu Santo, siempre presente y dispuesto a cuidarlos en cualquier necesidad con una simple petición. ¡No! ¡David fue a la batalla, se quedó a luchar y ganó! Sabio por encima de su juventud, no tenía necesidad de la armadura que utilizaba Saúl, porque restringía su libertad de actuar... Se la midió y tan pronto como se la midió, se la volvió a quitar. Además, rechinaba tan horrible al caminar, que le hubiera impedido escuchar la apacible y delicada voz de Dios, diciéndole: "¡Por aquí es el camino a la cañada David, ahí están las cinco piedras lisas! Confía sólo en mí. ¡Tu honda, hecha con tu mano servirá perfectamente, y ahí está el atajo hacia Goliat!" LOS CHOCOLATES habían huido, (pues todos eran de chocolate), pero David arremetió contra Goliat. Una sola piedra lisa bastó.</p>
+
+        <p>El secreto de David consistió en que sólo tenía un director y éste era infalible. Dios dirigió la piedra así como al joven. Varios capitanes en un equipo echan a perder el partido y si hay dos, sobra exactamente uno. Por eso Cristo dijo a sus soldados: El os guiará a toda la verdad.</p>
+
+        <div class="scripture">
+            "Este es mi Hijo Amado: a Él oíd"
+            <span class="scripture-ref">Marcos 9:7</span>
+        </div>
+
+        <div class="scripture">
+            "Un solo mediador, entre Dios y los hombres, Jesucristo hombre"
+            <span class="scripture-ref">1 Timoteo 2:5</span>
+        </div>
+
+        <p>"Un solo director del cristiano" El Espíritu Santo, cuyas instrucciones indiscutiblemente requieren obediencia inmediata, sin depender de la aprobación de los hombres.</p>
+
+        <p>Al diablo se le ataca con balas ardientes provistas por la fundidora del Espíritu Santo... Él se ríe de balas frías o tibias; y usar las que son una mezcla de hierro y arcilla, medio divinas y medio humanas, es como lanzarle bolas de nieve.</p>
+
+        <p>¿De dónde provenían la resolución y la destreza de este inexperto joven? No fue de cursos militares, escuelas teológicas o retiros espirituales. ¡Basta conocer sólo al Dios verdadero y a Jesucristo! Pablo decidió conocer sólo a Jesucristo, ¡Y vean que resultado! Mientras otros aprendían teorías bonitas, David, así como Juan, habían estado a solas con Dios en el campo, practicando contra osos y leones. ¿El resultado? Conocía a Dios y hacía proezas. Lo miraba sólo a Él, confiaba, y le obedecía. Ese era el secreto, sólo Dios da fuerzas. Dios mezclado con hombres implica la debilidad del hierro y la arcilla... chocolate, ¡fragilidad!</p>
+
+        <p>David era un héroe. Sin embargo, ¡Ay de él! Una vez jugó el papel de soldado de chocolate. Se quedó en casa, cuando debía ir a la guerra. Su ejército, lejos y en peligro, luchando contra el enemigo, ganó la batalla. Mientras que David, a salvo en su hogar, cerca de la casa de Dios y aún frecuentándola, sufrió la gran derrota de su vida, ocasionando una cosecha tan amarga de por vida, que bien pudiera disuadir a otros de cometer la tontería de sembrar esa clase de semillas silvestres. El pecado de David es un tremendo sermón (Como debiera haber sido la predicación de Lot en Sodoma) Su tema: ¡"No seas un soldado de chocolate"!</p>
+
+        <p>Mediante una sencilla, rápida y completa confesión, David recobró otra vez su vigor. Se necesita ser un verdadero hombre para realmente confesar. Un soldado de chocolate dará excusas o encubrirá su pecado. Resbalará en el fango, se revolcará, limpiará su boca tratando de quitar el mal sabor de la mentira consumada y se engañará diciendo: "No he cometido iniquidad". ¡El tal será un suicida insensato! Matando la conciencia para guardar la dignidad. Como Balaam que azotó a su asna cuando trataba de salvarle la vida. El ser un soldado de chocolate casi le cuesta la vida a David. ¡Cuidado!</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">NATÁN</div>
+
+        <p>Fue otro verdadero soldado de Cristo. Él fue a reprocharle a su rey de frente, como lo hizo Pedro con Ananías (sólo que David aprovechó la oportunidad y confesó), no como los soldados de chocolate de hoy, que se la pasan murmurando y se niegan a juzgar, reprochar, o a quitar de en medio lo malo por miedo a un posible escándalo.</p>
+
+        <p>Ellos, acobardados dicen: "No es nada ¡Nada en absoluto, apenas una equivocación! Como si la causa de Dios sufriera más por una declaración abierta en defensa de la verdad y por el uso de la espada, que por esconder el pecado y permitir el desarrollo mortífero en los miembros, causando así la muerte para el cuerpo entero.</p>
+
+        <p>"El que hace justicia es justo", "El que peca es del diablo", y uno debe decirlo. El que cae y vuelve a ser llevado cautivo por el diablo, no necesita ni vendajes ni ungüento, sino de un justo que lo reprenda con firmeza y lo exhorte a que se arrepienta. Hoy en día necesitamos mucho de personas como Natán, que le temen solo a Dios y no a cualquier escándalo.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">DANIEL</div>
+
+        <p>¡Por supuesto! Fue otro héroe ¿Acaso no era el hombre amado de Dios, a quien mandó un ángel para decírselo?</p>
+
+        <p>Me gusta observarlo mientras se dirige al foso de los leones con paso firme y cara radiante, parando sólo una vez, como su Señor rumbo al Calvario, para confortar al emperador que estaba llorando y agonizando. Dios obró a favor de Daniel, cerrando la boca de los leones, pero la abrió para aquellos que habían hablado en contra de su siervo.</p>
+
+        <p>A un hombre se le conoce por sus obras, y las obras de Daniel eran sus tres amigos, quienes prefirieron enfrentarse al horno de fuego antes que inclinarse delante de los hombres o de la imagen de oro.</p>
+
+        <p>Ve a Daniel otra vez, ahora en el salón del banquete, mientras se oye el susurro del que lo conduce: "Sé amable Daniel, sé diplomático..." "Posición y poder te esperan si eres discreto y sabio; sobre todo si eres discreto". Y ahí va la sencilla respuesta de Daniel: "¡Fuera, Satanás!" Después lo podemos ver delante del rey, enfrentando la tortura o la muerte inmediata, pero fue el rey quien vaciló, no Daniel, quien le dice directamente toda la calcinante verdad de Dios, sin quitarle una sola palabra</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">JUAN EL BAUTISTA</div>
+
+        <p>Fue un hombre enseñado, hecho y enviado por Dios, un buen tipo. ¡Juan! ¿Quién no lo ama y admira? ¡Hasta Herodes! No tenía pelos en la lengua, ni endulzaba sus palabras. No tenía ni una gota de aceite, ni de melaza en su composición, pues siempre enfatizaba la pura verdad. Como amaba, así advertía, no sabía adular. Cortejaba con la espada, y por eso los hombres lo amaban más. Siempre es así.</p>
+
+        <p>Los líderes religiosos mandaron interrogar a Juan con la pregunta que tanto gustaban de hacer: ¿Con qué autoridad haces estas cosas (buenas)? Lo mismo le preguntaron a Cristo, y lo crucificaron por haberlas hecho. La respuesta de Juan fue sencilla y mordaz. Les responderé lo que preguntan y más. (Juan era siempre sincero) "¿Yo? Yo no soy nadie, pero ustedes y sus maestros son una generación de víboras". ¡Que contestación! Juan siempre ponía sal a sus palabras. Era un hombre que hablaba con libertad y audacia, un hombre de Dios que: ¡No era ni golosina, ni soldado de chocolate!</p>
+
+        <p>De igual manera, se enfrentó a Herodes después de seis meses en una celda subterránea, donde actuaba como un hombre de la "misión de Dios al aire libre". Llevado ante el rey, rodeado de todo el poder y la majestad de la corte, parpadeando por la desacostumbrada luz, pero de ninguna manera vacilando ante la verdad, dejó escapar la ardiente y tronante reprensión:</p>
+
+        <p>"No te es lícito tomar esa mujer por esposa". Todo un sermón en una frase, tan fácil de recordar como imposible de olvidar. Juan había predicado así antes. Como Hugh Latimer, no menospreciaba el repetir palabra por palabra, un buen sermón a un rey, cuando éste había hecho caso omiso de sus advertencias.</p>
+
+        <p>Juan recibió tanto de Dios como del emisario de Satanás; la distinción única de ser un personaje sobresaliente. Escucha al Salvador, que se permite una explosión de exquisito sarcasmo, acerca de aquello que la gente pensaba de Juan. ¿Qué salieron a ver al desierto, una caña sacudida por el viento? ¿Un hombre vestido de ropa fina? ¿Un cristiano de Chocolate? ¡Qué delicia! Los chocolates se encontraban precisamente ahí delante de Jesús, fariseos, saduceos, sacerdotes, escribas, abogados y otros hipócritas. ¡Cómo se divertiría la muchedumbre! "¿Un profeta? ¡Si, os digo, y mucho más que un profeta! De hombre nacido de mujer no hay uno mayor que Juan". Y ¿Qué dijo el enviado del diablo cuando oyó de Jesús, después de la muerte de Juan? "Es Juan levantado de la muerte". ¡Qué personaje! ¡Imagínate, alguien confundiendo a Jesús con otro! Con el único que pudiera ser confundido, con Juan. Nadie le envidiaría esa honra, la tenía bien merecida. Aunque de veras era un gran honor porque Juan era un hombre puro, sólido, sin una sola pizca de chocolate.Si Juan hubiera oído decir a Jesús: "Ustedes me serán testigos hasta los confines más remotos de la tierra", no creo que la cárcel de Herodes o sus soldados, lo hubieran podido detener. Seguramente habría encontrado la manera de escapar y habría salido a predicar el evangelio de Cristo, sino en el mismo corazón del África, entonces en otra parte más difícil y peligrosa. Pero Cristo dijo refiriéndose al don del Espíritu Santo que sería dado a todo creyente: "El que es el menor en el reino de Dios, es mayor que Juan," dando a entender que poderes aún más grandes están a la disposición de todo cristiano y que todos nosotros podemos ser lo que era Juan: Bueno, directo, intrépido, invencible y heroico.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">PABLO</div>
+
+        <p>Pero he aquí otras huellas profundas que sólo pueden ser de un hombre "único". La más grande de las paradojas cristianas, el pequeño gigante Pablo, cuya cabeza era tan grande como su cuerpo y su corazón más que los dos. Por un tiempo, creyó y trató a todo cristiano como una combinación de tontos y locos. Luego, él mismo se volvió como ellos. Se le llamaba "tonto" porque su comportamiento estaba fuera de los límites del raciocinio humano y "loco" por su ardiente celo por Cristo y los hombres.</p>
+
+        <p>Pablo fue un intelectual de primera, pero supo utilizar su intelecto, pues lo dejó de lado, anunciando que la sabiduría de los hombres no era más que insensatez, por lo cual determinó conocer sólo a Jesucristo y a Él crucificado.</p>
+
+        <p>¿El resultado? Volvió el mundo al revés, lo trastornó. Su vida consistía en arriesgarse continuamente por Dios.</p>
+
+        <p>Se enfrentó diariamente a la muerte por Cristo. En repetidas ocasiones se paró firme ante los que anhelaban su sangre.</p>
+
+        <p>Compareció delante de reyes y gobernadores sin vacilar. Ni siquiera titubeó ante Nerón, el vicepresidente del infierno. Sus sufrimientos fueron espantosos.</p>
+
+        <p>Léelos. Siguió los pasos de su Maestro y recibió los mismos cumplidos que su Señor, porque Dios siempre es fiel y justo en sus recompensas.</p>
+
+        <p>"Todos lo abandonaron". Pues en aquel entonces también había algunos cristianos de chocolate. Tuvo que haber sido de chocolate quien abandonó a Pablo. Por supuesto, los chocolates se excusaron como lo hacen hoy en día.</p>
+
+        <p>¿Quién podría soportar a un tonto tan fanático y ferviente? ¿De carácter tan testarudo? ¡Nadie podía colaborar con él, ni él con nadie! (¡Qué mentira! Jesús lo hizo, y formaron un buen equipo).</p>
+
+        <p>Un entusiasta sin diplomacia, consideraba que era responsabilidad suya decirles a todos la cruda verdad, sin tener en cuenta las consecuencias.</p>
+
+        <p>Se graduó sin competencia ni escuela. ¡Y qué grado! Un hacha al cuello, superado sólo por la cruz.</p>
+
+        <p>Y así continúa el relato. Donde sea que leas en las Escrituras o libros de historia, encontrarás que quienes realmente conocían a Dios y no sólo lo confesaban, eran invariables ejemplos de valor y de esperanza, atrevidos por la causa de Jesús, arriesgándose por Dios.</p>
+
+        <p>"Tontos y locos", les gritan el mundo y los chocolates. "Sí, por causa de Cristo" agregan los ángeles.</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Noblemente lucharon por ganar el premio,</div>
+            <div class="poem-line">ascendieron las escarpadas alturas del cielo,</div>
+            <div class="poem-line">a través del peligro, penas y dolor.</div>
+            <div class="poem-line">¡Concédenos la gracia, Señor</div>
+            <div class="poem-line">para nosotros también imitarlos!</div>
+        </div>
+
+        <p>Por lo menos, los cristianos de chocolate de hoy, Pueden hacer alarde de antiguos linajes.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">CHOCOLATES A LA RUBÉN</div>
+
+        <p>Hay "Chocolates a la Rubén" que escudriñan sus corazones y hacen también grandes resoluciones, pero, por alguna razón, permanecen entre los "rebaños", oyendo las melodías de sus amados pianos y coros eclesiásticos.</p>
+
+        <p>Es bueno escudriñar nuestro corazón, pero es mejor tomar decisiones de corazón.</p>
+
+        <p>No obstante, si en lugar de obedecer, nos escondemos entre las ovejas y abandonamos a nuestros hermanos en la lucha contra los lobos, dejándolos solos y cargados de trabajos, no somos más que cristianos de chocolate.</p>
+
+        <p>Hace varios años resolviste ir al África por Cristo. ¿Dónde estás ahora? ¿En Inglaterra? ¡Sí! ¡Sí! ¡Caramelo! "¿Por qué te quedaste entre los rediles, para oír los balidos de los rebaños? Entre las familias de Rubén hubo grandes propósitos del corazón". (Jue. 5:16)</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">CHOCOLATES A LA MEROZ</div>
+
+        <p>Hay "chocolates a la Meroz", que son como aquellos que merecieron la maldición del ángel del Señor.</p>
+
+        <p>La guerra se declaró, la batalla estaba por empezar, las esperanzas eran minúsculas y Meroz se quedó en Inglaterra para asistir a unas convenciones hasta que terminó la contienda.</p>
+
+        <p>Luego salió cómodo y seguro como un turista. Sin duda decía: "No podré luchar sin antes estar debidamente preparado. Además, hay tanto que hacer en la abundancia y plenitud de Meroz, y sabemos que alimentar un rebaño de ovejas gordas siempre se ha considerado el entrenamiento perfecto para la guerra", ¡Como si el mejor entrenamiento para un soldado fuera el de ponerse en el papel de niñera!</p>
+
+        <div class="scripture">
+            "Maldecid a Meroz, dijo el ángel de Jehová; maldecid severamente a sus moradores, porque no vinieron al socorro de Jehová contra los fuertes"
+            <span class="scripture-ref">Jueces 5:23</span>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">CHOCOLATES A LA BALAAM</div>
+
+        <p>Los "chocolates a la Balaam", empiezan como de primera clase y son conocidos como profetas. Luego, comienzan a desviar la mirada y se derriten. Finalmente, salen huyendo de la sartén y caen en el fuego, como Balaam.</p>
+
+        <p>Un día, su ojo izquierdo no pudo mirar hacia Dios. Estaba observando el mundo y sus riquezas, y a esa chica, la señorita popularidad. Él debería haber hecho lo que Dios le dijo, sacarse el ojo, pero decía que eso era demasiado. Además, quería lo mejor de ambos mundos. Deseaba de todo corazón morir como un justo, pero no estaba dispuesto a pagar el precio de una vida justa. No se atrevía a maldecir al pueblo de Dios, de manera que trazó planes para que otros los llevaran a cabo por él. Pero un día, cuando sus siervos estaban haciendo los preparativos, Balaam cayó junto con ellos (Ver Nm. 22-24)</p>
+
+        <div class="scripture">
+            "Te aconsejo que unjas tus ojos con colirio para que veas, que vuelvas a tener una mirada clara y te des cuenta de lo necio que es coquetear con el mundo"
+            <span class="scripture-ref">Apocalipsis 3:18 (paráfrasis)</span>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">CHOCOLATES A LA DEMAS</div>
+
+        <p>Este "chocolate a la Demas" abandonó al candente y ferviente Pablo por seguir otro sendero menos peligroso. Pensaba que Pablo debía tolerar el pecado o fingir no verlo, para no tener que reprenderlo, pues ¿sabes? "Era tan aficionado al cuchillo que nunca usaba vendajes pues decía que no sanaban, sino que hacía crecer la llaga por debajo, la empeoraban, la agrandaban y la hacían más peligrosa" (Ver 2 Ti. 4:10)</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">JUAN</div>
+
+        <p>Una vez, se afilió a la Brigada de Chocolate. Dejó a Pablo y a Bernabé sin apoyo, y regresó a Jerusalén para recuperarse. Se fue a un "retiro espiritual". Gracias a Dios pronto se hartó, se apartó, y volvió a entrar en el ejército del Señor para ser un soldado útil. (Ver Hch. 13:13)</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">NAUFRAGOS</div>
+
+        <p>Muchos jóvenes admirables se convierten en chocolates a causa de viejos profetas. Viejos Profetas que han perdido el fuego o que abundan en palabras pero no en hechos, con frecuencia se vuelven grandes fabricantes de chocolate. A aquel joven varón de Dios que amonestó a Jeroboam le iba muy bien mientras obedecía sólo a Dios, pero todo terminó para él cuando escuchó otra voz, aún cuando fue la de un viejo profeta. Luego: ¿No dijo el viejo que él era profeta, y que había recibido el mensaje directo de Dios? ¡Qué gran mentira! La senda del cristianismo está plagada de fracasos producidos por viejos profetas. Dios no soporta las necedades de nadie. (Ver 1 R. 13) Todos tienen que escoger entre Cristo y Barrabás, así como cada cristiano tiene que escoger entre Dios y algún viejo profeta. Es mejor ser un burro tonto ante los ojos de uno de esos viejos profetas, que escuchar sus lisonjas y adulaciones, y terminar siendo un náufrago. "Este es mi Hijo Amado, escuchadle a Él". "Tienes unción de Dios, y no necesitas que nadie te enseñe" (ver 1 Juan 2:27) Dices que crees en la Biblia, pero ¿desmienten tus hechos, tus palabras?</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">LOS DIEZ ESPÍAS</div>
+
+        <p>Todos eran de chocolate. Se derritieron y luego se derramaron por toda la congregación de Israel, produciendo crema de chocolate. "Blanditos" que temían enfrentarse al fuego y al agua que quedaba por delante. Dios los puso otra vez en la sartén y los dejó hervir por cuarenta años en el desierto, y ahí los dejó. Él no utiliza chocolates. No es que subestime las cosas pequeñas, sino sólo a los que son "chocolates" pues él dijo: "Sus pequeños heredarán la tierra prometida que ustedes han perdido por escuchar a los hombres y despreciarme a mí" (Ver Nm. 13)</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">JONÁS</div>
+
+        <p>Una vez Jonás fue soldado de chocolate. Dios lo envió al África, pero se fue a Liverpool, y se embarcó hacia América. Afortunadamente, se encontró con una tempestad y un gran pez, que después de tres días de instrucciones, le enseñó a orar y a obedecer, y lo puso de nuevo en el camino correcto (Ver Jonás 1)</p>
+
+        <p>Nada descubre tanto a los chocolates, como un pequeño torbellino entre el pueblo de Dios.</p>
+
+        <p>Una vez les llegó uno a Pablo y Bernabé... Hablando por experiencia, creo que por ahí andaban algunos chocolates que inmediatamente se confundieron. Antes, habían decidido ir a los gentiles, pero esta "brisa" entre Pablo y Bernabé les hizo vacilar. Si ellos no hubieran sido de chocolate, seguramente habrían dicho: "Este asunto entre Pablo y Bernabé, hace más apremiante mi acercamiento a Dios, para hacer con mayor diligencia lo que Él me dijo que hiciera, así que me iré a África todavía antes y punto!"</p>
+
+        <p>Las dificultades, peligros, enfermedades, muerte, o divisiones, disuaden únicamente a los chocolates de llevar a cabo la voluntad de Dios. Al oír decir que un león se opone, el verdadero cristiano contesta pronto: "Eso sólo me anima, quiero además uno o dos osos para que valga la pena ir".</p>
+
+        <p>A los chocolates les encanta hablar fuerte y prolongadamente contra los llamados fanáticos. ¡Como si hubiera peligro hoy en día de que existieran cristianos fanáticos! Es tan raro encontrar fanáticos entre los cristianos, como hallar al pájaro extinto "dodó". Sería más razonable quejarse de la "tibieza". Al verdadero pueblo de Dios siempre se le ha llamado fanático.</p>
+
+        <p>Decían que Jesús era un loco, como también lo dijeron de Pablo, Whitfield, Wesley, Moody, y Spurgeon. Nadie ha progresado mucho en la escuela de Dios sin el cumplido de ser llamado "fanático". Nosotros, los cristianos de hoy, somos realmente un grupo tibio. Con tan solo la mitad del fuego y el entusiasmo de aquellos defensores del pasado, habríamos evangelizado al mundo entero y celebrado el regreso de Cristo en menos tiempo. Sí fuéramos tan resueltos y heroicos como los astronautas, o aquellos que viajan a los polos, o que suben el Everest, o que llevan a cabo cualquier empresa audaz, toda la tierra conocería el nombre y la salvación de Jesucristo en menos de diez años.</p>
+
+        <p>¡Ay de nosotros! Lo que conmueve la sangre de hombres comunes y los hace convertirse en héroes, hace huir a la mayoría de los cristianos como a una manada de ovejas asustadas. Muchos militares arriesgan su vida a diario, a fin de adelantar su causa, y aún contribuyen con sus propios medios, de tal manera que avergüenzan a los cristianos, que generalmente decimos que el enfrentarse a riesgos y luchar contra el destino es "tentar a Dios".</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">CARAMELOS</div>
+
+        <p>Caramelos de chocolate "(chiclosos los llaman los niños)" Dicen con su boca: "Yo voy Señor", pero se quedan aferrados a su iglesia. La conquista, especialmente la de Cristo, nunca se lleva a cabo en medio de la seguridad.</p>
+
+        <p>Con demasiada frecuencia los cristianos reemplazamos la oración por ver el partido. La oración es buena e indispensable, pero cuando se utiliza en reemplazo de la obediencia, es sólo una hipocresía alborotadora, un despreciable fariseísmo.</p>
+
+        <p>Necesitamos de tantas reuniones de acción como de oración y posiblemente aún más. Toda reunión ortodoxa de oración comienza cuando Dios le dice a su pueblo: "Ora para que sean enviados obreros a mi viña y tu ve hoy a trabajar". Y continúa cuando el cristiano responde: "Yo voy a donde quiera que me mandes Señor, para que tu nombre sea santificado en todas partes, venga pronto tu reino y se haga tu voluntad en la tierra como en el cielo". Pero si la reunión termina y nadie va a ninguna parte, sería mejor no haber orado.</p>
+
+        <p>Así como la fe, la oración sin obras es muerta. Por eso a muchas reuniones de oración se les podría llamar "mucho clamar, poco obrar". Zorobabel no sólo tuvo reuniones de oración, sino que salió a derrumbar árboles, y empezó a edificar. Por lo tanto, Dios le dijo: "De hoy en adelante te bendeciré". (Hag. 2:19)</p>
+
+        <p>Se dice que algunos han descubierto el secreto de los antiguos grandes maestros. ¿Y no podemos los cristianos descubrir y poner en práctica el de nuestro Gran Maestro y sus discípulos? ¡El heroísmo! El Señor y sus seguidores no se preocuparon por sí mismos, sino que amaban la vida de otros hasta la muerte y así los rescataban, perdiendo ¡hasta sus propias vidas!</p>
+
+        <p>Estamos gastando tiempo y dinero en múltiples convenciones, conferencias y retiros, cuando lo que necesitamos es participar completamente en el fragor de la batalla, ostentando la señal de combate cuerpo a cuerpo.</p>
+
+        <p>La "voz humana" juega un papel muy importante en nuestros grupos y organizaciones cristianas de hoy en día, pero la música es opacada cuando el que ministra no tiene "obediencia inmediata" e "intrépida valentía", sin lo cual es imposible hacer sonar el "Acorde perdido del heroísmo".</p>
+
+        <p>"Hagan lo que Él les diga", dijo la madre de Jesús. ¿Hacer qué? No era poner especias y melaza en los suaves recipientes sagrados que se encontraban dentro de la casa, sino verter el agua de la vida en los de piedra que se encontraban vacíos afuera.</p>
+
+        <p>Si el vino se hubiera acabado, el matrimonio de Caná habría terminado en vergüenza. El banquete de bodas de Cristo no empezará hasta que haya suficiente mezcla de toda lengua, linaje, tribu y nación. El suministro está asegurado tan pronto se vierta el agua como mandó Cristo, hasta "lo último de la tierra". La desgracia de hoy es debida a la renuencia de los siervos a hacer el trabajo de afuera. Todos quieren servir adentro, vestirse bien, escuchar la predicación, y agruparse en la despensa de una manera vergonzosa.</p>
+
+        <p>¡Empecemos de una vez por todas! Por años hemos declarado que estamos apunto de empezar, pero nunca lo hacemos.</p>
+
+        <p>Tenemos que divorciarnos de Chocolate y Desobediencia, y casarnos con Fe y Heroísmo.</p>
+
+        <p>"¿Quién comenzará la batalla?" Preguntó el rey. "Tú", contestó el profeta (1 R. 20:14), y cuando el rey y los jóvenes oficiales fueron rumbo a la guerra, ganaron con una facilidad tremenda, a pesar del gran poder opositor. Así también, los Apóstoles dirigieron el camino en la guerra de Dios hacia las partes más remotas de la tierra.</p>
+
+        <p>El llamado actual de Dios es a los jóvenes, hombres y mujeres de todo el mundo; y a quienes se aplican así mismos el nombre de Cristo. "El vino nuevo", dijo Cristo, "tiene que ponerse en odres nuevos". Los odres viejos que se encuentran mal etiquetados y remendados, son tan inútiles como la Nueva Teología. No se pueden mover, pues se revientan de orgullo y el vino se derrama en lugares equivocados.</p>
+
+        <div class="scripture">
+            "Y en los postreros días, derramaré de mi Espíritu sobre toda carne, y vuestros hijos y vuestras hijas profetizarán; vuestros jóvenes verán visiones (de fe), y vuestros ancianos soñarán sueños (de obediencia valerosa); y de cierto sobre mis siervos y sobre mis siervas en aquellos días derramaré de mi Espíritu, y profetizarán; y daré prodigios arriba en el cielo, y señales abajo en la tierra, y todo aquel que invocare el nombre del Señor será salvo"
+            <span class="scripture-ref">Hechos 2:17-19,21</span>
+        </div>
+
+        <p>Pero ¿cómo invocarán a aquel de quien ni siquiera han oído? ¿Te quedarás quieto tú, joven? ¿No puedes ir tú jovencita? Verdaderamente estamos en la última etapa, la de Laodicea, la iglesia tibia.</p>
+
+        <p>¿Serás tú compañero de Cristo en su trono, o serás alguien que le produce vómito? (Ap. 3:21) ¿Serás un militar o un cristiano de chocolate? ¿Temerás o lucharás? ¿Irán tus hermanos a la guerra mientras tú te quedas aquí? Cuándo Él venga, ¿Hallará fe en la tierra? Miles de veces has admitido "Que el amor de Cristo es tan asombroso, tan divino, que exige tu vida, tu alma, tu todo".</p>
+
+        <p>¿Serás tan mezquino que niegues lo que la dignidad te exige? ¿Darás tú como lo hicieron Ananías y Safira, quienes ostentando darlo todo, solo dieron una parte?</p>
+
+        <p>¿Poseyendo y disfrutando de la viña, -tal como los viñadores-, te negarás a pagar el arriendo acordado? ¿Temerás tú a la muerte, al diablo, o a los hombres y no temerás la vergüenza?</p>
+
+        <div class="scripture">
+            "Unos resucitarán para vida eterna, y otros para vergüenza y confusión perpetua"
+            <span class="scripture-ref">Daniel 12:2</span>
+        </div>
+
+        <p>¿Rehusaremos imitar a los héroes de aquellos tiempos, o lograremos el doble cumplimiento de esas gloriosas palabras?</p>
+
+        <p>Todos los guerreros vinieron con corazón puro, para coronar a Jesús Rey sobre todo el mundo.</p>
+
+        <p>Todos eran hombres valerosos para la guerra ¡El menor era igual a cien y el mayor a mil! ¡No eran de doble corazón! ¡Sus rostros eran como los de leones! ¡Eran rápidos como las gacelas sobre los montes! (Para cumplir los mandatos de su Señor).</p>
+
+        <p>En tiempos pasados procurabas que Jesús fuera rey sobre ti. Ahora, entonces, hazlo Rey (Compárese: 1 Cr. 12:8, 33, 38; 2 S. 3:17-18)</p>
+
+        <p>Contestemos: "Somos tuyos, Jesús, estamos de tu lado. Así me haga Dios y aún me añada, si como a Dios he jurado, no hago y derroque el reino de la casa de Satanás, y confirme el trono de Jesucristo sobre todo el mundo"</p>
+
+        <p>(Compárense 1 Cr. 12:18; 2 S. 3:10).</p>
+
+        <p>¡Vamos entonces! Restauremos el heroísmo en el cristianismo: "el acorde perdido", y así devolveremos la corona del mundo a Cristo.</p>
+
+        <p>El mismo te pregunta: ¿Serás de los que fingen estar enfermos o serás un militante?</p>
+
+        <p>¡Arrodíllate, hombre, toma tu Biblia! ¡Decídete ya! ¡No pongas más excusas! ¡El tiempo vuela! No insultes más a Dios, deja de consultar con carne y sangre. Desecha tu flojera y tus mentirosas y cobardes excusas.</p>
+
+        <p>¡Afíliate! He aquí los documentos y el voto de lealtad. Tacha un lado, y firma el otro ante la presencia de Dios y el ángel registrador...</p>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">De ahora en adelante:</div>
+
+        <div class="pledge-table">
+            <div class="pledge-option">
+                <h4>Para mí el</h4>
+                <p>Vivir es Cristo y el<br>Morir es ganancia.</p>
+                <p>Seré un militante.</p>
+                <p>Seré un hombre de Dios.</p>
+                <p>Me arriesgaré por Cristo,<br>Y seré un héroe</p>
+                <div class="signature">Firma:<br>_________________</div>
+            </div>
+            <div class="pledge-option">
+                <h4>Para mí es más fácil</h4>
+                <p>Ser de chocolate,<br>Ser tibio.<br>Fingir enfermedades.<br>Ser un hijo de papi y Mami<br>Excusarme a mí mismo<br>Ser un charlatán.</p>
+                <div class="signature">Firma:<br>_________________</div>
+            </div>
+        </div>
+
+        <div class="pledge-table">
+            <div class="pledge-option">
+                <h4>Promesas de Dios son firmes:</h4>
+                <p>"He aquí estoy siempre con vosotros"</p>
+            </div>
+            <div class="pledge-option">
+                <h4>Promesas de Dios son firmes:</h4>
+                <p>"Te vomitaré de mi boca"</p>
+            </div>
+        </div>
+
+        <div class="poem-box">
+            <div class="poem-line">Dios Bueno:</div>
+            <div class="poem-line">Llénanos del Espíritu Santo y fuego;</div>
+            <div class="poem-line">Sánanos de esta terrible plaga de enfermedad del sueño</div>
+            <div class="poem-line">y de este loco sonambulismo,</div>
+            <div class="poem-line">para que mientras oramos sin cesar,</div>
+            <div class="poem-line">sea santificado tu nombre en todas partes</div>
+            <div class="poem-line">y venga pronto tu reino.</div>
+            <div class="poem-line">Hágase tu voluntad, como en el cielo,</div>
+            <div class="poem-line">así también en la tierra.</div>
+            <div class="poem-line">¡Amén y Amén!</div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="hero-name">BIOGRAFÍA</div>
+
+        <p>Carlos Studd nace en el año de 1861 y su juventud la vivió en el Condado de Witshire, Inglaterra; su casa era una cómoda mansión en la que vivía con sus padres y hermanos. Desde que estaba en la secundaria practicaba el cricket, un deporte con mucho auge en Inglaterra en esos tiempos, logrando ser el mejor jugador de Inglaterra.</p>
+
+        <p>Su mayor desempeño en este deporte lo logró en 1882, cuando sólo tenía tres años de haber ingresado a la Universidad. En 1883 es considerado el primer jugador de Inglaterra.</p>
+
+        <p><strong>Disciplina:</strong> A pesar de que casi se aproximaba a los 70 años, seguía conservando los hábitos de su juventud. Se despertaba a las 2:30 o 3:00 de la mañana para orar y leer su Biblia. Como director de la misión, dedicaba su tiempo a la contestación de correspondencia y a la predicación. Su jornada de trabajo era de 18 horas diarias. Todos los fines de semana salía a predicar en un viaje que duraba 5 horas a través de la selva. Arribaba a la aldea nativa alrededor de las 6 de la mañana para comenzar una actividad que se prolongaba hasta el miércoles o jueves de la semana siguiente, para después regresar a su "casa", si se podía llamar casa a una choza donde sólo había una cama, un estante de libros y nada más. A esa edad tradujo el nuevo testamento al kingwana.</p>
+
+        <p><strong>Actividad Misionera:</strong> CHINA.- En el de 1885 parte junto con otros misioneros a la China. Hace una labor misionera que dura 10 años y regresa a Inglaterra. ESTADOS UNIDOS DE AMÉRICA .- En 1896 emprende un viaje a Estados Unidos de América, donde reside por espacio de 18 meses. INDIA.- En el año de 1900 se va a la India 6 años y regresa a Inglaterra. ÁFRICA.- En 1910 emprende una gira misionera al interior de África que dura casi 5 años. Regresa por última vez a Inglaterra de donde parte sin esposa y sin hijos para establecerse en el África hasta el año de su muerte en 1931.</p>
+    </div>
+</div>
+
+<div class="menu-link-container">
+  <a class="menu-button" href="../../menu.html">Volver al Menú</a>
+</div>
+
+<footer>
+    Revista Avivamiento - Un Cristianismo Afeminado<br>
+    Por Carlos Studd
+</footer>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>
