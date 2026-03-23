@@ -39,6 +39,48 @@ main {
   padding: 1rem;
 }
 
+.search-panel {
+  margin: 0 auto 1.5rem;
+  max-width: 680px;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.search-label {
+  font-weight: 600;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.72);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+.search-input:focus-visible {
+  outline: 3px solid rgba(34, 197, 94, 0.35);
+  outline-offset: 2px;
+  border-color: rgba(34, 197, 94, 0.75);
+}
+
+.search-results-count,
+.empty-state {
+  margin: 0;
+  color: var(--muted);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -54,7 +96,6 @@ main {
   flex-direction: column;
   gap: 0.75rem;
 }
-
 
 .card-cover-link {
   display: block;
@@ -118,7 +159,6 @@ main {
   color: #86efac;
 }
 
-
 html[data-theme="light"] {
   --bg: #e3ebf5;
   --card: #f8fbff;
@@ -139,7 +179,6 @@ body {
   background: var(--bg);
 }
 
-
 html[data-theme="light"] body {
   background:
     radial-gradient(circle at 12% 10%, rgba(16, 185, 129, 0.16), transparent 38%),
@@ -152,6 +191,11 @@ html[data-theme="light"] .card {
   box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
 }
 
+html[data-theme="light"] .search-input {
+  background: rgba(248, 251, 255, 0.95);
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
 html[data-theme="light"] .button {
   background: linear-gradient(135deg, #10b981, #22c55e);
   color: #032212;
@@ -160,7 +204,6 @@ html[data-theme="light"] .button {
 html[data-theme="light"] .button:hover {
   filter: brightness(1.03);
 }
-
 
 html[data-theme="light"] .hero {
   background: #0f274d;
