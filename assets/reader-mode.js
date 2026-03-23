@@ -180,15 +180,30 @@ function addReadAloudControls(main, article) {
   languageSelect.setAttribute("aria-label", "Idioma de voz");
 
   const languages = [
-    { code: "es", label: "Español" },
-    { code: "en", label: "English" },
-    { code: "pt", label: "Português" },
-    { code: "fr", label: "Français" },
-    { code: "it", label: "Italiano" },
-    { code: "de", label: "Deutsch" },
-    { code: "nl", label: "Nederlands" },
-    { code: "pl", label: "Polski" },
+    { code: "es", label: "Español", speechLang: "es-ES" },
+    { code: "en", label: "English", speechLang: "en-US" },
+    { code: "pt", label: "Português", speechLang: "pt-BR" },
+    { code: "fr", label: "Français", speechLang: "fr-FR" },
+    { code: "it", label: "Italiano", speechLang: "it-IT" },
+    { code: "de", label: "Deutsch", speechLang: "de-DE" },
+    { code: "nl", label: "Nederlands", speechLang: "nl-NL" },
+    { code: "pl", label: "Polski", speechLang: "pl-PL" },
+    { code: "ru", label: "Русский", speechLang: "ru-RU" },
+    { code: "uk", label: "Українська", speechLang: "uk-UA" },
+    { code: "ro", label: "Română", speechLang: "ro-RO" },
+    { code: "cs", label: "Čeština", speechLang: "cs-CZ" },
+    { code: "sv", label: "Svenska", speechLang: "sv-SE" },
+    { code: "tr", label: "Türkçe", speechLang: "tr-TR" },
+    { code: "ar", label: "العربية", speechLang: "ar-SA" },
+    { code: "hi", label: "हिन्दी", speechLang: "hi-IN" },
+    { code: "ja", label: "日本語", speechLang: "ja-JP" },
+    { code: "ko", label: "한국어", speechLang: "ko-KR" },
+    { code: "zh", label: "中文", speechLang: "zh-CN" },
   ];
+
+  const getLanguageConfig = (code) => (
+    languages.find((language) => language.code === code) || languages[0]
+  );
 
   languages.forEach(({ code, label: name }) => {
     const option = document.createElement("option");
@@ -272,14 +287,16 @@ function addReadAloudControls(main, article) {
     }
   };
 
-  const buildSpeechQueue = async (langCode) => {
+  const buildSpeechQueue = async (language) => {
     const baseChunks = splitTextIntoChunks(sourceText, 700);
+    const langCode = language.code;
+    const speechLang = language.speechLang;
 
     if (langCode === "es") {
-      return baseChunks.map((text) => ({ text, langCode: "es-ES" }));
+      return baseChunks.map((text) => ({ text, langCode: speechLang, label: language.label }));
     }
 
-    status.textContent = `Traduciendo a ${langCode.toUpperCase()}...`;
+    status.textContent = `Traduciendo a ${language.label}...`;
     const translatedChunks = [];
 
     for (const chunk of baseChunks) {
@@ -287,7 +304,7 @@ function addReadAloudControls(main, article) {
       translatedChunks.push(translatedChunk);
     }
 
-    return translatedChunks.map((text) => ({ text, langCode }));
+    return translatedChunks.map((text) => ({ text, langCode: speechLang, label: language.label }));
   };
 
   const speakNext = () => {
@@ -299,7 +316,7 @@ function addReadAloudControls(main, article) {
       return;
     }
 
-    const { text, langCode } = queue.shift();
+    const { text, langCode, label: languageLabel } = queue.shift();
     const utterance = new SpeechSynthesisUtterance(text);
     const voice = resolveVoice(langCode);
 
@@ -307,7 +324,7 @@ function addReadAloudControls(main, article) {
     if (voice) utterance.voice = voice;
 
     utterance.onstart = () => {
-      status.textContent = `Reproduciendo en ${langCode.toUpperCase()}...`;
+      status.textContent = `Reproduciendo en ${languageLabel || langCode}...`;
       setPlayState(true);
     };
 
@@ -338,8 +355,8 @@ function addReadAloudControls(main, article) {
     playButton.disabled = true;
 
     try {
-      const langCode = languageSelect.value || "es";
-      queue = await buildSpeechQueue(langCode);
+      const language = getLanguageConfig(languageSelect.value || "es");
+      queue = await buildSpeechQueue(language);
 
       if (queue.length === 0) {
         status.textContent = "No se encontró texto para reproducir.";
@@ -359,7 +376,7 @@ function addReadAloudControls(main, article) {
     languageToggle.textContent = languageWrap.hidden ? "🌐 Idioma" : "✖ Ocultar idioma";
   });
 
-  status.textContent = "Listo para leer en español. Puedes abrir Idioma para traducir y reproducir.";
+  status.textContent = "Listo para leer en español. Puedes abrir Idioma para traducir y reproducir en más idiomas.";
   window.addEventListener("beforeunload", clearPlayback);
 }
 
@@ -396,7 +413,7 @@ function injectToolbarStyles() {
     }
 
     .reader-toolbar {
-      background: rgba(255,255,255,0.96);
+      background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(241,245,249,0.96));
       border: 1px solid #d6dde8;
       border-radius: 10px;
       padding: 8px 10px;
@@ -425,7 +442,7 @@ function injectToolbarStyles() {
 
     .reader-toolbar__button {
       border: 1px solid #c8d4e5;
-      background: #4a6491;
+      background: linear-gradient(135deg, #4a6491, #35507f);
       color: #fff;
       border-radius: 999px;
       padding: 6px 10px;
@@ -462,8 +479,9 @@ function injectToolbarStyles() {
     }
 
     html[data-theme="dark"] .reader-toolbar {
-      background: rgba(15, 23, 42, 0.88);
-      border-color: #334155;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.96));
+      border-color: #475569;
+      box-shadow: 0 6px 18px rgba(2, 6, 23, 0.35);
     }
 
     html[data-theme="dark"] .reader-toolbar__label,
@@ -478,6 +496,11 @@ function injectToolbarStyles() {
       border-color: #334155;
       background: #1e293b;
       color: #e2e8f0;
+    }
+
+    html[data-theme="dark"] .reader-toolbar__button:not(.reader-toolbar__toggle-language) {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      border-color: #3b82f6;
     }
   `;
 
