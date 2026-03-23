@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Día del Juicio Final - David Wilkerson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .testimony-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #8B0000;
+        }
+
+        .examination-list {
+            margin: 20px 0 20px 30px;
+        }
+
+        .examination-list li {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por David Wilkerson</div>
+            <div>EL DÍA DEL JUICIO FINAL</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>Estimado lector: En esta ocasión, nuevamente el reconocido Pastor y escritor David Wilkerson, de quien los amigos y lectores de la Revista AVIVAMIENTO ya han leído en otras ocasiones, nos habla y estremece nuestros corazones.</p>
+
+        <p>En los tiempos que estamos viviendo, tiempos de ligereza y enfrentamiento espiritual, el hermano Wilkerson nos confronta con una realidad ineludible, con la que todos nosotros, tarde o temprano nos hemos de enfrentar. La Biblia dice de manera incuestionable: <span class="emphasis">"... de la manera que está establecido para los hombres que mueran una sola vez, y después de esto, El Juicio."</span> [Hebreos 9:27]</p>
+
+        <p>El temor de Dios, es ingrediente cada vez más escaso en el cristianismo actual. Quisiéramos que nuestros lectores no ignoraran esta realidad, sino que la tuvieran presente pues cada uno de nosotros compareceremos ante el tribunal de Cristo, dando cuenta de nuestras obras. <span class="emphasis">"Porque es necesario que todos nosotros comparezcamos ante el tribunal de Cristo, para que cada uno reciba según lo que haya hecho mientras estaba en el cuerpo, sea bueno o sea malo."</span> [2ª Corintios 5:10]</p>
+
+        <p>Los ejemplos y testimonios referidos en este artículo son un reflejo de la situación mundial y particular de nuestra sociedad mexicana. Tanto en el mundo incrédulo, como en la iglesia nominal las condiciones son las mismas. Por eso hemos creído conveniente publicar una reedición de este alertador mensaje. Le rogamos que lo lea con especial atención. Estamos seguros que el Espíritu Santo trabajará en su corazón y lo guiará a decisiones serias que serán de gran beneficio espiritual.</p>
+
+        <p>Tal es nuestro deseo, y también nuestra oración.</p>
+
+        <div class="editors-note">
+            Atentamente<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">EL DÍA DEL JUICIO</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por: David Wilkerson</div>
+
+    <div class="content-section">
+        <p>El apóstol Pablo, uno de los más fieles servidores de Dios, tenía tres motivaciones importantes detrás de su fidelidad: Esperanza, amor y temor.</p>
+
+        <p>Pablo tenía una bendita esperanza de vida eterna que lo motivaba a ser fiel; tenía también un gran amor por Cristo, en 2ª de Corintios 5:14 dice: <span class="emphasis">"Porque el amor de Cristo nos constriñe"</span> dando a entender que lo impulsaba a permanecer fiel a Dios; pero, la fidelidad de Pablo también estaba motivada por otra cosa, el temor reverente que le producía pensar en aquel día, en que iba a estar ante el Juez del mundo en el Día del Juicio.</p>
+
+        <p>Hoy, la gran mayoría de los cristianos sólo poseen las dos primeras motivaciones. Cada creyente confiesa tener esperanza de vida eterna. Muchos dicen con toda sinceridad. <span class="emphasis">"Yo conozco y amo a Jesús con todo mi corazón"</span>, pero lo que está faltando en la Iglesia de Jesucristo en estos últimos días es esa tercera motivación: La tremenda realidad de que un día estarán ante el Dios Santo y tendrán que dar cuenta de cada una de sus acciones, pensamientos y motivos. [Muy pocas veces y eso si lo hacemos, pensamos en aquél Día del Juicio].</p>
+
+        <p>Es esta verdad de que ha de llegar el Día del Juicio, la que produce creyentes serios y santos. Los que evitan pensar en ello son usualmente fríos, descuidados e indulgentes.</p>
+
+        <p>Sin embargo, en algún momento quizás no muy lejano, cada persona se presentará en el lugar del Juicio para ser juzgado por Jesucristo:</p>
+
+        <div class="scripture">
+            "Porque es necesario que todos nosotros comparezcamos ante el tribunal de Cristo"
+            <span class="scripture-ref">2ª Corintios 5:10</span>
+        </div>
+
+        <div class="scripture">
+            "De manera que cada uno de nosotros dará a Dios cuenta de sí"
+            <span class="scripture-ref">Romanos 14:12</span>
+        </div>
+
+        <p>En este mismo momento, los ángeles están ya listos para recibir la orden de Jesús para reunir de todos los rincones de la tierra, tanto a los inicuos, como a los justos.</p>
+
+        <div class="scripture">
+            "Enviará el hijo del hombre a sus ángeles, y recogerán de su reino a todos los que sirven de tropiezo, y a los que hacen iniquidad."
+            <span class="scripture-ref">Mateo 13:41</span>
+        </div>
+
+        <p>Todos los ricos, famosos y poderosos de todas las épocas serán traídos y se presentarán ante Él:</p>
+
+        <div class="scripture">
+            "Y los reyes de la tierra, y los grandes, los ricos, los capitanes, los poderosos... se escondieron en las cuevas y entre las peñas de los montes; y decían a los montes y a las peñas: Caed sobre nosotros, y escondednos del rostro de aquél que está sentado sobre el trono, y de la ira del cordero; porque el gran día de su ira ha llegado; ¿Y quien podrá sostenerse en pie?"
+            <span class="scripture-ref">Apocalipsis 6:15-17</span>
+        </div>
+
+        <p>Hay una actriz famosa que habla constantemente de la reencarnación, asegura que ha vivido muchas vidas y que cuando muera, regresará a la tierra en otro cuerpo. ¡Qué terror les espera a ella y a sus seguidores! Un ángel del Señor será enviado a sus tumbas, uniendo cuerpo y alma. Repentinamente descubrirán que no hay otra vida. En lugar de eso, serán llamados por el Juez a la última corte, una corte sin apelaciones. Y la única vida después de está vida, será la eterna condenación para todos los que lo rechazaron.</p>
+
+        <p>Ciertamente, los ángeles reunirán toda la "cizaña" los pecadores e inicuos y los arrastrarán en manojos para quemarlos. [Ver Mateo 13:40,30]. Ellos no vendrán voluntariamente, sino gimiendo, llorando y crujiendo los dientes.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>DIOS TIENE REGISTRADO EN LIBROS LO QUE CADA ALMA HA VIVIDO, DESDE ADÁN</h2>
+
+        <p>Dios guarda por escrito cada acción de toda persona, cada uno de sus pensamientos, palabras y obras. Los motivos del cristiano están en un "libro de registro", el Libro de la Vida. En el día del Juicio, Cristo recordará a todos los que están en ese libro:</p>
+
+        <div class="scripture">
+            "Entonces los que temían a Jehová hablaron cada uno a su compañero; y Jehová escuchó y oyó, y fue escrito el libro de memoria delante de Él para los que temen a Jehová... Y serán para Mí especial tesoro, ha dicho Jehová de los ejércitos, en el día en que yo actúe; y los perdonaré, como el hombre que perdona a su hijo que le sirve."
+            <span class="scripture-ref">Malaquías 3:16-17</span>
+        </div>
+
+        <p>Si usted ama a Jesús con todo su corazón y está purificado por Su sangre, entonces su nombre está inscrito en el Libro de la Vida. Los tales no tienen porque temer a este mensaje; de hecho, debe traer gran gozo a su corazón lo que Dios tiene planeado para los que le aman.</p>
+
+        <p>Pero existe el Libro, y aparte están los libros. La Biblia dice que cada persona tiene su propio libro, donde se encuentra escrito cada acontecimiento de su vida en la tierra.</p>
+
+        <div class="scripture">
+            "Y vi un gran trono blanco y al que estaba sentado en él, de delante del cual huyeron la tierra y el cielo... Y vi a los muertos, grandes y pequeños, de pie ante Dios; y otro libro fue abierto... y fueron juzgados los muertos por las cosas que estaban escritas en los libros, según sus obras. Y el mar entregó los muertos que había en él; y la muerte y el Hades entregaron los muertos que había en ellos; y fueron juzgados cada uno según sus obras."
+            <span class="scripture-ref">Apocalipsis 20:11-13</span>
+        </div>
+
+        <p>Los malvados y los inicuos serán juzgados por todo lo que está escrito en esos libros, uno por uno, ante el Juez de toda la tierra.</p>
+
+        <p>Las Escrituras dicen que cada persona tendrá un cuerpo resucitado en ese tiempo. Los pecadores tendrán un cuerpo "Preparado para destrucción." [Romanos 9:22]. Pero a los santos les será dado un cuerpo nuevo, como el del Señor. Cuando termine el Juicio, el Cordero se levantará de Su trono y guiará a Su rebaño al paraíso eterno.</p>
+
+        <p>Sin embargo, antes que el Juez haga esto, Él nos llamará a Su lado mientras juzga a los malvados:</p>
+
+        <div class="scripture">
+            "Al que venciere, le daré que se siente conmigo en mi trono, así como Yo he vencido, y me he sentado con mi Padre en Su trono."
+            <span class="scripture-ref">Apocalipsis 3:21</span>
+        </div>
+
+        <p>Jesús nos dirá a nosotros: Vengan siéntense a mí derecha mientras el Juicio procede.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>TRATE DE IMAGINAR EL ESCENARIO MIENTRAS COMIENZA EL JUICIO</h2>
+
+        <p>Hitler gritará con agonía mientras el Juez le dice a Sus ángeles que lean la lista de los nombres de cada judío que asesinó. Seis millones de nombres; los de cada hombre, mujer y niño que mató. Cada grito será repetido, cada clamor desde los hornos se escuchará nuevamente. Todos sus verdugos compartirán su terror.</p>
+
+        <p>Después pasará el ejército de doctores y enfermeras que ayudaron a abortar, de pie ante el Juez, temblarán conforme escuchen la lista de los nombres de millones de bebés. Dios tiene un nombre para cada uno, porque de acuerdo con las Escrituras ellos fueron conocidos desde la eternidad. [Ver Jeremías 1:5]. Cada grito dentro del vientre será vuelto a oír, mientras los doctores que cometieron estos actos asesinos tendrán que estar de pie escuchando. Cada madre que permitió que su bebé fuera asesinado verá la vida que Dios había planeado para su hijo y cómo se la robó. El Juez expondrá todo.</p>
+
+        <p>Luego pasarán los que "descuidaron su salvación". [Ver Hebreos 2:3]. Ellos estarán muy espantados, no creyendo estar numerados entre los transgresores. Se oirán sus clamores: <span class="emphasis">"Nosotros fuimos a la iglesia, diezmábamos. Te llamamos por tu nombre. No éramos malvados".</span> Pero el Juez dirá: <span class="emphasis">"Todas nuestras justicias como trapo de inmundicia."</span> [Isaías 64:6]. Otros dirán: <span class="emphasis">"Nosotros echamos fuera demonios, sanamos a los enfermos. Hicimos obras grandiosas en tu nombre."</span> Pero el Juez contestará:</p>
+
+        <div class="scripture">
+            "Os digo que no sé de donde sois; Apartaos de mí todos vosotros, hacedores de maldad."
+            <span class="scripture-ref">Lucas 13:27</span>
+        </div>
+
+        <p>Un ángel se parará en medio de ellos, repitiéndoles las Escrituras que ellos escucharon durante su vida: <span class="emphasis">"No atendieron con diligencia las cosas que oyeron"</span> [Ver Hebreos 2:1).</p>
+
+        <div class="testimony-box">
+            <p>También ante el trono estarán muchos otros rostros que recuerdo, no conozco sus nombres; sólo recuerdo el odio que vi en sus caras y las terribles blasfemias que salían de sus labios: Son las caras de tres lesbianas, viéndome fijamente al frente de un edificio de oficinas en Manhattan. La "operación rescate" estaba evangelizando ante una clínica de abortos. Y esas tres muchachas gritaban y maldecían: <span class="emphasis">"Saquen su basura de Cristo de las calles. Tomen a su Jesús y métanse nuevamente en sus hoyos".</span></p>
+
+            <p>Es la cara del doctor que abortaba, el hombre que hizo una fortuna matando a niños no nacidos. El levantó el puño amenazando a los cristianos, las venas de su cuello estaban hinchadas, y el odio llenaba sus ojos. Y en alta voz gritaba; <span class="emphasis">"Voy a agarrarlos por esto, los voy a demandar. Ustedes me la pagarán."</span></p>
+
+            <p>Están asimismo las caras de los homosexuales llenos de lujuria desfilando por el Círculo de Colón durante el desfile "Orgullo Homosexual" en Nueva York hace dos años. Yo estaba observando cómo 250,000 activistas homosexuales marchaban. El solo hecho de ver a alguien cargando una Biblia causó que se levantaran coros burlones: <span class="emphasis">"¡Jesús fue homosexual. Dios es homosexual!"</span> y perversas rimas:</p>
+
+            <p style="font-style: italic; text-align: center;">"Somos maricones y aquí estamos<br>Cuiden a sus hijos<br>Que por ellos vamos."</p>
+
+            <p>No fueron las palabras blasfemas o la increíble arrogancia lo que me afectó, fue el odio por Cristo, la mirada que decía que si Jesús estuviera allí ese día, con gusto lo hubieran clavado del árbol más cercano al Parque Central.</p>
+        </div>
+
+        <p>Sin embargo, de pronto estarán ahí ante el trono del juicio, agrupados en un montón, paralizados con agonía y temor. Es el día de la ira y la venganza de Dios. Ahora, conforme cada libro es abierto, y cada acto vil es leído en voz alta, ¿Qué ha sucedido con sus burlas? ¿Dónde están ahora sus atrevidas blasfemias a lo más sagrado? ¿Dónde quedaron sus gritos?</p>
+
+        <p>Recientemente prediqué en la universidad de Yale, cuando un grupo de activistas homosexuales entraron con pancartas tratando de interrumpir la reunión. Mi sermón era sobre el infierno y conforme yo hablaba, un silencio solemne del Espíritu Santo se hizo en el lugar. El silencio era tan abrumante que un reportero dijo: <span class="emphasis">"Parecía que hasta mi lápiz hacía ruido"</span>, los homosexuales no se movían, estaban paralizados. En ese momento entendí cómo será para ellos el día del Juicio, cuando tengan que estar delante del Señor Jesucristo.</p>
+
+        <div class="scripture">
+            "Por tanto, no se levantarán los malos en el Juicio."
+            <span class="scripture-ref">Salmo 1:5</span>
+        </div>
+
+        <p>Vea ahora a otros temblando ante el trono del Juicio: Los jueces que permitieron que niños no nacidos fueran asesinados. Profesores universitarios ateos, que llenaron a toda una generación de aversión y odio por Cristo. Políticos mentirosos que quitaron la oración y a Dios de nuestra sociedad. Presidentes sin Dios, dictadores y líderes de mucha gente. Actores y directores de cine que blasfeman contra Cristo. Artistas que despreciaron su obra, pintando la cruz sumergida en un excusado. Banqueros, gente de negocios, ricos, los que en un tiempo se mostraban orgullosos y nunca tuvieron tiempo para Él. Ahora, ¿Qué estarán haciendo?</p>
+
+        <p>Allí estarán parados, oyendo y esperando su turno, escuchando al Angel del Señor clamar entre ellos:</p>
+
+        <div class="scripture">
+            "Sabed que vuestro pecado os alcanzará."
+            <span class="scripture-ref">Números 32:23</span>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>EL JUEZ LLAMARÁ TESTIGOS</h2>
+
+        <p>El Juez, Jesucristo, llamará testigos. Ellos testificarán ya sea por usted o en contra de usted.</p>
+
+        <p><span class="red-emphasis">1.-</span> El primer testigo es la Palabra de Dios:</p>
+
+        <div class="scripture">
+            "El que me rechaza, y no recibe Mis palabras, tiene quien le juzgue; la Palabra que he hablado, ella le juzgará en el día postrero."
+            <span class="scripture-ref">Juan 12:48</span>
+        </div>
+
+        <p>Tendrán que dar cuentas de cada sermón, cassette o canto evangelístico escuchado; de cada versículo de la Biblia o folleto leído. Jesús dice: Cada palabra que Yo te he hablado te juzgará en ese día. Mi Palabra será testigo.</p>
+
+        <p><span class="red-emphasis">2.-</span> Se levantarán testigos tales como los hombres de Nínive, los hombres de Sodoma y la reina de Sabá. Jesús dice:</p>
+
+        <div class="scripture">
+            "Los hombres de Nínive se levantarán en el juicio con ésta generación, y la condenarán; porque ellos se arrepintieron a la predicación de Jonás, y he aquí más que Jonás en este lugar. La reina del Sur se levantará en el Juicio con esta generación, y la condenará; porque ella vino de los fines de la tierra para oír la sabiduría de Salomón, y he aquí más que Salomón en este lugar."
+            <span class="scripture-ref">Mateo 12:41-42</span>
+        </div>
+
+        <p>Cuando usted esté ante el Juez y su libro sea abierto, la vasta multitud de ninivitas vendrán al frente. Los que murieron en el holocausto de Sodoma y Gomorra vendrán al frente, así como los de Tiro y Sidón. Esos malvados lo rodearán, asombrados de la gran lista de oportunidades que usted tuvo de recibir la Palabra de Dios: Biblias, cassettes, radio, televisión, maestros, amigos, familia, etc., clamarán: El juicio de éste hombre debe ser peor que el nuestro. ¿Cómo pudo rechazar tantas oportunidades y negar tanta Luz? Nosotros no tuvimos una Biblia, ni recordatorios constantes, ninguna segunda oportunidad. Y él la tuvo.</p>
+
+        <p>Jesús dice que Sodoma se hubiera arrepentido si hubiera escuchado lo que usted ha escuchado:</p>
+
+        <div class="scripture">
+            "Porque si en Sodoma se hubieran hecho los milagros que han sido hechos en ti, habría permanecido hasta el día de hoy"
+            <span class="scripture-ref">Mateo 11:23</span>
+        </div>
+
+        <p>Los hombres de Sodoma se hubieran vestido de cilicio y ceniza si hubieran escuchado un fragmento de la predicación evangelística que usted ha escuchado.</p>
+
+        <p><span class="red-emphasis">3.-</span> Predicadores y pastores serán llamados como testigos:</p>
+
+        <div class="scripture">
+            "Y será predicado este evangelio del reino en todo el mundo, para testimonio a todas las naciones"
+            <span class="scripture-ref">Mateo 24:14</span>
+        </div>
+
+        <p>Nosotros los pastores tendremos que estar parados y testificar de su asistencia a la casa de Dios. Usted escuchó la predicación del Evangelio de Cristo. Deberemos testificar ante el Juez de toda la tierra, cada verdad que usted escuchó ya sea a su favor, o en su contra.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>QUIZÁS LAS ALMAS MÁS DESGRACIADAS QUE ESTARÁN ANTE EL JUEZ, SERÁN ESAS QUE LA BIBLIA LLAMA "SIERVOS INÚTILES"</h2>
+
+        <p>Estos eran los siervos, es decir, los que se decían a sí mismos por el nombre del Señor. Mientras preparaba este mensaje, éste era el grupo que más me preocupaba. El "Siervo inútil" es el que "escondió" su talento, el que fue demasiado flojo como para invertir su vida y tiempo en los intereses de Dios, y "descuidó" Sus cosas. Estos son, el típico hombre o mujer, siempre ocupados, que venían a la casa de Dios una vez por semana para mantener la apariencia de religión. Sin embargo, he aquí lo que el Señor dice de ese servicio flojo y mediocre:</p>
+
+        <div class="scripture">
+            "Siervo malo y negligente, sabías que siego donde no sembré, y que recojo donde no esparcí. Por tanto, debías haber dado mi dinero a los banqueros, y al venir yo, hubiera recibido lo que es mío con los intereses... Y al siervo inútil echadle en las tinieblas de afuera; allí será el lloro y el crujir de dientes."
+            <span class="scripture-ref">Mateo 25:26,27,30</span>
+        </div>
+
+        <p>¡Cuánto lamentará el siervo inútil en el momento que se abra su libro! El Juez mostrará al mundo cuanto tiempo y esfuerzo utilizó para hacer dinero, buscando seguridad personal, haciendo crecer sus cuentas bancarias, preocupándose, ignorando a su familia, olvidando a Dios y abandonando la asamblea de los creyentes.</p>
+
+        <p>En ese día Dios traerá delante de él las veces que despreció las reuniones de la Iglesia; toda actividad perezosa y centrada en sí mismo. Entonces, ante los ojos de este siervo aparecerá todo lo que se dedicó a acumular: casas, carros, muebles, ropa, joyas, valores, etc.</p>
+
+        <p>Repentinamente, de los ojos del Juez aparecerá un rayo: El fuego de un Dios que ha sido despreciado y enciende todo como una bomba de Hidrógeno. Parado ante el Juez habrá un ángel, y en las manos del ángel un montoncito de polvo. El Señor volteará hacia el siervo inútil y dirá: <span class="emphasis">"Esto es el valor total de los negocios que hiciste durante tu vida. Yo te necesitaba, pero me abandonaste. Me diste tan poco de tu tiempo, hasta que al final me sacaste de tu vida completamente. Desperdiciaste tu vida por un puñado de polvo, a pesar de que fuiste advertido que se quemaría como paja en el horno."</span></p>
+
+        <p>¡Oh, cómo se arrepentirá en aquel día, el hombre que no tuvo tiempo para Dios! El asiste al servicio obligatorio del domingo en la mañana con su esposa e hijos, porque "es lo correcto", pero no tiene un corazón para Dios. Nunca se le ve en las reuniones de oración o disfrutando de un verdadero compañerismo con los santos, animando y siendo animado en el Señor, como la Palabra lo ordena.</p>
+
+        <p>Sin embargo en el Día del Juicio, el Juez dirá: <span class="emphasis">"Tomen a ese siervo inútil y échenlo fuera de Mi presencia. Su corazón no está conmigo; nunca lo ha estado, dejó su primer amor hace mucho tiempo; no quiso que yo fuera el amor de su corazón, pues si así fuera, en todo momento de su vida yo estaría en su mente, en su negocio, en su familia, en todos sus hechos. Él hubiera puesto Mis intereses sobre todas las cosas. ¡Oh quién no tendrá temor el Día del Juicio!</span></p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿QUÉ SIGNIFICA EL DÍA DEL JUICIO PARA LOS VERDADEROS HIJOS DE DIOS?</h2>
+
+        <p>Lo primero que hará el Juez será separar sus ovejas de entre las cabras. El no permitirá que sus justos estén contados entre los pecadores, en lugar de eso, llamará a Sus ángeles para que reúnan su manada a Su mano derecha:</p>
+
+        <div class="scripture">
+            "Y serán reunidas delante de Él todas las naciones; y apartará los unos de los otros, como aparta el pastor las ovejas de los cabritos. Y pondrá las ovejas a su derecha y los cabritos a su izquierda. Entonces el Rey dirá a los de su derecha: Venid benditos de mi Padre, heredad el reino preparado para vosotros desde la fundación del mundo"
+            <span class="scripture-ref">Mateo 25:32-34</span>
+        </div>
+
+        <p>La Biblia es muy clara cuando dice que aquellos que permanecen en Cristo y esperan su venida, tendrán valor y confianza en ese día:</p>
+
+        <div class="scripture">
+            "Y ahora, hijitos, permaneced en Él, para que cuando se manifieste, tengamos confianza, para que en Su venida no nos alejemos de Él avergonzados"
+            <span class="scripture-ref">1ª Juan 2:28</span>
+        </div>
+
+        <div class="scripture">
+            "En esto se ha perfeccionado el amor en nosotros, para que tengamos confianza en el día del Juicio; pues como Él es, así somos nosotros en este mundo"
+            <span class="scripture-ref">1ª Juan 4:17</span>
+        </div>
+
+        <p>¿Cómo puede alguien tener tal gozo y confianza en el Día del Juicio? La respuesta es sencilla: porque el Hijo de Dios conoce al Juez como: Su amigo, hermano, redentor, Señor, abogado, intercesor, el amor de su corazón, su vida misma.</p>
+
+        <p>Hay una prueba que le mostrará si está usted o no preparado para ir al Juicio como oveja del Señor: con gozo, valor y confianza. La Biblia dice:</p>
+
+        <div class="scripture">
+            "Si, pues, nos examinásemos a nosotros mismos, no seríamos juzgados"
+            <span class="scripture-ref">1ª Corintios 11:31</span>
+        </div>
+
+        <p><span class="red-emphasis">¿Está usted dispuesto a juzgarse a usted mismo?</span></p>
+
+        <p>Si lo está, hágase estas tres preguntas:</p>
+
+        <ol class="examination-list">
+            <li><span class="red-emphasis">¿Desea usted, y espera la venida del Señor?</span> ¿Está usted deseoso de su venida? ¿Está usted soñando con el día que Él aparecerá?</li>
+        </ol>
+
+        <div class="scripture">
+            "Aguardando la esperanza bienaventurada y la manifestación gloriosa de nuestro gran Dios y Salvador Jesucristo"
+            <span class="scripture-ref">Tito 2:13</span>
+        </div>
+
+        <div class="scripture">
+            "Por lo demás, me está guardada la corona de justicia, la cual me dará el Señor, juez justo, en aquel día; y no sólo a mí, sino también a todos los que aman Su venida"
+            <span class="scripture-ref">2ª Timoteo 4:8</span>
+        </div>
+
+        <p>Este mundo no es nuestro hogar. Pero yo le pregunto: ¿Está usted echando raíces en este mundo?, ¿Está usted arrancando las raíces en este mundo? o ¿Está usted arrancando las raíces orando: <span class="emphasis">"Jesús mantén mi corazón despierto"</span>?</p>
+
+        <div class="scripture">
+            "Esperando y apresurándoos para la venida del día de Dios... Por lo cual, oh amados, estando en espera de éstas cosas, procurad con diligencia ser hallados por Él sin mancha e irreprensibles, en paz."
+            <span class="scripture-ref">2ª Pedro 3:12,14</span>
+        </div>
+
+        <p>Jesús dijo: <span class="emphasis">"Negociad entre tanto que vengo."</span> (Lucas 19:13). Todos debemos de continuar con nuestra vida diaria y nuestro trabajo. Pero en cada momento de nuestro día, nuestros corazones deben de clamar, <span class="emphasis">"Sí, ven, Señor Jesús."</span> [Apocalipsis 22:20]</p>
+
+        <ol class="examination-list" start="2">
+            <li><span class="red-emphasis">¿Son sus enemigos los enemigos de Dios?</span> ¿Está usted en la batalla contra los que se oponen a Dios? ¿Ha hecho suya la batalla de Él en contra de la carne, el mundo y el diablo? o ¿Ha dejado usted la batalla en las manos de otros miembros del cuerpo de Cristo?</li>
+        </ol>
+
+        <p>Si usted se va a parar ante el mundo y juzgar a los enemigos de Dios el Día del Juicio, usted tiene que hacerlos sus enemigos ahora. David dijo:</p>
+
+        <div class="scripture">
+            "¿No odio, oh Jehová, a los que te aborrecen, y me enardezco contra Tus enemigos? Los aborrezco por completo; los tengo por enemigos."
+            <span class="scripture-ref">Salmo 139:21-22</span>
+        </div>
+
+        <p>Sí, Jesús dijo que debíamos de amar a nuestros enemigos. Pero, ¿Qué de sus enemigos, esos que le odian, rehusan su gracia y misericordia, y difaman su nombre y lo arrastran por el lodo? Nosotros no debemos odiar a los hombres, sino que debemos aborrecer el pecado que está en sus corazones y los poderes demoniacos que los gobiernan. Debemos odiar la maldad que hay en el mundo.</p>
+
+        <p>Sin embargo, dice usted en su corazón: <span class="emphasis">"Este mundo siempre ha sido malvado, y cada día se pondrá peor, ¿Yo qué puedo hacer? Por lo menos mantendré limpios mis vestidos ante Dios."</span> ¡No! No es así, todos estamos en la batalla. Las puertas del infierno vienen en contra de la Iglesia de Jesucristo en estos últimos días como nunca antes. Usted no puede permanecer neutral.</p>
+
+        <p>Dios está llamando: <span class="emphasis">"¿Quién se levantará por Mí contra los malignos?"</span> [Salmo 94:16] Cuando venga el Día del Juicio, yo quiero decir con Pablo: <span class="emphasis">"He peleado la buena batalla"</span>. [2ª Timoteo 4:7] Quiero recibir a Jesucristo luchando, de rodillas, lleno de aborrecimiento hacia el pecado en mi vida y en el mundo.</p>
+
+        <ol class="examination-list" start="3">
+            <li><span class="red-emphasis">¿Ha dejado usted de congregarse con los que de corazón limpio invocan a Dios?</span></li>
+        </ol>
+
+        <div class="scripture">
+            "No dejando de congregarnos, como algunos tienen por costumbre, sino exhortándonos; y tanto más, cuanto veis que aquel día se acerca."
+            <span class="scripture-ref">Hebreos 10:25</span>
+        </div>
+
+        <p>No es casualidad que el versículo que sigue habla de "pecar voluntariamente" después que la verdad ha sido revelada. Realmente, es un hecho históricamente comprobado, que las personas se vuelven más descuidadas justo antes del Juicio y la calamidad.</p>
+
+        <p>Siempre, antes que cualquier sociedad se saliera de control, sus habitantes andaban en todo, menos en Dios. Haciendo dinero, detrás del placer, de su seguridad, de sus metas personales, etc., y en los últimos momentos las cosas se tornaban peores. Los creyentes abandonaban las reuniones de adoración.</p>
+
+        <p>El Apóstol, nos advierte, que ahora que el día está cercano, no dejemos de congregarnos, sino que es el tiempo de buscar a Dios más intensamente, y de unir nuestras fuerzas con los verdaderos vencedores.</p>
+
+        <p>Si su iglesia es la reunión del domingo, un Programa de Televisión, de Radio, o una reunión social, entonces amado, usted no se está congregando con los creyentes. Usted no está recibiendo o dando ánimo, como Dios nos ordena.</p>
+
+        <p>¿Qué es el Juicio, sino la última congregación de Su rebaño? ¿Estará usted allí voluntariamente con esperanza y con gozo? El Juez conoce a aquellos que le aman y que aman a su cuerpo, de modo que no pueden permanecer lejos de sus hermanos.</p>
+
+        <p><span class="red-emphasis">Yo le advierto. Los libros serán abiertos ese día y el Juez está tomando notas de todo en estos instantes.</span></p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿PASÓ USTED EL EXAMEN?</h2>
+
+        <p>Si usted sabe en su corazón que no está listo para estar parado ante Jesús (y ese momento no se tarda), entonces tendrá que dar cuenta por esto que ha leído hoy. Este mensaje es suficiente para condenarlo eternamente al infierno. Si lo rechaza, será testigo en su contra en el Día del juicio.</p>
+
+        <p>¿Es más importante para usted su trabajo, sus posesiones, o aun su ministerio, que las cosas de Dios? ¿Ha descuidado a su familia? ¿Está usted satisfecho porque va a la Iglesia cada domingo y dice en su corazón: <span class="emphasis">"Yo he hecho mi parte para con Dios"</span>?</p>
+
+        <p><span class="red-emphasis">La PALABRA del Señor es bastante clara.</span></p>
+
+        <div class="warning-box">
+            <p style="font-size: 1.5rem; text-align: center; font-weight: bold;">ESO NO ES SUFICIENTE</p>
+        </div>
+
+        <p>Si usted se ha juzgado y se ha hallado falto, debe meditar en sus caminos ahora que hay tiempo:</p>
+
+        <div class="scripture">
+            "Buscad a Jehová mientras puede ser hallado, llamadle en tanto que está cercano. Deje el impío su camino, y el hombre inicuo sus pensamientos, y vuélvase a Jehová, el cual tendrá de él misericordia, y al Dios nuestro, el cual será amplio en perdonar."
+            <span class="scripture-ref">Isaías 55:6-7</span>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - El Día del Juicio Final<br>
+    Por David Wilkerson
+</footer>
+</body>
+</html>

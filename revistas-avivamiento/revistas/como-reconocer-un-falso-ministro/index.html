@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo reconocer a un falso ministro - Juan Wesley</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .exhortation {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #8B0000;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Juan Wesley</div>
+            <div>CÓMO RECONOCER A UN FALSO MINISTRO</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>Estimado Lector de "Avivamiento": Nos complace en presentarle en este número una edición del importante estudio de aquel que fue ilustre en su época como reformador en tiempos de gran apostasía y recordado como un hombre célebre. Nos referimos a Juan Wesley, cuyas palabras no nos saben anticuadas, sino frescas y oportunas a pesar de haber sido pronunciadas hace más de dos siglos. Juan Wesley encontró a su paso las mismas dificultades, herejías y hombres perversos que atentaban contra la verdadera fe, que nosotros encontramos actualmente, de manera que asentimos al texto inspirado de Eclesiastés: <span class="emphasis">"¿Hay algo que se pueda decir: He aquí esto es nuevo? Ya fue en los siglos que nos han precedido".</span></p>
+
+        <p>Desde siempre, el camino de la verdad ha estado infestado de peligros que lo hacen estrecho y difícilmente transitable. Es evidente que casi nadie camina por él. Las costumbres, el mal ejemplo, la multitud de personas que engrosan las filas de aquellos que avanzan por el camino ancho, muchas de ellas tenidas como gente "buena y razonable", el pecado que se ofrece cada vez más descaradamente, las pocas ganas de esforzarse por caminar contra la corriente y mucho menos de aparecer ante los demás como "minoría, locos o fanáticos", son unos pocos ejemplos de los estorbos que hallamos para que muchos decidan abandonar la vereda angosta. Pero a esto, hemos de sumar un peligro mucho más sutil y destructivo.</p>
+
+        <p>Nos referimos a los falsos profetas, que es el tema que nos ocupa en este número. Falsos ministros que proliferan en nuestra sociedad y que asechan sigilosamente las almas de los que quieren escapar de la corrupción en la que viven. Líderes religiosos que se presentan inofensivos y cazan a aquellos que quieren huir de la ira venidera. ¿No es perverso que a las dificultades interiores con las que batalla el pecador por su propia maldad haya que agregar a estos enviados de Satanás que con sus suaves lisonjas y apariencia de ministros de justicia extravían irremediablemente a los inconstantes? Ciertamente <span class="emphasis">"sobre los tales ya de largo tiempo la condenación no se tarda, y su perdición no se duerme"</span> (2ª de Pedro 2:2 y 3) ¡Estemos alerta! Pues son muchos los que siguen sus disoluciones. ¿Cuánto podríamos decir de estas estrellas errantes?, pero dejemos hablar a aquel que caminó antes que nosotros por la senda angosta con tan buenos frutos en su ministerio.</p>
+
+        <p>Como siempre, le reiteramos nuestro compromiso de poner en sus manos material cristiano selecto para traer un profundo avivamiento a su vida.</p>
+
+        <div class="editors-note">
+            ATENTAMENTE<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">CÓMO RECONOCER A UN FALSO MINISTRO</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por Juan Wesley</div>
+
+    <div class="content-section">
+        <div class="scripture">
+            "Guardaos de los falsos profetas, que vienen a vosotros con vestidos de ovejas, pero por dentro son lobos rapaces. Por sus frutos los conoceréis. ¿Acaso se recogen uvas de los espinos, o higos de los abrojos? Así, todo buen árbol da buenos frutos, pero el árbol malo da frutos malos. No puede el buen árbol dar malos frutos, ni el árbol malo dar frutos buenos. Todo árbol que no da buen fruto, es cortado y hachado en el fuego. Así que por sus frutos los conoceréis"
+            <span class="scripture-ref">Mateo 7:15-20</span>
+        </div>
+
+        <p>Apenas se puede concebir o expresar en palabras cuán grandes son las multitudes que corren hacia la destrucción, y que no quieren persuadirse de que deben andar en el camino estrecho, a pesar de saber que es la vía de la salvación eterna. Y de esto somos testigos diariamente. Tales son la torpeza y la locura del género humano, que miles de hombres aún se apresuran en el camino del infierno, sólo porque es él, porque así lo hacen otros; pareciera que prefieren ser de la mayoría, aunque perezcan. ¡Tal es la influencia tremenda que tiene el ejemplo en los míseros y débiles hijos de los hombres! Continuamente están poblando las regiones de la muerte, y ahoga infinidad de almas en la perdición eterna.</p>
+
+        <p>A fin de advertir al género humano que evite este peligro, a fin de salvar a cuantos fuere posible de esta epidemia que se desarrolla, ha enviado Dios a sus atalayas que a voz en cuello muestren a la gente el peligro en que se encuentran.</p>
+
+        <p>Con este fin mandó a sus siervos los profetas de generación, a que enseñen el camino estrecho, y amonestasen a todos los hombres a no conformarse al mundo. Pero, ¿qué sucederá si los atalayas mismos caen en la red en contra de la cual amonestan a otros? ¿Qué pasará si los profetas profetizan mentiras y hacen que el pueblo yerre el camino? ¿Qué sucederá si señalan como la vía de la vida eterna la que en realidad guía a la muerte perdurable; si exhortan a los demás a que anden, como ellos mismos andan, en el camino espacioso y no en el angosto?</p>
+
+        <p>¿Es esta una cosa extraña, rara? ¡Ay! Dios sabe que no lo es. Los ejemplos de esto son innumerables. Se hallan en todas épocas y en todo el mundo. ¡Ay, y qué cosa tan horrenda es ésta, que los embajadores de Dios se conviertan en agentes del diablo! ¡Que los que han sido enviados a enseñar el camino del cielo, en realidad enseñan la vía del infierno! Son como las langostas de Egipto, que <span class="emphasis">"se comieron lo que había quedado sano y salvo, lo que quedó después del granizo"</span>.</p>
+
+        <p>Devoran a los hombres que quedan, que han escapado, a quienes no ha destruido el mal ejemplo. No sin buena razón para ello, nos amonesta tan solamente en contra de ellos nuestro sabio y bendito Salvador cuando dice: <span class="emphasis">"Guardaos de los falsos profetas, que vienen a vosotros con vestidos de ovejas, pero por dentro son lobos rapaces"</span>. Advertencia de la mayor importancia.</p>
+
+        <p>A fin de que se grabe más firmemente en nuestros corazones, investigaremos en primer lugar, quienes son estos falsos profetas; en segundo, que disfraz se ponen y finalmente, la manera por la que podremos saber lo que realmente son, a pesar de sus buenas apariencias.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿QUIÉNES SON ESTOS FALSOS PROFETAS?</h2>
+
+        <p>Investiguemos primeramente, quienes son estos falsos profetas. Y esto es tanta más necesario, cuanto que estos mismos hombres han procurado torcer esta escritura para su propia perdición, y no sólo la suya, sino la de otros muchos. Por consiguiente, para evitar toda clase de disputa, no haré mucho ruido, como acostumbran algunos, ni haré uso de exclamaciones vanas y retóricas a fin de engañar a los sencillos, sino que diré verdades tan claras y patentes que ninguno que no haya perdido la inteligencia o la modestia, puede negar: Verdades que se relacionen íntimamente con el tenor de las palabras anteriores de Cristo:</p>
+
+        <div class="scripture">
+            "Entrad por la puerta estrecha; porque ancha es la puerta, y espacioso el camino que lleva a la perdición, y muchos son los que entran por ella; porque estrecha es la puerta, y angosto el camino que lleva a la vida, y pocos son los que la hallan"
+            <span class="scripture-ref">Mateo 7:13-14</span>
+        </div>
+
+        <p>Puesto que muchos han interpretado estas palabras, sin hacer caso absolutamente de lo que se dijo antes, y como si no se relacionase con el sermón en el que se encuentran dichas palabras.</p>
+
+        <p>En este lugar, lo mismo que muchos otros pasajes de la Escritura, y especialmente el Nuevo Testamento, la palabra profeta significa; no la persona que adivina lo futuro; sino que habla en nombre de Dios: Un hombre que dice ser enviado de Dios a enseñar a los demás el camino del cielo.</p>
+
+        <p>Un profeta falso es aquel que enseña un camino falso, una vía que no lleva al cielo; o lo que viene a ser lo mismo, que no enseña el verdadero camino.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>EL CAMINO ESTRECHO Y EL CAMINO ANGOSTO</h2>
+
+        <p>Todo camino espacioso es infaliblemente falso. Por consiguiente, esta regla es clara y segura: <span class="red-emphasis">"Todo aquel que enseña a los hombres a que anden por el camino espacioso, una vía por la que van muchos, es un falso profeta".</span></p>
+
+        <p>Por otra parte, el camino al cielo es angosto. Luego esta otra regla es también clara y segura: <span class="red-emphasis">"Todo aquel que no enseña a los hombres a que anden por el camino angosto, a ser diferente de los demás hombres, es un falso maestro".</span></p>
+
+        <p>Extendámonos más todavía. El único camino al cielo es estrecho; el angosto. El que Jesús enseña en sus palabras anteriores; luego todo aquel que no enseña a los hombres ese camino, es un falso profeta.</p>
+
+        <p>Ahora bien, el camino angosto, es el camino de la humildad de los que lloran, de la mansedumbre, de los deseos santos, del amor a Dios y al prójimo donde se hace el bien, y se sufre el mal por amor a Cristo. Luego todo aquel que enseña un camino diferente de éste como si fuera la vía del cielo, es un falso profeta.</p>
+
+        <p>Nada importa el nombre que se dé a ese otro camino: que se llame fe; o buenas obras; o arrepentimiento; o arrepentimiento, fe y la nueva obediencia todos estos nombres son buenos; pero si esos nombres o cualquier otro, enseña alguno a los hombres ese camino, es en verdad un falso profeta.</p>
+
+        <p>¡Cuán tremenda debe ser la condenación de aquellos que hablan mal del buen camino; y sobre todo la de los que enseñan una vía enteramente opuesta, el camino del orgullo, de la liviandad, de las pasiones, de los deseos mundanos en el que se buscan placeres más que a Dios, de la dureza para con nuestro prójimo, del desprecio de las buenas obras y donde no se sufre ningún mal ni persecución por causa de la justicia!</p>
+
+        <p>Si alguien me pregunta: <span class="emphasis">"¿Cuándo ha enseñado alguno esto, o quien lo enseña como el camino del cielo?"</span> Le contestaré: Miles de varones tenidos como justos y sabios; todos aquellos que en diferentes denominaciones animan a los soberbios, los frívolos, los dados a las pasiones, los amantes del mundo y de los placeres, los injustos, los duros de corazón, los perezosos, los descuidados, los buenos para nada, los inútiles, los que nada sufren por la justicia, y les permiten imaginarse que van por el camino al cielo.</p>
+
+        <div class="warning-box">
+            <p>Estos son los falsos profetas en todo el sentido de la palabra. Los que traicionan a Dios y al hombre; los primogénitos de Satanás, los hijos mayores de Apolión el destructor. Estos son mucho peores que los asesinos, puesto que destruyen las almas de los hombres; continuamente están poblando las regiones de la obscuridad, y cuando sigan en pos de las almas que han arruinado, <span class="emphasis">"el infierno abajo se espantará y saldrá a recibirlos"</span>.</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>LOS FALSOS PROFETAS SE PRESENTAN CON APARIENCIA DE PIEDAD. POR FUERA OVEJAS, POR DENTRO LOBOS.</h2>
+
+        <p>Pero, ¿se presentan ahora tales cuales son? Nada de eso. Si así lo hicieran, no podrían destruir a tantos. Todos se alarmarían y huirían para escapar con vida. Por consiguiente, asumen una apariencia enteramente distinta, que es el segundo punto que vamos a considerar, <span class="emphasis">"vienen con vestidos de ovejas, mas por dentro son lobos rapaces"</span>.</p>
+
+        <p><span class="emphasis">"Vienen a vosotros con vestidos de ovejas"</span> es decir, su apariencia es la de hombres que no pueden hacer daño. Se presentan del modo más amable e inofensivo, sin la menor señal de enemistad. ¿Quién se ha de figurar que estos individuos tan pacíficos podrán hacer mal a nadie? Tal vez no sean tan celosos y activos en hacer bien como uno deseara; pero no obstante, no hay razón para sospechar que tengan ni siquiera el deseo de hacer daño -Pero no es esto todo.</p>
+
+        <p>En segundo lugar, vienen aparentando ser útiles, como si estuvieran llamados a esto cabalmente, a hacer el bien. Están encargados especialmente de velar por sus almas, de educarlos en el camino de la vida eterna. Su deber, aparentemente es ir por todas partes <span class="emphasis">"haciendo bien, y sanando a todos los oprimidos del diablo"</span>. Siempre hemos estado acostumbrados a considerarlos como mensajeros de Dios, enviados a traernos bendiciones.</p>
+
+        <p>En tercer lugar, vienen con la apariencia de la religión. Les podrán asegurar que es el celo de Dios, y solamente eso lo que les impulsa hacer lo que hacen. Todo lo que hablan es a impulsos de su amor a la verdad y el temor de que ésta sea menoscabe; puede ser por amor a la iglesia y el deseo de defenderla de sus enemigos.</p>
+
+        <p>Vienen sobre todo, con la apariencia del amor. Se toman todas estas molestias solamente por su bien; no deberían molestarse, pero se interesan por ustedes. Protestarán sus buenos deseos, la ansiedad que sienten al ver el peligro en que están, sus deseos fervientes de protegerlos en contra de toda clases de errores, de que no caigan en doctrinas nuevas y falsas. Sentirán mucho que ver que cualquier persona de tan buenas intenciones, acepta opiniones exageradas, o que esta perpleja con nociones extrañas e incomprensibles, o alucinada por el entusiasmo. Por tanto, les aconsejarán que estén quietos en el camino claro de en medio; que no sean demasiado justos, no sea que <span class="emphasis">"se destruyan a sí mismos"</span>.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿CÓMO PODEMOS SABER LO QUE REALMENTE SON A PESAR DE SUS APARIENCIAS?</h2>
+
+        <p>Pero, ¿cómo sabremos lo que realmente son, a pesar de su apariencia engañadora? Este es el tercer punto que nos propusimos investigar. Nuestro bendito Señor vio la necesidad de que todos los hombres conozcan a estos falsos profetas, por más que se disfracen, y dilucidan la verdad por la gran cantidad de consecuencias. Nos da, por consiguiente una regla clara y sencilla que aún las inteligencias de más cortos alcances pueden fácilmente comprender, y que puede aplicarse en todas ocasiones: <span class="red-emphasis">"Por sus frutos los conoceréis"</span>.</p>
+
+        <p>Fácilmente podemos aplicar esta regla a todas horas. A fin de saber si ciertas personas que hablan en nombre de Dios son verdaderos o falsos profetas, es fácil observar primero: ¿Qué influencia tienen en sus propias vidas? ¿Qué frutos producen sus doctrinas? ¿Son puros y limpios en todas las cosas? ¿Qué efecto tienen en sus corazones? ¿Dejan ver en todo el tenor de sus vidas que sus disposiciones y costumbres son santas, celestiales, divinas; que está en ellos la mente que estuvo en Jesucristo; que son mansos, humildes, pacíficos, amantes de Dios y del hombre, y celosos en hacer buenas obras?</p>
+
+        <p>Fácilmente podemos investigar, en segundo lugar, que frutos produce su enseñanza en aquellos que los escuchan, si no en todos, al menos en muchos de ellos; porque ni los apóstoles convirtieron a todos aquellos a quienes les predicaron. ¿Tienen estos la mente de Cristo? ¿Andan como Él anduvo? ¿Y su andar de esta manera, es el resultado de haber escuchado a dichos profetas? ¿Eran inicuos interior y exteriormente hasta que los escucharon? Si así fuere, claro está que los hombres son verdaderos profetas, maestros enviados por Dios. Pero si no es así, si no se enseñan a sí mismos o a otros eficazmente el amor y el servicio de Dios, claro está que son falsos profetas, que no han sido enviados por Dios.</p>
+
+        <p>Palabra dura es ésta, y ¿quién la podrá soportar? Nuestro Señor lo sabía y por tanto condescendió a probarlo muy extensamente por medio de varios argumentos claros y convincentes.</p>
+
+        <div class="scripture">
+            "¿Acaso se recogen uvas de los espinos" dice, "o higos de los abrojos" (v. 16). ¿Esperaremos buenos frutos de estos hombres perversos? ¡Más bien se puede esperar coger uvas de los espinos o higos de los abrojos! "Todo buen árbol da buenos frutos, mas el árbol malo da malos frutos" (v. 17). Todo verdadero profeta, todo verdadero maestro enviado por Dios, lleva el buen fruto de la santidad; pero el falso profeta, el falso maestro, a quien Él no ha enviado por Dios, no lleva malos frutos una que otra vez, sino continua y necesariamente. Así que, tengamos como regla eterna: <span class="red-emphasis">"Por sus frutos los conoceréis"</span>.
+            <span class="scripture-ref">Mateo 7:16-17</span>
+        </div>
+
+        <p>Todo aquel, que de hecho hace que los orgullosos, iracundos, de compasión superficial, amantes del mundo, se vuelvan humildes, amables, amantes de Dios, quien naturalmente confirma sus palabras. Por otra parte, aquel cuyos oyentes permanecen tan injustos como antes, o quienes no tienen la justicia que excede a la de los escribas y fariseos, es un falso profeta, y a no ser por un milagro de la gracia divina, tanto él como los que le escuchan, caerán en el hoyo.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¡GUARDAOS DE LOS FALSOS PROFETAS!</h2>
+
+        <p><span class="red-emphasis">"¡Guárdense de estos falsos profetas!"</span> porque aún cuando vengan <span class="emphasis">"con vestidos de ovejas, por dentro son lobos rapaces"</span>. Sólo vienen a destruir y devorar al rebaño, y si no hay quien lo defienda, lo hacen pedazos. Aunque quieran, no pueden guiarlos por el camino al cielo; no es posible que lo hagan, puesto que no saben la vía. ¡Guárdense de ellos, no sea que los descaminen y hagan que pierdan todo lo que ya tenían!</p>
+    </div>
+
+    <div class="content-section">
+        <h2>UNAS PALABRAS DE AMONESTACIÓN A LOS FALSOS PROFETAS</h2>
+
+        <p>No puedo concluir sin dirigir antes unas cuantas palabras a aquellos de quienes hemos estado hablando.</p>
+
+        <p>¡Ustedes, profetas falsos, huesos secos, escuchen, a lo menos hoy, la Palabra de Dios! ¿Hasta cuándo dejarán de mentir en el nombre de Dios, diciendo: <span class="emphasis">"Dios ha hablado"</span>, cuando Dios no habló? ¿Hasta cuándo seguirán torciendo los caminos rectos del Señor, cambiando la luz por tinieblas y las tinieblas por luz? ¿Hasta cuándo dejarán de enseñar el camino de la muerte, llamándolo, camino de la vida? ¿Hasta cuándo cesarán de entregar a Satanás las almas que pretenden llevar a Dios?</p>
+
+        <div class="exhortation">
+            <p><span class="emphasis">"¡Ay de vosotros, ciegos guías de ciegos!, porque cerráis el Reino de los cielos delante de los hombres; que ni vosotros entráis, ni a los que están entrando dejáis entrar."</span> A los que se están esforzando a entrar por la puerta angosta, llaman el camino espacioso; a los que apenas han dado unos cuantos pasos en la vía del Señor amonestan diabólicamente que no vayan muy lejos. A los que cabalmente empiezan a tener hambre y sed de justicia, persuaden a que no sean <span class="emphasis">"demasiado justos"</span> y de este modo los hacen tropezar en el mero dintel. Sí, logran hacer que caigan para no levantarse más. ¿Por qué hacen esto? ¿De qué les aprovecha su sangre cuando caen en el hoyo? ¡Qué ganancia tan miserable! <span class="red-emphasis">"Perecerán por su maldad, pero su sangre demandará Dios de vuestras manos!"</span></p>
+        </div>
+
+        <p>¿Dónde tienen los ojos, dónde la inteligencia? ¿Tanto han engañado a otros, que acabarán por engañarse a sí mismos? ¿Quién les ha dicho que enseñen el camino, el cual no conocen? ¿Se han <span class="emphasis">"entregado a semejante error, de tal manera, que no sólo enseñan sino que aún creen una mentira?"</span> ¿Es posible que crean ser enviados de Dios, que son sus mensajeros? Si el Señor les hubiera enviado, Su obra prosperaría en sus manos. Vive el Señor, que si fueran los mensajeros de Dios, el <span class="emphasis">"confirmaría las palabras de sus mensajeros;"</span> pero la obra del Señor no prospera en sus manos; no traen pecadores al arrepentimiento; no confirma el Señor sus palabras, puesto que no salvan almas de la muerte.</p>
+
+        <p>¿Cómo pueden evadir las palabras del Señor, tan terminantes, tan fuertes, tan decididas? ¿Cómo pueden dejar de conocerse por sus propios frutos, frutos malos de árboles malos? <span class="emphasis">"¿Acaso se recogen uvas de los espinos o higos de los abrojos?"</span> Aplíquense estas palabras, porque a ustedes pertenecen. ¡Oh, árboles secos!, ¿por qué inutilizan el terreno? <span class="emphasis">"Todo buen árbol lleva buenos frutos."</span> ¿No ven que no hay excepción? Sepan, pues, que no son buenos árboles, puesto que no llevan buenos frutos. <span class="emphasis">"Mas el árbol malo da malos frutos,"</span> y ustedes, desde el principio, han dado malos frutos. Lo que han hablado, como si fuera de Dios, sólo han confirmado a los que les han escuchado, en el carácter y las obras del diablo. Reciban la amonestación de aquel en cuyo nombre les hablo, antes que pase la sentencia que los está amenazando. <span class="emphasis">"Todo árbol que no da buen fruto, se corta, y se echa al fuego."</span></p>
+
+        <div class="highlight-box">
+            <p>¿Oh, los que saben aludidos no endurezcan su corazón! Por mucho tiempo han cerrado sus ojos para no ver la luz. Ábranlos, pues, antes que sea demasiado tarde; antes que les echen a las tinieblas de afuera. ¡No dejen que ninguna consideración temporal pase a su mente, porque arriesgan toda la eternidad! Antes de ser enviados han corrido. ¡No vayan más lejos; no condenen sus almas y las de los que les escuchan! No tienen fruto de su trabajo. ¿Y por qué? Simplemente porque no está el Señor con ustedes. Humíllense, pues, ante Él; clamen a Él desde el polvo, para que vivifique sus almas, les dé la fe que obra por el amor, ese amor que es humilde y manso, puro y misericordioso, celoso en buenas obras, que se goza en la tribulación en los reproches, en los sufrimientos, en la persecución por falta de la justicia. Entonces reposará sobre ustedes el <span class="emphasis">"glorioso espíritu de Cristo"</span>, y se verá que son de Dios. Entonces harán la obra de evangelistas y cumplirán su ministerio. La Palabra de Dios será en sus labios, como <span class="emphasis">"martillo que quebranta la piedra"</span>. Por sus frutos se sabrá que son profetas del Señor, aún por medio de los hijos espirituales que Dios les dé. Y después de enseñar justicia a la multitud, resplandecerán como las estrellas a perpetua eternidad.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - Cómo reconocer a un falso ministro<br>
+    Por Juan Wesley
+</footer>
+</body>
+</html>

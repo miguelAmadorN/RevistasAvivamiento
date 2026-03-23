@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Síntomas que Preceden al Avivamiento - Dr. James Stewart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .symptom-title {
+            font-size: 1.4rem;
+            color: #8B0000;
+            margin: 30px 0 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #8B0000;
+            display: inline-block;
+        }
+
+        .poem-box {
+            background-color: #f9f5e8;
+            border-left: 4px solid #b8860b;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .poem-line {
+            font-size: 1rem;
+            margin-bottom: 6px;
+            color: #5a3e1b;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Dr. James Stewart</div>
+            <div>SÍNTOMAS QUE PRECEDEN AL AVIVAMIENTO</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>Estimados Lectores: Tenemos el agrado de poner en sus manos la presente publicación esperando que aporte valiosos beneficios a su vida espiritual.</p>
+
+        <p>La hemos titulado <span class="emphasis">"Síntomas que preceden al Avivamiento"</span>, y su autor; el Dr. James Stewart, autor también del número anterior, afirma que el Avivamiento es anticipado por signos fácilmente identificables. Es decir; que podemos saber de manera inequívoca si el Avivamiento está a las puertas de suceder o no.</p>
+
+        <p>Consideremos lo siguiente: Jesús exhortó en Lc. 12:56 a la multitud que lo seguía con estas palabras: <span class="emphasis">"¿Cómo no distinguís este tiempo?"</span> Más aún: en Mt. 16:1-4 el Señor reprendió severamente a los fariseos por poder predecir las condiciones climatológicas y al mismo tiempo ignorar voluntariamente el momento espiritual que estaban viviendo y que se aproximaba. ¿Qué aprendemos de estos pasajes? Entre otras cosas, que como hay ciertos "síntomas" que preceden a la lluvia o al buen tiempo natural, así también hay "síntomas" que debemos observar y buscar, que anticipan la "lluvia" o el "buen tiempo" espiritual.</p>
+
+        <p>Por otro lado, observemos al profeta Elías en 1ª de Reyes 18:41-45 postrado en tierra, con su cabeza entre las rodillas, orando al Dios del cielo por lluvia, después de 3 años y medio de sequía y muerte. ¿Hasta cuando oró? ¿Cuándo supo que su oración había sido oída y contestada? Cuando por fin su siervo le dijo después de mucho perseverar: <span class="emphasis">"Veo una pequeña nube como la palma de la mano de un hombre, que sube del mar"</span> (v 44). En otras palabras el profeta ya tenía delante de sus ojos indicios de la lluvia que se avecinaba.</p>
+
+        <p><span class="red-emphasis">¡Sólo hasta entonces cesó su ruego!</span></p>
+
+        <div class="scripture">
+            "...y aconteció, estando en esto, que los cielos se oscurecieron con nubes y viento, Y HUBO UNA GRAN LLUVIA"
+            <span class="scripture-ref">1ª Reyes 18:45</span>
+        </div>
+
+        <p><span class="red-emphasis">¡Aprendamos del profeta Elías!</span></p>
+
+        <p>Conozcamos los síntomas que anticipan la "lluvia" que necesitamos y oremos hasta que aparezcan.</p>
+
+        <p>Deseamos que esta publicación le estimule a buscar un Avivamiento en su propia vida y en nuestra nación.</p>
+
+        <div class="editors-note">
+            Atentamente<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">SÍNTOMAS QUE PRECEDEN AL AVIVAMIENTO</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Dr. James Stewart</div>
+
+    <div class="content-section">
+        <p>Hay dos temas que conmueven los corazones y aceleran el pulso de los cristianos entusiastas en todo el mundo: El cercano regreso de nuestro Señor Jesucristo y la obra sobrenatural del Espíritu en el ministerio de avivamiento.</p>
+
+        <p>Estoy seguro que estarán de acuerdo conmigo cuando hablo de una desesperada necesidad de que llegue la hora de una visitación fresca del cielo. Un trabajo poderoso y sobrenatural de Dios resolvería todos nuestros problemas en la iglesia aquí y en todo el mundo. Los problemas que laceran nuestra vida de iglesia desaparecerían con el nuevo toque del Espíritu de Dios. Estaría llena de misioneros y de recursos para los campos extranjeros. Los millones de paganos que hasta ahora se encuentran en la oscuridad pronto serían evangelizados.</p>
+
+        <p>Con el fin de orar con inteligencia y fe, debemos saber qué es un avivamiento y cuáles son sus síntomas. Sabemos que la palabra "Síntoma" no es un término teológico sino un término médico; cuando un doctor dice que un paciente tiene cierto mal, ¿cómo lo sabe? Simplemente porque él ha encontrado los síntomas y ha diagnosticado el caso. Pues bien, hay síntomas definitivos de cuándo va a venir un avivamiento. Yo puedo ir de congregación en congregación, de pueblo en pueblo, y diagnosticar rápidamente la condición espiritual de los creyentes y así saber si van a tener un avivamiento o no.</p>
+
+        <p>Es posible que estés orando sin fe por un avivamiento si no observas cuidadosamente los síntomas del avivamiento que viene. Estos síntomas son los mismos en toda congregación, en toda ciudad, en toda nación, no importa lo diverso de los antecedentes. En todo lugar a donde voy, busco con oración profunda su diagnóstico espiritual para ver si el Espíritu de Dios está trabajando ahí realmente. Cuando veo estos síntomas entre un grupo de creyentes, entonces puedo sin temor a equivocarme, pronosticar un poderoso avivamiento.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="symptom-title">ESPÍRITU DE HUMILLACIÓN Y CONFESIÓN</div>
+
+        <p>Tenemos una observación aguda de este síntoma en el gran versículo profético de Zacarías 12:10, en el cual vemos que la nación de Israel llorará pronto al ver su terrible culpabilidad en la crucifixión de su Mesías.</p>
+
+        <div class="scripture">
+            "Y derramaré sobre la casa de David y sobre los moradores de Jerusalén, espíritu de gracia y de oración; y mirarán a mí, a quien traspasaron, y llorarán como se llora por hijo unigénito, afligiéndose por él como quien se aflige por el primogénito"
+            <span class="scripture-ref">Zacarías 12:10</span>
+        </div>
+
+        <p>Este espíritu de gracia y de oración se produce por el poderoso derramamiento del mismo Espíritu Santo. De hecho, el espíritu de gracia y de oración es sólo otro nombre del Espíritu Santo. Cuando el Espíritu Santo comienza a trabajar entre su pueblo, preparándolo para un avivamiento, siempre hay llanto, lamento y confesión. El pueblo de Dios se humilla y se quebranta delante de la cruz, mientras miran fijamente el asombroso amor de su querido Redentor. Así, humillados, lloran amargamente por sus pecados. "Oh Dios", claman, "¿cómo pudo mi corazón ser tan frío?, ¿cómo pudo mi vida de oración ser tan miserable?, ¿cómo pudo mi amor por mis hermanos y por mis hermanas ser tan pobre a la luz del calvario?"</p>
+
+        <p>"Oh Dios", claman, "perdóname por mi rencor, perdóname por mi raíz de amargura, perdóname por mi falta de fruto, perdóname por mi infernal orgullo religioso, perdóname por mi falta de preocupación por este mundo perdido que se está yendo al infierno."</p>
+
+        <p>Les digo, amigos; no hay nada que humille más que un avivamiento. ¿Estás preparado para esto? ¿Estás preparado para que la lámpara escudriñadora de la Palabra de Dios apunte hacia los escondrijos más profundos de tu ser, de tu vida pública y de tu vida privada? si, mi hermano. Si, mi hermana, antes que venga un avivamiento debe de haber muchas caras avergonzadas y muchos corazones quebrantados.</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Cuando veo la maravillosa cruz</div>
+            <div class="poem-line">En la cual el príncipe de Gloria murió</div>
+            <div class="poem-line">Mi mayor ganancia la tengo por pérdida</div>
+            <div class="poem-line">Y derramo desprecio sobre todo mi orgullo.</div>
+        </div>
+
+        <p>A menudo oramos: "Oh Señor Jesús, acércate, oh bendito Espíritu, muévete entre nosotros". Ahora, imagínate que Dios contesta esa oración, ¿qué puede suceder? Tendría que haber arrepentimiento, contrición y confesión en medio de los santos. Supón que el Señor humillara a tu pastor delante de la congregación. Supón que los ancianos fueran humillados por el Espíritu Santo. Suponte hermano, hermana, que tienes que levantarte este domingo en la mañana delante de la congregación y hacer una confesión completa. Supón que un pastor tiene que ir con otro y decirle: "Querido hermano, yo he estado diciendo algunas cosas malas acerca de usted y de su congregación. Yo he estado actuando con presunción y orgullo." ¡Yo te digo que estos serían síntomas de un avivamiento!</p>
+
+        <p>Queridos amigos; si pudieran ver lo que el ojo de Dios ve en medio de nosotros, ¡te maravillarías de que no nos haya mandado a todos al lago de fuego! Nunca olvides que Dios odia el pecado en todas las formas y tamaños, Él no lo va a tolerar ni por un segundo. Él enviará juicios y después se retirará de ti.</p>
+
+        <div class="scripture">
+            "...y quitaré tu candelero de su lugar, si no te hubieres arrepentido"
+            <span class="scripture-ref">Apocalipsis 2:5</span>
+        </div>
+
+        <p>No es siempre el adulterio, el robo, la borrachera y cosas como éstas las que estorban el avivamiento. Hay otras cosas de condenar. Mientras hablaba con la difunta Sra. Booth-Clibborn, la hija mayor de los fundadores del Ejército de Salvación, acerca de la necesidad desesperada de arrepentimiento en la iglesia, ella dijo muy seriamente::</p>
+
+        <div class="highlight-box">
+            <p>"Hermano James, ¿sabe qué creo? Creo que los pecados de corazón -raíces de amargura, envidia, celos, rencor o difamación u orgullo religioso- son tan infernales a los ojos de Dios como los pecados externos, como el adulterio o el asesinato."</p>
+        </div>
+
+        <p>Podría escribir hojas enteras, con lo que he visto como síntomas en nuestro ministerio de avivamiento. En una ocasión yo no pude hablar porque por ocho horas los cristianos permanecieron de pie uno tras otro confesando sus pecados.</p>
+
+        <p>Ahora, sea en público, en lo secreto o en privado; <span class="red-emphasis">la confesión debe conducir a una restitución práctica, y si no, todo es engaño.</span> No tiene caso llorar delante de Dios pidiéndole que perdone los pecados si no se va a restituir inmediatamente. No seas hipócrita: "Deja tu ofrenda en el altar y ve y reconcíliate con tu hermano."</p>
+
+        <p>Sí, lo afirmo de nuevo, éste es el primer síntoma de que viene un avivamiento. Recuerdo una ocasión que oí de una supuesta gran visitación de Dios en cierta ciudad del norte de Estados Unidos. Esperé en vano escuchar que uno de los líderes en la campaña hubiera confesado públicamente sus pecados y hubiera restituido con su esposa; la gran campaña evangelística terminó sin que yo oyera esto. Miles confesaron haberse salvado; las iglesias decían que tenían un gran avivamiento. Este líder público no parecía haberse humillado. Claramente no había habido tal avivamiento. Unas pocas semanas después los pastores sólo podían juntar un puñado de almas nacidas de nuevo; las iglesias volvieron a su tibieza y estado de muerte. Debemos tener el espíritu de quebrantamiento delante del Dios Santo.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="symptom-title">ESPÍRITU DE DOLORES DE PARTO</div>
+
+        <p>En Isaías 66:8 al final del versículo leemos:</p>
+
+        <div class="scripture">
+            "...pues en cuanto Sion estuvo de parto, dio a luz hijos"
+            <span class="scripture-ref">Isaías 66:8</span>
+        </div>
+
+        <p>El síntoma de dolores de parto es un gran ausente en las congregaciones actuales. Cuando voy a algunas de ellas a veces pienso que estoy en un zoológico a la hora de comer a causa del ruido. La gente está charlando como si estuvieran esperando el comienzo de un evento deportivo. Es bueno tener un ambiente amigable en la iglesia, pero, ¿cómo puede actuar el Espíritu Santo en ese ambiente? Spurgeon dijo una vez: "Va a haber una gran bendición hoy, porque hay mucho rocío celestial alrededor" Lo que él quiso decir era que había tantos intercesores delante del trono que él sabía que el Espíritu trabajaría poderosamente. No es de extrañar que Dios bendijera a Spurgeon. Por muchos años él tuvo dos veladas de oración semanales donde 4,000 cristianos oraban por horas; nunca predicó sin que 500 de sus gentes estuvieran orando en otro cuarto del edificio.</p>
+
+        <p>No es suficiente para un predicador proclamar el glorioso evangelio de Cristo. Debe predicarlo <span class="emphasis">"...por el Espíritu Santo enviado del cielo..."</span> (1ª Pedro 1:12). Sin embargo, esto no es suficiente. Si va a haber un avivamiento, si la iglesia va a ser apresurada y restaurada a su primer amor, si las almas van a ser salvas; <span class="red-emphasis">¡Todos los miembros de la iglesia deben tener dolores de parto para tener verdaderos nacimientos espirituales!</span> <span class="emphasis">"En cuanto Sión estuvo de parto, dio a luz hijos..."</span> En una ocasión Whitefield le gritó a la gente: "si ustedes no lloran por ustedes mismos, entonces yo tendré que llorar por ustedes"; después de esto él rompió en un llanto incontrolable.</p>
+
+        <p>Muchas veces nosotros hemos oído sollozos y los gemidos de santos preciosos antes y durante los servicios en Europa. A veces los llantos y los dolores de parto eran tan grandes que me fue imposible predicar. Antes de que estallara el avivamiento en Hungría, el Señor me permitió conocer a una hermana única en Cristo; su marido era de familia aristócrata. Ella estaba muy cargada por la condición espiritual de su marido y de su hijo, pero también lo estaba por la deplorable condición de la iglesia de la que era miembro. En todas nuestras reuniones de oración, no importaba si había 4,000 o 5,000 asistentes, ella siempre levantaba su mano y clamaba hacia el púlpito: "Hermano James, no nos olvidemos de orar por la iglesia, no nos olvidemos de orar por mi marido y mi hijo" Sí, era única, porque igual que Ana tenía un espíritu apesadumbrado; era una de las Anas del avivamiento; agonizaba, tenía dolores de parto. No importaba la hora del día o de la noche. Siempre estaba en las reuniones de oración, ya fueran a las tres de la tarde o a las dos de la mañana.</p>
+
+        <p>Una madrugada como a las cuatro yo estaba visitando una reunión de oración en la ciudad de Budapest y descubrí que ella llevaba doce horas orando en una iglesia metodista; me acerqué cuidadosamente y la toqué en su hombro y le dije amablemente: "Querida hermana, usted debe irse a su casa ahora, ya ha estado aquí suficiente tiempo." Me miró a través de las lágrimas y me dijo: "oh James, no me envíe a mi casa, no puedo irme. Además usted no es el Espíritu Santo, no puedo irme hasta que Él me libere. Ore conmigo, mi carga es muy grande".</p>
+
+        <p>Cuando años después el jefe de los obispos de la iglesia a la que pertenecía esta hermana me agradecía por haber traído un avivamiento a su iglesia yo le contesté: "Amado hermano, hace mal en agradecerme a mí este avivamiento. Es cierto que yo prediqué a miles, pero el avivamiento que vino a su congregación se debe a las oraciones agónicas de una mujer."</p>
+
+        <p>¿Tienen este síntoma de dolores de parto en medio de ustedes? <span class="red-emphasis">¡Entonces, el avivamiento viene en camino!</span></p>
+    </div>
+
+    <div class="content-section">
+        <div class="symptom-title">ESPÍRITU ANHELANTE</div>
+
+        <p>Otro síntoma de avivamiento es el espíritu anhelante.</p>
+
+        <div class="scripture">
+            "Dios mío eres tú; de madrugada te buscaré; mi alma tiene sed de ti, mi carne te anhela, en tierra seca y árida donde no hay aguas, para ver tu poder y tu gloria, así como te he mirado en el santuario"
+            <span class="scripture-ref">Salmo 63:1-2</span>
+        </div>
+
+        <div class="scripture">
+            "Como el ciervo brama por las corrientes de las aguas, así clama por ti oh Dios, el alma mía"
+            <span class="scripture-ref">Salmo 42:1</span>
+        </div>
+
+        <p>En esta gacela del desierto que brama por las aguas tenemos una preciosa ilustración de los creyentes sinceros y honestos, con almas sedientas por Dios. Nos han dicho los zoólogos que el ciervo es un animal que brama por las aguas; literalmente jadea todo el día, pero especialmente después de un recorrido por el desierto árido.</p>
+
+        <p>¿Cuál es tu condición espiritual y la de tus amigos creyentes? ¿Tienen hambre y sed de Dios? ¿Tienen ese espíritu anhelante de Dios? ¿Tienen ese anhelo espiritual de ver Su poder y Su gloria manifestados en Su santuario? Desgraciadamente, esa cualidad espiritual es muy rara. Habla con los cristianos nominales de las cosas santas de Dios; predica a la congregación evangélica promedio acerca de las cosas gloriosas de nuestro bendito Señor, y sólo tendrás una respuesta pequeña. La razón no hay que buscarla lejos: están aburridos; están cegados de tanto oír. Su pecado es alterar las cosas santas, ya han oído todo y a todos, ya hay saciedad en sus almas; han perdido la dulce sensación de la bendita presencia de la majestad de Cristo. Ministrarlos es como pararse en el glaciar más grande de Europa en el este de Noruega, ¡el cual es de 500 millas cuadradas de hielo sólido! La palabra de Dios se congela en tus labios y el alma se estremece dentro de ti.</p>
+
+        <p>Si el arcángel Gabriel fuera enviado a ministrarlos sería una obra deprimente. Uno de los grandes requisitos de un avivamiento es: escasez. <span class="emphasis">"Porque yo derramaré aguas sobre el sequedal..."</span> (Is. 44:3). Muchos cristianos dicen políticamente: "Me encantaría ver un avivamiento" pero por su simple tono de voz sabes que no tienen un deseo real.</p>
+
+        <p>Recientemente en una ciudad de Europa, después de un largo servicio de sábado en la tarde, los creyentes permanecieron seis horas en la sala de reunión el domingo escuchando una predicación sazonada con oración y alabanza: ¡no querían irse a sus casas!, no estaban interesados en su hermosa comida de domingo. ¡Quién quiere abandonar un banquete de las mejores cosas en la santa presencia de Dios, sólo para ir a comer un filete o un pollo frito! No es de extrañar que el Salvador dijera: <span class="emphasis">"María ha escogido la mejor parte, la cual no le será quitada"</span>.</p>
+
+        <p>Si algunos creyentes fueran al pastor y le dijeran: "Pastor, reunámonos el sábado en la noche, o levantémonos el domingo temprano para buscar el rostro de Dios, tengamos una reunión extra de estudio de la Biblia", entonces sabrás que el bendito espíritu anhelante se está manifestando, y el avivamiento, seguro está en camino. Agradece a Dios cuando veas un Espíritu inquieto, un espíritu de sed y de anhelo.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="symptom-title">ESPÍRITU DE ARMONÍA</div>
+
+        <p>Otro síntoma de avivamiento es el espíritu de armonía.</p>
+
+        <div class="scripture">
+            "Mirad cuán bueno y delicioso es habitar los hermanos juntos en armonía! es como el buen óleo sobre la cabeza, el cual desciende sobre la barba, la barba de Aarón, y baja hasta el borde de sus vestiduras; como el rocío de Hermón, que desciende sobre los montes de Sión, porque allí envía Jehová bendición y vida eterna"
+            <span class="scripture-ref">Salmo 133</span>
+        </div>
+
+        <p>Uno de los primeros pasos para el avivamiento es quitar las barreras denominacionales. En muchos casos las denominaciones han creado odios, envidias o aún celos entre la gente de Dios. Muchos grupos están clamando para que el avivamiento comience sólo en sus denominaciones, y se sentirían ofendidos con Dios si el fuego cayera sobre otro grupo en la misma ciudad. Si tú fuiste puesto por Dios en un grupo verdaderamente espiritual, debes ser fiel ahí; pero, oh mi hermano, no debemos amar más a nuestro grupo que a nuestro Señor. Nuestras etiquetas denominacionales caerán cuando seamos raptados a la gloria. El Espíritu de Dios está buscando la unidad entre la gente de Dios en estos últimos tiempos de oscuridad para detener la marea y preparar la venida del Señor.</p>
+
+        <p>El Espíritu Santo está buscando un rompimiento de las barreras en medio de su verdadero pueblo, comprado por Su sangre, para que sean instrumentos para el avivamiento que viene. Yo he visto en mi experiencia personal que es muy notorio durante los tiempos de persecución y las épocas de grandes avivamientos, que los verdaderos cristianos nacidos de nuevo se unan en un gran ejército para pelear contra el diablo. Andrew Bonar dijo: "Dios ama la unidad, ama que clamemos juntos, las peticiones firmadas por más de uno".</p>
+
+        <p>Cuando hace unos años tuve que enfrentar la muerte por causa de Cristo, estuve viviendo la eternidad durante dos semanas; pensé que no viviría y me trasladé a la gloria. Miré hacia atrás y hacia abajo, hacia la tierra, tal como era. Vi a las iglesias y noté poca esperanza y la total inutilidad de las barreras humanas levantadas para dividir a la gente de Dios. Mientras esperaba estar pronto en la presencia de mi glorioso Redentor, mi corazón estaba lleno del aplastante amor por TODOS LOS SANTOS para comprender la anchura, la largura, la profundidad y la altura de la vida cristiana (Ef. 3:18).</p>
+
+        <p>Otro paso para el avivamiento es quitar todas las diferencias que dividen a los cristianos dentro de sus propias congregaciones. No tiene caso clamar a Dios hasta que haya perfecta armonía dentro de la iglesia. Muchas veces encontrarás santos peleando contra el diablo en una esquina de la iglesia, y en otra esquina de la iglesia santos jugando con él. Pero desgraciadamente a veces hay división aún entre los miembros más distinguidos de la iglesia. El diablo ha sembrado su cizaña. En lugar de un hermoso amor impregnando la atmósfera, no hay sino odio, rencor y celos. Todo esto por el infernal orgullo y la autosuficiencia. Porque "el hombre viejo" no ha sido quitado de enfrente y clavado definitivamente en la cruz.</p>
+
+        <p>Uno de los más hermosos síntomas de avivamiento es la atmósfera cálida y amistosa de una unidad espiritual. Mientras el avivamiento sigue, el trabajo se intensifica y este amor crece. Yo he visto que, incluso después de muchos meses de reuniones diarias donde se juntan entre 2,000 ó 3,000, son como una gran familia feliz. El Santo Espíritu ha derramado el amor sobre los corazones (Rom. 5:5). Esta hermosa relación se da por la unidad en Cristo. Ellos pertenecen a Cristo y así pertenecen unos a otros. Ahora pueden cantar con profundo sentimiento:</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Ahora pertenezco a Cristo</div>
+            <div class="poem-line">Jesús me pertenece</div>
+            <div class="poem-line">No para los años del tiempo de soledad</div>
+            <div class="poem-line">sino para la eternidad</div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="symptom-title">ESPÍRITU DE FE</div>
+
+        <p>El último síntoma que mencionaré es el espíritu de fe. Recordemos la historia de 1ª de Reyes 18; el profeta estaba orando en el monte Carmelo y envió a su sirviente: "Sube y mira hacia el mar, y el subió y dijo: No hay nada. Y él le volvió a decir: Vuelve siete veces. A la séptima vez dijo: Veo una pequeña nube como la palma de la mano de un hombre, que sube del mar. Y él dijo: Ve y di a Acab, unce tu carro y desciende, para que la lluvia no te ataje" (1ª Reyes 18:43-44).</p>
+
+        <p>Nosotros hemos estado en esa misma cordillera, y es fácil para nosotros ver como el poderoso Elías pudo dar un vistazo en todas las direcciones del horizonte para ver si había alguna respuesta de Dios a su oración. Cuando agonizaba con la cara entre sus rodillas, Elías recibió el reporte de su sirviente de que ahora había una nube pequeña como del tamaño de la palma de la mano de un hombre; inmediatamente él profetizó en fe acerca de la lluvia que venía. La tormenta, en tierra de sequía, fue un milagro de Dios, pero no olvidemos que el milagro de Dios vino a causa de la fe de Elías. Él anunció de antemano que iba a llover cuando sólo había una nube minúscula a lo lejos. El espíritu de fe es peculiar sólo a aquellos que como Elías han orado. Esta gente es el pueblo de la unción secreta de Dios, aquellos que agonizan en sus cámaras secretas.</p>
+
+        <div class="poem-box">
+            <div class="poem-line">El linaje de los sacerdotes ungidos de Dios</div>
+            <div class="poem-line">nunca pasará,</div>
+            <div class="poem-line">permanecen delante de su glorioso rostro,</div>
+            <div class="poem-line">y le sirven de noche y de día.</div>
+            <div class="poem-line">Aunque la razón se levante y la incredulidad</div>
+            <div class="poem-line">fluya como poderoso río,</div>
+            <div class="poem-line">Ellos son y serán hasta el final,</div>
+            <div class="poem-line">los sacerdotes escondidos de Dios.</div>
+        </div>
+
+        <p>El avivamiento comienza cuando el Espíritu enseña a los intercesores. En quietud esperan en gloriosa comunión e intercesión agónica por la conversión de una iglesia mundana y de un mundo que se está muriendo. De pronto, Dios les revela que sus oraciones han sido contestadas y que las ventanas del cielo están a punto de abrirse y que un diluvio espiritual está apunto de descender.</p>
+
+        <p>Estos santos no siempre se dejan ver, ya que creen que deben permanecer en lo oculto por si una pequeña parte de la gloria que le pertenece a Dios les pudiera ser dada a ellos. A veces estas almas irán a su pastor, o se levantarán en una reunión y declararán que un poderoso avivamiento viene en camino; muchas veces esto sucede después de que ya han pasado muchos años, y ellos se atreven a decir que ya sabían que venía el avivamiento. Podíamos contar uno tras otro los incidentes de santos insignificantes que han tenido ese espíritu de fe. ¡Ellos profetizaron "el sonido de una lluvia abundante", cuando no había, ni siquiera una pequeña nube en el horizonte! ¿Cómo lo supieron? Dios les había revelado sus secretos. Sus oraciones fueron contestadas.</p>
+
+        <p>Recordamos cómo en una ciudad de los países escandinavos comenzamos con diez personas y terminamos con diez mil personas todas las noches en la plaza del mercado. Este avivamiento vino cuando la gente menos lo esperaba; unos años después descubrimos que esto ya había sido mostrado por el Señor a una hermana cuyas oraciones habían sido contestadas a quien el Señor había dicho que haría "una cosa nueva".</p>
+
+        <p>Amado, no juguemos al ministerio del avivamiento, no hablemos con ligereza del avivamiento. Muramos con angustia, no nos burlemos de Dios. ¿Cuántos de ustedes han orado y agonizado en las vigilias secretas del día y de la noche hasta que Dios les ha dado el testimonio de que la bendición viene en camino? ¿Hay algún signo de estos síntomas de Avivamiento en medio de ustedes ahora? Haz un diagnóstico cuidadoso de la vida espiritual de la gente, analiza cuantos tienen el espíritu de fe para anunciar la venida de las bendiciones. ¿Hay alguno en medio de ustedes que haya recibido la promesa definitiva de parte de Dios de que está a punto de amanecer sobre tu iglesia y sobre tu comunidad?</p>
+
+        <p><span class="red-emphasis">¡Que Dios nos permita ver estos síntomas de avivamiento para su gloria! Amén.</span></p>
+
+        <div class="highlight-box">
+            <p>Mi difunto amigo, Edward Last, dijo hermosamente: <span class="emphasis">"Aunque las iglesias no pueden producir un avivamiento, deben prepararse para él y esforzarse lo más que puedan mientras llega y, paradójicamente, la iglesia que está preparada para un avivamiento ya está en él."</span></p>
+
+            <p>"Algunas veces en un día de bochornos hemos visto grandes nubes juntarse, con la promesa de la lluvia y hemos oído la artillería de los cielos resonando en las alturas; y cuando volteamos los rostros hacia arriba una o dos grandes gotas caen sobre nosotros y sabemos que el aguacero está cerca. Así nos parece ahora a muchos cuando levantamos nuestras caras al cielo y sentimos las gotas refrescantes, aunque sean pocas, pero que prometen un chubasco. <span class="red-emphasis">HA COMENZADO A LLOVER</span>".</p>
+        </div>
+
+        <div class="poem-box">
+            <div class="poem-line">Por una inundación en la tierra sedienta,</div>
+            <div class="poem-line">por un poderoso avivamiento.</div>
+            <div class="poem-line">Por un grupo santificado y sin temor</div>
+            <div class="poem-line">listo para saludar su llegada.</div>
+            <div class="poem-line"> </div>
+            <div class="poem-line">¡Oh Dios, envía a tu iglesia comprada con tu sangre y a un mundo necesitado, un diluvio de bendición! ¡Amén!</div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="symptom-title">COMENTARIO ACERCA DE LA IGLESIA</div>
+
+        <p>El término "avivamiento" presupone un deterioro, una descomposición; una caída, un aflojar las riendas.</p>
+
+        <p>Una iglesia que necesita ser reavivada es una iglesia que está viviendo por debajo del patrón normal del Nuevo Testamento. Sus miembros, que necesitan ser despertados, están viviendo una vida cristiana subnormal. El fuego de la consagración a Cristo y el fuego del cielo por las almas perdidas se está apagando lentamente, y necesita ser reavivado. Es una tragedia y un hecho real, que la gran mayoría de los cristianos hoy están viviendo una vida cristiana subnormal. Tan bajo ha caído la vida espiritual de la mayoría de los creyentes, que el estado glorioso que trae un avivamiento les parece anormal. Hemos llegado a considerar que este bajo estado espiritual en nuestra experiencia es lo normal en la iglesia, y que el avivamiento del espíritu es extraordinario o anormal.</p>
+
+        <p>La frialdad, la muerte, la insensibilidad y el deslizarse son estados anormales y la iglesia nunca será normal hasta que sea reavivada. El esplendor glorioso de la iglesia que brilla como resultado de un avivamiento es el verdadero estándar que el Señor ha establecido en el Nuevo Testamento, y esto es lo que Él espera ver en medio de sus redimidos en todo tiempo. No hay nada anormal en la iglesia avivada del Señor. Lo único anormal en la iglesia hoy en día es que necesita ser reavivada. No hay nada anormal en ser llenos del Espíritu Santo, de acuerdo a Efesios 5:8. No hay nada anormal en santificar a Cristo en el corazón como dice el mandamiento en 1ª de Pedro 3:15. No hay nada anormal en los cristianos que "reinan en vida por Jesucristo" como se menciona en Romanos 5:7. No hay nada anormal en un hijo de Dios redimido que presenta su cuerpo en sacrificio vivo, como Pablo manda que se haga en Romanos 12:1. No hay nada anormal en un bautismo de poder para ganar las almas perdidas para Cristo. Todo esto representa lo normal en un cristiano como lo presenta para nosotros el Nuevo Testamento. Adolf Monod, cuando se estaba muriendo, gritó desesperadamente cuatro declaraciones: <span class="emphasis">"Todo por Cristo; por medio el Espíritu Santo; para la gloria de Dios; todo lo demás no vale nada"</span>.</p>
+
+        <p>La falsa idea acerca del avivamiento, se le puede atribuir a las enseñanzas erróneas del pasado: 1) Que el aceptar el señorío de Cristo en nuestras vidas es una segunda experiencia de la gracia que es un tipo de añadidura opcional en la vida del cristiano. 2) La llenura del Espíritu ha sido establecida como un lujo y sólo es para unos cuantos privilegiados. Que es algo delicado y noble, pero no un mandato necesario para cada hijo de Dios redimido. Por consiguiente se tienen términos de "súper-espirituales" para definir una vida que consideran anormal y prácticamente inalcanzable para la mayoría de los cristianos.</p>
+
+        <p>Mucha gente ha venido a mí en los estudios bíblicos, después de insistir en la absoluta necesidad de estar habituados en la vida espiritual que está declarada en el Nuevo Testamento, y me han dicho incluso hasta llorando: "Sr. Stewart, somos salvos hace años, y siempre hemos pensado que lo normal de una vida cristiana eran derrotas y fracasos mientras caminábamos sobre esta tierra. Nunca habíamos sabido que esa vida que usted nos describe no sólo es posible alcanzarla, sino que es el estándar de santidad que Dios tiene para cada uno de sus hijos".</p>
+    </div>
+
+    <div class="content-section">
+        <div class="symptom-title">CUANDO EL FUEGO DEL SEÑOR CAE</div>
+
+        <div class="scripture">
+            "Cuando llegó la hora de ofrecerse el holocausto, se acercó el profeta Elías y dijo: Jehová Dios de Abraham, de Isaac y de Israel, sea hoy manifiesto que tú eres Dios en Israel, y que yo soy tu siervo, y que por mandato tuyo he hecho todas estas cosas. Respóndeme, Jehová, respóndeme para que conozca este pueblo que tú, oh Jehová eres el Dios, y que tú vuelves a ti el corazón de ellos. Entonces cayó fuego de Jehová, y consumió el holocausto, la leña, las piedras y el polvo y aún lamió el agua que estaba en la zanja. Viéndolo todo el pueblo se postraron y dijeron: ¡Jehová es el Dios, Jehová es el Dios!"
+            <span class="scripture-ref">1ª Reyes 18:36-39</span>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - Síntomas que Preceden al Avivamiento<br>
+    Por Dr. James Stewart
+</footer>
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Señor!, ¿danos un avivamiento? - Leonard Ravenhill</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .quote-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #8B0000;
+        }
+
+        .poem-box {
+            background-color: #f9f5e8;
+            border-left: 4px solid #b8860b;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .poem-line {
+            font-size: 1rem;
+            margin-bottom: 6px;
+            color: #5a3e1b;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Leonard Ravenhill</div>
+            <div>¡SEÑOR!, ¿DANOS UN AVIVAMIENTO?</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p><span class="emphasis">¡Señor!, ¿danos un avivamiento?</span> El título de nuestra portada, aparentemente confuso ha sido puesto así intencionalmente. El porqué de la confusión es porque muchos supuestos cristianos hoy en día claman: "Señor, danos un avivamiento, envía el fuego a nuestros corazones, queremos ver este mundo de rodillas suplicando y llorando por sus pecados...". Esto suena bien pero, ¿Sabes cómo viene un avivamiento? ¿Estás dispuesto a pagar el precio por ello? ¿Realmente anhelas un avivamiento?</p>
+
+        <p>En el capítulo 6 del libro de 2ª de Samuel se narra cómo el rey David intentó trasladar el arca de Dios a Jerusalén, ¿un buen propósito, no? Sin embargo, aconteció algo inesperado:</p>
+
+        <div class="scripture">
+            "Cuando llegaron a la era de Nacón, Uza extendió su mano al arca de Dios, y la sostuvo; porque los bueyes tropezaban. Y el furor de Jehová se encendió contra Uza, y lo hirió allí Dios por aquella temeridad, y cayó allí muerto junto al arca de Dios."
+            <span class="scripture-ref">2ª Samuel 6:6-7</span>
+        </div>
+
+        <p>Una lectura superficial del pasaje pudiera hacernos pensar que Dios cometió una injusticia con un grupo de personas que tenían buenos deseos. Dios hizo morir a una persona que pretendió "ayudar" a que el arca de Dios no se cayera, porque los bueyes tropezaban. Pero este es precisamente el más grande error que cometemos los que nos decimos "pueblo de Dios".</p>
+
+        <p>Dios había dejado claro cómo debía trasladarse el arca del pacto, aquello que era símbolo de la presencia y la gloria del Dios Todopoderoso. David mismo lo entendió después:</p>
+
+        <div class="scripture">
+            "Entonces dijo David: El arca de Dios no debe ser llevada sino por los levitas; porque a ellos ha elegido Jehová para que lleven el arca de Jehová, y le sirvan perpetuamente."
+            <span class="scripture-ref">1ª Crónicas 15:2</span>
+        </div>
+
+        <p>El gran error de los cristianos actuales es pretender ver la gloria de Dios, pero bajo nuestras propias condiciones, por nuestros propios métodos. La dura reprensión de Dios al quebrantar a Uza debiera traernos a la memoria:</p>
+
+        <div class="scripture">
+            "Porque Jehová tu Dios es fuego consumidor."
+            <span class="scripture-ref">Deuteronomio 4:24</span>
+        </div>
+
+        <p>¿Acaso pretendemos hacer venir la gloria de Dios con nuestras miserables vidas de oración? Más aún, ¿sabemos lo que es la intercesión? No sé tú, pero la Biblia dice que el Maestro:</p>
+
+        <div class="scripture">
+            "...estando en agonía, oraba más intensamente; y era su sudor como grandes gotas de sangre que caían hasta la tierra."
+            <span class="scripture-ref">Lucas 22:44</span>
+        </div>
+
+        <p>¿Es tu vida santa y sin mancha delante de Aquél que conoce la mente y el corazón? Muchas interrogantes pudieran surgir hasta aquí y quizás comiences a sentirte reprobado. Y todavía nos atrevemos a preguntar: <span class="emphasis">"Señor, ¿por qué no llega el avivamiento?"</span></p>
+
+        <p>No amigo, Dios ha dejado claras las condiciones para que podamos ver su gloria. Nuestro deseo es que el presente artículo produzca en ti lo mismo que en el rey David:</p>
+
+        <div class="scripture">
+            "Y David temió a Dios aquel día, y dijo: ¿Cómo he de traer a mi casa el arca de Dios?"
+            <span class="scripture-ref">1ª Crónicas 13:12</span>
+        </div>
+
+        <p><span class="red-emphasis">Señor, ¿cómo debemos vivir para ver un avivamiento?</span></p>
+
+        <div class="scripture">
+            "Tú que te dices casa de Jacob, ¿se ha acortado el Espíritu de Jehová? ¿Son estas sus obras? ¿No hacen mis palabras bien al que camina rectamente?"
+            <span class="scripture-ref">Miqueas 2:7</span>
+        </div>
+
+        <div class="editors-note">
+            <strong>LOS EDITORES</strong>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="quote-box">
+            <p><span class="emphasis">Condiciones para un avivamiento</span></p>
+            <p>Nuestro grave error es querer que Dios envíe un avivamiento bajo nuestros términos. Queremos tener el poder de Dios en nuestras manos, para invocarlo y que trabaje para nosotros, promover y fomentar nuestra clase de cristianismo. Queremos aún tener el mando, guiando el carruaje a través del ambiente religioso en la dirección que queremos dirigirlo, proclamando: "¡Gloria al Señor!". Cierto, pero honestamente estamos en cierta forma buscando una porción de esa gloria para nosotros mismos. Pedimos a Dios que envíe fuego a nuestros altares, ignorando completamente el hecho de que son nuestros altares, no el de Dios. Y como los profetas de Baal trabajamos por nosotros mismos frenéticamente como si por medio de la fuerza pudiéramos dirigir el brazo del Todopoderoso.</p>
+
+            <p>Todo el error proviene de una noción confusa sobre el avivamiento y una falla en reconocer las leyes morales que sustentan el reino de Dios. Dios nunca obra caprichosamente; sus métodos nunca son impulsivos o erráticos. Él nunca envía juicio a menos que haya una violación a sus leyes, ni envía su bendición si no hay obediencia a las mismas. Tan precisos son sus actos tanto de justicia como de misericordia que un observador sabio, consciente de las circunstancias, podría predecir con absoluta precisión cualquier visitación de juicio o gracia que Dios pudiera enviar a una nación, una iglesia o una persona.</p>
+
+            <p class="scripture-ref">A. W. Tozer (1897-1963)</p>
+        </div>
+    </div>
+
+    <h1 class="main-title">¡SEÑOR!, ¿DANOS UN AVIVAMIENTO?</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por Leonard Ravenhill</div>
+
+    <div class="content-section">
+        <p>Avivamiento... otra definición podría ser "restablecer", "reparar" o "restaurar". Oseas 10:12 dice:</p>
+
+        <div class="scripture">
+            "Sembrad para vosotros en justicia, segad para vosotros en misericordia; haced para vosotros barbecho; porque es el tiempo de buscar a Jehová, hasta que venga y os enseñe justicia"
+            <span class="scripture-ref">Oseas 10:12</span>
+        </div>
+
+        <p>¿Qué es el barbecho? El barbecho es una tierra que fue fructífera y por lo tanto ha sido arada, pero como resultado de no haberse sembrado ninguna semilla en ella se ha convertido en tierra improductiva.</p>
+
+        <p>Nótese que aquí se hace un énfasis en el hombre: dice que nosotros tenemos que hacer barbecho, es decir tú debes quebrantar tu barbecho. Otro aspecto acerca de esto mismo está en el Salmo 85:6:</p>
+
+        <div class="scripture">
+            "¿No volverás a darnos vida, para que tu pueblo se regocije en ti?"
+            <span class="scripture-ref">Salmo 85:6</span>
+        </div>
+
+        <p>Entonces, está hablando de que hay una ausencia de gozo, de vitalidad; hay una ausencia de plenitud.</p>
+
+        <p>La sola palabra "avivamiento" o "reavivar" presupone vida. Sólo se puede avivar aquello que ya ha tenido vitalidad, vida que se ha enfermado, debilitado o que se ha vuelto apática. Creo que la analogía más exacta que puedo darte es el caso reciente de un hombre que aparentemente se ahogó. Él estuvo bajo el agua por un espacio de tiempo inconcebible. Entonces alguien lo sacó, trabajó y trabajó en él hasta que finalmente volvió a la vida. Esto es en realidad el significado de "avivamiento", significa "revitalizar", significa recuperar el poder perdido, significa recobrar el vigor perdido.</p>
+
+        <p>En el libro de los Hechos 3:19 podemos leer:</p>
+
+        <div class="scripture">
+            "Así que, arrepentíos y convertíos, para que sean borrados vuestros pecados; para que vengan de la presencia del Señor tiempos de refrigerio"
+            <span class="scripture-ref">Hechos 3:19</span>
+        </div>
+
+        <p>Aún antes de decir cualquier otra cosa sobre el avivamiento, debemos reconocer esto: que el avivamiento es un acto de misericordia en la soberanía de Dios.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Avivamiento no es lo mismo que evangelización</h2>
+
+        <p>Hay una gran diferencia entre avivamiento y evangelización. Cuando hablamos de avivamiento aquí en Estados Unidos pensamos en promover nuestra congregación: "Nuestro avivamiento comenzará este domingo por la noche, y terminará el próximo domingo a cierta hora". Obviamente, esto es algo puramente mecánico, es algo que los hombres han diseñado.</p>
+
+        <p>Creo que algo que ofende de un avivamiento --en un sentido histórico-- es que no puede ser controlado. Como dijera el Dr. Tozer: "Cuando el avivamiento llega hace cambiar el clima moral de una comunidad". Puedes tener un avivamiento en la Iglesia --como aconteció con Carlos Spurgeon--. Puedes tener un avivamiento que abarque una ciudad, o puedes tener un avivamiento que alcance a la nación entera, y es en este contexto que estoy pensando más que en los otros (aunque a veces el avivamiento se extiende de aquí para allá, como se propaga el fuego).</p>
+
+        <p>El avivamiento no puede ser controlado, en cambio el evangelismo sí puede organizarse. El avivamiento no puede ser subsidiado, el evangelismo comúnmente puede y debe ser así. El avivamiento no puede ser publicitado, el evangelismo sí.</p>
+
+        <p>Puede costar millones de dólares, como sucede a menudo, el tener uno de nuestros grandes y modernos así llamados "avivamientos". Tendrías que pagar grandes sumas de dinero por tener algún espacio en la televisión, por ejemplo --quizás un millón de dólares por noche--. Esto resulta inverosímil e impensable para mí en el contexto de un avivamiento bíblico o incluso histórico. ¿Por qué un avivamiento no necesita de promoción? Por la simple razón de que el fuego es lo que más se promociona a sí mismo, sea fuego material o el fuego del avivamiento, éste atrae a las personas como un imán.</p>
+
+        <p>Cómo intentar llevar esto a la tecnología moderna ya que un avivamiento no puede programarse en computadora. Hay información que se puede almacenar en una computadora y listo, obtendrás una respuesta acorde a los datos que se le suministraron. Pero un avivamiento no puede ser pronosticado o programado en computadoras. Hay periodos en los que predomina una sola cosa. A veces el avivamiento se manifiesta con un profundo dolor. Otras veces el avivamiento se manifiesta a través de gozo y éxtasis hasta que no sabes si te encuentras en el cuerpo o has salido de esta tierra. A veces el avivamiento es rodeado por quietud y reposo.</p>
+
+        <p>Hay veces en las que asistes a una reunión de oración y el poder de Dios se manifiesta. Hay quietud y reposo que te hace sentir inspirado. Presientes: "...algo está sucediendo ahora, alguien saldrá pronto con el corazón quebrantado... suplicando en agonía". El avivamiento no puede reducirse a conceptos racionales. Una vez más, lo más contundente de un avivamiento es que no puedes señalar cómo, por qué o dónde comenzó. Es completamente un acto de Dios.</p>
+
+        <p>Puedes encontrar un hombre que iba con una serie de mensajes a cierta comunidad y al poco tiempo todos se salvan, es asombroso. Después se va a otro pueblo exactamente con el mismo grupo de gente, derramando el mismo tipo de intercesión, realizan el mismo duro trabajo con dolores de parto por las almas, pero no hay respuesta.</p>
+
+        <p>No puedes predecir y no puedes organizar un avivamiento. ¿Por qué? Porque no puedes controlar de dónde sopla el viento. El Espíritu, el viento, sopla de donde quiere. Si dijeras que vendrá de esta manera, viene de otra. Si dices que Dios va a usar a tal o cual hombre, a menudo Dios ni siquiera se preocupará por tal persona. Muchas veces el avivamiento viene a través de personajes desconocidos.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Visión: un concepto olvidado</h2>
+
+        <p>Creo que el mundo nunca ha estado en un estado de confusión tan grande como ahora. No creo que nuestra nación lo haya estado. Lo que sea que tengamos que decir acerca del avivamiento, antes tenemos que reconocer que hay tres factores en la vida natural: concepción, gestación y nacimiento. No puedes alterar el orden. Así mismo, nunca habrá avivamiento, que sea notorio, que no sea precedido por una intercesión agonizante. Tal vez dirás: "Yo no he llegado a esa etapa de semejante intercesión. ¿Cómo es eso?". Bueno, ésta viene por medio de una VISIÓN.</p>
+
+        <p>Si en verdad queremos captar el concepto de avivamiento necesitamos tener una visión del profundo dolor de Dios por el pecado. Necesitamos comprender cómo, día tras día, ofendemos a Dios. Cómo país ofendemos a Dios en millones de formas. Una vez mientras predicaba en las Bahamas, observé una gran columna de humo que resultó proceder de unos neumáticos que se estaban quemando. Era tan negro como podía ser, y por allá lejos miré una pequeña espiral de vapor que subía del suelo. No pensé mucho en ello sino hasta un año después, cuando orando el Señor me dijo: "Esa gran densidad de humo negro es semejante a la cantidad de pecado que sube delante de mí cada día". Todas las blasfemias, toda la incredulidad, todas las inmundicias, toda la mentira, todo el engaño, toda la perversión sexual, toda la borrachera, toda esa inmensa columna de iniquidad sube delante de Dios. Y he aquí nosotros hacemos subir una pequeña cantidad de vapor que son las alabanzas que Dios recibe de su pueblo. Si queremos darnos cuenta de lo mucho que necesitamos un avivamiento, primero debemos reconocer las dimensiones del pecado. Debemos entender que el pecado lastima a Dios.</p>
+
+        <div class="scripture">
+            "Restáuranos, oh Dios de nuestra salvación, y haz cesar tu ira de sobre nosotros. ¿Estarás enojado contra nosotros para siempre?"
+            <span class="scripture-ref">Salmo 84:4</span>
+        </div>
+
+        <div class="scripture">
+            "Oh Dios, restáuranos; haz resplandecer tu rostro, y seremos salvos"
+            <span class="scripture-ref">Salmo 80:3</span>
+        </div>
+
+        <p>Nótese que esta frase se repite en los versos 7 y 19, "...haz resplandecer tu rostro", "...haz resplandecer tu rostro". Sabes, creo que una de las tragedias más impresionantes de nuestros días es esta: el pueblo de Israel no podía vivir si Dios volteaba su rostro lejos de ellos, ¡y parece que nosotros no podemos vivir si Dios no vuelve su rostro sobre nosotros!</p>
+
+        <p>Lo maravilloso de la presencia de Dios... lo asombroso de su majestad... hemos tenido reuniones, particularmente el mes pasado, donde yo me sentaría. Al terminar la sesión yo no sabía que hacer con eso, y entonces el pastor dijo: "Bueno, no sé cómo manejar una reunión como esta, ¿qué es lo que se hace?". El derramamiento del poder de Dios fue tan maravilloso que no había manera de conducirlo, por lo que sólo dejamos que la reunión siguiera su propio curso. Habíamos tenido reuniones que duraban cinco horas, comenzando a las siete y terminando a la media noche. Venían estudiantes, universitarios y hombres de negocios. Cuando Dios viene nuestras diferencias sociales no importan, nuestras diferencias intelectuales no importan. Hay una sensación arrolladora de que Dios está tratando, no tanto con mi intelecto, ni con mi cuerpo, ni con mis emociones sino con el hombre interior... el ser interior... el templo interior donde Él quiere morar.</p>
+
+        <p>¿No les parece asombroso lo que el Ayatolá Khomeini ha hecho? Ese hombre ha hecho cosas positivas. Ha expulsado el licor de su país. Nuestro presidente no se atreve a hacer eso. Hace una semana convocó a toda su nación a orar y ayunar cinco días. ¿Crees que existe alguien aquí en Washington que tuviera la suficiente visión para hacer eso? Con todo lo que pudieran hablar de espiritualidad, nadie tiene la suficiente sensibilidad para hacer algo así.</p>
+
+        <p>El profeta Joel habló a los ministros de Dios. Mira en Joel 1:13:</p>
+
+        <div class="scripture">
+            "Ceñíos y lamentad, sacerdotes; gemid, ministros del altar; venid, dormid en cilicio, ministros de mi Dios"
+            <span class="scripture-ref">Joel 1:13</span>
+        </div>
+
+        <p>Ve hacia el verso 12 del capítulo 2:</p>
+
+        <div class="scripture">
+            "Por eso pues, ahora, dice Jehová, convertíos a mí con todo vuestro corazón, con ayuno y lloro y lamento. Rasgad vuestro corazón, y no vuestros vestidos"
+            <span class="scripture-ref">Joel 2:12-13</span>
+        </div>
+
+        <p>Sigue al verso 17:</p>
+
+        <div class="scripture">
+            "Entre la entrada y el altar lloren los sacerdotes ministros de Jehová, y digan: Perdona, oh Jehová, a tu pueblo, y no entregues al oprobio tu heredad"
+            <span class="scripture-ref">Joel 2:17</span>
+        </div>
+
+        <p>Entonces, ¿cómo se llega a tal condición? No hay forma de llegar a ese nivel en cuestión de diez minutos. Es un trabajo, una transformación, un deber. Tiene que haber un quebrantamiento personal de mi barbecho estéril. ¿Qué hay en mi propia vida que obstruye el fluir del Espíritu? Si vas a romper tu barbecho debes someter tu propia vida a una rigurosa disciplina --y somos la generación de creyentes más indisciplinados que jamás haya existido--. No hay manera de llegar al avivamiento a menos que primero venga el quebrantamiento.</p>
+
+        <p>Dios no busca llenar sillas vacías, él no está interesado en llenar iglesias vacías. Él está preocupado por llenar corazones vacíos, vidas huecas y ojos ciegos que no tienen visión. Los corazones que no tienen pasión y las voluntades vanas que no tienen propósito.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>El dilema carnal</h2>
+
+        <p>¿Alguna vez has pensado en lo complejo de la religión judía? Una gran cantidad de sacerdotes y levitas, ofrendas y sacrificios, lunas nuevas, días de reposo y el Urim y Tumim. De repente, Dios pone entre ellos a un individuo solitario con una sola comisión: "Prepara el camino del Señor". Pero tal persona tiene todo este sistema en su contra: por lo menos dos mil sacerdotes, un sumo sacerdote y un templo muy venerado. Un sistema de compra y venta de ganado y otras cosas para los sacrificios. Un atrio exterior donde podías presentarte a un sacerdote y declararle tu pecado y tu culpa para que hiciera expiación por ti. Y este hombre viene de repente diciendo que todo ese ritual es obsoleto, que Dios se manifestará independientemente de todo aquello y que hay Alguien más. Ellos dicen: "Debes ser el hombre". Él dice, "¡Oh no, no, no! ¡Yo no soy él! Sólo vengo a preparar el camino del Señor".</p>
+
+        <p>Ahora piensa en el dolor de Dios después de la caída de Adán. Piensa en la tristeza de Dios después de que el sistema religioso judío que él mismo instituyó también fracasó.</p>
+
+        <p>Pero piensa en algo que podría ser aún más sorprendente: piensa en el hecho de que han pasado dos mil años desde que Jesús vino a esta tierra y consumó totalmente la redención de nuestras almas... ¡y la Iglesia de hoy continúa arrastrando sus pies!</p>
+
+        <p>El dilema carnal en que estamos justo ahora es que la humanidad nunca había caído en una condición tan baja. Las personas suelen decir: "No te preocupes, hemos salido de situaciones como esta". ¡No, no! No es así. No te engañes. Nunca hemos superado situaciones como esta, ¿Sabes por qué? porque nunca hemos estado en una situación semejante. ¡Esa es la razón!</p>
+
+        <p>Nunca hemos tenido un problema como este. Nunca había existido una plaga de divorcios. Nunca hemos tenido millones de niñas menores de 16 años quedando embarazadas como el año pasado. Qué dijeran la noche anterior en las noticias: "Esta noche 20,000 niñas en la nación quedarán embarazadas". El sexo ya es un deporte. La inmoralidad ha sido aceptada como un estilo de vida. Las personas hablan de que hubo menos divorcios que el año anterior. Bueno, ¿cómo esperan ver más divorcios cuando en realidad ya no contraen matrimonio? Se casaron una vez y se divorciaron. Ahora ya no se toman la molestia de casarse, sólo viven en unión libre. Tener un bebé ¿para qué? "Estamos de acuerdo sólo por conveniencia", eso es todo. Así que somos una nación arruinada. Nunca, nunca en la historia habíamos necesitado un avivamiento como ahora, en los días que vivimos. Pero tú no ruegas por un avivamiento... no hay tal cosa.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Avivamiento: ¿anhelo o curiosidad?</h2>
+
+        <p>Los cristianos me dicen donde quiera que voy: "Me gustaría tener un avivamiento". Yo les digo: "Ah sí, también muchos millones de personas". Encuentro todo tipo de cristianos pensando lo mismo. Pero no encuentro muchos de ellos preocupados con sinceridad. La gente está muy curiosa por un avivamiento, pero no estamos comenzando a hacer barbecho. No preparamos el camino del Señor.</p>
+
+        <p>Recuerdo que cuando era niño solía irme a dormir a la cama con una vela... ¿usted no acostumbraba eso? Recuerdo que pensaba, ¿cuántas otras velas se podrían reunir y encender de aquella vela? Me preguntaba y me preguntaba. Nunca encontré una respuesta, pero a menudo me lo preguntaba.</p>
+
+        <div class="poem-box">
+            <div class="poem-line">Fue Carlos Wesley quien escribió el himno:</div>
+            <div class="poem-line"> </div>
+            <div class="poem-line">"Mira cómo una gran llama consume,</div>
+            <div class="poem-line">encendida por una chispa de gracia.</div>
+            <div class="poem-line">El amor de Jesús inflama las naciones,</div>
+            <div class="poem-line">y pone todos los reinos en llamas.</div>
+            <div class="poem-line"> </div>
+            <div class="poem-line">A echar fuego en la tierra vino,</div>
+            <div class="poem-line">ardiendo en algunos corazones está.</div>
+            <div class="poem-line">¡Oh, que todos sean atrapados por ese incendio,</div>
+            <div class="poem-line">que todos participemos de ese gozo glorioso!"</div>
+        </div>
+
+        <p>Jesús dijo: <span class="emphasis">"Fuego vine a echar en la tierra"</span>. ¿Alguno ha escuchado a alguien predicar acerca de ese texto? ¿A qué tipo de fuego se refiere? Bueno, seguramente no al fuego del infierno. ¡Fuego del Espíritu Santo! El fuego más devastador de todos no es el fuego que consume un edificio. Tampoco el fuego del infierno. El fuego más grande y más devastador de todos es el fuego de Dios. A veces decimos, "Dios es amor, Dios es amor, Dios es amor..." y sin embargo nuestro Dios es fuego consumidor, <span class="emphasis">"¿y quién podrá soportar el tiempo de su venida?"</span>. Malaquías dijo: <span class="emphasis">"Porque él es como fuego purificador"</span>. Mateo 3:11: <span class="emphasis">"...él os bautizará en Espíritu Santo y fuego"</span>. Pero tal como ves, ese aspecto no se destaca en los días presentes.</p>
+
+        <p>Todo mundo habla sobre el bautismo. Pero, ¿qué entiendes tú por el bautismo? Existe un bautismo con el Espíritu Santo y fuego. No sólo en el Espíritu Santo, también en fuego. Cuando Él venga <span class="emphasis">"...limpiará su era, y recogerá el trigo en su granero, y quemará la paja en fuego que nunca se apagará"</span>. Esto también puede pasarle a un individuo, o puede acontecerle a una Iglesia, o puede venir en toda una comunidad, o puede sucederle a la nación entera.</p>
+
+        <p>Habrá miles de personas quienes, al verte poner tu corazón y mirada en esto, dirán: "Oh, tienes una visión muy cerrada". Bueno, pienso que la única razón por la cual el Apóstol Pablo conquistó... triunfó... nos sacó ventaja... sufrió más que nosotros... oró más que nosotros... nos excedió en consagración... y predicó mucho más que nosotros fue porque se enfocó en una sola cosa: <span class="emphasis">"...pero una cosa hago"</span>. Debes tener una sola visión, debes ser de un mismo corazón, debes de tener un solo propósito, <span class="emphasis">"...pero una cosa hago"</span>, se entregó totalmente a la voluntad de Dios.</p>
+
+        <p>¿Qué significa esto? Bueno, creo que esto llega a ser una obsesión, como le dije a un hermano esta mañana. Por cincuenta años he llorado, he orado, he gemido, he leído la Biblia, he ayunado y me he reunido con otros hermanos en veladas de oración, días de oración, días y días de intercesión por un avivamiento. No hay muchos indicios de que vaya a venir. Bueno pues, ¿estás seguro? La oración nunca muere. ¿Qué es el incienso bajo el altar? Las oraciones de los santos (ver Apocalipsis 8:15). Nunca hacemos una oración conforme la voluntad de Dios, que Dios no mantenga consigo. Dios jamás desperdicia nada. ¿Acaso crees que tú y yo hemos hecho oraciones producto del dolor, de la angustia y del deseo de ver derrumbarse la iniquidad (después de todo, eso es lo que el avivamiento produce) que Dios deje caer en tierra?</p>
+
+        <p>Pero de nuevo, la sombra de oscuridad y muerte está sobre esta generación como nunca antes. Y a pesar de esto, la tragedia más grande de todo es esta: una Iglesia débil y enferma en un mundo moribundo. No tenemos ni la visión ni la pasión, ni por ahora, la intención de poner nuestra vida en orden --para quebrar el barbecho-- para preparar el camino del Señor.</p>
+
+        <p>Mi esperanza es que hasta este momento no sólo estemos acumulando mera información y estadísticas sobre un avivamiento, sino que cada uno de nosotros busquemos un avivamiento personal.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿No derramamos lágrimas por un avivamiento?</h2>
+
+        <div class="scripture">
+            "Los que sembraron con lágrimas, con regocijo segarán."
+            <span class="scripture-ref">Salmo 126:5</span>
+        </div>
+
+        <p>Este es el edicto divino. Se refiere a algo más que una predicación con celo, algo más que una exposición académica. Esto es algo más que dar simples sermones con exactitud exegética y perfección homilética. Se refiere al hombre, ya sea predicador u oyente, que se siente consternado por el poco poder de la Iglesia en el presente drama de la brutalidad de este mundo. Tal persona se contrista con agonía por los hombres que hacen oídos sordos al Evangelio y exponiéndose voluntariamente al fuego eterno. Bajo esta pesada carga, el corazón de dicho hombre rompe en lágrimas.</p>
+
+        <p>El verdadero hombre de Dios es un contrito de corazón, afligido por la mundanalidad de la Iglesia, afligido por la ceguera de la Iglesia, afligido por la corrupción en la Iglesia, afligido por la tolerancia del pecado en la Iglesia, afligido por la falta de oración en la Iglesia. Le perturba que las oraciones de la Iglesia ya no derrumban las fortalezas del diablo. Él está avergonzado de que la Iglesia ya no clama en su desesperación ante una sociedad enloquecida por el pecado y conducida por el diablo, <span class="emphasis">"¿Por qué nosotros no pudimos echarlo fuera?"</span> (Mateo 17:19).</p>
+
+        <p>Muchos de nosotros no tenemos corazones quebrantados por la gloria que antes tuvo la Iglesia porque nunca hemos sabido lo que es el verdadero avivamiento. Nos conformamos con la situación actual y dormimos despreocupadamente mientras nuestra generación avanza rápidamente a la oscuridad eterna del infierno. ¡Vergüenza, vergüenza es lo que deberíamos tener! Jesús azotó a algunos cambistas y los corrió del templo; pero antes de azotarlos, lloró por ellos. Él sabía cuan cerca estaba su juicio. El Apóstol Pablo envió una carta escrita con lágrimas a los santos en Filipos, y les dijo:</p>
+
+        <div class="scripture">
+            "Porque por ahí andan muchos, de los cuales os dije muchas veces, y aun ahora lo digo llorando, que son enemigos de la cruz de Cristo"
+            <span class="scripture-ref">Filipenses 3:18</span>
+        </div>
+
+        <p>Nótese que no dijo son enemigos de Cristo, sino enemigos de la cruz de Cristo. Ellos niegan o minimizan los méritos redentores de la cruz.</p>
+
+        <p>Como estos hay muchos hoy en día. La iglesia católica de Roma no se presenta como un enemigo de Cristo; ella hace énfasis en el santo nombre de Dios. Sin embargo, niega la cruz al afirmar que la Santa Virgen María es corredentora. Si esto fuera así, ¿entonces por qué ella no fue también crucificada?</p>
+
+        <p>Los mormones usan el nombre de Cristo, pero van por mal camino para la redención. ¿Lloramos por ellos? ¿Les podremos mirar sin avergonzarnos aquel día cuando nos acusen por nuestra indolencia ante el trono del juicio, diciendo que fueron nuestros vecinos y una ofensa para nosotros, pero no una carga porque están perdidos?</p>
+
+        <p>¿Los adeptos del Ejército de Salvación apenas pueden leer la candente historia de su surgimiento sin llorar por ello? ¿Tiene la gloria del avivamiento de Wesley dominados los corazones de los metodistas de hoy? ¿Habrán leído de los hombres bautizados en fuego en el equipo de Wesley? Hombres como John Nelson, Thomas Walsh y un ejército de muchos otros cuyos nombres están inscritos en el libro de la vida, hombres perseguidos y aporreados en las calles cuando mantenían reuniones callejeras. Y aún con todo, mientras la sangre corría por sus heridas, también las lágrimas salían de sus ojos. ¿Tiene Dios gente haciendo guardias en las puertas de los salones de belleza para que ninguna cristiana entre a rizarse el pelo, mientras una cuadra adelante hay un grupo de prostitutas esforzándose por vender su cuerpo maltrecho por el pecado sin nadie que les hable del eterno amor de Dios?</p>
+
+        <p>¿Acaso los pentecostales miran hacia atrás con vergüenza mientras recuerdan cuando vivían en la doctrina correcta, con la gloria del Señor morando entre ellos? Cuando tuvieron una Iglesia viva, que significó noches de oración, seguidas de señales y maravillas, diversidad de milagros y genuinos dones del Espíritu Santo. Cuando no se la pasaban viendo el reloj, sino que tenían reuniones que duraban horas, saturándose del poder de Dios.</p>
+
+        <p>¿Qué acaso no derramamos lágrimas con estos recuerdos, o sentimos vergüenza al ver que nuestros hijos nada saben de semejante poder? Otras denominaciones tuvieron sus días de gloria y avivamiento. Piensa en las poderosas visitaciones de los presbiterianos en Corea. Recuerda el avivamiento que hizo temblar la tierra en Shantung. ¿Aquellos días se han ido para siempre? ¿No derramamos lágrimas por un avivamiento?</p>
+
+        <div class="highlight-box">
+            <p class="scripture-ref">Leonard Ravenhill (1907-1994)</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - ¡Señor!, ¿danos un avivamiento?<br>
+    Por Leonard Ravenhill
+</footer>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conducidos a las Tinieblas - David Wilkerson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .ichabod {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8B0000;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por David Wilkerson</div>
+            <div>CONDUCIDOS A LAS TINIEBLAS</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>En la última década la iglesia evangélica y los grupos cristianos independientes han sido espectadores de una corriente musical que promueve el uso de la música del mundo dentro de las congregaciones, con fines supuestamente evangelísticos y de entretenimiento.</p>
+
+        <p>Conforme el tiempo ha ido pasando, esta moda se ha ido popularizando y ganando muchos adeptos, especialmente entre los jóvenes.</p>
+
+        <p>En pocos años, es tal la cantidad de personas involucradas en esto, que no podemos pasarlo por alto y requerimos detenernos a examinarlo un poco más de cerca. Máxime que la mayoría de los cristianos lo están absorbiendo sin cuestionamientos como si en realidad viniera de parte de Dios. Pero... ¿Qué dice nuestro ya conocido y experimentado predicador, David Wilkerson al respecto? y sobre todo ¿Qué dice al respecto la Palabra de Dios?</p>
+
+        <p>Hubo un tiempo en que los jóvenes que asistían a iglesias cristianas, tenían como modelos a Jesús, al apóstol Pablo, Timoteo ó David, por nombrar unos pocos. Los jóvenes eran estimulados por el ejemplo de otros hombres y mujeres piadosos para dar su vida por Cristo y por una humanidad perdida. Hoy, los nuevos movimientos de nominación cristiana, donde incluimos el de la música mundana dentro de las iglesias han constituido sus propios parámetros para entender y enseñar las Sagradas Escrituras. De este modo nuestros jóvenes tienen como modelo a seguir a delicados y cuestionables artistas. Decimos cuestionables en aspecto y vida moral. Su idea de seguir a Cristo es pasar horas en un estudio de grabación y llegar a cantar y vestir extravagantemente como tal ó cual artista cristiano que admiran. ¡Esto es una tragedia y muchos parecen no percatarse del peligro! Antes los cristianos deseaban sacrificar hasta sus comodidades por seguir a Cristo. Hoy la palabra cruz o negación no se suele manejar porque ofende a los oyentes y ya no regresan a las predicaciones. Hubo un tiempo en que los creyentes se preocupaban por ahorrar dinero y mandarlo a los ministros necesitados ó a misioneros distantes. Hoy en día se malgastan fortunas que enriquecen a unos pocos para conseguir entradas a conciertos de música, comprar alguna camiseta vistosa con la foto y el nombre del artista favorito, y seguramente para obtener el último CD con el éxito del momento.</p>
+
+        <p>La situación empeora, si consideramos que actualmente este movimiento con sobre énfasis en la música mundana y super elaborada, ejerce más influencia sobre los jóvenes que aquellos a quienes Dios señaló para instruirles correctamente. ¿Cómo puede ser de otra manera si también los ministros están involucrados en lo mismo, sin argumentos ni celo a favor de la Santidad?</p>
+
+        <p>En fin, oigamos la voz de Dios a través de este consagrado hombre de oración y tomemos una postura definida en este tópico.</p>
+
+        <div class="editors-note">
+            Atentamente<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">CONDUCIDOS A LAS TINIEBLAS</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por David Wilkerson</div>
+
+    <div class="content-section">
+        <div class="scripture">
+            "¡A la ley y al testimonio! Si no dijeren conforme a esto, es porque no les ha amanecido... Y mirarán a la tierra, y he aquí tribulación y tinieblas, oscuridad y angustia, y serán sumidos en las tinieblas"
+            <span class="scripture-ref">Isaías 8:20-22</span>
+        </div>
+
+        <div class="warning-box">
+            <p><span class="red-emphasis">ANOCHE ASISTÍ A UN FESTIVAL DE MÚSICA CRISTIANA. NUNCA OLVIDARÉ LO QUE VÍ Y PUEDO DECIR QUE FUE DESCORAZONADOR. DESDE QUE SALÍ DEL CONCIERTO HE ESTADO LLORANDO POR HORAS Y CLAMANDO EN EL ESPÍRITU, SINTIENDO LA IRA DE UN DIOS SANTO ENCENDIDA POR LO QUE VÍ.</span></p>
+        </div>
+
+        <p>Fui al festival porque la "estrella" que iba a actuar había estado en mi oficina unas horas antes llorando, diciéndome cuánto amaba a Jesús, cuán sincero era y que quería aprender más acerca de la santidad. Me dijo que mis mensajes escritos lo habían convencido. Sus palabras sonaban bien y su actitud parecía humilde. Fui a escucharle a él y a su grupo, porque me lo pidió y me aseguró que no me molestaría.</p>
+
+        <p>Mi corazón está comprometido con la gente necesitada y mi gran preocupación es rescatar las almas perdidas en las drogas, el alcohol y poseídas de demonios. <span class="red-emphasis">YO NO QUERÍA QUE LA IGLESIA TUVIERA NADA QUE VER CON "ROCK AND ROLL", "HEAVY METAL" O "MÚSICA POP".</span> Yo sentía que había dicho bastante al respecto, y así se lo dije al músico cuando estaba en mi oficina. Habíamos orado juntos y lo abracé cuando dejó mi oficina.</p>
+
+        <p>Fui anoche con el corazón dispuesto, lleno de amor y compasión por él, por los músicos cristianos y los más o menos 3,000 jóvenes que asistirían al festival. Estuve sentado durante dos canciones devocionales, tradicionales, después escuché atentamente lo que el músico testificaba, de lo que decía que Jesús había hecho en su vida. Ningún predicador de cualquier parte podría haber hablado más convincentemente y con más sinceridad, las palabras eran correctas. Habló de separarse, de ser obediente a Jesús, de ganar almas, de oración, de la santidad, del matrimonio (él era casado), de vivir una vida santa. Mientras él hablaba yo oré: <span class="emphasis">"Amado Señor, tal vez juzgué mal a este músico y a su grupo de rock pesado, quizás TÚ ESTÁS haciendo algo nuevo usando la música que los incrédulos prefieren para ganarlos, para captar su atención, para atraerlos y que puedan ser ministrados también. Señor, deseo regocijarme en que Tú seas predicado en cualquier manera, por cualquier grupo, si Tú estas presente en esto, si tu Espíritu Santo lo bendice".</span></p>
+
+        <p>Yo me estaba preguntando si honestamente todos mis escritos acerca de <span class="emphasis">"MÚSICA DE DEMONIOS"</span> en la casa de Dios, no eran sino prejuicios pasados de moda, o simplemente mi disgusto por la música rock. ¿No era demasiado ruido para nada? Sin embargo, algo no andaba del todo bien, había un sentimiento interno en mi corazón que me quitaba la tranquilidad. Yo razoné así: <span class="emphasis">"Si Satanás está camuflageado de alguna forma, si hay levadura de maldad, ésta será revelada. Satanás siempre se revela a sí mismo de una u otra manera".</span></p>
+
+        <p>De repente el cantante gritó en el micrófono: <span class="emphasis">"¡JESÚS ESTÁ LLEGANDO -ÉL VA A ROMPER LOS CIELOS- ALÍSTENSE!"</span> La canción se titulaba <span class="emphasis">"ROMPAN LOS CIELOS"</span>. De repente una oleada de humo salió de unas máquinas de humo, el ritmo machacante subió a un grado enajenante, unas luces imponentes empezaron a relampaguear, los músicos estaban parados como fantasmas saliendo de un lóbrego pantano. Era fantasmal, sobrenatural, extraño, la multitud se volvió salvaje, parecía que les encantaba, en el mismo festival un grupo de <span class="emphasis">"pelos parados"</span> había entretenido al público con sus caras pintadas, andando altaneramente como pavos reales homosexuales.</p>
+
+        <p>Al principio no podía creer lo que veía en el escenario y grite: <span class="emphasis">"¡Esto no puede estar pasando en un festival cristiano, -no pueden hacerle esto a mi Jesús-! ¡No pueden estar tan ciegos los líderes de este ministerio de jóvenes, no pueden tener esta falta de discernimiento! Oh, Dios, ¿Qué le está pasando a tu Iglesia, que sus líderes y su gente no pueden ver el mal en esta abominación?"</span>.</p>
+
+        <p>De pronto yo estaba en el suelo, de espaldas, llorando y sollozando, gimiendo en el Espíritu. Me senté y me volví al escenario. <span class="red-emphasis">ME HORRORIZÓ LO QUE VÍ EN EL ESPÍRITU; ¡VÍ IMÁGENES DE DEMONIOS LEVANTÁNDOSE DEL ESCENARIO!</span> ¡Riéndose de los padres ciegos, de los pastores ciegos, de la juventud y de la iglesia que se desliza hacia atrás! Era una abierta manifestación de Satanás, peor que cualquiera que hubiera visto en las calles.</p>
+
+        <div class="ichabod">
+            ICHABOD (¡La gloria del Señor se ha marchado!) ¡ICHABOD!
+        </div>
+
+        <p>Me puse en pie, temblando literalmente, con el temor de Dios, consumido con un sentimiento de Su santa ira en contra de tanta maldad. Corrí entre la multitud gritando a todo lo que daba mi voz: <span class="red-emphasis">ICHABOD (¡La gloria del Señor se ha marchado!) ¡ICHABOD!</span> Corrí entre la multitud empujando sillas, llorando y gritando lo más alto que podía: <span class="emphasis">"¡Ichabod, esto es satánico! ¡Párenlo! "¡Dios está afligido!"</span>. Fui ignorado y creo que la mayoría debió haber pensado que yo era un lunático loco. Dudo que alguien supiera quien era yo; los músicos no podían oirme, y la multitud no me permitía acercarme al escenario. Yo quería acercarme a un micrófono y gritar como Elías: <span class="emphasis">"ESTO ES UN VÓMITO EN LA MESA DEL SEÑOR! ¿QUIENES SON SUS MAESTROS QUE PUEDEN ESTAR TAN CIEGOS, SER TAN MUNDANOS, ESTAR TAN ENGAÑADOS? ¿QUE CLASE DE BLASFEMIA ES ESTA?"</span>.</p>
+
+        <p>No me callaré respecto a este asunto. No guardaré silencio mientras multitud de jóvenes cristianos están siendo engañados por las suaves palabras de <span class="emphasis">"lobos con piel de ovejas"</span>. El verdadero amor demanda que la verdad sea dicha.</p>
+
+        <p>Lo que más hirió mi espíritu, y lo más difícil de entender para mí, es que este grupo en particular y muchos otros asisten a Iglesias Pentecostales. El músico al que me refiero me dijo que él había dejado las drogas, la bebida, el sexo depravado y la ejecución del <span class="emphasis">"rock and roll"</span> cuando fue salvo. Se cortó su larga cabellera femenina, dejó de vestirse como un exhibicionista y empezó a cambiar sus caminos. Fue un pastor quien lo animó a que dejara su apariencia tan cabal y que usara el <span class="emphasis">"rock and roll"</span> para atraer a los muchachos. Un maestro que anda en sus <span class="emphasis">"sesentas"</span>, en ocasiones viaja con ellos, enseñándoles y animándoles en sus malignos métodos. Según su maestro, el <span class="emphasis">"rock and roll"</span> va a ser la <span class="emphasis">"música normal en las iglesias Pentecostales y Evangélicas"</span>.</p>
+
+        <p>¡Es media noche y no puedo dormir! No puedo dejar de llorar interiormente. Estoy encerrado con Dios en mi estudio, pidiéndole que me muestre lo que está pasando, porque hace unas horas yo ví a algunos miles de cristianos levantando sus manos creyendo que era Jesús, cuando lo más seguro es que fuera el diablo. <span class="red-emphasis">¿SE HA DESVIADO TANTO LA IGLESIA, O LO QUE LOS HOMBRES LLAMAN IGLESIA, QUE YA NO HAY NINGÚN DISCERNIMIENTO?</span> ¿Ha cedido Dios ante algunos que arremeten, trayendo prácticas diabólicas dentro del dominio de la alabanza?</p>
+
+        <p><span class="red-emphasis">AHORA YO ME PREGUNTO: ¿QUIÉN SE ATREVE A ENSEÑAR A UN JESÚS ASÍ, a un Jesús que tolera el engaño? ¿QUÉ JESÚS ESTÁN PREDICANDO?</span></p>
+
+        <div class="scripture">
+            "Más vosotros no habéis aprendido así a Cristo"
+            <span class="scripture-ref">Efesios 4:20</span>
+        </div>
+
+        <p>Esto es lo que Pablo dijo en su carta a los Efesios, les estaba advirtiendo que no caminaran como otros lo hacían <span class="emphasis">"en la vanidad (orgullo) de su mente"</span> (Ef. 4:17). Los prevenía de aquellos que habían aprendido de Jesús en una manera pervertida, porque su entendimiento estaba entenebrecido; <span class="emphasis">"ajenos de la vida de Dios por la ignorancia que en ellos hay, por la dureza de su corazón"</span> (Ef. 4:18).</p>
+
+        <p>Algún maestro o pastor les ha ENSEÑADO MAL A JESUCRISTO. El Cristo que ellos aprendieron no era el Cristo de Dios, el Señor de la santidad, el Maestro de la pureza. Aunque hablan dulcemente de Jesús y lloran cuando mencionan su nombre, y hablan de hambre de caminar en sus caminos, Pablo dice de ellos: <span class="emphasis">"PERDIERON TODA SENSIBILIDAD, SE ENTREGARON A LA LASCIVIA (LUJURIA), PARA COMETER CON AVIDEZ TODA CLASE DE IMPUREZA"</span> (Ef. 4:19).</p>
+
+        <p>Esto es lo que ví anoche en el festival de música, a un grupo musical de flautistas afeminados, conduciendo a muchos jóvenes a los brazos de Satanás con suaves palabras acerca de Jesús y del Perdón, y después con una energía completamente carnal y con vehemencia, ponen un sello de aprobación sobre un paganismo salido de los tesoros del diablo. Estaban diciendo con su música y con su mundana y espantosa actuación, que Jesús y la basura de este mundo eran compatibles. Usaban dos máscaras, una de sinceros seguidores de Cristo y la otra de payasos actuando; con sus caras levantadas hacia Dios le estaban maldiciendo con su burla blasfema. Isaías profetizó de esto: <span class="emphasis">"...maldecirán a su rey y a su Dios, levantando el rostro en alto"</span> (Is. 8:21). Lo que ellos predicaban y lo que practicaban eran dos evangelios diferentes.</p>
+
+        <p>Están engañados y consecuentemente ellos mismos son engañadores. ¡Han CONOCIDO MAL A CRISTO! ¡Ellos han sido embaucados, manipulados y engañados! Deberían haber tenido un pastor o un maestro con discernimiento del Espíritu Santo, con devoción a la Verdad y al Dios Santo para ADVERTIRLES Y MOSTRARLES que Dios no tolera el apegarse al viejo hombre, ni a los caminos carnales. ¿Por qué sus pastores no discernieron que estos jóvenes estaban caminando en la ignorancia y la ceguera espiritual, sin entender las verdaderas demandas de Jesús? ¿Por qué no trataron con su ambición, sacándolos del dinero y de la fama, con algo que no los llevará a lo mismo que antes los condujo al vacío y a las drogas? Ahora ya está resultando que estos grupos están cayendo por todos lados, se han vuelto a las multitudes seculares a la cocaína, a los conjuntos musicales, haciendo el papel de voceadores hipócritas del evangelio. Sus pastores son fácilmente involucrados, porque están ciegos. Pablo lo dijo bien: <span class="emphasis">"Porque vergonzoso es aún hablar de lo que ellos hacen en secreto"</span> (Ef. 5:12). La misma música que ejecutan los lleva de vuelta a las tinieblas.</p>
+
+        <p>¡Ahora es tal vez demasiado tarde! ¡Ellos han rechazado la reprensión de los profetas y de los atalayas que realmente predican la verdad! ¡Están como aquellos de los cuales nos advirtió Pablo, que están perdidos a causa de su ignorancia y ceguera espirituales, que aceptan sus sentimientos del pasado y siguen sus caminos mundanos! Están tan ciegos que creen que están honrando a Cristo y que son bendición para multitud de jóvenes que la Iglesia <span class="emphasis">"no puede alcanzar"</span>.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Los Predicadores que suavizan el pecado están sumiendo a esta generación en la oscuridad</h2>
+
+        <div class="scripture">
+            "... serán sumidos en las tinieblas"
+            <span class="scripture-ref">Isaías 8:22</span>
+        </div>
+
+        <p>Yo culpo a los pastores por la blanda predicación, al suavizar el pecado. Un día se pararán delante del trono del juicio de Cristo y tendrán que responder no sólo por los músicos que estaban bajo su cuidado, sino por todos los jóvenes cristianos que ellos a su vez hirieron y destruyeron. Sin titubear declaro que estos ministros cobardes que prefieren ser amados y honrados antes que ser rechazados por predicar la verdad, están llevando a esta generación a profundas tinieblas espirituales.</p>
+
+        <p>No estaríamos enfrentando a una generación que se desliza hacia atrás, que ama los placeres, una juventud con una mentalidad mundana en nuestras iglesias, una juventud que ni siquiera conoce los mandamientos de un Cristo santo, <span class="red-emphasis">SI TAN SÓLO TUVIÉRAMOS PREDICADORES MÁS SANTOS Y ATREVIDOS, Y EVANGELISTAS QUE ENSEÑARAN Y PREDICARAN LA VERDAD DE CRISTO CON PUREZA Y AUTORIDAD.</span></p>
+
+        <p>No estoy acusando a todos los predicadores y maestros, gracias a Dios por los pocos que aún no se acobardan ante la multitud o se comprometen con los números y el éxito. Tal vez la juventud no nos escuche a los que predicamos en contra de su lujuria por el mundo, pero cuando los juicios se aceleren, se volverán a los predicadores de la santidad para que les den una palabra segura de Dios.</p>
+
+        <p>Hay inmundicia en Sión y extraños han sido exaltados en la casa de Dios por líderes cristianos ciegos, comprometidos y sin discernimiento. Ellos llaman al mal bien, y el consejo de un Dios justo no es apreciado, los corazones se están endureciendo, los oídos se están cerrando, los ojos están siendo cerrados, porque el orgullo, la carne, están contristando al Espíritu Santo, sacándolo fuera de Su templo.</p>
+
+        <div class="scripture">
+            "... Será su raíz como podredumbre,... porque desecharon la ley de Jehová de los ejércitos, y abominaron la palabra del Santo de Israel. Por esta causa se encendió el furor de Jehová contra su pueblo..."
+            <span class="scripture-ref">Isaías 5:24-25</span>
+        </div>
+
+        <p>El infierno debe estar gozoso ante el espectáculo de ministros, no sólo cediendo a los estándares inmorales de la música de la juventud, sino realmente promoviendo lo que sólo los demonios deberían promover. ¿Quién trae a estos grupos mundanos torcidos a la iglesia para dar conciertos? ¿Quién anima a la juventud a abrazar la música de los demonios? ¿Quién ridiculiza a los evangelistas, a los profetas y a los atalayas que claman en contra de esto? ¿Quién la pone en la radio, en la televisión, y quien promueve los conciertos y festivales que ahora degeneran en ESPECTÁCULOS SATÁNICOS? Son los pastores, los ministros de jóvenes, los dueños y gerentes de las estaciones cristianas de radio y televisión. Todos vivirán para ver la cosecha pervertida por su evangelio suave y su débil compromiso, verán como sus propios hijos perecerán en el espíritu de este siglo.</p>
+
+        <p>Un diccionario (el Webster's Twentieth Century) describe la palabra prostitución como <span class="emphasis">"el cambiar la adoración a Dios por la adoración a la idolatría"</span>. Un alcahuete es UNO QUE FAVORECE O PROMUEVE LA PROSTITUCIÓN. Cualquier líder espiritual que procura o promueve esta deserción idolátrica en vez de la verdadera adoración es un ALCAHUETE. Pablo establece enfáticamente:</p>
+
+        <div class="scripture">
+            "ningún fornicario, o inmundo, o avaro, que es idólatra, tiene herencia en el reino de Cristo y de Dios"
+            <span class="scripture-ref">Efesios 5:5</span>
+        </div>
+
+        <p>Jóvenes, no escuchen a estos alcahuetes, escuchen mejor al apóstol Pablo, quien advertía:</p>
+
+        <div class="scripture">
+            "Nadie (ni siquiera predicadores) os engañe con palabras vanas (vacías), porque por estas cosas viene la ira de Dios sobre los hijos de desobediencia. NO SEÁIS PUES PARTÍCIPES CON ELLOS"
+            <span class="scripture-ref">Efesios 5:6-7</span>
+        </div>
+
+        <p><span class="red-emphasis">¡REPRENDEDLOS!</span></p>
+
+        <div class="scripture">
+            "Y no participéis en las obras infructuosas de las tinieblas, sino más bien REPRENDEDLAS"
+            <span class="scripture-ref">Efesios 5:11</span>
+        </div>
+
+        <p>Cualquier trabajo espiritual que está corrompido con lo más mínimo de las tinieblas, Dios lo llama ¡OBRAS INFRUCTUOSAS! Esto contradice la gran mentira de los impulsores de la música de la <span class="emphasis">"nueva onda"</span>, que promueven al diablo arguyendo: <span class="emphasis">"¡Esto no puede ser del diablo, miren todos los jóvenes que son salvos! Escuchen sus grandes testimonios. La juventud está siendo alcanzada y muchos son salvos. Les hablan en un lenguaje que entienden y glorifican a Jesús en su lenguaje"</span>.</p>
+
+        <p>Dios nunca ha juzgado un trabajo por sus resultados. Nadie tiene más éxito en ganar convertidos que los musulmanes. Ninguna Iglesia es más rica que el Vaticano. Los Testigos de Jehová dicen que están ganando multitudes para Cristo.</p>
+
+        <p>¡Dios juzga todo por la LUZ! Esto quiere decir: Por cuánto de Dios tiene, por qué tanto se parece a Cristo, por lo claro, por lo puro, por qué tan transparente es. El repudia y escupe de su boca todo lo que tenga la mínima parte de tinieblas. Juan vio la ciudad santa descendiendo del cielo de Dios, teniendo la gloria de Dios, esto quiere decir a gente santa, a una novia adornada y preparada para el novio. Su principal característica es esta:</p>
+
+        <div class="scripture">
+            "Y su fulgor era como el de una piedra preciosísima, como piedra de jaspe, diáfana como el cristal"
+            <span class="scripture-ref">Apocalipsis 21:11</span>
+        </div>
+
+        <p>Cualquier cosa que sea de Dios es <span class="red-emphasis">¡TRASPARENTE COMO EL CRISTAL!</span> Su santidad es tan pura, es traslúcida como una piedra de jaspe puro. Los que son contados en esta Sión santa, en esta nueva Jerusalén que desciende de Dios, HAN ENTRADO EN LA LUZ. No hay tinieblas en ellos, porque han sido trasladados a Su luz, caminan en la luz, odian las tinieblas y las reprueban en donde quiera que estén. El enemigo se ha metido en círculos religiosos para destruir lo que es puro y limpio, introduciendo un elemento pagano que crea una película o sombra. Si Satanás puede insertar el más mínimo grado de error o levadura maligna, sabe que el Espíritu Santo se retirará contristado. Por esta razón es que no debe permitirse ninguna mezcla, ninguna sombra de paganismo en la Iglesia de Cristo. La Biblia también habla de: CADA SEMILLA PRODUCIENDO SEGÚN SU ESPECIE (Gn. 1:12). Una semilla mala produce malos frutos que a veces no se reconocen hasta que están maduros. Los <span class="emphasis">"profetas"</span> del rock de esta generación están sembrando una semilla según su especie, que algún día traerá un fruto que se marchitará y morirá. Judas aclara esto:</p>
+
+        <div class="scripture">
+            "Estos son manchas en vuestros ágapes, que comiendo impúdicamente con vosotros se apacientan a sí mismos; nubes sin agua, llevadas de acá para allá por los vientos; árboles otoñales (marchitos), sin fruto, dos veces muertos y desarraigados"
+            <span class="scripture-ref">Judas 12</span>
+        </div>
+
+        <p>¿Qué pasa con los testimonios profundos, sinceros y convincentes? Pablo tiene la respuesta.</p>
+
+        <div class="scripture">
+            "os ruego, hermanos, que os fijéis en los que causan divisiones y TROPIEZOS en contra de la doctrina que vosotros habéis aprendido, y que OS APARTÉIS DE ELLOS... Porque tales personas no sirven a nuestro Señor Jesucristo, sino a SUS PROPIOS VIENTRES, Y CON SUAVES PALABRAS Y LISONJAS ENGAÑAN LOS CORAZONES DE LOS INGENUOS"
+            <span class="scripture-ref">Romanos 16:17-18</span>
+        </div>
+
+        <p>¡Cuánto necesita el pueblo de Dios el discernimiento! Grandes decepciones abundan por doquier, no sólo en lo que se refiere al rock y a la música de la juventud, sino también respecto a las nuevas formas de adoración y alabanza que están siendo promocionadas. Algo de esto es nacido del Espíritu Santo, pero mucho es de la carne, y los que caminan en la luz notan la diferencia.</p>
+
+        <p>Hay un avivamiento de adoración y alabanza en toda la tierra, y mucho énfasis en la oración, la intercesión y la nueva revelación. Ni qué decir que hay más y más cristianos parados una o dos horas en grandes congregaciones cantando y alabando con sonrisas, alegría, alborozo, aplaudiendo y danzando. En los tiempos modernos nunca se había oído un GRITO MAYOR EN EL CAMPAMENTO.</p>
+
+        <p>Gracias a Dios por los que están en el campamento que adoran en Espíritu y en verdad, que levantan manos limpias y que tienen corazones puros, que se presentan delante de Su santidad con un corazón quebrantado y un espíritu contrito. Si están caminando en santidad, si tiemblan ante la palabra de Dios, arrepentidos y libres de las ataduras del pecado, es un sacrificio glorioso y aceptable al Señor. Dios habita en las alabanzas de su pueblo, pero sólo de aquellos que caminan rectamente.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Pero hay un grito que es superficial y sin sentido</h2>
+
+        <p>Hay un grito de los vencedores y otro de los idólatras, y es mejor que conozcamos la diferencia. El Señor le ordenó a Moisés:</p>
+
+        <div class="scripture">
+            "Anda, desciende, porque tu pueblo que sacaste de la tierra de Egipto se ha corrompido, se han apartado del camino que yo les mandé; se han hecho un becerro de fundición, y lo han adorado"
+            <span class="scripture-ref">Éxodo 32:7-8</span>
+        </div>
+
+        <p>Según se acercaban Moisés y Josué al campamento de Israel, Josué <span class="emphasis">"oyó el clamor del pueblo que gritaba..."</span> (Ex. 32:17). Pero no era el clamor de un pueblo que hubiera vencido al enemigo. Moisés el verdadero pastor, que venía de la misma presencia de la santidad de Dios, pudo fácilmente discernir que ese GRAN CLAMOR que procedía del pueblo escogido no era puro, algo estaba muy mal, porque no se oía que procediera de la santidad de Dios.</p>
+
+        <div class="scripture">
+            "No es voz de alaridos de fuertes, ni voz de alaridos de débiles; voz de canto oigo yo"
+            <span class="scripture-ref">Éxodo 32:18</span>
+        </div>
+
+        <p>Eso es todo lo que era, SONIDO SUPERFICIAL Y SIN SENTIDO, una abominación a los oídos de un Dios santo. No tenían derecho de cantar, ellos estaban fornicando con un ídolo; sus corazones se habían dado al placer y a la diversión. Estaban enfrente de un becerro de oro y ofrecían sacrificios quemados en el nombre del Señor. El pueblo <span class="emphasis">"se sentó a comer, y a beber y se levantó a regocijarse..."</span> (Ex. 32:6).</p>
+
+        <p>Recibo muchas cartas de cristianos que han pasado por la escuela de Cristo, han pasado por mucho sufrimiento y por una lucha espiritual para tener a Dios en un lugar donde ya nada importa, sino conocerlo a Él completamente. Ellos estaban pasando por una tan profunda hambre de Dios, que empezaron a estar sedientos por Cristo como <span class="emphasis">"el ciervo brama por las corrientes de las aguas"</span> (Sal. 42:1). Me han dicho que se sienten fuera de lugar en esas grandes asambleas donde se produce el <span class="emphasis">"grito en el campamento"</span>. Parece que todo está bien, y superficialmente suena bien. Pero no pueden entrar, porque disciernen que algo está mal en su esencia. Ni siquiera pueden explicarlo, el Espíritu de Dios dentro de ellos no les permite participar en eso. Disciernen algo inexplicable, cierto tipo de tinieblas, algo sutil, sin embargo, hay algo siniestro en todo lo carnal que acompaña al canto, los gritos y la danza, demasiado profesional, demasiado arreglado, demasiado carnal. Se retiran pensando, <span class="emphasis">"Debo ser yo, ¿Habrá algo mal en mí? ¿Juzgo demasiado? ¿Por qué no me encuentro a gusto con estos cantos y danzas?"</span>.</p>
+
+        <p>Aquellos que han CAMINADO EN LA LUZ pueden discernir fácilmente la sombra de las tinieblas, y no serán engañados por falsa danza, falsa adoración, falso clamor o falsa oración.</p>
+
+        <p>Los verdaderos santos de Sión se REGOCIJAN CON TEMBLOR (Sal. 2:11). Saben que la alegría es para <span class="emphasis">"los rectos de corazón"</span> (Sal. 97:11). Pueden cantar y danzar cuando el Espíritu los mueve y con David pueden decir: <span class="emphasis">"Oyó Sión, y se alegró; Y las hijas de Judá, Oh, Jehová, SE GOZARON POR TUS JUICIOS"</span> (Sal. 97:8). Santos de Sión: <span class="emphasis">"Alegraos en Jehová, y alabad la memoria de su santidad"</span> (Sal. 97:12).</p>
+
+        <p>Nada de <span class="emphasis">"rock"</span>, <span class="emphasis">"pop"</span> o gritos ridículos para aquellos que andan en la luz. Ellos le alaban por Su bondad y porque tiemblan ante su nombre Grande y Terrible.</p>
+
+        <div class="scripture">
+            "Jehová reina; temblarán los pueblos... Jehová en Sión es grande y exaltado sobre todos los pueblos. ALABEN TU NOMBRE GRANDE Y TEMIBLE; ÉL ES SANTO"
+            <span class="scripture-ref">Salmo 99:1-3</span>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - Conducidos a las Tinieblas<br>
+    Por David Wilkerson
+</footer>
+</body>
+</html>

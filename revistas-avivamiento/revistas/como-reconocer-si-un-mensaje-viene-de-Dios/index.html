@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo reconocer si un mensaje viene de Dios - David Wilkerson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .test-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #4a6491;
+        }
+
+        .warning-large {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #8B0000;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por David Wilkerson</div>
+            <div>CÓMO RECONOCER SI UN MENSAJE VIENE DE DIOS</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>Estimados lectores: En esta ocasión el pastor David Wilkerson de la iglesia en Times Square, Nueva York, nos comparte claves precisas para reconocer si un mensaje corresponde al único y verdadero evangelio o no. <span class="emphasis">"No que haya otro, sino que hay algunos que os perturban y quieren pervertir el Evangelio de Cristo"</span>. (Gá. 1:7)</p>
+
+        <p>En efecto, sólo hay un evangelio que salva y que te lleva a vivir una vida agradable a Dios. Sin embargo, hay muchos "evangelios" modificados y adulterados perversamente que no solo no te llevarán a una vida de santidad, sino que además te perderán eternamente.</p>
+
+        <p>Por lo general, tales mensajes, así como sus mensajeros, se presentarán bajo un manto piadoso. Su simpatía, el carisma que manifiesten, el supuesto poder que los acompañe, las buenas obras que hagan, la elocuencia con la que prediquen, y lo convencidos y genuinos que se vean, no son parámetros seguros para juzgar si viene de Dios o no. Necesitamos otros signos más fidedignos.</p>
+
+        <p>Por fortuna, en esto como en todas las cosas importantes, Dios no nos ha dejado extraviados, sino que nos ha dado <span class="emphasis">"...la palabra profética más segura, a la cual hacéis bien en estar atentos como a una antorcha que alumbra en lugar oscuro"</span> (2 Pe. 1:19) La Palabra de Verdad revelada en la Biblia, de cuyos principios el autor ha tomado para poder determinar si un mensaje proviene de Dios.</p>
+
+        <p>El impacto de las palabras en los corazones de los oyentes se puede observar y comparar con lo que la Palabra de Dios provoca. Dios no ha cambiado y tampoco sus Palabras. De igual forma, el viejo mensaje de Satanás apartando a Adán y Eva del temor de Dios, tampoco ha cambiado. La antigua sugerencia es hoy día presentada en infinidad de lugares de culto, denominaciones y grupos independientes con una envoltura agradable y aparentemente escritural. <span class="red-emphasis">¡ESTEMOS ALERTA!</span></p>
+
+        <p>Estudiemos lo que el Señor nos dice a través de este mensaje y apliquémoslo a nuestras vidas sin dilación, pues las palabras que estamos escuchando pueden ser, o bien "Palabras de vida Eterna" o veneno que acabará con nuestra alma.</p>
+
+        <div class="editors-note">
+            ATENTAMENTE<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">CÓMO RECONOCER SI UN MENSAJE ES DE DIOS</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por David Wilkerson</div>
+
+    <div class="content-section">
+        <p>Hace algún tiempo un ministro habló a mi oficina muy perturbado. Dijo que él predicaba en su iglesia acerca de la santidad y de la vida crucificada y parecía que realmente tenía un corazón de pastor. Después dijo que algunos miembros de su iglesia habían asistido a cierto seminario y habían vuelto decididos a dejar su congregación.</p>
+
+        <p>Me dijo algo que he estado oyendo que pasa en iglesias por todo el país. <span class="emphasis">"¿Qué está pasando? Hay tantas doctrinas nuevas y extrañas, tantos maestros con nuevas 'revelaciones'. Todos parecen que tienen ciertas escrituras que los respaldan. Ninguno está discerniendo lo que es de Dios y lo que es de Satanás, lo que es necedad y lo que es correcto. Nuestra gente se está confundiendo".</span></p>
+
+        <p>¡No estaba equivocado! Casi a diario están surgiendo nuevas doctrinas, nuevas revelaciones y nuevos evangelios. Y esto se va a poner aún peor. La Biblia advierte claramente que en los últimos tiempos habría doctrinas extrañas que presentarían a otro Jesús, otro Espíritu, otro evangelio.</p>
+
+        <p>El apóstol Pablo juntó a los ancianos de la iglesia de Efeso y sus últimas palabras para estos santos amados fueron:</p>
+
+        <div class="scripture">
+            "Porque yo sé que después de mi partida entrarán en medio de vosotros lobos rapaces que no perdonarán al rebaño. Y de vosotros mismos se levantarán hombres que hablen cosas perversas para arrastrar tras sí a los discípulos"
+            <span class="scripture-ref">Hechos 20:29-30</span>
+        </div>
+
+        <p>Todo el tiempo en que Pablo ministró a las iglesias que él estableció abrigó un temor que lo seguiría hasta el día de su muerte. Era un temor que cualquier pastor verdadero debe tener y nunca se fue de Pablo <span class="emphasis">"...por tres años, de noche y de día, no he cesado de amonestar a cada uno"</span> (Hch. 20:31). El temor era por los falsos maestros que entran para engañar.</p>
+
+        <p>Pablo dijo a los Corintios, <span class="emphasis">"...os celo con celo de Dios"</span> (2 Co. 11:2). Sin embargo no estaba hablando acerca de alguien que estuviera "robando sus ovejas". No decía, <span class="emphasis">"¡Oigan, estas ovejas son mías! Yo soy su maestro -están bajo mi autoridad."</span> Pablo estaba más bien indignado de pensar que algún maestro se entremetiera entre sus discípulos y su devoción a Jesús: <span class="emphasis">"pues os he desposado con un solo esposo, para presentaros como una virgen para Cristo"</span> (v.2).</p>
+
+        <p>Pablo decía que él tenía una meta, un propósito, un deseo -y es el deseo que todo verdadero pastor debe tener: pararse en el día del juicio delante de Cristo y presentar a cada hijo espiritual puro, sin mancha, santo y justo, arraigado y cimentado en La Palabra. O sea, ¡verlos de pie delante de Su trono, con la certeza de que les has dado el consejo completo de Dios. Que no fueron llevados de aquí para allá con cualquier viento de doctrina, ni fueron engañados por doctrinas de demonios. Que pasaron cada prueba y cada juicio con la Palabra de Dios escondida en sus corazones!.</p>
+
+        <p>Amado, mi mayor gozo junto con Pablo y cualquier ministro verdadero de Dios será el oír cada uno de sus nombres mencionado por el Señor, y verlos pararse delante de Él rebosando devoción y humildad, y oír al Señor decirles, <span class="emphasis">"¡Bien hecho, buen siervo y fiel!"</span></p>
+
+        <p>Este es el verdadero deseo de mi corazón. Es por esto que predico con fuego y celo. Si Pablo estuviera vivo predicando desde el púlpito de Times Square, nos diría con lágrimas lo mismo cada vez que hablara: <span class="emphasis">"¡Estén atentos! ¡Viene una invasión! Por todos lados van a ser bombardeados por falsos maestros y falsas doctrinas. Te presentarán a otro Cristo. No serán del Espíritu Santo, sino de otro espíritu. No será el verdadero evangelio, será otro evangelio".</span></p>
+
+        <p>Pablo confesó un temor que tenía acerca de ellos:</p>
+
+        <div class="scripture">
+            "Pero temo que como la serpiente engañó a Eva, vuestros sentidos sean de alguna manera extraviados de la sincera fidelidad de Cristo"
+            <span class="scripture-ref">2 Corintios 11:3</span>
+        </div>
+
+        <p>Pablo sabía que los corintios eran muy susceptibles a los falsos maestros. Les estaban diciendo: <span class="emphasis">"¡Ustedes se abren demasiado, están demasiado ansiosos de oír algo nuevo".</span></p>
+
+        <p>Sucede a menudo que un cristiano sólido, de buen corazón, me entrega un cassette y me dice, <span class="emphasis">"Debería oír a este maestro. Tiene un mensaje poderoso, increíble. Todo el mundo habla de él"</span>. Así que lo escucho. Parece bien, ungido, nuevo y fresco. Pero de repente el Espíritu se empieza a inquietar dentro de mí.</p>
+
+        <p>¿Le ha pasado esto a usted? Según va usted escuchando siente una intranquilidad -usted espera y sigue escuchando. No encuentra nada malo pero hay algo que no suena correcto. Y si continúa, de repente... ¡ahí está! ¡Un error! Un error craso, total, ¡una tremenda herejía! Una interpretación no escritural, fantasía, ideas de hombre, como si se abriera un misterio. Pero que no está de acuerdo con la Palabra de Dios.</p>
+
+        <p>Pablo estaba sorprendido de la facilidad con que los gálatas se habían dejado influir:</p>
+
+        <div class="scripture">
+            "Estoy maravillado de que tan pronto os hayáis alejado del que os llamó por la gracia de Cristo, para seguir un evangelio diferente. No que haya otro, sino que hay algunos que os perturban y quieren pervertir el evangelio de Cristo. Mas si aún nosotros, o un ángel del cielo, os anunciare otro evangelio diferente del que os hemos anunciado, sea anatema"
+            <span class="scripture-ref">Gálatas 1:6-8</span>
+        </div>
+
+        <p>Pablo estaba diciendo, <span class="emphasis">"No sean tan caballerosos y delicados acerca de esto. Si no es el evangelio que han oído de mí, no es de Dios. Es anatema, perverso, mortal. Es un asunto serio, y te causará problemas si eres atrapado por él. Por lo tanto, no lo tomes a la ligera. No lo toleres, y no seas condescendiente con él. ¡Que el que lo predica sea para ti anatema (alguien maldecido por Dios)!"</span></p>
+
+        <p>No importa si un ángel se te aparece y te dice que el mensaje es de Dios. No importa si tú o tus amigos "disciernen" que todo está bien. La Biblia lo pone de una manera sencilla: si no está de acuerdo con el evangelio de Pablo, es de Satanás, es "anatema".</p>
+
+        <p>¿Cómo sabremos entonces cuál es el verdadero evangelio y cuál es anatema?. Déjenme decirles primero que aún los más falsos y demoniacos maestros empiezan con advertencias acerca de las falsas doctrinas. Advertirán fuerte y firmemente en contra de ser atrapados en algo que no se parezca a Cristo. Casi todo falso maestro que he oído habla muy fuerte contra la falsa doctrina, y luego procede a predicar lo que es falso. Pasan mucho tiempo tratando de convencer a sus oyentes que ellos no son como los falsos maestros. Sin embargo los están preparando para que oigan su mensaje.</p>
+
+        <p>La doctrina no es correcta simplemente porque el maestro parezca ser santo, bueno, piadoso y sincero. A lo largo de la historia de la iglesia las más dañinas herejías han sido enseñadas por hombres que eran considerados buenos y sinceros. Esto hace mucho más peligrosas las falsas doctrinas. Muchos cristianos han dicho: <span class="emphasis">"Pero él es un hombre tan bueno, tan sobrio, tan sincero"</span> -pero los "ángeles de luz" del diablo también aparentarán lo mismo. Vendrán como mensajeros de la justicia y de la verdad revelada.</p>
+
+        <p>Pablo dice que Satanás trata de engañarnos, así como engañó a Eva en el paraíso. Él usa la misma astucia, el mismo engaño:</p>
+
+        <div class="scripture">
+            "Pero temo, que como la serpiente con su astucia engañó a Eva, vuestros sentidos sean de alguna manera extraviados"
+            <span class="scripture-ref">2 Corintios 11:3</span>
+        </div>
+
+        <p>¡Nada ha cambiado desde ese entonces! El falso evangelio que Satanás presentó a Eva es el mismo que promueve hoy en día -y todos los falsos evangelios tienen los mismos rasgos en común. Dios no dejó este asunto tan importante sin explicar. Él lo dejó muy claro, y hay claves absolutas que exponen las enseñanzas falsas:</p>
+    </div>
+
+    <div class="content-section">
+        <h2>1. Cualquier enseñanza que menoscaba el temor de Dios es anatema, ¡del diablo!</h2>
+
+        <p>Todos los falsos maestros tienen este mensaje en común: <span class="emphasis">"Tranquilízate, Dios no puede ser tan duro. No te va a herir, Él te ama. Un Dios amoroso quiere que disfrutes la vida".</span> El truco del enemigo es desviarte del respeto reverencial y del temor de un Dios Santo que juzga el pecado. Toda falsa doctrina tiene esta dirección. Menoscabar el temor de Dios en ti.</p>
+
+        <p>Solamente el poderoso y absoluto temor de Dios evitó que Adán y Eva lo desobedecieran. No fue su amor por Dios, ni su comunión diaria. Fue esto:</p>
+
+        <div class="scripture">
+            "Y mandó Jehová Dios al hombre... del árbol de la ciencia del bien y del mal no comerás; porque el día que de él comieres, ciertamente morirás"
+            <span class="scripture-ref">Génesis 2:16-17</span>
+        </div>
+
+        <p>Pero Satanás vino con un suave mensaje: <span class="emphasis">"No moriréis"</span> (Gn. 3:4). Esto fue una total perversión de la verdad -¡Otro evangelio!. Sin embargo, esto era exactamente lo que Eva quería oír. Algo dentro de ella se opuso al mandamiento de Dios. La limitación del Señor parecía un yugo demasiado grande, y ella se irritó por llevarlo.</p>
+
+        <p>Satanás sabía que esto estaba en Eva, y comenzó a minar el temor de Dios en ella inmediatamente: <span class="emphasis">"¿Dijo realmente Dios esto? Dios no es así. Tienes un concepto equivocado de Él. ¿Crees que Él te negaría conocimiento y sabiduría, cuando Él mismo es Conocimiento y Sabiduría? ¿Qué clase de Dios crees que es? ¡Ciertamente no morirás!"</span></p>
+
+        <p>Tú puedes sentarte bajo una predicación fuerte que parezca un fuerte yugo. Puedes irritarte con ella y decir: <span class="emphasis">"¡No me gusta!"</span> Pero no te engañes: Esto es lo único que te traerá libertad, paz y gozo. Sin embargo dentro de ti gritas, <span class="emphasis">"¡No puedo servir a Dios así, yo quiero libertad!"</span></p>
+
+        <p>Hay una enseñanza que se maneja en el movimiento cristiano "de los dones espirituales" acerca de la nueva libertad. Dice: <span class="emphasis">"Ven a cantar, a gritar y a hablar en lenguas -¡y luego sal y vive como un demonio!"</span>. Esto no es libertad. Es Satanás diciendo, <span class="emphasis">"No morirás. Dios no es tan duro. Él es demasiado amante, demasiado misericordioso"</span>. Satanás encontró un evangelio que se ajustaba a los deseos carnales de Eva -y él encontrará uno que se adapte a cada cristiano impaciente con comezón de oír.</p>
+
+        <p>He oído de jóvenes pastores, piadosos y con el corazón quebrantado, que los han corrido de sus iglesias o que están renunciando. Ellos predican santidad y el temor de Dios a los adolescentes, pero los pastores y los padres se quejan de que traen esclavitud a la juventud: <span class="emphasis">"No queremos que usted predique esas cosas a nuestros muchachos"</span>. Estos jóvenes (algunos de los cuales son hijos de predicadores) están viviendo en una total rebelión. Son irrespetuosos, engañan a sus padres y codician las cosas del mundo. Y los mensajes acerca de santidad y el temor de Dios están haciendo temblar a estos muchachos que nunca antes los habían escuchado.</p>
+
+        <p>Hemos criado una generación entera que está totalmente desprovista del temor de Dios. Nunca han conocido nada acerca del juicio. Siempre han tenido lo que han querido. Ellos dicen, <span class="emphasis">"Queremos rock-and-roll"</span>, y sus padres dicen, <span class="emphasis">"No los molesten. Traigan el rock-and-roll a la iglesia y pónganle letra cristiana"</span>. O, <span class="emphasis">"Ellos van a tener relaciones sexuales de cualquier manera, así que démosles alguna protección"</span>.</p>
+
+        <p>Esta juventud nunca ha conocido el temor de Dios, debido a que los pastores y sus padres han enseñado que Dios es el gran alcahuete del cielo. Solamente un puñado de jóvenes cristianos, hoy en día, caminan en santidad. ¿Por qué? Porque los pastores son demasiado débiles para predicar el evangelio en el púlpito -y porque los padres están viviendo vidas dobles, y ¡sus hijos lo saben!.</p>
+
+        <p>Algunos cristianos me han escrito, <span class="emphasis">"Hermano David, usted predica muy duro. ¿Predica usted de esa manera todo el tiempo en su iglesia? ¿Lo acepta la gente?"</span>.</p>
+
+        <p>Mi respuesta es esta: Nosotros somos llamados a predicar la Palabra con tal poder y autoridad que ésta produzca un temor constante de Dios en cada oyente. Aquellos que no abandonen sus pecados favoritos no permanecerán en la iglesia, ya que se sentirán ofendidos. Cerrarán sus oídos a la verdad y buscarán maestros que les den permiso para satisfacer sus deseos carnales (2 Ti. 4:14).</p>
+
+        <div class="scripture">
+            "Y con el temor de Jehová los hombres se apartan del mal"
+            <span class="scripture-ref">Proverbios 16:6</span>
+        </div>
+
+        <p>Aquí está lo que creo que un mensaje del verdadero evangelio debe producir en nosotros:</p>
+
+        <ul class="bible-list" style="margin-left: 30px; margin-bottom: 20px;">
+            <li>1) Un aborrecimiento por el pecado que no nos dé lugar a excusas o pretextos.</li>
+            <li>2) Una convicción de pecado por ser perezosos o tibios espiritualmente.</li>
+            <li>3) Un entendimiento profundo de que Dios no cierra sus ojos ante nuestros pecados.</li>
+            <li>4) Una convicción de que recogeremos lo que sembramos.</li>
+            <li>5) Un justo y santo temor de Dios.</li>
+            <li>6) Una confianza de que Dios nos librará de cualquier pecado que rechacemos y resistamos.</li>
+        </ul>
+
+        <p>¿No estás seguro o no estás convencido acerca de la necesidad de caminar en el temor de Dios?</p>
+
+        <p>Para terminar con esto de una vez y para siempre, ve Isaías 11:1-3. Este pasaje profetiza de alguien en quien el Espíritu del Señor reposaría -Alguien a quien le <span class="emphasis">"hará entender diligente en el temor de Jehová"</span>. ¡Este pasaje está hablando de Jesús! Y si Jesús caminó en el temor del Padre y se deleitó en esto, ¡Cuánto más debiéramos hacerlo nosotros!</p>
+
+        <div class="warning-box" style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 6px; padding: 20px; margin: 25px 0;">
+            <p>Ten cuidado con cualquier mensaje que te quita la convicción de pecado, que produce en ti flojera espiritual, que te relaja suavemente, y que te dice al oído: <span class="emphasis">"Todo está bien"</span>. Todas estas frases tranquilizantes provienen de un falso evangelio.</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>2. Mantente alerta de cualquier evangelio que te desvíe de una devoción única a Jesucristo</h2>
+
+        <p>Pablo nos advierte seriamente que Satanás se transformará en <span class="emphasis">"ángel de luz"</span> -que él levantará sus falsos maestros, todos ellos haciéndose pasar por ministros de justicia.</p>
+
+        <p>La luz representa la verdad, el evangelio, la revelación. Satanás vendrá usando el amado nombre de Jesús y tratará de engañar aún a los elegidos.</p>
+
+        <div class="scripture">
+            "...que se disfrazan como apóstoles de Cristo"
+            <span class="scripture-ref">2 Corintios 11:13</span>
+        </div>
+
+        <p>¡Piensa lo terrible de semejante cosa! Enfrentar los últimos tiempos bajo el poder de falsos apóstoles, abrazando doctrinas de demonios, estando bajo el control de un falso espíritu.</p>
+
+        <p>¿Cómo puede suceder semejante cosa? ¿Cómo puede alguien sentarse bajo el evangelio pervertido que Pablo describe y no darse cuenta? Sólo hay una manera: Por rehusarse a abandonar los deseos carnales y caminar en una descarada desobediencia. Los deseos carnales son el imán que conducen a la persona a los falsos apóstoles. Te puedo asegurar que si permaneces en tus malos deseos vas a terminar en falsas doctrinas. Es inevitable; tú la encontrarás y ella te encontrará a ti. Y estarás tan ciego que no te darás cuenta.</p>
+
+        <p>En el siglo XVIII se introdujo en la iglesia otro evangelio llamado antinomianismo, que significa <span class="emphasis">"contra la ley"</span>. Hoy día este evangelio está más fuerte que nunca. Quita el temor de Dios dando a entender que una vez que tú has creído puedes pecar y nunca ser condenado porque Jesús ya lo pagó todo.</p>
+
+        <p>El Dr. Tobías Crisp era uno de los maestros de esta nueva doctrina que se extendió por toda Alemania. Sus exponentes usaban el nombre de Jesús como estribillo: <span class="emphasis">"¡Se habla mucho acerca de la gracia y de "escudriñar nuestro corazón", pero a mí dame a Cristo! ¡Yo no busco las promesas, sino a Cristo! ¡Yo no busco la santificación, sino a Cristo! ¡No me hables de meditaciones u obligaciones, dime de Cristo!"</span></p>
+
+        <p>Parece como una profunda devoción a Cristo -un evangelio centrado en Jesús. Pero el mismo Jesús enseñó que no todo el que le diga <span class="emphasis">"Señor, Señor"</span>, entrará en Su reino. No cualquiera que use el nombre de Jesús estará predicando el verdadero evangelio.</p>
+
+        <p>La doctrina del antinomianismo está siendo predicada hoy en día y el movimiento cristiano de "los dones del Espíritu" se está dejando engañar por ella, siendo enlazado y hundiéndose cada vez más. Escuchen el resto de esta doctrina:</p>
+
+        <div class="highlight-box">
+            <p><span class="emphasis">"Un creyente puede estar seguro de ser perdonado tan pronto como cometa un pecado, aunque sea adulterio o asesinato. Dios no está enojado, aunque un creyente peque a menudo. No hay ningún pecado que pueda cometer que a Él le pueda herir -por lo tanto, no hay porque temer al pecado. El pecado está muerto y no debe causar terror. Si nosotros le decimos a los creyentes que deben caminar en santidad y hacer buenas obras porque si no "Dios se va a enojar con ellos", estamos pervirtiendo las Escrituras. Estamos mintiendo en la cara de Dios. ¡Dios ya lo hizo todo en Cristo. Ya no hay nada que temer!"</span></p>
+        </div>
+
+        <p>Es como si los cristianos que abrazan esta doctrina estuvieran sentados en un hoyo profundo esperando que Jesús pase. Están diciendo, <span class="emphasis">"Señor, Tú ya sabes donde estoy, si me amas sácame de aquí"</span>. ¡No! ¡La Biblia manda que resistamos al diablo y huirá de nosotros!.</p>
+
+        <p>Hemos hecho que los cristianos parezcan un manojo de paralíticos inútiles, sin poder ni autoridad, atados a hábitos pecaminosos, esperando una liberación milagrosa. No hay ninguna lucha santa en contra del pecado, ni temor de Dios.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>3. No hay devoción a Cristo, sin un camino de santidad</h2>
+
+        <p>Así es como se debe juzgar toda doctrina: ¿te conforma a la imagen de Jesucristo? Tú no puedes decir que un evangelio es puro solamente porque el maestro habla en contra del pecado, o porque ese refiere a menudo a Cristo. El movimiento de la Nueva Era habla mucho acerca del "espíritu de Cristo".</p>
+
+        <p>He escuchado a falsos maestros gritar el nombre de Jesús por el micrófono, tronando en contra de la homosexualidad, las drogas y de los pecados de la sociedad. Pero cuanto más lo oigo más me doy cuenta: este hombre no está quebrantado. Este mensaje no trae convicción.</p>
+
+        <p>Estos maestros actúan ante la multitud provocando entusiasmo y emoción. Realmente no tienen convicción, ni tienen un deseo ardiente de conformar a la gente a la imagen de Cristo. A los cristianos les gusta ir a reuniones donde oyen a un predicador hablar acerca de la falta de oración en las escuelas, y tal vez mencione algo acerca de nuestra codicia, orgullo y adulterio, las cosas que están en nuestro corazón. Pero luego viene la palabra suave, tranquilizante, y una vez que se ha ganado la confianza de la gente, el temor de Dios es menoscabado.</p>
+
+        <p>Hay una prueba segura para la verdadera enseñanza de santidad. Se encuentra en 2ª de Timoteo 2:19:</p>
+
+        <div class="scripture">
+            "Pero el fundamento de Dios está firme, teniendo este sello: Conoce el Señor a los que son suyos; y: Apártese de iniquidad todo aquel que invoca el nombre de Cristo"
+            <span class="scripture-ref">2 Timoteo 2:19</span>
+        </div>
+
+        <p>Yo siento, como Pablo debe haber sentido, un grito desgarrador para advertir al pueblo de Dios acerca de lo que se viene. Vienen grandes guerras teológicas. Todo el movimiento "de los dones espirituales" se dividirá en diferentes corrientes, cada uno corriendo tras sus doctrinas, sus maestros y sus libros, acusándose unos a otros de error y de falsa profecía. ¡Y todos van a creer que están defendiendo la fe!</p>
+
+        <p>No van a estar luchando en contra del diablo, porque van a estar muy ocupados llamándose unos a otros herejes. Será un tiempo de gran confusión, y un cristiano sin preparación no sabrá a quien creer.</p>
+
+        <p>Amado, yo quiero pelear contra el enemigo real. ¡Y ese enemigo está en las calles y en nuestros corazones! No voy a discutir acerca de profecías. Yo voy a estar al lado del hermano o la hermana que camina en el temor de Jehová y cuyo corazón se haya entregado en una devoción sincera a Cristo Jesús.</p>
+
+        <p>Debemos de quitar nuestros ojos de los maestros y evangelistas, y hacernos estudiantes de la Palabra de Dios.</p>
+
+        <div class="scripture">
+            "Procura con diligencia presentarte a Dios aprobado, como obrero que no tiene de qué avergonzarse, que usa bien la palabra de verdad"
+            <span class="scripture-ref">2 Timoteo 2:15</span>
+        </div>
+
+        <p>No busques a pastores o a evangelistas "aprobados". Irás tras uno y otro, y todos te fallarán, hasta que al final pierdas la esperanza. <span class="red-emphasis">¡Quita tus ojos de todos los predicadores y ponlos en Cristo Jesús!.</span></p>
+    </div>
+
+    <div class="content-section">
+        <h2>4. ¡El verdadero evangelio tiene que ver con tu corazón, porque de él mana la vida!</h2>
+
+        <p>Los fariseos vieron a algunos de los discípulos del Señor comiendo pan sin haberse lavado las manos, y <span class="emphasis">"los condenaban"</span> (Mr. 7:2). <span class="emphasis">"Porque los fariseos y todos los judíos, aferrándose a la tradición de los ancianos, si muchas veces no se lavan las manos, no comen"</span> (v.3).</p>
+
+        <p>Estos hombres le preguntaban a Jesús por qué sus discípulos no caminaban en esta clase de "santidad". Sin embargo, esto solamente era una tradición ceremonial. Era sólo externa y tenía que ver con actos de la carne. Jesús les contestó, <span class="emphasis">"Hipócritas, bien profetizó de vosotros Isaías, como está escrito: Este pueblo de labios me honra, mas su corazón está lejos de mí"</span> (v.6).</p>
+
+        <p>Jesús dijo en esencia. <span class="emphasis">"Sus enseñanzas son vanas, no cambian el corazón. Son un espectáculo, son sólo palabras, y actos fingidos"</span>. Él nos está diciendo a nosotros, <span class="emphasis">"Si un evangelio no te da nada, sino un culto de labios y no trata con el corazón, no pierdas el tiempo con él. La verdadera doctrina tiene que ver con lo que mana del corazón"</span>. Jesús presenta el problema con todos los falsos evangelios: Ellos no tocan lo que corrompe el corazón. No traen convicción de pecado, ni cambian el corazón. Ellos ofrecen una forma de piedad sin corazón.</p>
+
+        <div class="scripture">
+            "Pero lo que sale de la boca, del corazón sale; y esto contamina al hombre"
+            <span class="scripture-ref">Mateo 15:18</span>
+        </div>
+
+        <div class="scripture">
+            "...sigue la justicia, la fe, el amor y la paz, con los que de corazón limpio invocan al Señor"
+            <span class="scripture-ref">2 Timoteo 2:22</span>
+        </div>
+
+        <p>No me digas de los milagros que suceden en tu iglesia, la alabanza, la adoración o lo bien que predica el pastor. ¡No, dime acerca de gente que busca a Dios con un corazón puro! Dime, que aunque ellos no lo han alcanzado están siendo llevados en esa dirección. Están permitiéndole a Dios que escudriñe y pruebe sus corazones, para exponer sus actitudes pecaminosas.</p>
+
+        <div class="highlight-box">
+            <p>Este es el verdadero evangelio de Jesús. Un evangelio que convence al corazón de pecado, que trata con el corazón y <span class="red-emphasis">¡cambia el corazón!</span> ¿Es este evangelio que se te está predicando? ¿Te trae convicción de tus más profundos y escondidos pecados? ¿De malos pensamientos? ¿De adulterio?, ¿De fornicación?, ¿De robo?, ¿De codicia?, ¿De maldad?, ¿De orgullo?, ¿De engaños?</p>
+        </div>
+
+        <div class="warning-large">
+            Si no es así, entonces busca y quédate en una iglesia donde tu corazón sea expuesto, sacudido y ¡Cambiado, para la gloria de Cristo!
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - Cómo reconocer si un mensaje viene de Dios<br>
+    Por David Wilkerson
+</footer>
+</body>
+</html>

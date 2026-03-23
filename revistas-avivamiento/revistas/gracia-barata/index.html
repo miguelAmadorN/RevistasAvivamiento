@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracia Barata - Dietrich Bonhoeffer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .faust-quote {
+            font-style: italic;
+            text-align: center;
+            margin: 20px 0;
+            color: #5a738f;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Dietrich Bonhoeffer</div>
+            <div>GRACIA BARATA</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <h3>BONHOEFFER: LA TEOLOGÍA DE UN MÁRTIR CONTEMPORÁNEO</h3>
+
+        <p>Esta es una edición adaptada y traducida al español de un importante capítulo del clásico del teólogo alemán Dietrich Bonhoeffer. El libro, titulado originalmente <span class="emphasis">Nachfolge</span> (1937), fue publicado en inglés posteriormente como <span class="emphasis">The Cost of Discipleship</span>.</p>
+
+        <p>Su capítulo "Costly Grace" contiene un análisis profundamente espiritual de lo que realmente constituye ser un discípulo de Cristo y ser justificado por gracia. Incluye, además, un diagnóstico certero del estado de tibieza y apostasía doctrinal en que se encontraba la Iglesia alemana, la cual en su mayoría, se convirtió eventualmente en cómplice silenciosa del nazismo en la Segunda Guerra Mundial.</p>
+
+        <p>Bonhoeffer nació en Breslau en 1906 y murió ejecutado por órdenes de Hitler en 1945 en el campo de concentración de Flossenburg, a la corta edad de 39 años. Desde el inicio de la dictadura Nazi, el joven ministro Dietrich denunció la pasividad de la Iglesia alemana ante el fascismo y participó en la formación de una iglesia subterránea que no estuviese controlada ideológicamente por los principios del Estado nazi. Eventualmente, participó a título personal en el movimiento de resistencia contra el régimen de Hitler. Sus escritos teológicos, rara vez traducidos a nuestro idioma, han sido muy bien recibidos por teólogos y cristianos comprometidos en cada generación. Ciertamente, el capítulo "Gracia Costosa" no ha sido la excepción. Como todo clásico de la literatura cristiana, su mensaje ha pasado exitosamente la prueba del tiempo y sigue siendo un favorito en todo el mundo, especialmente entre jóvenes interesados en el significado de seguir radicalmente a Jesús en la sociedad de hoy en día. El mensaje de Bonhoeffer sigue siendo tan actual y relevante para los cristianos contemporáneos como lo fue cuando se escribió.</p>
+
+        <p>Gracia costosa o gracia barata; discipulado o pasividad; fidelidad a Cristo o disimulada apostasía. Ese es el dilema que enfrenta nuestra generación y con el que nos confronta este importante texto.</p>
+
+        <div class="editors-note">
+            ATENTAMENTE<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">GRACIA COSTOSA</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por: Dietrich Bonhoeffer</div>
+
+    <div class="content-section">
+        <p>La gracia barata es el enemigo mortal de nuestra Iglesia. Hoy en día estamos luchando por la gracia que cuesta.</p>
+
+        <p>Gracia barata significa gracia vendida en el mercado como baratijas de segunda mano. Los sacramentos, el perdón de pecados, y los consuelos de la religión se malbaratan a precios rebajados. La gracia es representada como la inexhaustible tesorería de la Iglesia, de la cual ella hace llover bendiciones con manos generosas, sin hacer preguntas o fijar límites. ¡Gracia sin precio; gracia sin costo! La esencia de la gracia, suponemos, es que la cuenta ha sido pagada por adelantado; y que, por cuanto ha sido pagada, todo puede ser obtenido por nada. Por cuanto el costo fue infinito, las posibilidades de usarla y gastarla también son infinitas. ¿Qué sería la gracia si no fuera barata?</p>
+
+        <p>Gracia barata significa gracia como una doctrina, un principio, un sistema. Significa el perdón de pecados proclamado como una verdad general, el amor de Dios enseñado como la concepción "cristiana" de Dios. Un asentimiento intelectual a esa idea se considera, por sí mismo, suficiente para asegurar la remisión de pecados. La Iglesia que tiene la doctrina correcta de la gracia participa ipso facto, se supone, de esa gracia. En tal Iglesia, el mundo halla una cubierta barata para sus pecados; no se requiere ninguna contrición, y mucho menos el deseo real de ser libertado del pecado. La gracia barata, por lo tanto, se reduce a una negación de la Palabra viva de Dios. Es, de hecho, una negación de la Encarnación de la Palabra.</p>
+
+        <p>Gracia barata significa la justificación del pecado sin la justificación del pecador. La gracia sola hace todo, dicen ellos, y así todo puede permanecer como era antes. El mundo continúa en el mismo viejo camino, y nosotros todavía somos pecadores "aún en la mejor vida," como dijo Lutero. Bueno, entonces que el cristiano viva como el resto del mundo, que se moldee a los estándares del mundo en cada área de la vida y que no aspire presuntuosamente a vivir una vida bajo la gracia, diferente a su antigua vida bajo el pecado. Esa era la herejía de los entusiastas, los anabaptistas y los de ese tipo. Que el cristiano se cuide de rebelarse contra la gratuita e ilimitada gracia de Dios y de profanarla. ¡Qué no intente erigir una nueva religión de la letra procurando vivir una vida de obediencia a los mandamientos de Jesucristo! El mundo ha sido justificado por gracia. El cristiano sabe eso, y se lo toma en serio. Él sabe que no debe luchar contra esta gracia indispensable. Por lo tanto: ¡Qué viva como el resto del mundo! Por supuesto que le gustaría ir y hacer algo extraordinario, y se requiere de bastante dominio propio para refrenarse del intento, y para contentarse con vivir como vive el mundo. Sin embargo, es imperativo que el cristiano niegue sus deseos, y practique la modestia para que su vida no se distinga de la forma de vivir del mundo. Debe dejar a la gracia ser verdaderamente gracia, de otro modo destruirá la fe del mundo en el don gratuito de la gracia. Que el cristiano descanse satisfecho con su mundanalidad y con su renuncia a alcanzar ningún estándar más alto que el mundo. Lo está haciendo por causa del mundo, más que por causa de la gracia. Que permanezca confortado y descanse seguro en su posesión de esta gracia pues la sola gracia todo lo hace. ¡Qué el cristiano disfrute las consolaciones de su gracia en vez de seguir a Cristo! Eso es lo que queremos decir con gracia barata, la gracia que es a fin de cuentas la justificación del pecado sin la justificación del pecador arrepentido que se aparta del pecado, y de quien el pecado se aparta. La gracia barata no es el tipo de perdón de pecados que nos liberta de las fatigas y afanes del pecado. <span class="red-emphasis">La gracia barata es la gracia que nos otorgamos a nosotros mismos.</span></p>
+
+        <div class="highlight-box">
+            <p>Gracia barata es la predicación del perdón sin requerir arrepentimiento, bautismo sin disciplina eclesiástica, comunión sin confesión; absolución sin confesión personal. <span class="red-emphasis">Gracia barata es gracia sin discipulado, gracia sin la cruz, gracia sin Jesucristo vivo y encarnado.</span></p>
+        </div>
+
+        <p>La gracia costosa es el tesoro escondido en el campo, por causa de él un hombre irá felizmente y venderá todo lo que posee. Es la perla de gran precio por lo cual, el mercader venderá todos sus bienes. Es la regla majestuosa de Cristo, por la cual un hombre se sacará el ojo que lo hace tropezar. Es el llamado de Jesucristo, al cual el discípulo deja sus redes y lo sigue. Gracia costosa es el evangelio que debe ser buscado vez tras vez, el regalo que debe ser pedido, la puerta a la cual un hombre debe llamar.</p>
+
+        <p>Tal gracia es costosa porque nos llama a seguir, y es gracia porque nos llama a seguir a Jesucristo. Es costosa porque le cuesta a un hombre su vida y es gracia porque le da a un hombre la única vida verdadera. Es costosa porque condena el pecado y es gracia porque justifica al pecador. Sobre todo, es costosa porque le costó a Dios la vida de su Hijo: <span class="emphasis">"Porque habéis sido comprados por precio;"</span> y lo que le ha costado mucho a Dios no puede ser barato para nosotros. Sobre todo, es gracia porque Dios no estimó a su Hijo como un precio muy caro que pagar por nuestra vida, sino que lo entregó por nosotros. <span class="red-emphasis">La gracia costosa es la Encarnación de Dios.</span></p>
+
+        <p>La gracia costosa es el santuario de Dios; tiene que ser protegida del mundo y no echada a los perros. Es por lo tanto, la palabra viviente, la Palabra de Dios que Él habla como le place. La gracia costosa nos confronta como un bondadoso llamado a seguir a Jesús, viene como una palabra de perdón al espíritu quebrantado y al corazón contrito. La gracia es costosa porque obliga a un hombre a someterse al yugo de Cristo y a seguirlo; es gracia porque Jesús dice <span class="emphasis">"mi yugo es fácil y ligera mi carga"</span>.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>La Gracia en la Vida de Pedro</h2>
+
+        <p>En dos ocasiones separadas Pedro recibió el llamado "Sígueme". Esta fue la primera y última palabra que Jesús habló a su discípulo (Marcos 1:17; Juan 21:22). Hay toda una vida entre estos dos llamados. La primera ocasión ocurrió junto al lago de Genesaret, cuando Pedro dejó sus redes y su oficio y siguió a Jesús a su indicación. La segunda vez es cuando el Señor Resucitado lo encuentra de nuevo en su antiguo oficio. Una vez más ocurre junto al lago de Genesaret, y una vez más el llamado es: "Sígueme". Entre los dos llamados, hay toda una vida de discipulado siguiendo a Cristo. A la mitad, entre ellos, viene la confesión de Pedro, cuando reconoció a Jesús como el Cristo de Dios. Tres veces Pedro escucha la misma proclamación que Cristo es su Señor y Dios: al principio, al final y en Cesárea de Filipo. En cada ocasión es la misma gracia de Cristo la que le dice: "Sígueme" y que se revela a sí misma a Pedro en su confesión del Hijo de Dios. Tres veces en el caminar de Pedro lo atrajo la gracia. La misma gracia proclamada de tres maneras diferentes. Esta gracia ciertamente no era auto-otorgada. Era la gracia de Cristo mismo ahora prevaleciendo sobre el discípulo para que lo dejara todo y para seguirlo a Él. Luego operando en él esa confesión que para el mundo debe sonar como la máxima blasfemia. Después, invitando a Pedro al supremo seguimiento del martirio por el Señor que había negado y por la misma gracia perdonándole todos sus pecados. <span class="red-emphasis">En la vida de Pedro la gracia y el discipulado son inseparables. Él había recibido la gracia costosa.</span></p>
+    </div>
+
+    <div class="content-section">
+        <h2>El Monasticismo y la Gracia Barata</h2>
+
+        <p>Conforme el cristianismo se extendió y la Iglesia se volvió más secularizada, esta consciencia de lo costoso de la gracia se desvaneció gradualmente, el mundo fue cristianizado y la gracia vino a ser su propiedad común. Tenía que ser obtenida a un bajo costo; sin embargo, la Iglesia de Roma no perdió del todo la visión inicial. Es altamente significativo que la Iglesia fue lo suficientemente astuta para abrirle lugar al movimiento monástico y para prevenir que se deslizase hacia el cisma. Aquí, en el margen exterior de la Iglesia, había un lugar en donde la antigua visión se mantuvo viva. Allí, hombres recordaban aún que la gracia cuesta, que la gracia significa seguir a Cristo. Allí dejaron ellos todo lo que tenían por causa de Cristo y se esforzaban diario para practicar sus rigurosos mandamientos.</p>
+
+        <p>De esta manera, el monasticismo vino a ser una protesta viviente contra la secularización del cristianismo y el abaratamiento de la gracia, pero la Iglesia fue suficientemente sabia para tolerar esta protesta y para prevenir que se desarrollara hasta sus conclusiones lógicas. Y de esta manera tuvo éxito en relativizarla, usándola aún para justificar la secularización de su propia vida. El monasticismo era representado como un logro personal que la masa de los laicos no podía esperarse que imitara. Al limitar así la aplicación de los mandamientos de Jesús a un grupo restringido de especialistas, la Iglesia formuló la concepción fatal del doble estándar---un estándar máximo y otro mínimo de obediencia cristiana. Cada vez que la iglesia era acusada de estar demasiado secularizada, siempre podía apuntar al monasticismo como una oportunidad de vivir una vida más alta dentro del redil, y de esta manera justificar la otra posibilidad de un estándar de vida más bajo para otros; y así obtenemos el paradójico resultado de que el monasticismo, cuya misión era preservar en la Iglesia de Roma el concepto original cristiano de la gracia costosa, proporcionó una justificación conclusiva para la secularización de la Iglesia. A fin de cuentas, el error fatal del monasticismo no estaba tanto en su rigorismo (aunque aún aquí había bastante malinterpretación del contenido preciso de la voluntad de Jesús) sino en el extremo en que se apartó del cristianismo genuino. De esta manera, el monasticismo se estableció a sí mismo como el logro individual de unos pocos elegidos, reclamando así un mérito especial propio.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Lutero y la Gracia Costosa</h2>
+
+        <p>Cuando vino la Reforma, la providencia de Dios levantó a Lutero para restaurar el Evangelio de la gracia pura y costosa. Lutero pasó por el claustro; él era un monje y todo esto era parte del plan divino. Lutero había dejado todo para seguir a Cristo en el camino de la obediencia absoluta. Había renunciado al mundo con tal de vivir la vida cristiana, había aprendido la obediencia a Cristo y a su Iglesia, porque solamente el que es obediente puede creer. El llamado al monasterio exigía de Lutero la entrega completa de su vida, pero Dios destruyó sus esperanzas. Le enseñó a través de las Escrituras que el seguir a Cristo no es el logro o mérito de algunos pocos selectos, sino el mandamiento divino a todos los cristianos sin distinción. El monasticismo había transformado el humilde trabajo del discipulado en la actividad meritoria de los santos y la negación personal del discipulado en flagrante autosuficiencia espiritual de lo "religioso". El mundo había penetrado subrepticiamente el corazón mismo de la vida monástica y una vez más, estaba haciendo estragos. El intento de los monjes por escapar del mundo resultó ser una sutil forma de amor al mundo. Estando así borrada la esencia de la vida religiosa, Lutero se asió de la gracia. Justo cuando el mundo entero del monasticismo se desplomaba en ruinas alrededor de él, él vio a Dios en Cristo extendiendo su mano para salvar. Él se asió de esa mano en fe, creyendo que "después de todo, nada de lo que podemos hacer sirve para nada, independientemente de la vida buena que llevamos". La gracia que se le otorgó a él, fue una gracia costosa e hizo pedazos toda su existencia. Una vez más, Lutero debía dejar sus redes y seguir a Jesús. La primera vez, fue cuando entró en el monasterio, cuando había dejado atrás todo excepto su piadosa persona. En esta ocasión aún eso le fue quitado. Él obedeció el llamado, no a través de ningún mérito propio, sino simplemente a través de la gracia de Dios. Lutero no oyó la palabra: "Por supuesto que has pecado pero ahora todo te ha sido perdonado, así que puedes quedarte como estás y disfrutar los consuelos del perdón". No, Lutero tuvo que dejar el claustro y regresar al mundo, no porque el mundo era bueno y santo en sí mismo, sino porque aún el monasterio era solamente una parte del mundo.</p>
+
+        <p>El regreso de Lutero del monasterio al mundo fue el peor golpe que el mundo ha sufrido desde los inicios del cristianismo. La renuncia que él hizo cuando se volvió monje fue un juego de niños, comparada con la que tuvo que hacer cuando regresó al mundo. Ahora venía el asalto frontal. La única manera de seguir a Jesús era viviendo en el mundo. Hasta aquí la vida cristiana había consistido en el logro de unas cuantas almas selectas bajo las condiciones excepcionalmente favorables del monasticismo, pero ahora, era una obligación para cada cristiano viviendo en el mundo. Al mandamiento de Jesús se le debía conferir perfecta obediencia en la diaria vocación de la vida personal. El conflicto entre la vida del cristiano y la vida del mundo fue, de esta manera, catapultado a la mayor notoriedad posible. Era un conflicto mano a mano entre el cristiano y el mundo. Es una malinterpretación fatal el suponer que el redescubrimiento de Lutero del Evangelio de la gracia pura ofrecía una dispensa general de la obediencia al mandamiento de Jesús o que el gran descubrimiento de la Reforma fue que la gracia perdonadora de Dios confería automáticamente sobre el mundo tanto rectitud como santidad. Al contrario, para Lutero el llamado terrenal de los cristianos es santificado sólo en tanto que ese llamado, registre la oposición final y radical contra el mundo. Sólo mientras que el llamado secular de los cristianos se ejercita en el seguir a Jesús, recibe nueva autorización y justificación del Evangelio. No fue la justificación del pecado, sino la justificación del pecador lo que empujó a Lutero del monasterio de regreso al mundo. La gracia que había recibido, era gracia costosa. Era gracia, porque era como agua en tierra seca, consuelo en la tribulación, libertad de la esclavitud de un camino escogido por iniciativa propia, y perdón de todos sus pecados; y era costosa, pues muy lejos de exentarlo de hacer buenas obras, significaba que debía tomar el llamado al discipulado más en serio que nunca. Era gracia porque costó tanto, y costó tanto porque era gracia. <span class="red-emphasis">Ese era el secreto del evangelio de la Reforma: la justificación del pecador.</span></p>
+    </div>
+
+    <div class="content-section">
+        <h2>La Degeneración de la Gracia</h2>
+
+        <p>Sin embargo, el resultado de la Reforma no fue la victoria de la percepción de Lutero de la gracia en toda su pureza y elevado costo. Mas bien triunfó el instinto del humano religioso y vigilante que buscaba un lugar donde la gracia puede ser obtenida al precio más barato. Todo lo que se necesitaba, era un cambio sutil, casi imperceptible de énfasis, y el daño estaba hecho. Lutero había enseñado que el hombre no puede estar delante de Dios independientemente de qué tan religiosas sean sus obras y caminos, porque en el fondo siempre está buscando sus propios intereses. Desde lo profundo de su miseria, Lutero se había asido por fe del perdón gratuito e incondicional de todos sus pecados. Esa experiencia le enseñó que esta gracia le había costado su misma vida, y que le debería seguir costando el mismo precio día tras día. Lejos de dispensarlo del discipulado, esta gracia solo lo hacía un discípulo más comprometido. Cuando hablaba de la gracia, Lutero siempre señalaba como corolario que le había costado su propia vida, la vida que ahora estaba sujeta a la obediencia absoluta a Cristo. Sólo así podía él hablar de gracia. Lutero había dicho que sólo la gracia por sí misma puede salvar; sus seguidores tomaron su doctrina y la repitieron palabra por palabra, pero dejaron fuera su invariable implicación: la obligación del discipulado. No había necesidad de que Lutero mencionara siempre explícitamente ese corolario, porque él siempre hablaba como uno que había sido guiado por gracia a seguir a Cristo de la manera más estricta. Juzgada por los estándares de la doctrina de Lutero, la de sus seguidores era inexpugnable y sin embargo su ortodoxia anunciaba el fin y la destrucción de la Reforma como la revelación de la gracia costosa de Dios. La justificación del pecador en el mundo degeneró en la justificación del pecado y del mundo. <span class="red-emphasis">La gracia costosa se convirtió en gracia barata sin discipulado.</span></p>
+
+        <p>Lutero había dicho que todo lo que podemos hacer es en vano, independientemente de la vida de bondad que llevemos. Él había dicho que nada nos puede ser útil delante de Dios sino "la gracia y el favor que confieren el perdón del pecado". Pero él hablaba como alguien que sabía que en el momento mismo de su crisis estaba llamado a dejar por segunda vez todo lo que tenía y seguir a Jesús. El reconocimiento de la gracia fue su ruptura final y radical, con el pecado que le asediaba, pero nunca fue la justificación de ese pecado. Al asirse del perdón de Dios, renunció de forma final y radical a una vida voluntariosa, y esta ruptura fue tal que le llevó inevitablemente a seguir a Cristo. Él siempre vio esto como la respuesta integral, pero una respuesta a la que él había llegado por medio de Dios, no por medio del hombre. Pero entonces sus seguidores convirtieron la "respuesta" en meros datos para hacer sus propios cálculos. Esa era la raíz del problema, si la gracia, el don gratuito de la vida cristiana es la respuesta de Dios, entonces nosotros no podemos ni por un momento, prescindir de seguir a Cristo. Pero si la gracia consiste en mera información para mi vida cristiana, significa que entonces yo salí a vivir la vida cristiana en el mundo con todos mis pecados justificados de antemano. Puedo ir y pecar todo lo que me dé la gana y fiarme de esta gracia para que me perdone porque, al fin y al cabo, el mundo se justifica en principio por gracia. Yo puedo, por lo tanto, asirme a mi vida secular burguesa y permanecer como estaba antes, pero con la garantía agregada de que la gracia de Dios me cubrirá. Es bajo la influencia de este tipo de "gracia" que el mundo ha sido hecho "cristiano", pero al costo de secularizar la religión cristiana como nunca antes. La antítesis entre la vida cristiana y la vida de la respetabilidad burguesa ha terminado. La vida cristiana viene a convertirse en nada más que vivir en el mundo y como el mundo, en no ser diferentes del mundo. De hecho, viene a convertirse en prohibición de ser diferente al mundo por causa de la gracia. El resultado final de todo esto es que mi único deber como cristiano es dejar el mundo durante más o menos una hora un domingo en la mañana e ir a la iglesia para estar seguro de que mis pecados están todos perdonados. Ya no necesito intentar más seguir a Cristo pues la gracia barata, el enemigo más acérrimo del discipulado, que el verdadero discipulado debe aborrecer y detestar, me ha liberado de eso. La gracia como información para nuestros cálculos, significa gracia al precio más barato, pero la gracia como respuesta integral, significa gracia costosa. Es aterrador darse cuenta del uso que se le puede dar a una genuina doctrina evangélica. En ambos casos tenemos una fórmula idéntica: "justificación sólo por fe"; sin embargo, el uso indebido de esta fórmula lleva a la completa destrucción de su misma esencia. Al fin de una vida consumida en la búsqueda del conocimiento, Fausto tiene que confesar:</p>
+
+        <div class="faust-quote">
+            "Ahora veo que nada podemos saber".
+        </div>
+
+        <p>Esa es la respuesta a un total, es el resultado de una larga experiencia. Pero como Kierkegaard observó, es una cosa bastante diferente cuando un novato llega a la universidad y usa esa misma mentalidad para justificar su indolencia. Como la respuesta a una suma, es perfectamente verdadera, pero como información inicial, es un fragmento de autoengaño. Pues el conocimiento adquirido no puede divorciarse de la existencia en la cual se adquiere. El único hombre que tiene el derecho a decir que ha sido justificado sólo por gracia es el hombre que ha dejado todo para seguir a Cristo. Tal persona sabe que el llamado al discipulado es un regalo de gracia y que el llamado es inseparable de la gracia. Pero aquellos que intentan usar esta gracia como un permiso para no imitar la vida de Cristo, están simplemente engañándose a sí mismos.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>El Precio de la Gracia Barata</h2>
+
+        <p>Nosotros los luteranos, nos hemos reunido como águilas alrededor del cadáver de la gracia barata y hemos bebido ahí del veneno que ha matado la vida del seguir a Cristo. Es verdad, por supuesto, que en la cristiandad hemos brindado divinos honores sin igual a la doctrina de la gracia. Es más hemos exaltado esa doctrina hasta la posición de Dios mismo. En todos lados, la fórmula de Lutero ha sido repetida, pero su verdad pervertida en un auto-engaño. ¡Mientras nuestra iglesia tenga la doctrina correcta de la justificación, no hay duda alguna de que es una Iglesia justificada! Eso dijeron, pensando que debemos vindicar nuestra herencia luterana haciendo dicha gracia disponible en los términos más baratos y fáciles posibles. El ser "luterano" debe significar que dejamos el imitar la vida de Cristo a los legalistas, los calvinistas y los entusiastas y todo esto por amor a la gracia. Nosotros justificamos al mundo, y condenamos como heréticos a aquellos que trataron de seguir a Cristo. El resultado fue que una nación vino a ser cristiana y luterana, pero a precio del verdadero discipulado. El precio que había sido llamado a pagar la nación era demasiado barato. A final de cuentas, la gracia barata había ganado.</p>
+
+        <div class="warning-box">
+            <p>Pero, ¿nos damos cuenta de que esta gracia barata se ha vuelto contra nosotros mismos como un bumerang? El precio que estamos teniendo que pagar hoy en día en términos del colapso de la Iglesia organizada, es solamente la consecuencia inevitable de nuestra política de hacer disponible la gracia a todos a un precio demasiado bajo. Regalamos la Palabra y los sacramentos al por mayor; bautizamos, confirmamos y absolvimos a toda una nación sin que nos lo pidieran y sin condición alguna. Nuestro sentimiento humanitario nos hizo dar lo santo a los escarnecedores e incrédulos. Derramamos oleadas de gracia interminables. Pero el llamado a seguir a Jesús en el camino angosto casi nunca era oído. ¿Dónde estaban esas verdades que impulsaron a la primera iglesia a instituir el catecumenado, el cual permitió que se mantuviera una supervisión estricta sobre los límites entre la Iglesia y el mundo, y permitió una protección adecuada para la gracia costosa? ¿Qué le había pasado a todas esas advertencias de Lutero contra predicar el evangelio en una manera tal que hiciera descansar seguros a los hombres en su forma impía de vivir? ¿Hubo alguna vez alguna instancia más terrible o desastrosa de la cristianización del mundo que ésta? ¿Qué son esos tres mil sajones ejecutados por Carlomagno, comparados con los millones de cadáveres espirituales en nuestro país hoy en día? Ha sido abundantemente comprobado en nosotros que los pecados de los padres son visitados sobre los hijos hasta la tercera y cuarta generación. <span class="red-emphasis">La gracia barata ha resultado ser absolutamente despiadada hacia nuestra Iglesia Evangélica.</span></p>
+        </div>
+
+        <p>Esta gracia barata no ha sido menos desastrosa para nuestras propias vidas espirituales. En lugar de abrir el camino hacia Cristo, lo ha cerrado. En lugar de llamarnos a seguir a Cristo, nos ha endurecido en nuestra desobediencia. Tal vez habíamos oído alguna vez el llamado de gracia a seguirlo a Él, y aún a causa de este mandato incluso tomado los primeros pasos del camino del discipulado, en la disciplina de la obediencia, sólo para encontrarnos confrontados por el mensaje de la gracia barata. ¿Acaso no fue eso despiadado y cruel? El único efecto que tal mensaje pudo haber tenido era el de bloquear nuestro camino hacia el progreso, y seducirnos al nivel mediocre del mundo, apagando el gozo del discipulado al decirnos que estábamos siguiendo un camino escogido por nosotros, que estábamos gastando nuestra fuerza y disciplinándonos en vano todo lo cuál no era solamente inútil, sino peligroso en extremo. Después de todo, se nos dijo que nuestra salvación ya había sido efectuada por la gracia de Dios. El pabilo que humea fue apagado despiadadamente. Era cruel hablarle así a las personas, pues una oferta tan barata sólo podía dejarlos confundidos y tentarlos a apartarse del camino al cual habían sido llamados por Cristo. Habiéndose asido de la gracia barata, fueron impedidos para siempre del conocimiento de la gracia costosa. Engañadas y debilitadas, las personas sentían que eran fuertes ahora que estaban en posesión de esta gracia barata mientras que en realidad habían perdido el poder para vivir la vida de discipulado y obediencia. <span class="red-emphasis">El mensaje de la gracia barata ha provocado la ruina de más cristianos que cualquier mandamiento de obras.</span></p>
+    </div>
+
+    <div class="content-section">
+        <h2>El Desafío de Nuestro Tiempo</h2>
+
+        <p>En nuestros capítulos subsecuentes, trataremos de encontrar un mensaje para aquellos que están siendo inquietados por este problema y para quienes el mundo de la gracia ha sido vaciado de todo su significado. Este mensaje debe de ser expuesto por causa de la verdad, por causa de aquellos entre nosotros que confiesan que a través de la gracia barata han perdido el seguir a Cristo, y más aún, con el seguir a Cristo, han perdido el entendimiento de la gracia costosa. Para simplificarlo, debemos emprender este trabajo porque ahora estamos listos para admitir que ya no estamos en el camino del verdadero discipulado. Confesamos que, aunque nuestra Iglesia es ortodoxa, en cuanto respecta a su doctrina de la gracia, ya no estamos seguros de que somos miembros de una Iglesia que sigue a su Señor. Debemos, por lo tanto, intentar recuperar un verdadero entendimiento de la relación recíproca entre la gracia y el discipulado. El asunto ya no puede ser evadido. Se está haciendo más claro cada día que el problema más urgente que asedia a nuestra Iglesia es éste: <span class="red-emphasis">¿Cómo podemos vivir la vida cristiana en el mundo moderno?</span></p>
+
+        <div class="highlight-box">
+            <p>Bienaventurados aquellos que han llegado al fin del camino que buscamos andar, los que se asombran al descubrir la nada obvia verdad que la gracia es costosa, sólo porque es la gracia de Dios en Jesucristo. Bienaventurados los sencillos seguidores de Jesucristo que han sido conquistados por su gracia, los que pueden cantar las alabanzas de la autosuficiente gracia de Cristo con humildad de corazón. Bienaventurados los que, conociendo esa gracia, pueden vivir en el mundo sin ser del mundo, aquellos que, siguiendo a Jesucristo, están tan seguros de su ciudadanía celestial que están verdaderamente libres para vivir sus vidas en este mundo. Bienaventurados los que saben que el discipulado significa simplemente la vida que brota de la gracia, y que gracia simplemente significa discipulado. Bienaventurados los que han venido a ser cristianos en este sentido de la palabra. Para ellos, el mensaje de la gracia ha demostrado ser una fuente de misericordia.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - Gracia Barata<br>
+    Por Dietrich Bonhoeffer
+</footer>
+</body>
+</html>

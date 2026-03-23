@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pecadores en manos de un Dios airado - Jonathan Edwards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .implications-list {
+            margin: 20px 0 20px 30px;
+        }
+
+        .implications-list li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .consider-list {
+            margin: 20px 0 20px 30px;
+        }
+
+        .consider-list li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Jonathan Edwards</div>
+            <div>"PECADORES EN MANOS DE UN DIOS AIRADO"</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p><span class="emphasis">"Pecadores en manos de un Dios airado"</span> La presente publicación obedece al mandamiento expresado en Jeremías 6:16 <span class="emphasis">"Paraos en los caminos, y mirad, y preguntad por las sendas antiguas, cual sea el buen camino, y andad por él, y hallaréis descanso para vuestra alma."</span></p>
+
+        <p>Estamos seguros de que será de gran interés para todos aquellos que están comprometidos en la búsqueda de la más pura doctrina cristiana.</p>
+
+        <p>Cualquier persona sincera admitirá la ausencia de verdadera vida cristiana en todos aquellos lugares que por lo menos en teoría, debiera de existir. La causa no es difícil de encontrar: la palabra, simiente de la vida, está echada a perder.</p>
+
+        <p>La escritura dice:</p>
+
+        <div class="scripture">
+            "Siendo renacidos, no de simiente corruptible, sino de incorruptible, por la Palabra de Dios que vive y permanece para siempre"
+            <span class="scripture-ref">1 Pedro 1:23</span>
+        </div>
+
+        <p>Según este texto y otros similares, la palabra actuará como una semilla depositada en nuestro corazón. Si esta no es la verdadera Palabra de Dios, la vida que nacerá de ella será deforme y corrupta. Si es la Semilla Incorruptible, lo que resultará es la vida de Cristo, reproducida en una persona. ¡Qué importante es entonces mirar si las palabras que estamos escuchando son Semillas del verdadero evangelio! Echemos un vistazo honesto y libre de prejuicios a los exponentes del Cristianismo moderno. ¿Qué vemos? Deformidad y corrupción. Sermones secos, rutinarios, muertos, y carentes de eficacia. La Espada de doble filo está desafilada. No penetra hasta partir el alma y el espíritu, las coyunturas y los tuétanos, ni discierne los pensamientos y las intenciones del corazón. No provoca convicción de pecado. Muchas veces es más parecida a una lista de consejos dichos con tibieza y condescendencia cobarde que no convence ni al más sincero. En otras ocasiones, la "Semilla de vida" consiste en una serie de chistes y comentarios irreverentes que terminan de hundir al pecador que tuvo la desgracia de estar bajo su influencia.</p>
+
+        <p>No se manifiesta la vida de Cristo en las personas porque no hay palabras de vida en los púlpitos.</p>
+
+        <p>Por estas razones vamos a considerar predicaciones clásicas; antiguas; de probada eficacia; como la que tiene en sus manos, que fue dada en el apogeo de un avivamiento espiritual y que produjo efectos eternos en las conciencias y vidas de sus oyentes. Esperamos que su estudio y meditación nos lleve a desechar las innovaciones actuales disfrazadas de predicación que están tan en desacuerdo con las palabras verdaderas del Dios Inmutable.</p>
+
+        <div class="editors-note">
+            Atentamente<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">"PECADORES EN MANOS DE UN DIOS AIRADO"</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por: Jonathan Edwards</div>
+
+    <div class="content-section">
+        <h2>INTRODUCCIÓN</h2>
+
+        <p>El siguiente mensaje es un resumen de una predicación dada a una congregación en el año de 1741. Una tremenda convicción de pecado traída por el Espíritu Santo, cayó sobre muchas de las personas allí reunidas, tanto que la gente gritaba ¡me voy al infierno! y literalmente se agarraban de los postes del edificio, sintiendo que allí mismo se hundían en la perdición eterna. Ese evento ha quedado grabado en la historia de los avivamientos como algo sorprendente. Como un milagro soberano obrado por el Espíritu de Dios. Y para muchos es como algo casi mágico y sin oportunidad de repetirse. La gente deja de ver que no sólo fue la acción del Espíritu lo que produjo tal convicción de pecado, sino que Él actuó junto con la palabra, a través de un mensaje adecuado.</p>
+
+        <p>Un estudio cuidadoso de esta predicación nos dará una idea de por qué aquella gente tuvo tal experiencia: El Espíritu actuó junto con las verdades adecuadas al caso.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>MENSAJE</h2>
+
+        <div class="scripture">
+            "A su tiempo su pie resbalará"
+            <span class="scripture-ref">Deuteronomio 32:35</span>
+        </div>
+
+        <p>En este versículo Dios amenaza con vengarse de los israelitas por su maldad e incredulidad, a pesar de que eran el pueblo visible de Dios y vivían bajo un tipo de gracia. Ellos no consideraban todas las obras maravillosas de Dios a su favor, y permanecieron invalidando su consejo y sin entendimiento, como dice el v. 28.</p>
+
+        <p>Este pueblo privilegiado dio a luz un fruto amargo y venenoso.</p>
+
+        <p>La expresión que escogí para mi texto inicial, "A su tiempo su pie resbalará" relata el castigo y destrucción que se avecinaba y al que estaba expuesto este pueblo impenitente.</p>
+
+        <h3>Implica las siguientes cosas:</h3>
+
+        <ol class="implications-list">
+            <li><span class="red-emphasis">Siempre estuvieron expuestos a la destrucción,</span> así como uno que camina sobre algo resbaloso está siempre expuesto a caerse. Esto explica la manera en que la destrucción vendría sobre ellos. Representa cómo sus pies resbalarían. <span class="emphasis">"Ciertamente los has puesto en deslizaderos; en asolamiento los harás caer"</span> (Salmo 73:18).</li>
+
+            <li><span class="red-emphasis">Implica que siempre estuvieron expuestos a una repentina e inesperada destrucción.</span> Así como el que camina en lugares resbalosos está a cada momento en peligro de caer, y no puede ver más allá de ese momento, si permanecerá en pie o caerá; y cuando caiga, caerá sin aviso: <span class="emphasis">"¡Cómo han sido asolados de repente"</span> (Salmo 73:19).</li>
+
+            <li><span class="red-emphasis">Otra cosa que implica, es que estaban propensos a caer por sí mismos, sin que nadie los tirara.</span> Así como el que camina en un piso resbaloso no necesita más que el mismo peso de su cuerpo para caerse. La razón por la cual no han caído todavía es porque no ha llegado el tiempo en el que Dios lo decrete. Dios dijo que cuando llegue ese tiempo, su pie resbalará. Entonces serán soltados para que caigan sin misericordia, así como su mismo peso los lleva a caer.</li>
+        </ol>
+
+        <p>En otras palabras, Dios ya no los va a sostener más, sino que los va a dejar a la inercia de su propia gravedad. En ese mismo instante caerán en la destrucción. Como el que se para en el borde resbaloso de un abismo donde no puede sostenerse solo, y cuando es soltado, inmediatamente cae y se pierde para siempre.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>SOLO LA MISERICORDIA DE DIOS MANTIENE A UN PECADOR FUERA DEL INFIERNO</h2>
+
+        <p>La observación de mis palabras es esta: <span class="red-emphasis">No hay nada que mantenga a un pecador fuera del infierno, más que la pura determinación de Dios.</span> Por la pura determinación de Dios, me refiero a Su elección soberana. La suprema voluntad de Dios de extender inmerecidamente su misericordia un poco más, es lo que preserva al pecador de ese momento.</p>
+
+        <p>La verdad de esta observación puede mostrarse en las consideraciones siguientes:</p>
+
+        <ol class="implications-list">
+            <li><span class="red-emphasis">Dios no necesita un Poder especial para enviar al infierno a un pecador en el momento que Él disponga.</span> Las manos del hombre no pueden hacer nada cuando Dios se levanta contra ellos. Los más fuertes no tienen poder para resistirlo, ni nadie puede escapar de sus manos. No solamente puede mandar a los malvados al infierno, sino que lo hace fácilmente. De la misma manera como el hombre pisotea una lombriz que se arrastra por el suelo con toda facilidad, o como quien corta un hilo que está fuera de lugar, así de fácil es para Dios mandar a sus enemigos al infierno cuando Él lo decida. ¿Qué somos para atrevernos a pensar en pararnos frente a Él, ante quien la tierra tiembla y las grandes rocas se hacen añicos?</li>
+
+            <li><span class="red-emphasis">El pecador merece ser echado en el infierno para que entre en acción la justicia divina.</span> Dios es justo y nadie podría objetar nada contra Él. La justicia clama a gritos contra el pecador por un castigo eterno. La justicia de Dios dice del árbol que no quiere dar fruto. <span class="emphasis">"Córtala; ¿Para qué inutiliza también la tierra?"</span> (Lc. 13:7). La espada de la justicia divina está preparada para sus cabezas, y no es más que la mano misericordiosa de Dios la que al presente la detiene.</li>
+
+            <li><span class="red-emphasis">El pecador ya tiene la sentencia de condenación;</span> la sentencia de la ley de Dios. Esa eterna e inmutable Ley de Dios condena al hombre en sus pecados al infierno. <span class="emphasis">"El que no cree, ya ha sido condenado"</span> (Jn. 3:18) Todo hombre no convertido pertenece al infierno. Ese es su lugar, <span class="emphasis">"Vosotros sois de abajo"</span> (Jn. 8:23) Ese es el destino eterno e inmutable del pecador.</li>
+
+            <li><span class="red-emphasis">Los pecadores son el objeto de la ira de Dios,</span> la cual se expresa en los tormentos insoportables del infierno. Así es; Dios está airado contra muchos en este mundo, y sin duda también está airado contra muchos de esta congregación. La ira del Señor se enciende contra los pecadores. El hoyo ya está preparado y el fuego listo; el horno ya está ardiendo sólo para recibirlos. Las llamas se encrespan enfurecidas. La espada ya está desenvainada puesta sobre sus cuellos. el infierno ha abierto su boca.</li>
+
+            <li><span class="red-emphasis">El diablo también está preparado para caerles encima y tomarlos para sí,</span> tan pronto como Dios se lo permita. El pecador pertenece al diablo. Es su posesión. Tiene su alma en su poder. De igual manera, los demonios aguardan impacientes como leones hambrientos sobre su presa. Esperan agarrarlo, sólo que al presente son detenidos. Si Dios quita su mano, por la cual son preservados, en ese instante caen sobre su desdichada alma.</li>
+
+            <li><span class="red-emphasis">En las almas de los impíos hay principios infernales reinando.</span> El pecado que lo ha gobernado será su ruina y miseria. Es destructivo en sí mismo. La corrupción de sus propios pecados desembocará necesariamente en el infierno de fuego.</li>
+
+            <li><span class="red-emphasis">El hombre no tiene ninguna seguridad de que va a permanecer con vida un momento más.</span> No importa que goce de buena salud; en cualquier momento puede pasar al otro mundo. El pecador que se jacta en el día de mañana debería considerar que es Dios el que le preserva la vida, y que puede cambiar Su voluntad y mandarlo al infierno en el momento que desee, sin darle cuentas a nadie.</li>
+
+            <li><span class="red-emphasis">La prudencia natural del hombre para cuidarse y preservar su propia vida, no trae consigo ninguna seguridad.</span> Por mucha sabiduría que tenga, es imposible para él, evitar que sufra una muerte instantánea e inesperada. <span class="emphasis">"También morirá el sabio como el necio"</span> (Ec. 2:16).</li>
+
+            <li><span class="red-emphasis">El infierno es repentino para toda persona que rechaza a Cristo como Señor y Salvador.</span> Todo hombre al escuchar acerca del infierno cree y piensa que va a escapar de ir allá. Depende de sí mismo, y se ampara en lo que ha hecho, en lo que hace, y lo que piensa hacer. No espera de ningún modo llegar a ese lugar de tormento. Se dice a sí mismo que en adelante intentará llevar una vida lo más recta posible, y eso lo librará. Si pudiéramos hablar con los que ahora están en el infierno y les preguntáramos uno por uno, que si cuando estaban vivos y escuchaban acerca del infierno, alguna vez pensaron ser víctimas de ésta miseria, sin lugar a dudas, ellos dirían: "¡No!" "Nunca pensé llegar aquí: tenía otras cosas en mi mente. Pensé que todo me iba a salir bien, pensaba que estaba bien, me cuidaba de hacer cosas buenas; pero vino sobre mi inesperadamente; vino como un ladrón en la noche, la muerte me alcanzó. La ira de Dios vino muy rápida e implacable sobre mí, ¡Oh, la maldición de mi necedad! ¡En vano fueron mis sueños y mis planes del porvenir! Cuando más creía que vivía en paz y seguridad, entonces vino destrucción repentina."</li>
+
+            <li><span class="red-emphasis">Mientras los pecadores no tengan interés en el Mediador; en Cristo Jesús y en las promesas dadas por Dios a los que están en pacto con Él,</span> no hay ninguna promesa que lo obligue a detener por un momento más al pecador de caer en el infierno.</li>
+        </ol>
+    </div>
+
+    <div class="content-section">
+        <h2>APLICACIÓN</h2>
+
+        <div class="warning-box">
+            <p>El propósito de este tema tan impactante, es despertar a las personas inconversas de esta congregación. Esto que has escuchado es el caso de cada uno de ustedes que están sin Cristo. Ese mundo de miseria; ese lago que arde con fuego y azufre, está extendido bajo tus pies, y no tienes nada de donde sujetarte. Lo único que hay entre tú y el infierno es el poder y la misericordia de Dios que te están impidiendo caer.</p>
+        </div>
+
+        <p>Tu pecado te hace tan pesado como el plomo. Te da peso y te presiona hacia el infierno, y si Dios no se opusiera, de inmediato te deslizarías por ese drenaje que desciende hasta lo más profundo del abismo. Eres una carga para este mundo. La creación te aborrece. El sol no brilla y te da su calor para que sirvas al pecado y a Satanás. De igual manera, el aire que respiras no te sustenta para que vivas como un enemigo de Dios. La creación de Dios es buena y fue hecha para que el hombre sirviera a Dios en ella. La misma tierra ya te hubiera expulsado si la buena voluntad de Dios no la detuviera. Día a día tu culpabilidad crece y también atesoras cada vez más y más ira. Ya están listas las flechas de Dios y la justicia divina las dirige hacia tu corazón para que se embriaguen con tu sangre.</p>
+
+        <p>Mientras ustedes no hayan experimentado un cambio de corazón por el poderoso Espíritu de Dios; todos ustedes que no han nacido de nuevo, ni son nuevas criaturas <span class="red-emphasis">¡están en manos de un Dios airado!</span> No importa si has modificado tu vida en algunas áreas ¡O si te gusta asistir a tu muy particular religión!, o si mantienes una vida aparentemente cristiana, o si oras o lees tu Biblia. Sólo la misericordia de Dios te detiene en este mismo momento de la destrucción eterna. Todos los que se han ido al infierno estando en las mismas circunstancias que tú, ya se convencieron que sí era verdad. También a ellos la ira de Dios los agarró repentinamente y sin aviso. Dios te aborrece y ha sido muy provocado por tu maldad. Su ira sobre ti se enciende como el fuego. Él es de ojos muy puros, y sus ojos ya no aguantan tu presencia: Eres diez mil veces más abominable a sus ojos, que la serpiente más aborrecible lo es a los nuestros. No hay razón comprensible que nos explique por qué no estás ya en el infierno, puesto que has estado acudiendo a su casa de oración, provocándole cínicamente con tu pecaminosa manera de vivir. ¡Y aún así asistes a una reunión de adoración como esta! ¡Oh, pecador! Considera el horrendo peligro en el que te encuentras: Es grande la ira de Dios que has provocado, la has encendido como los que ya agonizan en el infierno. Y con todo esto, no manifiestas ningún interés en el único Mediador que te puede ayudar, ni haces nada real por salvarte, nada por apagar el fuego de la ira de Dios.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Considera lo siguiente:</h2>
+
+        <ol class="consider-list">
+            <li><span class="red-emphasis">De quien es la ira:</span> ¡Es la ira del Dios infinito! Si la ira de un rey hacia un hombre puede ser terrible en extremo, los terrores de la peor tortura humana no se comparan con la ira del Rey de Reyes y Señor de Señores. (Lc. 12:4-5)</li>
+
+            <li><span class="red-emphasis">Estas expuesto a la furia de su ira.</span> Leamos acerca de su ira <span class="emphasis">"Para retribuir con ira a sus enemigos, y dar el pago a sus adversarios"</span> (Is. 59:18) <span class="emphasis">"Jehová vendrá con fuego, y sus carros como torbellino, para descargar su ira con furor"</span> (Is. 66:15) <span class="emphasis">"De su boca sale una espada aguda, para herir con ella a las naciones, y él las regirá con vara de hierro, y él pisa el lagar del vino del furor y de la ira del Dios Todopoderoso"</span> (Ap. 19:15).</li>
+
+            <li><span class="red-emphasis">Considera que al permanecer en ese estado no regenerado, sin arrepentirte, Dios no va a tener misericordia de ti cuando te envíe al abismo, ni tampoco se lamentará.</span> <span class="emphasis">"Pues también yo procederé con furor; no perdonará mi ojo, ni tendré misericordia; y gritarán a mis oídos con gran voz, y no los oiré"</span> (Ez. 8:18) Dios está listo para condenarte.</li>
+
+            <li><span class="red-emphasis">Hoy es el día de misericordia.</span> Puedes arrepentirte y llorar para obtenerla, pero si dejas pasar el día de misericordia, el día que clames y llores será en vano. ¡Estarás eternamente perdido! Dice Dios que cuando clames entonces se reirá <span class="emphasis">"también yo me reiré en vuestra calamidad, y me burlaré cuando os viniere lo que teméis"</span> (Prov. 1:26) ¡Qué tremendas palabras!</li>
+
+            <li><span class="red-emphasis">Qué miserable serás cuando tengas que comprobar que grande es Su ira, en vez de experimentar que inmensa es su misericordia.</span> Del mismo modo como no alcanzamos a comprender su misericordia, tampoco su ira. Ni aún la ira del rey Nabucodonosor al ordenar que se aumentara la temperatura del horno de fuego siete veces más sobre estos tres siervos de Dios, se puede comparar con la ira del Rey de Reyes. Cuando el Dios todopoderoso se levante a vengarse de sus enemigos, y estos sientan el peso de su infinito poder contra ellos, entonces reunirá a todo el Universo para que presenciemos Su majestad y Su omnipotencia (Is. 33:10-14). Así será contigo que permaneces en un estado de inconversión si sigues así. Serás atormentado en la presencia de los ángeles, del Cordero, y cuando estés sufriendo en agonía, todos los habitantes del cielo verán ese tremendo espectáculo, y al verlo se postrarán sobre sus rostros y adorarán al Señor por su poder y majestad (Is. 66:23-24).</li>
+
+            <li><span class="red-emphasis">¡La ira del Cordero es eterna!</span> Es espantoso sufrir esta ira por un momento, pero tú la tendrás que sufrir toda la eternidad. No habrá fin a esta miseria. ¡Oh, quién podrá expresar el estado de tu alma en esas circunstancias! Todo lo que podemos imaginarnos está muy lejos de la realidad. Que triste saber que ese es el estado actual de cada alma en esta congregación que permanezca obstinado en sus pecados sin nacer de nuevo. No importa lo religioso, sobrio, estricto, si es joven o viejo. Si, hay muchos aquí presentes que serán los sujetos de esta miseria eterna. Yo no sé quién será, o que asiento esté ocupando, o qué estén pensando en estos momentos. ¡Qué terrible sería saber quiénes son! ¡Cómo clamaríamos por tales infelices!</li>
+        </ol>
+
+        <div class="warning-box">
+            <p>Muchos de los que escuchan este mensaje, lo recordarán en el infierno. No será de sorprenderse que algunos de los presentes se vayan al infierno antes de que termine el año, o antes de que amanezca un nuevo día. ¡Cómo quisieran las almas que están en el infierno una oportunidad de ser salvos. Una oportunidad de estar hoy aquí escuchando este mensaje y poder escapar de la ira de Dios!</p>
+
+            <p>Tú que estás inconverso, ¡Qué no sabes que Dios está airado contra ti? Si tu corazón se endurece en este gran día de salvación, vas a maldecir este día por toda la eternidad, y maldecirás también el día en que naciste, por haber despreciado la misericordia de Dios.</p>
+        </div>
+
+        <p>Este día es como aquéllos días de Juan el Bautista. El hacha ya esta puesta a la raíz de los árboles. Todo árbol que no de buen fruto será cortado y echado en el fuego que nunca se apagará. Por lo tanto, ¡todo aquél que esté fuera de Cristo, que despierte, que huya de la ira venidera! La ira del todopoderoso está sobre gran parte de esta congregación.</p>
+
+        <div class="scripture">
+            "Escapa por tu vida; no mires tras ti, ni pares en toda esta llanura; escapa al monte, no sea que perezcas"
+            <span class="scripture-ref">Génesis 19:17</span>
+        </div>
+
+        <div class="highlight-box">
+            <p style="font-size: 1.5rem; text-align: center; font-weight: bold;">¡AMÉN!</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - Pecadores en manos de un Dios airado<br>
+    Por Jonathan Edwards
+</footer>
+</body>
+</html>

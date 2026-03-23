@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Arnés del Señor - Bill Britton</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .vision-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 4px solid #b8860b;
+        }
+
+        .vision-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #8B4513;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Bill Britton</div>
+            <div>EL ARNÉS DEL SEÑOR</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>El presente artículo va dirigido a aquellas personas que han tomado en serio el cristianismo. Es una pena reconocer que es una minoría la que considera las condiciones de Cristo para ser su seguidor y perseverar en ellas.</p>
+
+        <p>El evangelio se ha ofrecido barato con miras a obtener más adeptos. Frecuentemente se ocultan las dificultades de ser cristiano en un mundo entenebrecido y lo que resulta es un híbrido que avergüenza a Jesucristo. De esto están llenas las congregaciones.</p>
+
+        <p>De hecho, cuando alguno de sus miembros, guiado por su conciencia y por lo que la Biblia establece, busca con diligencia salir del estado de mediocridad imperante, se encontrará con la resistencia de la generalidad, reacia a sobresalir y se enfrentará en lo sucesivo a no pocos problemas.</p>
+
+        <p>El autor describe una visión llena de alegorías y enseñanzas. La idea del Espíritu es convencer a todos los que quieran ser participantes con Cristo, que deben dejarse guiar y moldear. No hay lugar en el Reino de los Cielos para los rebeldes. Ninguno que se obstina a la voluntad de Dios y contiende con el Espíritu Santo, tiene parte ni suerte en la Gloria del Señor, ni aquí, ni en el siglo venidero.</p>
+
+        <p>¿Cómo podrá el Señor depositar su Evangelio y su confianza en aquellos que ni siquiera han tomado en serio despojarse de todo peso y del pecado que les asedia? De ninguna manera. No decimos que existan dos clases de cristianos. Las condiciones para ser discípulo del Maestro son las mismas para todos, independientemente de lo que cada quien piense. El señorío de Cristo no es opcional. Si queremos que Jesús responda por nosotros como nuestro Salvador, debemos hacerlo nuestro Amo y Señor.</p>
+
+        <p>Es precisamente para todos aquellos que viven descontentos e insatisfechos con el cristianismo que han visto y vivido que publicamos el presente número.</p>
+
+        <p>Como siempre, deseamos que sea bendecido al considerar las verdades que han hecho tanto bien a otros con similares anhelos.</p>
+
+        <div class="editors-note">
+            ATENTAMENTE<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">EL ARNÉS DEL SEÑOR</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por Bill Britton</div>
+
+    <div class="content-section">
+        <p>El Espíritu Santo está llevando al cabo una gran operación hoy en día para traer a los hijos de Dios a una entrega absoluta a la perfecta voluntad de Dios. Este es el día de su preparación, el día en que está preparando el canal a través del cual Él derramará su gloria para que todo el mundo lo vea. Este canal es su cuerpo en la tierra, esa gloriosa compañía de personas que están siendo conformadas a través de muchas tribulaciones y pruebas de fuego a la imagen del Hijo de Dios. Este es su "hacha de batalla y sus armas de guerra" con el cual Él someterá reinos y vencerá a todos sus enemigos. Este es su "Fuerte y Poderoso" a quien le dará el trabajo de juzgar a este mundo. Este es su Vencedor, su "gran ejército" con el cual Él traerá a todas las naciones a sumisión. Las armas de su milicia (batalla, guerra) no son carnales, ni armas naturales, sino que son armas poderosas, poderosas a través de Dios para la destrucción de fortalezas. Estos son los que <span class="emphasis">"En Dios harán proezas..."</span>. (Salmo 60:12) Pero antes de que Dios pueda entregar este ministerio grande y tremendo en sus manos, es necesario que se sometan a la disciplina del Señor, permitiéndole ser verdaderamente el Señor de sus vidas.</p>
+
+        <p>Por mucho tiempo hemos tratado la cuestión del pecado que es notorio en nuestras vidas, pero ahora Dios está tratando con la rebelión interna de nuestra voluntad. Algunos buenos cristianos no están siendo tratados en esto, pues no forman parte de este primer grupo; sin embargo, Dios está tratando realmente a aquellos que son llamados al Gran Llamamiento de Dios. Esto es algo verdadero, y es la obra del "Fuego Refinador". Para aquellos que están pasando por este fuego refinador, algunos de sus aspectos son terribles, pero muy necesarios, y el resultado final es glorioso conforme somos llevados a una sujeción completa y absoluta a la voluntad de nuestro Señor. Fue en una convención y conferencia de pastores en donde Dios me dio una visión que quiero compartirles acerca de esta sujeción de nuestra voluntad. Había más de 30 líderes presentes en esta reunión matutina especial en un día jueves, y Dios, el Padre de los espíritus estaba presente para tratar con sus hijos, para corregirlos y disciplinarlos a una obediencia absoluta a su voluntad. El Espíritu se manifestó con tanta fuerza que nadie podía ir al púlpito y ministrar. Ninguno de los líderes querían llegar a decir algo que no fuera guiado por el Espíritu Santo. Y conforme aquellos hombres de Dios permanecían sentados ahí en la temible presencia del Dios Todopoderoso, algunos con muchos años en el ministerio, otros misioneros, todos capaces de levantarse y predicar un sermón poderoso, me impresionaba ver la forma en la que habían respondido a la disciplina del Espíritu. Y mientras que Dios trataba tremendamente con nuestros espíritus, el Espíritu Santo me dio una visión...</p>
+    </div>
+
+    <div class="vision-box">
+        <div class="vision-title">VÍ LA CARROZA DEL REY</div>
+
+        <p>En un camino terregoso en medio de un extenso campo, estaba parada una hermosa carroza, algo parecida a una diligencia, con acabados de oro y hermosamente labrada. Tiraban de ella sus grandes caballos castaños, dos al frente, dos en medio, y dos atrás. Pero no se movían, no estaban tirando de la carroza, y yo me preguntaba por qué. Entonces vi al arriero debajo de la carroza, en el suelo, sobre su espalda, justamente detrás de los talones de los dos últimos caballos. Arreglaba algo que estaba entre las ruedas delanteras de la carroza. Pensé, "pero si está en un lugar muy peligroso; pues si uno de esos caballos pateara o diera un paso hacia atrás, podrían matarlo, o si decidieran caminar hacia adelante, o se asustaran por alguna razón, tirarían de la carroza justamente encima de él". Pero él no parecía tener miedo, puesto que sabía que los caballos estaban disciplinados y no se moverían hasta que él les diera la orden para hacerlo. Los caballos no movían sus patas ni estaban inquietos, y a pesar de que tenían campanitas amarradas en sus patas, no se oía ningún sonido. Tenían colocados adornos en sus arneses sobre sus cabezas, pero los adornos no se movían. Estaban simplemente de pie en silencio y quietud, esperando la voz del Maestro.</p>
+    </div>
+
+    <div class="vision-box">
+        <div class="vision-title">HABÍA DOS POTRILLOS EN EL CAMPO</div>
+
+        <p>Al ver a estos caballos sujetos pude ver dos potrillos que venían del campo, y se acercaron al carruaje como diciéndoles a los caballos: "Vengan a jugar con nosotros, tenemos muchos juegos interesantes, jugaremos a las carreras con ustedes, vengan a atraparnos". Y después de esto los potrillos relincharon, movieron sus colas, y seguían corriendo a través del campo. Pero al voltear atrás y al ver que los caballos no los seguían, se intrigaron. No sabían nada de la sujeción, y no podían entender por qué los caballos no querían jugar. Entonces les preguntaron: "¿Por qué no corren con nosotros? ¿Están cansados? ¿Se sienten muy débiles? ¿Acaso no tienen fuerzas para correr? Están muy serios, necesitan más alegría en sus vidas". Pero los caballos no contestaron una sola palabra, ni movieron sus patas, o sacudieron sus cabezas. Sino que permanecieron quietos y silenciosos, esperando la voz del Maestro.</p>
+
+        <p>De nuevo los potrillos les decían: "¿Por qué están parados allí bajo el calor del sol? Vengan acá bajo la sombra de este hermoso árbol. ¿Ven qué verde está el pasto? Deben tener hambre, vengan y coman con nosotros, está muy verde y rico. Se ven sedientos, vengan y tomen uno de nuestros tantos arroyos de agua fresca y clara". Pero los caballos no contestaban ni siquiera con una mirada, mas permanecían quietos esperando la orden del Rey para seguir adelante.</p>
+
+        <p>Después la escena cambió, vi que lazaron al cuello de los dos potrillos. Fueron llevados al corral del Maestro para ser entrenados y disciplinados. Qué tristes se sintieron al ver desaparecer los hermosos campos verdes, y fueron encerrados en el corral con su tierra café y su cerca alta. Los potrillos corrían de un lado de la cerca a otro, buscando libertad, pero se dieron cuenta que estaban encerrados en este lugar para entrenamiento. Después el Entrenador comenzó a trabajar con ellos con su látigo y su brida o freno. ¡Era la muerte para estos potrillos que se habían acostumbrado a tal libertad! No podían comprender la razón de esta tortura, de esta terrible disciplina. ¿Qué crimen cometieron para merecer esto? Poco sabían de la responsabilidad que sería de ellos cuando se hubieren sometido a la disciplina y hubieran aprendido perfectamente a obedecer al Maestro, y terminado su entrenamiento. Lo único que ellos sabían era que este proceso era la cosa más horrible que jamás antes habían conocido.</p>
+    </div>
+
+    <div class="vision-box">
+        <div class="vision-title">SUJECIÓN Y REBELIÓN</div>
+
+        <p>Uno de los potrillos se rebeló durante el entrenamiento, y dijo, "Esto no es para mí. Me gusta mi libertad, mis montañas verdes, mis arroyos de agua fresca. No soportaré más este encierro, este terrible entrenamiento". Así que encontró una salida y se brincó la cerca y corrió felizmente a sus pastos verdes. Me sorprendió ver que el Maestro le permitiera irse, y que no fuera detrás de él. Más Él concentró toda su atención en el potrillo que se había quedado. Este también, tuvo la misma oportunidad de escapar, pero decidió someter su propia voluntad, y aprender los caminos del Maestro. El entrenamiento cada vez fue más duro, pero él aprendía rápidamente cada vez más y más a obedecer el más mínimo deseo del Maestro, y a responder incluso a la quietud de su voz. Y vi que si no hubiera habido ningún entrenamiento, ni prueba, tampoco hubiera habido sujeción ni rebelión por parte de ninguno de los potrillos. Pues en el campo no se les daba la alternativa de sujetarse o rebelarse. Eran inocentes y sin pecado. Pero cuando llevados al lugar del entrenamiento, la prueba, y la disciplina, entonces se hizo manifiesta la obediencia de uno y la rebelión del otro. Y a pesar de que parecía más seguro no entrar al lugar de la disciplina por el riesgo de ser encontrado rebelde, me di cuenta de que sin esto, no podría haber comunión con su gloria, ni con su Hijo.</p>
+    </div>
+
+    <div class="vision-box">
+        <div class="vision-title">EN LA SUJECIÓN</div>
+
+        <p>Finalmente este período de entrenamiento terminó. ¿Acaso se le recompensó con su libertad, y fue enviado a los campos? Oh no. Sino que ahora se llevaba a cabo un encierro mayor, pues un arnés era colocado sobre sus hombros. Ahora se dio cuenta de que ni siquiera había libertad de correr en el pequeño corral, pues con el arnés se podía mover solamente en el momento y al lugar donde el Maestro le indicara. A menos que el Maestro diera una orden, él permanecía quieto.</p>
+
+        <p>La escena cambió, y vi al otro potrillo parado en un lado de la montaña, comiendo pasto. Entonces al otro lado de los campos, por el camino venía la carroza del Rey, tirada por seis caballos. Con asombro vio que al frente, en el lado derecho, estaba su hermano el potrillo, ahora fuerte y maduro, alimentado con buen trigo en el establo del Maestro. Veía cómo se movían con el aire los hermosos adornos, observó el arnés de su hermano que tenía los bordes de oro brillante, y cómo se escuchaban las campanas en sus pies... y sintió envidia en su corazón. Renegó consigo mismo diciendo: "¿Por qué han honrado tanto a mi hermano, y a mí me han despreciado? No han puesto campanillas en MIS pies, ni adornos en MÍ cabeza. El Maestro no ME ha dado esa maravillosa responsabilidad de tirar de su carroza, ni colocó sobre MÍ el arnés de oro. ¿Por qué han escogido a mi hermano y no a mí?". Y a través del Espíritu me fue dada la respuesta mientras yo observaba. <span class="red-emphasis">"Porque uno se sujetó a la voluntad y a la disciplina del Maestro, y el otro se rebeló, de allí que uno fue escogido y el otro fue hecho a un lado".</span></p>
+    </div>
+
+    <div class="vision-box">
+        <div class="vision-title">HAMBRE EN LA TIERRA</div>
+
+        <p>Después vi una gran sequía que acabó con todo el campo, y los pastos verdes se secaron, se tornaron cafés y quebradizos. También los pequeños arroyos se secaron, dejaron de fluir, y sólo había unos cuantos charcos lodosos aquí y allá. Vi al pequeño potrillo, (me sorprendió ver que nunca creció ni maduró) cómo corría de un lado para otro, a través de los campos buscando las corrientes frescas y los pastos verdes, no encontrando nada. Aún así corría, en círculos, siempre buscando algo para alimentar su espíritu hambriento. Pero había hambre en la tierra, y ya no habría más de aquellos ricos pastos verdes y de los arroyos que fluían anteriormente. Y un día el potrillo estaba parado en una montaña sobre sus piernas débiles y tambaleantes, preguntándose a dónde iría ahora para encontrar comida, y de dónde tomaría fuerzas para llegar. Todo parecía inútil, pues la buena comida y las corrientes que fluían eran cosa del pasado, y todos los esfuerzos que hacía para encontrar algo sólo lo debilitaban más. De pronto VIÓ que la carroza del Rey venía por el camino tirada por seis fuertes caballos. Y vio a su hermano, gordo y fuerte, con los músculos marcados, peinado y hermoso, con mucho resplandor. Su corazón estaba sorprendido y perplejo, y gritó: "Hermano mío, ¿en dónde encontraste alimento que te ha mantenido tan fuerte y gordo en estos días de hambre? Yo he ido a todas partes en mi libertad, buscando comida, y no encuentro nada. ¿A dónde vas tú en tu terrible encierro y encuentras comida en estos días de sequía? ¡Dímelo, por favor, tengo que saberlo!". Y después contestó una voz llena de victoria y alabanza: <span class="red-emphasis">"En la Casa de mi Maestro hay un lugar secreto en las limitaciones de mi encierro en sus establos en donde Él me alimenta de su propia mano, y sus graneros nunca se acaban, y su pozo jamás se seca".</span> Y con esto el Señor me hizo saber que cuando las personas están débiles, y sus espíritus hambrientos en el tiempo de hambre espiritual, aquellos que han negado su voluntad, y han entrado al lugar secreto del Altísimo, en una total entrega a su perfecta voluntad, tendrán abundancia de trigo del cielo, y un fluir de corrientes de agua fresca de revelación por su Espíritu que nunca se acabarán.</p>
+    </div>
+
+    <div class="content-section">
+        <p><span class="emphasis">"Escribe la visión, y declárala en tablas, para que corra el que leyere en ella"</span> (Hab. 2:2). <span class="emphasis">"Uncid (ponerles los arneses a los caballos) caballos y subid, vosotros los jinetes..."</span> (Jer. 46:4). Estoy seguro que muchos de ustedes que han escuchado lo que el Espíritu dice a la iglesia, ya han visto lo que Dios está mostrando en esta visión. Pero permítanme explicarlo de una forma sencilla.</p>
+
+        <p>Una vez que hemos nacido en la familia de Dios, nos alimentamos en los pastos verdes, tomamos de las muchas corrientes de revelación de su propósito que es bueno y maravilloso. Pero no es suficiente. Mientras que éramos niños, jóvenes e indisciplinados, limitados sólo por el vallado exterior de la ley que establecía los límites de los pastos (que nos detenía de entrar en los pastos oscuros donde estaban las hierbas venenosas), Él estaba contento al vernos crecer y desarrollarnos en hombres jóvenes, espiritual-mente hablando. Pero llegó el momento para aquellos que se alimentaban en sus pastos y que tomaban de sus corrientes, de que fueran llevados a la "disciplina" o "entrenamiento" con el propósito de hacerlos hijos maduros. Muchos de los hijos de hoy en día no pueden entender por qué algunos que se han puesto los arneses de Dios no sienten ninguna emoción con tantos juegos religiosos y travesuras juguetonas de los inmaduros. Se preguntan por qué los disciplinados no van tras toda nueva revelación o se alimentan de toda oportunidad para comprometerse en todas las supuestas actividades religiosas "buenas y provechosas". Se preguntan por qué algunos no compiten con ellos en sus frenéticos esfuerzos para construir grandes obras y grandes notables ministerios. No pueden entender el simple hecho de que este grupo de santos está esperando la voz del Maestro, y no podrían escuchar a Dios entre tanta actividad. Se moverán cuando su Maestro lo ordene. Pero no antes, aunque muchas tentaciones provengan de los potrillos juguetones. Y los potrillos no pueden entender por qué aquellos que parecen tener grandes habilidades y fuerzas no les están dando buen uso. "Lleven el carruaje por el camino", dicen ellos, pero los disciplinados, aquéllos sujetos a Dios saben que no deben moverse antes de que escuchen la voz del Maestro. Se moverán en su tiempo, con un propósito y una gran responsabilidad.</p>
+
+        <p>Y el Señor me hizo saber que hubo muchos a quienes Él llevó al entrenamiento, pero que se habían rebelado contra la disciplina y la corrección del Padre. No se les podía confiar la gran responsabilidad de hijo maduro, así que Él los dejó regresar a su libertad, a sus actividades religiosas, revelaciones y dones. Aún son parte de su pueblo, alimentándose en sus pastos, pero los ha hecho a un lado de los grandes propósitos para el fin de la era. De ahí que se gozan en su libertad, sintiendo que son los escogidos con las muchas corrientes, sin saber que han sido hechos a un lado, pues son inservibles para su gran obra en este fin de la era.</p>
+
+        <p>Me mostró que a pesar de que la corrección parecía gravosa en el momento, y la disciplina difícil de soportar, aún así los resultados con toda la gloria de ser llamado hijo, valen la pena, y la gloria que continuará excede todo sufrimiento que hayamos soportado. Y aunque algunos incluso pierdan sus vidas en este entrenamiento, no obstante compartirán la misma gloria de su eterno propósito. No desmayen santos de Dios, pues es el Señor el que los lleva a este encierro, y no su enemigo. ¡Es por su bien y para la gloria de Dios que soporten todas las cosas con alabanza y acciones de gracias, pues Él los ha tenido por dignos de compartir su gloria! No teman el látigo en su mano, pues no es para su castigo, sino para su corrección y entrenamiento, para que ustedes puedan entrar a la sujeción de su voluntad, y ser hallados semejantes a Él en esa hora. Regocíjense en sus pruebas, en todas sus tribulaciones, y gloríense en su cruz y en las limitaciones del encierro de su sujeción, pues a ustedes los ha escogido, y Él ha tomado la responsabilidad de mantenerlos fuertes y bien alimentados. Por lo tanto apóyense en Él, y no confíen en su propia habilidad, ni en su propio entendimiento. Serán alimentados, y su mano será sobre ustedes, y su gloria los protegerá y fluirá entre ustedes así como cubre toda la tierra. ¡Gloria a Dios! ¡Bendito el Señor, Él es maravilloso! Permítanle ser el Señor de sus vidas, y no renieguen de aquello que Él traerá a sus vidas.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>ABUNDANCIA EN EL TIEMPO DE HAMBRE</h2>
+
+        <p>En la hora cuando el hambre azote la tierra, Él alimentará de su propia mano a aquellos que estén sujetos a su perfecta voluntad, y que moren en el lugar secreto del Altísimo. Cuando el terror azote la tierra, aquellos que estén sometidos a Él no temerán, pues ellos sentirán su brida y conocerán la guianza de su Espíritu. Cuando otros estén débiles, frágiles y temerosos, éstos serán fuertes en el poder de su fuerza, y no tendrán falta de ningún bien. Cuando venga la hora en que las tradiciones de los sistemas religiosos se hayan probado falsas, y sus arroyos se hayan secado, entonces sus escogidos hablarán con la verdadera Palabra de Dios. Así que regocíjense hijos de Dios, por haber sido escogidos por su gracia para esta gran obra en esta última hora.</p>
+
+        <div class="highlight-box">
+            <p>El vallado que mantiene a los potrillos en sus propias praderas y sus propios pastos no significa nada para el grupo que se ha sometido, pues las puertas de estos vallados están abiertas para ellos. Ellos salen por allí tirando la carroza del Rey a muchos lugares extraños y maravillosos. No se detienen a comer las hierbas envenenadas de pecado, pues ellos se alimentan sólo del establo del Maestro. Sólo pisotean estos campos al pasar por ellos mientras que continúan en los asuntos del Rey. No hay ley alguna para aquellos que son traídos en absoluta sujeción a su voluntad. Pues ellos se mueven en la gracia de Dios, guiados solamente por el Espíritu Santo, en donde todas las cosas son lícitas pero no todas convienen. Esto es un reino peligroso para los indisciplinados, y muchos han perecido en pecado por haberse saltado el vallado sin el arnés y la brida del Señor. Muchos creen de sí mismos estar completamente sujetos a Él, sólo que después encuentran alguna área en sus vidas en donde moraba la rebelión y el egoísmo. Esperemos en Él para que ponga su lazo alrededor de nosotros y nos lleve a su lugar de entrenamiento. Y aprendamos los tratos de Dios y el mover de su Espíritu hasta que sintamos cuando Él nos coloque el arnés, y escuchemos su voz guiándonos. <span class="red-emphasis">¡Y entonces habrá seguridad en contra de las trampas y del peligro del pecado, para habitar siempre en su Casa!</span></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - El Arnés del Señor<br>
+    Por Bill Britton
+</footer>
+</body>
+</html>

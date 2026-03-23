@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Compañía de Elías - David Wilkerson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por David Wilkerson</div>
+            <div>LA COMPAÑÍA DE ELÍAS</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>En esta ocasión Elías no será una persona, ni tampoco la reencarnación del profeta de Israel de los tiempos de la monarquía, como algunos se han imaginado torpemente de Juan el Bautista, a quien Jesús también aplicó esta profecía. Mas bien se refiere a la iglesia restaurada y victoriosa que anticipará la Segunda venida del Señor, cuyas características de santidad y valor corresponderán a las del profeta del Siglo noveno a.C. Separado en los desiertos, Elías rehusó mezclarse con la corrupción religiosa de sus tiempos. Su lema era su vivencia: <span class="emphasis">"Vive Jehová en cuya presencia estoy"</span>. Esta precisamente será la iglesia del Señor que se manifestará en el espíritu y poder de Elías.</p>
+
+        <p>Su voz franca y directa dividirá el camino de los pecadores: <span class="emphasis">"¿Hasta cuando claudicaréis vosotros entre dos pensamientos? Si Jehová es Dios, seguidle; y si Baal, id en pos de él"</span> (1 R. 18:21) Unos se convertirán de sus malos caminos, y otros lo aborrecerán, como la perversa Jezabel y sus falsos ministros.</p>
+
+        <p>Como Juan el Bautista, preparará el Camino del Señor. "Bajará los montes y levantará los valles". Las palabras que oyó en la presencia del Altísimo sacudirán los cimientos de las organizaciones muertas establecidas. Sus obras testificarán de la compasión del Señor por un mundo agonizante y desorientado. No serán palabreros vociferantes como los que suelen proliferar a fines de siglo.</p>
+
+        <p>¡Qué contraste tan marcado hará con el diplomático y condescendiente cristianismo nominal actual!</p>
+
+        <p>Es difícil en estos tiempos encontrar verdaderos exponentes de esta restauración tan necesaria. Algunos de ellos los hemos publicados en esta Revista. En esta ocasión David Wilkerson nos vuelve a alertar con su ya conocida contundencia. Nuestra oración, como la exhortación de Elías que te menciono, es que muchos se decidan por una postura bien definida, a favor de la santidad y completa obediencia a Cristo, cueste lo que cueste.</p>
+
+        <div class="editors-note">
+            Atentamente<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">LA COMPAÑÍA DE ELÍAS</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por: David Wilkerson</div>
+
+    <div class="content-section">
+        <p>El Antiguo Testamento termina con la asombrosa profecía de Malaquías:</p>
+
+        <div class="scripture">
+            "He aquí, yo os envío el profeta Elías, antes que venga el día de Jehová, grande y terrible. Él hará volver el corazón de los padres hacia los hijos, y el corazón de los hijos hacia los padres, no sea que yo venga y hiera la tierra con maldición"
+            <span class="scripture-ref">Malaquías 4:5-6</span>
+        </div>
+
+        <p>Esta profecía fue en gran manera cumplida en el ministerio de Juan el Bautista. Un ángel apareció a Zacarías y profetizó que su hijo Juan haría que muchos de los hijos de Israel se convirtieran al Señor Dios de ellos:</p>
+
+        <div class="scripture">
+            "E irá delante de él con el espíritu y el poder de Elías, para hacer volver los corazones de los padres a los hijos y de los rebeldes a la prudencia de los justos, para preparar al Señor un pueblo bien dispuesto"
+            <span class="scripture-ref">Lucas 1:16-17</span>
+        </div>
+
+        <p>Jesús, hablando a sus discípulos acerca de Juan el Bautista, dijo: <span class="emphasis">"Y si queréis recibirlo, él es aquél Elías que había de venir."</span> (Mt. 11:14). Él añadió, <span class="emphasis">"El que tiene oídos para oír, oiga"</span> (v. 15). Creo que Jesús les estaba pidiendo que vieran el significado espiritual de la venida de Juan, como estaba profetizada, EN EL ESPÍRITU Y PODER de Elías. El mismo Juan enfáticamente negó que él era Elías resucitado de entre los muertos. Cuando los judíos le preguntaron directamente, <span class="emphasis">"¿Eres tú Elías?"</span> Juan respondió: <span class="emphasis">"No soy... yo soy la voz de uno que clama en el desierto: Enderezad el camino del Señor, como dijo el profeta Isaías."</span> (Jn. 1:21-23). Esta es la razón por la cual Jesús les dijo a sus discípulos que únicamente los ojos y oídos espirituales entenderían que Juan el Bautista era DEL MISMO CARÁCTER MINISTERIAL que el profeta Elías. Juan fue un predicador de justicia, como lo fue Elías, enviado para despertar a un pueblo hacia el camino recto y estrecho de la santidad. Juan, ungido con el mismo Espíritu valeroso y el poder que estaba sobre Elías, habló en contra de los pecados de desobediencia, avaricia y placeres amorosos de los judíos. Cristo estaba por aparecer pronto y este hombre poderoso de verdad repentinamente llegó a escena para preparar un pueblo para el Señor. Este profeta del desierto fue enviado para convertir los corazones de la gente, que es la más exacta definición de arrepentimiento. Juan predicaba arrepentimiento, restitución, pureza de corazón, justicia y un camino práctico de santidad que corresponden a una abierta <span class="emphasis">"confesión de pecados"</span>.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>UNA COMPAÑÍA DE ELÍAS EN ESTOS ÚLTIMOS DÍAS</h2>
+
+        <p>Creo que el profeta Malaquías, tanto como otros profetas del Antiguo Testamento, hablan de una COMPAÑÍA DE GENTE SANTA que se levantaría justamente antes de la segunda venida de Cristo, quien también será del mismo carácter ministerial de Elías. Esto es, que ellos ministrarán bajo el mismísimo Espíritu de poder que descansó sobre Elías y Juan el Bautista. Creo que la segunda venida de Cristo ciertamente es <span class="red-emphasis">"EL GRANDE Y TERRIBLE DÍA DEL SEÑOR"</span>, del cual habló el profeta Malaquías, terrible en relación a la ira de Dios para el inicuo y desobediente. La raíz de la palabra hebrea usada aquí es YARE, que significa espantar, espantarse. Hay ciertamente un día cuando el impío clamará para que las rocas y las montañas caigan sobre ellos:</p>
+
+        <div class="scripture">
+            "Caed sobre nosotros y escondednos del rostro de aquel que está sentado sobre el trono, y de la ira del Cordero"
+            <span class="scripture-ref">Apocalipsis 6:16</span>
+        </div>
+
+        <p>Pero antes de que ese día terrible llegue, el Espíritu Santo tiene una fuerte y clara voz por toda la tierra UNA COMPAÑÍA DE ELÍAS, de gente santa, consagrada, con discernimiento, quienes sin temor advierten de pecado, justicia y juicio amenazante. Esta compañía de Elías de los últimos días, son creyentes que harán caso de la profecía de Isaías:</p>
+
+        <div class="scripture">
+            "Clama a voz en cuello, no te detengas; alza tu voz como trompeta, y anuncia a mi pueblo su rebelión, y a la casa de Jacob su pecado."
+            <span class="scripture-ref">Isaías 58:1</span>
+        </div>
+
+        <p>Estos son los guardas sobre los muros:</p>
+
+        <div class="scripture">
+            "todo el día y toda la noche no callarán jamás... no reposéis, ni le déis tregua hasta que restablezca a Jerusalén, y la ponga por alabanza en la tierra"
+            <span class="scripture-ref">Isaías 62:6-7</span>
+        </div>
+
+        <p>La verdadera compañía de Elías no está buscando un reino terrenal, porque ellos como Abraham, están buscando una ciudad cuyo constructor y hacedor es Dios. Ellos han nacido dentro de la Jerusalén celestial, la cual es la madre de todos los verdaderos redimidos. Sión es UN PUEBLO SANTO PREPARADO COMO UNA NOVIA ADORNADA.</p>
+
+        <div class="scripture">
+            "Y les llamarán Pueblo Santo Redimidos de Jehová; y a ti te llamarán CIUDAD DESEADA, NO DESAMPARADA"
+            <span class="scripture-ref">Isaías 62:12</span>
+        </div>
+
+        <p>Cuán ciegos han sido los escribas religiosos de nuestro tiempo, enfocándose en alguna clase de templo judío reconstruido. Nuestro Señor ha estado construyendo a Sión, su templo verdadero, aun desde que Él vino a la tierra como Dios encarnado. Y ahora la santa ciudad está casi terminada, y pronto las puertas serán cerradas. No más sacrificios de animales, no más templos terrenales hechos con las manos, ni ningún reino que sea de este mundo. La compañía de Elías es un pueblo santo, sentado ahora mismo con Cristo en los lugares celestiales. Ahora Cristo reina sobre todos como Rey absoluto y soberano. Ellos están separados de este mundo y están enteramente dedicados a su Señor.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>ELLOS SON UN PUEBLO DEL DESIERTO A QUIENES LA PALABRA DEL SEÑOR HA LLEGADO</h2>
+
+        <p>Quiero gritar cada vez que leo estas palabras,</p>
+
+        <div class="scripture">
+            "Siendo sumos sacerdotes Anás y Caifás, VINO PALABRA DE DIOS A JUAN, hijo de Zacarías, en el desierto."
+            <span class="scripture-ref">Lucas 3:2</span>
+        </div>
+
+        <p>El Espíritu Santo pasó por alto todos los sistemas religiosos, las escuelas rabinas, los educados fariseos y escribas, y aun los más altos oficiales de la iglesia y envió la palabra de verdad a un hombre de Dios aprisionado en el desierto. La palabra vino a Juan, a un hombre fuera del cuerpo religioso de esos días, a un hombre educado por el Espíritu Santo únicamente. Los grandes religiosos, aquellos piadosos oficiales de la iglesia, no tenían ni una simple palabra del Señor. Ellos pudieron haber hablado monótonamente por horas, exhortando con Escrituras muertas, pero ellos no tenían nada nuevo y vivo del trono de Dios. ¡Pero Juan! Él no era materialista, sino apartado, lleno de Dios, y poseído por una sola visión ¡el Cristo que venía! Cómo debe haberle ardido su corazón en el desierto mientras él leía acerca de ese profeta Elías del Antiguo Testamento. Juan estaba en el desierto ante el Señor, aprendiendo sus justos caminos, preparando su corazón para ser inflexible contra una sociedad corrupta e impía.</p>
+
+        <p>El ministerio de Juan es una prueba de que nadie reclamaría hablar por Dios, o denunciaría el pecado, a menos que él verdaderamente tuviera la palabra enviada de Dios. Así fue con Elías. Repentinamente apareció en escena en medio de la hora oscura de Israel de iniquidad y libertinaje. Acab no solamente tomó a la inicua Jezabel por esposa, sino que además <span class="emphasis">"provocó al Señor Dios de Israel a ira más que todos los reyes de Israel que fueron antes de él."</span> (1 Re 16:33). Fuera del desierto de Galaad vino Elías tisbita a confrontar al perverso Acab y al Israel apóstata. Qué poderosa palabra de Dios había recibido este profeta. Él dijo:</p>
+
+        <div class="scripture">
+            "Vive Jehová Dios de Israel, EN CUYA PRESENCIA ESTOY, que no habrá lluvia ni rocío en estos años, sino por mi palabra... y vino a él palabra de Jehová"
+            <span class="scripture-ref">1 Reyes 17:1-2</span>
+        </div>
+
+        <p>Este es el carácter ministerial de la compañía de Elías <span class="red-emphasis">¡VIVE JEHOVÁ EN CUYA PRESENCIA ESTOY!</span> Esto habla de un pueblo aprisionado con Dios en la escuela de Cristo, un cuerpo de santos despiertos quienes rehusan ser tentados y desviados por las enseñanzas y tradiciones de maestros no espirituales y pastores egocéntricos. Estos principalmente se han dado por vencidos, tratando de recibir una palabra verdadera de la jerarquía religiosa, quienes están limitados por estrechas doctrinas denominacionales. Ellos se encuentran en un desierto de confusión, hambrientos de una palabra que satisfaga el alma que da testimonio en el hombre interior de que ha sido enviado de Dios. Si ellos fueran directamente a la Santa Escritura de Dios para buscar la verdad. Qué suave descanso sería el no escuchar cassettes durante una temporada, dejando a un lado todos los libros y literatura, y concentrándose en las Escrituras. Ellos llorarían, buscarían la verdad como si estuvieran buscando una perla preciosa. Ellos oirían las imponentes lamentaciones de Jeremías, Ezequiel, Isaías y todos los demás profetas y la ira de Dios en contra del pecado y la apostasía les fuera revelada.</p>
+
+        <p>Ellos aprenderían algo del carácter de Dios -su misericordia para el arrepentimiento y obediencia y su indignación en contra de la hipocresía y la mezcla con el mundo-. Y porque ellos están frente a Dios, lejos de otras voces que los distraigan, la palabra del Señor les ha llegado con fuerza y fuego consumidor. Jeremías perteneció a la compañía de Elías quien estuvo ante el Señor para recibir la palabra de verdad. Dios le dijo:</p>
+
+        <div class="scripture">
+            "Si te convirtieres, yo te restauraré, Y DELANTE DE MI ESTARÁS; y si entresacares lo precioso de lo vil, serás como mi boca. Conviértanse ellos a ti, y tú no te conviertas a ellos. Y te pondré en este pueblo por muro fortificado de bronce, y pelearán contra ti, pero no te vencerán; porque yo estoy contigo para guardarte y para defenderte dice Jehová."
+            <span class="scripture-ref">Jeremías 15:19-20</span>
+        </div>
+
+        <p>Discernimiento precioso, discernimiento necesario, esto es lo que Dios derrama sobre su compañía de Elías mientras ellos están ante Él, fuera del campamento enseñando al pueblo de Dios la diferencia entre lo precioso y lo vil. El justo no es orgulloso ni arrogante sino simplemente audaz como un león. Ellos han adquirido una historia con el Señor, teniendo una mente espiritual ejercitada, capaz de discernir: qué es de Dios y qué es de la carne.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>ELLOS SON LLAMADOS "HACEDORES DE PROBLEMAS"</h2>
+
+        <p>Ellos son los HACEDORES DE PROBLEMAS que enfurecen a los apóstatas, líderes religiosos y a los cristianos corruptos. Ellos son odiados como lo fue Jesús cuando Él testificó contra ellos que <span class="emphasis">"sus obras eran malas"</span> (Jn. 7:7). Acab fue a encontrarse con Elías en un tiempo designado y burlándose le preguntó, <span class="emphasis">"¿Eres tú el que turbas a Israel?"</span> (1 Re.18:17). Imagínese a este corrupto compañero de Jezabel acusando a este santo profeta de causar división, problemas y contienda entre el pueblo de Dios. Él estaba demasiado ciego por sus pecados para reconocer la voz profética de Dios -para él, Elías no era más que un simple hacedor de problemas-. Elías no se inclinaría ante este espíritu de rebelión y terquedad. Él osadamente miró a Acab a los ojos y respondió:</p>
+
+        <div class="scripture">
+            "yo no he turbado a Israel, sino tú y la casa de tu padre, dejando los mandamientos de Jehová, y siguiendo a los baales"
+            <span class="scripture-ref">1 Reyes 18:18</span>
+        </div>
+
+        <p>¿Quiénes son los verdaderos hacedores de problemas, los verdaderos traficantes de división en la casa de Dios hoy en día? No es la compañía de Elías quienes suspiran y lloran por las abominaciones de la iglesia.</p>
+
+        <p>No, son éstos los que exponen al pecado y testifican en contra de las obras perversas de los líderes religiosos de aquellos que reposan en Sión. ¡Toda división es causada por ser indiferente al pecado! Todo problema en la casa de Dios es el resultado de la apostasía y el olvido de los mandamientos del Señor.</p>
+
+        <div class="scripture">
+            "Porque donde hay celos y contención, allí hay perturbación y toda obra perversa."
+            <span class="scripture-ref">Santiago 3:16</span>
+        </div>
+
+        <p>Pablo advierte a los hermanos a: <span class="emphasis">"que os fijéis en los que causan divisiones y tropiezos... y que os apartéis de ellos."</span> (Ro. 16:17). Pero, ¿Quiénes eran aquellos que "causaban tropiezo en contra de la doctrina que habían aprendido"? Ellos no eran nada más, ni nada menos que los egocéntricos y los grupos apóstatas que:</p>
+
+        <div class="scripture">
+            "No sirven a nuestro Señor Jesucristo, sino a sus propios vientres"
+            <span class="scripture-ref">Romanos 16:18</span>
+        </div>
+
+        <p>Esto prueba que esta división es causada por el orgullo y la arrogancia que proviene de los intereses egoístas. Pablo dijo: <span class="emphasis">"y con suaves palabras y lisonjas engañan los corazones de los ingenuos"</span> (v. 18).</p>
+
+        <p>Esos predicadores que son indiferentes al pecado, pasando por alto los hechos malvados en la casa de Dios y clamando por unidad, son los verdaderos divisionistas. Ellos están liderando a muchos a una falsa trampa de amor. El verdadero cuerpo de Cristo nunca ha sido ni será dividido. Aquellos en santa unión con Cristo están ya unidos unos con los otros. ¡El pecado es el que divide! Pablo y Silas fueron traídos ante los magistrados en la ciudad de Filipos, habiendo sido acusados de "alborotar" la ciudad (Hch. 16:20). Ellos fueron golpeados y llevados a prisión como resultado del PROBLEMA que habían causado. ¿Cuál fue el gran alboroto? Pablo y Silas habían echado fuera un espíritu de adivinación de una muchacha <span class="emphasis">"la cual daba gran ganancia a sus amos, adivinando... pero viendo sus amos que había salido la esperanza de su ganancia, prendieron a Pablo y a Silas"</span> (Hch. 16:16-19). Cuando el interés egoísta es tratado en alguna forma, se levanta el lamento, <span class="emphasis">"¡Hacedores de problemas! ¡División! ¡Traten de unirse!"</span> Pablo y Silas habían descubierto un juego religioso -un engaño demoniaco bajo el traje de religión-. Era un provechoso plan para unos cuantos selectos, quienes sabían como manipular a las multitudes sin discernimiento. ¿Qué fue lo que levantó el lamento "División"? Era un avivamiento de limpieza.</p>
+
+        <div class="highlight-box">
+            <p><span class="red-emphasis">¡DIOS DANOS MÁS HACEDORES DE PROBLEMAS DE ISRAEL, QUE NO TENGAN TEMOR DE PARARSE EN CONTRA DE LA HIPOCRESÍA RELIGIOSA Y DE LA DESOBEDIENCIA!</span> La compañía de Elías no tiene nada que perder, porque ellos ya han "tomado gozosamente el botín de sus ganancias". Es un camino despreciado -una senda de rechazamiento, soledad y profunda pena divina-. Día tras día el Espíritu Santo revela más y más la angustia de Dios por los pecados de su pueblo. Parece como si el mismo Cristo llorara a través de sus ojos sobre la falta de santidad, verdad y discernimiento en la iglesia. Y entre más tiempo se pase ante el Señor, la claridad de la palabra viene, hasta que llega a ser un fuego que arde en tus huesos espirituales y <span class="emphasis">"miserable de mí si permanezco callado"</span>.</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>UNA PALABRA DE PRECAUCIÓN</h2>
+
+        <p>La verdadera compañía de Elías no es una banda arrasadora que va de un lado hacia otro, acusando y amenazando a aquellos que no miden su concepto de santidad y pureza. Mucho daño se está haciendo en las iglesias actuales por los seudoprofetas, quienes van y vienen castigando y sermoneando y profanan lo que es llamada "una revelación de Dios acerca de algo en tu vida". He sido en muchas ocasiones inundado con tales revelaciones y profecías. Una de esas "profecías" me advirtió que mi vida estaba en peligro si yo iba a la ciudad de Nueva York a ministrar. Amablemente le dije a ella que ya estaba muerto a este mundo y que sería un honor si eso llegara a ocurrir. He sido maldecido, amenazado, corregido y juzgado por muchos sinceros celosos y autoproclamado profetas y profetisas. He recibido montones de profecías, todas comenzando con: "Así dice el Señor..." Algunas de ellas dan testimonio a mi corazón de que Dios realmente ha hablado, pero mucho de esto no tiene significado.</p>
+
+        <p>El aborrecimiento de Elías por el pecado de Israel, actuando con un fuerte amor por el pueblo de Dios. Él no odiaba a las personas, sino al pecado. Él no era un hombre de venganza, sino un hombre cuyo corazón anhelaba el retorno de Israel hacia el Señor. Para entender el Espíritu y poder que estaba sobre Elías, deben escuchar su lamento acongojado en el Monte Carmelo:</p>
+
+        <div class="scripture">
+            "Respóndeme, Jehová, respóndeme, para que conozca este pueblo que tú, oh Jehová, eres el Dios, Y QUE TÚ VUELVES A TI EL CORAZÓN DE ELLOS... Entonces cayó fuego y viéndolo todo el pueblo, se postraron..."
+            <span class="scripture-ref">1 Reyes 18:37-39</span>
+        </div>
+
+        <p>Elías no estaba del todo interesado en ser considerado como un profeta. Él quería únicamente ver el honor de Dios restaurado y que aquellos que habían apostatado "regresaran al Señor". Los verdaderos profetas, aunque hablan fuerte en contra del pecado, son de corazón misericordioso, amable y paciente. Y cuando ellos ven un sincero arrepentimiento bíblico, se convierten en constructores y reparadores de grietas. Quiero continuar diciendo que creo que existen actualmente verdaderos pastores de la compañía de Elías. No todos los predicadores son apóstatas o egocéntricos. He escuchado de un gran número de santos pastores quienes han sido heridos y rechazados por ovejas descuidadas.</p>
+
+        <p>Algunos han sido literalmente expulsados de sus iglesias por predicar estándares de santidad. Pero las más crueles de todas, son las así llamadas profecías y denuncias de las ásperas "voces proféticas" que no tienen misericordia redentora en sí mismas. Si alguna vez escuchas a un "profeta" pronunciando maldiciones o algo así, puedes estar seguro de que no camina en el Espíritu de Cristo. El tal es un orgulloso autoproclamado Elías, lleno de arrogancia y codicia. La Palabra dice claramente:</p>
+
+        <div class="scripture">
+            "Bendecid... y no maldigáis."
+            <span class="scripture-ref">Romanos 12:14</span>
+        </div>
+
+        <p>Aquellos que van y vienen hablando maldiciones deberían estremecerse con estas advertencias:</p>
+
+        <div class="scripture">
+            "Amó la maldición, y ésta le sobrevino; y no quiso la bendición, y ella se alejó de él. Se vistió de maldición como de su vestido, y entró como agua en sus entrañas, y como aceite en sus huesos"
+            <span class="scripture-ref">Salmo 109:17-18</span>
+        </div>
+
+        <p>A la luz de esto, si uno que se considera a sí mismo profeta trata de maldecirte, haz lo que Jesús nos mandó:</p>
+
+        <div class="scripture">
+            "Bendecid a los que os maldicen"
+            <span class="scripture-ref">Mateo 5:44</span>
+        </div>
+
+        <p>Sonríe y vete sin miedo, porque sus maldiciones son dañinas pero para sí mismos.</p>
+
+        <p>La compañía de Elías es un pueblo que llora y cada palabra profética que sale de sus labios está bañada en lágrimas. Ellos han transmitido un vislumbre de la imponente santidad de Cristo y sus propios pecados del pasado los han aplastado. Ahora, en quebrantamiento y pena divina, caminan en arrepentimiento, ellos lo predican y nunca le dejarán de mostrar al pueblo de Dios su apostasía. Ellos rehusan parpadear al pecado y no temen al hombre ni al diablo cuando vienen a defender el honor de Cristo.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¡LA PALABRA QUE VIENE DE LA COMPAÑÍA DE ELÍAS ES CRISTOCÉNTRICA!</h2>
+
+        <p>Jesús tomó a Pedro, a Santiago y a Juan y los llevó a un monte alto y se transfiguró delante de ellos. Repentinamente Elías y Moisés aparecieron y ellos estaban <span class="emphasis">"hablando con Jesús"</span> (Mr. 9:2-4). Lucas nos dice que ellos <span class="emphasis">"hablaban de su partida, que iba Jesús a cumplir en Jerusalén"</span> (Lc. 9:31). Pedro, solamente despertó de su sueño y <span class="emphasis">"no sabiendo lo que decía"</span>, expresó, <span class="emphasis">"Maestro, hagamos tres enramadas, una para ti, una para Moisés, y una para Elías"</span> (Lc. 9:33). Y aún cuando él hablaba estas palabras fueron cubiertos por una nube, causándoles temor.</p>
+
+        <div class="scripture">
+            "Y vino una voz desde la nube, que decía: Este es mi Hijo amado, a él oíd. Y cuando cesó la voz, Jesús fue hallado solo..."
+            <span class="scripture-ref">Lucas 9:35-36</span>
+        </div>
+
+        <p>Dios hizo una declaración a su iglesia la cual no debe ser mal interpretada. Él estaba diciéndole a Pedro y a todo aquél que tenga oídos que oiga. <span class="emphasis">"No más templos judíos con sus paredes de división, no más distinción entre el judío y el gentil, no más derramamiento de sangre de toros y becerros ¡Todo es de Cristo ahora! No más retorno a tipos y sombras; ¡Cristo la realidad ha llegado! No más edificios hechos a mano, no más reino terrenal y una Jerusalén terrenal, no más edificación sobre Moisés ¡La casa ahora pertenece a Cristo! No más futurismo, el reino es ahora, no más era milenaria judía, porque ahora Cristo es el Rey. Ahora Jesús gobierna y reina en el corazón de sus siervos. Las profecías de Elías se han cumplido; mi Hijo es el constructor de la casa de David que ha caído. El reino ha llegado; Cristo Jesús es el templo; Él aún está construyendo ahora su santa ciudad <span class="red-emphasis">"¡ESCÚCHENLO!"</span></span> ¡Qué asombroso! ¡Moisés y Elías desaparecen y ahí permanece Jesús solo! Y el mandamiento de Dios estaba sonando en sus oídos <span class="red-emphasis">"¡ESCÚCHENLO!"</span></p>
+
+        <p>¿Qué significa esto para la compañía de Elías de estos últimos días? Yo creo que ésta es la señal que le distingue a la compañía actual de Elías <span class="red-emphasis">ELLOS TIENEN OJOS PARA VER, OÍDOS PARA OÍR Y UN CORAZÓN PURO PARA OBEDECER TODO LO QUE EL SEÑOR HA HABLADO.</span> Hay un pueblo santo que está levantándose ahora quienes están escuchando el clamor de Cristo, ellos están permaneciendo firmes en sus preciosos mandamientos, y su delicia está en la Ley del Señor. Todos los profetas vieron este día y profetizaron la unidad de todo el pueblo santo, separado, quien tendría un gran entendimiento de la Palabra del Señor. Daniel escuchó grandes cosas de Dios pero <span class="emphasis">"no las entendió"</span> (Dn. 12:8). Pero él vio que vendría un día cuando un remanente puro, tratado y probado, podría entenderlas. Esta es la compañía de los últimos tiempos que tiene sabiduría y discernimiento en las cosas de Dios.</p>
+
+        <div class="scripture">
+            "Muchos serán limpios... los impíos procederán impíamente, y ninguno de los impíos entenderá, pero los entendidos comprenderán"
+            <span class="scripture-ref">Daniel 12:10</span>
+        </div>
+
+        <p>Isaías deploró la ceguera espiritual de Israel apóstata. Él dijo: <span class="emphasis">"se entontecieron... erraron en la visión, tropezaron en el juicio"</span> (Is. 28:7). Qué pequeño discernimiento tuvieron una vez, el cual fue destruido por sus codicias. Pero Isaías profetizó de un día en el cual:</p>
+
+        <div class="scripture">
+            "los sordos oirán las palabras... los ojos de los ciegos verán en medio de la oscuridad y de las tinieblas... santificarán mi nombre; y santificarán al Santo de Jacob (Cristo), y temerán al Dios de Israel. Y los extraviados de espíritu aprenderán inteligencia, y los murmuradores aprenderán doctrina"
+            <span class="scripture-ref">Isaías 29:18-24</span>
+        </div>
+
+        <p>Yo creo que en los últimos días de avivamiento muchos predicarán acerca de un AVIVAMIENTO DE LIMPIEZA.</p>
+
+        <p>Si el trabajo del Espíritu Santo es convencer al mundo de pecado, justicia y juicio, entonces es cierto que un gran derramamiento del Espíritu Santo sobre la humanidad producirá una profunda convicción de pecado y la iglesia descuidada e indulgente será sacudida y forzada a enfrentar sus pecados. Mientras multitudes de cristianos andan en busca de señales y milagros y añaden a ellos maestros de éxito y prosperidad y otros rebaños escuchan placenteros sermones de los complacientes de multitudes. Dios ha estado llamando a un <span class="emphasis">"pueblo del desierto"</span> que han salido de Babilonia y son consumidos con hambre de Cristo. Ya no pueden caminar más con el incumplimiento, el amor placentero y el adormecimiento. Mientras el ciego guía al ciego, ellos tienen sus ojos enfocados en Cristo y el cuerpo entero está lleno de luz -que viene siendo el discernimiento del Espíritu Santo-. Oh, sí ¡hay justamente ahora una gloriosa compañía de Elías apareciendo en la tierra! Oigo de muchos de ellos diariamente y cómo bendice mi corazón. Un día Dios comenzó a mover sus corazones. Ellos se desilusionaron con toda la hipocresía y vergüenza.</p>
+
+        <p>Ellos entraron a la Palabra de Dios y vieron para sí mismos cuáles son sus últimos propósitos, ellos dejaron su idolatría y su mitad descorazonada, ellos crucificaron sus deseos de la carne. Ellos se pusieron la ropa de justicia por la fe en Cristo, ellos se sometieron al llamado de Cristo, ellos decidieron caminar solos si fuera necesario, para ser completamente obedientes a Él.</p>
+
+        <p>Ellos se convirtieron en aborrecedores del pecado y llenos del celo del Señor en contra de la impiedad. Ellos se prepararon para escuchar y entender cuáles son los deseos del Señor. Ellos comenzaron a ver cosas en el Espíritu y se les hizo entender que el final de las cosas está a la puerta. <span class="red-emphasis">¡PARA ÉSTOS LA PALABRA DEL SEÑOR HA LLEGADO!</span> Y la Palabra del Señor está siendo proclamada fuerte y clara. <span class="emphasis">"¡Cristo ya viene! ¡CRISTO DEBE TENER UNA ESPOSA PURA Y SIN MANCHA, PREPARADA Y ADORNADA!</span></p>
+
+        <div class="highlight-box">
+            <p><span class="red-emphasis">¡Arrepiéntete, que el día del Señor está cerca! ¡Deja a un lado el pecado acosante y prepara tu afecto en las cosas de arriba! ¡Huye de Babilonia! ¡Apártate de aquellos que te envuelven en el mundo, no tengas parte con ellos! ¡No soportes las Torres de Babel! ¡No seas partícipe en los imperios y sueños del hombre! Abandona todo y sal a encontrarte con Él; es media noche, mira que Él viene!"</span> ¡La compañía de Elías va adelante con suficiente aceite; el aceite de la devoción a Cristo! Sus lámparas estarán encendidas brillando, alumbrando sus caminos y mostrándoles todas las cosas ocultas.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - La Compañía de Elías<br>
+    Por David Wilkerson
+</footer>
+</body>
+</html>

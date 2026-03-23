@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Eres un verdadero discípulo de Jesús? - Charles G. Finney</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Charles G. Finney</div>
+            <div>¿ERES UN VERDADERO DISCÍPULO DE JESÚS?</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">¿ERES UN VERDADERO DISCÍPULO DE JESÚS?</div>
+
+        <div class="scripture">
+            "Cualquiera de vosotros que no renuncia a todo lo que posee, no puede ser mi discípulo"
+            <span class="scripture-ref">Lucas 14:33</span>
+        </div>
+
+        <p>En este estudio explicaré lo que significa y lo que no significa renunciar a todo por Cristo. Demostraré lo que es ser un discípulo de Jesús, y que ser su discípulo es una condición indispensable para la salvación. Solamente tenemos derecho a pedir discipulado y enseñanza divina en la medida en que vivamos en un estado de completa consagración a Dios.</p>
+
+        <p>Dejarlo todo por Cristo no quiere decir abandonar nuestras posesiones y amigos para irnos de peregrinos, ni que debemos partir con todas nuestras posesiones para poder ser discípulos de Cristo. Renunciar a todo lo que poseemos, tampoco es un trueque o un intercambio -dar todas las cosas terrenales a cambio de la vida eterna-.</p>
+
+        <p>Desafortunadamente, mucha gente creé que renunciar a todo por Cristo es entregar todas las cosas terrenales a cambio de obtener cosas celestiales. Esto no es de ninguna manera lo que significa Lucas 14:33.</p>
+
+        <p>¿Qué es lo que realmente significa abandonar todo por Cristo?</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Renunciar a todo lo que poseemos por Cristo</h2>
+
+        <p>Renunciar a todo lo que poseemos por Cristo, implica un cambio radical de corazón, esto es, dejar el egoísmo por la benevolencia. En otras palabras "abandonar todo" quiere decir abandonar sin excusa alguna todos los intereses egoístas como el objetivo principal de tu vida.</p>
+
+        <p>Dejar todo por Jesús es una rendición absoluta de una vez y para siempre de los intereses egoístas y la gratificación personal como la meta de nuestra vida.</p>
+
+        <p>Renunciar a todo por seguir a Cristo significa entrar en la visión, en las intenciones y en los diseños de Jesús para promover la gloria de Dios y los intereses de Su reino.</p>
+
+        <p>Abandonar todo por Cristo te pide inevitablemente dejar el principio de ser dueño de ti mismo. Los pecadores actúan siempre bajo el principio de que son dueños de sí mismos. Insisten en su derecho a disponer de su persona como les plazca sin tener que dar cuentas a Dios o al hombre. Cristo aborrece esta manera de actuar. Él les niega el derecho a disponer de sí mismos y los reclama para Él porque en primer lugar fueron creados por Él y luego fueron redimidos por Su sangre. Cristo, por lo tanto, insiste en que los pecadores dejen de contender, en teoría o en práctica, acerca de que se pertenecen a sí mismos y tienen el derecho de disponer de ellos como les plazca.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Dueños o Mayordomos</h2>
+
+        <p>Dejarlo todo por Cristo también implica renunciar a reclamar la pertenencia de cualquier cosa. Esto significa que reconoces que verdaderamente no tienes nada que puedas llamar propio, que todo es de Dios y que tú eres solamente su mayordomo.</p>
+
+        <p>Dejarlo todo trae como consecuencia un reconocimiento de corazón y en la práctica del principio de la mayordomía universal: Que todo lo que tienes y eres, tu ser, tu vida, salud, cuerpo, alma, tiempo, tus posesiones y tus amigos, son considerados y utilizados por ti de la manera más provechosa, porque pertenecen a Dios. Como su mayordomo en todo, le entregas cuentas estrictas e imparciales. Esto quiere decir que tú realmente sientes todas tus posesiones como si fuesen de Dios y que no tienes derecho a disponer de ellas sino según su voluntad. Debes sentir eso, así se trate de una granja, de una casa o de cualquier otra propiedad de la cual poseas un título. Te consideras a ti mismo en posesión de éstas cosas sólo como un administrador.</p>
+
+        <p>Supón que has vendido tu granja o tu casa; las escrituras han sido entregadas y registradas. A ti se te ha permitido quedarte hasta que el dueño venga o envíe a alguien a tomar posesión. En tal caso entenderías muy bien cómo deberías considerar la propiedad. Si eres una persona honrada, tú no pensarías en venderla o en disponer de algo de ella, sino por el contrario, en conservarla en el mejor estado para su dueño. En cualquier momento que apareciera o enviara a alguien a tomar posesión, no pensarías en oponerte a su derecho de tomar posesión, pues es suya. Todo el tiempo pensarías, "Esto no es mío". Esta mentalidad tendría siempre un peso muy especial en tu conducta. Estarías esperando entregar la propiedad en cualquier momento que te lo pidiera el dueño, sin discutir, ni resistir.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Un Cambio Radical de Manera de Pensar</h2>
+
+        <p>Dejar todo por Cristo implica, en esencia, una manera de comportarse de acuerdo a esta mentalidad que he explicado. Es una mentalidad en la cual tú no pensarías más en disponer de las cosas que posees sin consultar primero a Dios, y quedando satisfecho con respecto a Su voluntad sobre el asunto, así como tampoco pensarías en ir y disponer de los bienes de tu prójimo sin consultarlo. La persona que deja todo, según el sentido del versículo que estamos estudiando, siente con respecto a su prójimo, que sus posesiones son suyas, pero refiriéndose a Dios, su sentimiento práctico y consciente es que estas cosas no son suyas, que no tiene derecho a disponer de ellas, sino según la voluntad de Dios. Exactamente como tampoco puede disponer de las cosas de su prójimo.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Intenciones Correctas</h2>
+
+        <p>Abandonar todo para seguir a Jesús, significa hacer todo esto por amor a Dios, y no, como he dicho antes, por un principio de trueque o "intercambio". Debe ser hecho en el mismo espíritu en el cual una esposa que ama a su marido abandonaría todo lo que tiene y lo seguiría al exilio por amor a él, y no porque esperara recibir honores o un premio.</p>
+
+        <p>Renunciar a todo lo que poseemos por Cristo debe de hacerse con gozo, no como algo forzado. No debes considerar el dejar todo por Jesús como el menor de dos males, sino como aquello que es correcto, justo, útil y deseable en sí mismo. Es estrictamente justo porque en realidad nada es tuyo, sino que sólo eres administrador de todas tus posesiones. Es por lo tanto, realmente un asunto de estricta justicia el que tú abandones todo lo que tienes en el sentido que se ha explicado hasta aquí. Hazlo porque es lo justo y lo correcto, y por amor a la justicia (no por temor al castigo si no lo haces). Renunciar a todo lo que poseemos para seguir a Jesús implica tu completa consagración a Dios y la de todo lo que tienes y eres: Nada menor a esto está implícito en el versículo que estamos estudiando.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿Quién es un Verdadero Discípulo de Cristo?</h2>
+
+        <p>Un discípulo es un alumno. Ser un discípulo de Jesucristo es ser su alumno y tenerlo a Él como maestro. Ser un discípulo de Cristo es ser un cristiano, un seguidor de Cristo, alguien dedicado a Sus intereses, uno que abraza Sus principios, que cree Su doctrina y sigue Su ejemplo.</p>
+
+        <p>Ser un discípulo de Cristo y recibir su divina enseñanza es una condición expresa e indispensable para la salvación. La doctrina de la indispensable necesidad de las enseñanzas del Espíritu Santo para la salvación del alma es enseñada abundantemente en toda la Biblia; tan abundantemente que no necesito quitarte tu tiempo citando textos que lo comprueben.</p>
+
+        <p>Las palabras que expresan verdades espirituales son figurativas, y a no ser por la influencia del Espíritu Santo, no captaríamos su verdadero significado. Una mente egoísta puede entender, y entiende lo suficiente como para convencerse de pecado y sentirse condenada. Entiende también lo suficiente para hacer que su mente obedezca a Dios aceptablemente. Pero como el hombre no regenerado no tiene ninguna disposición de obedecer a Dios, no entiende ni entenderá lo suficiente de la verdad divina para que lo induzca a cambiar su corazón sin las enseñanzas del Espíritu Santo. Por eso es necesario ser enseñados por Cristo.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿Por qué Renunciar a Todo es una Condición para ser Discipulado?</h2>
+
+        <p>La Biblia enseña claramente que dejarlo todo es una condición indispensable para ser un discípulo. Estudia el texto: <span class="emphasis">"cualquiera de vosotros que no renuncia a todo lo que posee, no puede ser mi discípulo"</span>. (Lc. 14:33) Mira la naturaleza del caso. Nada menos que esto es conversión o regeneración. La regeneración o nuevo nacimiento consiste en renunciar al egoísmo y vivir para hacerle el bien a los demás desinteresadamente. La regeneración es una profunda transformación del corazón. Nada menos que esto es virtud, porque nada menor que esto es correcto. Un hombre no ha hecho lo correcto mientras no haga todo lo que la justicia demanda. La justicia de Dios requiere la completa renuncia de nuestros intereses egoístas como meta principal de la vida. Requiere la sincera y completa consagración a Dios de uno mismo y de todo lo que tenemos. Hasta que una persona ha hecho esto, en ningún sentido ha hecho lo correcto. Antes bien, es alguien deshonesto, un defraudador, alguien que roba a Dios, y no hay ni puede haber una sola partícula de virtud en él.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Completa Rendición: ¿Una Opción?</h2>
+
+        <p>Dejarlo todo es naturalmente indispensable para la salvación. La principal idea de la salvación es la santidad. Un ser humano no puede ser ni santo, ni feliz, sin dejarlo todo en el sentido en el que he explicado hasta aquí. Sin esto no puede estar en paz con Dios, ni consigo mismo. Es lo que Dios pide y lo que su conciencia le demanda, y hasta que lo haga será imposible que pueda tener paz.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Malinterpretando a Cristo</h2>
+
+        <p>Abandonarlo todo es indispensable para poder recibir enseñanza divina. Renunciar al egoísmo como regla de vida, y entrar en un estado de completa consagración al servicio de Dios son naturalmente indispensables para tener un entendimiento correcto de la visión de Cristo, así como de sus sentimientos e instrucciones. Debe haber similitud en los puntos de vista, sentimientos y experiencias de dos personas, de otra manera no se podrán entender adecuadamente.</p>
+
+        <p>Si tú eres egoísta y Dios es supremamente benevolente, tus puntos de vista, sentimientos y estado mental son tan contrarios a Él que será imposible que lo comprendas. Siendo egoísta, todos tus hábitos de pensar y razonar así como tu comprensión del lenguaje, estarán de acuerdo con el estado de tu corazón. ¿Cómo, pues, vas a entender el lenguaje de alguien cuya mentalidad es en todo exactamente opuesta a la tuya?</p>
+
+        <p>¿No te llama la atención, que tan pronto como una persona tiene una genuina conversión, la Biblia [que antes había sido letra muerta para ella] de repente viene a ser clara y sencilla?. Lo que antes leía sin ningún interés y sin entendimiento, ahora parece ser todo nuevo, claro y glorioso. Tal persona se maravilla de que la Biblia nunca le había parecido así antes. Este es el resultado de estar en un estado mental similar al del Autor de la Biblia. Cuando alguien nos habla en nuestro idioma, y sobre un asunto en el que estamos de acuerdo, le entendemos con mucha facilidad. Pero si estamos en un estado mental opuesto, casi invariablemente lo malinterpretamos.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Por qué Muchos no Estudian con Seriedad la Biblia</h2>
+
+        <p>Sin estar en un estado mental como el que se ha explicado, Cristo no puede enseñarte, pues tú no estudiarías. Es en vano tratar de instruir a una persona, si no va a sujetar su mente a la investigación y consideración cuidadosa de un tema. Por lo tanto, a menos que abandones radicalmente tu egoísmo y comprometas tu alma y tu corazón con Cristo para construir Su reino, no tendrás interés en Su intención de motivarte para que concentres tu mente en el estudio y entendimiento de los medios por los cuales se pueden lograr Sus metas.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Por qué Muchos Leen Pero No Entienden</h2>
+
+        <p>A menos que: <span class="emphasis">"Renuncies a todo lo que posees"</span> Jesús no puede enseñarte porque no serías sincero. Lo que Él diga no sería recibido por ti con honestidad, sencillez y genuina disposición de conocer la verdad. Sin un estado mental adecuado no serías diligente en buscar el significado de lo que Él te dijera y tampoco entenderías las doctrinas de negarse a uno mismo que Él enseña. Sin la mentalidad de negarse a uno mismo, en la cual se renuncia a todo lo que tenemos y se abandona cualquier forma o grado de egoísmo, naturalmente no entenderemos este tipo de doctrinas que enseñó Cristo. Sin este estado mental necesariamente te vas a resistir cuando las palabras de Jesús reprendan tus prejuicios, tu egoísmo y tu lujuria. Las doctrinas de la cruz no pueden ser recibidas sin el espíritu de sobrellevar la cruz. Por lo tanto, una actitud y disposición para tomar la cruz es siempre indispensable para ser discipulado por el Espíritu.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Consagración Total: El Precio del Discipulado</h2>
+
+        <p>No tenemos derecho a decirnos discípulos de Jesús, ni a pedir que Dios nos enseñe, a menos que vivamos en un estado de completa consagración a Él. Esta es la condición expresa del discipulado. La Biblia presenta invariablemente el principio de la verdadera fe cristiana como un acto de completa consagración. Se habla de ella en la Biblia como un cambio radical del carácter moral, un cambio de corazón o como un nuevo nacimiento. La naturaleza del caso, muestra que nada menos que esto puede ser virtud u obediencia a Dios.</p>
+
+        <p>Tú estás tentando a Dios cuando te dices discípulo y no posees ese estado mental que es la condición expresa e indispensable para ser discipulado. Tú tientas a Dios cuando pides enseñanza divina, o le pides a Cristo que sea tu maestro, a menos que estés cumpliendo con la condición con la cual puedes llegar a ser Su discípulo.</p>
+
+        <p>Ciertamente Jesucristo tiene derecho de establecer sus propias condiciones. De hecho está moralmente obligado a hacerlo. Tratándose del discipulado, tanto la justicia como la naturaleza del caso hacen tal condición indispensable. Sería un insulto para Él que se le pidiera enseñanza y guianza divina, y derecho de ser Su discípulo, cuando en realidad no llenas la condición expresa del discipulado. ¿Tenemos derecho de aferrarnos a nuestro egoísmo, de vivir en cualquier forma de pecado, de rechazar sus condiciones y aún así pedirle ser Sus discípulos y buscarlo para que nos enseñe, como si estuviésemos cumpliendo sus condiciones? Claro que no tenemos derecho y cualquier esperanza de darle la vuelta a esto es vana.</p>
+
+        <div class="scripture">
+            "Ojalá fueras frío o caliente. Pero por cuanto eres tibio, y no frío ni caliente, te vomitaré de mi boca"
+            <span class="scripture-ref">Apocalipsis 2:15-16</span>
+        </div>
+
+        <p>El que tiene un corazón dispuesto a renunciar a todo por Cristo, lo hará tan pronto tenga la ocasión. Por otro lado, si tiene la disposición a negarse a sí mismo, se negará en hechos concretos, cuando Cristo y sus intereses egoístas entren en competencia. Es un error fatal enseñar que algo menos que un estado de completa consagración a Dios es haber nacido de nuevo. Si un estándar más bajo es admitido por los maestros del cristianismo como verdadero cristianismo, esto llevará inevitablemente a la iglesia a la destrucción.</p>
+
+        <p>Continuar en tu primer amor o sea, en un estado de absoluta entrega o consagración a Dios, es indispensable para que Dios te siga enseñando. Recuerda, te ruego, ¡qué ésta es la expresa condición para que puedas esperar que Cristo te instruya! Por lo tanto, a menos que continúes en dicho estado, cumpliendo ésta condición cada día, cada hora, no tienes derecho a ir a Jesús esperando ser enseñado por Él. Si lo esperas no lo recibirás.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Cuando Dios no Responde a la Oración</h2>
+
+        <p>Si oras pidiendo la instrucción del Espíritu Santo, no recibirás su influencia a menos que vivas de acuerdo a este divino precepto, obedezcas toda la luz que tienes, y vivas, por lo tanto, en estado de completa consagración.</p>
+
+        <p>¿Comprendes por qué tan pocos disfrutan la continua enseñanza del Espíritu Santo? ¿Por qué oran tan a menudo para que el Espíritu Santo les enseñe y no son instruidos por Él? ¿Por qué ustedes, mis hermanos, piden a menudo el Espíritu Santo y oran por la guianza y enseñanza divina y no reciben lo que piden? Yo les puedo decir: Es porque no cumplen con la única condición con la cual recibirían Su influencia. Están tolerando alguna forma de egoísmo en sus vidas. No han renunciado realmente a todo lo que tienen. Si lo hicieran se podrían acercar a Cristo en cualquier momento con la seguridad de que les enseñaría. Pero como están las cosas, Él les dice:</p>
+
+        <div class="scripture">
+            "¿Por qué me llamáis, Señor, Señor, y no hacéis lo que yo os digo?"
+            <span class="scripture-ref">Lucas 6:46</span>
+        </div>
+
+        <p>¿Por qué me llaman maestro y vienen a Mí a ser instruidos, si no cumplen con las claras condiciones sobre las cuales Yo he prometido enseñarles?</p>
+
+        <p>Cada vez que ores pidiendo enseñanza divina, debes tener presente esto: ¿Vives cumpliendo la condición de manera que tengas derecho a pedir Su instrucción?</p>
+    </div>
+
+    <div class="content-section">
+        <h2>El camino a la Incredulidad</h2>
+
+        <p>Muchas personas viven en egoísmo, están plenamente conscientes de que no viven en un estado de completa consagración, y sin embargo, siguen orando para pedir enseñanza divina como si cumplieran esta condición. Algunas veces se engañan a sí mismos pensando que son enseñados por Cristo, cuando realmente sólo se están entreteniendo con sus propios engaños o siguiendo las sugerencias de Satanás. En otras ocasiones oran a menudo para que Dios les enseñe, conscientes de que no reciben lo que piden, se desaniman y piensan que la oración sirvió de poco. Dudan que las promesas de Cristo signifiquen lo que dicen. Al hacer todo esto pasan por alto que hay una condición expresa para estas promesas. En el texto que estamos analizando, y en multitud de pasajes similares, esto es obvio y fácil de entender. Pero no lo cumplen.</p>
+
+        <p>¿Ves ahora por qué se entiende tan poco la Biblia, aun en la iglesia cristiana? ¿Cómo pueden entender la Biblia sin el Espíritu de Dios? ¿Y cómo pueden tener el Espíritu Santo sin estar en un estado de completa consagración? En otras palabras, sin vivir de la mejor forma, en todos los aspectos, según la luz que tienen. Cuando hayas obedecido una verdad Cristo te enseñará otra. ¿De qué le serviría continuar enseñándote si rehúsas obedecer lo que ya te enseñó?</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Ministros sin Guianza del Espíritu</h2>
+
+        <p>Puedes darte cuenta por qué tan pocos llegan a ser versados en el estudio profundo de la Biblia. Si los jóvenes que estudian la Biblia, o los ministros de cualquier edad, se niegan a cumplir las condiciones y se rehúsan a vivir en estado de completa consagración a Dios, no pueden ni jamás podrán disfrutar de la enseñanza del Espíritu. Obviamente progresarán muy poco en el entendimiento de la Biblia.</p>
+
+        <p>Ahora puedes ver por qué ministros están tan perdidos en cuanto a saber qué enseñar. Parece que se encuentran en oscuridad, desinteresados, y les cuesta trabajo prepararse para el púlpito. Si vivieran en un estado de completa consagración, sus sentimientos serían lo contrario de todo esto. Disfrutarían la continua enseñanza de Jesús. Alimentarían continuamente a la iglesia con conocimiento y sabiduría. De su interior, como dijo Cristo, correrían ríos de agua viva.</p>
+
+        <p>Podemos entender por lo anterior que injusticia tan grande comete un ministro contra Cristo y contra la iglesia a la que ministra, si no vive en estado de completa consagración a Dios. Supongamos que una iglesia tiene un ministro, el cual en lugar de vivir de tal manera que pueda ser enseñado por Dios se complace en el egoísmo, en sus apetitos y lujuria, y por lo tanto se priva de la enseñanza de Cristo. ¡De qué forma pone en peligro a las almas! ¡De qué forma tan grande deshonra a Dios!</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Tentando a Dios</h2>
+
+        <p>¿Cuánta de esta oración para pedir la influencia del Espíritu Santo realmente es tentar a Dios y una burla a Su Nombre? Imagínate a un grupo de gente egoísta que se dicen cristianos. Se juntan para una reunión de oración. Tal vez cada uno de ellos está plenamente consciente que no está viviendo de acuerdo a la luz que recibe, que no ha renunciado a todo lo que posee y que no vive en un estado de completa consagración a Dios. Bueno, ¿para qué se reunieron? Para orar, pedir enseñanza divina, y un derramamiento del Espíritu Santo sobre ellos y sobre otros. ¡Claro! ¿Y no es esto tentar a Dios? Deberían recordar la palabra del Señor en Ezequiel 14:3,</p>
+
+        <div class="scripture">
+            "Hijo de hombre, estos hombres han puesto sus ídolos en su corazón, y han establecido el tropiezo de su maldad delante de su rostro. ¿Acaso he de ser yo en modo alguno consultado por ellos?"
+            <span class="scripture-ref">Ezequiel 14:3</span>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Un Estándar Falso de Cristianismo</h2>
+
+        <p>Mira ahora a estos mismos que se dicen cristianos, que oran diariamente en el altar familiar pidiendo enseñanza divina, pero no tratan de vivir, ni por un solo día, en completa consagración a Dios. ¿Para qué hacen esas oraciones? ¿Por qué confían en la misericordia y en la influencia del Espíritu Santo para instruirlos? Yo contesto: Porque ellos mismos no han sido instruidos en que un estado de completa consagración es una condición indispensable para ser un discípulo de Cristo. Porque en lugar de esto, lo que han aprendido es que vivir en un estado de completa consagración a Dios es algo difícil de obtener en nuestra vida y por lo tanto, siguen viviendo arrastrándose hacia la muerte y el infierno, asustados por la doctrina de la completa consagración a Dios en esta vida, pues seguramente esto es algo completamente inconsistente con su experiencia. Pero ¿cómo podrán tener una experiencia diferente, a menos que los que enseñan la Biblia despierten y comiencen a vivir en un estado de completa consagración ellos mismos? Y como consecuencia insistan en la consagración total como la gran condición indispensable del discipulado.</p>
+
+        <p>Ahora, amado, ¿no es asombroso que teniendo el versículo que hasta aquí hemos estudiado, y otros similares, la iglesia insista tan poco en que un estado de completa consagración es algo indispensable?</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Ídolos en el Corazón: Morir al Egoísmo</h2>
+
+        <p>Renunciar a todo lo que tienes y morir al egoísmo es indispensable para poder gozar de Dios y de Cristo. Una esposa disfruta la compañía de su esposo en la proporción en la que su corazón está inmerso en el de él. Su presencia no es un gusto para ella si no lo ama. Si tiene otros amantes, la presencia de él no es más que una molestia para ella. Es igual contigo. A menos que estés supremamente dedicado a Cristo, Su presencia será sólo una molestia para ti.</p>
+
+        <p>¿Te das cuenta por qué Él corta cualquier dependencia de algún ídolo? Él te cela con celo santo. Si Él te ve apostatar e ir en pos de ídolos o de otros deseos, Él a menudo, intervendrá y los quitará de tu camino.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>El Camino de la Salvación</h2>
+
+        <p>La doctrina de la consagración total no es una doctrina nueva. Es tan antigua como la Biblia misma, como la verdadera piedad.</p>
+
+        <p>Los inconversos saben ahora lo que tienen que hacer para ser cristianos. Deben renunciar a su egoísmo y volverse suprema y desinteresadamente personas dedicadas a hacer el bien sirviendo a Dios. Deben cambiar su corazón, renunciar a todo lo que poseen y consagrar su todo a Cristo.</p>
+
+        <p>Rehusarte a hacer esto, o dejar de hacerlo, es continuar en un estado de injusticia y rebelión contra Dios. Es rehusarse a rendirle a Dios lo que Le pertenece. Es negarse a volverse una persona honesta, a hacer lo correcto porque es correcto. Hasta que hagas esto Dios no puede y no debe perdonarte.</p>
+
+        <p>Y déjame recordarte una vez más, que cuando vas a Dios en oración para ser oído, debes ir consciente de que cumples esta condición. Recuerda que:</p>
+
+        <div class="scripture">
+            "...si nuestro corazón nos reprende, mayor que nuestro corazón es Dios, y Él sabe todas las cosas. Amados, si nuestro corazón no nos reprende, confianza tenemos en Dios; y cualquiera cosa que pidiéremos la recibiremos de él, porque guardamos sus mandamientos, y hacemos las cosas que son agradables delante de él. Y este es su mandamiento: Que creamos en el nombre de su Hijo Jesucristo, y nos amemos unos a otros como nos lo ha mandado"
+            <span class="scripture-ref">1 Juan 3:20-23</span>
+        </div>
+
+        <p>Por lo tanto, acuérdate de cumplir con la condición para que puedas disfrutar la enseñanza de Cristo. A menos que seas su discípulo, tú no puedes ser salvo. Y no puedes ser su discípulo a menos que: <span class="red-emphasis">"renuncies a todo lo que posees".</span></p>
+
+        <div class="highlight-box">
+            <p style="font-size: 0.9rem; text-align: center;"><span class="emphasis">* Esta es una traducción adaptada. Los subtítulos y énfasis son de los editores. El título original es: "Entire Consecration: A condition of discipleship" por Charles G. Finney. Tomado del libro Principles of Consecration. Compilado por L.G. Parkhurst, Jr. (Minneapolis: Bethany House Publishers, 1990).</span></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - ¿Eres un verdadero discípulo de Jesús?<br>
+    Por Charles G. Finney
+</footer>
+</body>
+</html>

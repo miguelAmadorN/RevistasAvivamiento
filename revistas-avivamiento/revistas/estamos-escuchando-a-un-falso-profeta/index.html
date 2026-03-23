@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Estamos escuchando a un falso profeta? - David Wilkerson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .characteristic-list {
+            margin: 20px 0 20px 30px;
+        }
+
+        .characteristic-list li {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por David Wilkerson</div>
+            <div>¿ESTAMOS ESCUCHANDO A UN FALSO PROFETA?</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>El pueblo de Dios debe estar consciente de que es su responsabilidad personal, analizar que las enseñanzas que esté recibiendo, ya sean en su congregación, en una campaña evangelística, o en un evento especial, sean 100% Bíblicas. No importa que tan famoso sea un evangelista, ni que tan hermoso se oiga el mensaje de un pastor, necesitamos revisar nuestras Biblias para comprobar que el alimento espiritual que recibimos no sea una mezcla de errores y verdades. Fue Jesús quien dijo: <span class="emphasis">"Y conoceréis la verdad, y la verdad os hará libres"</span> [Juan 8:32], pero recordemos que cuando la verdad contiene 50% de mentira ya no es la verdad, sino un error bien disfrazado.</p>
+
+        <p>Toda aquella persona sincera que está buscando crecimiento espiritual, libertad del pecado y la opresión; paz y comunión profunda con Dios, y que no está obteniendo resultados, debería comenzar por revisar que tipo de mensajes está escuchando. Es posible que en muchos casos estemos oyendo a algún falso profeta que está minando sutilmente nuestra vida espiritual, cuando estamos deseando tener un verdadero avivamiento personal en nuestras vidas. Debemos tener especial cuidado con aquellos predicadores que con hermosos y floridos mensajes nos hacen sentir bien, cuando en realidad deberían estar señalándonos nuestros pecados y errores, para nosotros poder quitar lo que estorba en nuestra relación con Dios.</p>
+
+        <p>La Biblia enseña que reconocer a un falso maestro no es tarea fácil: suelen ser amables, sonrientes y de apariencia bonachona. Mateo 7:15 dice que parecen cristianos, y hablan mucho de las cosas de Dios. Ezequiel 13:10 enseña que suelen prometer a la gente muchas bendiciones, y Lucas 6:26 nos explica que son muy populares con la gente. Esto precisamente, porque evitan predicar claramente contra el pecado. Recordemos también que los falsos ministros operan dentro de las iglesias; No fuera de ellas y Jesús dijo que en los últimos tiempos habría muchos de ellos engañando a la gente [Mateo 24:24]. ¡Y cómo no van a engañar a la gente! Pues si hacemos un resumen de lo anterior, nos daremos cuenta que los falsos líderes no son gente extraña, o desequilibrada mentalmente, sino amable, popular, con apariencia perfecta de cristianos y que aparte prometen grandes bendiciones a todos. ¡Son gente muy agradable!</p>
+
+        <p>Leamos la descripción que de ellos hace Juan Wesley, uno de los más reconocidos maestros cristianos de todos los tiempos y una autoridad en cuanto al tema:</p>
+
+        <div class="highlight-box">
+            <p>"Otra clase hay: la de los hombres bonachones, que llevan una vida fácil, no haciendo daño a nadie, quienes no se molestan con el pecado exterior, ni con la justicia interior; hombres que no se hacen notables, ni de un modo ni de otro, ni a favor ni en contra de la religión; cuya vida es muy regular tanto en público como en privado, pero que no pretenden ser más estrictos que sus prójimos. Un ministro de esta clase, no sólo uno o unos cuantos de los mandamientos muy pequeños de Dios, sino también todas las virtudes mayores y de más peso de la ley, que se refieren al poder de la piedad, y todas las que requieren que conservemos en temor todo el tiempo de nuestra peregrinación; que nos ocupemos de nuestra salvación con temor y temblor; que tengamos siempre nuestros lomos ceñidos, nuestra lámpara ardiendo; que porfiemos o agonicemos "a entrar por la puerta angosta". [Lc. 13:24] Y así enseñar a los hombres con todo el ejemplo de su vida; con el tenor general de su predicación, la que por lo general tiende a lisonjear en su sueño agradable a los que se imaginan que son cristianos, y no lo son; a persuadir a todos los que están bajo su ministerio a seguir descansando y durmiendo. Nada extraño será por consiguiente, que tanto él como los que le siguen despierten juntos en las llamas eternas."</p>
+            <p class="scripture-ref">"Sermones", Juan Wesley, Casa Nazarena de Publicaciones, Tomo II, Kansas E.U.A., 1984</p>
+        </div>
+
+        <p>Juan Wesley enseña que un falso profeta como el allí descrito, llevará a la condenación eterna a sus oyentes, y si lo analizamos bien, tiene lógica; pues los mensajes tibios suelen producir que la gente tome a la ligera el pecado, y eso por naturaleza lleva a una vida de inmoralidad y libertinaje. ¡Qué peligroso!</p>
+
+        <p>Nuestro sincero deseo y oración es que Dios le dé discernimiento espiritual a todos nuestros lectores en estos tiempos difíciles, para que dejen de escuchar a cualquier persona que caiga en la categoría de un falso profeta.</p>
+
+        <p>Esperamos que el Espíritu Santo utilice a nuestro hermano David Wilkerson en su mensaje titulado, <span class="emphasis">"Los profetas de la comodidad"</span> para darnos una base sólida y Bíblica para adquirir este discernimiento tan importante para la salud eterna de nuestras almas.</p>
+
+        <div class="editors-note">
+            Atentamente<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">LOS PROFETAS DE LA COMODIDAD</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por: David Wilkerson</div>
+
+    <div class="content-section">
+        <p>Ezequiel se enfrentó solo contra todos los falsos profetas de Israel. Estos profetas no estaban predicando el mensaje de rectitud moral y de juicio inminente. En vez de esto, ellos profetizaban que era de paz, comodidad y prosperidad.</p>
+
+        <p>Ezequiel 13 es la palabra de Jehová contra aquellos predicadores y profetas que apapachaban a las personas con mensajes agradables a la carne, que decían eran del Señor. Sus palabras fueron maquinadas para hacer al pueblo de Dios sentirse cómodo en momentos en que más bien, el pueblo se enfrentaba a un juicio inminente de parte de Dios.</p>
+
+        <p>Ezequiel se encontraba horrorizado al ver a los profetas que habían desarrollado un arte de hacer al pueblo de Dios sentirse cómodo. El Señor dijo:</p>
+
+        <div class="scripture">
+            "Cualquier hombre de la casa de Israel que hubiere puesto sus ídolos en su corazón, y establecido el tropiezo de su maldad delante de su rostro, yo Jehová responderé, ya que se han apartado de mí todos ellos por sus ídolos"
+            <span class="scripture-ref">Ezequiel 14:4-5</span>
+        </div>
+
+        <p>La verdadera palabra del Señor era:</p>
+
+        <div class="scripture">
+            "Hijo de hombre, come tu pan con temblor, y bebe tu agua con estremecimiento y con ansiedad. Y di al pueblo de la tierra: su tierra será despojada de su plenitud, por la maldad de todos los que en ella moran. Y las ciudades habitadas quedarán desiertas, y la tierra será asolada; Porque no habrá más visión vana, ni habrá adivinación de lisonjeros..."
+            <span class="scripture-ref">Ezequiel 12:18-24</span>
+        </div>
+
+        <p>Mientras Ezequiel estaba llamando al pueblo a la humildad y al arrepentimiento, tratando de preparar al pueblo de Dios para los juicios que pronto vendrían, estos profetas de la comodidad profetizaban los sueños e imaginaciones de sus propios corazones. Dios no les había hablado, y aún así ellos introducían sus profecías diciendo: <span class="emphasis">"Escuchad lo que dice el Señor..."</span> Dios dijo:</p>
+
+        <div class="scripture">
+            "Ha dicho Jehová, y Jehová no los envió"
+            <span class="scripture-ref">Ezequiel 13:6</span>
+        </div>
+
+        <p><span class="red-emphasis">YO NO LOS ENVIÉ. ELLOS NO HABLAN POR MÍ.</span></p>
+
+        <p>Parecía que cargaban con ellos almohadas cómodas para ponerlas bajo cada codo de aquellos que les seguían para oír sus falsas profecías. Ellos ponían "velos mágicos" sobre las cabezas de cada uno de sus discípulos, esto significaba que ellos les estaban declarando a otros: -Muy buenos tiempos están por delante. No veremos sino paz y lujo-.</p>
+
+        <p>Ezequiel les habló fuertemente la palabra de Dios cuando las multitudes se congregaban a oír las palabras placenteras y agradables de los falsos profetas.</p>
+
+        <div class="scripture">
+            "y ven para ella visión de paz, no habiendo paz, dice Jehová el Señor..."
+            <span class="scripture-ref">Ezequiel 13:16</span>
+        </div>
+
+        <div class="scripture">
+            "andan en pos de su propio espíritu, y nada han visto"
+            <span class="scripture-ref">Ezequiel 13:3</span>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Igual que en los tiempos de Ezequiel, es ahora</h2>
+
+        <p>¡Los profetas de la comodidad están todavía entre nosotros! Ellos hablan acerca de la palabra de Dios, acerca de profecía, y sazonan sus suaves mensajes con mucha Escritura. Pero hay una falsedad en lo que ellos predican. No están predicando la cruz, la santidad y la separación. No hacen demandas a los que los escuchan. Muy pocas veces hablan de pecado y de juicio. Aborrecen el solo mencionar el tema de sufrimiento y dolor. Para ellos, los héroes de la fe del libro de los Hebreos fueron cobardes, sin fe y perdedores sin dinero, quienes tenían miedo a -reclamar sus derechos-.</p>
+
+        <p>Tal como los profetas de la comodidad de Israel, su único deseo es promover estilos de vida lujosa y hacer a las personas sentirse cómodas en su búsqueda de la buena vida. Ellos no están hablando de parte de Dios.</p>
+
+        <p>Todo lo que ellos están haciendo es hacer sentir cómoda a la gente en sus pecados. Con razón las multitudes se congregan para sentarse a escuchar sus mensajes. Estos mensajes no son el llamado de Cristo para negarse a uno mismo y tomar la cruz.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿Cómo diferenciamos a un falso profeta, de un verdadero seguidor de Dios?</h2>
+
+        <p>¿Cuál es la diferencia entre los profetas de la comodidad, y los verdaderos profetas de Jehová? El creyente que no conoce la diferencia, está en un terreno peligroso. Con tantos que andan por ahí reuniendo enormes congregaciones, es imperativo tener discernimiento del Espíritu Santo. Los profetas que están confundiendo a la gente deberán ser confrontados y expuestos por la verdad. La mayoría de ellos se ven y se oyen sinceros, hombres de Dios, amantes de la Biblia. Pero el Señor ha dado a su pueblo pruebas infalibles para probar lo que es verdadero y lo que es falso. Debemos probar cada hombre y cada mensaje a través de toda la Palabra de Dios.</p>
+
+        <p>Permíteme llamar tu atención a tres características de un verdadero profeta de Dios.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>I. Un verdadero hombre de Dios vive consumido por una visión del Señor Jesucristo</h2>
+
+        <p>Un verdadero ministro está tan sumergido, tan profundamente dirigido y capacitado por esa hermosa y gloriosa visión, que no puede hablar de nada más. Él predica todo el consejo de la Palabra de Dios --siendo Cristo glorificado en todo-.</p>
+
+        <div class="scripture">
+            "Porque no he rehuido anunciaros todo el consejo de Dios"
+            <span class="scripture-ref">Hechos 20:27</span>
+        </div>
+
+        <p>Dios dijo de los falsos profetas:</p>
+
+        <div class="scripture">
+            "¡Ay de los profetas insensatos, que andan en pos de su propio espíritu, y nada han visto!"
+            <span class="scripture-ref">Ezequiel 13:3</span>
+        </div>
+
+        <p>Aun de Moisés se escribió:</p>
+
+        <div class="scripture">
+            "Por la fe dejó a Egipto, no temiendo la ira del rey; porque se sostuvo como viendo al Invisible"
+            <span class="scripture-ref">Hebreos 11:27</span>
+        </div>
+
+        <p>Jesús dijo de Abraham:</p>
+
+        <div class="scripture">
+            "Abraham vuestro padre se gozó de que había de ver mi día; y lo vio, y se gozó"
+            <span class="scripture-ref">Juan 8:56</span>
+        </div>
+
+        <p>Esteban tuvo una gloriosa visión de Él.</p>
+
+        <div class="scripture">
+            "Y dijo: He aquí, veo los cielos abiertos, y al Hijo del Hombre que está a la diestra de Dios"
+            <span class="scripture-ref">Hechos 7:56</span>
+        </div>
+
+        <p>Ananías dijo a Pablo:</p>
+
+        <div class="scripture">
+            "El Dios de nuestros padres te ha escogido para que conozcas su voluntad, y veas al Justo, y oigas la voz de su boca"
+            <span class="scripture-ref">Hechos 22:14</span>
+        </div>
+
+        <p>A sus propios discípulos, Jesús dijo:</p>
+
+        <div class="scripture">
+            "Todavía un poco, y el mundo no me verá más; pero vosotros me veréis"
+            <span class="scripture-ref">Juan 14:19</span>
+        </div>
+
+        <p>Lo que cada uno de estos hombres de Dios tenían en común fue una vida controlada por la visión de Cristo el Señor. Cristo fue su más grande y único motivo de vivir. Ellos vieron a Cristo a través del ojo de la fe.</p>
+
+        <p>Moisés voluntariamente dejó la comodidad y la prosperidad de Egipto para sufrir privaciones en un desierto, porque él había sido transformado y perfeccionado por una visión de Cristo. Nada más le importaba, ni aun su sueño de convertirse en el gran libertador. Él vio más allá de cualquier ambición humana. Él se apartó de todo lo que era terrenal porque había visto a Cristo. Él pudo soportarlo todo, porque nada en la tierra podía compararse con lo que sus ojos espirituales contemplaron.</p>
+
+        <p>Abraham se volvió totalmente apartado de este mundo y voluntariamente llegó a ser un extranjero en la tierra, porque sus ojos estaban puestos en la ciudad cuyo arquitecto constructor es Dios [Ver Hebreos 11:9-10]. Pero sobre todo él había visto una visión de Cristo en su trono en aquella Santa Ciudad. Nunca volvió a tener puesta su atención en las cosas terrenales o temporales. Su fe era edificada sobre su continua visión de Cristo. Él se regocijaba y estaba contento, porque tenía sus ojos puestos en lo invisible, lo eterno, ¡Cristo!</p>
+
+        <p>Desde el momento en que Pablo le vio todo lo demás aquí en la tierra se convirtió en basura [estiércol, en el griego original] para él. Desde el momento en que Cristo fue revelado en él, Pablo determinó no saber de nada más entre los hombres sino su Señor.</p>
+
+        <div class="scripture">
+            "Pero cuantas cosas eran para mi ganancia, las he estimado como pérdida por amor de Cristo. Y ciertamente, aún estimo todas las cosas como pérdida por la excelencia del conocimiento de Cristo Jesús, mi Señor, por amor del cual lo he perdido todo, y lo tengo por basura, para ganar a Cristo, y ser hallado en él, no teniendo mi propia justicia, que es por la ley, sino la que es por la fe de Cristo, la justicia que es de Dios por la fe; a fin de conocerle, y el poder de su resurrección, y la participación de sus padecimientos, llegando a ser semejante a él en su muerte"
+            <span class="scripture-ref">Filipenses 3:7-10</span>
+        </div>
+
+        <p>Él alegremente soportó trabajos, naufragios, que lo apedrearan, azotes, privaciones y cárceles. Ninguna de estas cosas lo movieron de su fe porque él se gloriaba en su visión del Señor. [Ver 2 Corintios 11:23-28].</p>
+
+        <p>Cualquier hombre de Dios que está atado a esta tierra o a las cosas de este mundo no ha visto nada. Si él tuviera una visión de Cristo, si él estuviera en constante unión con Cristo, él no podría predicar de nada más. Él se pararía ante las multitudes, proclamando: ¡Estimo todas las cosas como pérdida --todo lo tengo por basura [estiércol]-! Es Cristo y Él solamente. Él es todo; Él llena todas las cosas. Él es toda mi vida.</p>
+
+        <p>Tal como sucedió a Isaías, el verdadero hombre de Dios que ve al Señor, alto y sublime, caerá sobre su rostro y llorará por sus pecados y los pecados del pueblo de Dios. Entonces él será limpiado y purificado e irá en el poder de su grandiosa visión a predicar a Cristo.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Los falsos profetas se interesaban mucho en el dinero</h2>
+
+        <p>Dios le advirtió a Israel:</p>
+
+        <div class="scripture">
+            "Como zorras... fueron tus profetas"
+            <span class="scripture-ref">Ezequiel 13:4</span>
+        </div>
+
+        <p>En otras palabras, algunos no tienen ni siquiera un simple ojo enfocado en Cristo, sino que tienen los ojos llenos de avaricia. Despojan y roban la viña, tomando lo mejor para ellos mismos. ¡Andan en sus propios caminos, alimentando su propio ego!</p>
+
+        <p>Estos profetas que buscaban lo de ellos mismos, decían y enfatizaban que habían oído la voz de Dios. Reclamaban que era una palabra profética directamente del cielo. Dicen:</p>
+
+        <div class="scripture">
+            "Ha dicho Jehová, y Jehová no los envió; con todo, esperan que Él confirme la palabra de ellos"
+            <span class="scripture-ref">Ezequiel 13:6</span>
+        </div>
+
+        <p>Las multitudes del pueblo de Dios, quienes corren a acercarse para oír mensajes tibios solamente necesitan tomarse un segundo, y honestamente mirar y observar lo que están oyendo y creyendo.</p>
+
+        <div class="scripture">
+            "¿No habéis visto visión vana, y no habéis dicho adivinación mentirosa, pues que decís: Dijo Jehová, no habiendo yo hablado?"
+            <span class="scripture-ref">Ezequiel 13:7</span>
+        </div>
+
+        <div class="scripture">
+            "por cuanto engañaron a mi pueblo, diciendo: Paz, no habiendo paz..."
+            <span class="scripture-ref">Ezequiel 13:10</span>
+        </div>
+
+        <p>Su mensaje era: Dios me ha dicho que todo está bien. No hay problemas en los tiempos venideros. ¡Buenos tiempos! No vendrá juicio o tribulación. El deseo de Dios es que todos estemos felices, prósperos y descansadamente... El Señor le llama a esto engaño.</p>
+
+        <p>Yo no creo que los ministros estén tomando suficientemente en serio la tragedia de predicar el mensaje equivocado. ¡Cómo nos atrevemos a predicar paz y buenos tiempos continuos e interminables, a un mundo y a un pueblo que están al borde del juicio de Dios! [Ver 1 Timoteo 6:3-11].</p>
+
+        <p>El pecado de Israel estaba a punto de ser castigado en fuegos increíbles de la ira divina.</p>
+
+        <p>Veamos lo que Dios estaba tratando de decir a su pueblo:</p>
+
+        <div class="scripture">
+            "Por tanto, así ha dicho Jehová el Señor: Como la madera de la vid entre los árboles del bosque, la cual di al fuego para que la consumiese, así haré a los moradores de Jerusalén. Y pondré mi rostro contra ellos; aunque del fuego se escaparon, fuego los consumirá... cuando pusiere mi rostro contra ellos. Y convertiré la tierra en asolamiento, por cuanto cometieron prevaricación, dice Jehová el Señor"
+            <span class="scripture-ref">Ezequiel 15:6-8</span>
+        </div>
+
+        <p>El pueblo rechazó la verdadera Palabra de Dios. Las masas corrieron tras sus maestros para oír el mensaje engañoso: -Dios no es esa clase de Dios. Él desea únicamente lo mejor para todos nosotros. Gran paz y buenos tiempos están por delante. No escuchen a los profetas que predican condenación. Dios me ha dicho directamente desde su trono que lo mejor está por venir- [Ver 2 Timoteo 4:1-4].</p>
+
+        <p>Yo te pregunto a ti: ¿Qué harán estos profetas de la comodidad, cuando Dios comience a juzgar los pecados de esta nación y les quite su pan y su plenitud? Piensa en las multitudes de cristianos sinceros que no están preparados, quienes deberían estar arrepintiéndose de su tibieza; estar llorando por causa de su conformidad con el pecado y de su avaricia; deberían estar dejando y abandonando todo en vez de estar acumulando bienes materiales.</p>
+
+        <p>Gracias a Dios, el Espíritu Santo está levantando un pueblo santo, que está harto de todos los ministerios centrados en sí mismos, y su clamor es: "Queremos ver a Jesús".</p>
+
+        <p>El evangelio centrado en el hombre no puede perdurar mucho tiempo más. Un tiempo de limpieza está por delante. Nos estamos dirigiendo a fuegos de refinamiento. Mientras que los cristianos tibios y avaros se echan a sus anchas a descansar en sus lechos de quietud, comodidad y lujos; un remanente se separará e irá en busca del Novio. Cristo se va a revelar al humilde, al pobre de espíritu, y la verdadera Palabra de Dios fluirá hacia otros con unción y poder. La unión con Cristo se convertirá en la perla de gran precio.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>II. El verdadero hombre de Dios predica y practica el negarse así mismo</h2>
+
+        <p>¡Compara esto con lo que los falsos profetas de la comodidad enfocan en sus mensajes! Dios dijo de ellos:</p>
+
+        <div class="scripture">
+            "Y Habéis de profanarme entre mi pueblo por puñados de cebada y por pedazos de pan... mintiendo a mi pueblo"
+            <span class="scripture-ref">Ezequiel 13:19</span>
+        </div>
+
+        <p>Una traducción moderna a este versículo es: "Estos profetas tienen dinero en sus mentes. El dinero les ha hecho mentirosos".</p>
+
+        <p>He aquí un retrato completo de un profeta falso. Él permite que su imaginación corra desenfrenadamente. Él opera en la idea que la prosperidad durará para siempre. Edifica sobre sueños y planes. Para hacerlo necesita dinero --mucho dinero-. Su necesidad de dinero se convierte en el enfoque de su ministerio. Él termina diciendo mentiras al pueblo de Dios para conseguirlo. Entonces él lo contamina todo diciendo: "Dios me dijo...".</p>
+
+        <p>El mensaje de Jesucristo es dolorosamente directo: NIÉGATE A TÍ MISMO Y TOMA TU CRUZ.</p>
+
+        <div class="scripture">
+            "Entonces Jesús dijo a sus discípulos: Si alguno quiere venir en pos de mí, niéguese a sí mismo, y tome su cruz, y sígame"
+            <span class="scripture-ref">Mateo 16:24</span>
+        </div>
+
+        <p>Negarse así mismo ¡Qué concepto tan extraño en estos días de tantos mensajes acariciadores y cómodos! Estos profetas de la comodidad lo han rechazado por completo. Negarse a sí mismo es el abandonar y renunciar a todo lo que impide la presencia constante de Cristo.</p>
+
+        <p>No hay ningún mérito en negarse así mismo. Somos salvos por gracia solamente. No se trata de ganar los beneficios de Dios. Para negarse así mismo, quita todo lo que impide tener una comunión constante con Cristo. Pablo dijo,</p>
+
+        <div class="scripture">
+            "Sino que golpeo mi cuerpo, [lo disciplino] y lo pongo en servidumbre, no sea que habiendo sido heraldo para otros, yo mismo venga a ser eliminado"
+            <span class="scripture-ref">1 Corintios 9:27</span>
+        </div>
+
+        <p>No estamos poniendo nuestros cuerpos bajo control; nuestras pasiones y apetitos no están bajo sujeción. Programas sensuales de televisión actualmente estimulan los apetitos carnales entre los "cristianos" hacia la pornografía. La lujuria y la sensualidad están casi fuera de control, aun entre los "cristianos". Casi a diario escucho de pastores y hermanos que pasan horas viendo películas y cassettes pornográficos.</p>
+
+        <p>Multitudes del pueblo de Dios, incluyendo predicadores del Evangelio, desperdician un tiempo precioso ante el ídolo de la televisión. Tal como Lot, nuestras mentes están siendo perturbadas por las cosas que vemos y oímos.</p>
+
+        <p>La comida se está convirtiendo en el vicio de los creyentes. No necesitamos cocaína o alcohol, tenemos una droga legalizada: la comida. Nunca en todo el tiempo que tengo de convertido he visto tantos cristianos con apetitos fuera de control.</p>
+
+        <p>La verdad más profunda acerca de negarse a sí mismo va más allá de despojarnos de las cosas materiales. Tú puedes vender tu televisión, huir de todos los sonidos e imágenes eróticas, traer todos los apetitos de la carne bajo control, y aún no haberte negado a ti mismo.</p>
+
+        <p>Lo que Cristo está pidiendo, es una clase de devoción hacia Él mismo, que eche fuera del corazón todo lo que impide una profunda unión con Cristo. Es un compromiso a convertirnos en absolutamente nada ante Dios y los hombres. Es estar completamente dispuesto a decir como Pablo:</p>
+
+        <div class="scripture">
+            "Ya no vivo yo", --es Cristo viviendo en mí--
+            <span class="scripture-ref">Gálatas 2:20</span>
+        </div>
+
+        <p>El mundo deberá perder su encanto para nosotros. Debemos morir a toda ambición personal --a todas las ataduras de las cosas terrenales--, hasta que podamos decir honestamente: "Yo estoy muerto a este mundo y todo lo que representa. Ya no vivo yo".</p>
+
+        <p>Físicamente vivo, ¡sí! Pero debo morir a todo lo que impida mi visión y amor por Cristo. Cualquier cosa que sea, deberá irse. ¿Lujuria, sensualidad, lascivia? ¿Planes de nuestro propio yo? ¿Amarguras, enemistades, rencores, envidias, malos sentimientos?</p>
+
+        <p>¿Ansias de reconocimiento? ¿Autoestima? Debo morir a todo esto. Debo traerlo todo a la cruz y ejecutar un juicio de mi propia persona.</p>
+
+        <p>¿Por qué los cristianos que están a punto de morir se separan tanto del mundo y de las cosas físicas y materiales? Es porque la eternidad está a la vista. Todo palidece en comparación al gozo que está por delante. ¿Por qué no podemos vivir así todo el tiempo? ¿Por qué no mantenemos nuestras mentes fijas en Cristo en todo tiempo?</p>
+    </div>
+
+    <div class="content-section">
+        <h2>III. Un verdadero hombre de Dios expone con atrevimiento santo el pecado -¡él nunca encubre la maldad!-</h2>
+
+        <p>Los profetas de la comodidad no tienen fundamento de santidad sobre el cual edificar. Ezequiel dijo:</p>
+
+        <div class="scripture">
+            "...y será descubierto su cimiento..."
+            <span class="scripture-ref">Ezequiel 13:14</span>
+        </div>
+
+        <p>Los profetas falsos estaban construyendo paredes con mezcla de cal y arena sin consistencia, o sea como un lodo suelto, y pintadas las grietas por encima con cal para blanquear las paredes.</p>
+
+        <p>Lo peor de todo, es que con su mensaje y la manera en que lo decían:</p>
+
+        <div class="scripture">
+            "entristecisteis con mentiras el corazón del justo... y fortalecisteis las manos del impío, para que no se apartase de su mal camino..."
+            <span class="scripture-ref">Ezequiel 13:22</span>
+        </div>
+
+        <p>Y ellos "fortalecieron las manos del impío". Dios les acusó de estar enviando al infierno las almas por no hablarles contra el pecado. La ligereza en cuanto al pecado únicamente los confirmaba más a seguir envueltos en sus pecados.</p>
+
+        <p>Dios no permitirá a ningún ministro del evangelio entristecer, perturbar o afligir a sus escogidos y seguidores devotos y sinceros sin su previo conocimiento. Pero tampoco permitirá Dios que los profetas de la comodidad le llamen a lo malo, bueno, y apapachen a los cristianos apóstatas que necesitan arrepentirse.</p>
+
+        <p>Ciertamente estamos llamados a predicar el Evangelio de gracia, misericordia y perdón. Pero al hombre de Dios también se le ordena -levantar su voz, hablar fuertemente y no detenerse, para mostrarle al pueblo de Dios sus pecados-.</p>
+
+        <div class="scripture">
+            "Clama a voz en cuello, no te detengas; alza tu voz como trompeta, y anuncia a mi pueblo su rebelión, y a la casa de Jacob su pecado"
+            <span class="scripture-ref">Isaías 58:1</span>
+        </div>
+
+        <p>¿Podrá ser que no podamos levantar un patrón de santidad a causa de la corrupción en nuestros propios corazones? ¿Podrán nuestros propios pecados quitarnos ese atrevimiento santo de exponer el pecado? ¿Estaremos pasando por alto los pecados de otros, a causa de los pecados habituales en nuestros corazones?</p>
+
+        <p>¿Conoces algún hombre de Dios que hable con determinación contra el pecado? ¿Su mensaje proviene no de una moralidad externa, sino de una profunda pureza personal? Entonces siéntate y escucha su mensaje, porque él tiene la verdad que te hará libre. Él es un verdadero profeta de Dios, y hará a todos los profetas temblar y temer. Los profetas de la prosperidad le despreciarán porque él camina con la verdad en su interior.</p>
+
+        <p>¡Busca este mensaje de Dios que haga a Cristo real en ti! Que te convenza de tu tiempo desperdiciado y de que te estás volviendo hacia las cosas de este mundo. Que te señalará y te expondrá el pecado.</p>
+
+        <p>Los falsos profetas están edificando sus enormes paredes. Ellos se ven muy exitosos y bendecidos. Pero Jehová dice:</p>
+
+        <div class="scripture">
+            "caerá; y enviaré piedras de granizo que la hagan caer, y viento tempestuoso la romperá... Así desbarataré la pared y la echaré a tierra"
+            <span class="scripture-ref">Ezequiel 13:11-14</span>
+        </div>
+
+        <div class="highlight-box">
+            <p>Dios nos ha dicho que en estos últimos días nuestros jóvenes verán visiones. No de éxito, o prosperidad o de grandes hazañas. <span class="red-emphasis">Habrá una visión para todos: ¡CRISTO!</span></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - ¿Estamos escuchando a un falso profeta?<br>
+    Por David Wilkerson
+</footer>
+</body>
+</html>

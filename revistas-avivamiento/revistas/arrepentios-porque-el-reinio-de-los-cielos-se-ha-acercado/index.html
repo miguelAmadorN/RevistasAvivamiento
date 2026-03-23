@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrepentíos, porque el Reino de los Cielos se ha acercado - Eiren Israel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .revival-story {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 4px solid #8B0000;
+        }
+
+        .revival-title {
+            font-size: 1.5rem;
+            color: #8B0000;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Eiren Israel</div>
+            <div>ARREPENTÍOS, PORQUE EL REINO DE LOS CIELOS SE HA ACERCADO</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>Es el contenido del primer mensaje de Jesús para la humanidad registrado por Mateo. Las razones para este mensaje son sencillas; el reino de los cielos es algo tan sublime y hermoso que nadie puede comprenderlo y mucho menos entrar en él sin haberse arrepentido de corazón. Cuando Jesús dijo <span class="red-emphasis">ARREPENTÍOS</span> no se refería a lo que la mayoría de la gente cree; no se refería a una simple confesión a Dios de los pecados para luego salir y seguir siendo el mismo; tampoco se refería a sentir un poco de remordimiento, o al dejar los pecados más escandalosos de nuestras vidas.</p>
+
+        <p>Jesús usó la palabra griega <span class="hebrew-word" style="font-weight:bold; color:#8B4513;">METANOEO</span> que quiere decir <span class="emphasis">"cambio de dirección, de mentalidad y de metas, sintiendo profunda vergüenza por haber ofendido a Dios con nuestra manera de vivir"</span>. Actualmente es muy común que la gente pase por alto esta gran verdad. Aún en gente que ha hecho una profesión de fe, que se ha bautizado o confesado a Jesús como Salvador falta el gran elemento: el arrepentimiento bíblico. Cuando éste está ausente, la persona vive una vida de derrota, depresión y esclavitud al pecado. Independientemente de que haya hecho algún compromiso cristiano, la persona persiste en sentir un vacío espiritual y falta de poder. En otras palabras; aún no ha entrado al reino de los cielos. ¿Es éste su caso amado lector? Si es así, usted podrá encontrar en este número de nuestra revista: QUÉ ES ARREPENTIRSE DE VERDAD y cuáles son las grandes bendiciones espirituales que esto le puede traer a su vida. Incluimos también la historia de un avivamiento de arrepentimiento en Escocia que transformó la vida de congregaciones enteras... ¡y aun de un pueblo entero! Que el Espíritu Santo traiga a su vida una gran convicción de pecado, y hambre y sed de un genuino arrepentimiento. Esa es nuestra oración.</p>
+
+        <div class="editors-note">
+            ATENTAMENTE<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">ARREPENTÍOS: EL MENSAJE QUE PREDICÓ JESÚS</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por Eiren Israel</div>
+
+    <div class="content-section">
+        <p>El propósito de este estudio es dejar bien claro que Jesús, sus apóstoles, y los grandes siervos de Dios a través de la historia, predicaron arrepentimiento y, que fuera de este mensaje no puede haber entrada en el reino de los cielos, ni a la vida de libertad y felicidad que promete la Biblia. En especial me dirijo a aquellos muchos que, si son honestos consigo mismos, saben que están viviendo en frustración y amargura porque no han recibido las bendiciones que la Biblia dice.</p>
+
+        <p>También me dirijo a aquellos que profesan ser cristianos pero que actualmente se sienten secos y vacíos, aún cuando alguna vez confesaron a Jesús como su salvador. Me dirijo a todas aquellas personas que nunca atendieron al hecho de que el mensaje clave de Jesús era que primero se arrepintieran.</p>
+
+        <p>Quienquiera que seas, en dondequiera que estés, no importa tu posición o condición, busca el arrepentimiento de que habló Jesús.</p>
+
+        <div class="scripture">
+            "Desde entonces comenzó Jesús a predicar, y a decir: Arrepentíos, porque el reino de los cielos se ha acercado."
+            <span class="scripture-ref">Mateo 4:17</span>
+        </div>
+
+        <p>El primer mensaje que predicó Jesús a la humanidad fue de arrepentimiento. Durante 30 años el Hijo de Dios, el Salvador del mundo mantuvo silencio. Durante esos años vio las familias destruidas por culpa de un padre alcohólico, vio el sufrimiento que causa un mal ambiente familiar por culpa de alguien amargado, Jesús vio como se oprimía a los trabajadores por parte de empresarios avaros, miró como la gente casada se traicionaba mutuamente, vio que la gente religiosa era hipócrita porque era una en la iglesia y otra en su casa, vio a Dios lastimado por esa conducta, vio al hombre mismo herido, vio aun a los niños afectados por el descuido de sus padres. Cuando Jesús abrió su boca para comenzar su misión de salvar al mundo salió un solo mensaje: <span class="red-emphasis">"ARREPIÉNTANSE"</span>.</p>
+
+        <p>¡El Hijo de Dios llegó con una respuesta clara y definitiva para la raza humana! Él vino a traer SOLUCIONES REALES y a enseñar la verdad. ¡Qué importante! Cuando Él abrió su boca no habló de psicología, ni de filosofía, ni de ciencia, ni de religión. Tampoco dijo hagan rezos, vayan a misa, canten himnos o únanse a tal o cual denominación. ¡Ni siquiera dijo a la gente que hicieran devocionales por las mañanas o que empezaran a leer la Biblia! Él dijo: <span class="red-emphasis">ARREPIÉNTANSE</span>. Él dejó muy claro que la primera clave para poder entrar en las bendiciones de Dios es tener un genuino arrepentimiento.</p>
+
+        <p><span class="red-emphasis">SIN ARREPENTIMIENTO NO HAY ENTRADA AL REINO DE LOS CIELOS</span>, y esto lo dejó establecido desde su primer mensaje. Si hubiera habido otro mensaje más urgente para la humanidad seguramente Él lo habría dicho, pero no fue así.</p>
+
+        <p>Hay que arrepentirse para poder entrar al reino de los cielos. Esta verdad NUNCA podrá ser alterada, pues fue dicha por Dios mismo hecho carne. Recordemos que Jesús dijo que los cielos y la tierra pasarían pero que SU PALABRA nunca pasaría.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿ARREPENTIMIENTO? ¿A QUÉ SE REFERÍA JESÚS?</h2>
+
+        <p>Cuando Jesús dijo arrepentíos no se refería a sentir un poco de remordimiento por haber hecho algo malo; tampoco a hacer una confesión de pecados para después volver a lo mismo; ni siquiera quería decir que nos apartáramos de ciertos pecados escandalosos como el emborracharse, matar o adulterar; o que entráramos al proceso de cambiar poco a poco nuestros hábitos. Jesús no estaba dando clases de moralización o <span class="emphasis">"buenos consejos para que nos vaya bien en la vida"</span>, o <span class="emphasis">"para ser mejores"</span>. Él le estaba gritando a la humanidad su realidad: <span class="red-emphasis">"TODO está mal en tu vida"</span>. <span class="red-emphasis">"No hay NADA bueno"</span>. <span class="red-emphasis">"Necesitas un cambio TOTAL y DE RAÍZ en tu manera de pensar y de vivir"</span>. La palabra original que usó Jesús, viene del griego METANOIA y quiere decir: <span class="emphasis">"cambio total de MENTALIDAD y de acciones sintiendo vergüenza por haber ofendido a Dios"</span>. ¿Entonces qué quería decir Jesús? El ABANDONO TOTAL de los pecados que una persona practica en su vida diaria. Si esto le parece difícil, añadiré aún algo más; No sólo es DEJARLOS, sino COMENZAR a hacer lo contrario (por ejemplo si robaba, ahora trabajo y ayudo a otros). ¿Parece complicado? Pues no sólo es eso sino abandonar los pecados y malos caminos DE BUENA GANA y GUSTOSO, hacerlo porque estamos CONVENCIDOS de que ya hemos ofendido mucho a Dios (de nada vale el <span class="emphasis">"dejar"</span> pecados si la persona no está convencida en su mente, y en tal caso no hay un arrepentimiento verdadero).</p>
+
+        <p>En resumen, arrepentirse es <span class="red-emphasis">ABORRECER EL PECADO</span> (cada quien sabe cuáles son sus pecados personales), <span class="red-emphasis">RECHAZARLO</span> y <span class="red-emphasis">COMENZAR</span> a hacer aquello que sabemos que agrada a Dios porque estamos CONVENCIDOS de haber insultado a Dios con nuestras malas acciones. Eso quiso decir Jesús y eso, y sólo eso, es tener un arrepentimiento bíblico. Arrepentirse es hacer precisamente aquello que muchos dicen que es IMPOSIBLE. <span class="emphasis">"¡Cómo!"</span> gritan escandalizados. <span class="emphasis">"¿Quiere decir que tengo que DEJAR mi borrachera, mi rencor, y mi lujuria?"</span> ¡Exactamente! y no sólo eso, sino DEJAR CUALQUIER OTRO pecado en su vida. Sin DEJAR o ABANDONAR los pecados no ha habido arrepentimiento, no importa cuántas lágrimas o confesiones haya habido, y por cierto, hay que dejarlos de buena gana y sin quejarse. <span class="emphasis">"¡Es imposible!"</span> dicen muchos. Amigo, Jesús NUNCA pide cosas imposibles. Todo lo que Él pide es perfectamente posible cuando hay un cambio de mentalidad y dolor por haber ofendido a Dios. Este es el concepto bíblico, eso es tener un genuino arrepentimiento.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LOS 4 EVANGELIOS DEMUESTRAN QUE JESÚS PREDICÓ ARREPENTIMIENTO</h2>
+
+        <div class="scripture">
+            En Mateo 4:17 el dijo: "Arrepentíos porque el reino de los cielos se ha acercado".
+            <span class="scripture-ref">Mateo 4:17</span>
+        </div>
+
+        <div class="scripture">
+            En Marcos 1:14-15 se lee: "... Jesús vino a Galilea predicando el Evangelio del reino de Dios, diciendo: El tiempo se ha cumplido y el reino de Dios se ha acercado ARREPENTÍOS, y creed en el evangelio".
+            <span class="scripture-ref">Marcos 1:14-15</span>
+        </div>
+
+        <div class="scripture">
+            En Lucas 13:5 Jesús clamó a las multitudes: "... antes si no os ARREPENTÍS, todos pereceréis igualmente".
+            <span class="scripture-ref">Lucas 13:5</span>
+        </div>
+
+        <p>En el evangelio de Juan, Jesús explicó que el mundo lo odiaba por predicar arrepentimiento. Miremos el texto en el capítulo 7 versículo 7:</p>
+
+        <div class="scripture">
+            "No puede el mundo aborreceros a vosotros; mas a mí me aborrece, porque yo testifico de él, que sus obras son malas."
+            <span class="scripture-ref">Juan 7:7</span>
+        </div>
+
+        <p>¡Los 4 evangelios nos gritan que Jesús le dio prioridad al arrepentimiento y que en todo tiempo trataba de que la gente entendiera esto! Esto es tan claro que una vez dijo <span class="emphasis">"no he venido a llamar a justos sino a pecadores AL ARREPENTIMIENTO"</span> ¡Él dejó el mismo cielo y bajó a la tierra para hacerle entender a la gente que sin arrepentirse no puede haber salvación. Qué clara es la Biblia.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>JESÚS ESTÁ MÁS INTERESADO EN EL ARREPENTIMIENTO DE LAS PERSONAS QUE EN LA SANIDAD DE LOS CUERPOS</h2>
+
+        <p>Actualmente vemos mucho énfasis en las sanidades y en los milagros pero Jesús dejó muy claro que el gran propósito que tenían los milagros que Él hacía era solamente que la gente se arrepintiera y se apartara de sus pecados.</p>
+
+        <div class="scripture">
+            "Entonces comenzó a reconvenir a las ciudades en las cuales había hecho muchos de sus milagros, porque no se habían arrepentido, diciendo: ¡Ay de ti, Corazín! ¡Ay de ti, Betsaida! Porque si en Tiro y en Sidón se hubieran hecho los milagros que han sido hechos en vosotras, tiempo ha que se hubieran arrepentido en cilicio y en ceniza. Por tanto os digo que en el día del juicio, será más tolerable el castigo para Tiro y para Sidón, que para vosotras"
+            <span class="scripture-ref">Mateo 11:20-22</span>
+        </div>
+
+        <p>Él no hacía milagros para entretener una audiencia o sólo para aliviar la necesidad humana pues sabía que aunque la gente sanara si no se arrepentía iría al infierno. Cuando sanó a un paralítico le dijo claramente <span class="emphasis">"mira has sido sanado; no peques más para que no te venga alguna cosa peor"</span> (Jn. 5:14). Jesús esperaba arrepentimiento en ese individuo y SE LO DEJÓ MUY CLARO. Actualmente hay un número cada vez mayor de predicadores que hablan de sanidad y milagros pero no de arrepentimiento. ¿Podemos creer que vienen de parte de Dios cuando no predican el mensaje que Jesús predicó?</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¡ARREPENTIMIENTO FUE EL MENSAJE QUE JESÚS RECIBIÓ DIRECTAMENTE DE SU PADRE!</h2>
+
+        <p>En el evangelio de Juan, Jesús dejó muy claro que el mensaje que Él predicó lo recibió directamente del Padre.</p>
+
+        <div class="scripture">
+            "Porque yo no he hablado por mi propia cuenta; el Padre que me envió, él me dio mandamiento de lo que he de decir, y de lo que he de hablar."
+            <span class="scripture-ref">Juan 12:49</span>
+        </div>
+
+        <p>Eso quiere decir que el evangelio de arrepentimiento es un mensaje DIVINO, y muy importante que no debe ser ALTERADO ni tampoco IGNORADO.</p>
+
+        <p>¡Qué importante es saber esto para tener una buena actitud ante las predicaciones de arrepentimiento que escudriñan intensamente nuestros corazones! Qué importante es saber que DIOS MISMO le encomendó este mensaje a su Hijo y que eso es exactamente lo que Él quería decirle a la humanidad para poder ayudarla. Jesús no inventó el mensaje; no lo copió de nadie, era Dios mismo hablando a todos los hombres. <span class="emphasis">"¡Arrepiéntanse!"</span> <span class="emphasis">"¡Sus vidas están mal!"</span> <span class="emphasis">"¡Abandonen sus pecados!"</span> <span class="emphasis">"¡Vuélvanse a Dios!"</span> <span class="emphasis">"¡No peques más!"</span> Ese era el mensaje que resonó y conmovió Israel en ese entonces, y es lo que necesitamos hoy en día. ¡Ay del hombre o mujer que se atreve a decir que no es necesario pues está haciendo a Dios mentiroso! ¡Ay del que lo altera pues evita que la gente entre al reino de Dios! ¡Ay del que lo QUITA pues Dios quitará su parte del libro de la vida! (Ap. 22:19).</p>
+    </div>
+
+    <div class="content-section">
+        <h2>JESÚS MANDÓ QUE SE PREDICARA ARREPENTIMIENTO EN TODOS LOS PAÍSES</h2>
+
+        <p>A sus discípulos Jesús mandó a predicar arrepentimiento.</p>
+
+        <div class="scripture">
+            "Y les mandó que no llevasen nada para el camino, sino solamente bordón; Ni alforja, ni pan, ni dinero en el cinto... Y saliendo, predicaban que los hombres se arrepintiesen."
+            <span class="scripture-ref">Marcos 6:8 y 12</span>
+        </div>
+
+        <p>Y después de su resurrección MANDÓ que el mensaje que convertiría a las naciones sería ese. Él no les dio otro.</p>
+
+        <div class="scripture">
+            "y que se predicase en su nombre el arrepentimiento y el perdón de pecados en todas las naciones, comenzando desde Jerusalén."
+            <span class="scripture-ref">Lucas 24:47</span>
+        </div>
+
+        <p>Él nunca dijo a sus discípulos que le hablaran a la gente de humanismo o de prosperidad económica o de religión. Él les dio el mismo MENSAJE que había recibido de su Padre y ellos lo predicaron fielmente.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>EL ÚLTIMO MENSAJE DE JESÚS A LAS IGLESIAS CRISTIANAS FUE DE ARREPENTIMIENTO</h2>
+
+        <p>Aun para los que ya se habían arrepentido una vez, Jesucristo LES VOLVIÓ a predicar arrepentimiento, pues era necesario para su restauración.</p>
+
+        <div class="scripture">
+            "Por tanto, arrepiéntete; pues si no, vendré a ti pronto, y pelearé contra ellos con la espada de mi boca."
+            <span class="scripture-ref">Apocalipsis 2:16</span>
+        </div>
+
+        <div class="scripture">
+            "Yo reprendo y castigo a todos los que amo; sé, pues, celoso, y arrepiéntete."
+            <span class="scripture-ref">Apocalipsis 3:19</span>
+        </div>
+
+        <p>Los dos pasajes terminan diciendo <span class="emphasis">"el que tiene oídos, oiga lo que el Espíritu dice a LAS IGLESIAS"</span>. Esto es lo que Él está diciéndonos hoy.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LOS APÓSTOLES PREDICARON EL MISMO MENSAJE</h2>
+
+        <p>El apóstol Pedro lleno del Espíritu Santo predicó que lo primero que un hombre necesita para salvarse es arrepentirse.</p>
+
+        <div class="scripture">
+            "Pedro les dijo: Arrepentíos, y bautícese cada uno de vosotros en el nombre de Jesucristo para perdón de los pecados; y recibiréis el don del Espíritu Santo."
+            <span class="scripture-ref">Hechos 2:38</span>
+        </div>
+
+        <p>Después repitió el mismo mensaje a más de cinco mil personas.</p>
+
+        <div class="scripture">
+            "Así que, arrepentíos y convertíos, para que sean borrados vuestros pecados; para que vengan de la presencia del Señor tiempos de refrigerio."
+            <span class="scripture-ref">Hechos 3:19</span>
+        </div>
+
+        <p>¡Dios no iba a bendecir a aquella gente a menos que tuvieran un genuino arrepentimiento!</p>
+
+        <p>Pablo, el instrumento escogido por Dios para escribir una gran parte del Nuevo Testamento, maestro y experto en las Escrituras que en una ocasión visitó el Paraíso siempre habló un claro mensaje de arrepentimiento, tanto en estudios bíblicos por los hogares como públicamente. La Biblia lo registra así:</p>
+
+        <div class="scripture">
+            "y como nada que fuese útil he rehuido de anunciaros y enseñaros, públicamente y por las casas, testificando a judíos y a gentiles acerca del arrepentimiento para con Dios, y de la fe en nuestro Señor Jesucristo."
+            <span class="scripture-ref">Hechos 20:20-21</span>
+        </div>
+
+        <div class="scripture">
+            "Pero Dios, habiendo pasado por alto los tiempos de esta ignorancia, ahora manda a todos los hombres en todo lugar, que se arrepientan."
+            <span class="scripture-ref">Hechos 17:30</span>
+        </div>
+
+        <div class="scripture">
+            "Por lo cual, oh rey Agripa, no fui rebelde a la visión celestial, sino que anuncié primeramente a los que están en Damasco, y Jerusalén, y por toda la tierra de Judea, y a los gentiles, que se arrepintiesen y se convirtiesen a Dios, haciendo obras dignas de arrepentimiento."
+            <span class="scripture-ref">Hechos 26:19-20</span>
+        </div>
+
+        <p>¿Por qué no hablaba otra cosa? ¡Él sabía el secreto para que una persona tuviera la bendición de Dios! Amado amigo, ¡cómo necesitamos ese mensaje hoy! ¡Cuánta derrota y miseria espiritual hay en muchas vidas por falta de un profundo arrepentimiento! ¡Cuántos se han perdido y no entraron al cielo por no atender a este divino mensaje! Aunque muchos predicadores modernos prediquen otra cosa la Biblia lo sigue gritando: sin arrepentimiento no hay bendición. Necesitamos oír enseñanzas que nos expongan, que nos quebranten, que nos hablen las cosas claras y por su nombre para que venga convicción de pecado y haya un profundo arrepentimiento. ENTONCES VEREMOS LA BENDICIÓN DE DIOS y entraremos al nivel de vida y poder espiritual que la Biblia enseña.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LOS PREDICADORES MÁS USADOS POR DIOS EN LA HISTORIA CRISTIANA PREDICARON ARREPENTIMIENTO</h2>
+
+        <h3>JUAN WESLEY</h3>
+        <p>Juan Wesley, es considerado por muchos estudiosos como uno de los predicadores más grandes de todos los tiempos. El poder de Dios era tan grande cuando él predicaba que a veces la gente caía al suelo impactada por su predicación. Literalmente miles de almas fueron llevadas a una vida victoriosa por medio de él. El predicaba, primeramente, arrepentimiento a todas las personas [Algunos de sus mensajes pueden ser leídos en el libro "Sermones de Juan Wesley"]. He aquí un fragmento de uno de sus mensajes dado a su congregación. Se puede apreciar el fuerte y claro mensaje de arrepentimiento.</p>
+
+        <div class="highlight-box">
+            <p><span class="emphasis">"¡Arrepiéntete! ¡Arrepiéntete! antes de que seas partido por la espada de dos filos que sale de la boca de Cristo (Ap. 1:16). Son ustedes los que están crucificando de nuevo a Cristo y avergonzándolo públicamente... ¡Tengan mucho cuidado! pues está para caerles el juicio de Dios... Vive Dios que "ni los fornicarios, ni los idólatras, ni los adúlteros, ni los afeminados... heredarán el reino de Dios""</span></p>
+            <p class="scripture-ref">[Tomado del libro John Wesley, editado por Albert C. Outler, Oxford University Press, 1964]</p>
+        </div>
+
+        <h3>JONATHAN EDWARDS</h3>
+        <p>Para muchos este predicador fue el maestro bíblico de más influencia en la teología de los Estados Unidos. Fue usado por Dios en un avivamiento que abarcó PUEBLOS ENTEROS y que se extendió por años. Los mensajes que predicaba hacían que la gente se arrepintiera inmediatamente y cambiara sus vidas por la gracia de Dios. Sus mensajes eran muy fuertes y de arrepentimiento. He aquí los títulos de algunos de sus predicaciones:</p>
+
+        <ul class="bible-list" style="margin-left: 30px;">
+            <li>"Pecadores en manos de un Dios airado".</li>
+            <li>"La justicia de Dios al condenar al pecador".</li>
+            <li>"Cómo serán los tormentos del infierno para el impío".</li>
+            <li>"La destrucción de los pecadores".</li>
+            <li>"Los hipócritas son siempre inconstantes en la oración".</li>
+        </ul>
+
+        <p class="scripture-ref">[Tomado de biografía de Jonathan Edwards, por Mx. Lesser, Twayne Publishers, 1988]</p>
+
+        <h3>CARLOS FINNEY</h3>
+        <p>Este evangelista ha sido llamado <span class="emphasis">"El mayor promotor de avivamientos espirituales desde el tiempo de los apóstoles"</span>. Otros lo llaman el padre de los movimientos del Espíritu Santo. Su biografía narra la impresionante historia de pueblos enteros que fueron transformados, cambiados y avivados y el mensaje respaldado por Dios siempre era el de arrepentimiento, franco y directo. Un dato importante es que 85% de las personas que se salvaban permanecían totalmente convertidas HASTA el fin de su vida. ¡Este mensaje no falla en producir resultados permanentes y vidas victoriosas!</p>
+    </div>
+
+    <div class="content-section">
+        <h2>CONCLUSIÓN</h2>
+
+        <p>Aunque no parezca elegante ni muy sofisticado el mensaje de arrepentimiento es el mensaje que Dios ha dado para nosotros. Aunque parezca demasiado duro y a veces lo sea, eso es lo que necesitamos oír para tratar con nuestros corazones. Es lo que necesitan oír las familias y nuestra sociedad perversa y cada vez más depravada. Lo necesitan oír políticos y religiosos; los ateos y aun las iglesias. Es el mensaje de Jesús. ¿Está su vida espiritual seca y vacía? ¿Está harto ya de ser esclavo de sus pecados y de su carácter? ¿Se da cuenta de que en su vida no hay poder ni victoria? Usted necesita alimentarse con fuertes y claros mensajes de arrepentimiento para que sacudan su alma y limpien todo lo que está estorbando. Usted necesita un profundo arrepentimiento.</p>
+    </div>
+
+    <div class="revival-story">
+        <div class="revival-title">AVIVAMIENTO EN LA ISLA DE LUIS, ESCOCIA</div>
+        <p style="font-style: italic;">Por Duncan Campbell (Tomado de la revista "La Trompeta de Dios", no. 63, may-jun 1990)</p>
+
+        <p>Ante todo, quiero decir que yo no produje el avivamiento en Luis, sino que empezó antes de que yo llegara a la isla.</p>
+
+        <h3 style="color: #8B0000;">¿QUÉ ES EL AVIVAMIENTO?</h3>
+        <p>Existen muchas opiniones en las iglesias de hoy, en cuanto a qué es un avivamiento. Hay una gran diferencia entre un avivamiento y una cruzada de evangelismo, esto último no es avivamiento, aunque doy gracias a Dios por cada alma alcanzada para Cristo por medio de tales esfuerzos y doy gracias a Dios por cada tiempo de bendición recibida en nuestras conferencias y convenciones, sin embargo tales esfuerzos, por lo común, no tocan al vecindario, y la inmensa mayoría de la gente se van precipitadamente hacia el infierno.</p>
+
+        <p>En un avivamiento, la comunidad repentinamente se conscientiza de la presencia de Dios. Él comienza a obrar entre su propia gente, y en cosa de pocas horas -no de días, sino de horas- las iglesias vienen a ser muy concurridas, no hay anuncio de reuniones especiales, pero pasa algo que atrae a hombres y mujeres a la casa de Dios. Dentro de horas, habrán veintenas de personas pidiendo perdón a Dios antes de siquiera llegar cerca de la iglesia.</p>
+
+        <p>En el avivamiento que hubo en tiempo de Jonathan Edwards, eso fue lo que pasó. En el avivamiento de Gales, eso fue lo que pasó. Y en el avivamiento más reciente en Luis, eso es lo que pasó. Dios se manifestó y súbitamente los hombres y las mujeres por todas partes de la parroquia fueron paralizados por temor a Dios.</p>
+
+        <h3 style="color: #8B0000;">CÓMO EMPEZÓ EL AVIVAMIENTO EN LUIS</h3>
+        <p>Un día al atardecer, una mujer ciega de 84 años, tuvo una visión. Esta anciana querida, Margarita, vio en la visión a la iglesia de sus padres llena de jóvenes y a un ministro desconocido en el púlpito. Estaba tan emocionada por esta visión que llamó al pastor y se la contó. El pastor de la colonia era un hombre que temía a Dios y anhelaba verlo obrando, había tratado muchas cosas para interesar a los jóvenes de la parroquia, pero ni siquiera un adolescente asistía a la iglesia.</p>
+
+        <p>¿Qué es lo que le dijo Margarita? -Estoy segura de que usted está anhelando ver a Dios obrar. ¿Qué piensa de convocar a los ancianos y diáconos y sugerirles que pasen dos noches por semana en oración a Dios? Ustedes han probado misiones; han probado evangelistas especiales. ¿Han probado a Dios?</p>
+
+        <p>El pastor humildemente obedeció. -Sí, convocaré la sesión, sugiriendo que nos juntemos los martes y viernes en la noche, para pasar toda la noche en oración. -Muy bien -respondió-, si ustedes hacen eso, mi hermana y yo nos arrodillaremos a las 10:00 pm cada martes y viernes, y nos quedaremos allí hasta las 4:00 de la mañana.</p>
+
+        <p>Así todos se concentraron en la oración. Tuvieron esta promesa de Dios, y con esa promesa suplicaron: <span class="emphasis">"Porque yo derramaré aguas sobre el sequedal, y ríos sobre la tierra árida"</span> (Isaías 44:3). En sus oraciones, según lo que dijo el pastor, ellos debían pedir vez tras vez: Señor, Tú eres un Dios que guarda tu pacto, y debes cumplir Tu promesa.</p>
+
+        <p>Las súplicas y las reuniones duraron por varios meses, luego, una noche, aconteció algo muy notable; estando de rodillas en medio de la paja en el granero, de repente un joven se puso de pie y leyó en voz alta una parte del Salmo 24: <span class="emphasis">"¿Quién subirá al monte de Jehová? ¿Y quién estará en su lugar santo? El limpio de manos y puro de corazón; el que no ha elevado su alma a cosas vanas, ni jurado con engaño. Él recibirá bendición de Jehová"</span> (v.v. 3-5), cerró su Biblia y mirando a los ojos del ministro y a los otros arrodillados allí, dijo: Hermanos, me parece que es tiempo perdido el orar como hemos estado orando, y esperar como hemos estado esperando, si nosotros mismos no tenemos relaciones debidas con Dios, entonces comenzó a orar: <span class="emphasis">"Señor, ¿están limpias mis manos? ¿Es puro mi corazón?"</span> Y aquel querido hombre no siguió más adelante, pronto se arrodilló y se extendió boca abajo en la paja. En cosa de pocos minutos, un poder se soltó en Barvas, el cual desconcertó a todos los habitantes de la isla.</p>
+
+        <h3 style="color: #8B0000;">¡DIOS SE MANIFESTÓ!</h3>
+        <p>El Espíritu Santo comenzó a obrar en medio de la gente. El pastor, describió lo que pasó la mañana siguiente y dice: <span class="emphasis">"Se encontró a Dios en el yermo; se le encontró en los hogares. Dios parecía estar en todas partes"</span>.</p>
+
+        <p>¿Y qué fue eso? ¡Fue avivamiento! No fue algo organizado a base de esfuerzo humano, sino que era toda la comunidad consciente de Dios, lo cual tuvo en suspenso a todos en el área, tanto así que todo trabajo se paró. La gente se reunió en grupos. Los jóvenes se reunían en el campo y comenzaron a hablar acerca de este fenómeno de parte de Dios, que saturaba la comunidad.</p>
+
+        <p>El relato continúa describiendo cómo el avivamiento se extendió, cómo cientos de personas se reunían en las iglesias a medianoche, cómo los bailes y tabernas se cerraban, y cómo catorce jóvenes que planeaban una fiesta fueron todos salvos, once de los cuales hoy sirven en la iglesia.</p>
+
+        <div class="highlight-box">
+            <p><span class="red-emphasis">¡CONVICCIÓN! ¡ANGUSTIA DEL ALMA!</span></p>
+            <p>Catorce jóvenes discutían acerca de cuánta cerveza debían traer a la parroquia para un baile el viernes. De pronto uno de ellos dijo a los otros: "Muchachos, aumentemos la cantidad, porque creo que esta es la última vez que llegará la cerveza a esta parroquia".</p>
+            <p>"Angus", dijo otro, "¿insinúas que el avivamiento va a llegar a esta parroquia impía?" "No puedo decir lo que va a acontecer, o que va a venir, pero algo pasa conmigo". Eso es todo lo que dijo, pero catorce jóvenes se arrodillaron al frente del salón de baile, quedándose allí por más de una hora. Como resultado, todos fueron salvos, y once desempeñan un cargo en la iglesia hoy en día.</p>
+        </div>
+
+        <p>¿Qué son los frutos del avivamiento? Podía contar sobre mis cinco dedos las personas que dejaron de asistir a las reuniones de oración. En Luis, y en las tierras altas de Escocia en general, no creerían que una persona que no asistía a los cultos de oración era cristiana, no más de lo que creerían que el diablo era cristiano. Cuando un alma renace, repentinamente uno está con hambre de reunirse con los que oran a Dios.</p>
+
+        <p>Los cultos de oración se volvieron muy concurridos. No había ni siquiera una parroquia en Luis que no tuviera a lo menos cinco cultos de oración. La prensa del pueblo anunció que había más gente asistiendo a los cultos de oración, que los que solían frecuentar el culto de mañana en el día de comulgar. Eso es una de las características notables en cuanto al fruto que se queda.</p>
+
+        <p>Y ha provenido de esas reuniones un movimiento entre los jóvenes, que está atravesando por toda la isla de Luis. Los jóvenes y las señoritas que en días anteriores hubieran estado yendo a ver las películas, al baile o a las tabernas, hoy día están asistiendo, por veintenas, a los cultos de oración. No digo que esto sea avivamiento -no en el mismo sentido de lo que experimentamos hace varios años- pero en las parroquias se encontrará desarrollándose cinco o seis cultos de oración. Primero están en la iglesia, después van a cenar un poco, luego van a varias casas para esperar en Dios hasta las dos de la mañana. Y en aquellos cultos de oración los jóvenes están entregándose a Cristo.</p>
+
+        <p>Otro rasgo en cuanto a los frutos, es el número de hombres y mujeres quienes han salido por tiempo completo en el ministerio y como misioneros.</p>
+
+        <p><span class="red-emphasis">¿Entiende usted lo que significa el avivamiento? Significa mirar obrar a Dios -el Dios de milagros-, obrando de una manera soberana y sobrenatural, manifestándose entre los hombres y mujeres, induciéndolos a entrar al Reino de Dios.</span></p>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - Arrepentíos, porque el Reino de los Cielos se ha acercado<br>
+    Por Eiren Israel
+</footer>
+</body>
+</html>

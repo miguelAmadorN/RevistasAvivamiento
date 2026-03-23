@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El casi cristiano - John Wesley</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .latin-quote {
+            font-style: italic;
+            font-family: 'Times New Roman', serif;
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin: 15px 0;
+            text-align: center;
+            color: #5a738f;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por John Wesley</div>
+            <div>EL CASI CRISTIANO</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>Estimados lectores: A pesar de que hace más de 250 años que Juan Wesley predicó este sermón, todavía conserva la misma fuerza y eficacia que cuando Dios se lo inspiró. El mismo efecto que produjo en la conciencia de los cristianos nominales de las religiones de su época, puede producir en nosotros y llevarnos a reflexionar respecto a nuestro cristianismo.</p>
+
+        <p>Es común hoy, como entonces que todo el mundo tenga sus particulares opiniones de lo que es el cristianismo. Por lo general no son más que eso: simples opiniones que carecen de sustento bíblico. Para unos, ser cristiano es tan simple como "aceptar a Cristo". Habrá quien enfatice el tratar de mejorar la calidad moral de vida. Otros impondrán una serie de requisitos inalcanzables y absurdos, dando importancia a lo que no tiene e ignorando la esencia del cristianismo.</p>
+
+        <p>El estándar de auténtico cristianismo que Wesley menciona es real: bíblico. Lo único aceptable por el Señor Jesucristo. Menos que eso es sólo religión sin alma; formas sin vida. Mero intentar ser cristiano en las propias fuerzas sin la consagración y el amor necesarios y sin la gracia de Cristo obrando efectivamente a favor de uno.</p>
+
+        <p>Amigo: ¿Está usted viviendo en el único estándar aceptable? Es más; ¿Cuántos conoce que lleven esta calidad de vida?</p>
+
+        <p>Oramos a Dios para que por medio de este escrito el cristianismo sea reivindicado a la altura y dignidad que merece nuestro Señor Jesucristo. Amén.</p>
+
+        <div class="editors-note">
+            Atentamente<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">EL CASI CRISTIANO</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por: John Wesley</div>
+
+    <div class="content-section">
+        <div class="scripture">
+            "Por poco me persuades a ser cristiano"
+            <span class="scripture-ref">Hechos 26:28</span>
+        </div>
+
+        <p>Existen muchas almas que hasta este punto llegan; pues desde que se estableció en el mundo el cristianismo, ha habido un sinnúmero, en todas épocas y de todas nacionalidades, que casi se han decidido a ser cristianos. Mas viendo que nada vale ante la presencia de Dios, el llegar tan sólo hasta este punto, es de la mayor importancia que consideremos:</p>
+
+        <p><span class="emphasis">PRIMERO</span>, lo que significa ser casi cristiano.<br>
+            <span class="emphasis">SEGUNDO</span>, lo que es ser cristiano por completo.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>CARACTERÍSTICAS DEL "CASI CRISTIANO"</h2>
+
+        <p><span class="red-emphasis">I.-</span> El ser casi cristiano quiere decir: En primer lugar, la práctica de la justicia pagana; y no creo que ninguno ponga en duda mi afirmación, puesto que la justicia pagana abraza no sólo los preceptos de sus filósofos, sino también esa rectitud que los paganos esperan unos de otros y que muchos de ellos practican. Sus maestros les enseñan: Que no deben ser injustos, ni tomar lo que no les pertenece sin el consentimiento de su dueño; que a los pobres no se debe oprimir, ni hacer extorsión a ninguno; que en cualquier negocio que tengan con ellos, no se ha de engañar ni defraudar a ricos, ni a pobres; que no priven a nadie de sus derechos y si fuere posible, que nada deban a ninguno.</p>
+
+        <p><span class="red-emphasis">2.-</span> Más aún: La mayoría de los paganos reconocían la necesidad de rendir tributo a la verdad y a la justicia y aborrecían, por consiguiente, no sólo al que juraba en falso, poniendo a Dios por testigo de una mentira, sino también al que acusaba falsamente a su prójimo calumniándolo. En verdad que no tenían sino desprecio para los mentirosos de todas clases, considerándolos como la deshonra del género humano y la peste de la sociedad.</p>
+
+        <p><span class="red-emphasis">3.-</span> Además: Esperaban unos de otros cierta caridad y misericordia; cualquier ayuda que se pudieran prestar sin detrimento propio. Practicaban esta benevolencia, no sólo al prestar esos pequeños servicios humanitarios que no causan al que los hace gusto, ni molestias, sino también alimentando a los hambrientos; vistiendo a los desnudos con la ropa que les sobraba, y en lo general a los necesitados, lo que no les hacía falta. Hasta tal punto llegaba la justicia de los paganos; justicia que también poseen los que casi son cristianos.</p>
+
+        <p><span class="red-emphasis">4.-</span> La segunda cualidad del que casi es cristiano, es que tiene la apariencia de piedad, de esa piedad que se menciona en el Evangelio de Jesucristo, que tiene las señales exteriores de un verdadero cristiano. Por consiguiente, los que casi son cristianos no hacen nada de lo que el Evangelio prohibe: no toman el nombre de Dios en vano; bendicen y no maldicen, no juran jamás, sino que sus contestaciones son siempre: sí, sí; no, no; no profanan el día del Señor, ni permiten que nadie lo profane, ni aún el extranjero que está adentro de sus puertas; evitan no sólo todo acto de adulterio, fornicación e impureza, sino aún las palabras y miradas que tienden a pecar de esa manera; más aún toda palabra ociosa, toda clase de difamación, critica, murmuración, "palabras deshonestas o truhanerías", cierta virtud entre los moralistas paganos; en una palabra, se abstienen de toda clase de conversación que no "sea buena para edificación" y que por consiguiente, contrista "al Espíritu Santo de Dios con el cual estáis sellados para el día de Redención".</p>
+
+        <p><span class="red-emphasis">5.-</span> Se abstienen de beber vino, de fiestas y glotonerías, y evitan hasta donde les es posible, toda clase de contención y disputas; procurando vivir en paz con todos los hombres. Si se les hace alguna injusticia, no se vengan, ni devuelven mal por mal. No injurian, no se burlan, ni se mofan de sus prójimos por razón de sus debilidades. Voluntariamente no lastiman, ni afligen, ni oprimen a nadie, sino que en todo hablan y obran conforme a la regla "todas las cosas que quisierais que los hombres hiciesen con vosotros, así también haced vosotros con ellos".</p>
+
+        <p><span class="red-emphasis">6.-</span> En la práctica de la benevolencia, no se limitan a obras fáciles y que cuestan poco esfuerzo, sino que trabajan y sufren en bien de muchos, a fin de proteger eficazmente a unos cuantos por lo menos. A pesar de los trabajos y las penas, todo lo que les viene a la mano, lo hacen según sus fuerzas, ya sea en favor de sus amigos o ya de sus enemigos; de los buenos o de los malos, porque no siendo "perezosos" en este o en cualquier otro "deber", hacen toda clase de bien, según tienen oportunidad a "todos los hombres" a sus almas lo mismo que a sus cuerpos. Reprenden a los malos, instruyen a los ignorantes, fortalecen a los débiles, animan a los buenos y consuelan a los afligidos. A los que duermen espiritualmente procuran despertar, y guiar a aquellos a quienes Dios ya ha movido al "Manantial Abierto... Para el pecado y la inmundicia", a fin de que se laven y queden limpios; amonestando también a los que ya son salvos por la Fe, a honrar en todo el Evangelio de Cristo.</p>
+
+        <p><span class="red-emphasis">7.-</span> El que tiene la forma de la santidad usa también de los medios de gracia, de todos ellos y siempre que hay la oportunidad. Con frecuencia asiste a la casa de Dios y no como algunos, quienes se presentan ante el Altísimo cargados de cosas de oro y joyería, mostrando vanidad en el vestido y ya sea por sus mutuas atenciones, impropias de la ocasión o su impertinente frivolidad, demuestran que no tienen la forma, ni el poder de la santidad. Rogamos a Dios que no hubiera entre nosotros algunas personas de esta clase, que entran al Templo mirando por todas partes y con todas las señales de indiferencia y descuido; si bien algunas veces parece que piden la bendición de Dios sobre lo que van a hacer; quienes durante el culto solemne se duermen o toman la postura más cómoda posible o conversan y miran para todas partes, como si no tuvieran nada serio que hacer y Dios estuviese durmiendo. Estos no tienen ni la forma de piedad; el que la posee, se postra con seriedad y presta atención a todas y cada una de las partes solemnes del culto; muy especialmente al acercarse a la Mesa del Señor, no lo hace liviana o descuidadamente, sino con tal aire, modales y comportamiento, que parece decir: "Señor, ten misericordia de mí, pecador".</p>
+
+        <p><span class="red-emphasis">8.-</span> Si a todo esto se añade la práctica de la oración con la Familia, que acostumbraban los jefes del hogar y consagrar ciertos momentos del día a la comunión con Dios en lo privado, observando una conducta irreprochable, tendremos una idea completa de aquellos que practican el cristianismo exteriormente y tienen la forma de la piedad. <span class="red-emphasis">Sólo una cosa les falta para ser casi cristianos: La sinceridad.</span></p>
+    </div>
+
+    <div class="content-section">
+        <h2>LA SINCERIDAD</h2>
+
+        <p><span class="red-emphasis">9.-</span> Sinceridad quiere decir un principio real, interior y verdadero de cristianismo, del cual emanan todas estas acciones exteriores. Y a la verdad, que si carecemos de este principio, no tenemos la justicia de los paganos, ni siquiera la suficiente para satisfacer las exigencias del poeta Epicureo. Aún ese falto de juicio en sus momentos sobrios decía:</p>
+
+        <div class="latin-quote">
+            "Operunt Pecare Boni Virtutis amore;<br>
+            Operunt Pecate Mali, Formidini Poenoe."
+        </div>
+
+        <p>"Por amor a la virtud dejan de pecar los Buenos; más los malos por temor al castigo"</p>
+
+        <p>De manera que si un hombre deja de hacer lo malo, simplemente por no incurrir en las penas, no hace ninguna gracia. "No te ajusticiaran" "No alimentarás a los cuervos colgado de un madero", dijo el pagano y en esto recibe su única recompensa. Pero ni aún en la opinión de este poeta es un hombre inofensivo éste, tan bueno como los paganos rectos. Por consiguiente, no podemos decir con verdad de una persona, quien, guiada por el móvil de evitar el castigo, la pérdida de sus amistades, sus ganancias o su reputación, se abstiene de hacer lo malo y práctica lo bueno, y usa todos los medios de gracia, que casi es cristiano. Si no tiene mejores intenciones en su corazón, es un hipócrita.</p>
+
+        <p><span class="red-emphasis">10.-</span> Se necesita, por lo tanto, de la sinceridad para este estado de casi cristiano; una intención decidida de servir a Dios y un deseo firme de hacer su voluntad. Significa el deseo sincero que el hombre tiene de agradar a Dios en todas las cosas; con sus palabras, sus acciones, en todo lo que hace y deja de hacer. Este propósito del hombre que casi es cristiano, afecta todo el tenor de su vida; es el principio que lo impulsa a practicar el bien, abstenerse de hacer lo malo y a usar los medios que Dios ha instituido.</p>
+
+        <p><span class="red-emphasis">11.-</span> En este punto, probablemente pregunten algunos: ¿"Es posible que un hombre pueda ir tan lejos y, sin embargo, no ser más que casi cristiano"? "¿qué otra cosa además se necesita para ser cristiano por completo"? En contestación diré: que según los oráculos sagrados de Dios y el testimonio de la experiencia, es muy posible avanzar hasta tal punto y sin embargo, no ser más que un casi cristiano.</p>
+
+        <p><span class="red-emphasis">12.-</span> Hermanos, grande "es la confianza con la que os hablo" "Perdonadme esta injuria" si declaro mi locura desde los techos de las casas para vuestro bien y del Evangelio. Permitidme pues, que hable con toda franqueza de mi mismo, como si hablare de otro hombre cualquiera; estoy dispuesto a humillarme para ser después exaltado; y a ser todavía más vil para que Dios sea glorificado.</p>
+
+        <p><span class="red-emphasis">13.-</span> Durante largo tiempo y como muchos de vosotros podéis testificar, no llegué sino hasta este punto; si bien usaba de toda diligencia para desterrar lo malo y tener una conciencia libre de toda culpa; "Redimiendo el tiempo" me aprovechaba de todas las oportunidades que se presentaban para hacer el bien a los hombres, usaba constante y esmeradamente de todos los medios de gracia tantos públicos como privados; procuraba observar la mejor conducta posible en todos lugares y toda hora y, Dios es mi testigo, hacía yo todo esto con la mayor sinceridad puesto que tenía vívidos deseos de servir al Señor y resolución firme de hacer su voluntad en todo; de agradar a Aquél que se había dignado llamarme a pelear "La Buena Batalla" y a echar mano de la vida eterna; sin embargo, mi conciencia me dice, movida por el Espíritu Santo, que durante todo ese tiempo yo no era más que un casi cristiano.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>EL AMOR: LA PRINCIPAL CARACTERÍSTICA DEL VERDADERO CRISTIANO</h2>
+
+        <p>Si me pregunta: ¿Qué otra cosa además de todo esto, significa el ser cristiano por completo? Contestaré:</p>
+
+        <p><span class="red-emphasis">1.-</span> En primer lugar, el amor de Dios quien así dice en su Santa Palabra: <span class="emphasis">"Amarás pues al Señor tu Dios de todo tu corazón y de toda tu alma, y de toda tu mente, y de todas tus fuerzas."</span> Ese amor que llena el corazón, que se posesiona de todos sus afectos y desarrolla las facultades del alma, empleándolas en toda su plenitud. El espíritu de aquél que de esta manera ama al Señor, de continuo se regocija en Dios su Salvador; su deleite está en el Señor, a quien de todas las cosas da gracias; todos sus deseos son de Dios y permanece en él la memoria de su nombre; su corazón a menudo exclama: <span class="emphasis">"¿A quién tengo yo en los cielos?"</span> <span class="emphasis">"Y fuera de ti nada deseo en la tierra"</span> Y ciertamente, ¿Qué otra cosa puede desear además de Dios? A la verdad que no el mundo, ni las cosas del mundo: Porque está crucificado al mundo y el mundo a él; "Ha crucificado la carne con sus deseos y concupiscencias;" más aún, está muerto a toda clase de soberbia porque "el amor... no se envanece;" sino que por el contrario como el que vive en el amor así "vive en Dios y Dios en él" y se considera a sí mismo menos que nada.</p>
+
+        <p><span class="red-emphasis">2.-</span> En segundo lugar, otra de las señales del verdadero cristiano, es el amor que profesa a sus semejantes, pues el Señor ha dicho: <span class="emphasis">"Amarás a tu prójimo como a ti mismo"</span>. Si alguno preguntase: "¿Quién es mi prójimo?" le contestaríamos: todos los hombres del mundo, todas y cada una de las criaturas de Aquél que es el Padre de los espíritus de toda carne. No debemos exceptuar a nuestros enemigos, ni a los enemigos de Dios y de sus propias almas, sino que los debemos amar como a nosotros mismos, como "Cristo nos ama a nosotros"; y el que quiera comprender esta clase de amor, que medite sobre la descripción que Pablo da de ella. <span class="emphasis">"Es sufrida, es benigna... no tiene envidia"</span> no juzga con ligereza; <span class="emphasis">"no se envanece"</span>, sino que convierte al que ama en humilde siervo de todos. El amor no hace nada indebido... no busca lo suyo, sino el bien de los demás y que todos sean salvos; <span class="emphasis">"no se irrita"</span>, sino que desecha la ira que solo existe en quien no ama; <span class="emphasis">"no se goza de la injusticia, más se goza de la verdad; todo lo sufre, todo lo cree, todo lo espera"</span>.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>OTRA CARACTERÍSTICA INDISPENSABLE: LA FE</h2>
+
+        <p><span class="red-emphasis">3.-</span> Aún hay otro requisito para ser verdaderamente cristiano, que pudiera considerarse por separado, si bien no es distinto de los anteriores, sino al contrario, la base de todos ellos: <span class="emphasis">"La Fe"</span>. Excelentes cosas se dicen de esta virtud en los Oráculos de Dios. <span class="emphasis">"Todo aquél que cree que Jesús es el Cristo, es nacido de Dios."</span> Dijo el discípulo amado. <span class="emphasis">"A todos los que le recibieron, les dio potestad de ser hechos hijos de Dios, a los que creen en su nombre."</span> <span class="emphasis">"Y esta es la victoria que vence al mundo, nuestra Fe"</span>. El Señor mismo declara que: <span class="emphasis">"El que cree en mí, aunque este muerto vivirá."</span></p>
+
+        <p><span class="red-emphasis">4.-</span> Nadie se engañe a sí mismo. "Necesario es ver claramente que la Fe que no produce arrepentimiento, amor y buenas obras, no es la fe viva y verdadera, sino está muerta y es diabólica; porque aún los demonios mismos creen que Jesucristo nació de una virgen; que hizo muchos milagros y declaró ser el Hijo de Dios; que sufrió una muerte penosísima por nuestras culpas y para redimirnos de la muerte eterna; que al tercer día resucitó de entre los muertos, que subió a los cielos y está sentado a la diestra de Dios Padre y que el día del Juicio vendrá otra vez a juzgar a los vivos y muertos. Estos artículos de nuestra Fe y todo lo que está escrito en el Antiguo y Nuevo Testamento, los demonios creen firmemente, y sin embargo, permanecen en su estado de condenación porque les falta esta verdadera Fe cristiana.</p>
+
+        <p><span class="red-emphasis">5.-</span> Consiste la verdadera y única Fe cristiana, Fe, en tener una plena seguridad y completa certeza de que Cristo nos ha salvado de la muerte eterna. Es una confianza firme y una certidumbre inalterable de que Dios nos ha perdonado nuestros pecados por los méritos de Cristo, y que nos hemos reconciliado con Él; lo que inspira amor en nuestros corazones y la obediencia de sus santos mandamientos.</p>
+
+        <p><span class="red-emphasis">6.-</span> Ahora bien, todo aquél que tenga esta Fe "que purifica el corazón" (Por medio del poder de Dios que reside en Él) de la soberbia, la ira, de los deseos impuros, "de toda maldad", "de toda inmundicia de carne y de Espíritu;" y por otra parte lo llena con un amor hacia Dios y sus semejantes, más poderoso que la misma muerte, amor que lo impulsa a hacer las obras de Dios; a gastar y gastarse a sí mismo, trabajando en bien de todos los hombres; que sufre con gozo los reproches por causa de Cristo, el que se burlen de él, lo desprecien, que todos lo aborrezcan, más aún, todo lo que Dios en su sabiduría permite que la malicia de los hombres o los demonios inflijan sobre él; cualquiera que tenga este Fe y trabaje impulsado por este amor, es no solamente casi, sino cristiano por completo.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>EXAMEN PERSONAL</h2>
+
+        <p><span class="red-emphasis">7.-</span> Más ¿Dónde están los testigos vivientes de todas estas cosas? Os ruego, hermanos, en la presencia de ese Dios ante quien están "el Infierno y la Perdición"... ¿Cuánto más los corazones de los hombres? "Que os preguntéis cada uno en vuestro corazón: ¿Pertenezco a ese número? ¿Soy recto, misericordioso y amante de la verdad, siquiera como los mejores paganos? Si así es, ¿Tengo solamente la forma exterior del cristiano? ¿Me abstengo de hacer lo malo, de todo lo que la Palabra de Dios prohibe? ¿Hago con todas mis fuerzas todo lo que me viene a la mano por hacer? ¿Uso de los medios instituidos por Dios siempre que se ofrece la oportunidad? ¿Y hago todo esto con el deseo sincero de agradar a Dios en todas las cosas?</p>
+
+        <p><span class="red-emphasis">8.-</span> ¿No tenéis muchos de vosotros la conciencia de encontraros muy lejos de ese estado de mente y corazón; de que ni siquiera estáis próximos a ser cristianos; de que no llegáis a la altura de la rectitud de los paganos; de que ni aún tenéis la forma de la santidad cristiana? Pues mucho menos ha encontrado Dios sinceridad en vosotros, el verdadero deseo de agradarle en todas las cosas. No habéis tenido ni la intención de consagrar todas vuestras palabras y obras, vuestros negocios y estudios, vuestras diversiones a su gloria. No habéis determinado ni siquiera deseado, hacer todo "en el nombre del Señor Jesús" y ofrecerlo todo como un sacrificio espiritual, agradable a Dios por Jesucristo.</p>
+
+        <p><span class="red-emphasis">9.-</span> Más suponiendo que hayáis determinado y decidido hacerlo ¿Será suficiente el hacer propósitos y el tener buenos deseos, para ser un verdadero cristiano? En ninguna manera. De nada sirven los buenos propósitos y las sanas determinaciones, a no ser que se pongan en práctica. Bien ha dicho alguien que "El Infierno esta empedrado de buenas intenciones." Queda por resolver la gran pregunta: ¿Está vuestro corazón lleno del amor de Dios? ¿Podéis exclamar con sinceridad: "¡Mi Dios y mi todo!"? ¿Tenéis otro deseo además de poseerlo en vuestro corazón? ¿Os sentís felices en el amor de Dios? ¿Tenéis en Él vuestra gloria, vuestra delicia y regocijo? ¿Lleváis impreso en vuestro corazón este mandamiento: "Que el que ama a Dios, ame también a su hermano"? ¿Amáis pues a vuestros semejantes como a vosotros mismos? ¿Amáis a todos los hombres, aún a vuestros enemigos y los enemigos de Dios, como a vuestra propia alma como Cristo os amó a vosotros? ¿Creéis que Cristo os amó y se dio a sí mismo por vosotros? ¿Tenéis Fe en su Sangre? ¿Creéis que el Cordero de Dios "ha quitado" vuestros pecados y los ha tirado como una piedra en lo profundo del mar? ¿Creéis que ha raído el decreto que os era contrario, quitándolo de en medio y clavándolo en la cruz? ¿Habéis obtenido la redención por medio de su sangre, aún la remisión de vuestros pecados? Y por último, ¿Da su Espíritu testimonio con vuestro espíritu de que sois hijos de Dios?</p>
+    </div>
+
+    <div class="content-section">
+        <div class="highlight-box">
+            <p>El Dios y Padre de nuestro Señor Jesucristo, que está en medio de nosotros, sabe que si algún hombre muere sin esta fe y sin este amor, mejor le fuera a tal hombre el no haber nacido. Despiértate, pues, tú que duermes e invoca a Dios; llámale ahora, en el día cuando se le puede encontrar; no le dejes descansar hasta que haga pasar todo "su bien delante de tu rostro", hasta que te declare el nombre del Señor "Jehová, fuerte, misericordioso y piadoso; tardo para la ira, y grande en benignidad y verdad; que guarda la misericordia en millares, que perdona la iniquidad, la rebelión y el pecado." Que ningún hombre os engañe, ni os detenga antes de que la hayáis obtenido, sino al contrario llamad de día y de noche a Aquél que "Cuando aún éramos pecadores, a su tiempo murió por los impíos", hasta que sepáis en quien habéis creído y podáis decir: "¡Señor Mío, y Dios Mío!" Orando sin cesar y sin desmayar hasta que podáis levantar vuestras manos hacia el cielo y decir, sé que vive por siempre: "Señor tú sabes todas las cosas; tú sabes que te amo."</p>
+        </div>
+
+        <p>Quiera el Señor que todos los que aquí estamos reunidos sepamos no solamente lo que es ser casi cristiano, sino verdaderos y completos cristianos; estando gratuitamente justificados por su gracia, por medio de la redención que es en Jesús; sabiendo que tenemos paz con Dios por medio de Jesucristo; regocijándonos con la esperanza de la gracia de Dios y teniendo el amor de Dios derramado en nuestros corazones por el Espíritu Santo que nos es dado.</p>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - El casi cristiano<br>
+    Por John Wesley
+</footer>
+</body>
+</html>

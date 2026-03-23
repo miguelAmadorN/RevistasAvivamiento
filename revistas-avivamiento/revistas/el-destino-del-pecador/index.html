@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El destino del pecador - Carlos G. Finney</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Carlos G. Finney</div>
+            <div>EL DESTINO DEL PECADOR</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <p>Para poder introducirnos en la esencia de este mensaje que hoy ponemos en sus manos, creemos necesario primero dar una breve reseña de su autor.</p>
+
+        <p>Carlos G. Finney, nació en Connecticut, Norteamérica en 1792 y murió en Oberlin, Estados Unidos, el 16 de agosto de 1875.</p>
+
+        <p>Si tuviéramos que describir su vida con una sola palabra, no encontraríamos otra mejor que la de Avivamiento. Su libro de "Lecturas de Avivamiento" ha sido un clásico por muchos años.</p>
+
+        <p>Finney se convirtió a Cristo después de terminar su carrera de abogado y fue cuando pronunció una frase que fue célebre en su época. <span class="emphasis">"El Señor Jesucristo me ha contratado para abogar por su causa y ya ve usted, que no puedo ocuparme en otro asunto".</span></p>
+
+        <p>Fue profesor de Teología en el Oberlin College; Pastor; predicador itinerante y promotor de despertamientos en comunidades y congregaciones donde tenía la oportunidad de predicar.</p>
+
+        <p>Su mensaje era incisivo, penetrante. Tenía un profundo conocimiento del corazón del hombre sin Cristo y presentaba sus mensajes con argumentos y lógica aplastante. Era la palabra adecuada para que el Espíritu Santo pudiera hacer la buena obra de convencer al pecador de sus pecados y abatir la soberbia y la justicia propia.</p>
+
+        <p>Usted podrá comprobar en este número que ponemos en sus manos, lo cierto de nuestras aseveraciones.</p>
+
+        <p>Léalo deseando un despertamiento en su alma, y el fiel Espíritu de Dios le hablará como lo hizo en los tiempos de su predicación.</p>
+
+        <div class="editors-note">
+            Atentamente<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">EL DESTINO DEL PECADOR</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por: Carlos G. Finney</div>
+
+    <div class="content-section">
+        <div class="scripture">
+            "El hombre que reprendido endurece la cerviz, de repente será quebrantado, y no habrá para él medicina."
+            <span class="scripture-ref">Proverbios 29:1</span>
+        </div>
+
+        <p>Al discutir este tema vamos a considerar:</p>
+
+        <p>I. Cuándo y cómo son reprobadas las personas.<br>
+            II. La intención de Dios al reprobar a los pecadores.<br>
+            III. Qué es endurecer la cerviz.<br>
+            IV. Qué quiere decir que el pecador será quebrantado de repente.<br>
+            V. Qué implica el que no habrá para él medicina.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>I. Cuándo y Cómo son reprobadas las personas.</h2>
+
+        <p>La reprobación de los pecadores por parte de Dios puede considerarse que abraza tres departamentos distintos, a saber: reprobación por medio de su Palabra, por medio de su Providencia y por medio del Espíritu. El tiempo de que dispongo sólo me permitirá hacer algunas sugerencias sobre cada uno de estos puntos.</p>
+
+        <p><span class="red-emphasis">1.</span> Dios reprueba al pecador por medio de su Palabra siempre que le presenta alguna verdad en su mente por medio de la Biblia que le muestra sus pecados, con lo cual le revela los deberes que no está cumpliendo. Cualquier revelación de deberes no cumplidos o de pecados cometidos es una reprobación por parte de Dios. Supongamos que eres un padre y que le indicas a tu hijo alguna negligencia cometida en el cumplimiento de su deber. Por medio de este acto repruebas a tu hijo. Puede haber junto con esto algún grado de advertencia o amenaza anunciado de modo explícito, o puede que no vaya incluido; en uno y en otro caso se trata de una reprimenda, porque hay que entender siempre que la amenaza de castigo va incluida. De ahí que si llamas la atención de tu hijo sobre algo en su conducta que te desagrada, este mismo acto es una reprobación. Del mismo modo cuando Dios, por medio de la verdad revelada de su Palabra, llama la atención del pecador al hecho del pecado, virtualmente le reprueba, y ésta es la intención de Dios al llamarle la atención sobre el hecho de su pecado.</p>
+
+        <p><span class="red-emphasis">2.</span> Por medio de la Providencia de Dios son reprobados los pecadores cuando sus proyectos egoístas sufren descalabros. Los hombres pecadores siempre están planeando maquinaciones egoístas, y Dios con frecuencia las desbarata, y lo hace con el propósito de reprobar a los que las proyectan. No podría reprenderlos de una manera más enfática que ésta.</p>
+
+        <p>Los pecadores a veces forman proyectos ambiciosos. El estudiante procura hacerse un gran nombre como erudito; en otras esferas, los hombres buscan renombre como soldados o de otras mil maneras ver sus nombres pregonados por la fama, pero Dios en su providencia destruye sus esperanzas, frustra sus planes y procura hacerles ver que sería mejor que procuraran tener sus nombres escritos en el libro de la vida del Cordero. De modo que borra su nombre del pergamino de la ambición tan pronto como ellos lo han escrito, como si quisiera mostrarles su locura, y los atrae para que lo escriban donde ningún poder del mundo lo puede borrar.</p>
+
+        <p>Además ocurre con frecuencia que los hombres, debido a su egoísmo, se meten en dificultades, quizá por el uso egoísta de sus propiedades, o quizás por permitirse licencias excesivas con su lengua, y Dios extiende una red alrededor de ellos y de repente están cogidos en ella y tienen que volver a pensar en sus caminos y experimentar las consecuencias de sus planes y añagazas egoístas. ¡Cuán a menudo vemos esto! Los hombres se apresuran a hacerse ricos, y empiezan planes codiciosos y egoístas con este propósito, pero Dios de repente los caza y los pone a pensar si quizás hay "un Dios en el cielo que observa los asuntos de los hombres". Otro se enreda en procesos en los tribunales y sus propiedades se disuelven como nieve en abril; y otro se lanza a especulaciones financieras temerarias, hasta que el Todopoderoso frunce el cejo y reprueba su insensatez.</p>
+
+        <p>De la misma manera que el hombre tiene mil maneras de desarrollar su egoísmo, Dios tiene mil maneras de hacerles volver atrás de sus planes y hacerles ver que "Su camino es una locura". En todos estos casos los hombres deberían considerarse, asimismo, como dentro de la red de la providencia de Dios. Dios los encuentra en el camino estrecho de su egoísmo y habla con ellos acerca de la vanidad y locura del curso que siguen.</p>
+
+        <p>Todo lo que sirve para hacer prestar la atención de los hombres sobre sus caminos debe ser considerado como una reprobación providencial. Así, cuando Dios hace acto de presencia entre los pecadores y se lleva a algunos de sus compinches de iniquidad, ¡Cuán solemnes resultan estas sus dispensaciones! ¡Cuántas veces he tenido oportunidad de considerar sus efectos! Con frecuencia he visto lo solemnes que se vuelven los pecadores en su actitud bajo la reprobación del Todopoderoso. Sus sentimientos se vuelven tiernos, su sensibilidad a la verdad es en gran manera estimulada. ¿Quién puede dejar de darse cuenta de que estos sucesos tienen el propósito de llamarles la atención y reprobar a los otros en el curso del pecado?</p>
+
+        <p>Todos los obstáculos que Dios interpone en el camino de su egoísmo son su reprobación. No se les puede considerar bajo otra luz.</p>
+
+        <p>Dios reprueba a veces a los pecadores en una forma que es más vívida aún. Me refiero al hecho que la Biblia llama "amontonar brasas sobre la cabeza del enemigo". Cuando alguien nos injuria nuestra venganza ha de ser hacerle todo el bien que está en nuestro poder hacerle. Esta es la mejor venganza. Dios hace esto muchas veces con los pecadores. Cuando ellos pecan y le ultrajan, la forma en que les contesta es enviarles una lluvia de bendiciones. Prospera sus propiedades, aumenta su familia, sonríe a todos sus esfuerzos. ¡Cuán extrañamente contrastan estas misericordias con los insultos del pecador a su benefactor!</p>
+
+        <p>Puedo recordar algunos casos de esta clase en mi propia experiencia, cuando la propia conciencia de culpa me hacía darme cuenta de algunos grandes juicios de Dios. Pero precisamente entonces Dios parecía revelarme su bondad y su amor de una manera más notable y mostrar la gran bondad de su corazón. ¡Oh, qué reprobación de mis pecados fue aquella! ¿Podía haber algo que quebrantara mejor mi corazón? ¿Quién no conoce el poder de la bondad que derrite el corazón?</p>
+
+        <p>A veces la enfermedad ha de ser considerada como una reprobación de Dios. Cuando las personas, con motivos egoístas, abusan de su salud y Dios la retira, en una forma convincente les reprueba por su locura.</p>
+
+        <p>Algunas veces permite que las vidas de los hombres pasen por grandes riesgos a fin de que se hallen a un paso de la muerte; como si en este movimiento de su providencia hubiera un clarinazo que les advirtiera que se aproxima su sentencia.</p>
+
+        <p><span class="red-emphasis">3.</span> Dios reprueba también a los hombres con su Espíritu. Según las enseñanzas de nuestro Salvador, el Espíritu "redargüirá al mundo de pecado, de justicia y de juicio". De aquí que cuando los pecadores se sienten especialmente convictos de pecado deben saber que Dios en persona ha venido a reprobarlos. Su Espíritu viene a sus mismos corazones y causa impresiones de la verdad y del deber en ellos, revelando al pecador lo que es su propio corazón, y mostrando cuán gran disparidad hay entre él y un corazón lleno de amor divino.</p>
+
+        <p>No tengo duda de que en el presente, como en el pasado, Dios reprueba a los hombres de sus pecados por medio de sueños. Si todos los casos fidedignos de esta clase que han ocurrido desde los tiempos bíblicos hubieran sido registrados no dudo que habría muchos volúmenes llenos. Me doy cuenta de que algunos suponen que este modo de operación divina en la mente humana ya ha cesado desde hace mucho tiempo, pero yo pienso de otro modo. Puede que haya cesado como medio de revelar nuevas verdades, y así lo creo, pero no ha cesado de ser usado como medio de imprimir y poner en vigor la verdad ya revelada. Algunas veces las realidades del juicio venidero y del destino futuro son impresas con fuerza aplastante por medio de sueños. Cuando ocurren casos así, ¿Quién puede decir que la mano del Señor no está en ello?</p>
+
+        <p>Un ejemplo notable de un sueño en que se podía ver la mano del Señor fue relatado por el Pastor Edwards. Uno de sus vecinos, un hombre disoluto, soñó que iba a morir e iría al infierno. No voy a entrar en circunstancias de lo que según el sueño ocurrió allí. Basta con decir que en el sueño consiguió permiso para regresar durante un año a la tierra para ser probado, y se le dijo claramente que si no se reformaba, dentro de un año debería regresar al infierno. Al levantarse, y bajo la terrible impresión del sueño decidió ir a visitar a su pastor, Mr. Edwards, aquella misma mañana. Edwards le dijo: "Éste es un solemne aviso de Dios para su alma. Usted debe hacer caso del aviso y abandonar sus pecados o su alma se perderá por toda la eternidad." El hombre prometió solemnemente que lo haría. Al retirarse el hombre, Edwards escribió en su diario los pormenores de la conversación y naturalmente la fecha del suceso. El borracho reformó su conducta y todo fue bien durante un tiempo; asistió a la iglesia y parecía serio en su propósito, pero antes de poco volvió a las andadas: empezó otra vez a emborracharse. Un día, estando borracho, se cayó escaleras abajo en su tienda y se fracturó el cuello. Mrs. Edwards fue a consultar su diario y halló que hacía un año aquella misma noche que el hombre había tenido el sueño. Había sido emplazado y el momento de rendir cuentas había llegado.</p>
+
+        <p>No hay duda de que en general los sueños están bajo el control de leyes psicológicas, y siguen, aunque con mucha irregularidad, el curso de nuestras fantasías despiertos, y por esta razón muchas personas no creen que la mano del Señor obre en ellos; con todo, esta opinión no es del todo legítima, pues Dios puede, sin duda, poner su mano sobre la mente que sueña así como sobre la mente despierta, y en muchos casos se muestra que lo ha hecho.</p>
+
+        <p>También reprueba Dios al pecador siempre que su Espíritu despierta en la mente de una persona un sentimiento de gran peligro por vivir en el pecado. He conocido muchas veces pecadores grandemente afectados por la idea de este peligro, el tremendo peligro de transcurrir la vida en pecado, expuesto en todo momento a un infierno eterno e irremediable. Estas solemnes impresiones son advertencias cariñosas de Dios, que las imprime en el alma porque desea el bienestar del pecador y desea salvarle si es posible.</p>
+
+        <p>A menudo el Espíritu de Dios da a los pecadores una visión impresionante de lo corto del tiempo. Les hace sentir que esta gran verdad se aplica con todo poder a ellos, que su propio tiempo es corto y que con toda probabilidad no tienen mucho más tiempo de vida. Yo me doy cuenta de que algunas veces esta impresión se origina en un estado deficiente de salud, pero sé también que en algunos casos hay buenas razones para reconocer en ello la mano especial de Dios, y estas personas, algunas veces, adscriben a una depresión nerviosa lo que deberían considerar viene de Dios directamente.</p>
+
+        <p>A veces Dios produce la impresión de que el presente es la última oportunidad del pecador para asegurar su salvación. No sé cuántos casos de éstos han sido observados por mí. Casos en que los pecadores han sentido profundamente que aquella es la última oferta de misericordia y los últimos esfuerzos que hace el Espíritu a su favor. Mi observación me ha enseñado en estos casos a esperar que el resultado comprobará que era un aviso, que no se trata sino de la voz de Dios, y que Dios no miente al hombre, sino que le enseña la verdad de modo solemne e impresionante. ¡Oh, cuánto le conviene al pecador escuchar y hacer caso de estos avisos a tiempo!</p>
+
+        <p>También reprueba el Espíritu de Dios a los pecadores por medio de amigos particulares o ministros del evangelio. Las admoniciones afectuosas de una hermana, un padre o un hijo, un marido o una esposa, ¡con cuánta frecuencia han sido el vehículo por medio del cual Dios ha hablado al alma! Sus ministros también son empleados con este propósito, dirigiendo sus mentes de tal modo que, de hecho, presentan en el púlpito o personalmente al pecador la misma verdad que conviene a su caso y el tal dice luego: "Alguien tiene que haber dicho al predicador lo que pienso y lo que siento. ¡Quién puede haber sido? No he dicho a nadie lo que había en mi corazón. ¡Cómo puede haber predicado sobre esto!" En estos casos se puede también adscribir el caso a la mano divina que ha guiado al pastor. Dios hace uso de su siervo para reprobar al pecador.</p>
+
+        <p>En todos estos casos que he presentado, la reprobación administrada tiene que ser adscrita al Espíritu del Señor. De la misma manera en que Dios a veces administra reprobación a las almas penitentes, también administra reprobación a las impenitentes. Tiene mil métodos de hacer su voz audible a la conciencia del pecador, y en su sabiduría siempre escoge el medio que cree más adecuado para producir el resultado deseado.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>II. La intención de Dios al reprobar a los pecadores.</h2>
+
+        <p>Una de las cosas que se propone es hacerles ver que han de reformarse. Un Dios benevolente desea sinceramente su salvación y hace todo lo que puede para conseguir el resultado deseado. Por esto repite las reprobaciones y los avisos con frecuencia. Por lo menos va a dejarles sin ninguna excusa. Nunca podrán decir: "¡Oh, si hubiera sido advertido de antemano en aquellas horas y años preciosos en que la salvación era posible todavía!" Dios, de intento, previene estas exclamaciones, de modo que al final no les queda otra expresión: "Cómo aborrecía la instrucción y mi corazón despreciaba el consejo."</p>
+
+        <p>Con este propósito Dios avisa con tiempo al pecador, cuando no es tarde todavía. Pongamos el caso del hombre que soñó que tendría que regresar al infierno al cabo de un año. Este aviso era suficiente para inducir a la reforma y al arrepentimiento real, pero el hombre halló muchas excusas para persistir en el pecado.</p>
+
+        <p>Dios quiere con estos avisos preparar al hombre para el juicio solemne. Quiere que les sean útiles; asegurar en el presente el arrepentimiento inmediato para que puedan presentarse ante su Dios habiendo hecho las paces con Él.</p>
+
+        <p>No hay duda de que es también verdad que el buen Dios desea que cada pecador haya sido individualmente advertido. Esto es evidencia de su buena voluntad como Padre amoroso. Pero por otra parte cada uno de estos esfuerzos frustrados debe ser registrado por la pluma de un ángel, y será presentado al pecador que desoyó avisos tan oportunos. El pastor Edwards insiste en la bondad de Dios, "que soporta con paciencia a los pecadores porque no quiere que ninguno perezca, sino que todos vengan al arrepentimiento".</p>
+
+        <p>Con estos avisos providenciales Dios glorifica su nombre mostrando su verdadero carácter y su conducta. Es también interesante notar la forma en que Dios hace que un aviso traiga otro. Un suceso providencial, enviado como un juicio a un pecador, multiplica su voz muchas veces cuando cae en los oídos de una multitud de pecadores diferentes. Como vimos, esto es un solemne aviso.</p>
+
+        <p>En Rome, Estado de Nueva York, hace algunos años ocurrió un gran avivamiento, cuya fuerza sacudió y abrió el corazón empedernido de muchos pecadores, como los árboles son partidos por un rayo; pero con él vinieron grandes y tremendos juicios que revelaban otra forma de la poderosa mano de Dios. Había en aquel lugar un grupo de borrachos que estaban decididos a resistir toda llamada de Dios a que se arrepintieran. Los domingos se iban a beber y correrse una juerga. En una de estas ocasiones uno de ellos cayó muerto repentinamente. Mrs. Gillett, pastor de la iglesia del lugar, se apresuró a ir al lugar; y halló al muerto todavía caliente. Volviéndose a los otros que estaban presentes les dijo: "¡Quién de vosotros puede dudar que este hombre ha ido directamente al infierno!" Este caso hizo una profunda impresión en el grupo.</p>
+
+        <p>Otro individuo, famoso apóstata del camino de Dios, se oponía acerbamente al avivamiento. De repente Dios le tocó con un acceso de locura, y en su delirio intentó quitarse la vida. Tuvo que ser sujetado por varios hombres para evitar que se suicidara. No tardó mucho en morir en condiciones terribles; ¡un aviso a los endurecidos apóstatas de su propio fin cercano! Así Dios procura reformar y salvar a los pecadores.</p>
+
+        <p>De nuevo Dios manifiesta la terrible locura, temeridad e insensatez de los pecadores. ¡Cuán terrible será el juicio cuando se vea la multitud de casos de reprobación y la relación con la locura de los pecadores que se resistieron a tantas advertencias! ¡Qué terrible será contemplar a miríadas de seres inteligentes que habrán cometido la locura de resistir tanto amor manifestado en las llamadas y reprobaciones que se les había hecho! ¡Cuánta locura! ¡Cuánta insensatez!</p>
+    </div>
+
+    <div class="content-section">
+        <h2>III. ¿En qué consiste endurecer la cerviz?</h2>
+
+        <p>La figura procede del efecto del yugo en el buey. Bajo la constante presión y fricción del yugo el pellejo en el cuello se vuelve duro, calloso, y ya no tiene sensibilidad. Lo mismo ocurre con la conciencia del pecador. Su voluntad ha resistido la verdad hasta que su constante oposición ha endurecido su sensibilidad moral, y su voluntad permanece en una actitud de rebelión hacia Dios. Su mente está fija, las reprobaciones que se le han hecho han embotado su sensibilidad, y ahora ya no le hacen efecto; las nuevas advertencias de la providencia no le alarman; la voz de Dios no le trastorna; su razón y su conciencia no responden y su voluntad ya no se mueve; sus sentimientos morales son insensibles.</p>
+
+        <p>En este estado puede decirse que su cuello está endurecido. ¿Quién no ha visto casos semejantes? Casos en que los hombres se han endurecido hasta el punto de que ninguna reprobación les hace efecto, como si su sensibilidad moral hubiera dejado de existir. Me causó impresión, el otro día, en una conversación con un hombre de setenta y cinco años, que se mostraba del todo insensible a las consideraciones de carácter bíblico. "¿Es usted cristiano?", le pregunté. "No; no sé nada referente a éstos que usted llama cristianos. No he asesinado a nadie y me parece que he sido más o menos tan honrado como la mayoría de la gente con quienes me codeo." "¿Pero está usted preparado para entrar en el cielo o para ir a otra forma de existencia; para encontrarse con Dios cara a cara?" "¡Oh! No creo en estas cosas. Si vivo rectamente esto es todo lo que me interesa." No pude hacer la menor impresión en una mente así, pero Dios hará que este hombre aprenda algo de estas cosas de las que no sabe nada, y no podrá tardar mucho.</p>
+
+        <p>A veces se ven hombres en estas condiciones; que han renunciado a su inteligencia abrazando el error; que libremente han preferido las tinieblas a la luz. Se han petrificado en sus iniquidades y han dicho al mal: "Tú eres mi bien." Éstos tienen una conciencia cauterizada y un corazón endurecido; los músculos de su cuello son tendones de hierro, y no están dispuestos a ceder a las peticiones más razonables de Dios.</p>
+
+        <p>¿Qué tiene que hacer Dios con estas personas? El texto nos lo dice: "Los destruiré de repente y no habrá para ellos remedio." Esto me lleva a tratar de entender:</p>
+    </div>
+
+    <div class="content-section">
+        <h2>IV. ¿Qué significa ser destruido de repente?</h2>
+
+        <p>Implica ser cortado de modo inesperado, en el momento en que menos se piensa. A veces hablamos de cosas que vienen de repente, no porque vengan pronto en la vida, sino porque ocurren de modo inesperado, sin que se esperara que ocurrieran. Es en este sentido que se habla de "repente" en nuestro texto. Cuando cae sobre nosotros algún golpe terrible de la Providencia, derribando a algún pecador en sus pecados, decimos: "Una muerte súbita, ¡qué espantoso!" Por ello la Biblia dice cuando gritan: "Paz y seguridad, entonces la destrucción caerá sobre ellos y no tendrán escape." No se da aviso, no hay heraldo con trompeta que proclame la venida del dardo mortal, sino que de repente el hacha rasga el aire y se recibe el golpe. No hay necesidad de dar otro. Viene silencioso, como el rocío; como el paso en la habitación alfombrada. En estos casos no hay destreza o poder de los hombres que pueda evitarlo cuando se acerca; la muerte levanta su huesudo brazo y clava el dardo, en un momento. ¿Dónde está la víctima? Se ha ido. ¿Dónde? La Biblia dice que ha sido "destruida de repente". ¿Significa esto que ha sido llevada en un carro de fuego al cielo? ¿Fueron los perversos habitantes de Sodoma y Gomorra "los cuales sirvieron como ejemplo" del destino de los malvados, arrebatados al cielo en las columnas de fuego y humo que se levantaban de la destrucción? Si hubiera sido así los que había ya en el cielo se habrían desmayado al verlo. No nos hagamos confusiones; no es posible pensar que los millares que perecieron en el diluvio, cuando la tierra estaba llena de violencia y maldad, fueron destruidos, es decir, fueron llevados al cielo en volandas mientras que el pobre Noé cubierto de oprobio y burlas por esta generación, tuvo que trabajar durante largos años para que con el arca pudiera salvarse él y su familia, y así evitar el "ser destruido también y llevado al cielo".</p>
+
+        <p>Esto es jugar con la Palabra de Dios; decir que la destrucción del pecador no es más que llevarle al cielo por una ruta más directa. ¿Es esto lo que quiere decir Dios? ¡No! Si su intención hubiera sido engañar a los hombres podría haber usado un método más directo que llamar el llevar a los hombres al cielo "destrucción". No, este lenguaje sólo pertenece a Satanás, no a Dios.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>V. ¿Qué significa el que se diga que esta destrucción "no tiene remedio"?</h2>
+
+        <p>Que esta destrucción no puede ser parada. Es irresistible y su poder abrumador. Se burla de todos los esfuerzos para evitarla. Un ejemplo contundente de ella lo tenemos en la terrible epidemia de cólera que estalló hace algunos años en algunas de nuestras ciudades. Yo estaba en Nueva York entonces, fui testigo presencial, y aún más de su terrible poder.</p>
+
+        <p>Yo mismo sufrí su mazazo devastador. Había un hombre de fuerte constitución en el cuarto al lado del mío. Su enfermedad apareció a la misma hora que la mía, y al cabo de pocas horas era un cadáver. Su poder era espantoso. Lo mismo podría pensarse en parar un huracán con la mano que detener a este mensajero del Todopoderoso. Y así con todas las formas de destrucción que están a las órdenes de Dios para llevar al pecador endurecido a su fin. Vienen a pasos gigantescos y con un ímpetu incontenible. La terrible mano de Dios está en ellos, ¿y quién puede oponerse a su ira?</p>
+
+        <p>Hay otras formas de enfermedad que, como el cólera, muestran el terror del brazo de Jehová.</p>
+
+        <p>El mismo lenguaje muestra que la principal idea del escritor es que esta destrucción es interminable. Es destrucción que excluye la posibilidad de felicidad para siempre. No hay rescate posible; la recuperación es imposible; es una tumba más allá de la aurora de resurrección. La destrucción deshace toda esperanza, y no hay remedio. ¿Se puede concebir de otro elemento de terror, no implicado ya y desarrollado, en ésta, la más sombría de las formas de destrucción?</p>
+    </div>
+
+    <div class="content-section">
+        <h2>CONCLUSIÓN</h2>
+
+        <p><span class="red-emphasis">1.</span> Vemos La forma en que hemos de explicar la muerte súbita de los malvados, que ocurre con frecuencia, y lo que hemos de pensar de ello. Hemos visto jóvenes, hijos de padres piadosos, a los cuales se habían hecho numerosas advertencias, pero se endurecieron al ser reprobados. Sus días estaban contados. Desaparecieron del mundo de la esperanza y la misericordia. Una cosa es segura; sus compañeros en pecado recibieron con su muerte una terrible advertencia.</p>
+
+        <p><span class="red-emphasis">2.</span> El peligro de los infieles está en proporción a la luz que han recibido. Aquellos que han recibido más luz es posible que sean los que son cortados antes en la vida. Hemos visto terribles ejemplos de estos casos. Jóvenes que crecieron aquí cuando yo llegué, que en sus tiernos años de infancia y juventud vieron a todos sus amigos convertidos y ellos fueron advertidos con afecto. Pero resistieron todo aviso y llegaron pronto a la madurez en un estado de insensibilidad moral. Ya no están entre nosotros. Ya no responden a las llamadas de los amigos ni de los familiares entristecidos, aunque van a responder a la llamada final de la trompeta. Sabían cuál era su deber, pero decidieron no hacerlo.</p>
+
+        <p><span class="red-emphasis">3.</span> Es, en realidad, una benevolencia de Dios el que en sus juicios providenciales los pecadores endurecidos sean cortados pronto, pues ello sirve por lo menos de aviso a sus compañeros. Éste es el aviso más impresionante que puede dar Dios a los hombres. En algunos casos es tan terrible que algunos pecadores ni se han atrevido a asistir al entierro de sus antiguos amigos. Parece que les asusta estar cerca de una escena tan terrible, tal es la evidencia de que la mano de Dios ha entrado en ello. Ha habido casos en que los que han sufrido este fin fueron abatidos cuando se estaban oponiendo a avivamientos.</p>
+
+        <p><span class="red-emphasis">4.</span> Vemos también en algunos casos que la terrible destrucción ha alcanzado a aquellos que, teniendo mucha luz, se han endurecido en el pecado. Personas que han pasado por grandes tribulaciones y era de esperar que con ello iban a reformarse. Si no lo han hecho no es infrecuente que hayan tenido que recibir la sentencia según los principios anunciados en nuestro texto. La reprobación, o bien conduce a la sumisión o acelera el proceso destructivo. Este proceso de maduración negativa se acelera en proporción a la insistencia con que Dios los sigue con reprobaciones frecuentes. Cuanto todo es en vano podemos esperar que caiga el rayo destructor fulminante.</p>
+
+        <p><span class="red-emphasis">5.</span> Cuanto más cerca de la destrucción está el hombre, menos la espera. Cuando oigas que gritan "Paz y seguridad", entonces viene la destrucción súbitamente y no escaparán. Viene como una avalancha de nieve en las montañas y no hay tiempo para escapar ni resistir.</p>
+
+        <p><span class="red-emphasis">6.</span> Los pecadores que han recibido mucha luz viven muy atropelladamente. Los que saben perfectamente cuál es su deber han de convertirse rápidamente para no pasar pronto el último límite de esperanza, el punto en que es moralmente posible ser renovado. Los hombres pueden, en algunas circunstancias, vivir hasta larga edad y nunca conseguir mucha luz, como la que a veces se obtiene en unas semanas. Bajo determinadas circunstancias un pecador puede conseguir más luz, cometer más pecado y endurecerse más en un período de doce meses, que en otras circunstancias de la vida en ochenta años. Bajo estas circunstancias los hombres viven rápidamente ¡Cuán pronto llenan los años que les son permitidos! ¡Con qué velocidad se acercan a su destrucción, de no mediar el arrepentimiento! Para el pecador que está decidido a seguir pecando, el peor sitio donde puede ir es a una iglesia porque es donde adquiere más luz. Sería mucho más seguro plantar la tienda ante la puerta del mismo infierno. Muchos padres desean enviar a sus hijos a la iglesia para que reciban una buena influencia en su educación, y también en la esperanza de que se convertirán también. Esto está muy bien, yo haría lo mismo, pero no basta; hay que hacer todo lo posible, por todos los medios, hasta que se abrazan a la salvación. Los padres son los que deben asegurarse de que sus hijos se convierten realmente. Si pasan por la iglesia sin convertirse, pronto se apartarán y se lanzarán al laberinto del pecado.</p>
+
+        <div class="warning-box">
+            <p><span class="red-emphasis">¿Quién ignora que éste es el resultado natural de resistir la luz?</span></p>
+            <div class="scripture">
+                "Por cuanto no recibieron el amor de la verdad para ser salvos. Por esto Dios les envía un espíritu engañoso, para que crean la mentira a fin de que sean condenados todos los que no creyeron a la verdad, sino que se complacieron en la injusticia."
+                <span class="scripture-ref">2ª Tesalonicenses 2:10-12</span>
+            </div>
+            <p>¡Oh, cuán rápido es su paso en dirección al infierno! Apenas puede decirse que están aquí y ya han desaparecido." Y el redoblar de las campanas en su funeral proclamará: <span class="red-emphasis">"El hombre que reprendido endurece la cerviz, de repente será quebrantado, y no habrá para él medicina."</span></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - El destino del pecador<br>
+    Por Carlos G. Finney
+</footer>
+</body>
+</html>

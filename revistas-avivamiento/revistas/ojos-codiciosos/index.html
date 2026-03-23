@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ojos Codiciosos - David Wilkerson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por David Wilkerson</div>
+            <div>OJOS CODICIOSOS</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">EDITORIAL</div>
+
+        <div class="scripture">
+            "Porque habrá hombres amadores de sí mismos, avaros, vanagloriosos, soberbios, blasfemos, desobedientes a los padres, ingratos, impíos, sin afecto natural, implacables, calumniadores, intemperantes, crueles, aborrecedores de lo bueno, traidores, impetuosos, infatuados, amadores de los deleites más que de Dios"
+            <span class="scripture-ref">2 Timoteo 3:2-4</span>
+        </div>
+
+        <p>La sociedad actual ha abandonado toda clase de moralidad y se lanza detrás de la impureza y la maldad de forma asombrosa. Hoy en día se ha adoptado una forma de vida que no apela ni a las más mínimas reglas de conducta y aún ha echado fuera toda clase de principios que son necesarios para una vida estable.</p>
+
+        <p>Los jóvenes viven entregados a los pecados sexuales, los adultos viven para sí mismos y los niños observan el degenere de éstos para luego imitar tan vergonzoso ejemplo.</p>
+
+        <p>En realidad, la Biblia ya había profetizado todo esto, pero ¿qué sucede cuando aún los llamados "hijos de Dios" son arrasados por las mismas formas de conducta? Esto es la peor tragedia que existe: cuando aquellos que deberían ser la luz de este mundo, participan en los mismos pecados y se enredan en las mismas tinieblas.</p>
+
+        <p>Le invitamos a reflexionar en el siguiente artículo escrito por David Wilkerson, que sin duda arrojará la luz a aquellos que con corazón sincero, teman a las palabras de Dios.</p>
+
+        <div class="editors-note">
+            ATENTAMENTE<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">"OJOS CODICIOSOS"</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por David Wilkerson</div>
+
+    <div class="content-section">
+        <p>Yo no tengo una televisión o una videocasetera, y por la gracia de Dios he sido guardado de toda forma de pornografía; pero considera a los cristianos que tienen una televisión y también cablevisión. Son más de las diez de la noche y los niños están en sus camas, y se sientan a ver una película para adultos. Ante sus propios ojos ven adultos fornicando y practicando toda clase de maldad del infierno. Tanto su espíritu como su cuerpo son capturados por eso. O podría ser este escenario: estás lejos de tu casa y nadie te conoce. Te sientes solo y un curioso impulso viene sobre ti. El enemigo de tu alma te susurra: "¡Ve esta o aquella película, sólo una vez, después puedes arrepentirte!"- Entonces tú vas a una película para adultos o de media noche. Esta es corrupta y te hace sentir sucio y pecador. ¡Sales del cine vacío! O supón que en vez de salir, simplemente le cambias a una película sucia en la habitación del cuarto del motel. ¡Ahí mismo en el cuarto el Espíritu Santo se va contristado, viendo cómo un hijo de Dios tiene sus ojos pegados a una película vil, inmunda y sensual! Y aquí está un último escenario: ¡caminando por la calle te detienes en un puesto de periódicos contemplando todas las revistas pornográficas (Play Boy, Pent House, etc.) y toda una colección de otras revistas viles! ¡Sólo mirando! Pero compras un periódico y la revista pornográfica, escondiéndola entre las páginas del periódico. Te la llevas a tu casa y la escondes, y la sacas secretamente para anhelar lo que está en las fotos. Después de un tiempo te deshaces de ella con disgusto, diciendo: "¡Nunca más! Esto es tonto, es ridículo, ¿Quién lo necesita?"</p>
+
+        <p>Pero hay algo todavía más serio: supón que yo camino por las calles para ir a trabajar o para ir a la iglesia o para tomar el camión o el metro, y mis ojos están codiciando, ¡siempre mirando! ¡Satanás hace alarde de la carne en todo lugar! ¡Muchos se visten, caminan y actúan como si estuvieran poseídos por demonios! Son como pornografía caminando, tentando a tus ojos. Aunque hombres y mujeres son igualmente culpables de tener ojos "codiciosos", los hombres son probablemente más susceptibles a ello. Las esposas tienen cuidado de hacia donde ven, mientras que sus esposos cristianos voltean sus cabezas y siguen a las mujeres con sus ojos codiciosos, en los restaurantes ¡y aún en la iglesia! ¡Las esposas observan los ojos de sus esposos! Nada es más irrespetuoso para una esposa, o más degradante, que un esposo que codicia con sus ojos, ¡en su presencia!</p>
+
+        <p>En la ciudad todo esto se intensifica por el evidente número de personas, la propaganda sensual y la forma en que se visten los inicuos. Años atrás, aquí en Nueva York, ¡las mujeres usaban vestidos hasta el piso! Ellas eran modestas (recatadas), todavía sentían vergüenza. Era vergonzoso aún dejarse ver el tobillo. ¡Hoy en día muchas mujeres se visten como prostitutas que rondan en busca de su presa! Aún hace cincuenta años, la mayoría de ellas habrían sido llevada por patrullas de policía, cubiertas con chamarras y, ¡acusadas de exposición indecente! Puedes estar seguro de que las tentaciones se pondrán peores entre más nos acerquemos al fin de este siglo. Va a ser algo terrible.</p>
+
+        <p>La pregunta es: ¿por qué un verdadero hijo de Dios pondría sus ojos en tan inicua obscenidad? Sabemos que la codicia de los ojos es una de las batallas más grandes que están siendo peleadas por los cristianos hoy en día. Me tocó ver a un hombre que cargaba su Biblia en la esquina de las calles 68 y Broadway. Al pasar junto a él una mujer que traía puesta una mini-falda, cruzó la calle, mirando hacia atrás todo el tiempo, arriesgando su vida por el tráfico. ¡Qué terrible parecía aquello! La Biblia se veía fuera de lugar. Esta es una batalla que está siendo peleada por ministros, licenciados, doctores, políticos, gente de todo tipo de vida y de cada nacionalidad. Existen miles que dan rienda suelta a esto secretamente, y quisieran que nunca nadie lo supiera, y otros miles caen en esto sólo de vez en cuando. Pero esto ejerce dominio sobre ellos y parecen no poder ser completamente libres.</p>
+
+        <p>Yo quiero hablarles aquí solamente a aquellos quienes buscan agradar al Señor y caminar en santidad. ¿Por qué existe esta atracción perversa? ¿Por qué algunos siguen haciéndolo? ¿Por qué los ojos codiciosos? Isaías habló de las hijas de Sión que tenían "ojos desvergonzados" u ojos desviados y codiciosos:</p>
+
+        <div class="scripture">
+            "... las hijas de Sión se ensoberbecen, y andan con cuello erguido y con ojos desvergonzados; cuando andan van danzando, y haciendo son con los pies..."
+            <span class="scripture-ref">Isaías 3:16</span>
+        </div>
+
+        <p>David oró:</p>
+
+        <div class="scripture">
+            "Aparta mis ojos, que no vean la vanidad; avívame en tu camino"
+            <span class="scripture-ref">Salmo 119:37</span>
+        </div>
+
+        <div class="scripture">
+            "No pondré delante de mis ojos cosa injusta..."
+            <span class="scripture-ref">Salmo 101:3</span>
+        </div>
+
+        <div class="scripture">
+            "Tus ojos miren lo recto, y diríjanse tus párpados hacia lo que tienes delante"
+            <span class="scripture-ref">Proverbios 4:25</span>
+        </div>
+
+        <p>¿Por qué no mantenemos nuestros ojos mirando lo recto, lo puro y hacia adelante?</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Los ojos codiciosos están relacionados con un corazón trastornado e insatisfecho</h2>
+
+        <p>No estamos reconociendo que el problema del ojo refleja un problema del corazón aún más profundo. Dios tiene que llevarnos a ver que algo no está todavía restaurado en nuestros corazones, que existe una raíz causante de tener ojos codiciosos y lujuriosos.</p>
+
+        <div class="scripture">
+            "Y sobre toda cosa guardada, guarda tu corazón; porque de él mana la vida"
+            <span class="scripture-ref">Proverbios 4:23</span>
+        </div>
+
+        <p>No estamos tomando este asunto tan seriamente como Jesús lo hace. Él hace de este problema con el ojo un tema de vida o muerte. No es algo que se quita con el tiempo. Por el contrario, es algo con lo que se debe tratar en el temor de Dios, decisiva y despiadadamente. Debemos reconocer que Jesús dijo que nos podría enviar al infierno si no tratamos con esto de una vez por todas. ¡Jesús dijo que un ojo perverso debe ser sacado!</p>
+
+        <p>Déjenme decirles cómo surgió este mensaje. Anteriormente mencioné que vi a un hombre mirando a una mujer con minifalda, y qué mal me sentí por él. De hecho, yo pensé: "¡Eres un hombre sucio!", pero el Espíritu de Dios me reprendió amorosamente diciendo: "Él es tu espejo. ¡Tú has estado haciendo lo mismo! Tal vez no con una Biblia en la mano, pero tú no has estado guardando tus ojos como debieras". En aquella noche y hasta este mismo momento el Espíritu Santo puso un temor santo en mí, previniéndome de que lo que yo miro es un asunto muy serio para con el Señor. No es un rollo legalista de esclavitud. Es la vida y la muerte. Es imposible tener un corazón puro y tener ojos indisciplinados. La lascivia del ojo es una extensión de la lascivia que hay en el corazón.</p>
+
+        <div class="scripture">
+            "... quienes aún mientras comen con vosotros... tienen los ojos llenos de adulterio, no se sacian de pecar..."
+            <span class="scripture-ref">2 Pedro 2:13-14</span>
+        </div>
+
+        <p>Ellos vienen a la casa de Dios a comer con nosotros. Escuchan y disfrutan la Palabra, pero están llenos de lujuria. Esto involucra tanto a mujeres como a hombres. Ellos pretenden desear a Cristo. Dicen todas las palabras correctas, pero tienen una cosa predominante en sus mentes. Ellos están locos por las mujeres y ellas enajenadas por los hombres, ¡con ojos codiciosos! Yo he tenido a muchos de estos que vienen a mí por oración, diciendo: "No puedo aguantarlo, algo viene sobre mí. ¡La lujuria me arrasa! ¡Tiene que ser algo demoníaco!" Un ministro que fue sorprendido con ocho mujeres en su iglesia me dijo: "Todo comenzó cuando yo tenía quince años con la empleada doméstica en nuestra casa. Luego se hizo un hábito y yo no veía nada malo en hacerlo".</p>
+
+        <p>En todos estos casos, es la carne, no los demonios, reinando.</p>
+
+        <div class="scripture">
+            "Sabe el Señor... reservar a los injustos para ser castigados en el día del juicio; y mayormente a aquellos que, siguiendo la carne andan en concupiscencia e inmundicia... atrevidos..."
+            <span class="scripture-ref">2 Pedro 2:9-10</span>
+        </div>
+
+        <p>Pedro dice: <span class="emphasis">"... tienen el corazón habituado a la codicia..."</span> (2 Pe. 2:14). La palabra "habituado" ¡tiene que ver con la desnudez! Ellos han sido obsesionados con la desnudez. Ellos lo codiciaron, lo practicaron, ¡siguieron la concupiscencia con sus ojos! Pedro dice de ellos:</p>
+
+        <div class="scripture">
+            "El perro vuelve a su vómito y la puerca lavada a revolcarse en el cieno"
+            <span class="scripture-ref">2 Pedro 2:22</span>
+        </div>
+
+        <p>Estos son halagadores que andan al acecho. ¿Qué título tienen? ¡Embusteros internacionales! ¡Tienen todas las respuestas correctas!</p>
+
+        <div class="scripture">
+            "Pues hablando palabras infladas y vanas, seducen con concupiscencias de la carne y disoluciones a los que verdaderamente habían huido de los que viven en error"
+            <span class="scripture-ref">2 Pedro 2:18</span>
+        </div>
+
+        <p>Esta es una de las advertencias más fuertes y significativas en la Palabra de Dios para la Iglesia hoy en día.</p>
+
+        <p>Para todos ustedes que han escapado de los falsos maestros, que han salido del error y han escapado limpiamente de doctrinas de demonios, que han escapado de la corrupción de una iglesia o de un líder que era falso, estén atentos a otra trampa: un seductor retumbante, "espiritual", y de lenguaje hipócrita enviado a ti por el diablo, justamente cuando estás más vulnerable. ¡A todas las mujeres casadas: escuchen este mensaje! Si tú has despertado espiritualmente y tienes hambre de Dios, si te has vuelto y ahora no quieres otra cosa más que a Cristo, pero tu matrimonio no es lo que debiera ser, si hay confusión y problemas, si las cosas se han vuelto amargas y él no comparte tus anhelos más profundos, si están creciendo separados: ¡ten cuidado! El diablo va a estar poniendo justo en tu camino a un hombre que parecerá tan espiritual, tan sabio, tan comprensivo. Este hombre pareciera que lee tu mente. ¡Él va a hablar como nadie que tú hayas escuchado jamás! ¡Va a ser altilocuente y agradable a tu vanidad! Tu esposo va a parecer muy insípido en comparación.</p>
+
+        <p>Había un ministro en Canadá que conoció a una "profetisa". ¡Cómo profetizaba! Diciéndole que su ministerio sacudiría a las naciones. Ella podía ver a través de él y entenderlo. Comparada a esta mujer, su esposa era "materialista y poco espiritual", decía él. Ellos terminaron en una aventura con la mujer profetizando todo el tiempo, diciendo: "Así dice el Señor..." ¡Mientras cometían fornicación! Otro hombre y su esposa que ahora asisten a la iglesia de "Times Square" habían pertenecido a una comunidad que hacía mucho énfasis en el pastoreo, en donde a él se le había dicho que no estaba espiritualmente a tono con ella. El grupo forzó a la esposa a divorciarse del esposo, y luego le trajeron a otro hombre (un espectro espiritual), para que se casara con ella.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Siervos del pecado</h2>
+
+        <div class="scripture">
+            "Les prometen libertad y son ellos mismos esclavos de corrupción..."
+            <span class="scripture-ref">2 Pedro 2:19</span>
+        </div>
+
+        <p>¡Escuchen la advertencia del apóstol! ¡Cuídense! Estos, quienes tienen ojos llenos de adulterio, pueden identificar a los que están atribulados. Te ofrecen una mano bondadosa o te llaman, diciéndote: "Tengo carga por ti, el Señor me despertó y me habló de ti. Tengo un buen oído. Dime todo lo que te sucede". Si tú estás casado o casada, y estás en el teléfono (o en persona) descargando tu corazón con alguien que no es tu pareja, ¡entonces estás pecando y jugando con fuego! Tú estás en la mismísima trampa de la que Pedro nos advierte.</p>
+
+        <p>Aquí está una palabra para solteros. Si tú estás buscando a Dios y dispuesto a seguir a Cristo a cualquier costo, tú vas a ser un blanco para Satanás. Él va a enviarte a tu camino a alguien que tenga lo que yo llamo "religión de luna de miel"; esto es: ¡una plática lo suficientemente espiritual y dulce como para llevarte al altar! Una joven esposa confesó: "¡Él sonaba tan espiritual! Todo lo que hablaba era acerca del Señor. Me dijo que Cristo era todo para él, pero el día que nos casamos, él cambió". ¡No! Él no cambió. Sus verdaderas intenciones tan solo salieron a la luz. Ella recuerda que todo el tiempo que fueron novios tuvo una lengua espiritual, pero manos pegajosas. ¡Esa es la prueba. Niégale sus pasiones animales y verás qué tan espiritual es!.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Otros rehúsan permitir que sus ojos ofendan a Cristo en ellos</h2>
+
+        <div class="scripture">
+            "Si tu ojo derecho te es ocasión de caer, sácalo y échalo de ti; pues mejor te es que se pierda uno de tus miembros y no que todo tu cuerpo sea echado al infierno"
+            <span class="scripture-ref">Mateo 5:29</span>
+        </div>
+
+        <p>Esta es una persona que está bajo el absoluto señorío de Cristo. Si la carne o el yo estuvieran en el trono, ¿qué nos podría ofender?, mas debido a que Cristo gobierna en supremacía, entonces los ojos ofenden, cualquier cosa diferente de Cristo ¡se vuelve ofensiva! Estas palabras de Jesús nos muestran que tan seriamente toma este asunto de los ojos codiciosos. Él también menciona el mismo mensaje nuevamente en Mateo 18. ¡Dos veces en un libro! Si Cristo gobierna y reina en tu corazón, tú vas a experimentar su contristamiento ¡cada vez que miras persistentemente a cualquier hombre o mujer, o ves una revista pornográfica, o te sientas y ves, aunque sea cinco minutos, una película inmunda, o compras o rentas una película atrevida! ¡Tu espíritu clamará: "Oh, Señor, ¡te estoy ofendiendo con mis ojos!"</p>
+
+        <p>"Si tu ojo derecho te es ocasión de caer..." ¿Por qué Jesús habla del ojo derecho? ¿No puede tu ojo izquierdo ver lo mismo? El ojo derecho representa autoridad. Cristo se sienta a la diestra del Padre. Puesto que Dios es Espíritu, no puede haber literalmente una mano derecha o izquierda. Por el contrario, representa la posición soberana de autoridad de nuestro Señor. De esta manera tu ojo derecho es cualquier pasión que ha asumido poder o autoridad abrumadora en tu cuerpo. Los pecados del ojo derecho son aquellos que tienen raíces, aquellos que fácilmente nos acosan. Este se vuelve el ojo derecho de la carne, el ojo dominante cuando se cede al pecado como <span class="emphasis">"instrumentos de iniquidad..."</span> (Rom. 6:13).</p>
+
+        <p>Para algunos es un dominante ojo derecho de fantasía. Este es el curso de los matrimonios: esposos o esposas soñando despiertos en algo mejor; con un ojo inicuo que está ciego a la realidad y enfocado en alguna fantasía. ¡Ellos no pueden creer que Dios haga un milagro de sanidad, porque viven con una visión falsa de que en algún lugar hay un hombre o una mujer perfectos! Hace algunos años yo estaba en un programa de televisión con un comediante que se había casado más de ocho veces y estaba a punto de casarse otra vez. Yo le dije: "Creo que acabo de conocer al hombre más triste en los Estados Unidos". Más tarde, él confesó: "¡Ocho mujeres no pudieron haber estado equivocadas! Yo esperaba que ellas me trajeran felicidad. Estuve casado con una de ellas tan sólo una semana". Puesto que ninguna podía hacerlo feliz, él podía irse. Si tú eres uno de los que sueñan despiertos, ¡necesitas un poco de colirio del Espíritu Santo en tu ojo para limpiar tu visión! Esas fantasías pueden destruir lo que queda de tu matrimonio.</p>
+
+        <p>Jesús dijo: "Sácalo y échalo de ti!". Él está diciendo simple y llanamente: "¡Es suficiente, déjalo ya, no más! ¡No más fantasías perversas! ¡No más revistas y películas sucias! ¡No más ojos codiciosos! ¡Desecha ese ojo derecho! No dejes que esa pasión tenga ningún dominio. ¡Saca esa codicia de tu corazón! Cristo no te da una excusa; Él simplemente dice: déjalo o piérdete "...pues mejor te es que se pierda uno de tus miembros y no que todo tu cuerpo sea echado al infierno". Tú puedes orar, llorar por misericordia, rogar por gracia, excusarlo como debilidad, rogar desamparadamente, y aún decirle que es el trabajo de Dios y no el tuyo. Pero Jesús dice: "¡Sácalo tú, tú échalo de ti!" A nosotros no se nos mandaría a hacer algo imposible; tiene que ser posible, porque Él nos dijo que lo hiciéramos. Pero nosotros simplemente no queremos batallar contra el pecado. Por el contrario, nos plantamos enfrente de una película de la televisión, nos volvemos a algo vil, y oramos: "Dios, ¿Dónde está tu poder? ¡Libérame!" Caminamos a un puesto de revistas, tomamos una revista pornográfica, y decimos en voz baja: "Señor, ¿Dónde estás tú?".</p>
+
+        <div class="scripture">
+            "Pero yo os digo que cualquiera que mira a una mujer para codiciarla, ya adulteró con ella en su corazón"
+            <span class="scripture-ref">Mateo 5:28</span>
+        </div>
+
+        <p>La mayoría de las personas estarían de acuerdo en que una aventura secreta rompe la confianza y arruina el matrimonio, y que fuera de la gracia de Dios nunca será lo mismo. Pero el mirar literatura pornográfica, ya sea el hombre o la mujer, y codiciar las imágenes, tienen el mismo efecto. ¡Tú eres igual de infiel! Sería lo mismo que haber estado físicamente con una prostituta. Tu adulterio mental destruirá tu relación con tu esposa. Esto hiere a los matrimonios, porque el esposo o la esposa no pueden ser igual a lo que tú viste. El diablo dice: "¡Él o ella es demasiado gordo! ¡Mira con lo que estás casado!" Las comparaciones se hacen, y lo que tú tienes ¡parece muy lejano de tu fantasía! Ahora tú miras, tus ojos codician, porque él o ella no te pueden satisfacer. Satanás ha contaminado tu mente, haciéndote sentir engañado.</p>
+
+        <p>En el tema de la masturbación, aún los escritores cristianos han escrito que es un medio legítimo de aliviar la tensión, que esto no es fornicación. Los cristianos solteros de ahora no consideran que entregarse a ello sea pecado, siempre y cuando todo se quede en la mente. Pero la Palabra de Dios lo llama autoindulgencia. Pablo, un hombre soltero dijo:</p>
+
+        <div class="scripture">
+            "Sino que golpeo mi cuerpo y lo pongo en servidumbre, no sea que habiendo sido heraldo para otros, yo mismo venga a ser eliminado"
+            <span class="scripture-ref">1 Corintios 9:27</span>
+        </div>
+
+        <div class="scripture">
+            "... mas yo no me dejaré dominar de ninguna"
+            <span class="scripture-ref">1 Corintios 6:12</span>
+        </div>
+
+        <p>El peligro para los solteros, así como para los casados es que estas pasiones y hábitos empiezan a controlar y a tomar poder sobre el cuerpo.</p>
+
+        <div class="scripture">
+            "Huid de la fornicación. Cualquier otro pecado que el hombre cometa, está fuera del cuerpo, mas el que fornica, contra su propio cuerpo peca. ¿O ignoráis que vuestro cuerpo es templo del Espíritu Santo, el cual está en vosotros, el cual tenéis de Dios, y que no sois vuestros? Porque habéis sido comprados por precio; glorificad, pues a Dios en vuestro cuerpo y en vuestro espíritu, los cuales son de Dios"
+            <span class="scripture-ref">1 Corintios 6:18-20</span>
+        </div>
+
+        <p>¿Puede Dios guardar a los solteros puros? ¿Puede darles ojos puros?</p>
+
+        <div class="scripture">
+            "Y aquel que es poderoso para guardaros sin caída y presentaros sin mancha delante de su gloria con gran alegría..."
+            <span class="scripture-ref">Judas 24</span>
+        </div>
+
+        <p>A la mujer soltera o divorciada Dios le dice:</p>
+
+        <div class="scripture">
+            "No temas, pues no serás confundida; no te avergüences, porque no serás afrentada, sino que te olvidarás de la vergüenza de tu juventud, y de la afrenta de tu viudez no tendrás más memoria. Porque tu marido es tu Hacedor; Jehová de los ejércitos es su nombre; y tu Redentor, el Santo de Israel; Dios de toda la tierra será llamado. Porque como a mujer abandonada y triste de espíritu te llamó Jehová, y como a la esposa de la juventud que es repudiada dijo el Dios tuyo"
+            <span class="scripture-ref">Isaías 54:4-6</span>
+        </div>
+
+        <p>Para los hombres jóvenes David dice por el Espíritu Santo:</p>
+
+        <div class="scripture">
+            "Mi porción es Jehová"
+            <span class="scripture-ref">Salmo 119:57</span>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>¡Si la cosa inmunda en la que tu ojo se enfoca no es quitada, todo dentro de ti se vuelve perverso!</h2>
+
+        <div class="scripture">
+            "La lámpara del cuerpo es el ojo; cuando tu ojo es bueno, también todo tu cuerpo está lleno de luz; pero cuando tu ojo es maligno, también tu cuerpo está en tinieblas. Mira pues, no suceda que la luz que en ti hay, sea tinieblas"
+            <span class="scripture-ref">Lucas 11:34-35</span>
+        </div>
+
+        <p>Había un artículo en un periódico dominical reciente que ilustra apropiadamente estos versículos. Tenía que ver con una estrella de cine que se enamoró de su compañero de actuación. Pero esto no era recíproco. Él era amable con ella y ella malinterpretó esto como amor. Él, de hecho, tenía otra novia. Ella estaba tan obsesionada con él que perdió todo raciocinio y le mandó una muñeca desfigurada, dejándola en el escalón de la entrada de su casa; acosándolo por teléfono y con cartas. La policía se la llevó para interrogarla. ¡Esto destruyó su vida!</p>
+
+        <p>Esto es lo que la Palabra está hablando. Esa cosa perversa que el ojo no quiere dejar, se convierte en una obsesión. Empieza a tomar control. Todo el sentido común se va, gente inteligente empieza a hacer cosas tontas y peligrosas. La mente, cuerpo, alma y espíritu se llenan de perversa oscuridad.</p>
+
+        <p>Una mujer joven me dijo de cómo su amor por un hombre joven la estaba destruyendo. Ella sentía que estaba perdiendo su mente, siempre fantaseando acerca de lo que sería su vida con él. Yo hablé con él, y estaba sorprendido: "Yo en ninguna ocasión le he dado una razón para que piense que la amo. ¡Nunca hemos salido! Me la he encontrado en dos ocasiones". Ella está ahora, al borde del suicidio, obsesionada con él, y él está herido, porque no fue su culpa. ¡Fue el ojo perverso de ella!</p>
+
+        <p>¿Por qué es Cristo tan insistente, tan exigente, en que esta cosa inmunda sea quitada, terminada y desechada? Porque Él conoce la horrible confusión y oscuridad que esto trae consigo. Todo lo que tú hagas estará contaminado con inmundicia. No vas a poder escuchar la voz de Dios. La luz que tú pienses que hay en ti, será oscuridad. Horribles pensamientos inicuos entrarán en tu mente. Vas a ser capaz de mentir, hacer trampa, disimular, ¡llamando a lo malo bueno y pervirtiéndote en todos tus caminos! Tú dices: "Sí hay algo que domina a mis ojos. Yo tengo mi ojo en alguien o en algo. Pero no puedo detenerme. No puedo dejarlo". Jesús no dijo que sería fácil; pero sí que sería posible.</p>
+
+        <div class="scripture">
+            "...mejor te es entrar en la vida cojo o manco, que ser echado en el fuego eterno"
+            <span class="scripture-ref">Mateo 18:8</span>
+        </div>
+
+        <p>Esto puede significar que tú termines acongojado o emocionalmente cojo. ¡Pero es una de dos, eso o el infierno! Sí, puede ser como si murieras. Algo va a morir en ti, pero se tiene que ir o arruinará tu alma.</p>
+
+        <div class="warning-box">
+            <p>Yo leí un sermón de un predicador famoso aquí en Nueva York, dado en una catedral al norte de la ciudad. Él dijo: "No suprimas esos sentimientos profundos. Abandónate, entrégate a ellos, de otra forma vas a destruir tu personalidad". ¡Ese predicador va a encontrarse cara a cara con un ejército de almas condenadas en el infierno que no lo van a dejar descansar por toda la eternidad, por haberles mentido!</p>
+            <p style="text-align: center; font-size: 1.3rem; margin-top: 15px;"><span class="red-emphasis">Jesús dijo: ¡Sácalo, échalo de ti!</span></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - Ojos Codiciosos<br>
+    Por David Wilkerson
+</footer>
+</body>
+</html>

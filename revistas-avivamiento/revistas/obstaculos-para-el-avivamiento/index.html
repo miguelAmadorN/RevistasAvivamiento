@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obstáculos para el Avivamiento - Oswald J. Smith</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .editors-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            border-top: 2px solid #4a6491;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .editorial-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .editorial-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .examination-list {
+            margin: 20px 0 20px 30px;
+        }
+
+        .examination-list li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .poem-box {
+            background-color: #f9f5e8;
+            border-left: 4px solid #b8860b;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .poem-line {
+            font-size: 1rem;
+            margin-bottom: 6px;
+            color: #5a3e1b;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="author-info">
+            <div class="author-name">Por Oswald J. Smith</div>
+            <div>OBSTÁCULOS PARA EL AVIVAMIENTO</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este Número</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="editorial-container">
+        <div class="editorial-title">Estimados Lectores:</div>
+
+        <p>Es nuestra satisfacción publicar éste artículo para traer un beneficio a sus almas. El deseo de todo cristiano es experimentar un poderoso avivamiento, primero en lo personal, y después en su comunidad. Para que este anhelo se cumpla es necesario quitar cualquier estorbo que esté impidiendo el derramamiento del poder de Dios. Lea, estudie y medite las siguientes consideraciones que sin lugar a dudas alumbrarán su corazón.</p>
+
+        <div class="editors-note">
+            ATENTAMENTE<br>
+            <strong>Los Editores</strong>
+        </div>
+    </div>
+
+    <h1 class="main-title">OBSTÁCULOS PARA EL AVIVAMIENTO</h1>
+    <div style="text-align: center; margin-bottom: 30px; font-style: italic; color: #4a6491;">Por Oswald J. Smith</div>
+
+    <div class="content-section">
+        <p>HAY TAN SÓLO un obstáculo que puede bloquear el canal e impedir el poder de Dios y éste es el <span class="red-emphasis">PECADO</span>. El pecado es la gran barrera. Por sí solo puede impedir la obra del Espíritu e impedir un avivamiento.</p>
+
+        <div class="scripture">
+            "Si en mi corazón hubiese yo mirado a la iniquidad, el Señor no me habría escuchado"
+            <span class="scripture-ref">Salmo 66:18</span>
+        </div>
+
+        <div class="scripture">
+            "He aquí que no se ha acortado la mano de Jehová para salvar, ni se ha agravado su oído para oír; pero vuestras iniquidades han hecho división entre vosotros y vuestro Dios, y vuestros pecados han hecho ocultar de vosotros su rostro para no oír"
+            <span class="scripture-ref">Isaías 59:1-2</span>
+        </div>
+
+        <p>Así, el pecado es la gran barrera y tiene que ser abandonado. No pueden haber medias tintas. No hay alternativas. Dios no obrará en tanto que haya iniquidad no confesada.</p>
+
+        <div class="scripture">
+            "Sembrad para vosotros en justicia, segad para vosotros en misericordia; haced para vosotros barbecho; porque es el tiempo de buscar a Jehová, hasta que venga y os enseñe justicia"
+            <span class="scripture-ref">Oseas 10:12</span>
+        </div>
+
+        <div class="scripture">
+            "Si se humillare mi pueblo, sobre el cual mi nombre es invocado, y oraren, y buscaren mi rostro, y se convirtieren de sus malos caminos; entonces yo oiré desde los cielos, y perdonaré sus pecados, y sanaré su tierra"
+            <span class="scripture-ref">2 Crónicas 7:14</span>
+        </div>
+
+        <p>Así que, nada menos que un corazón contrito por el pecado, una confesión total y restitución satisfará a Dios; y no solamente tristeza por las consecuencias y castigo del pecado, sino por el pecado mismo cometido contra Dios. El infierno está lleno de remordimientos, pero solamente por el castigo en el que se ha incurrido. No existe ninguna verdadera contrición. El hombre rico no pronunció ni una sola palabra de tristeza por su pecado en contra de Dios (Lc. 16:29-30). Pero David, aunque culpable de asesinato y de adulterio a la vez, vio su pecado como solamente contra Dios (Sal. 51:4). El mero remordimiento no es verdadera tristeza según Dios para arrepentimiento. Judas, aunque lleno de remordimientos, nunca se arrepintió. <span class="red-emphasis">El pecado tiene que ser dejado por completo.</span></p>
+
+        <p>Ahora bien, solamente Dios puede conceder un corazón contrito y quebrantado, una tristeza que tendrá como resultado la confesión y el abandono del pecado y nada menos que esto será suficiente.</p>
+
+        <div class="scripture">
+            "Los sacrificios de Dios son el espíritu quebrantado; al corazón contrito y humillado no despreciarás tú, oh Dios"
+            <span class="scripture-ref">Salmo 51:17</span>
+        </div>
+
+        <div class="scripture">
+            "El que encubre sus pecados no prosperará; mas el que los confiesa y se aparta alcanzará misericordia"
+            <span class="scripture-ref">Proverbios 28:13</span>
+        </div>
+
+        <div class="scripture">
+            "Reconoce, pues, tu maldad, porque contra Jehová tu Dios has prevaricado"
+            <span class="scripture-ref">Jeremías 3:13</span>
+        </div>
+
+        <p>Constituye una experiencia muy normal hallar almas arrodilladas ante el altar y clamando a Dios con una apariencia de gran angustia de corazón y que no reciben nada. Y es igual de normal que grupos de personas se reúnan durante noches orando para un avivamiento, y que con todo, no tienen ninguna respuesta a sus oraciones. ¿Dónde está el problema? Que la Palabra de Dios dé la respuesta: <span class="emphasis">"Vuestras iniquidades han hecho división entre vosotros y vuestro Dios, y vuestros pecados han hecho ocultar de vosotros su rostro para no oír."</span> Así, ante todo destapemos nuestro pecado; hagamos rectos los caminos torcidos, saquemos las piedras del camino, y entonces podremos esperar confiadamente lluvias de bendiciones.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Examinémonos a Nosotros Mismos</h2>
+
+        <p>Ahora tomemos nuestros pecados uno a uno y tratemos por separado con cada transgresión y preguntémonos lo siguiente, puede que seamos culpables y que Dios nos vaya a hablar:</p>
+
+        <ol class="examination-list">
+            <li><span class="red-emphasis">¿Hemos perdonado a todos?</span> Existe alguna malicia, rencor, odio o enemistad en nuestros corazones? ¿Alimentamos resentimientos y hemos rehusado reconciliarnos?</li>
+
+            <li><span class="red-emphasis">¿Nos ponemos coléricos?</span> ¿Nos exaltamos por dentro? ¿Es verdad que aún perdemos los estribos? ¿Acaso la ira se apodera en ocasiones de nosotros?</li>
+
+            <li><span class="red-emphasis">¿Hay sentimientos de celos?</span> Cuando se prefiere a otro antes que a nosotros, ¿nos invade la envidia? ¿Tenemos celos de aquellos que pueden orar, hablar, y hacer las cosas mejor que nosotros?</li>
+
+            <li><span class="red-emphasis">¿Nos volvemos impacientes e irritables?</span> ¿Acaso hay pequeñas cosas que nos abruman y enojan? ¿O somos dulces, calmados e inconmovibles bajo todas las circunstancias?</li>
+
+            <li><span class="red-emphasis">¿Se nos ofende fácilmente?</span> Cuando la gente no se da cuenta de nuestra presencia y nos esquiva sin dirigirse a nosotros ¿nos duele? Si se hace mucho a otros y a nosotros se nos deja a un lado, ¿cómo nos sentimos acerca de ello?</li>
+
+            <li><span class="red-emphasis">¿Hay algún orgullo en nuestros corazones?</span> ¿Nos hinchamos? ¿Nos creemos mucho nuestra propia posición y consecuciones?</li>
+
+            <li><span class="red-emphasis">¿Hemos sido deshonestos?</span> ¿Están nuestros negocios abiertos y limpios de toda censura? ¿Damos un metro por un metro y un kilo por un kilo?</li>
+
+            <li><span class="red-emphasis">¿Hemos estado murmurando de otras personas?</span> ¿Calumniamos el carácter de otros? ¿Somos chismosos y entremetidos?</li>
+
+            <li><span class="red-emphasis">¿Criticamos sin amor, duramente, severamente?</span> ¿Estamos siempre hallando fallos y buscando las equivocaciones de los demás?</li>
+
+            <li><span class="red-emphasis">¿Le robamos a Dios?</span> ¿Le robamos tiempo que le pertenece a Él? ¿Hemos retenido nuestro dinero?</li>
+
+            <li><span class="red-emphasis">¿Somos mundanos?</span> ¿Nos gusta el brillo, la pompa, y la gloria de esta vida?</li>
+
+            <li><span class="red-emphasis">¿Hemos robado?</span> ¿Tomamos cosas pequeñas que no son nuestras?</li>
+
+            <li><span class="red-emphasis">¿Anidamos en nosotros un espíritu de amargura hacia otros?</span> ¿Hay odio en nuestro corazón?</li>
+
+            <li><span class="red-emphasis">¿Están nuestras vidas llenas de ligereza y de frivolidad?</span> ¿Es nuestra conducta indecorosa? ¿Consideraría el mundo por nuestras acciones que estamos de su lado?</li>
+
+            <li><span class="red-emphasis">¿Hemos dañado a alguien y no hemos hecho restitución?</span> ¿O nos ha poseído el espíritu de Zaqueo? ¿Hemos restaurado las muchas cosas pequeñas que Dios nos ha mostrado?</li>
+
+            <li><span class="red-emphasis">¿Estamos preocupados o ansiosos?</span> ¿Dejamos de confiar en Dios en cuanto a nuestras necesidades temporales y espirituales? ¿Estamos continuamente sufriendo futuras penalidades sin haber llegado a ellas?</li>
+
+            <li><span class="red-emphasis">¿Somos culpables de inmoralidad?</span> ¿Dejamos que nuestras mentes aniden imaginaciones impuras e impías?</li>
+
+            <li><span class="red-emphasis">¿Somos veraces en nuestras afirmaciones, o exageramos y con ello transmitimos falsas impresiones?</span> ¿Hemos mentido?</li>
+
+            <li><span class="red-emphasis">¿Somos culpables del pecado de incredulidad?</span> A pesar de todo lo que Él ha hecho por nosotros, ¿Rehusamos aún creer Su Palabra? ¿Murmuramos y nos quejamos?</li>
+
+            <li><span class="red-emphasis">¿Hemos cometido el pecado de la falta de oración?</span> ¿Somos intercesores? ¿Oramos? ¿Cuánto tiempo pasamos en oración? ¿Hemos permitido que las muchas ocupaciones desplacen a la oración de nuestras vidas?</li>
+
+            <li><span class="red-emphasis">¿Estamos siendo negligentes con la lectura de la Palabra de Dios?</span> ¿Cuántos capítulos leemos al día? ¿Somos estudiosos de la Biblia? ¿Sacamos de las Escrituras nuestro aprovisionamiento?</li>
+
+            <li><span class="red-emphasis">¿Hemos dejado de confesar a Cristo de una manera abierta?</span> ¿Nos avergonzamos de Jesús? ¿Cerramos nuestras bocas cuando nos vemos rodeados por personas del mundo? ¿Estamos testificando a diario?</li>
+
+            <li><span class="red-emphasis">¿Estamos con una carga por la salvación de las almas?</span> ¿Tenemos amor por los perdidos? ¿Hay alguna compasión en nuestros corazones por los que están pereciendo?</li>
+
+            <li><span class="red-emphasis">¿Hemos perdido nuestro primer amor y ya no tenemos fervor hacia Dios?</span></li>
+        </ol>
+
+        <div class="highlight-box">
+            <p>Éstas son las cosas, tanto positivas como negativas, que detienen la obra de Dios en medio de Su pueblo. Seamos honrados y llamemos las cosas por su nombre: <span class="red-emphasis">PECADO</span>, es la palabra que Dios utiliza. Lo antes que admitamos que hemos pecado, y estemos listos a confesarlo y a dejarlo, lo antes que podemos esperar que Dios nos oiga y obre en poder. ¿Para qué nos vamos a engañar? No podemos engañar a Dios. Así, pues, eliminemos el obstáculo, lo que estorba, antes de tomar ningún otro paso. <span class="emphasis">"Si nos juzgáramos a nosotros mismos, no seríamos juzgados."</span> <span class="emphasis">"El juicio tiene que empezar en la casa de Dios".</span></p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>La Historia de los Avivamientos</h2>
+
+        <p>Ésta ha sido la historia de la obra del avivamiento a lo largo de todos los siglos. Noche tras noche se han predicado sermones sin que ellos surtieran ningún efecto, hasta que algún anciano o diácono estalla en una agonía de confesión y, yendo a aquél al que ha dañado, le ruega perdón. O alguna mujer que ha sido muy activa en la obra, y que se hunde en lágrimas de contrición confiesa públicamente que ha estado murmurando acerca de alguna otra hermana, o que no se habla con la persona al otro lado del pasillo. Entonces, cuando se ha hecho confesión y restitución, con la dura tierra desmontada, el pecado al descubierto y reconocido, entonces y no hasta entonces, el Espíritu de Dios viene sobre la audiencia y un avivamiento desciende sobre la comunidad.</p>
+
+        <p>Por lo general hay tan solamente un pecado, un pecado que constituye el obstáculo. Había un Acán en el campamento de Israel. Y Dios señalará con Su dedo justo el lugar. Y no lo sacará hasta que se haya actuado con respecto al obstáculo.</p>
+
+        <div class="scripture">
+            "Examíname, oh Dios, y conoce mi corazón; pruébame y conoce mis pensamientos; y ve si hay en mí camino de perversidad"
+            <span class="scripture-ref">Salmo 139:23-24</span>
+        </div>
+
+        <p>¡Oh! entonces, roguemos primero con la oración de David cuando él clamó: <span class="emphasis">"Examíname, oh Dios, y conoce mi corazón; pruébame y conoce mis pensamientos; y ve si hay en mí camino de perversidad"</span> (Salmo 139:23, 24). Y tan pronto como el obstáculo del pecado haya sido eliminado del camino, Dios vendrá en un poderoso avivamiento.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="poem-box">
+            <div class="poem-line">Una ciudad de iglesias llena,</div>
+            <div class="poem-line">grandes y eruditos oradores,</div>
+            <div class="poem-line">bella música, órganos y coros;</div>
+            <div class="poem-line">si todos fallan, entonces ¿qué?</div>
+            <div class="poem-line">Buenos obreros, fervientes, deseosos,</div>
+            <div class="poem-line">que hora tras hora trabajan con ardor;</div>
+            <div class="poem-line">pero ¿dónde, oh, dónde, mi hermano,</div>
+            <div class="poem-line">está el todopoderoso hacer de Dios?</div>
+            <div class="poem-line"> </div>
+            <div class="poem-line">Refinamiento ¡educación!</div>
+            <div class="poem-line">Desean lo mejor.</div>
+            <div class="poem-line">Sus planes y designios, perfectos.</div>
+            <div class="poem-line">No se dan descanso alguno;</div>
+            <div class="poem-line">consiguen del talento lo mejor,</div>
+            <div class="poem-line">tratan de hacerlo superior,</div>
+            <div class="poem-line">pero, oh, hermano, su necesidad</div>
+            <div class="poem-line">es el Espíritu Santo de Dios.</div>
+            <div class="poem-line"> </div>
+            <div class="poem-line">Gastaremos nuestro dinero y tiempo</div>
+            <div class="poem-line">y predicaremos con sabiduría grande,</div>
+            <div class="poem-line">pero la simple educación</div>
+            <div class="poem-line">empobrecerá al pueblo de Dios.</div>
+            <div class="poem-line">Dios no quiere humana sabiduría,</div>
+            <div class="poem-line">no busca sonrisas ganar;</div>
+            <div class="poem-line">sino que, oh hermano ¡necesitamos,</div>
+            <div class="poem-line">que el pecado abandonado sea ya!</div>
+            <div class="poem-line"> </div>
+            <div class="poem-line">Es el Espíritu Santo</div>
+            <div class="poem-line">que el alma vivifica.</div>
+            <div class="poem-line">Dios no aceptará al hombre adoración,</div>
+            <div class="poem-line">ni aceptará el control humano.</div>
+            <div class="poem-line">Ni humana innovación,</div>
+            <div class="poem-line">ni habilidad o arte mundano,</div>
+            <div class="poem-line">podrán dar contricción,</div>
+            <div class="poem-line">ni quebrantar el corazón del pecador.</div>
+            <div class="poem-line"> </div>
+            <div class="poem-line">Podemos humana sabiduría tener,</div>
+            <div class="poem-line">grandes cantos y triunfos:</div>
+            <div class="poem-line">buen equipo podrá haber,</div>
+            <div class="poem-line">pero en esto no hay bendición.</div>
+            <div class="poem-line">Dios quiere un vaso puro y limpio,</div>
+            <div class="poem-line">labios ungidos y veraces,</div>
+            <div class="poem-line">un hombre del Espíritu llenado,</div>
+            <div class="poem-line">que proclame todo Su mensaje.</div>
+            <div class="poem-line"> </div>
+            <div class="poem-line">Gran Dios ¡avívanos en verdad!</div>
+            <div class="poem-line">y mantennos cada día;</div>
+            <div class="poem-line">que todos puedan reconocerte,</div>
+            <div class="poem-line">vivimos como oramos.</div>
+            <div class="poem-line">La mano del Señor no se ha acortado,</div>
+            <div class="poem-line">todavía es Su delicia bendecir,</div>
+            <div class="poem-line">si huimos de todo mal,</div>
+            <div class="poem-line">y todo nuestro pecado confesamos.</div>
+            <div class="scripture-ref" style="margin-top: 15px;">Nota: Este poema fue escrito por Samuel Stevenson que me introdujo por vez primera a algunos de los guerreros de la oración que he mencionado, y que me enseñó muchas de estas grandes verdades.</div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Revista Avivamiento - Obstáculos para el Avivamiento<br>
+    Por Oswald J. Smith
+</footer>
+</body>
+</html>
