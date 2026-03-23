@@ -248,7 +248,9 @@ if (grid) {
     const card = document.createElement("article");
     card.className = "card";
     card.innerHTML = `
-      <img class="card-cover" src="${revista.cover}" alt="Portada de ${revista.description}" loading="lazy" />
+      <a class="card-cover-link" href="${revista.href}" aria-label="Abrir revista: ${revista.description}">
+        <img class="card-cover" src="${revista.cover}" alt="Portada de ${revista.description}" loading="lazy" />
+      </a>
       <h2>${revista.title}</h2>
       <p>${revista.description}</p>
       <a class="button" href="${revista.href}">Abrir revista</a>
