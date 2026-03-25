@@ -285,11 +285,14 @@ function addReadAloudControls(main, article) {
     const bookmark = getBookmark();
     if (!bookmark) {
       bookmarkGoButton.hidden = true;
+      bookmarkGoButton.classList.remove("is-visible");
       return;
     }
 
     const distance = Math.abs((window.scrollY || 0) - bookmark.scrollY);
-    bookmarkGoButton.hidden = distance < 120;
+    const shouldShow = distance >= 120;
+    bookmarkGoButton.hidden = !shouldShow;
+    bookmarkGoButton.classList.toggle("is-visible", shouldShow);
   };
 
   bookmarkButton.addEventListener("click", () => {
@@ -619,6 +622,11 @@ function injectToolbarStyles() {
     .reader-separator-dock__go {
       background: linear-gradient(135deg, #0f766e, #0d9488);
       box-shadow: 0 8px 18px rgba(13, 148, 136, 0.33);
+      display: none;
+    }
+
+    .reader-separator-dock__go.is-visible {
+      display: inline-flex;
     }
 
     html[data-theme="dark"] .print-button,
