@@ -178,7 +178,7 @@ function addReadAloudControls(main, article) {
 
   const helper = document.createElement("p");
   helper.className = "reader-toolbar__helper";
-  helper.textContent = "Usa separador 🔖 y notas 📝 mientras lees.";
+  helper.textContent = "Usa tu separador 🔖 para guardar tu avance.";
 
   const controlsRow = document.createElement("div");
   controlsRow.className = "reader-toolbar__controls-row";
@@ -241,46 +241,56 @@ function addReadAloudControls(main, article) {
   const status = document.createElement("p");
   status.className = "reader-toolbar__status";
 
-  const readingTools = document.createElement("div");
-  readingTools.className = "reader-toolbar__reading-tools";
+  toolbar.append(label, helper, controlsRow, status);
+  main.insertBefore(toolbar, article);
+
+  const separatorDock = document.createElement("div");
+  separatorDock.className = "reader-separator-dock";
+  separatorDock.setAttribute("aria-label", "Controles flotantes de separador");
 
   const bookmarkButton = document.createElement("button");
   bookmarkButton.type = "button";
-  bookmarkButton.className = "reader-toolbar__button reader-toolbar__bookmark";
-  bookmarkButton.textContent = "🔖 Guardar separador";
+  bookmarkButton.className = "reader-separator-dock__button reader-separator-dock__mark";
+  bookmarkButton.textContent = "🔖 Marcar aquí";
 
   const bookmarkGoButton = document.createElement("button");
   bookmarkGoButton.type = "button";
-  bookmarkGoButton.className = "reader-toolbar__button reader-toolbar__bookmark-go";
+  bookmarkGoButton.className = "reader-separator-dock__button reader-separator-dock__go";
   bookmarkGoButton.textContent = "📖 Ir al separador";
+  bookmarkGoButton.hidden = true;
 
-  const notesLabel = document.createElement("label");
-  notesLabel.className = "reader-toolbar__notes-label";
-  notesLabel.textContent = "📝 Notas de esta revista";
-
-  const notesArea = document.createElement("textarea");
-  notesArea.className = "reader-toolbar__notes";
-  notesArea.rows = 4;
-  notesArea.placeholder = "Escribe aquí tus notas personales...";
-  notesArea.setAttribute("aria-label", "Notas personales de esta revista");
-
-  readingTools.append(bookmarkButton, bookmarkGoButton, notesLabel, notesArea);
-  toolbar.append(label, helper, controlsRow, readingTools, status);
-  main.insertBefore(toolbar, article);
+  separatorDock.append(bookmarkButton, bookmarkGoButton);
+  document.body.appendChild(separatorDock);
   injectToolbarStyles();
 
   const bookmarkKey = `${storagePrefix}:bookmark`;
-  const notesKey = `${storagePrefix}:notes`;
+  const getBookmark = () => {
+    const rawBookmark = safeStorage.getItem(bookmarkKey);
+    if (!rawBookmark) {
+      return null;
+    }
 
-  const storedNotes = safeStorage.getItem(notesKey);
-  if (storedNotes) {
-    notesArea.value = storedNotes;
-  }
+    try {
+      const parsed = JSON.parse(rawBookmark);
+      if (!Number.isFinite(parsed?.scrollY)) {
+        return null;
+      }
+      return parsed;
+    } catch {
+      return null;
+    }
+  };
 
-  notesArea.addEventListener("input", () => {
-    const didSave = safeStorage.setItem(notesKey, notesArea.value);
-    status.textContent = didSave ? "Nota guardada." : "No se pudo guardar la nota en este navegador.";
-  });
+  const updateSeparatorButtonVisibility = () => {
+    const bookmark = getBookmark();
+    if (!bookmark) {
+      bookmarkGoButton.hidden = true;
+      return;
+    }
+
+    const distance = Math.abs((window.scrollY || 0) - bookmark.scrollY);
+    bookmarkGoButton.hidden = distance < 120;
+  };
 
   bookmarkButton.addEventListener("click", () => {
     const bookmark = {
@@ -291,30 +301,28 @@ function addReadAloudControls(main, article) {
     status.textContent = didSave
       ? "Separador guardado en esta posición."
       : "No se pudo guardar el separador en este navegador.";
+    updateSeparatorButtonVisibility();
   });
 
   bookmarkGoButton.addEventListener("click", () => {
-    const rawBookmark = safeStorage.getItem(bookmarkKey);
-    if (!rawBookmark) {
+    const bookmark = getBookmark();
+    if (!bookmark) {
       status.textContent = "Aún no tienes separador guardado.";
       return;
     }
 
-    try {
-      const bookmark = JSON.parse(rawBookmark);
-      const top = Number.isFinite(bookmark.scrollY) ? bookmark.scrollY : 0;
-      window.scrollTo({ top, behavior: "smooth" });
-      status.textContent = "Te llevamos a tu separador.";
-    } catch {
-      status.textContent = "No se pudo leer el separador guardado.";
-    }
+    window.scrollTo({ top: bookmark.scrollY, behavior: "smooth" });
+    status.textContent = "Te llevamos a tu separador.";
+    setTimeout(updateSeparatorButtonVisibility, 250);
   });
 
   if (!speechSupported) {
-    status.textContent = "Tu navegador no soporta lectura en voz alta, pero sí separador y notas.";
+    status.textContent = "Tu navegador no soporta lectura en voz alta, pero sí tu separador.";
     [playButton, languageToggle, languageSelect].forEach((control) => {
       control.disabled = true;
     });
+    updateSeparatorButtonVisibility();
+    window.addEventListener("scroll", updateSeparatorButtonVisibility, { passive: true });
     return;
   }
 
@@ -463,7 +471,9 @@ function addReadAloudControls(main, article) {
     languageToggle.textContent = languageWrap.hidden ? "🌐 Idioma" : "✖ Ocultar idioma";
   });
 
-  status.textContent = "Listo para leer. Nuevas funciones activas: separador y notas.";
+  status.textContent = "Listo para leer. Tu separador está activo.";
+  updateSeparatorButtonVisibility();
+  window.addEventListener("scroll", updateSeparatorButtonVisibility, { passive: true });
   window.addEventListener("beforeunload", clearPlayback);
 }
 
@@ -564,28 +574,35 @@ function injectToolbarStyles() {
       color: #5a6d86;
     }
 
-    .reader-toolbar__reading-tools {
-      margin-top: 8px;
-      display: grid;
-      gap: 6px;
+    .reader-separator-dock {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #d1d9e6;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.22);
+      backdrop-filter: blur(6px);
     }
 
-    .reader-toolbar__notes-label {
+    .reader-separator-dock__button {
+      border: none;
+      border-radius: 999px;
+      padding: 9px 13px;
       font-size: 0.82rem;
       font-weight: 700;
-      color: #34495e;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
     }
 
-    .reader-toolbar__notes {
-      border: 1px solid #b7c3d6;
-      border-radius: 8px;
-      padding: 8px;
-      font-size: 0.9rem;
-      resize: vertical;
-      min-height: 90px;
-      font-family: inherit;
-      background: #fff;
-      color: #1f2937;
+    .reader-separator-dock__go {
+      background: linear-gradient(135deg, #0f766e, #0d9488);
     }
 
     html[data-theme="dark"] .print-button,
@@ -604,8 +621,7 @@ function injectToolbarStyles() {
     html[data-theme="dark"] .reader-toolbar__label,
     html[data-theme="dark"] .reader-toolbar__helper,
     html[data-theme="dark"] .reader-toolbar__status,
-    html[data-theme="dark"] .reader-toolbar__toggle-language,
-    html[data-theme="dark"] .reader-toolbar__notes-label {
+    html[data-theme="dark"] .reader-toolbar__toggle-language {
       color: #e2e8f0;
     }
 
@@ -622,10 +638,31 @@ function injectToolbarStyles() {
       border-color: #3b82f6;
     }
 
-    html[data-theme="dark"] .reader-toolbar__notes {
+    html[data-theme="dark"] .reader-separator-dock {
+      background: rgba(15, 23, 42, 0.86);
       border-color: #334155;
-      background: #0f172a;
-      color: #e2e8f0;
+      box-shadow: 0 10px 25px rgba(2, 6, 23, 0.4);
+    }
+
+    html[data-theme="dark"] .reader-separator-dock__button {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+    }
+
+    html[data-theme="dark"] .reader-separator-dock__go {
+      background: linear-gradient(135deg, #14b8a6, #0d9488);
+    }
+
+    @media (max-width: 640px) {
+      .reader-separator-dock {
+        right: 10px;
+        bottom: 10px;
+        padding: 6px;
+      }
+
+      .reader-separator-dock__button {
+        padding: 8px 11px;
+        font-size: 0.78rem;
+      }
     }
   `;
 
