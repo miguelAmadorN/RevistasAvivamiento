@@ -174,11 +174,7 @@ function addReadAloudControls(main, article) {
 
   const label = document.createElement("p");
   label.className = "reader-toolbar__label";
-  label.textContent = "Herramientas de lectura";
-
-  const helper = document.createElement("p");
-  helper.className = "reader-toolbar__helper";
-  helper.textContent = "Usa tu separador 🔖 para guardar tu avance.";
+  label.textContent = "Escuchar revista";
 
   const controlsRow = document.createElement("div");
   controlsRow.className = "reader-toolbar__controls-row";
@@ -241,7 +237,7 @@ function addReadAloudControls(main, article) {
   const status = document.createElement("p");
   status.className = "reader-toolbar__status";
 
-  toolbar.append(label, helper, controlsRow, status);
+  toolbar.append(label, controlsRow, status);
   main.insertBefore(toolbar, article);
 
   const separatorDock = document.createElement("div");
@@ -251,12 +247,16 @@ function addReadAloudControls(main, article) {
   const bookmarkButton = document.createElement("button");
   bookmarkButton.type = "button";
   bookmarkButton.className = "reader-separator-dock__button reader-separator-dock__mark";
-  bookmarkButton.textContent = "🔖 Marcar aquí";
+  bookmarkButton.textContent = "🔖";
+  bookmarkButton.title = "Guardar separador en esta posición";
+  bookmarkButton.setAttribute("aria-label", "Guardar separador en esta posición");
 
   const bookmarkGoButton = document.createElement("button");
   bookmarkGoButton.type = "button";
   bookmarkGoButton.className = "reader-separator-dock__button reader-separator-dock__go";
-  bookmarkGoButton.textContent = "📖 Ir al separador";
+  bookmarkGoButton.textContent = "📖";
+  bookmarkGoButton.title = "Ir al separador guardado";
+  bookmarkGoButton.setAttribute("aria-label", "Ir al separador guardado");
   bookmarkGoButton.hidden = true;
 
   separatorDock.append(bookmarkButton, bookmarkGoButton);
@@ -526,12 +526,6 @@ function injectToolbarStyles() {
       font-size: 1rem;
     }
 
-    .reader-toolbar__helper {
-      margin: 0 0 8px;
-      font-size: 0.82rem;
-      color: #5a6d86;
-    }
-
     .reader-toolbar__controls-row {
       display: flex;
       align-items: center;
@@ -619,7 +613,6 @@ function injectToolbarStyles() {
     }
 
     html[data-theme="dark"] .reader-toolbar__label,
-    html[data-theme="dark"] .reader-toolbar__helper,
     html[data-theme="dark"] .reader-toolbar__status,
     html[data-theme="dark"] .reader-toolbar__toggle-language {
       color: #e2e8f0;
