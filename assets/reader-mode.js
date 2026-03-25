@@ -259,11 +259,35 @@ function addReadAloudControls(main, article) {
   bookmarkGoButton.setAttribute("aria-label", "Ir al separador guardado");
   bookmarkGoButton.hidden = true;
 
-  separatorDock.append(bookmarkButton, bookmarkGoButton);
+  const fontSizeButton = document.createElement("button");
+  fontSizeButton.type = "button";
+  fontSizeButton.className = "reader-separator-dock__button reader-separator-dock__font-size";
+  fontSizeButton.title = "Cambiar tamaño de letra";
+  fontSizeButton.setAttribute("aria-label", "Cambiar tamaño de letra");
+
+  const fontSizeLabel = document.createElement("span");
+  fontSizeLabel.className = "reader-separator-dock__font-label";
+  fontSizeButton.appendChild(fontSizeLabel);
+
+  separatorDock.append(bookmarkButton, bookmarkGoButton, fontSizeButton);
   document.body.appendChild(separatorDock);
   injectToolbarStyles();
 
   const bookmarkKey = `${storagePrefix}:bookmark`;
+  const fontScaleKey = `${storagePrefix}:fontScale`;
+  const fontScaleLevels = [0.95, 1, 1.1, 1.2, 1.3];
+  const baseRootFontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize) || 16;
+  let fontScaleIndex = 1;
+
+  const applyFontScale = (scale) => {
+    const boundedScale = Number.isFinite(scale) ? Math.min(Math.max(scale, 0.8), 1.5) : 1;
+    document.documentElement.style.fontSize = `${(baseRootFontSize * boundedScale).toFixed(2)}px`;
+  };
+
+  const updateFontButtonLabel = () => {
+    const scale = fontScaleLevels[fontScaleIndex] || 1;
+    fontSizeLabel.textContent = `A ${Math.round(scale * 100)}%`;
+  };
   const getBookmark = () => {
     const rawBookmark = safeStorage.getItem(bookmarkKey);
     if (!rawBookmark) {
@@ -318,6 +342,22 @@ function addReadAloudControls(main, article) {
     status.textContent = "Te llevamos a tu separador.";
     setTimeout(updateSeparatorButtonVisibility, 250);
   });
+
+  fontSizeButton.addEventListener("click", () => {
+    fontScaleIndex = (fontScaleIndex + 1) % fontScaleLevels.length;
+    const nextScale = fontScaleLevels[fontScaleIndex];
+    applyFontScale(nextScale);
+    safeStorage.setItem(fontScaleKey, String(nextScale));
+    updateFontButtonLabel();
+    status.textContent = `Tamaño de letra: ${Math.round(nextScale * 100)}%.`;
+  });
+
+  const storedFontScale = Number.parseFloat(safeStorage.getItem(fontScaleKey) || "");
+  const initialScale = Number.isFinite(storedFontScale) ? storedFontScale : 1;
+  const matchedIndex = fontScaleLevels.findIndex((level) => Math.abs(level - initialScale) < 0.001);
+  fontScaleIndex = matchedIndex >= 0 ? matchedIndex : 1;
+  applyFontScale(initialScale);
+  updateFontButtonLabel();
 
   if (!speechSupported) {
     status.textContent = "Tu navegador no soporta lectura en voz alta, pero sí tu separador.";
@@ -629,6 +669,21 @@ function injectToolbarStyles() {
       display: inline-flex;
     }
 
+    .reader-separator-dock__font-size {
+      background: linear-gradient(135deg, #7c3aed, #6d28d9);
+      box-shadow: 0 8px 18px rgba(109, 40, 217, 0.32);
+      width: auto;
+      min-width: 54px;
+      padding: 0 8px;
+      font-size: 0.74rem;
+    }
+
+    .reader-separator-dock__font-label {
+      line-height: 1;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
     html[data-theme="dark"] .print-button,
     html[data-theme="dark"] .theme-toggle-button {
       background: rgba(30, 41, 59, 0.92);
@@ -673,6 +728,10 @@ function injectToolbarStyles() {
 
     html[data-theme="dark"] .reader-separator-dock__go {
       background: linear-gradient(135deg, #14b8a6, #0d9488);
+    }
+
+    html[data-theme="dark"] .reader-separator-dock__font-size {
+      background: linear-gradient(135deg, #8b5cf6, #7c3aed);
     }
 
     @media (max-width: 640px) {
