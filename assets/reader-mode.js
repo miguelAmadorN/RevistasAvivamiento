@@ -150,6 +150,23 @@ function splitTextIntoChunks(text, maxLength = 900) {
 function addReadAloudControls(main, article) {
   const speechSupported = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
   const storagePrefix = `reader:${window.location.pathname}`;
+  const safeStorage = {
+    getItem(key) {
+      try {
+        return window.localStorage.getItem(key);
+      } catch {
+        return null;
+      }
+    },
+    setItem(key, value) {
+      try {
+        window.localStorage.setItem(key, value);
+        return true;
+      } catch {
+        return false;
+      }
+    },
+  };
 
   const toolbar = document.createElement("section");
   toolbar.className = "reader-toolbar";
@@ -157,7 +174,11 @@ function addReadAloudControls(main, article) {
 
   const label = document.createElement("p");
   label.className = "reader-toolbar__label";
-  label.textContent = "Escuchar revista";
+  label.textContent = "Herramientas de lectura";
+
+  const helper = document.createElement("p");
+  helper.className = "reader-toolbar__helper";
+  helper.textContent = "Usa separador 🔖 y notas 📝 mientras lees.";
 
   const controlsRow = document.createElement("div");
   controlsRow.className = "reader-toolbar__controls-row";
@@ -244,21 +265,21 @@ function addReadAloudControls(main, article) {
   notesArea.setAttribute("aria-label", "Notas personales de esta revista");
 
   readingTools.append(bookmarkButton, bookmarkGoButton, notesLabel, notesArea);
-  toolbar.append(label, controlsRow, readingTools, status);
+  toolbar.append(label, helper, controlsRow, readingTools, status);
   main.insertBefore(toolbar, article);
   injectToolbarStyles();
 
   const bookmarkKey = `${storagePrefix}:bookmark`;
   const notesKey = `${storagePrefix}:notes`;
 
-  const storedNotes = localStorage.getItem(notesKey);
+  const storedNotes = safeStorage.getItem(notesKey);
   if (storedNotes) {
     notesArea.value = storedNotes;
   }
 
   notesArea.addEventListener("input", () => {
-    localStorage.setItem(notesKey, notesArea.value);
-    status.textContent = "Nota guardada.";
+    const didSave = safeStorage.setItem(notesKey, notesArea.value);
+    status.textContent = didSave ? "Nota guardada." : "No se pudo guardar la nota en este navegador.";
   });
 
   bookmarkButton.addEventListener("click", () => {
@@ -266,12 +287,14 @@ function addReadAloudControls(main, article) {
       scrollY: Math.round(window.scrollY || 0),
       savedAt: new Date().toISOString(),
     };
-    localStorage.setItem(bookmarkKey, JSON.stringify(bookmark));
-    status.textContent = "Separador guardado en esta posición.";
+    const didSave = safeStorage.setItem(bookmarkKey, JSON.stringify(bookmark));
+    status.textContent = didSave
+      ? "Separador guardado en esta posición."
+      : "No se pudo guardar el separador en este navegador.";
   });
 
   bookmarkGoButton.addEventListener("click", () => {
-    const rawBookmark = localStorage.getItem(bookmarkKey);
+    const rawBookmark = safeStorage.getItem(bookmarkKey);
     if (!rawBookmark) {
       status.textContent = "Aún no tienes separador guardado.";
       return;
@@ -440,7 +463,7 @@ function addReadAloudControls(main, article) {
     languageToggle.textContent = languageWrap.hidden ? "🌐 Idioma" : "✖ Ocultar idioma";
   });
 
-  status.textContent = "Listo para leer en español. También puedes guardar separador y notas.";
+  status.textContent = "Listo para leer. Nuevas funciones activas: separador y notas.";
   window.addEventListener("beforeunload", clearPlayback);
 }
 
@@ -487,10 +510,16 @@ function injectToolbarStyles() {
     }
 
     .reader-toolbar__label {
-      margin: 0 0 6px;
+      margin: 0 0 2px;
       font-weight: 700;
       color: #2c3e50;
-      font-size: 0.95rem;
+      font-size: 1rem;
+    }
+
+    .reader-toolbar__helper {
+      margin: 0 0 8px;
+      font-size: 0.82rem;
+      color: #5a6d86;
     }
 
     .reader-toolbar__controls-row {
@@ -573,6 +602,7 @@ function injectToolbarStyles() {
     }
 
     html[data-theme="dark"] .reader-toolbar__label,
+    html[data-theme="dark"] .reader-toolbar__helper,
     html[data-theme="dark"] .reader-toolbar__status,
     html[data-theme="dark"] .reader-toolbar__toggle-language,
     html[data-theme="dark"] .reader-toolbar__notes-label {
