@@ -247,14 +247,14 @@ function addReadAloudControls(main, article) {
   const bookmarkButton = document.createElement("button");
   bookmarkButton.type = "button";
   bookmarkButton.className = "reader-separator-dock__button reader-separator-dock__mark";
-  bookmarkButton.textContent = "🔖";
+  bookmarkButton.innerHTML = "<span class=\"reader-separator-dock__icon\" aria-hidden=\"true\">🔖</span>";
   bookmarkButton.title = "Guardar separador en esta posición";
   bookmarkButton.setAttribute("aria-label", "Guardar separador en esta posición");
 
   const bookmarkGoButton = document.createElement("button");
   bookmarkGoButton.type = "button";
   bookmarkGoButton.className = "reader-separator-dock__button reader-separator-dock__go";
-  bookmarkGoButton.textContent = "📖";
+  bookmarkGoButton.innerHTML = "<span class=\"reader-separator-dock__icon\" aria-hidden=\"true\">📘</span>";
   bookmarkGoButton.title = "Ir al separador guardado";
   bookmarkGoButton.setAttribute("aria-label", "Ir al separador guardado");
   bookmarkGoButton.hidden = true;
@@ -586,17 +586,39 @@ function injectToolbarStyles() {
 
     .reader-separator-dock__button {
       border: none;
-      border-radius: 999px;
-      padding: 9px 13px;
-      font-size: 0.82rem;
+      border-radius: 12px;
+      width: 44px;
+      height: 44px;
       font-weight: 700;
       cursor: pointer;
       color: #fff;
       background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+    }
+
+    .reader-separator-dock__button:hover {
+      transform: translateY(-1px) scale(1.04);
+      filter: saturate(1.08);
+    }
+
+    .reader-separator-dock__button:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.28);
+    }
+
+    .reader-separator-dock__icon {
+      font-size: 1.18rem;
+      line-height: 1;
+      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.22));
     }
 
     .reader-separator-dock__go {
       background: linear-gradient(135deg, #0f766e, #0d9488);
+      box-shadow: 0 8px 18px rgba(13, 148, 136, 0.33);
     }
 
     html[data-theme="dark"] .print-button,
@@ -653,8 +675,12 @@ function injectToolbarStyles() {
       }
 
       .reader-separator-dock__button {
-        padding: 8px 11px;
-        font-size: 0.78rem;
+        width: 42px;
+        height: 42px;
+      }
+
+      .reader-separator-dock__icon {
+        font-size: 1.1rem;
       }
     }
   `;
