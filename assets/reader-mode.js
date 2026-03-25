@@ -264,7 +264,7 @@ function addReadAloudControls(main, article) {
   fontSizeButton.className = "reader-separator-dock__button reader-separator-dock__font-size";
   fontSizeButton.title = "Abrir controles de tamaño de letra";
   fontSizeButton.setAttribute("aria-label", "Abrir controles de tamaño de letra");
-  fontSizeButton.innerHTML = "<span class=\"reader-separator-dock__icon\" aria-hidden=\"true\">🔠</span>";
+  fontSizeButton.innerHTML = "<span class=\"reader-separator-dock__icon\" aria-hidden=\"true\">Aa</span>";
 
   const fontSizePanel = document.createElement("div");
   fontSizePanel.className = "reader-separator-dock__font-panel";
@@ -732,6 +732,12 @@ function injectToolbarStyles() {
     .reader-separator-dock__font-size {
       background: linear-gradient(135deg, #7c3aed, #6d28d9);
       box-shadow: 0 8px 18px rgba(109, 40, 217, 0.32);
+    }
+
+    .reader-separator-dock__font-size .reader-separator-dock__icon {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
     .reader-separator-dock__font-size.is-active {
