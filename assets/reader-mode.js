@@ -259,11 +259,65 @@ function addReadAloudControls(main, article) {
   bookmarkGoButton.setAttribute("aria-label", "Ir al separador guardado");
   bookmarkGoButton.hidden = true;
 
-  separatorDock.append(bookmarkButton, bookmarkGoButton);
+  const fontSizeButton = document.createElement("button");
+  fontSizeButton.type = "button";
+  fontSizeButton.className = "reader-separator-dock__button reader-separator-dock__font-size";
+  fontSizeButton.title = "Abrir controles de tamaño de letra";
+  fontSizeButton.setAttribute("aria-label", "Abrir controles de tamaño de letra");
+  fontSizeButton.innerHTML = "<span class=\"reader-separator-dock__icon\" aria-hidden=\"true\">Aa</span>";
+
+  const fontSizePanel = document.createElement("div");
+  fontSizePanel.className = "reader-separator-dock__font-panel";
+  fontSizePanel.hidden = true;
+  fontSizePanel.setAttribute("role", "group");
+  fontSizePanel.setAttribute("aria-label", "Controles de tamaño de letra");
+
+  const fontDecreaseButton = document.createElement("button");
+  fontDecreaseButton.type = "button";
+  fontDecreaseButton.className = "reader-separator-dock__font-action";
+  fontDecreaseButton.textContent = "A−";
+  fontDecreaseButton.title = "Disminuir tamaño de letra";
+  fontDecreaseButton.setAttribute("aria-label", "Disminuir tamaño de letra");
+
+  const fontResetButton = document.createElement("button");
+  fontResetButton.type = "button";
+  fontResetButton.className = "reader-separator-dock__font-action reader-separator-dock__font-action--reset";
+  fontResetButton.textContent = "A";
+  fontResetButton.title = "Restablecer tamaño de letra";
+  fontResetButton.setAttribute("aria-label", "Restablecer tamaño de letra");
+
+  const fontIncreaseButton = document.createElement("button");
+  fontIncreaseButton.type = "button";
+  fontIncreaseButton.className = "reader-separator-dock__font-action";
+  fontIncreaseButton.textContent = "A+";
+  fontIncreaseButton.title = "Aumentar tamaño de letra";
+  fontIncreaseButton.setAttribute("aria-label", "Aumentar tamaño de letra");
+
+  fontSizePanel.append(fontDecreaseButton, fontResetButton, fontIncreaseButton);
+  separatorDock.append(bookmarkButton, bookmarkGoButton, fontSizeButton, fontSizePanel);
   document.body.appendChild(separatorDock);
   injectToolbarStyles();
 
   const bookmarkKey = `${storagePrefix}:bookmark`;
+  const fontSizeKey = `${storagePrefix}:fontSize`;
+  const baseRootFontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize) || 16;
+  const minFontSize = Math.max(14, Math.round(baseRootFontSize - 2));
+  const maxFontSize = Math.min(24, Math.round(baseRootFontSize + 8));
+  const fontStep = 2;
+  let currentFontSize = Math.round(baseRootFontSize);
+
+  const applyFontSize = (sizePx) => {
+    const boundedSize = Number.isFinite(sizePx)
+      ? Math.min(Math.max(Math.round(sizePx), minFontSize), maxFontSize)
+      : Math.round(baseRootFontSize);
+    document.documentElement.style.fontSize = `${boundedSize}px`;
+    currentFontSize = boundedSize;
+  };
+
+  const updateFontSizeButtons = () => {
+    fontDecreaseButton.disabled = currentFontSize <= minFontSize;
+    fontIncreaseButton.disabled = currentFontSize >= maxFontSize;
+  };
   const getBookmark = () => {
     const rawBookmark = safeStorage.getItem(bookmarkKey);
     if (!rawBookmark) {
@@ -318,6 +372,52 @@ function addReadAloudControls(main, article) {
     status.textContent = "Te llevamos a tu separador.";
     setTimeout(updateSeparatorButtonVisibility, 250);
   });
+
+  fontSizeButton.addEventListener("click", () => {
+    const isExpanded = !fontSizePanel.hidden;
+    fontSizePanel.hidden = isExpanded;
+    fontSizeButton.classList.toggle("is-active", !isExpanded);
+  });
+
+  fontDecreaseButton.addEventListener("click", () => {
+    const nextSize = currentFontSize - fontStep;
+    applyFontSize(nextSize);
+    safeStorage.setItem(fontSizeKey, String(currentFontSize));
+    updateFontSizeButtons();
+    status.textContent = "Tamaño de letra reducido.";
+  });
+
+  fontIncreaseButton.addEventListener("click", () => {
+    const nextSize = currentFontSize + fontStep;
+    applyFontSize(nextSize);
+    safeStorage.setItem(fontSizeKey, String(currentFontSize));
+    updateFontSizeButtons();
+    status.textContent = "Tamaño de letra aumentado.";
+  });
+
+  fontResetButton.addEventListener("click", () => {
+    applyFontSize(baseRootFontSize);
+    safeStorage.setItem(fontSizeKey, String(currentFontSize));
+    updateFontSizeButtons();
+    status.textContent = "Tamaño de letra restablecido.";
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Node)) {
+      return;
+    }
+    if (separatorDock.contains(target)) {
+      return;
+    }
+    fontSizePanel.hidden = true;
+    fontSizeButton.classList.remove("is-active");
+  });
+
+  const storedFontSize = Number.parseFloat(safeStorage.getItem(fontSizeKey) || "");
+  const initialFontSize = Number.isFinite(storedFontSize) ? storedFontSize : baseRootFontSize;
+  applyFontSize(initialFontSize);
+  updateFontSizeButtons();
 
   if (!speechSupported) {
     status.textContent = "Tu navegador no soporta lectura en voz alta, pero sí tu separador.";
@@ -629,6 +729,59 @@ function injectToolbarStyles() {
       display: inline-flex;
     }
 
+    .reader-separator-dock__font-size {
+      background: linear-gradient(135deg, #7c3aed, #6d28d9);
+      box-shadow: 0 8px 18px rgba(109, 40, 217, 0.32);
+    }
+
+    .reader-separator-dock__font-size .reader-separator-dock__icon {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .reader-separator-dock__font-size.is-active {
+      outline: 2px solid rgba(255, 255, 255, 0.85);
+      outline-offset: 1px;
+    }
+
+    .reader-separator-dock__font-panel {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid #d1d9e6;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+    }
+
+    .reader-separator-dock__font-panel[hidden] {
+      display: none;
+    }
+
+    .reader-separator-dock__font-action {
+      border: 1px solid #c8d4e5;
+      background: #ffffff;
+      color: #1e293b;
+      border-radius: 10px;
+      min-width: 38px;
+      height: 34px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 0 8px;
+    }
+
+    .reader-separator-dock__font-action:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .reader-separator-dock__font-action--reset {
+      min-width: 32px;
+    }
+
     html[data-theme="dark"] .print-button,
     html[data-theme="dark"] .theme-toggle-button {
       background: rgba(30, 41, 59, 0.92);
@@ -673,6 +826,22 @@ function injectToolbarStyles() {
 
     html[data-theme="dark"] .reader-separator-dock__go {
       background: linear-gradient(135deg, #14b8a6, #0d9488);
+    }
+
+    html[data-theme="dark"] .reader-separator-dock__font-size {
+      background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    }
+
+    html[data-theme="dark"] .reader-separator-dock__font-panel {
+      background: rgba(15, 23, 42, 0.96);
+      border-color: #334155;
+      box-shadow: 0 8px 20px rgba(2, 6, 23, 0.4);
+    }
+
+    html[data-theme="dark"] .reader-separator-dock__font-action {
+      background: #1e293b;
+      border-color: #475569;
+      color: #e2e8f0;
     }
 
     @media (max-width: 640px) {
