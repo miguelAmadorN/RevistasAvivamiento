@@ -149,10 +149,28 @@ function splitTextIntoChunks(text, maxLength = 900) {
 
 function addReadAloudControls(main, article) {
   const speechSupported = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+  const storagePrefix = `reader:${window.location.pathname}`;
+  const safeStorage = {
+    getItem(key) {
+      try {
+        return window.localStorage.getItem(key);
+      } catch {
+        return null;
+      }
+    },
+    setItem(key, value) {
+      try {
+        window.localStorage.setItem(key, value);
+        return true;
+      } catch {
+        return false;
+      }
+    },
+  };
 
   const toolbar = document.createElement("section");
   toolbar.className = "reader-toolbar";
-  toolbar.setAttribute("aria-label", "Controles de lectura en voz alta");
+  toolbar.setAttribute("aria-label", "Controles de lectura");
 
   const label = document.createElement("p");
   label.className = "reader-toolbar__label";
@@ -221,13 +239,93 @@ function addReadAloudControls(main, article) {
 
   toolbar.append(label, controlsRow, status);
   main.insertBefore(toolbar, article);
+
+  const separatorDock = document.createElement("div");
+  separatorDock.className = "reader-separator-dock";
+  separatorDock.setAttribute("aria-label", "Controles flotantes de separador");
+
+  const bookmarkButton = document.createElement("button");
+  bookmarkButton.type = "button";
+  bookmarkButton.className = "reader-separator-dock__button reader-separator-dock__mark";
+  bookmarkButton.innerHTML = "<span class=\"reader-separator-dock__icon\" aria-hidden=\"true\">🔖</span>";
+  bookmarkButton.title = "Guardar separador en esta posición";
+  bookmarkButton.setAttribute("aria-label", "Guardar separador en esta posición");
+
+  const bookmarkGoButton = document.createElement("button");
+  bookmarkGoButton.type = "button";
+  bookmarkGoButton.className = "reader-separator-dock__button reader-separator-dock__go";
+  bookmarkGoButton.innerHTML = "<span class=\"reader-separator-dock__icon\" aria-hidden=\"true\">📘</span>";
+  bookmarkGoButton.title = "Ir al separador guardado";
+  bookmarkGoButton.setAttribute("aria-label", "Ir al separador guardado");
+  bookmarkGoButton.hidden = true;
+
+  separatorDock.append(bookmarkButton, bookmarkGoButton);
+  document.body.appendChild(separatorDock);
   injectToolbarStyles();
 
+  const bookmarkKey = `${storagePrefix}:bookmark`;
+  const getBookmark = () => {
+    const rawBookmark = safeStorage.getItem(bookmarkKey);
+    if (!rawBookmark) {
+      return null;
+    }
+
+    try {
+      const parsed = JSON.parse(rawBookmark);
+      if (!Number.isFinite(parsed?.scrollY)) {
+        return null;
+      }
+      return parsed;
+    } catch {
+      return null;
+    }
+  };
+
+  const updateSeparatorButtonVisibility = () => {
+    const bookmark = getBookmark();
+    if (!bookmark) {
+      bookmarkGoButton.hidden = true;
+      bookmarkGoButton.classList.remove("is-visible");
+      return;
+    }
+
+    const distance = Math.abs((window.scrollY || 0) - bookmark.scrollY);
+    const shouldShow = distance >= 120;
+    bookmarkGoButton.hidden = !shouldShow;
+    bookmarkGoButton.classList.toggle("is-visible", shouldShow);
+  };
+
+  bookmarkButton.addEventListener("click", () => {
+    const bookmark = {
+      scrollY: Math.round(window.scrollY || 0),
+      savedAt: new Date().toISOString(),
+    };
+    const didSave = safeStorage.setItem(bookmarkKey, JSON.stringify(bookmark));
+    status.textContent = didSave
+      ? "Separador guardado en esta posición."
+      : "No se pudo guardar el separador en este navegador.";
+    updateSeparatorButtonVisibility();
+  });
+
+  bookmarkGoButton.addEventListener("click", () => {
+    const bookmark = getBookmark();
+    if (!bookmark) {
+      status.textContent = "Aún no tienes separador guardado.";
+      return;
+    }
+
+    window.scrollTo({ top: bookmark.scrollY, behavior: "smooth" });
+    status.textContent = "Te llevamos a tu separador.";
+    setTimeout(updateSeparatorButtonVisibility, 250);
+  });
+
   if (!speechSupported) {
-    status.textContent = "Tu navegador no soporta reproducción de texto por voz.";
+    status.textContent = "Tu navegador no soporta lectura en voz alta, pero sí tu separador.";
     [playButton, languageToggle, languageSelect].forEach((control) => {
       control.disabled = true;
     });
+    updateSeparatorButtonVisibility();
+    window.addEventListener("scroll", updateSeparatorButtonVisibility, { passive: true });
     return;
   }
 
@@ -376,7 +474,9 @@ function addReadAloudControls(main, article) {
     languageToggle.textContent = languageWrap.hidden ? "🌐 Idioma" : "✖ Ocultar idioma";
   });
 
-  status.textContent = "Listo para leer en español. Puedes abrir Idioma para traducir y reproducir en más idiomas.";
+  status.textContent = "Listo para leer. Tu separador está activo.";
+  updateSeparatorButtonVisibility();
+  window.addEventListener("scroll", updateSeparatorButtonVisibility, { passive: true });
   window.addEventListener("beforeunload", clearPlayback);
 }
 
@@ -423,10 +523,10 @@ function injectToolbarStyles() {
     }
 
     .reader-toolbar__label {
-      margin: 0 0 6px;
+      margin: 0 0 2px;
       font-weight: 700;
       color: #2c3e50;
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
 
     .reader-toolbar__controls-row {
@@ -471,6 +571,64 @@ function injectToolbarStyles() {
       color: #5a6d86;
     }
 
+    .reader-separator-dock {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #d1d9e6;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.22);
+      backdrop-filter: blur(6px);
+    }
+
+    .reader-separator-dock__button {
+      border: none;
+      border-radius: 12px;
+      width: 44px;
+      height: 44px;
+      font-weight: 700;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+    }
+
+    .reader-separator-dock__button:hover {
+      transform: translateY(-1px) scale(1.04);
+      filter: saturate(1.08);
+    }
+
+    .reader-separator-dock__button:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.28);
+    }
+
+    .reader-separator-dock__icon {
+      font-size: 1.18rem;
+      line-height: 1;
+      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.22));
+    }
+
+    .reader-separator-dock__go {
+      background: linear-gradient(135deg, #0f766e, #0d9488);
+      box-shadow: 0 8px 18px rgba(13, 148, 136, 0.33);
+      display: none;
+    }
+
+    .reader-separator-dock__go.is-visible {
+      display: inline-flex;
+    }
+
     html[data-theme="dark"] .print-button,
     html[data-theme="dark"] .theme-toggle-button {
       background: rgba(30, 41, 59, 0.92);
@@ -501,6 +659,37 @@ function injectToolbarStyles() {
     html[data-theme="dark"] .reader-toolbar__button:not(.reader-toolbar__toggle-language) {
       background: linear-gradient(135deg, #2563eb, #1d4ed8);
       border-color: #3b82f6;
+    }
+
+    html[data-theme="dark"] .reader-separator-dock {
+      background: rgba(15, 23, 42, 0.86);
+      border-color: #334155;
+      box-shadow: 0 10px 25px rgba(2, 6, 23, 0.4);
+    }
+
+    html[data-theme="dark"] .reader-separator-dock__button {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+    }
+
+    html[data-theme="dark"] .reader-separator-dock__go {
+      background: linear-gradient(135deg, #14b8a6, #0d9488);
+    }
+
+    @media (max-width: 640px) {
+      .reader-separator-dock {
+        right: 10px;
+        bottom: 10px;
+        padding: 6px;
+      }
+
+      .reader-separator-dock__button {
+        width: 42px;
+        height: 42px;
+      }
+
+      .reader-separator-dock__icon {
+        font-size: 1.1rem;
+      }
     }
   `;
 
