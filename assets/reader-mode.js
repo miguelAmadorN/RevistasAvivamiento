@@ -149,10 +149,11 @@ function splitTextIntoChunks(text, maxLength = 900) {
 
 function addReadAloudControls(main, article) {
   const speechSupported = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+  const storagePrefix = `reader:${window.location.pathname}`;
 
   const toolbar = document.createElement("section");
   toolbar.className = "reader-toolbar";
-  toolbar.setAttribute("aria-label", "Controles de lectura en voz alta");
+  toolbar.setAttribute("aria-label", "Controles de lectura");
 
   const label = document.createElement("p");
   label.className = "reader-toolbar__label";
@@ -219,12 +220,75 @@ function addReadAloudControls(main, article) {
   const status = document.createElement("p");
   status.className = "reader-toolbar__status";
 
-  toolbar.append(label, controlsRow, status);
+  const readingTools = document.createElement("div");
+  readingTools.className = "reader-toolbar__reading-tools";
+
+  const bookmarkButton = document.createElement("button");
+  bookmarkButton.type = "button";
+  bookmarkButton.className = "reader-toolbar__button reader-toolbar__bookmark";
+  bookmarkButton.textContent = "🔖 Guardar separador";
+
+  const bookmarkGoButton = document.createElement("button");
+  bookmarkGoButton.type = "button";
+  bookmarkGoButton.className = "reader-toolbar__button reader-toolbar__bookmark-go";
+  bookmarkGoButton.textContent = "📖 Ir al separador";
+
+  const notesLabel = document.createElement("label");
+  notesLabel.className = "reader-toolbar__notes-label";
+  notesLabel.textContent = "📝 Notas de esta revista";
+
+  const notesArea = document.createElement("textarea");
+  notesArea.className = "reader-toolbar__notes";
+  notesArea.rows = 4;
+  notesArea.placeholder = "Escribe aquí tus notas personales...";
+  notesArea.setAttribute("aria-label", "Notas personales de esta revista");
+
+  readingTools.append(bookmarkButton, bookmarkGoButton, notesLabel, notesArea);
+  toolbar.append(label, controlsRow, readingTools, status);
   main.insertBefore(toolbar, article);
   injectToolbarStyles();
 
+  const bookmarkKey = `${storagePrefix}:bookmark`;
+  const notesKey = `${storagePrefix}:notes`;
+
+  const storedNotes = localStorage.getItem(notesKey);
+  if (storedNotes) {
+    notesArea.value = storedNotes;
+  }
+
+  notesArea.addEventListener("input", () => {
+    localStorage.setItem(notesKey, notesArea.value);
+    status.textContent = "Nota guardada.";
+  });
+
+  bookmarkButton.addEventListener("click", () => {
+    const bookmark = {
+      scrollY: Math.round(window.scrollY || 0),
+      savedAt: new Date().toISOString(),
+    };
+    localStorage.setItem(bookmarkKey, JSON.stringify(bookmark));
+    status.textContent = "Separador guardado en esta posición.";
+  });
+
+  bookmarkGoButton.addEventListener("click", () => {
+    const rawBookmark = localStorage.getItem(bookmarkKey);
+    if (!rawBookmark) {
+      status.textContent = "Aún no tienes separador guardado.";
+      return;
+    }
+
+    try {
+      const bookmark = JSON.parse(rawBookmark);
+      const top = Number.isFinite(bookmark.scrollY) ? bookmark.scrollY : 0;
+      window.scrollTo({ top, behavior: "smooth" });
+      status.textContent = "Te llevamos a tu separador.";
+    } catch {
+      status.textContent = "No se pudo leer el separador guardado.";
+    }
+  });
+
   if (!speechSupported) {
-    status.textContent = "Tu navegador no soporta reproducción de texto por voz.";
+    status.textContent = "Tu navegador no soporta lectura en voz alta, pero sí separador y notas.";
     [playButton, languageToggle, languageSelect].forEach((control) => {
       control.disabled = true;
     });
@@ -376,7 +440,7 @@ function addReadAloudControls(main, article) {
     languageToggle.textContent = languageWrap.hidden ? "🌐 Idioma" : "✖ Ocultar idioma";
   });
 
-  status.textContent = "Listo para leer en español. Puedes abrir Idioma para traducir y reproducir en más idiomas.";
+  status.textContent = "Listo para leer en español. También puedes guardar separador y notas.";
   window.addEventListener("beforeunload", clearPlayback);
 }
 
@@ -471,6 +535,30 @@ function injectToolbarStyles() {
       color: #5a6d86;
     }
 
+    .reader-toolbar__reading-tools {
+      margin-top: 8px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .reader-toolbar__notes-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #34495e;
+    }
+
+    .reader-toolbar__notes {
+      border: 1px solid #b7c3d6;
+      border-radius: 8px;
+      padding: 8px;
+      font-size: 0.9rem;
+      resize: vertical;
+      min-height: 90px;
+      font-family: inherit;
+      background: #fff;
+      color: #1f2937;
+    }
+
     html[data-theme="dark"] .print-button,
     html[data-theme="dark"] .theme-toggle-button {
       background: rgba(30, 41, 59, 0.92);
@@ -486,7 +574,8 @@ function injectToolbarStyles() {
 
     html[data-theme="dark"] .reader-toolbar__label,
     html[data-theme="dark"] .reader-toolbar__status,
-    html[data-theme="dark"] .reader-toolbar__toggle-language {
+    html[data-theme="dark"] .reader-toolbar__toggle-language,
+    html[data-theme="dark"] .reader-toolbar__notes-label {
       color: #e2e8f0;
     }
 
@@ -501,6 +590,12 @@ function injectToolbarStyles() {
     html[data-theme="dark"] .reader-toolbar__button:not(.reader-toolbar__toggle-language) {
       background: linear-gradient(135deg, #2563eb, #1d4ed8);
       border-color: #3b82f6;
+    }
+
+    html[data-theme="dark"] .reader-toolbar__notes {
+      border-color: #334155;
+      background: #0f172a;
+      color: #e2e8f0;
     }
   `;
 
