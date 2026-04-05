@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Santificación Práctica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .title-info {
+            text-align: left;
+        }
+
+        .title-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .print-button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .print-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: #4a6491;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scripture {
+            background-color: #f0f4f8;
+            border-left: 4px solid #8ba3c7;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+            position: relative;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #5a738f;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .definition-table {
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .definition-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f8f9fa;
+        }
+
+        .definition-table th {
+            background-color: #4a6491;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .definition-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-style: italic;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .red-emphasis {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        .content-table {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a6491;
+        }
+
+        .content-table h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .content-table ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .content-table li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .content-table li::before {
+            content: "•";
+            color: #4a6491;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .bibliography {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 4px solid #8B0000;
+        }
+
+        .bibliography h3 {
+            color: #8B0000;
+            margin-bottom: 20px;
+        }
+
+        .bibliography p {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            padding-left: 20px;
+            text-indent: -20px;
+        }
+
+        .reference-number {
+            display: inline-block;
+            background-color: #4a6491;
+            color: white;
+            font-size: 0.7rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .reference-number:hover {
+            background-color: #2c3e50;
+            transform: scale(1.1);
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            border-bottom: 1px dotted #4a6491;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 280px;
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -140px;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .title-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .definition-table {
+                font-size: 0.8rem;
+            }
+
+            .tooltip .tooltiptext {
+                width: 220px;
+                margin-left: -110px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="title-info">
+            <div class="title-name">LA SANTIFICACIÓN PRÁCTICA</div>
+        </div>
+        <button class="print-button" onclick="window.print()">Imprimir este estudio</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="content-table">
+        <h3>CONTENIDO</h3>
+        <ul>
+            <li>San Agustín cristianizó una filosofía pagana: la introducción del neoplatonismo. Nace el concepto de naturaleza pecaminosa.</li>
+            <li>Definición bíblica del concepto de "la carne": algunas características cruciales. Los deseos humanos no son malos. La carne no es en sí pecaminosa. Jesús también tuvo un cuerpo humano. ¿Qué es el viejo hombre según el apóstol Pablo?</li>
+            <li>Definiciones en el Nuevo Testamento de lo que es el pecado. El pecado son acciones voluntarias, no una sustancia. Metáforas que provocan problemas de exégesis. Por qué peca el ser humano. Ephitumia: la concupiscencia. Qué es la tentación.</li>
+            <li>La falsa doctrina de la inhabilidad. ¿Tiene capacidad el ser humano de obedecer la ley moral de Dios? La existencia de la libre voluntad. Es posible guardar la ley moral: ejemplos bíblicos. También las obras de la carne pueden morir. Los genuinos cristianos vencen la carne.</li>
+        </ul>
+    </div>
+
+    <h1 class="main-title">LA SANTIFICACIÓN PRÁCTICA</h1>
+
+    <div class="content-section">
+        <p>En el folleto de "El Evangelio de la Gracia" describimos el poder de la gracia en el cristiano para vencer al pecado en su vida. Un argumento muy comúnmente usado para justificar la derrota es el que dice: <span class="emphasis">"la carne es débil"</span>, <span class="emphasis">"mi naturaleza pecaminosa me conduce inevitablemente a pecar"</span> o, <span class="emphasis">"mientras vivamos en este cuerpo jamás dejaremos la práctica habitual del pecado."</span></p>
+
+        <p>Estos son en resumen, los tipos de razonamiento en que se fundamenta otra excusa para pecar, muy difundida en ámbitos evangélicos y católicos.</p>
+
+        <p>Primeramente es importante recordar el antecedente histórico de estos argumentos. En los primeros siglos del cristianismo, un famoso y polémico predicador llamado <span class="tooltip">Marcion<span class="tooltiptext">Hereje del siglo II que enseñaba la distinción entre el Dios del Antiguo Testamento (justo) y el Dios del Nuevo Testamento (amoroso). Rechazaba la materialidad del cuerpo de Cristo.</span></span> enseñaba que Dios sólo salvaba el alma de la persona y no la carne. Una doctrina similar dice el día de hoy: <span class="emphasis">"Dios salva el espíritu del hombre y no la carne"</span>. De acuerdo a esto, cuando Dios salva a una persona sólo lo hace interiormente, pero su carne (la naturaleza humana) sigue perdida. De esta manera, la carne al seguir perdida y ser insaciable en su fuerte apetito, seduce continuamente al espíritu o alma del hombre, manteniéndolo así cautivo del pecado. En otras palabras, la carne continuará reinando y como un tirano, llevará cautiva el alma convertida a cometer irremediablemente iniquidades que ya no desea.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>FILOSOFÍA PAGANA Y CRISTIANISMO: SAN AGUSTÍN DE HIPONA</h2>
+
+        <p>Esta idea de que la carne es esencialmente pecaminosa tiene orígenes paganos, los padres apostólicos la combatieron vigorosamente. No fue sino hasta que el Catolicismo Romano hizo su aparición en la historia, que un monje llamado <span class="tooltip">Agustín de Hipona<span class="tooltiptext">(354-430 d.C.) Obispo, filósofo y teólogo. Considerado uno de los Padres de la Iglesia. Su teología influyó profundamente en el pensamiento católico y protestante, especialmente en Calvino.</span></span> introdujo esta idea, habiéndola tomado de las doctrinas griegas del <span class="tooltip">maniqueísmo<span class="tooltiptext">Religión dualista fundada por Mani en el siglo III. Sostenía que la materia (cuerpo) era creación del principio del mal, mientras que el espíritu era creación del principio del bien.</span></span>. Hablando de San Agustín la Enciclopedia Británica comenta:</p>
+
+        <div class="highlight-box">
+            <p>"Su mente fue el crisol en el cual la religión del Nuevo Testamento fue completamente fusionada con la tradición platónica de la filosofía griega, y fue también el medio por el cual el resultado de esta fusión fue transmitido al Cristianismo medieval del Catolicismo Romano y al Renacimiento Protestante". <span class="tooltip">(Énfasis añadido)<span class="tooltiptext">Enciclopedia Británica, Volumen 2, artículo sobre Agustín de Hipona.</span></span></p>
+        </div>
+
+        <p>Agustín introdujo el concepto de naturaleza pecaminosa heredada de Adán desde el nacimiento. En Agustín podemos mirar claramente como las experiencias y frustraciones personales, así como el gusto por ciertas filosofías, pueden influir en la fabricación de una teología. Agustín sujetó la Biblia a su experiencia. Veamos el contexto filosófico que influyó a Agustín de Hipona:</p>
+
+        <div class="warning-box">
+            <p>"En la iglesia del maniqueísmo, el orden más alto de 'elegidos' estaba adherido a un régimen estricto de ascetismo y celibato, toda la generación física había sido mantenida al servicio de las tinieblas". <span class="tooltip">(Énfasis añadido)<span class="tooltiptext">Will Durant, La Historia de la Civilización, Vol. IV, "La Era de la Fe", p. 80.</span></span></p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>SE INTRODUCE EL NEOPLATONISMO GRIEGO</h2>
+
+        <p>Agustín cuando pertenecía a los maniqueístas, tenía una amante con la cual procreó un hijo, por lo tanto no podía acceder al orden de "los elegidos". Aquí empezaron sus primeras frustraciones espirituales. Después de pasar años con los maniqueos, Agustín llegó al catolicismo y fue bautizado. Su conversión fue una experiencia emocional que lo impactó fuertemente. Sin embargo, esto no duró mucho tiempo: <span class="emphasis">"La experiencia mística de Agustín, su conciencia de Dios, había sido momentánea y fugaz... él estaba todavía enredado con la carne"</span> <span class="tooltip">[1]<span class="tooltiptext">J. N. D. Kelly, Early Christian Doctrines, p. 358.</span></span>.</p>
+
+        <p>Aquí encontró otro fuerte obstáculo en su vida. El conocimiento de que para acercarse a un Dios santo hay que vivir en rectitud, intensificó sus conflictos. ¿Cómo se podría calmar este terrible conflicto interior?, ¡desear no pecar, pero seguir cayendo! Este problema de conciencia, sería el generador de varias doctrinas compuestas de principios paganos mezclados con cristianismo que Agustín popularizaría.</p>
+
+        <div class="highlight-box">
+            <p>"De hecho el Neoplatonismo había reforzado el principio Maniqueo de que la manera para regresar a Dios debería ser a través de escapar del cuerpo, y para Agustín esto significaba primera e inmediatamente escapar de los lazos de la sexualidad". <span class="tooltip">(Énfasis añadido)<span class="tooltiptext">Peter Brown, Augustine of Hippo: A Biography, p. 135.</span></span></p>
+        </div>
+
+        <p>De aquí que Agustín considerara como pecaminosas las relaciones sexuales aun dentro del matrimonio, contradiciendo las mismas Escrituras. Llegó a tal punto su rechazo al cuerpo humano, un cuerpo humano que finalmente es creación de Dios, que aun decía a las personas legalmente casadas que amaran a sus esposas castamente. Cuando alguien se siente acusado por su conciencia, y no ha quitado la causa de esta acusación, este cargo de conciencia impregnará todos sus pensamientos. Así David cuando adulteró decía:</p>
+
+        <div class="scripture">
+            "Y mi pecado está siempre delante de mí"
+            <span class="scripture-ref">Salmo 51:3b</span>
+        </div>
+
+        <p>Fue a causa de estos conflictos que Agustín eventualmente creó el concepto de naturaleza pecaminosa transmitida por herencia desde Adán:</p>
+
+        <div class="warning-box">
+            <p>"... no sólo todos los hombres están involucrados en la culpa y el castigo de Adán, sino también este involucramiento tiene efecto a través de la dependencia humana de la procreación sobre la pasión sexual, en la cual la inhabilidad del espíritu para controlar la carne es evidente". <span class="tooltip">(Énfasis añadido)<span class="tooltiptext">Agustín, Sobre el Matrimonio y la Concupiscencia, Libro I, Cap. 24.</span></span></p>
+        </div>
+
+        <p>Aquí es importante señalar que la anterior aseveración es falsa. Los primeros sucesores de los apóstoles como <span class="tooltip">Justino<span class="tooltiptext">(c. 100-165 d.C.) Mártir cristiano, uno de los primeros apologistas. Enseñaba que los hombres tienen libre albedrío para elegir el bien o el mal.</span></span>, <span class="tooltip">Tertuliano<span class="tooltiptext">(c. 160-220 d.C.) Padre de la Iglesia de Cartago. Defendió la doctrina del libre albedrío contra los gnósticos.</span></span>, <span class="tooltip">Ireneo<span class="tooltiptext">(c. 130-202 d.C.) Obispo de Lyon, discípulo de Policarpo. Escribió "Contra las Herejías", donde defendía la bondad de la creación material.</span></span> y <span class="tooltip">Clemente de Alejandría<span class="tooltiptext">(c. 150-215 d.C.) Teólogo y filósofo cristiano. Enseñaba que el cuerpo es bueno y que el cristiano debe vivir en pureza.</span></span>, no creyeron jamás eso. Todo lo contrario, ellos combatían la idea pagana de que el cuerpo humano era pecaminoso.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LA CRISTIANIZACIÓN DEL GNOSTISMO</h2>
+
+        <p>La herejía de Marcion y de los gnósticos, fue resucitada por Agustín y cristianizada. Esta doctrina pasó de la iglesia católica romana y de allí al protestantismo y, eventualmente, a la mayoría de las iglesias evangélicas hasta hoy.</p>
+
+        <p><span class="tooltip">Juan Calvino<span class="tooltiptext">(1509-1564) Teólogo y reformador protestante. Autor de las "Instituciones de la Religión Cristiana". Adoptó y desarrolló las doctrinas agustinianas sobre la naturaleza pecaminosa y la predestinación.</span></span> bebió abundantemente de la cisterna de las doctrinas de Agustín. En su libro Instituciones de la Religión Cristiana, capítulo primero, habla precisamente de la naturaleza pecaminosa en términos totalmente agustinianos, y en el capítulo segundo en donde niega la existencia del libre albedrío, cita al monje Agustín casi en cada página, poniéndolo por encima de los padres apostólicos.</p>
+
+        <p>Minar la credibilidad de los padres apostólicos, tenía la obvia intención de anular sus escritos para establecer los propios.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>DEFINICIÓN DEL TÉRMINO "CARNE"</h2>
+
+        <p>Cuando la Biblia habla de "obras de la carne", o afirma cosas como "en mi carne no mora el bien", etc., no se refiere precisamente al cuerpo humano. Ciertamente, a causa de la caída adámica nuestro cuerpo se enferma, declina y muere. Esto es, físicamente nos vamos deteriorando.</p>
+
+        <p><span class="red-emphasis">Carne, no se refiere tampoco a nuestra naturaleza humana como si fuera otro ser con capacidad de decisión independiente.</span> Sino que carne se refiere a la intención humana entregada a satisfacer los deseos naturales que poseen el cuerpo y la mente humana.</p>
+
+        <div class="scripture">
+            "Porque de dentro del corazón de los hombres, salen los malos pensamientos, los adulterios, las fornicaciones, los homicidios,… Todas estas maldades de dentro salen, y contaminan al hombre."
+            <span class="scripture-ref">Marcos 7:21,23 (Énfasis añadido)</span>
+        </div>
+
+        <p>Aquí cuando se habla del corazón, no se refiere al órgano físico que bombea la sangre a todo nuestro cuerpo, sino que se usa como analogía; así como del corazón sale la vida a todo el cuerpo, así de nuestra intención salen las acciones que mueven los actos de nuestro cuerpo. Cuando esta intención se rinde ciegamente a los deseos del cuerpo en contra de lo que prohíbe Dios, esto da como resultado los adulterios, las fornicaciones, los homicidios, etc. Entonces decimos que la persona es "carnal". Es muy distinto tener un cuerpo humano, a ser carnal en el sentido escritural. El apóstol dice:</p>
+
+        <div class="scripture">
+            "Pues aunque andamos en la carne, no militamos según la carne; porque las armas de nuestra milicia no son carnales, sino poderosas en Dios para la destrucción de fortalezas"
+            <span class="scripture-ref">2 Corintios 10:3-4</span>
+        </div>
+
+        <p>Aquí cuando Pablo declara que "andamos en la carne", está diciendo "andamos en el cuerpo"; y cuando dice "no militamos según la carne", está diciendo "no rendimos nuestra intención o voluntad a los deseos del cuerpo". Así pues, cuando la voluntad se esclaviza a los deseos, decimos que la persona es carnal.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LA CARNE TIENE DESEOS DE PLACER Y NO DEL PECADO EN SÍ MISMO</h2>
+
+        <p>Es importante aclarar que los deseos del cuerpo o de la carne, no son por el pecado en sí mismo, sino por el placer. Así pues, el ladrón roba no porque desea pecar contra Dios, sino porque codicia algo que le traerá satisfacción. El adúltero no siente placer en pecar contra Dios, sino en que su instinto sexual quede complacido. Cuando Eva pecó en el jardín del Edén, su codicia no era por el pecado sino por la sabiduría que recibiría al comer el fruto prohibido. La Biblia dice:</p>
+
+        <div class="scripture">
+            "Y vio la mujer que el árbol era bueno para comer, y que era agradable a los ojos, y árbol codiciable para alcanzar la sabiduría; y tomó de su fruto, y comió"
+            <span class="scripture-ref">Génesis 3:6</span>
+        </div>
+
+        <p>El deseo de ella era por el placer de saber, no por la desobediencia en sí misma.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LOS DESEOS HUMANOS EN SÍ MISMOS, NO SON PECADO</h2>
+
+        <p>Hay quienes consideran que los deseos humanos son pecaminosos. Cuando alguien tiene un deseo piensan que allí está el pecado morando en la persona. Hay también otros que dicen: "tiene buenos deseos", "es una persona de buenos sentimientos". Aquí es importante entender cómo está constituido el hombre. El hombre está formado por espíritu, alma y cuerpo (1ª Tesalonicenses 5:23).</p>
+
+        <p>El alma humana posee la mente, la voluntad y los deseos, las emociones y los sentimientos. Por ejemplo, Dios puso en el hombre el deseo de ser apreciado y rechazo a ser humillado; esto se llama sentido de dignidad. Sin embargo, si uno es gobernado por el deseo de ser apreciado por otros y convierte este sentimiento en un ídolo, pronto vivirá sólo para eso y paradójicamente terminará perdiendo su dignidad haciendo cualquier cosa para recibir aprecio de los demás. Vivir para recibir el aplauso de los demás en la Biblia se llama vanidad y ésta lo considera pecado. Es obvio que el deseo en sí mismo no era malo, pero al pervertirse su uso, dio origen al pecado.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>¿QUÉ SON LOS DESEOS?</h2>
+
+        <p>Los deseos son un atributo del ser humano por el cual busca sentir placer o evitar ser dañado. Los deseos no miran si algo es bueno o si es malo, sólo piden aquello que les trae placer o les evita el dolor. Así pues, los deseos deben estar sometidos a la razón, la cual, sí sabe qué es bueno y qué es malo. Un ejemplo de esto lo podemos entender cuando comemos: la lengua es la parte gustativa del cuerpo, y aprecia, quizás, saborear un dulce; si la persona ve que está echado a perder, si lo huele y huele mal, entonces razona y dice: "aunque a mi lengua le traiga placer, no lo como porque me puedo intoxicar". Así pues, los demás sentidos se ayudan, y los deseos se someten a la razón cuando se toma dicha decisión.</p>
+
+        <p>Los deseos piden comer; si Dios nos quitara el deseo de comer nos moriríamos. Pero si la persona come más de la cuenta incurre en glotonería. El deseo pide tener relaciones sexuales, si eso ocurre en el matrimonio no es una "obra de la carne". Ese deseo sexual no es malo, pero fuera de los límites del matrimonio, la persona (no el deseo), que sabiendo que no lo debe hacer y rinde su voluntad a dicha pasión, peca.</p>
+
+        <p>La culpa no la tienen los deseos con que Dios creó el cuerpo humano, sino el uso que nosotros le demos a estos deseos. La Biblia dice:</p>
+
+        <div class="scripture">
+            "Digo, pues: Andad en el Espíritu, y no satisfagáis los deseos de la carne"
+            <span class="scripture-ref">Gálatas 5:16</span>
+        </div>
+
+        <p>Aquí la Biblia nos dice solamente que no los satisfagamos en forma equivocada, no nos dice que no los tengamos. Si fueran pecaminosos los deseos, los prohibiría. Pero no lo hace, porque el pecado está en usarlos mal no en tenerlos; porque estos deseos son parte natural de nuestra constitución humana. Así pues, el resultado del mal uso de los deseos es el pecado. Es como si dijéramos: "el cuchillo es asesino", el cual, en manos de un buen carnicero, puede servir a mucha gente destazando una res; mientras que el mismo cuchillo en las manos de un asesino, puede matar.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LA CARNE EN SÍ MISMA NO ES PECAMINOSA</h2>
+
+        <p>Hay quienes consideran como malo este cuerpo en que vivimos. Habiendo definido claramente lo que significa el término "carne", no será difícil esclarecer por las Escrituras el dogma de que poseemos una carne o naturaleza pecaminosa. Si la carne fuera pecaminosa:</p>
+
+        <p><span class="red-emphasis">¿Por qué Dios desearía vivir en un templo pecaminoso?</span> Porque la Escritura dice:</p>
+
+        <div class="scripture">
+            "¿O ignoráis que vuestro cuerpo es templo del Espíritu Santo, el cual está en vosotros, el cual tenéis de Dios, y que no sois vuestros?"
+            <span class="scripture-ref">1 Corintios 6:19 (Énfasis añadido)</span>
+        </div>
+
+        <p>El Espíritu, el cual es Santo, no escogería tal cuerpo para habitar si fuera "perverso". En el Antiguo Testamento vemos que el tabernáculo era ungido con el aceite junto con todos sus utensilios para ser santos y ser la habitación de Dios con los hombres (Ex. 40:9). Si el cuerpo humano fuese pecaminoso no moraría el Espíritu Santo en él. ¿O acaso cambia la sustancia del cuerpo humano cuando nos convertimos? Aún más, si la carne es pecaminosa: <span class="red-emphasis">¿Cómo podríamos glorificarle con nuestro cuerpo?</span> Porque la Escritura añade:</p>
+
+        <div class="scripture">
+            "... Glorificad, pues, a Dios en vuestro cuerpo y en vuestro espíritu, los cuales son de Dios"
+            <span class="scripture-ref">1 Corintios 6:20 (Énfasis añadido)</span>
+        </div>
+
+        <p>Si fuera pecaminoso el cuerpo no le podríamos glorificar con él porque nada malo o en pecado puede glorificar a Dios.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>JESÚS TAMBIÉN TUVO UN CUERPO HUMANO</h2>
+
+        <p>• Si Jesús mismo tuvo un cuerpo humano igual que nosotros ¿cómo puede ser éste pecaminoso?</p>
+
+        <div class="scripture">
+            "Así que, por cuanto los hijos participaron de carne y sangre, él (Jesús) también participó de lo mismo,…"
+            <span class="scripture-ref">Hebreos 2:14 (Énfasis añadido)</span>
+        </div>
+
+        <p>El nacimiento virginal sólo expresa el hecho de que Jesús era el hijo de Dios, el producto no de un hombre ni de un ser humano, sino de Dios por el poder del Espíritu Santo. Pero al ser concebido en María, obviamente participa de la misma carne o cuerpo que María que era humana. De hecho, la herejía del gnosticismo que dice que Jesús no poseía cuerpo real sino que era una teofanía o aparición, se debe a que los gnósticos consideraban la materia como mala. El que Jesús vino en carne es un hecho:</p>
+
+        <div class="scripture">
+            "y todo espíritu que no confiesa que Jesucristo ha venido en carne, no es de Dios; …"
+            <span class="scripture-ref">1 Juan 4:3a (Énfasis añadido)</span>
+        </div>
+
+        <div class="scripture">
+            "Y Cristo, en los días de su carne …"
+            <span class="scripture-ref">Hebreos 5:7a (Énfasis añadido)</span>
+        </div>
+
+        <p>Cristo poseía un cuerpo humano como el de nosotros, en cuya carne residían los deseos que todo ser humano posee y los cuales son el blanco de la tentación. Jesús fue tentado al igual que nosotros:</p>
+
+        <div class="scripture">
+            "Porque no tenemos un sumo sacerdote que no pueda compadecerse de nuestras debilidades, sino uno que fue tentado en todo según nuestra semejanza, pero sin pecado"
+            <span class="scripture-ref">Hebreos 4:15</span>
+        </div>
+
+        <p>Al decir "fue tentado en todo según nuestra semejanza", está diciendo, "como es tentado todo ser humano que vive en un cuerpo de carne que posee deseos". ¿Podemos afirmar que el deseo de no tomar la copa que el Padre le daba a tomar era pecado? Claro que no, era sólo una tentación y Cristo la venció. Así pues, la carne no es pecaminosa porque aun Jesús fue revestido de ella.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>QUÉ ES EL VIEJO HOMBRE</h2>
+
+        <p>• La carne no es pecaminosa porque Dios nos mandó despojarnos del viejo hombre (no del cuerpo), y revestirnos del nuevo, usando el mismo cuerpo humano.</p>
+
+        <p>El gran error que han cometido los que afirman que existe una "naturaleza pecaminosa" es confundir "carne" con "viejo hombre". El viejo hombre es la causa y raíz de todo pecado, a esto, le han llamado naturaleza pecaminosa, como si fuese algo material. El "hombre viejo" es la persona cuya intención está esclavizada a los deseos y vive ajeno a la voluntad de Dios. La epístola de Efesios dice:</p>
+
+        <div class="scripture">
+            "En cuanto a la pasada manera de vivir, despojaos del viejo hombre, que está viciado conforme a los deseos engañosos"
+            <span class="scripture-ref">Efesios 4:22</span>
+        </div>
+
+        <p>"Viejo hombre" no se refiere al cuerpo, sino a una "manera de vivir", la cual está esclavizada a los deseos. Viejo es término de tiempo y se refiere al hombre antes de convertirse, el cual estaba esclavizado al pecado. No se refiere al cuerpo, ya que nos manda despojarnos de él, y si dice que nos despojemos es porque se puede hacer. Por elemental justicia, Dios no nos ordenaría algo que fuera imposible.</p>
+
+        <div class="scripture">
+            "y vestíos del nuevo hombre, creado según Dios en la justicia y santidad de la verdad"
+            <span class="scripture-ref">Efesios 4:24 (Énfasis añadido)</span>
+        </div>
+
+        <div class="scripture">
+            "No mintáis los unos a los otros, habiéndoos despojado del viejo hombre con sus hechos, y revestido del nuevo, el cual conforme a la imagen del que lo creó..."
+            <span class="scripture-ref">Colosenses 3:9-10 (Énfasis añadido)</span>
+        </div>
+
+        <p>Al decir "despojaos", no nos dice "liberaos del cuerpo", lo cual requeriría el suicidio; mas bien habla de quitarnos una manera de vivir egoísta. Los que confían en Jesús, en esta vida pueden despojarse del pecado y no necesitan esperar la muerte para ser liberados. Al decir "vestíos" obviamente significa que también se puede hacer en nuestro cuerpo mortal un uso adecuado de los deseos y vivir rectamente; el texto está hablando a gente de carne y hueso, no a los ángeles.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>EL PECADO SON ACCIONES VOLUNTARIAS Y NO UNA SUSTANCIA</h2>
+
+        <p>A continuación analizaremos las definiciones etimológicas de la palabra así como las definiciones bíblicas, para tener una amplia comprensión de lo que es el pecado.</p>
+
+        <p>Hay varias palabras que se usan para referirse al pecado por ejemplo: iniquidad y transgresión; estudiaremos su significado literal tanto en el hebreo como en el griego.</p>
+
+        <div class="definition-table">
+            <table>
+                <thead>
+                <tr><th colspan="2">En Hebreo:</th></tr>
+                </thead>
+                <tbody>
+                <tr><td><strong>Palabra</strong></td><td><strong>Significado</strong></td></tr>
+                <tr><td>Transgresión (Fesha)</td><td>Rebelión, Sublevarse <span class="tooltip">[2]<span class="tooltiptext">James Strong, Diccionario Hebreo y Griego, núm. 6588.</span></span></td></tr>
+                <tr><td>Iniquidad (Avown)</td><td>Perversidad, malo moralmente <span class="tooltip">[3]<span class="tooltiptext">James Strong, Diccionario Hebreo y Griego, núm. 5771.</span></span></td></tr>
+                <tr><td>Pecado (Chata)</td><td>Perder, no atinar <span class="tooltip">[4]<span class="tooltiptext">James Strong, Diccionario Hebreo y Griego, núm. 2398.</span></span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="definition-table">
+            <table>
+                <thead>
+                <tr><th colspan="2">En Griego:</th></tr>
+                </thead>
+                <tbody>
+                <tr><td><strong>Palabra</strong></td><td><strong>Significado</strong></td></tr>
+                <tr><td>Transgresión (Parabasis)</td><td>Violación <span class="tooltip">[5]<span class="tooltiptext">James Strong, Diccionario Hebreo y Griego, núm. 3847.</span></span></td></tr>
+                <tr><td>Iniquidad (Anomia)</td><td>Ilegalidad, Violador de la ley <span class="tooltip">[6]<span class="tooltiptext">James Strong, Diccionario Hebreo y Griego, núm. 458.</span></span></td></tr>
+                <tr><td>Pecado (Hamartia)</td><td>Errar la marca, no dar al blanco <span class="tooltip">[7]<span class="tooltiptext">James Strong, Diccionario Hebreo y Griego, núm. 266.</span></span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Por su parte El Lexicon del Nuevo Testamento del lingüista Spiros Zodhiates los define como sigue:</p>
+
+        <div class="highlight-box">
+            <p><strong>Pecado, del griego "hamartia" significa:</strong> "Perdiendo la verdadera meta y propósito de la vida, ofensa en relación con Dios con énfasis sobre la culpa que resulta" <span class="tooltip">[8]<span class="tooltiptext">Spiros Zodhiates, The Complete Word Study Dictionary: New Testament, p. 138.</span></span></p>
+        </div>
+
+        <p>El Lexicon de J. H. Thayer de palabras griegas del Nuevo Testamento, da el siguiente significado para la palabra pecado. <span class="emphasis">"Hamartia, fallar en acertar a la marca", una mala acción, una mala obra. En el Nuevo Testamento siempre es usada en un sentido ético.</span> <span class="tooltip">[9]<span class="tooltiptext">J. H. Thayer, Greek-English Lexicon of the New Testament, p. 30.</span></span></p>
+
+        <p>Veamos ahora las definiciones que la misma palabra de Dios en el Nuevo Testamento da a la palabra pecado.</p>
+
+        <div class="scripture">
+            "...el pecado es infracción de la Ley"
+            <span class="scripture-ref">1 Juan 3:4b</span>
+        </div>
+
+        <div class="scripture">
+            "y al que sabe hacer lo bueno, y no lo hace, le es pecado"
+            <span class="scripture-ref">Santiago 4:17</span>
+        </div>
+
+        <div class="warning-box">
+            <p>Haciendo un resumen de todas estas definiciones y significados, obtendremos lo siguiente:</p>
+            <p><span class="red-emphasis">Pecado es: una mala acción, una mala obra, infringir la ley moral de Dios, o saber hacer lo bueno y no hacerlo.</span></p>
+            <p>Concluimos pues, que el pecado son acciones que violan la ley de Dios. <span class="red-emphasis">¡Son acciones! No son sustancias, ni líquidos, ni sólidos, ni gases, ni virus, ni demonios. Los pecados son acciones voluntarias.</span></p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>EL PECADO REPRESENTADO COMO UN PERSONAJE IMPERIAL</h2>
+
+        <p>Algunos han confundido el pecado con alguna sustancia o germen en nuestra naturaleza, a causa del uso retórico de la palabra. Por ejemplo, el apóstol Pablo para explicar más claramente lo que nos quiere decir, personifica al pecado en la epístola de Romanos. Esto es, habla del pecado como si fuera una persona para ilustrar su pensamiento y dar mayor claridad a los oyentes. Así pues, usa las siguientes expresiones:</p>
+
+        <div class="scripture">
+            "para que así como el pecado reinó para muerte,..."
+            <span class="scripture-ref">Romanos 5:21a</span>
+        </div>
+
+        <div class="scripture">
+            "No reine, pues, el pecado en vuestro cuerpo mortal, de modo que lo obedezcáis en sus concupiscencias"
+            <span class="scripture-ref">Romanos 6:12</span>
+        </div>
+
+        <div class="scripture">
+            "Porque el pecado no se enseñoreará de vosotros"
+            <span class="scripture-ref">Romanos 6:14</span>
+        </div>
+
+        <div class="scripture">
+            "De manera que ya no soy yo quien hace aquello, sino el pecado que mora en mí"
+            <span class="scripture-ref">Romanos 7:17</span>
+        </div>
+
+        <p>En todos estos pasajes, se habla del concepto de pecado como si se tratara de un rey (una persona) que gobierna, que tiene dominio, o que vive dentro de una casa. Pero éste es un recurso literario sólo para dar a entender más claramente una idea. Thayer's en su Lexicon comenta lo siguiente acerca del uso de la palabra pecado en esos pasajes:</p>
+
+        <div class="highlight-box">
+            <p>"En este sentido "hamartia" como un poder ejerciendo dominio sobre el hombre (el pecado como un principio y poder) es retóricamente representado como un personaje imperial". <span class="tooltip">[10]<span class="tooltiptext">J. H. Thayer, Greek-English Lexicon of the New Testament, p. 31.</span></span></p>
+        </div>
+
+        <p>Como vemos, es una figura retórica, un recurso literario de personificación. Concluimos pues, que pecados son acciones voluntarias propias y no sustancias. Esto queda demostrado tanto por las definiciones etimológicas, por los eruditos en el uso de las palabras griegas, y por las definiciones que la misma Biblia da. Las representaciones retóricas de la palabra en forma de personajes, no pueden ser admitidas como una definición o significado sino como lo que son, meras ilustraciones en un recurso literario para dar a entender más claramente un concepto abstracto.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>EPHITUMIA: TENER DESEOS NO ES PECADO</h2>
+
+        <p>En el texto anterior encontramos el mismo mecanismo que lleva al pecado: la tentación y los deseos despertados que la Escritura denomina concupiscencia (del griego "ephitumia"). "De su propia concupiscencia es atraído y seducido". De aquí da a luz la codicia en el corazón y de allí siguen las acciones. En este caso dice: "el pecado siendo consumado". Ahora, es importante aclarar que la palabra concupiscencia, Agustín la hizo sinónimo de pecado: pero la palabra sólo quiere decir fuerte deseo, un anhelo. Y prueba de que no es pecado, es que la Escritura dice: "De su propia concupiscencia es atraído y seducido,". Hasta este punto todavía no hay iniquidad en la persona, no es sino hasta que obedece este deseo que se da a luz el pecado. Así, vemos que la concupiscencia no es transgresión, sino que es el objeto de la tentación. William Greathouse dice lo siguiente referente al término concupiscencia:</p>
+
+        <div class="scripture-ref">"Pues este teólogo (Agustín), identificó casi completamente el pecado original con la concupiscencia ..." <span class="tooltip">[11]<span class="tooltiptext">William Greathouse, "Wholeness in Christ", p. 70.</span></span></div>
+
+        <p>Si la concupiscencia fuera pecado, entonces la tentación sería pecado, pero Cristo fue tentado al igual que nosotros "pero sin pecado", esto prueba que la tentación no es pecado.</p>
+
+        <p>El concepto agustiniano va en contra de las Escrituras ya que intenta implicar que hay pecado cuando alguien es tentado, el mismo autor explica lo siguiente:</p>
+
+        <div class="highlight-box">
+            <p>"Pero lo que nosotros declaramos es que tal comprensión del pecado original, saca a la superficie una tendencia helenista de pensar en el cuerpo físico como algo pecaminoso per se, lo que es una idea que las Escrituras desconocen. De esas premisas uno tiene que aceptar que la tentación ya implica pecado. Cualquier doctrina de la salvación que ligue el pecado tan íntimamente a los deseos del cuerpo, tendrá que darle la mano a Agustín..." <span class="tooltip">[12]<span class="tooltiptext">William Greathouse, "Wholeness in Christ", p. 71.</span></span></p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>LA DOCTRINA DE LA INHABILIDAD: ¿PUEDE EL CRISTIANO OBEDECER A DIOS?</h2>
+
+        <p>Ciertamente a causa de la caída de Adán el ser humano quedó afectado. En su espíritu perdió la comunión con Dios, en su alma la cual consiste en mente, voluntad, emociones y deseos, también se vio menoscabado. Sus intenciones quedaron eventualmente esclavizadas por su propia elección, a la satisfacción de sus deseos (Ef. 2:1-3). Su mente quedó oscurecida hacia lo espiritual quedando ciego a las realidades eternas. El libro de Efesios nos da un claro retrato del estado de la raza humana:</p>
+
+        <div class="scripture">
+            "... los otros gentiles, que andan en la vanidad de su mente, teniendo el entendimiento entenebrecido, ajenos de la vida de Dios por la ignorancia que en ellos hay, por la dureza de su corazón"
+            <span class="scripture-ref">Efesios 4:17b-18 (Énfasis añadido)</span>
+        </div>
+
+        <p>Así pues, al perder la sensibilidad de la conciencia, el hombre se entrega a la satisfacción de los deseos carnales.</p>
+
+        <div class="scripture">
+            "los cuales, después que perdieron toda sensibilidad, se entregaron a la lascivia para cometer con avidez toda clase de impureza"
+            <span class="scripture-ref">Efesios 4:19</span>
+        </div>
+
+        <p>Los deseos del ser humano se agigantaron y se hicieron muy sensibles a la sola idea de aquello que le trae placer. Esos deseos ahora son fácilmente estimulados y despiertan con un solo pensamiento de asociación. Aunado a esto, después de la caída de Adán, Satanás vino a ser el dios de este siglo cegando más aún el entendimiento de los incrédulos, para que no entiendan el plan de salvación (2ª Corintios 4:4). Aun nuestro cuerpo sufrió con la caída de Adán; no porque se haya convertido en "pecaminoso"; eso, ya demostramos que es un mito. Sino que el cuerpo humano está decaído, debilitado y así las partes del cuerpo están sujetas a diversas enfermedades hasta llegar a la muerte; como dice el salmista "porque todos nuestros días declinan ..." (Sal. 90:9). Así pues nacemos con facultades físicas deterioradas.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>SE PUEDE GUARDAR LA LEY MORAL</h2>
+
+        <p>Todo indica que al darle los mandamientos de la ley moral, Dios está contemplando el hecho de que el hombre tiene capacidad para ponerlos en práctica. Se sobreentiende que si Dios da mandamientos, Él da gracia para cumplirlos; pues Dios no es injusto para pedir algo sin dar los medios que se necesitan para su cumplimiento. Dios no pide imposibles al hombre en la ley moral, tan sólo lo correcto. Si el hombre no tuviera capacidad para obedecer los mandamientos no estaría obligado ante Dios a cumplirlos. Es como si un padre le dijera a un niño recién nacido que escribiera una obra literaria pues si no lo hace lo castigara, todos sabríamos que es un acto extremadamente injusto. Así pues, cuando Dios da mandamientos a una raza caída; es porque aun en la condición en la que se encuentra los puede poner por obra. Y de hecho, hubo momentos en que los pusieron por obra. En Números 23:24 cuando Balac llama a Balaam para que maldiga a Israel, Dios no lo maldice y la razón era porque en ese momento estaban en un estado de obediencia.</p>
+
+        <div class="scripture">
+            "No ha notado iniquidad en Jacob, Ni ha visto perversidad en Israel. Jehová su Dios está con él, Y júbilo de rey en él"
+            <span class="scripture-ref">Números 23:21</span>
+        </div>
+
+        <p>Aquí vemos que al menos en ese momento, Israel, estaba cumpliendo la ley. Con todo, si alguien quisiera argumentar que Dios lo veía "sin iniquidad" posicionalmente bajo la bendición de Abraham, y no porque estuvieran obedeciendo sus mandamientos; esto tampoco sería verdad, porque cuando Balaam vio la razón por la cual Dios no maldecía a Israel (por causa de no hallar iniquidad en ellos) aconsejó a Balac que incitara a Israel a que acudiera a Baal-peor y fornicase para que de esta manera prevaricasen y fuesen juzgados (Nm. 31:18, Dt. 4:3 y Nm. 25:9). Así pues cuando obedecieron, Dios no los maldijo y fue hasta que desobedecieron, cuando cayeron 23,000.</p>
+
+        <p>Concluimos pues que el hombre sí puede obedecer a Dios porque cuando Él da la ley, junto con los mandamientos da lo necesario para cumplirlos.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>LOS VERDADEROS CRISTIANOS YA HAN VENCIDO LA CARNE</h2>
+
+        <div class="scripture">
+            "Pero los que son de Cristo han crucificado la carne con sus pasiones y deseos"
+            <span class="scripture-ref">Gálatas 5:24</span>
+        </div>
+
+        <p>Esto es un hecho de la vida real del cristiano ¿Qué significa que ha crucificado la carne? No significa que ya no tiene ningún deseo, ni tampoco que ya no pueda ser tentado. Aquí, Pablo recurre otra vez a la personificación. Hace ver a la carne como si fuera una persona que ha sido clavada en una cruz. ¿Pero qué hacía esta persona antes?, exigía que la obedecieran en todos sus apetitos, caprichos y deseos, y cuando esto se hacía, esclavizaba a su víctima. Cuando se viene a Cristo se le "crucifica". Con esto no quiere decir que ya no pida que lo complazca sino que para mí esta persona está muerta, ya no le hago caso ni le obedezco en nada que me pida. En la religión judía cuando una hija se casaba con un gentil, para la familia era como si hubiera muerto. Si el padre se la encontraba en la calle y ella le hablaba, el padre no volteaba a responderle, ni siquiera a mirarla porque para él ella había muerto. De la misma manera los cristianos tratan habitualmente las tentaciones. Tienen un nuevo amo ahora a quien complacer. Su nombre es Jesucristo de Nazaret, y viven para Él. Él los ha cautivado con su amor de tal manera que su pasión ahora es hacer su voluntad. Han entendido el verdadero significado de la gracia; que Jesús murió por ellos, no sólo para perdonarlos, sino para libertarlos de la esclavitud del pecado. Los que han sido salvos por gracia han recibido el Espíritu Santo al confiar en Cristo. Un Espíritu de "poder, amor y dominio propio" y a través de una comunión íntima con Él, se ven cada vez más fortalecidos para vencer las tentaciones, y sus mentes están cada vez más sensibles a las cosas eternas.</p>
+
+        <div class="warning-box">
+            <p>Es una blasfemia enseñar que Cristo Jesús murió en la cruz y que el Espíritu ha sido dado a los creyentes pero que el pecado o los deseos carnales se continuarán enseñoreando de ellos. <span class="red-emphasis">La carne, no es más poderosa que la gracia de Dios.</span></p>
+        </div>
+
+        <div class="scripture">
+            "Porque lo que era imposible para la ley, por cuanto era débil por la carne, Dios, enviando a su hijo en semejanza de carne de pecado y a causa del pecado, condenó al pecado en la carne; para que la justicia de la ley se cumpliese en nosotros, que no andamos conforme a la carne, sino conforme al Espíritu"
+            <span class="scripture-ref">Romanos 8:3-4</span>
+        </div>
+    </div>
+
+    <div class="bibliography">
+        <h3>REFERENCIAS BIBLIOGRÁFICAS</h3>
+        <p>[1] J. N. D. Kelly, <em>Early Christian Doctrines</em>, Londres: A & C Black, 1977, p. 358.</p>
+        <p>[2] James Strong, <em>The Strongest Strong's Exhaustive Concordance of the Bible</em>, Grand Rapids: Zondervan, 2001, núm. 6588.</p>
+        <p>[3] Strong, núm. 5771.</p>
+        <p>[4] Strong, núm. 2398.</p>
+        <p>[5] Strong, núm. 3847.</p>
+        <p>[6] Strong, núm. 458.</p>
+        <p>[7] Strong, núm. 266.</p>
+        <p>[8] Spiros Zodhiates, <em>The Complete Word Study Dictionary: New Testament</em>, Chattanooga: AMG Publishers, 1992, p. 138.</p>
+        <p>[9] J. H. Thayer, <em>Greek-English Lexicon of the New Testament</em>, Peabody: Hendrickson Publishers, 1996, p. 30.</p>
+        <p>[10] Thayer, p. 31.</p>
+        <p>[11] William Greathouse, <em>Wholeness in Christ: Toward a Biblical Theology of Holiness</em>, Kansas City: Beacon Hill Press, 1998, p. 70.</p>
+        <p>[12] Greathouse, p. 71.</p>
+        <p>Enciclopedia Británica, <em>Volumen 2: Agustín de Hipona</em>, 15ª edición, Chicago: Encyclopædia Britannica, 1990.</p>
+        <p>Will Durant, <em>La Historia de la Civilización, Vol. IV: La Era de la Fe</em>, Buenos Aires: Editorial Sudamericana, 1976, p. 80.</p>
+        <p>Peter Brown, <em>Augustine of Hippo: A Biography</em>, Berkeley: University of California Press, 2000, p. 135.</p>
+        <p>Agustín de Hipona, <em>Sobre el Matrimonio y la Concupiscencia</em>, Libro I, Cap. 24, en <em>Obras Completas de San Agustín</em>, Madrid: BAC, 1997.</p>
+    </div>
+</div>
+
+<footer>
+    La Santificación Práctica
+</footer>
+</body>
+</html>
