@@ -42,7 +42,11 @@
       || document.querySelector(".scripture"),
   );
 
-  const isMenuPage = () => Boolean(document.querySelector("#revistas-grid"));
+  const isMenuPage = () => Boolean(
+    document.querySelector("#revistas-grid")
+      || document.querySelector("#course-modules-grid")
+      || document.querySelector("#main-menu-grid")
+  );
 
   const getToggleHost = () => {
     if (isMenuPage()) {

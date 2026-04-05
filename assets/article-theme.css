@@ -228,3 +228,28 @@ html[data-theme="dark"] .red-emphasis {
 html[data-theme="dark"] .menu-link-container {
   color: #e2e8f0 !important;
 }
+
+html[data-theme="dark"] .content-table,
+html[data-theme="dark"] .definition-table table,
+html[data-theme="dark"] .bibliography {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #334155 !important;
+}
+
+html[data-theme="dark"] .definition-table th {
+  background: #1d4e89 !important;
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .definition-table td,
+html[data-theme="dark"] .bibliography p {
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .tooltip .tooltiptext {
+  background: #0f172a !important;
+  color: #e2e8f0 !important;
+  border: 1px solid #334155 !important;
+}
