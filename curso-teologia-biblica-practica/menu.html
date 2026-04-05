@@ -160,6 +160,24 @@
         color: #cbd5e1;
       }
 
+      .hero .theme-toggle-button {
+        border-color: rgba(59, 130, 246, 0.55);
+        background: #ffffff;
+        color: #0f3a5b;
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+      }
+
+      .hero .theme-toggle-button:hover {
+        background: #eff6ff;
+      }
+
+      html[data-theme="dark"] .hero .theme-toggle-button {
+        border-color: rgba(148, 163, 184, 0.55);
+        background: #1e293b;
+        color: #e2e8f0;
+        box-shadow: none;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         .module-card {
           transition: none;
@@ -174,11 +192,12 @@
       </header>
 
       <section id="course-modules-grid" class="grid" aria-label="Módulos del curso">
-        <a class="module-card" href="./la-santificacion-practica/">
+        <article class="module-card placeholder" aria-disabled="true">
           <span class="module-id">Módulo 1</span>
-          <h2 class="module-title">La santificación práctica</h2>
-          <p class="module-note">Fundamentos bíblicos y aplicación diaria de una vida apartada para Dios.</p>
-        </a>
+          <h2 class="module-title">Módulo en preparación</h2>
+          <p class="module-note">Contenido en desarrollo.</p>
+          <p class="status">Próximamente</p>
+        </article>
 
         <article class="module-card placeholder" aria-disabled="true">
           <span class="module-id">Módulo 2</span>
@@ -222,12 +241,11 @@
           <p class="status">Próximamente</p>
         </article>
 
-        <article class="module-card placeholder" aria-disabled="true">
+        <a class="module-card" href="./la-santificacion-practica/">
           <span class="module-id">Módulo 8</span>
-          <h2 class="module-title">Módulo en preparación</h2>
-          <p class="module-note">Contenido en desarrollo.</p>
-          <p class="status">Próximamente</p>
-        </article>
+          <h2 class="module-title">La santificación práctica</h2>
+          <p class="module-note">Fundamentos bíblicos y aplicación diaria de una vida apartada para Dios.</p>
+        </a>
       </section>
 
       <p class="footer">Total de módulos: 8</p>

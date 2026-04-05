@@ -174,7 +174,7 @@ function addReadAloudControls(main, article) {
 
   const label = document.createElement("p");
   label.className = "reader-toolbar__label";
-  label.textContent = "Escuchar revista";
+  label.textContent = "Escuchar";
 
   const controlsRow = document.createElement("div");
   controlsRow.className = "reader-toolbar__controls-row";
