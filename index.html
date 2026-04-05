@@ -3,19 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Revistas Avivamiento</title>
-    <meta http-equiv="refresh" content="0; url=./revistas-avivamiento/menu.html" />
-    <script>
-      (() => {
-        const projectBase = "/revistas-avivamiento";
-        const target = `${projectBase}/menu.html`;
-        if (window.location.pathname !== target) {
-          window.location.replace(target);
-        }
-      })();
-    </script>
+    <title>Menú principal | Avivamiento</title>
+    <style>
+      :root {
+        --bg: #f1f6fc;
+        --card: #ffffff;
+        --text: #12324b;
+        --muted: #4d6a82;
+        --border: #d2e2f1;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        color: var(--text);
+        background: linear-gradient(180deg, #eef4fb 0%, #f8fbff 100%);
+      }
+
+      .page {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 3rem 1rem;
+      }
+
+      h1 {
+        margin: 0;
+        text-align: center;
+        font-size: clamp(2rem, 5vw, 2.8rem);
+      }
+
+      .lead {
+        text-align: center;
+        color: var(--muted);
+        max-width: 700px;
+        margin: 0.75rem auto 2rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1rem;
+      }
+
+      .card {
+        display: block;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.2rem;
+        text-decoration: none;
+        color: inherit;
+        box-shadow: 0 12px 24px -16px rgba(15, 58, 91, 0.45);
+      }
+
+      .card:hover,
+      .card:focus-visible {
+        outline: none;
+        transform: translateY(-2px);
+        border-color: #9dc0de;
+      }
+
+      .card h2 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      .card p {
+        margin: 0.7rem 0 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+    </style>
   </head>
   <body>
-    <p>Redireccionando al menú de revistas...</p>
+    <main class="page">
+      <h1>Menú principal</h1>
+      <p class="lead">Selecciona la sección que deseas abrir.</p>
+
+      <section class="grid" aria-label="Secciones principales">
+        <a class="card" href="./revistas-avivamiento/menu.html">
+          <h2>Revistas Avivamiento</h2>
+          <p>Accede al catálogo completo de revistas.</p>
+        </a>
+
+        <a class="card" href="./curso-teologia-biblica-practica/menu.html">
+          <h2>Curso Teología Bíblica Práctica</h2>
+          <p>Ingresa al menú de módulos del curso.</p>
+        </a>
+      </section>
+    </main>
   </body>
 </html>

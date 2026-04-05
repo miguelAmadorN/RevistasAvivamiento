@@ -66,6 +66,28 @@
             background: rgba(255,255,255,0.3);
         }
 
+        .menu-button {
+            display: inline-block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .menu-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
         .main-title {
             text-align: center;
             font-size: 2rem;
@@ -329,7 +351,10 @@
         <div class="title-info">
             <div class="title-name">LA SANTIFICACIÓN PRÁCTICA</div>
         </div>
-        <button class="print-button" onclick="window.print()">Imprimir este estudio</button>
+        <div class="header-actions">
+            <a class="menu-button" href="../menu.html">← Volver al menú</a>
+            <button class="print-button" onclick="window.print()">Imprimir este estudio</button>
+        </div>
     </div>
 </header>
 
