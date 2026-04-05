@@ -37,6 +37,7 @@
       .header {
         text-align: center;
         margin-bottom: 2rem;
+        position: relative;
       }
 
       .header h1 {
@@ -129,6 +130,36 @@
         font-size: 0.92rem;
       }
 
+      html[data-theme="dark"] body {
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+
+      html[data-theme="dark"] .module-card {
+        background: #1e293b;
+        border-color: #334155;
+        color: #e2e8f0;
+        box-shadow: none;
+      }
+
+      html[data-theme="dark"] .module-id {
+        border-color: #475569;
+        color: #93c5fd;
+      }
+
+      html[data-theme="dark"] .module-note,
+      html[data-theme="dark"] .footer {
+        color: #cbd5e1;
+      }
+
+      html[data-theme="dark"] .header h1 {
+        color: #bfdbfe;
+      }
+
+      html[data-theme="dark"] .header {
+        color: #cbd5e1;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         .module-card {
           transition: none;
@@ -138,15 +169,11 @@
   </head>
   <body>
     <main class="page">
-      <header class="header">
+      <header class="header hero">
         <h1>Curso de Teología Bíblica Práctica</h1>
-        <p>
-          Bienvenido al curso. Aquí encontrarás los 8 módulos del programa. Puedes comenzar
-          con el módulo disponible y regresar a este menú para continuar con los siguientes.
-        </p>
       </header>
 
-      <section class="grid" aria-label="Módulos del curso">
+      <section id="course-modules-grid" class="grid" aria-label="Módulos del curso">
         <a class="module-card" href="./la-santificacion-practica/">
           <span class="module-id">Módulo 1</span>
           <h2 class="module-title">La santificación práctica</h2>
@@ -205,5 +232,6 @@
 
       <p class="footer">Total de módulos: 8</p>
     </main>
+    <script src="../assets/theme.js"></script>
   </body>
 </html>
