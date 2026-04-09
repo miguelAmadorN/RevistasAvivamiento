@@ -22,6 +22,23 @@
     localStorage.setItem(STORAGE_KEY, theme);
   };
 
+  const ensureFavicon = () => {
+    const currentScript = document.currentScript;
+    if (!currentScript?.src) return;
+
+    const faviconUrl = new URL("candle-flame.svg", currentScript.src).toString();
+    let iconLink = document.querySelector('link[rel="icon"]');
+
+    if (!iconLink) {
+      iconLink = document.createElement("link");
+      iconLink.rel = "icon";
+      document.head.appendChild(iconLink);
+    }
+
+    iconLink.type = "image/svg+xml";
+    iconLink.href = faviconUrl;
+  };
+
   const ensureSharedStylesheet = () => {
     const currentScript = document.currentScript;
     if (!currentScript?.src) return;
@@ -101,6 +118,7 @@
 
   applyTheme(getInitialTheme());
   ensureSharedStylesheet();
+  ensureFavicon();
 
   window.addEventListener("DOMContentLoaded", () => {
     addThemeButton();
